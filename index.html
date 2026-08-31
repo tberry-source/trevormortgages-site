@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Darian Stadnyk × Trevor Berry | Calgary Home Financing Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --perch-dark-green: #12453B;
+      --perch-light-green: #327766;
+      --perch-orange: #F7704F;
+      --bg-light: #F8F9FA;
+      --card-bg: #FFFFFF;
+      --border-color: #DEE2E6;
+      --text-dark: #1B2421;
+      --text-muted: #6C757D;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.5;
+    }
+    header {
+      background-color: var(--perch-dark-green);
+      color: #FFF;
+      padding: 16px 20px;
+    }
+    .header-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 20px 16px 40px;
+    }
+    .tab-toggle {
+      display: flex;
+      background-color: #E9ECEF;
+      border-radius: 8px;
+      padding: 4px;
+      margin-bottom: 20px;
+    }
+    .tab-btn {
+      flex: 1;
+      padding: 10px 0;
+      border: none;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      background: transparent;
+      color: var(--text-muted);
+      font-family: inherit;
+    }
+    .tab-btn.active {
+      background-color: var(--perch-dark-green);
+      color: #FFF;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .listing-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 14px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .listing-card.active {
+      border: 2px solid var(--perch-dark-green);
+      box-shadow: 0 4px 12px rgba(18, 69, 59, 0.12);
+    }
+    .calc-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 22px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+      margin-bottom: 22px;
+    }
+    .rate-badge {
+      background-color: #E8F3F1;
+      color: var(--perch-dark-green);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 800;
+      display: inline-block;
+    }
+    .btn-action {
+      display: inline-block;
+      text-align: center;
+      padding: 12px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      font-family: inherit;
+      cursor: pointer;
+    }
+    .btn-outline {
+      background: #F8F9FA;
+      color: var(--text-dark);
+      border: 1px solid var(--border-color);
+    }
+    .btn-primary {
+      background: var(--perch-dark-green);
+      color: #FFF;
+      border: none;
+    }
+    .input-field {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+      font-family: inherit;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div>
+        <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.85;">Darian Stadnyk × Trevor Berry</div>
+        <div style="font-size: 17px; font-weight: 700; margin-top: 2px;">Calgary Home Financing Hub</div>
+      </div>
+      <a href="tel:5878880024" style="background-color: var(--perch-light-green); color: #FFF; padding: 7px 14px; border-radius: 6px; font-size: 13px; text-decoration: none; font-weight: 600;">
+        Call Darian
+      </a>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <div class="tab-toggle">
+      <button id="tabListingsBtn" class="tab-btn active" onclick="switchTab('listings')">Darian's Active Listings</button>
+      <button id="tabCheckAnyBtn" class="tab-btn" onclick="switchTab('check_any')">Check Any Home</button>
+    </div>
+
+    <div id="listingsView">
+      <div class="grid-2">
+        <div id="card-temple" class="listing-card active" onclick="selectListing('temple')">
+          <div style="font-size: 11px; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Temple, NE</div>
+          <div style="font-weight: 800; font-size: 17px; color: var(--perch-dark-green); margin-top: 2px;">$359,000</div>
+          <div style="font-size: 13px; margin-top: 4px; font-weight: 500;">252 Templeview Way NE</div>
+          <div style="font-size: 11px; color: #868E96; margin-top: 6px;">MLS® A2317927 · 3b/2ba</div>
+        </div>
+
+        <div id="card-kingsland" class="listing-card" onclick="selectListing('kingsland')">
+          <div style="font-size: 11px; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Kingsland, SW</div>
+          <div style="font-weight: 800; font-size: 17px; color: var(--perch-dark-green); margin-top: 2px;">$685,000</div>
+          <div style="font-size: 13px; margin-top: 4px; font-weight: 500;">809 68 Avenue SW</div>
+          <div style="font-size: 11px; color: #868E96; margin-top: 6px;">MLS® A2339915 · 4b/2ba</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="checkAnyView" style="display: none; background: #FFF; padding: 18px 20px; border-radius: 10px; border: 1px solid var(--border-color); margin-bottom: 20px;">
+      <h3 style="font-size: 15px; font-weight: 700; color: var(--perch-dark-green); margin-bottom: 12px;">Calculate Payments for Any Calgary Property</h3>
+      <div class="grid-2" style="margin-bottom: 0;">
+        <div>
+          <label style="font-size: 12px; font-weight: 600; color: #495057; display: block; margin-bottom: 4px;">Purchase Price ($)</label>
+          <input id="customPriceInput" type="number" step="5000" value="550000" class="input-field" oninput="updateCustomNumbers()" />
+        </div>
+        <div>
+          <label style="font-size: 12px; font-weight: 600; color: #495057; display: block; margin-bottom: 4px;">Annual Taxes ($)</label>
+          <input id="customTaxesInput" type="number" step="100" value="3200" class="input-field" oninput="updateCustomNumbers()" />
+        </div>
+      </div>
+    </div>
+
+    <div class="calc-card">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid #EEE; padding-bottom: 16px;">
+        <div>
+          <span style="font-size: 12px; text-transform: uppercase; color: var(--text-muted); font-weight: 600; letter-spacing: 0.5px;">Estimated Monthly Cost</span>
+          <div style="font-size: 34px; font-weight: 800; color: var(--perch-dark-green); margin-top: 2px;">
+            $<span id="totalMonthlyDisplay">1,905</span><span style="font-size: 14px; font-weight: 500; color: var(--text-muted);">/mo</span>
+          </div>
+        </div>
+        <div style="text-align: right;">
+          <div class="rate-badge">3.65% Variable</div>
+          <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">Lowest Insured Rate*</div>
+        </div>
+      </div>
+
+      <div style="margin-top: 16px; display: flex; justify-content: space-between; font-size: 14px; color: #495057;">
+        <span>Principal & Interest (25-yr am):</span>
+        <strong style="color: var(--text-dark);">$<span id="piPaymentDisplay">1,691</span>/mo</strong>
+      </div>
+      <div style="margin-top: 8px; display: flex; justify-content: space-between; font-size: 14px; color: #495057;">
+        <span>Estimated Property Taxes:</span>
+        <strong style="color: var(--text-dark);">$<span id="taxDisplay">214</span>/mo</strong>
+      </div>
+      <div style="margin-top: 8px; display: flex; justify-content: space-between; font-size: 14px; color: #495057;">
+        <span>Down Payment Selected (<span id="dpPercentLabel">10</span>%):</span>
+        <strong style="color: var(--perch-dark-green);">$<span id="dpDollarsDisplay">35,900</span></strong>
+      </div>
+
+      <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #EEE;">
+        <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 700;">
+          <span>Adjust Down Payment:</span>
+          <span style="color: var(--perch-orange);" id="sliderValueText">10% ($35,900)</span>
+        </div>
+        <input id="dpSlider" type="range" min="5" max="25" step="5" value="10" style="width: 100%; margin-top: 8px; accent-color: var(--perch-orange); cursor: pointer;" oninput="recalculate()" />
+      </div>
+
+      <div class="grid-2" style="margin-top: 22px; margin-bottom: 0;">
+        <a id="smsDarianBtn" href="sms:5878880024?body=Hi Darian, I have a question about 252 Templeview Way NE" class="btn-action btn-outline">
+          Ask Darian About Showing
+        </a>
+        <a href="https://app.myperch.io/auth/sign-up?referralCode=1RDE2DDY&advisorProfileId=8mvVdjPF" target="_blank" class="btn-action btn-primary">
+          Get Pre-Approved with Trevor
+        </a>
+      </div>
+    </div>
+
+    <div style="background-color: #E8F3F1; border-radius: 8px; padding: 16px 18px; display: flex; align-items: center; gap: 14px; margin-bottom: 22px;">
+      <div style="flex: 1;">
+        <div style="font-size: 13px; font-weight: 700; color: var(--perch-dark-green);">Trevor Berry · Mortgage Associate with Perch</div>
+        <div style="font-size: 12.5px; color: var(--perch-light-green); margin-top: 3px; line-height: 1.4;">
+          “Free access to 40+ lenders, at no cost to you — with custom advice built to save you money.”
+        </div>
+      </div>
+      <a href="tel:4038701537" style="font-size: 12px; font-weight: 700; color: var(--perch-dark-green); text-decoration: none; border: 1px solid var(--perch-dark-green); padding: 6px 10px; border-radius: 6px; white-space: nowrap;">
+        403-870-1537
+      </a>
+    </div>
+
+    <div class="calc-card" style="margin-bottom: 0;">
+      <div id="formContainer">
+        <h3 style="font-size: 16px; font-weight: 700; color: var(--perch-dark-green); margin-bottom: 4px;">Want a Complete Payment & Down Payment Breakdown?</h3>
+        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
+          Enter your details below. Trevor and Darian will send you the full breakdown of cash required to close, qualification hurdles, and rate options for this property.
+        </p>
+
+        <form id="leadForm" onsubmit="submitLead(event)">
+          <div style="margin-bottom: 10px;">
+            <input id="leadName" required placeholder="Full Name" class="input-field" />
+          </div>
+          <div class="grid-2" style="margin-bottom: 12px;">
+            <input id="leadPhone" required type="tel" placeholder="Cell Phone" class="input-field" />
+            <input id="leadEmail" required type="email" placeholder="Email Address" class="input-field" />
+          </div>
+          <button id="submitBtn" type="submit" class="btn-action" style="width: 100%; background: var(--perch-light-green); color: #FFF; border: none; font-size: 14px;">
+            Send Me the Numbers
+          </button>
+        </form>
+      </div>
+
+      <div id="formSuccess" style="display: none; text-align: center; padding: 20px 10px;">
+        <div style="font-size: 36px; margin-bottom: 8px;">✓</div>
+        <h3 style="font-size: 18px; font-weight: 700; color: var(--perch-dark-green); margin-bottom: 6px;">Your Snapshot Request is In!</h3>
+        <p style="font-size: 13px; color: #495057; margin-bottom: 16px;">Trevor and Darian will follow up with your custom financing breakdown shortly.</p>
+        <a href="https://app.myperch.io/auth/sign-up?referralCode=1RDE2DDY&advisorProfileId=8mvVdjPF" target="_blank" class="btn-action btn-primary" style="display: inline-block; padding: 10px 18px;">
+          Skip the Line: Start Perch Client Portal
+        </a>
+      </div>
+    </div>
+
+    <footer style="margin-top: 28px; text-align: center; font-size: 11px; color: #868E96; line-height: 1.6;">
+      Trevor Berry is a licensed mortgage associate with Perch Mortgage Brokerage (RECA licensed in Alberta).
+      Calculations are estimates for illustration purposes only. O.A.C. Terms and conditions apply. Lowest insured rate 3.65% variable.
+    </footer>
+  </div>
+
+  <script>
+    const listings = {
+      temple: { address: "252 Templeview Way NE", price: 359000, taxes: 2571 },
+      kingsland: { address: "809 68 Avenue SW", price: 685000, taxes: 3850 }
+    };
+    let currentMode = 'listings';
+    let activeListingKey = 'temple';
+    let customPrice = 550000;
+    let customTaxes = 3200;
+    const rate = 3.65;
+
+    function switchTab(tab) {
+      currentMode = tab;
+      document.getElementById('tabListingsBtn').classList.toggle('active', tab === 'listings');
+      document.getElementById('tabCheckAnyBtn').classList.toggle('active', tab === 'check_any');
+      document.getElementById('listingsView').style.display = tab === 'listings' ? 'block' : 'none';
+      document.getElementById('checkAnyView').style.display = tab === 'check_any' ? 'block' : 'none';
+      recalculate();
+    }
+
+    function selectListing(key) {
+      activeListingKey = key;
+      document.getElementById('card-temple').classList.toggle('active', key === 'temple');
+      document.getElementById('card-kingsland').classList.toggle('active', key === 'kingsland');
+      recalculate();
+    }
+
+    function updateCustomNumbers() {
+      customPrice = Math.max(100000, Number(document.getElementById('customPriceInput').value));
+      customTaxes = Math.max(0, Number(document.getElementById('customTaxesInput').value));
+      recalculate();
+    }
+
+    function recalculate() {
+      const price = currentMode === 'listings' ? listings[activeListingKey].price : customPrice;
+      const taxes = currentMode === 'listings' ? listings[activeListingKey].taxes : customTaxes;
+      const address = currentMode === 'listings' ? listings[activeListingKey].address : 'Calgary Property';
+
+      const dpPercent = Number(document.getElementById('dpSlider').value);
+      const dpDollars = Math.round(price * (dpPercent / 100));
+      const ltv = ((price - dpDollars) / price) * 100;
+
+      let cmhcRate = 0;
+      if (ltv > 90) cmhcRate = 0.04;
+      else if (ltv > 85) cmhcRate = 0.031;
+      else if (ltv > 80) cmhcRate = 0.028;
+
+      const totalLoan = (price - dpDollars) * (1 + cmhcRate);
+      const monthlyRate = Math.pow(Math.pow(1 + (rate / 100) / 2, 2), 1 / 12) - 1;
+      const n = 25 * 12;
+      const monthlyPI = Math.round((totalLoan * (monthlyRate * Math.pow(1 + monthlyRate, n))) / (Math.pow(1 + monthlyRate, n) - 1));
+      const monthlyTax = Math.round(taxes / 12);
+      const totalCost = monthlyPI + monthlyTax;
+
+      document.getElementById('totalMonthlyDisplay').innerText = totalCost.toLocaleString();
+      document.getElementById('piPaymentDisplay').innerText = monthlyPI.toLocaleString();
+      document.getElementById('taxDisplay').innerText = monthlyTax.toLocaleString();
+      document.getElementById('dpPercentLabel').innerText = dpPercent;
+      document.getElementById('dpDollarsDisplay').innerText = dpDollars.toLocaleString();
+      document.getElementById('sliderValueText').innerText = `${dpPercent}% ($${dpDollars.toLocaleString()})`;
+
+      document.getElementById('smsDarianBtn').href = `sms:5878880024?body=Hi Darian, I have a question about ${encodeURIComponent(address)}`;
+    }
+
+    async function submitLead(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      btn.innerText = 'Sending...';
+      btn.disabled = true;
+
+      const price = currentMode === 'listings' ? listings[activeListingKey].price : customPrice;
+      const address = currentMode === 'listings' ? listings[activeListingKey].address : 'Custom Check Any Home';
+
+      const payload = {
+        lead_type: 'realtor_referral',
+        realtor_slug: 'darian',
+        first_name: document.getElementById('leadName').value,
+        phone: document.getElementById('leadPhone').value,
+        email: document.getElementById('leadEmail').value,
+        target_price: price,
+        goal_or_challenge: `Inquiry for ${address} ($${price.toLocaleString()})`,
+        consent_to_contact: true,
+        source_page: '/darian'
+      };
+
+      try {
+        await fetch('/api/intake', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+      } catch (err) {
+        console.log('Submission registered');
+      }
+
+      document.getElementById('formContainer').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    }
+
+    recalculate();
+  </script>
+</body>
+</html>
