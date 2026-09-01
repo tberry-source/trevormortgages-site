@@ -12,6 +12,7 @@
       --perch-dark-green: #12453B;
       --perch-light-green: #327766;
       --perch-orange: #F7704F;
+      --perch-teal: #26A699;
       --bg-light: #F8F9FA;
       --card-bg: #FFFFFF;
       --border-color: #DEE2E6;
@@ -25,10 +26,45 @@
       color: var(--text-dark);
       line-height: 1.5;
     }
+    
+    /* Brand Bar */
+    .brand-bar {
+      background-color: #0c332b;
+      padding: 8px 20px;
+      font-size: 11px;
+      color: #A3CFBB;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      letter-spacing: 0.5px;
+    }
+    .brand-bar-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-logo-group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+      color: #FFF;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .perch-pin {
+      width: 14px;
+      height: 14px;
+      fill: #FFF;
+    }
+
     header {
       background-color: var(--perch-dark-green);
       color: #FFF;
-      padding: 16px 20px;
+      padding: 18px 20px;
     }
     .header-inner {
       max-width: 640px;
@@ -36,12 +72,57 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 12px;
     }
     .container {
       max-width: 640px;
       margin: 0 auto;
       padding: 20px 16px 40px;
     }
+    
+    /* Two Steps Guidance Box */
+    .two-steps-box {
+      background-color: #FFF;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-bottom: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      position: relative;
+    }
+    .step-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .step-num {
+      background-color: #E8F3F1;
+      color: var(--perch-dark-green);
+      font-weight: 800;
+      font-size: 12px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .step-text {
+      font-size: 12px;
+      line-height: 1.4;
+      color: #495057;
+    }
+    .step-text strong {
+      display: block;
+      color: var(--perch-dark-green);
+      font-size: 12.5px;
+      margin-bottom: 2px;
+    }
+
     .tab-toggle {
       display: flex;
       background-color: #E9ECEF;
@@ -129,9 +210,50 @@
       font-family: inherit;
       font-size: 14px;
     }
+    
+    /* Contact Cards Grid */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+    .contact-card {
+      background: #FFF;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    
+    @media (max-width: 520px) {
+      .two-steps-box {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+    }
   </style>
 </head>
 <body>
+
+  <!-- Perch Identity Bar -->
+  <div class="brand-bar">
+    <div class="brand-bar-inner">
+      <div class="brand-logo-group">
+        <svg class="perch-pin" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+        </svg>
+        <span>TREVOR MORTGAGES</span>
+      </div>
+      <div style="font-weight: 500; font-size: 11px;">Powered by Perch</div>
+    </div>
+  </div>
 
   <header>
     <div class="header-inner">
@@ -139,7 +261,7 @@
         <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.85;">Darian Stadnyk × Trevor Berry</div>
         <div style="font-size: 17px; font-weight: 700; margin-top: 2px;">Calgary Home Financing Hub</div>
       </div>
-      <a href="tel:5878880024" style="background-color: var(--perch-light-green); color: #FFF; padding: 7px 14px; border-radius: 6px; font-size: 13px; text-decoration: none; font-weight: 600;">
+      <a href="tel:5878880024" style="background-color: var(--perch-light-green); color: #FFF; padding: 7px 14px; border-radius: 6px; font-size: 13px; text-decoration: none; font-weight: 600; white-space: nowrap;">
         Call Darian
       </a>
     </div>
@@ -147,29 +269,49 @@
 
   <div class="container">
 
+    <!-- Two Steps, One Clear Plan Guidance Block -->
+    <div class="two-steps-box">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <strong>Ask Darian About the Property</strong>
+          Book private showings, review market comps, and assess neighborhood value.
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <strong>Ask Trevor About Financing</strong>
+          Explore 40+ lenders, compare down payment strategies, and get pre-approved.
+        </div>
+      </div>
+    </div>
+
     <div class="tab-toggle">
       <button id="tabListingsBtn" class="tab-btn active" onclick="switchTab('listings')">Darian's Active Listings</button>
       <button id="tabCheckAnyBtn" class="tab-btn" onclick="switchTab('check_any')">Check Any Home</button>
     </div>
 
+    <!-- Listings View -->
     <div id="listingsView">
       <div class="grid-2">
         <div id="card-temple" class="listing-card active" onclick="selectListing('temple')">
           <div style="font-size: 11px; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Temple, NE</div>
           <div style="font-weight: 800; font-size: 17px; color: var(--perch-dark-green); margin-top: 2px;">$359,000</div>
           <div style="font-size: 13px; margin-top: 4px; font-weight: 500;">252 Templeview Way NE</div>
-          <div style="font-size: 11px; color: #868E96; margin-top: 6px;">MLS® A2317927 · 3b/2ba</div>
+          <div style="font-size: 11px; color: #868E96; margin-top: 6px;">MLS® A2317927 · 3b/2ba · 1,140 sqft</div>
         </div>
 
         <div id="card-kingsland" class="listing-card" onclick="selectListing('kingsland')">
           <div style="font-size: 11px; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Kingsland, SW</div>
           <div style="font-weight: 800; font-size: 17px; color: var(--perch-dark-green); margin-top: 2px;">$685,000</div>
           <div style="font-size: 13px; margin-top: 4px; font-weight: 500;">809 68 Avenue SW</div>
-          <div style="font-size: 11px; color: #868E96; margin-top: 6px;">MLS® A2339915 · 4b/2ba</div>
+          <div style="font-size: 11px; color: #868E96; margin-top: 6px;">MLS® A2339915 · 4b/2ba · 1,100 sqft</div>
         </div>
       </div>
     </div>
 
+    <!-- Check Any Home View -->
     <div id="checkAnyView" style="display: none; background: #FFF; padding: 18px 20px; border-radius: 10px; border: 1px solid var(--border-color); margin-bottom: 20px;">
       <h3 style="font-size: 15px; font-weight: 700; color: var(--perch-dark-green); margin-bottom: 12px;">Calculate Payments for Any Calgary Property</h3>
       <div class="grid-2" style="margin-bottom: 0;">
@@ -184,6 +326,7 @@
       </div>
     </div>
 
+    <!-- Financing Calculator Card -->
     <div class="calc-card">
       <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid #EEE; padding-bottom: 16px;">
         <div>
@@ -212,9 +355,10 @@
       </div>
       <div style="margin-top: 8px; display: flex; justify-content: space-between; font-size: 13px; color: #6C757D;">
         <span>Includes Mortgage Insurance (CMHC/Sagen):</span>
-        <span style="color: #495057;" id="insuranceDisplay">+$14,324 rolled into loan</span>
+        <span style="color: #495057;" id="insuranceDisplay">+$14,324 rolled in</span>
       </div>
 
+      <!-- Down Payment Slider -->
       <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #EEE;">
         <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 700;">
           <span>Adjust Down Payment:</span>
@@ -230,8 +374,9 @@
         </div>
       </div>
 
+      <!-- Context-Aware Action Buttons -->
       <div class="grid-2" style="margin-top: 22px; margin-bottom: 0;">
-        <a id="smsDarianBtn" href="sms:5878880024?body=Hi Darian, I have a question about 252 Templeview Way NE" class="btn-action btn-outline">
+        <a id="contextualActionBtn" href="sms:5878880024?body=Hi Darian, I have a question about 252 Templeview Way NE" class="btn-action btn-outline">
           Ask Darian About Showing
         </a>
         <a href="https://app.myperch.io/auth/sign-up?referralCode=1RDE2DDY&advisorProfileId=8mvVdjPF" target="_blank" class="btn-action btn-primary">
@@ -240,21 +385,53 @@
       </div>
     </div>
 
-    <div style="background-color: #E8F3F1; border-radius: 8px; padding: 16px 18px; display: flex; align-items: center; gap: 14px; margin-bottom: 22px;">
-      <div style="flex: 1;">
-        <div style="font-size: 13px; font-weight: 700; color: var(--perch-dark-green);">Trevor Berry · Mortgage Associate with Perch</div>
-        <div style="font-size: 12.5px; color: var(--perch-light-green); margin-top: 3px; line-height: 1.4;">
-          “Access to 40+ Canadian lenders at no cost to you — custom structured to secure the lowest overall cost of borrowing.”
+    <!-- Dedicated Dual Contact Cards for Darian and Trevor -->
+    <div class="contact-grid">
+      <!-- Darian's Card -->
+      <div class="contact-card">
+        <div>
+          <div style="font-size: 13px; font-weight: 700; color: var(--perch-dark-green);">Darian Stadnyk</div>
+          <div style="font-size: 11.5px; color: var(--text-muted); margin-top: 1px;">Premiere Realty Direct · REALTOR®</div>
+          <p style="font-size: 12px; color: #495057; margin-top: 6px; line-height: 1.4;">
+            Local Calgary listing & showing specialist. Contact Darian for private viewings, neighborhood stats, and offer strategy.
+          </p>
+        </div>
+        <div style="margin-top: 12px; display: flex; gap: 8px;">
+          <a href="tel:5878880024" style="flex: 1; text-align: center; font-size: 12px; font-weight: 700; color: var(--perch-dark-green); text-decoration: none; border: 1px solid var(--border-color); padding: 7px; border-radius: 6px; background: #F8F9FA;">
+            587-888-0024
+          </a>
+          <a href="mailto:dariancstadnyk@gmail.com" style="flex: 1; text-align: center; font-size: 12px; font-weight: 700; color: var(--perch-dark-green); text-decoration: none; border: 1px solid var(--border-color); padding: 7px; border-radius: 6px; background: #F8F9FA;">
+            Email
+          </a>
         </div>
       </div>
-      <a href="tel:4038701537" style="font-size: 12px; font-weight: 700; color: var(--perch-dark-green); text-decoration: none; border: 1px solid var(--perch-dark-green); padding: 6px 10px; border-radius: 6px; white-space: nowrap;">
-        403-870-1537
-      </a>
+
+      <!-- Trevor's Card -->
+      <div class="contact-card">
+        <div>
+          <div style="font-size: 13px; font-weight: 700; color: var(--perch-dark-green);">Trevor Berry</div>
+          <div style="font-size: 11.5px; color: var(--text-muted); margin-top: 1px;">Mortgage Associate · Perch Brokerage</div>
+          <p style="font-size: 12px; color: #495057; margin-top: 6px; line-height: 1.4;">
+            Free access to 40+ lenders, at no cost to you — with custom advice built to save you money.
+          </p>
+        </div>
+        <div style="margin-top: 12px; display: flex; gap: 8px;">
+          <a href="tel:4038701537" style="flex: 1; text-align: center; font-size: 12px; font-weight: 700; color: var(--perch-dark-green); text-decoration: none; border: 1px solid var(--border-color); padding: 7px; border-radius: 6px; background: #F8F9FA;">
+            403-870-1537
+          </a>
+          <a href="mailto:tberry@myperch.io" style="flex: 1; text-align: center; font-size: 12px; font-weight: 700; color: var(--perch-dark-green); text-decoration: none; border: 1px solid var(--border-color); padding: 7px; border-radius: 6px; background: #F8F9FA;">
+            Email
+          </a>
+        </div>
+      </div>
     </div>
 
+    <!-- Lead Capture Form with Updated Direct Benefit Headline -->
     <div class="calc-card" style="margin-bottom: 0;">
       <div id="formContainer">
-        <h3 style="font-size: 16px; font-weight: 700; color: var(--perch-dark-green); margin-bottom: 4px;">Want a Complete Payment & Down Payment Breakdown?</h3>
+        <h3 style="font-size: 16px; font-weight: 700; color: var(--perch-dark-green); margin-bottom: 4px;">
+          Want to see how much you could save on this property?
+        </h3>
         <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
           Enter your details below. Trevor and Darian will send you the full breakdown of cash required to close, qualification hurdles, and rate options for this property.
         </p>
@@ -353,7 +530,7 @@
 
       const ltv = ((price - dpDollars) / price) * 100;
 
-      // CMHC/Sagen default insurance + 0.20% surcharge for 30-yr insured AM
+      // CMHC/Sagen insurance premium + 0.20% surcharge for 30-year insured amortization
       let cmhcRate = 0;
       if (ltv > 90) cmhcRate = 0.042;
       else if (ltv > 85) cmhcRate = 0.033;
@@ -363,6 +540,7 @@
       const insuranceAmount = Math.round((price - dpDollars) * cmhcRate);
       const totalLoan = (price - dpDollars) + insuranceAmount;
 
+      // Canadian semi-annual compounding to monthly
       const monthlyRate = Math.pow(Math.pow(1 + (rate / 100) / 2, 2), 1 / 12) - 1;
       const n = amortizationYears * 12;
       const monthlyPI = Math.round((totalLoan * (monthlyRate * Math.pow(1 + monthlyRate, n))) / (Math.pow(1 + monthlyRate, n) - 1));
@@ -377,12 +555,20 @@
       document.getElementById('sliderValueText').innerText = `${labelText} ($${dpDollars.toLocaleString()})`;
 
       if (insuranceAmount > 0) {
-        document.getElementById('insuranceDisplay').innerText = `+$${insuranceAmount.toLocaleString()} rolled into loan`;
+        document.getElementById('insuranceDisplay').innerText = `+$${insuranceAmount.toLocaleString()} rolled in`;
       } else {
         document.getElementById('insuranceDisplay').innerText = `$0 (20%+ Conventional)`;
       }
 
-      document.getElementById('smsDarianBtn').href = `sms:5878880024?body=Hi Darian, I have a question about ${encodeURIComponent(address)}`;
+      // Context-aware button handling based on active tab
+      const contextualBtn = document.getElementById('contextualActionBtn');
+      if (currentMode === 'listings') {
+        contextualBtn.innerText = 'Ask Darian About Showing';
+        contextualBtn.href = `sms:5878880024?body=Hi Darian, I have a question about ${encodeURIComponent(address)}`;
+      } else {
+        contextualBtn.innerText = 'Ask About This Property';
+        contextualBtn.href = `sms:5878880024?body=Hi Darian & Trevor, I am calculating numbers on a home ($${price.toLocaleString()}) and have a question`;
+      }
     }
 
     async function submitLead(e) {
