@@ -189,34 +189,45 @@
         <div>
           <span style="font-size: 12px; text-transform: uppercase; color: var(--text-muted); font-weight: 600; letter-spacing: 0.5px;">Estimated Monthly Cost</span>
           <div style="font-size: 34px; font-weight: 800; color: var(--perch-dark-green); margin-top: 2px;">
-            $<span id="totalMonthlyDisplay">1,905</span><span style="font-size: 14px; font-weight: 500; color: var(--text-muted);">/mo</span>
+            $<span id="totalMonthlyDisplay">1,834</span><span style="font-size: 14px; font-weight: 500; color: var(--text-muted);">/mo</span>
           </div>
         </div>
         <div style="text-align: right;">
           <div class="rate-badge">3.65% Variable</div>
-          <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">Lowest Insured Rate*</div>
+          <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">30-Yr AM · Lowest Insured*</div>
         </div>
       </div>
 
       <div style="margin-top: 16px; display: flex; justify-content: space-between; font-size: 14px; color: #495057;">
-        <span>Principal & Interest (25-yr am):</span>
-        <strong style="color: var(--text-dark);">$<span id="piPaymentDisplay">1,691</span>/mo</strong>
+        <span>Principal & Interest (30-yr Amortization):</span>
+        <strong style="color: var(--text-dark);">$<span id="piPaymentDisplay">1,620</span>/mo</strong>
       </div>
       <div style="margin-top: 8px; display: flex; justify-content: space-between; font-size: 14px; color: #495057;">
         <span>Estimated Property Taxes:</span>
         <strong style="color: var(--text-dark);">$<span id="taxDisplay">214</span>/mo</strong>
       </div>
       <div style="margin-top: 8px; display: flex; justify-content: space-between; font-size: 14px; color: #495057;">
-        <span>Down Payment Selected (<span id="dpPercentLabel">10</span>%):</span>
-        <strong style="color: var(--perch-dark-green);">$<span id="dpDollarsDisplay">35,900</span></strong>
+        <span>Down Payment Selected (<span id="dpPercentLabel">5</span>%):</span>
+        <strong style="color: var(--perch-dark-green);">$<span id="dpDollarsDisplay">17,950</span></strong>
+      </div>
+      <div style="margin-top: 8px; display: flex; justify-content: space-between; font-size: 13px; color: #6C757D;">
+        <span>Includes Mortgage Insurance (CMHC/Sagen):</span>
+        <span style="color: #495057;" id="insuranceDisplay">+$14,324 rolled into loan</span>
       </div>
 
       <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #EEE;">
         <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 700;">
           <span>Adjust Down Payment:</span>
-          <span style="color: var(--perch-orange);" id="sliderValueText">10% ($35,900)</span>
+          <span style="color: var(--perch-orange);" id="sliderValueText">5% ($17,950)</span>
         </div>
-        <input id="dpSlider" type="range" min="5" max="25" step="5" value="10" style="width: 100%; margin-top: 8px; accent-color: var(--perch-orange); cursor: pointer;" oninput="recalculate()" />
+        <input id="dpSlider" type="range" min="5" max="25" step="5" value="5" style="width: 100%; margin-top: 8px; accent-color: var(--perch-orange); cursor: pointer;" oninput="recalculate()" />
+        <div style="display: flex; justify-content: space-between; font-size: 11px; color: #868E96; margin-top: 4px;">
+          <span>Min Down (5%)</span>
+          <span>10%</span>
+          <span>15%</span>
+          <span>20% (Uninsured)</span>
+          <span>25%</span>
+        </div>
       </div>
 
       <div class="grid-2" style="margin-top: 22px; margin-bottom: 0;">
@@ -233,7 +244,7 @@
       <div style="flex: 1;">
         <div style="font-size: 13px; font-weight: 700; color: var(--perch-dark-green);">Trevor Berry · Mortgage Associate with Perch</div>
         <div style="font-size: 12.5px; color: var(--perch-light-green); margin-top: 3px; line-height: 1.4;">
-          “Free access to 40+ lenders, at no cost to you — with custom advice built to save you money.”
+          “Access to 40+ Canadian lenders at no cost to you — custom structured to secure the lowest overall cost of borrowing.”
         </div>
       </div>
       <a href="tel:4038701537" style="font-size: 12px; font-weight: 700; color: var(--perch-dark-green); text-decoration: none; border: 1px solid var(--perch-dark-green); padding: 6px 10px; border-radius: 6px; white-space: nowrap;">
@@ -274,7 +285,7 @@
 
     <footer style="margin-top: 28px; text-align: center; font-size: 11px; color: #868E96; line-height: 1.6;">
       Trevor Berry is a licensed mortgage associate with Perch Mortgage Brokerage (RECA licensed in Alberta).
-      Calculations are estimates for illustration purposes only. O.A.C. Terms and conditions apply. Lowest insured rate 3.65% variable.
+      Calculations are estimates for illustration purposes only. O.A.C. Lowest insured rate 3.65% 5-yr variable on 30-year amortization for eligible purchasers. Mortgage default insurance included.
     </footer>
   </div>
 
@@ -288,6 +299,15 @@
     let customPrice = 550000;
     let customTaxes = 3200;
     const rate = 3.65;
+    const amortizationYears = 30;
+
+    function getMinimumDownPayment(price) {
+      if (price <= 500000) {
+        return Math.round(price * 0.05);
+      } else {
+        return Math.round((500000 * 0.05) + ((price - 500000) * 0.10));
+      }
+    }
 
     function switchTab(tab) {
       currentMode = tab;
@@ -316,18 +336,35 @@
       const taxes = currentMode === 'listings' ? listings[activeListingKey].taxes : customTaxes;
       const address = currentMode === 'listings' ? listings[activeListingKey].address : 'Calgary Property';
 
-      const dpPercent = Number(document.getElementById('dpSlider').value);
-      const dpDollars = Math.round(price * (dpPercent / 100));
+      const minDp = getMinimumDownPayment(price);
+      const minDpPercent = Math.round((minDp / price) * 100);
+
+      const slider = document.getElementById('dpSlider');
+      let dpPercent = Number(slider.value);
+
+      let dpDollars = Math.round(price * (dpPercent / 100));
+      let labelText = `${dpPercent}%`;
+
+      if (dpDollars < minDp) {
+        dpDollars = minDp;
+        dpPercent = minDpPercent;
+        labelText = `Min Insured (${dpPercent}%)`;
+      }
+
       const ltv = ((price - dpDollars) / price) * 100;
 
+      // CMHC/Sagen default insurance + 0.20% surcharge for 30-yr insured AM
       let cmhcRate = 0;
-      if (ltv > 90) cmhcRate = 0.04;
-      else if (ltv > 85) cmhcRate = 0.031;
-      else if (ltv > 80) cmhcRate = 0.028;
+      if (ltv > 90) cmhcRate = 0.042;
+      else if (ltv > 85) cmhcRate = 0.033;
+      else if (ltv > 80) cmhcRate = 0.030;
+      else cmhcRate = 0.00;
 
-      const totalLoan = (price - dpDollars) * (1 + cmhcRate);
+      const insuranceAmount = Math.round((price - dpDollars) * cmhcRate);
+      const totalLoan = (price - dpDollars) + insuranceAmount;
+
       const monthlyRate = Math.pow(Math.pow(1 + (rate / 100) / 2, 2), 1 / 12) - 1;
-      const n = 25 * 12;
+      const n = amortizationYears * 12;
       const monthlyPI = Math.round((totalLoan * (monthlyRate * Math.pow(1 + monthlyRate, n))) / (Math.pow(1 + monthlyRate, n) - 1));
       const monthlyTax = Math.round(taxes / 12);
       const totalCost = monthlyPI + monthlyTax;
@@ -337,7 +374,13 @@
       document.getElementById('taxDisplay').innerText = monthlyTax.toLocaleString();
       document.getElementById('dpPercentLabel').innerText = dpPercent;
       document.getElementById('dpDollarsDisplay').innerText = dpDollars.toLocaleString();
-      document.getElementById('sliderValueText').innerText = `${dpPercent}% ($${dpDollars.toLocaleString()})`;
+      document.getElementById('sliderValueText').innerText = `${labelText} ($${dpDollars.toLocaleString()})`;
+
+      if (insuranceAmount > 0) {
+        document.getElementById('insuranceDisplay').innerText = `+$${insuranceAmount.toLocaleString()} rolled into loan`;
+      } else {
+        document.getElementById('insuranceDisplay').innerText = `$0 (20%+ Conventional)`;
+      }
 
       document.getElementById('smsDarianBtn').href = `sms:5878880024?body=Hi Darian, I have a question about ${encodeURIComponent(address)}`;
     }
