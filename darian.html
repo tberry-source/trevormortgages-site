@@ -9,23 +9,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
-
     :root {
-      --bg-canvas: #FFFFFF;
-      --bg-subtle: #F8FAF9;
-      --bg-alt: #EFF4F1;
-      --border-subtle: #E2EAE5;
-      --border-focus: #12453B;
+      --bg-canvas: #0C100E;         /* Deep Matte Obsidian Canvas from Handout */
+      --bg-subtle: #101613;         /* Dark Charcoal-Green */
+      --bg-alt: #141D19;            /* Deep Obsidian-Green */
+      --border-subtle: #1A2420;     /* Luxury Framing Green from Handout */
+      --border-focus: #EDAB2B;      /* Signature Gold/Mustard */
       
-      --text-main: #131E1A;
-      --text-body: #394A43;
-      --text-muted: #647870;
+      --text-main: #FFFFFF;         /* Pristine White Text */
+      --text-body: #E5E7EB;         /* Extremely readable Light Grey */
+      --text-muted: #9CA3AF;        /* Muted Silver Text */
       
-      /* Official Perch Brand Tokens */
-      --brand-green: #12453B;
-      --brand-green-hover: #0E362E;
-      --brand-green-light: #E7EFEA;
-      --brand-green-dark: #0A2923;
+      /* Official Perch Brand Tokens - Modified for Premium Dark Luxury */
+      --brand-green: #EDAB2B;       /* Use Gold/Mustard as the main brand highlight in dark mode */
+      --brand-green-hover: #D99518;
+      --brand-green-light: #1E2823; /* Dark green background with gold text */
+      --brand-green-dark: #0A0E0C;
       --accent-mustard: #EDAB2B;
       --accent-mustard-hover: #D99518;
       --accent-orange: #F7704F;
@@ -35,9 +34,9 @@
       --radius-sm: 8px;
       --radius: 12px;
       --radius-lg: 20px;
-      --shadow-sm: 0 2px 8px rgba(18, 69, 59, 0.05);
-      --shadow-md: 0 8px 24px rgba(18, 69, 59, 0.08);
-      --shadow-lg: 0 16px 36px rgba(18, 69, 59, 0.12);
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+      --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.6);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -52,7 +51,7 @@
 
     /* Co-Branded Top Header */
     .partner-nav {
-      background: #FFFFFF;
+      background: var(--bg-canvas);
       border-bottom: 1.5px solid var(--border-subtle);
       position: sticky;
       top: 0;
@@ -103,7 +102,7 @@
       align-items: center;
       gap: 0.5rem;
       background: var(--brand-green-light);
-      color: var(--brand-green);
+      color: var(--accent-mustard);
       padding: 0.5rem 1.1rem;
       border-radius: 30px;
       font-size: 0.85rem;
@@ -125,7 +124,7 @@
 
     /* Clean Hub Header (No confusing specific address at top) */
     .hub-hero {
-      background: #FFFFFF;
+      background: var(--bg-canvas);
       border-radius: var(--radius-lg);
       border: 1.5px solid var(--border-subtle);
       padding: 2.4rem 2.4rem 2rem;
@@ -138,7 +137,7 @@
       align-items: center;
       gap: 0.4rem;
       background: var(--brand-green-light);
-      color: var(--brand-green);
+      color: var(--accent-mustard);
       font-size: 0.76rem;
       font-weight: 800;
       padding: 0.35rem 0.9rem;
@@ -186,7 +185,7 @@
       width: 30px;
       height: 30px;
       border-radius: 50%;
-      background: #FFFFFF;
+      background: var(--bg-canvas);
       border: 1.5px solid var(--border-subtle);
       display: flex;
       align-items: center;
@@ -203,7 +202,7 @@
       font-weight: 700;
     }
     .strip-phone {
-      color: var(--brand-green);
+      color: var(--accent-mustard);
       font-weight: 700;
       text-decoration: none;
       margin-left: 0.25rem;
@@ -248,104 +247,547 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 1.2rem;
     }
-    
-
-
-    /* =========================================================================
-       MASTER RESPONSIVE OPTIMIZATIONS FOR CO-BRANDED PORTAL
-       ========================================================================= */
-    @media (max-width: 768px) {
-      body, html {
-        overflow-x: hidden !important;
-        position: relative;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-      }
-
-      /* Consistent Mobile Padding & Page Margins */
-      .hub-hero, 
-      .hub-content-section, 
-      .inquiry-box-wrap, 
-      .hub-footer {
-        padding-left: 1.25rem !important;
-        padding-right: 1.25rem !important;
-        box-sizing: border-box !important;
-      }
-
-      .hub-hero-container, 
-      .hub-footer-inner, 
-      .brokerage-compliance-box {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        width: 100% !important;
-      }
-
-      /* Subpage Header and Branding Alignment */
-      .hub-nav-inner {
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 0.8rem !important;
-        padding: 0.8rem 0 !important;
-      }
-      .hub-logo-row {
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 0.6rem !important;
-        text-align: center !important;
-      }
-      .brand-badge, .partner-brand-badge {
-        font-size: 0.75rem !important;
-        padding: 0.3rem 0.6rem !important;
-      }
-
-      /* Stack listing cards vertically */
+    @media (max-width: 860px) {
       .property-cards-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1.2rem !important;
-        width: 100% !important;
-      }
-      .prop-card {
-        padding: 1.2rem !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-      }
-
-      /* Stack calculations and carrying cost breakdown cards */
-      .calc-card-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
-      }
-      .calc-left-inputs, .calc-right-results {
-        padding: 1.5rem 1.25rem !important;
-        border-radius: var(--radius) !important;
-      }
-      .result-main-num {
-        font-size: 2.2rem !important;
-      }
-
-      /* Stack bottom forms and stack footer elements */
-      .inquiry-form-grid {
-        grid-template-columns: 1fr !important;
-        gap: 0.8rem !important;
-      }
-      .btn {
-        width: 100% !important;
-        justify-content: center !important;
-      }
-
-      .hub-footer-inner {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
-        text-align: center !important;
-      }
-      .brokerage-lockup-row {
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
+        grid-template-columns: 1fr;
       }
     }
+
+    .prop-card {
+      background: var(--bg-subtle);
+      border: 2px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+    .prop-card:hover {
+      border-color: var(--accent-mustard);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .prop-card.active {
+      border-color: var(--accent-mustard);
+      background: var(--bg-alt);
+      box-shadow: 0 0 0 3px rgba(18, 69, 59, 0.12);
+    }
+    .prop-card-tag {
+      align-self: flex-start;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.65rem;
+      border-radius: 20px;
+      margin-bottom: 0.8rem;
+    }
+    .tag-openhouse {
+      background: #FFF4E5;
+      color: #B45309;
+    }
+    .tag-featured {
+      background: var(--brand-green-light);
+      color: var(--accent-mustard);
+    }
+    .tag-custom {
+      background: #EDE9FE;
+      color: #6D28D9;
+    }
     
+    .prop-card-address {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.3;
+      margin-bottom: 0.35rem;
+    }
+    .prop-card-meta {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+    .prop-card-price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 0.9rem;
+      margin-top: auto;
+    }
+    .prop-card-price-lbl {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .prop-card-price-val {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--accent-mustard);
+    }
+    .prop-card-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-top: 0.75rem;
+      color: var(--text-muted);
+    }
+    .prop-card.active .prop-card-status {
+      color: var(--accent-mustard);
+      font-weight: 800;
+    }
+
+    /* SECTION 2: THE INTERACTIVE CALCULATOR CARD */
+    .calc-card-wrap {
+      background: var(--bg-subtle);
+      border-radius: var(--radius-lg);
+      border: 1.5px solid var(--border-subtle);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      margin-bottom: 2.2rem;
+    }
+    
+    /* Top Banner identifying the active property */
+    .calc-focus-banner {
+      background: var(--bg-alt);
+      border-bottom: 1.5px solid var(--border-subtle);
+      padding: 1rem 1.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    .calc-focus-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .calc-focus-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--accent-mustard);
+    }
+    .calc-focus-specs {
+      font-size: 0.85rem;
+      color: var(--text-body);
+      font-weight: 600;
+    }
+
+    .calc-card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 860px) {
+      .calc-card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Left: Inputs & Sliders */
+    .calc-left-inputs {
+      padding: 2.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+    }
+    .calc-field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+    .calc-label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .calc-num-callout {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--accent-mustard);
+    }
+
+    /* Slider Range */
+    .slider-range {
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      background: #D8E4DF;
+      outline: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+      margin: 0.35rem 0;
+    }
+    .slider-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--accent-orange);
+      cursor: pointer;
+      border: 3px solid #FFFFFF;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      transition: transform 0.15s;
+    }
+    .slider-range::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+    .slider-bounds {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Clean 2-Button Toggle Groups (50/50 Aligned) */
+    .btn-toggle-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      margin-top: 0.4rem;
+    }
+    .toggle-pill-btn {
+      padding: 0.55rem 0.8rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--border-subtle);
+      background: var(--bg-canvas);
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-body);
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+    .toggle-pill-btn:hover {
+      border-color: var(--accent-mustard);
+    }
+    .toggle-pill-btn.active {
+      background: var(--brand-green);
+      border-color: var(--accent-mustard);
+      color: #FFFFFF;
+    }
+
+    /* Interest Rate Row */
+    .rate-box-row {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .rate-input-wrap {
+      display: inline-flex;
+      align-items: center;
+      background: var(--bg-canvas);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.4rem 0.8rem;
+      width: 110px;
+    }
+    .rate-input-wrap input {
+      border: none;
+      outline: none;
+      font-family: inherit;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-main);
+      width: 60px;
+    }
+    .rate-tag {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Right: Results Card (Forest Green #0A2923) */
+    .calc-right-results {
+      background: var(--brand-green-dark);
+      color: #FFFFFF;
+      padding: 2.4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .result-metric-header {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent-mustard);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.35rem;
+    }
+    .result-main-num {
+      font-size: 2.7rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .result-sub {
+      font-size: 0.82rem;
+      color: var(--accent-mustard);
+      margin-top: 0.35rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .breakdown-table {
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding-top: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      color: #C2DFD2;
+    }
+    .breakdown-row strong {
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+    .breakdown-row.total-row {
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 0.75rem;
+      margin-top: 0.3rem;
+      font-size: 0.95rem;
+    }
+    .breakdown-row.total-row strong {
+      color: var(--accent-mustard);
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+
+    /* Action Buttons in Results Card */
+    .calc-action-btns {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .btn-action-gold {
+      background: var(--accent-mustard);
+      color: #131E1A;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 0.9rem 1.4rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      text-align: center;
+      display: block;
+      transition: all 0.2s;
+      box-shadow: 0 4px 14px rgba(237, 171, 43, 0.35);
+    }
+    .btn-action-gold:hover {
+      background: var(--accent-mustard-hover);
+      transform: translateY(-1px);
+    }
+    .btn-action-outline {
+      background: transparent;
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.75rem 1.2rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      text-align: center;
+      display: block;
+      transition: all 0.2s;
+    }
+    .btn-action-outline:hover {
+      border-color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    /* Inquiry Card */
+    .inquiry-card {
+      background: var(--bg-subtle);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 2rem 2.2rem;
+      margin-bottom: 2.2rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .inquiry-card h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.35rem;
+    }
+    .inquiry-card p {
+      font-size: 0.92rem;
+      color: var(--text-body);
+      margin-bottom: 1.2rem;
+    }
+    .inquiry-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr auto;
+      gap: 0.75rem;
+    }
+    @media (max-width: 860px) {
+      .inquiry-form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .inquiry-input {
+      padding: 0.75rem 0.9rem;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.92rem;
+      color: var(--text-main);
+    }
+    .inquiry-input:focus {
+      outline: none;
+      border-color: var(--accent-mustard);
+      box-shadow: 0 0 0 3px rgba(18, 69, 59, 0.08);
+    }
+    .inquiry-btn {
+      background: var(--brand-green);
+      color: #FFFFFF;
+      font-family: inherit;
+      font-weight: 800;
+      font-size: 0.92rem;
+      padding: 0.75rem 1.4rem;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .inquiry-btn:hover {
+      background: var(--brand-green-hover);
+    }
+
+    /* Team Cards Grid */
+    .team-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 760px) {
+      .team-cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .team-card {
+      background: var(--bg-subtle);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .team-card-top {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .team-avatar-initials {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: var(--brand-green-light);
+      color: var(--accent-mustard);
+      font-weight: 800;
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #FFFFFF;
+      box-shadow: var(--shadow-sm);
+      flex-shrink: 0;
+    }
+    .team-avatar-initials.darian {
+      background: #FFF4E5;
+      color: #B45309;
+    }
+    .team-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+    .team-title {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .team-bio {
+      font-size: 0.9rem;
+      color: var(--text-body);
+      line-height: 1.55;
+      margin-bottom: 1.2rem;
+    }
+    .team-contact-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.1rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-green-fill {
+      background: var(--brand-green);
+      color: #FFFFFF;
+    }
+    .btn-green-fill:hover {
+      background: var(--brand-green-hover);
+    }
+    .btn-green-outline {
+      border: 1.5px solid var(--accent-mustard);
+      color: var(--accent-mustard);
+      background: transparent;
+    }
+    .btn-green-outline:hover {
+      background: var(--brand-green-light);
+    }
+
+    /* Footer Regulatory Strip */
+    .hub-footer {
+      border-top: 1.5px solid var(--border-subtle);
+      margin-top: 4rem;
+      padding: 2.2rem 1.5rem;
+      background: var(--bg-canvas);
+    }
+    .hub-footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .hub-footer-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
   </style>
 </head>
 <body>
@@ -617,7 +1059,7 @@
           <button type="submit" class="inquiry-btn">Get My Numbers →</button>
         </div>
       </form>
-      <div id="inquiry-success" style="display: none; color: var(--brand-green); font-weight: 800; margin-top: 1.2rem; font-size: 1.05rem;">
+      <div id="inquiry-success" style="display: none; color: var(--accent-mustard); font-weight: 800; margin-top: 1.2rem; font-size: 1.05rem;">
         ✓ Request received! Trevor will text or email your numbers shortly.
       </div>
     </div>
