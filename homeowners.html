@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homeowners & Equity | Trevor Berry - Calgary Mortgage Associate</title>
+  <meta name="description" content="Put your Calgary home equity to work. Consolidate high-interest debt, fund suites or rental purchases, and calculate your available equity under Canada's 80% LTV rules." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-canvas: #FFFFFF;
+      --bg-subtle: #F8FAF9;
+      --bg-alt: #EFF4F1;
+      --border-subtle: #E2EAE5;
+      --border-focus: #12453B;
+      
+      --text-main: #131E1A;
+      --text-body: #394A43;
+      --text-muted: #647870;
+      
+      /* Official Perch Brand Tokens */
+      --brand-green: #12453B;
+      --brand-green-hover: #0E362E;
+      --brand-green-light: #E7EFEA;
+      --accent-mustard: #EDAB2B;
+      --accent-mustard-hover: #D99518;
+      --accent-orange: #F7704F;
+      
+      --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --radius-sm: 6px;
+      --radius: 10px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 2px 8px rgba(18, 69, 59, 0.05);
+      --shadow-card: 0 4px 16px rgba(18, 69, 59, 0.08);
+      --shadow-lg: 0 12px 32px rgba(18, 69, 59, 0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-canvas);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Strip */
+    .top-strip {
+      background-color: var(--bg-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.82rem;
+      padding: 0.5rem 0;
+      color: var(--text-muted);
+    }
+    .top-strip-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .top-strip a {
+      color: var(--brand-green);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .top-strip a:hover { text-decoration: underline; }
+
+    /* Header Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 1.5rem;
+    }
+    .brand-link {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-name {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: var(--text-main);
+    }
+    .brand-meta {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--accent-orange);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    nav.nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+    }
+    nav.nav-links a {
+      text-decoration: none;
+      color: var(--text-body);
+      font-weight: 600;
+      font-size: 0.94rem;
+      transition: color 0.15s ease;
+      cursor: pointer;
+    }
+    nav.nav-links a:hover, nav.nav-links a.active {
+      color: var(--brand-green);
+      font-weight: 700;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.4rem;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1.5px solid transparent;
+      gap: 0.4rem;
+    }
+    .btn-primary {
+      background-color: var(--brand-green);
+      color: #FFFFFF;
+    }
+    .btn-primary:hover {
+      background-color: var(--brand-green-hover);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: #FFFFFF;
+      border: 2px solid var(--brand-green);
+      color: var(--brand-green);
+      box-shadow: 0 1px 3px rgba(18, 69, 59, 0.08);
+    }
+    .btn-secondary:hover {
+      background: var(--brand-green);
+      color: #FFFFFF;
+      transform: translateY(-1px);
+    }
+    .btn-accent {
+      background-color: var(--accent-mustard);
+      color: var(--text-main);
+      font-weight: 800;
+    }
+    .btn-accent:hover {
+      background-color: var(--accent-mustard-hover);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-1px);
+    }
+
+    /* Subpage Hero */
+    .subpage-hero {
+      padding: 4.5rem 1.5rem 3.5rem;
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--bg-subtle) 100%);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .subpage-hero-container {
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .eyebrow-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: var(--brand-green-light);
+      color: var(--brand-green);
+      padding: 0.35rem 0.85rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+    }
+    .subpage-hero h1 {
+      font-size: 2.7rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--text-main);
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.02em;
+    }
+    .subpage-hero h1 span.accent {
+      color: var(--brand-green);
+    }
+    .subpage-hero p.lead {
+      font-size: 1.12rem;
+      color: var(--text-body);
+      line-height: 1.65;
+      margin-bottom: 2rem;
+    }
+
+    /* Content Section */
+    .content-section {
+      padding: 4.5rem 1.5rem;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .section-title-wrap {
+      max-width: 720px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+    .section-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-mustard);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .section-title-wrap h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.8rem;
+    }
+    .section-title-wrap p {
+      color: var(--text-body);
+      font-size: 1.05rem;
+    }
+
+    /* 2x2 Feature Grid */
+    .feature-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    .feature-box {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .feature-box h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.8rem;
+    }
+    .feature-box p {
+      font-size: 0.94rem;
+      color: var(--text-body);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .lane-bullets {
+      list-style: none;
+    }
+    .lane-bullets li {
+      position: relative;
+      padding-left: 1.4rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.88rem;
+      color: var(--text-body);
+    }
+    .lane-bullets li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--brand-green);
+      font-weight: 800;
+    }
+
+    /* Calculator Box Wrap */
+    .calc-box-wrap {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      margin: 3.5rem auto;
+      max-width: 960px;
+      box-shadow: 0 8px 30px rgba(18, 69, 59, 0.07);
+    }
+    .calc-header {
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 1.2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .calc-header h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--brand-green);
+    }
+    .calc-header p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+    }
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2.8rem;
+      align-items: stretch;
+    }
+    .calc-inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      justify-content: space-between;
+    }
+    .calc-field label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.6rem;
+    }
+    .calc-field label span.val {
+      color: var(--accent-orange);
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+    .calc-range {
+      width: 100%;
+      accent-color: var(--accent-orange);
+      cursor: pointer;
+      height: 6px;
+    }
+    .calc-toggles {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .calc-toggle-btn {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-subtle);
+      font-size: 0.85rem;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-family: var(--font-family);
+      transition: all 0.15s ease;
+    }
+    .calc-toggle-btn.active {
+      background: var(--brand-green);
+      color: #FFFFFF;
+      border-color: var(--brand-green);
+    }
+    .rate-input-box {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .rate-input-box input {
+      width: 100px;
+      padding: 0.5rem 0.8rem;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: var(--font-family);
+      color: var(--text-main);
+    }
+    .rate-input-box input:focus {
+      border-color: var(--brand-green);
+      outline: none;
+    }
+
+    /* Calculator Results Pane - Deep Forest Green */
+    .calc-results {
+      background: var(--brand-green);
+      color: #FFFFFF;
+      border-radius: var(--radius);
+      padding: 2.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-sm);
+    }
+    .calc-metric-main {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .calc-metric-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #C2D1CB;
+    }
+    .calc-metric-num {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.1;
+      margin: 0.3rem 0;
+    }
+    .calc-metric-sub {
+      font-size: 0.82rem;
+      color: #A3B8AF;
+    }
+    .calc-breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.65rem 0;
+      font-size: 0.92rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      color: #E2ECE6;
+    }
+    .calc-breakdown-row strong {
+      color: #FFFFFF;
+    }
+
+    /* CTA Banner Box */
+    .cta-banner-box {
+      background: var(--brand-green);
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      text-align: center;
+      margin: 3.5rem auto 1rem;
+      max-width: 960px;
+    }
+    .cta-banner-box h3 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+    }
+    .cta-banner-box p {
+      color: #C2D1CB;
+      font-size: 1.05rem;
+      max-width: 680px;
+      margin: 0 auto 1.8rem;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      background: #0E1814;
+      color: #FFFFFF;
+      padding: 4.5rem 0 2.5rem;
+      border-top: 1px solid #1C2B25;
+    }
+    .footer-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+    }
+    .footer-main h4 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+    }
+    .footer-main p {
+      color: #9BB0A7;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+    .footer-links h5 {
+      color: var(--accent-mustard);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+    }
+    .footer-links ul { list-style: none; }
+    .footer-links li { margin-bottom: 0.55rem; font-size: 0.9rem; }
+    .footer-links a { color: #C0D2CA; text-decoration: none; transition: color 0.15s; }
+    .footer-links a:hover { color: #FFFFFF; }
+
+    .brokerage-compliance-box {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 0;
+      border-top: 1px solid #1C2B25;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .brokerage-lockup-row {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .perch-brand-lockup {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      color: #FFFFFF;
+    }
+    .brokerage-details {
+      font-size: 0.84rem;
+      color: #8CA399;
+      line-height: 1.6;
+    }
+    .legal-disclaimer {
+      font-size: 0.75rem;
+      color: #6C8278;
+      line-height: 1.6;
+    }
+
+    /* Modal Backdrop */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(19, 30, 26, 0.65);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.2rem;
+    }
+    .modal-backdrop.active { display: flex; }
+    .modal-dialog {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 540px;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+    }
+    .modal-top {
+      padding: 1.2rem 1.6rem;
+      background: var(--brand-green);
+      color: #FFFFFF;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-top h3 { font-size: 1.1rem; font-weight: 700; }
+    .modal-close-btn {
+      background: transparent;
+      border: none;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1.6rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+    .modal-close-btn:hover { color: #FFFFFF; }
+    .modal-body { padding: 1.8rem; }
+    .step-track {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 1.5rem;
+    }
+    .step-bar {
+      height: 4px;
+      flex-grow: 1;
+      background: var(--border-subtle);
+      border-radius: 2px;
+      transition: background 0.25s ease;
+    }
+    .step-bar.active { background: var(--brand-green); }
+    .step-panel { display: none; }
+    .step-panel.active { display: block; }
+    .pill-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+    .pill-card {
+      background: var(--bg-subtle);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 1rem 0.9rem;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .pill-card:hover {
+      border-color: var(--brand-green);
+      background: #FFFFFF;
+      box-shadow: var(--shadow-sm);
+    }
+    .pill-title { font-weight: 700; font-size: 0.92rem; color: var(--text-main); }
+    .pill-sub { font-size: 0.76rem; color: var(--text-muted); }
+    .input-row { margin-bottom: 1.1rem; }
+    .input-row label {
+      display: block;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.35rem;
+    }
+    .input-field {
+      width: 100%;
+      padding: 0.75rem 0.9rem;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.95rem;
+      background: #FFFFFF;
+      color: var(--text-main);
+    }
+    .input-field:focus {
+      outline: none;
+      border-color: var(--brand-green);
+      box-shadow: 0 0 0 3px rgba(18, 69, 59, 0.08);
+    }
+
+    @media (max-width: 860px) {
+      .subpage-hero h1 { font-size: 2.2rem; }
+      .feature-grid-2, .calc-grid, .footer-inner { grid-template-columns: 1fr; }
+      nav.nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Utility Strip -->
+  <div class="top-strip">
+    <div class="top-strip-inner">
+      <span>Feel free to text or call: <a href="tel:4038701537">403-870-1537</a></span>
+      <span>40+ Canadian Lenders · Clear Solutions · Zero Hidden Fees</span>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="nav-inner">
+      <a href="/" class="brand-link">
+        <span class="brand-name">TREVOR BERRY</span>
+        <span class="brand-meta">Mortgage Associate</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/buying">Buying</a>
+        <a href="/homeowners" class="active">Homeowners</a>
+        <a href="/alternative">Alternative</a>
+        <a href="/partners">Partners</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div>
+        <button class="btn btn-primary" onclick="openSnapshotModal('Homeowner Equity')">Get Mortgage Numbers</button>
+      </div>
+    </div>
+  </header>
+
+  
+<main>
+
+  <!-- Subpage Hero Section -->
+  <section class="subpage-hero">
+    <div class="subpage-hero-container">
+      <div class="eyebrow-tag">
+        <span>Homeowner Strategy · Cash Flow & Equity</span>
+      </div>
+      <h1>Put Your Home Equity to Work & <span class="accent">Lower Your Monthly Payments</span></h1>
+      <p class="lead">
+        High-interest credit cards and heavy car loans can squeeze household cash flow. I show you the exact math on restructuring expensive debt into one manageable monthly payment, or funding renovations and rental purchases while preserving your existing low-rate mortgage.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <button class="btn btn-primary" onclick="openSnapshotModal('Homeowner Equity')">Your Equity Options →</button>
+        <a href="#scenarios" class="btn btn-secondary">Explore Refinance Scenarios ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section: Education & Strategy First -->
+  <section class="content-section" id="scenarios">
+    <div class="section-title-wrap">
+      <span class="section-eyebrow">Strategic Restructuring</span>
+      <h2>Real Ways Homeowners Use Their Equity</h2>
+      <p>It isn't about taking on more debt—it's about moving expensive debt to a lower interest rate to restore monthly cash flow.</p>
+    </div>
+
+    <!-- 4 Strategy Boxes Grid -->
+    <div class="feature-grid-2">
+      <div class="feature-box">
+        <h3>Consolidating Credit Cards & Car Loans</h3>
+        <p>In Calgary, it's common to carry an $800/mo vehicle loan at 8.5% and $15,000 on credit cards at 19.99%. By rolling high-interest consumer debt into your mortgage equity, homeowners frequently reduce monthly obligations by $800 to $1,500+ every month.</p>
+        <ul class="lane-bullets">
+          <li>One simple monthly payment instead of juggling multiple high-rate bills</li>
+          <li>Dramatically cuts total non-deductible interest paid over time</li>
+          <li>Immediately restores disposable household cash flow</li>
+        </ul>
+      </div>
+
+      <div class="feature-box">
+        <h3>Preserving Your Low-Rate First Mortgage</h3>
+        <p>If you have an existing first mortgage locked in at a low fixed rate (such as 2% to 3%), breaking it to refinance triggers massive bank penalties and forfeits your rate. Instead, we structure secondary mortgage solutions or customized equity facilities that leave your primary low-rate mortgage completely untouched.</p>
+        <ul class="lane-bullets">
+          <li>Zero bank prepayment penalties on your existing first mortgage</li>
+          <li>Maintain your low locked-in rate on your primary principal balance</li>
+          <li>Access only the net equity you need to eliminate expensive consumer debt</li>
+        </ul>
+      </div>
+
+      <div class="feature-box">
+        <h3>Funding Suites or Rental Purchases</h3>
+        <p>Whether you are converting an unfinished basement into a legal secondary suite or pulling equity from your primary home to purchase an investment property, home equity is the most cost-effective capital available. I structure the mortgage so projected rental cash flows actively strengthen your borrowing power.</p>
+        <ul class="lane-bullets">
+          <li>Generate monthly rental income ($1,400 to $1,800/mo in Calgary)</li>
+          <li>Use future tenant revenue to qualify for higher financing limits</li>
+          <li>Leverage primary residence equity for rental property down payments</li>
+        </ul>
+      </div>
+
+      <div class="feature-box">
+        <h3>Renovations, Improvements & Investments</h3>
+        <p>Whether updating a kitchen, replacing a roof, expanding living space for a growing family, or deploying capital into business or wealth opportunities, tapping equity at residential mortgage rates is far cheaper than carrying floating credit lines or unsecured bank loans.</p>
+        <ul class="lane-bullets">
+          <li>Significantly lower borrowing costs than personal loans or lines of credit</li>
+          <li>Spread project costs comfortably over a standard amortization</li>
+          <li>Substantially increase property value while maintaining monthly cash flow</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- The Straight Math Comparison Card -->
+    <div class="calc-card" style="background: var(--bg-subtle); border: 1.5px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2.5rem; margin: 3.5rem 0;">
+      <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.6rem;">The Straight Math: Consolidating $45,000 of Debt</h3>
+      <p style="margin-bottom: 1.8rem; color: var(--text-body); font-size: 0.95rem;">Here is how restructuring consumer debt into mortgage equity changes a typical household budget:</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+        <div style="background: #FFFFFF; padding: 1.8rem; border-radius: 10px; border: 1.5px solid #E2EAE5;">
+          <div style="font-size: 0.82rem; font-weight: 800; color: #B9382B; text-transform: uppercase; letter-spacing: 0.05em;">Before (Separate Payments)</div>
+          <div style="margin-top: 0.8rem; font-size: 0.95rem; color: var(--text-body); line-height: 1.8;">
+            • Car Loan ($30k @ 8.5%): <strong>$615/mo</strong><br />
+            • Credit Cards ($15k @ 19.9%): <strong>$450/mo</strong><br />
+            <div style="margin-top: 1rem; padding-top: 0.8rem; border-top: 1px dashed var(--border-subtle); font-size: 1.25rem; font-weight: 800; color: var(--text-main);">Total: $1,065 / month</div>
+          </div>
+        </div>
+        <div style="background: #FFFFFF; padding: 1.8rem; border-radius: 10px; border: 2px solid var(--brand-green);">
+          <div style="font-size: 0.82rem; font-weight: 800; color: var(--brand-green); text-transform: uppercase; letter-spacing: 0.05em;">After (Rolled Into Equity)</div>
+          <div style="margin-top: 0.8rem; font-size: 0.95rem; color: var(--text-body); line-height: 1.8;">
+            • $45,000 added to mortgage @ 4.79%:<br />
+            • Single payment over amortization: <strong>$255/mo</strong><br />
+            <div style="margin-top: 1rem; padding-top: 0.8rem; border-top: 1px dashed var(--brand-green-light); font-size: 1.25rem; font-weight: 800; color: var(--brand-green);">Monthly Savings: $810 / month</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Home Equity Calculator (Boxed, High Contrast, Perfectly Aligned) -->
+    <div class="calc-box-wrap" id="equity-calc" style="background: #FFFFFF; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2.5rem; margin: 3.5rem 0; box-shadow: 0 8px 30px rgba(18, 69, 59, 0.07);">
+      <div class="calc-header" style="border-bottom: 1px solid var(--border-subtle); padding-bottom: 1.2rem; margin-bottom: 2rem;">
+        <h3 style="font-size: 1.6rem; font-weight: 800; color: var(--brand-green);">Home Equity Calculator</h3>
+        <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 0.3rem;">Calculate your maximum Canadian 80% LTV refinance limit and net cash available in real time.</p>
+      </div>
+
+      <div class="calc-grid" style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 2.8rem; align-items: stretch;">
+        <div class="calc-inputs" style="display: flex; flex-direction: column; gap: 1.8rem; justify-content: space-between;">
+          <div class="calc-field">
+            <label style="display: flex; justify-content: space-between; font-size: 0.92rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.6rem;">
+              <span>Estimated Current Home Value:</span>
+              <span class="val" id="eq-val-disp" style="color: #F7704F; font-size: 1.1rem; font-weight: 800;">$650,000</span>
+            </label>
+            <input type="range" class="calc-range" id="eq-val-slider" min="300000" max="2000000" step="10000" value="650000" oninput="runEqCalc()" style="width: 100%; accent-color: #F7704F; cursor: pointer; height: 6px;" />
+            <div style="display: flex; justify-content: space-between; font-size: 0.76rem; color: var(--text-muted); margin-top: 0.2rem;">
+              <span>$300k</span>
+              <span>$1.15M</span>
+              <span>$2.0M</span>
+            </div>
+          </div>
+
+          <div class="calc-field">
+            <label style="display: flex; justify-content: space-between; font-size: 0.92rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.6rem;">
+              <span>Current Mortgage Balance:</span>
+              <span class="val" id="eq-mort-disp" style="color: #F7704F; font-size: 1.1rem; font-weight: 800;">$350,000</span>
+            </label>
+            <input type="range" class="calc-range" id="eq-mort-slider" min="0" max="1500000" step="10000" value="350000" oninput="runEqCalc()" style="width: 100%; accent-color: #F7704F; cursor: pointer; height: 6px;" />
+            <div style="display: flex; justify-content: space-between; font-size: 0.76rem; color: var(--text-muted); margin-top: 0.2rem;">
+              <span>$0 (Clear Title)</span>
+              <span>$750k</span>
+              <span>$1.5M</span>
+            </div>
+          </div>
+
+          <div style="background: var(--bg-subtle); padding: 1.2rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); font-size: 0.88rem; color: var(--text-body); line-height: 1.5;">
+            <strong>Canadian 80% Refinance Benchmark:</strong> Under Canadian lending guidelines, homeowners can refinance up to 80% of their property's appraised value. The difference between 80% LTV and your current balance is the tax-free equity available to consolidate debts or reinvest.
+          </div>
+        </div>
+
+        <div class="calc-results" style="background: var(--brand-green); color: #FFFFFF; border-radius: var(--radius); padding: 2.2rem; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 8px 24px rgba(18, 69, 59, 0.2);">
+          <div class="calc-metric-main" style="border-bottom: 1px solid rgba(255, 255, 255, 0.15); padding-bottom: 1.4rem; margin-bottom: 1.4rem;">
+            <div class="calc-metric-label" style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #A3CFBB;">Net Cash Available to You</div>
+            <div class="calc-metric-num" id="eq-net-cash-out" style="font-size: 2.7rem; font-weight: 800; color: #FFFFFF; line-height: 1.1; margin: 0.4rem 0;">$170,000</div>
+            <div class="calc-metric-sub" style="font-size: 0.84rem; color: #C2D1CB;">Based on Canada's standard 80% Loan-to-Value limit</div>
+          </div>
+
+          <div class="calc-breakdown" style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <div class="calc-breakdown-row" style="display: flex; justify-content: space-between; padding: 0.5rem 0; font-size: 0.92rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); color: #C2D1CB;">
+              <span>Total Home Equity:</span>
+              <strong id="eq-total-equity-out" style="color: #FFFFFF; font-weight: 800;">$300,000</strong>
+            </div>
+            <div class="calc-breakdown-row" style="display: flex; justify-content: space-between; padding: 0.5rem 0; font-size: 0.92rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); color: #C2D1CB;">
+              <span>Maximum 80% Refinance Limit:</span>
+              <strong id="eq-max-loan-out" style="color: #FFFFFF; font-weight: 800;">$520,000</strong>
+            </div>
+            <div class="calc-breakdown-row" style="display: flex; justify-content: space-between; padding: 0.5rem 0; font-size: 0.92rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); color: #C2D1CB;">
+              <span>Existing Mortgage Payoff:</span>
+              <strong id="eq-payoff-out" style="color: #FFFFFF; font-weight: 800;">$350,000</strong>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-accent" style="width: 100%; margin-top: 1.5rem; justify-content: center; font-weight: 800;" onclick="openSnapshotModal('Homeowner Equity', document.getElementById('eq-net-cash-out').innerText)">
+            Get Your Equity Options →
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Generously Spaced and Perfectly Aligned Bottom CTA Banner -->
+    <div class="cta-banner-box" style="background: var(--brand-green); color: #FFFFFF; border-radius: var(--radius-lg); padding: 3rem; text-align: center; margin-top: 4rem;">
+      <h3 style="font-size: 2rem; font-weight: 800; margin-bottom: 0.8rem; color: #FFFFFF;">Want to See What Your Equity Can Do?</h3>
+      <p style="color: #C2D1CB; font-size: 1.05rem; max-width: 680px; margin: 0 auto 1.8rem; line-height: 1.6;">
+        I will calculate your current home value and show you whether debt consolidation or a structured equity takeout makes the most financial sense for your family.
+      </p>
+      <button class="btn btn-accent" onclick="openSnapshotModal('Homeowner Equity')">Get Your Equity Options →</button>
+    </div>
+  </section>
+
+</main>
+
+
+  <footer id="contact">
+    <div class="footer-inner">
+      <div class="footer-main">
+        <h4>TREVOR BERRY</h4>
+        <p>Mortgage Associate with Perch Mortgages. Dedicated advisory helping clients and professional partners structure common-sense financing across 40+ lenders.</p>
+        <p style="color: var(--accent-mustard); font-weight: 700; font-size: 0.92rem;">
+          Direct Line: 403-870-1537 · tberry@myperch.io
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h5>Client Advisory</h5>
+        <ul>
+          <li><a href="/buying">Buying a Home & Pre-Approvals</a></li>
+          <li><a href="/homeowners">Equity & Debt Relief</a></li>
+          <li><a href="/alternative">Alternative & Bank Declines</a></li>
+          <li><a href="/buying#calculator">Mortgage Payment Calculator</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h5>Professional Portals</h5>
+        <ul>
+          <li><a href="/partners">Partners & Collaborations</a></li>
+          <li><a href="/partners#realtors">Realtor Listing Hubs & Rebates</a></li>
+          <li><a href="/partners#cpas">CPA Tax & Scenario Desk</a></li>
+          <li><a href="/partners#builders">Builder Pre-Construction Program</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Official Brokerage Regulatory Lockup with Precise Perch SVG Logo -->
+    <div class="brokerage-compliance-box">
+      <div class="brokerage-lockup-row">
+        <a href="https://myperch.io" target="_blank" rel="noopener" class="perch-brand-lockup" title="Perch Mortgage Brokerage">
+          <svg viewBox="0 0 152 44" fill="currentColor" style="height: 32px; width: auto; display: block;" aria-label="Perch">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M17 2C9.268 2 3 8.268 3 16C3 25.8 17 42 17 42C17 42 31 25.8 31 16C31 15.65 30.98 15.3 30.95 14.96C32.8 16.5 35.8 17.5 40 17.5V12.5C36.5 12.5 33.5 11 31.8 8.8C28.8 4.6 23.3 2 17 2ZM17 21C14.239 21 12 18.761 12 16C12 13.239 14.239 11 17 11C19.761 11 22 13.239 22 16C22 18.761 19.761 21 17 21Z" fill="currentColor"/>
+            <text x="46" y="30" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="28" font-weight="800" letter-spacing="-0.03em" fill="currentColor">perch</text>
+          </svg>
+        </a>
+
+        <div class="brokerage-details">
+          <strong>Trevor Berry</strong> is a licensed Mortgage Associate registered with <strong>Perch Mortgage Brokerage</strong>.<br />
+          Operating across Alberta, British Columbia, Ontario, and Canadian provinces through Perch's national brokerage platform.
+        </div>
+      </div>
+      <p class="legal-disclaimer">
+        Information, interest rates, and loan structures are for educational and illustrative purposes only O.A.C. Terms and rates are subject to borrower qualification and lender guidelines.
+      </p>
+    </div>
+  </footer>
+
+  <!-- 4-Step Intake Modal -->
+  <div class="modal-backdrop" id="snapshotModal">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalHeading">
+      <div class="modal-top">
+        <h3 id="modalHeading">Get Your Free Purchase Numbers</h3>
+        <button type="button" class="modal-close-btn" aria-label="Close modal" onclick="closeSnapshotModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="step-track">
+          <div class="step-bar active" id="bar-1"></div>
+          <div class="step-bar" id="bar-2"></div>
+          <div class="step-bar" id="bar-3"></div>
+          <div class="step-bar" id="bar-4"></div>
+        </div>
+
+        <form id="snapshotForm">
+          <!-- Step 1: Goal -->
+          <div class="step-panel active" id="panel-1">
+            <h4 style="font-size: 1.15rem; margin-bottom: 0.3rem;">What is your primary goal?</h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">Select what best fits your situation:</p>
+            <div class="pill-grid">
+              <div class="pill-card" onclick="chooseGoal('Buying a Home')">
+                <div class="pill-title">Buying a Home</div>
+                <div class="pill-sub">First-time, new build, or move-up</div>
+              </div>
+              <div class="pill-card" onclick="chooseGoal('Pre-Approval')">
+                <div class="pill-title">Pre-Approval</div>
+                <div class="pill-sub">120-day rate hold protection</div>
+              </div>
+              <div class="pill-card" onclick="chooseGoal('Equity & Debt Relief')">
+                <div class="pill-title">Debt & Equity</div>
+                <div class="pill-sub">Consolidation or renos</div>
+              </div>
+              <div class="pill-card" onclick="chooseGoal('Bank Declined / Alt')">
+                <div class="pill-title">Second Opinion</div>
+                <div class="pill-sub">Self-employed or bank decline</div>
+              </div>
+            </div>
+
+  
+  <script>
+    let activeStep = 1;
+
+    // Accessibility: Close modal on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        const modal = document.getElementById('snapshotModal');
+        if (modal && modal.classList.contains('active')) {
+          closeSnapshotModal();
+        }
+      }
+    });
+
+    function openSnapshotModal(goal, defaultVal) {
+      if (goal) document.getElementById('goalInput').value = goal;
+      if (defaultVal) {
+        const targetEl = document.getElementById('targetVal');
+        if (targetEl) targetEl.value = defaultVal;
+      }
+      document.getElementById('snapshotModal').classList.add('active');
+      showStep(1);
+    }
+
+    function closeSnapshotModal() {
+      document.getElementById('snapshotModal').classList.remove('active');
+    }
+
+    function chooseGoal(goal) {
+      document.getElementById('goalInput').value = goal;
+      const valLabel = document.getElementById('valueLabel');
+      if (goal.includes('Equity') || goal.includes('Debt')) {
+        if (valLabel) valLabel.innerText = 'Estimated Current Home Value';
+      } else {
+        if (valLabel) valLabel.innerText = 'Target Purchase Price';
+      }
+      showStep(2);
+    }
+
+    function showStep(step) {
+      activeStep = step;
+      document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.step-bar').forEach((b, i) => {
+        if (i < step) b.classList.add('active');
+        else b.classList.remove('active');
+      });
+      const target = document.getElementById('panel-' + step);
+      if (target) target.classList.add('active');
+    }
+
+    // Google Sheets CRM Hook
+    document.getElementById('snapshotForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const lead = {
+        name: document.getElementById('userName').value,
+        phone: document.getElementById('userPhone').value,
+        email: document.getElementById('userEmail').value,
+        goal: document.getElementById('goalInput').value,
+        targetValue: document.getElementById('targetVal').value,
+        location: document.getElementById('targetLoc').value,
+        downPayment: document.getElementById('downVal').value,
+        timeline: document.getElementById('timeframeSelect').value,
+        source: 'Homeowners & Equity Page',
+        submittedAt: new Date().toISOString()
+      };
+
+      document.getElementById('greetingName').innerText = lead.name;
+
+      const scriptEndpoint = 'GOOGLE_APPS_SCRIPT_URL_HERE';
+      if (scriptEndpoint && scriptEndpoint !== 'GOOGLE_APPS_SCRIPT_URL_HERE') {
+        fetch(scriptEndpoint, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(lead)
+        }).catch(err => console.log('Lead logged:', err));
+      }
+
+      document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+      document.getElementById('panel-success').classList.add('active');
+    });
+
+    // Home Equity Calculator Engine
+    function runEqCalc() {
+      var valEl = document.getElementById('eq-val-slider');
+      var mortEl = document.getElementById('eq-mort-slider');
+      if (!valEl || !mortEl) return;
+
+      var homeVal = parseFloat(valEl.value) || 650000;
+      var mortBal = parseFloat(mortEl.value) || 350000;
+
+      var vDisp = document.getElementById('eq-val-disp');
+      if (vDisp) vDisp.textContent = '$' + homeVal.toLocaleString();
+      var mDisp = document.getElementById('eq-mort-disp');
+      if (mDisp) mDisp.textContent = '$' + mortBal.toLocaleString();
+
+      var maxLoan = homeVal * 0.80;
+      var netCash = Math.max(0, maxLoan - mortBal);
+      var totalEquity = Math.max(0, homeVal - mortBal);
+
+      var nOut = document.getElementById('eq-net-cash-out');
+      if (nOut) nOut.textContent = '$' + Math.round(netCash).toLocaleString();
+      var eOut = document.getElementById('eq-total-equity-out');
+      if (eOut) eOut.textContent = '$' + Math.round(totalEquity).toLocaleString();
+      var lOut = document.getElementById('eq-max-loan-out');
+      if (lOut) lOut.textContent = '$' + Math.round(maxLoan).toLocaleString();
+      var pOut = document.getElementById('eq-payoff-out');
+      if (pOut) pOut.textContent = '$' + Math.round(mortBal).toLocaleString();
+    }
+
+    // Auto-run calculator on DOM ready
+    window.addEventListener('DOMContentLoaded', function() {
+      runEqCalc();
+    });
+  </script>
+
+
+</body>
+</html>
