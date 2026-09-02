@@ -1869,7 +1869,6 @@
   </header>
 
   <main>
-    <!-- VIEW 1: HOME -->
     <section class="page-view" id="view-home">
         <!-- Hero Section -->
   <section class="hero">
@@ -2030,137 +2029,13 @@
       </div>
       <div class="partner-cta-box">
         <button class="btn btn-accent" onclick="openSnapshotModal('Partner Collaboration')">Discuss a Scenario With Trevor →</button>
-        <a href="/partners" style="color: var(--brand-green); font-size: 0.92rem; font-weight: 700; text-decoration: underline;">Learn More About Working Together</a>
+        <a href="#partners" onclick="showPage('partners', event)" style="color: var(--brand-green); font-size: 0.92rem; font-weight: 700; text-decoration: underline;">Learn More About Working Together</a>
       </div>
     </div>
   </section>
 
   <!-- 4-Step Intake Modal (With Clean SVG Icons & Exact Mustard) -->
-  <div class="modal-backdrop" id="snapshotModal">
-    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalHeading">
-      <div class="modal-top">
-        <h3 id="modalHeading">Get Your Mortgage Snapshot</h3>
-        <button type="button" class="modal-close-btn" aria-label="Close modal" onclick="closeSnapshotModal()">&times;</button>
-      </div>
-      <div class="modal-body">
-        <div class="step-track">
-          <div class="step-bar active" id="bar-1"></div>
-          <div class="step-bar" id="bar-2"></div>
-          <div class="step-bar" id="bar-3"></div>
-          <div class="step-bar" id="bar-4"></div>
-        </div>
-
-        <form id="snapshotForm">
-          <!-- Step 1: Goal -->
-          <div class="step-panel active" id="panel-1">
-            <h4 style="font-size: 1.15rem; margin-bottom: 0.3rem;">What are you looking to figure out?</h4>
-            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">Select what best fits your situation:</p>
-            <div class="pill-grid">
-              <div class="pill-card" onclick="chooseGoal('Buying a Home')">
-                <div class="pill-icon">
-                  <!-- SVG Home Icon -->
-                  <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                </div>
-                <div class="pill-title">Buying a Home</div>
-                <div class="pill-sub">First-time, new build, or move-up</div>
-              </div>
-              <div class="pill-card" onclick="chooseGoal('Equity / Debt Relief')">
-                <div class="pill-icon">
-                  <!-- SVG Credit Card Icon -->
-                  <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-                </div>
-                <div class="pill-title">Debt & Equity</div>
-                <div class="pill-sub">Credit cards, car loans, or renos</div>
-              </div>
-              <div class="pill-card" onclick="chooseGoal('Bank Declined / Alt')">
-                <div class="pill-icon">
-                  <!-- SVG Second Opinion / Switch Icon -->
-                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
-                </div>
-                <div class="pill-title">Bank Said No</div>
-                <div class="pill-sub">Self-employed, credit, or 2nd opinion</div>
-              </div>
-              <div class="pill-card" onclick="chooseGoal('Pre-Approval / Explore')">
-                <div class="pill-icon">
-                  <!-- SVG Document / Check Icon -->
-                  <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                </div>
-                <div class="pill-title">Pre-Approval</div>
-                <div class="pill-sub">Check numbers & rate holds</div>
-              </div>
-            </div>
-            <input type="hidden" id="goalInput" value="Buying a Home" />
-          </div>
-
-          <!-- Step 2: Target Numbers -->
-          <div class="step-panel" id="panel-2">
-            <h4 style="font-size: 1.15rem; margin-bottom: 0.3rem;">What's the ballpark target?</h4>
-            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">A rough estimate is completely fine:</p>
-            <div class="input-row">
-              <label id="valueLabel" for="targetVal">Target Purchase Price</label>
-              <input type="text" class="input-field" id="targetVal" placeholder="e.g. $550,000" />
-            </div>
-            <div class="input-row">
-              <label for="targetLoc">Location</label>
-              <input type="text" class="input-field" id="targetLoc" value="Calgary, AB" />
-            </div>
-            <button type="button" class="btn btn-primary" style="width: 100%;" onclick="showStep(3)">Continue →</button>
-          </div>
-
-          <!-- Step 3: Cash & Time -->
-          <div class="step-panel" id="panel-3">
-            <h4 style="font-size: 1.15rem; margin-bottom: 0.3rem;">Down payment & timeline</h4>
-            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">Helps me narrow down the right lender options:</p>
-            <div class="input-row">
-              <label for="downVal">Available Savings or Down Payment</label>
-              <input type="text" class="input-field" id="downVal" placeholder="e.g. $35,000" />
-            </div>
-            <div class="input-row">
-              <label for="timeframeSelect">When are you looking to move?</label>
-              <select class="input-field" id="timeframeSelect">
-                <option value="0-3 Months (Active)">0–3 Months (Active / Making Offers)</option>
-                <option value="3-6 Months">3–6 Months</option>
-                <option value="6-12 Months">6–12 Months</option>
-                <option value="Just Exploring">Just Exploring Options</option>
-              </select>
-            </div>
-            <button type="button" class="btn btn-primary" style="width: 100%;" onclick="showStep(4)">Almost Done: Contact Info →</button>
-          </div>
-
-          <!-- Step 4: Contact -->
-          <div class="step-panel" id="panel-4">
-            <h4 style="font-size: 1.15rem; margin-bottom: 0.3rem;">Where should I send your snapshot?</h4>
-            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">No credit check · No obligation · Straightforward advice</p>
-            <div class="input-row">
-              <label for="userName">Your Name</label>
-              <input type="text" class="input-field" id="userName" placeholder="First and last name" required />
-            </div>
-            <div class="input-row">
-              <label for="userPhone">Phone Number (for quick text updates)</label>
-              <input type="tel" class="input-field" id="userPhone" placeholder="403-555-0199" required />
-            </div>
-            <div class="input-row">
-              <label for="userEmail">Email Address</label>
-              <input type="email" class="input-field" id="userEmail" placeholder="you@example.com" required />
-            </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%;">Send My Free Mortgage Snapshot →</button>
-          </div>
-
-          <!-- Confirmation -->
-          <div class="step-panel" id="panel-success">
-            <div style="text-align: center; padding: 1.5rem 0;">
-              <div style="font-size: 2.8rem; margin-bottom: 0.8rem;">✅</div>
-              <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Snapshot Request Received!</h3>
-              <p style="color: var(--text-body); font-size: 0.95rem; line-height: 1.6;">
-                Thanks <strong id="greetingName"></strong>. I'm reviewing your details and will follow up with your custom options shortly.
-              </p>
-              <button type="button" class="btn btn-secondary" style="margin-top: 1.5rem;" onclick="closeSnapshotModal()">Close</button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
+  >
 
   
   
@@ -2641,590 +2516,8 @@
       <button class="btn btn-accent" onclick="openSnapshotModal('Bank Decline')">Request a Second Opinion →</button>
     </div>
   </section>
-
-  <!-- Footer with Official Brokerage Compliance -->
-  
-  <!-- 4-Step Intake Modal (With Clean SVG Icons & Exact Mustard) -->
-  
-            <input type="hidden" id="goalInput" value="Buying a Home" />
-          </div>
-
-          <!-- Step 2: Target Numbers -->
-          <div class="step-panel" id="panel-2">
-            <h4 style="font-size: 1.15rem; margin-bottom: 0.3rem;">What's the ballpark target?</h4>
-            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">A rough estimate is completely fine:</p>
-            <div class="input-row">
-              <label id="valueLabel" for="targetVal">Target Purchase Price</label>
-              <input type="text" class="input-field" id="targetVal" placeholder="e.g. $550,000" />
-            </div>
-            <div class="input-row">
-              <label for="targetLoc">Location</label>
-              <input type="text" class="input-field" id="targetLoc" value="Calgary, AB" />
-            </div>
-            <button type="button" class="btn btn-primary" style="width: 100%;" onclick="showStep(3)">Continue →</button>
-          </div>
-
-          <!-- Step 3: Cash & Time -->
-          <div class="step-panel" id="panel-3">
-            <h4 style="font-size: 1.15rem; margin-bottom: 0.3rem;">Down payment & timeline</h4>
-            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">Helps me narrow down the right lender options:</p>
-            <div class="input-row">
-              <label for="downVal">Available Savings or Down Payment</label>
-              <input type="text" class="input-field" id="downVal" placeholder="e.g. $35,000" />
-            </div>
-            <div class="input-row">
-              <label for="timeframeSelect">When are you looking to move?</label>
-              <select class="input-field" id="timeframeSelect">
-                <option value="0-3 Months (Active)">0–3 Months (Active / Making Offers)</option>
-                <option value="3-6 Months">3–6 Months</option>
-                <option value="6-12 Months">6–12 Months</option>
-                <option value="Just Exploring">Just Exploring Options</option>
-              </select>
-            </div>
-            <button type="button" class="btn btn-primary" style="width: 100%;" onclick="showStep(4)">Almost Done: Contact Info →</button>
-          </div>
-
-          <!-- Step 4: Contact -->
-          <div class="step-panel" id="panel-4">
-            <h4 style="font-size: 1.15rem; margin-bottom: 0.3rem;">Where should I send your snapshot?</h4>
-            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">No credit check · No obligation · Straightforward advice</p>
-            <div class="input-row">
-              <label for="userName">Your Name</label>
-              <input type="text" class="input-field" id="userName" placeholder="First and last name" required />
-            </div>
-            <div class="input-row">
-              <label for="userPhone">Phone Number (for quick text updates)</label>
-              <input type="tel" class="input-field" id="userPhone" placeholder="403-555-0199" required />
-            </div>
-            <div class="input-row">
-              <label for="userEmail">Email Address</label>
-              <input type="email" class="input-field" id="userEmail" placeholder="you@example.com" required />
-            </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%;">Send My Free Mortgage Snapshot →</button>
-          </div>
-
-          <!-- Confirmation -->
-          <div class="step-panel" id="panel-success">
-            <div style="text-align: center; padding: 1.5rem 0;">
-              <div style="font-size: 2.8rem; margin-bottom: 0.8rem;">✅</div>
-              <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Snapshot Request Received!</h3>
-              <p style="color: var(--text-body); font-size: 0.95rem; line-height: 1.6;">
-                Thanks <strong id="greetingName"></strong>. I'm reviewing your details and will follow up with your custom options shortly.
-              </p>
-              <button type="button" class="btn btn-secondary" style="margin-top: 1.5rem;" onclick="closeSnapshotModal()">Close</button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  
-<script>
-    // =========================================================================
-    // 1. SINGLE PAGE ROUTER (SPA MODULE)
-    // =========================================================================
-    let activeStep = 1;
-
-    function showPage(pageId, event) {
-        if (event) event.preventDefault();
-        
-        // Hide mobile header scrolling behavior and scroll back to top smoothly
-        window.scrollTo({ top: 0, behavior: 'instant' });
-
-        // Toggle Active Class in Header Nav Links
-        document.querySelectorAll('nav.nav-links a').forEach(link => {
-            const href = link.getAttribute('href');
-            if (href === '#' + pageId) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
-        });
-
-        // Toggle Page View Visibilities
-        document.querySelectorAll('.page-view').forEach(view => {
-            view.style.display = 'none';
-            view.classList.remove('active');
-        });
-
-        const targetView = document.getElementById('view-' + pageId);
-        if (targetView) {
-            targetView.style.display = 'block';
-            targetView.classList.add('active');
-            console.log("Navigated to:", pageId);
-        }
-
-        // Push URL hash without page jump to enable deep-linking and browser navigation
-        if (window.location.hash !== '#' + pageId) {
-            history.pushState(null, null, '#' + pageId);
-        }
-    }
-
-    function scrollToContact(event) {
-        if (event) event.preventDefault();
-        const contactSec = document.getElementById('contact-section');
-        if (contactSec) {
-            contactSec.scrollIntoView({ behavior: 'smooth' });
-        }
-    }
-
-    // Browser navigation (Back / Forward buttons) support
-    window.addEventListener('hashchange', handleRouting);
-    window.addEventListener('DOMContentLoaded', function() {
-        handleRouting();
-        // Initialize calculators
-        if (typeof updateCalculator === 'function') updateCalculator();
-        if (typeof runEqCalc === 'function') runEqCalc();
-        if (typeof runBuyCalc === 'function') runBuyCalc();
-    });
-
-    function handleRouting() {
-        let hash = window.location.hash.substring(1);
-        const validPages = ['home', 'buying', 'homeowners', 'alternative', 'partners'];
-        if (!validPages.includes(hash)) {
-            hash = 'home';
-        }
-        showPage(hash);
-    }
-
-    // =========================================================================
-    // 2. UNIVERSAL INTAKE MODAL (GOOGLE SHEET CRM WIRED)
-    // =========================================================================
-    // Close modal on Escape key for accessibility
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            const modal = document.getElementById('snapshotModal');
-            if (modal && modal.classList.contains('active')) {
-                closeSnapshotModal();
-            }
-        }
-    });
-
-    function openSnapshotModal(goal) {
-        if (goal) document.getElementById('goalInput').value = goal;
-        const modal = document.getElementById('snapshotModal');
-        if (modal) {
-            modal.classList.add('active');
-            showStep(1);
-        }
-    }
-
-    function closeSnapshotModal() {
-        const modal = document.getElementById('snapshotModal');
-        if (modal) modal.classList.remove('active');
-    }
-
-    function chooseGoal(goal) {
-        document.getElementById('goalInput').value = goal;
-        const valLabel = document.getElementById('valueLabel');
-        if (goal.includes('Equity') || goal.includes('Debt')) {
-            valLabel.innerText = 'Estimated Current Home Value';
-        } else {
-            valLabel.innerText = 'Target Purchase Price';
-        }
-        showStep(2);
-    }
-
-    function showStep(step) {
-        activeStep = step;
-        document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
-        document.querySelectorAll('.step-bar').forEach((b, i) => {
-            if (i < step) b.classList.add('active');
-            else b.classList.remove('active');
-        });
-        const target = document.getElementById('panel-' + step);
-        if (target) target.classList.add('active');
-    }
-
-    // Google Sheets CRM Hook for Multi-Step Modal Form
-    document.getElementById('snapshotForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        const lead = {
-            lead_type: 'general_buyer',
-            full_name: document.getElementById('userName').value,
-            phone: document.getElementById('userPhone').value,
-            email: document.getElementById('userEmail').value,
-            goal: document.getElementById('goalInput').value,
-            purchase_price: document.getElementById('targetVal').value,
-            location: document.getElementById('targetLoc').value,
-            savings_available: document.getElementById('downVal').value,
-            timeline: document.getElementById('timeframeSelect').value,
-            province: 'Alberta',
-            source_cta: 'Master SPA Multi-Step Intake',
-            submittedAt: new Date().toISOString()
-        };
-
-        // Set lead type depending on selected goal to route to correct sheet tabs
-        const goal = lead.goal.toLowerCase();
-        if (goal.includes('buying') || goal.includes('pre-approval')) {
-            lead.lead_type = 'general_buyer';
-        } else if (goal.includes('equity') || goal.includes('debt')) {
-            lead.lead_type = 'renovators'; // Routes to secondary homeowner/equity profiles
-        } else {
-            lead.lead_type = 'general_inquiry';
-        }
-
-        document.getElementById('greetingName').innerText = lead.full_name;
-
-        const scriptEndpoint = 'https://script.google.com/macros/s/AKfycbysYey_FmE3UBLGOFHWs3298qZGwfNz-gr7at4oRp3ZIrs8TJ2U-YcSX4ZSD6NrTR5O/exec';
-        
-        fetch(scriptEndpoint, {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(lead)
-        }).catch(err => console.log('Lead submission logged:', err));
-
-        document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
-        document.getElementById('panel-success').classList.add('active');
-    });
-
-    // =========================================================================
-    // 3. UNIVERSAL FOOTER CONTACT FORM (GOOGLE SHEET CRM WIRED)
-    // =========================================================================
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const lead = {
-            lead_type: 'general_inquiry',
-            full_name: document.getElementById('contact_name').value,
-            email: document.getElementById('contact_email').value,
-            phone: document.getElementById('contact_phone').value,
-            province: 'Alberta',
-            details: document.getElementById('contact_message').value,
-            source_cta: 'Universal Footer Contact Form',
-            submittedAt: new Date().toISOString()
-        };
-        
-        const scriptEndpoint = 'https://script.google.com/macros/s/AKfycbysYey_FmE3UBLGOFHWs3298qZGwfNz-gr7at4oRp3ZIrs8TJ2U-YcSX4ZSD6NrTR5O/exec';
-        
-        fetch(scriptEndpoint, {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(lead)
-        }).then(() => {
-            document.getElementById('contactForm').style.display = 'none';
-            document.getElementById('contact-success').style.display = 'block';
-        }).catch(err => {
-            console.log('General contact submission logged:', err);
-            // Show fallback success since no-cors hides response status
-            document.getElementById('contactForm').style.display = 'none';
-            document.getElementById('contact-success').style.display = 'block';
-        });
-    });
-
-    // =========================================================================
-    // 4. BUYING VIEW CALCULATOR CODE
-    // =========================================================================
-    var currentProvince = 'AB';
-    var currentBuyerStatus = 'fthb';
-    var currentOccupancy = 'owner';
-
-    function setProvince(prov) {
-      currentProvince = prov;
-      document.getElementById('btn-prov-ab').classList.toggle('active', prov === 'AB');
-      document.getElementById('btn-prov-on').classList.toggle('active', prov === 'ON');
-      updateCalculator();
-    }
-
-    function setBuyerStatus(status) {
-      currentBuyerStatus = status;
-      document.getElementById('btn-buyer-fthb').classList.toggle('active', status === 'fthb');
-      document.getElementById('btn-buyer-repeat').classList.toggle('active', status === 'repeat');
-
-      var subtext = document.getElementById('buyer-status-subtext');
-      if (status === 'fthb') {
-        subtext.textContent = "✓ First-time buyers qualify for the 100% GST rebate up to $1M (up to $50,000 maximum).";
-      } else {
-        subtext.textContent = "✓ Repeat & move-up buyers qualify for baseline statutory rebates (up to $24,000 in ON; up to $6,300 in AB).";
-      }
-      updateCalculator();
-    }
-
-    function setOccupancy(occ) {
-      currentOccupancy = occ;
-      document.getElementById('btn-occ-owner').classList.toggle('active', occ === 'owner');
-      document.getElementById('btn-occ-investor').classList.toggle('active', occ === 'investor');
-      
-      var sub = document.getElementById('occ-subtext');
-      if (occ === 'owner') {
-        sub.textContent = "✓ Primary residence purchasers qualify for immediate builder credit or down payment advance.";
-      } else {
-        sub.textContent = "⚠️ Investors must pay tax at closing and file the CRA NRRP rental rebate post-possession.";
-      }
-      updateCalculator();
-    }
-
-        function updateCalculator() {
-      var slider = document.getElementById('slider-price');
-      var price = slider ? (parseFloat(slider.value) || 550000) : 550000;
-      
-      var dispPrice = document.getElementById('disp-price');
-      if (dispPrice) dispPrice.textContent = "$" + price.toLocaleString();
-
-      var fedRebate = 0;
-      var provRebate = 0;
-      var onhapRebate = 0;
-      var totalTax = 0;
-      var taxDesc = "";
-      var ruleNote = "";
-      var fedDesc = "";
-      var provDesc = "";
-
-      // 1. Total Tax Calculation
-      if (currentProvince === 'AB') {
-        totalTax = price * 0.05;
-        taxDesc = "$" + Math.round(totalTax).toLocaleString() + " (5% GST)";
-      } else {
-        totalTax = price * 0.13;
-        taxDesc = "$" + Math.round(totalTax).toLocaleString() + " (13% HST)";
-      }
-
-      // 2. Federal Rebate Calculation
-      if (currentOccupancy === 'investor') {
-        // Investor NRRP: Standard baseline rules only up to $450k
-        if (price <= 350000) {
-          fedRebate = (price * 0.05) * 0.36;
-          fedDesc = "$" + Math.round(fedRebate).toLocaleString() + " (NRRP Baseline)";
-        } else if (price < 450000) {
-          fedRebate = 6300 * ((450000 - price) / 100000);
-          fedDesc = "$" + Math.round(fedRebate).toLocaleString() + " (Phasing Out)";
-        } else {
-          fedRebate = 0;
-          fedDesc = "$0 (Over $450k NRRP Cap)";
-        }
-      } else {
-        // Owner Occupied: Check First-Time Buyer vs Repeat
-        if (currentBuyerStatus === 'fthb') {
-          // CRA First-Time Home Buyers' GST/HST Rebate (Up to $50,000 maximum on $1M, phases out at $1.5M)
-          if (price <= 1000000) {
-            fedRebate = price * 0.05;
-            fedDesc = "$" + Math.round(fedRebate).toLocaleString() + " (100% FTHB Rebate)";
-          } else if (price < 1500000) {
-            fedRebate = 50000 * ((1500000 - price) / 500000);
-            fedDesc = "$" + Math.round(fedRebate).toLocaleString() + " (FTHB Partial Phase-out)";
-          } else {
-            fedRebate = 0;
-            fedDesc = "$0 (Over $1.5M FTHB Ceiling)";
-          }
-        } else {
-          // Standard Baseline New Housing Rebate
-          if (price <= 350000) {
-            fedRebate = (price * 0.05) * 0.36;
-            fedDesc = "$" + Math.round(fedRebate).toLocaleString() + " (36% Baseline)";
-          } else if (price < 450000) {
-            fedRebate = 6300 * ((450000 - price) / 100000);
-            fedDesc = "$" + Math.round(fedRebate).toLocaleString() + " (Phasing Out)";
-          } else {
-            fedRebate = 0;
-            fedDesc = "$0 (Over $450k Cap)";
-          }
-        }
-      }
-
-      // 3. Provincial Rebate & ONHAP Calculation (Ontario 8% and 5% top-ups)
-      if (currentProvince === 'ON') {
-        // Both owners and qualifying rental investors qualify under the temporary 2026 Ontario Enhanced program
-        if (price <= 1000000) {
-          provRebate = Math.min(price * 0.08, 80000);
-          provDesc = "$" + Math.round(provRebate).toLocaleString() + " (Enhanced ENHR/ENRRP)";
-          var grossONHAP = Math.min(price * 0.05, 50000);
-          onhapRebate = Math.max(0, grossONHAP - fedRebate);
-        } else if (price <= 1500000) {
-          provRebate = 80000;
-          provDesc = "$80,000 (Enhanced ENHR/ENRRP)";
-          var grossONHAP = 50000;
-          onhapRebate = Math.max(0, grossONHAP - fedRebate);
-        } else if (price < 1850000) {
-          var factor = (1850000 - price) / 350000;
-          provRebate = 24000 + (56000 * factor);
-          provDesc = "$" + Math.round(provRebate).toLocaleString() + " (ENHR/ENRRP Phase-down)";
-          var grossONHAP = 50000 * factor;
-          onhapRebate = Math.max(0, grossONHAP - fedRebate);
-        } else {
-          // $1.85M and above: standard Ontario provincial new-housing/rental rebate (75% of 8%, max $24,000)
-          var provTax = price * 0.08;
-          provRebate = Math.min(24000, provTax * 0.75);
-          provDesc = "$" + Math.round(provRebate).toLocaleString() + " (Standard Cap)";
-          onhapRebate = 0;
-        }
-      } else {
-        provRebate = 0;
-        provDesc = "$0 (N/A in Alberta)";
-        onhapRebate = 0;
-      }
-
-      var totalRebate = fedRebate + provRebate + onhapRebate;
-
-      // Update DOM Safely
-      var elTotalTax = document.getElementById('out-total-tax');
-      if (elTotalTax) elTotalTax.textContent = taxDesc;
-
-      var elFed = document.getElementById('out-fed-rebate');
-      if (elFed) elFed.textContent = fedDesc;
-
-      var elProv = document.getElementById('out-prov-rebate');
-      if (elProv) {
-        if (currentProvince === 'ON') {
-          var provLabel = provDesc;
-          if (onhapRebate > 0) {
-            provLabel += " + $" + Math.round(onhapRebate).toLocaleString() + " ONHAP";
-          }
-          elProv.textContent = provLabel;
-        } else {
-          elProv.textContent = "$0 (N/A in Alberta)";
-        }
-      }
-
-      var elTotalRebate = document.getElementById('out-total-rebate');
-      if (elTotalRebate) elTotalRebate.textContent = "$" + Math.round(totalRebate).toLocaleString();
-
-      var elAdvAmt = document.getElementById('out-advance-amt');
-      var elAdvDesc = document.getElementById('out-advance-desc');
-      if (elAdvAmt && elAdvDesc) {
-        elAdvAmt.textContent = "$" + Math.round(totalRebate).toLocaleString();
-        if (currentOccupancy === 'owner') {
-          elAdvDesc.textContent = "Closing treatment depends on builder structure, lender policy and available financing programs.";
-        } else {
-          elAdvDesc.innerHTML = "Closing availability: <strong>Requires structure review.</strong><br>Closing treatment depends on builder structure, lender policy and available financing programs.";
-        }
-      }
-
-      // 4. Rule Notes Generation
-      if (currentProvince === 'AB') {
-        if (currentOccupancy === 'investor') {
-          ruleNote = "<strong>Alberta Investor Rule:</strong> Rental properties do not qualify for the First-Time Buyer top-up. Investors must pay the 5% GST upfront at closing and file the CRA NRRP rebate post-possession (eligible up to $450,000 only).";
-        } else if (currentBuyerStatus === 'fthb') {
-          if (price <= 1000000) {
-            ruleNote = "<strong>Alberta FTHB Advantage:</strong> Eligible first-time home buyers receive a <strong>100% full rebate of the 5% GST</strong> up to $1,000,000 (saving up to <strong>$50,000</strong>).";
-          } else if (price < 1500000) {
-            ruleNote = "<strong>Alberta FTHB Phase-Out:</strong> Between $1M and $1.5M, the first-time buyer GST rebate gradually reduces from $50,000 to $0. On this $" + price.toLocaleString() + " purchase, the eligible tax relief is <strong>$" + Math.round(fedRebate).toLocaleString() + "</strong>.";
-          } else {
-            ruleNote = "<strong>Above $1.5M Ceiling:</strong> In Alberta, new homes valued at or above $1.5M do not qualify for federal GST rebates. The full 5% GST is payable.";
-          }
-        } else {
-          if (price > 450000) {
-            ruleNote = "<strong>Alberta Repeat Buyer Rule:</strong> For repeat/move-up buyers, the standard federal GST rebate phases out completely above $450,000. Full 5% GST applies, but can be factored into mortgage financing.";
-          } else {
-            ruleNote = "<strong>Alberta Standard Rebate:</strong> Repeat buyers qualify for the 36% federal GST rebate on homes up to $350,000 (phasing out at $450k, max $6,300).";
-          }
-        }
-      } else {
-        // Ontario
-        if (currentOccupancy === 'investor') {
-          ruleNote = "<strong>Ontario Investor Rule:</strong> Qualifying Ontario rental-property purchasers may be eligible for the enhanced Ontario rental rebate (ENRRP) and ONHAP, providing combined relief of up to $130,000 depending on purchase price and program eligibility. Investors must pay tax at closing and apply to the CRA post-possession.";
-        } else {
-          // Owner Occupied
-          if (price <= 1000000) {
-            ruleNote = "<strong>Ontario Enhanced Program (ENHR + ONHAP):</strong> Eligible Ontario new homes up to $1 million may receive relief equivalent to the full 13% HST. Maximum combined relief of $130,000 is maintained from $1 million to $1.5 million and then gradually declines to $24,000 at $1.85 million.";
-          } else if (price <= 1500000) {
-            ruleNote = "<strong>Ontario Combined Enhanced Program:</strong> Maximum combined relief of $130,000 is maintained from $1 million to $1.5 million (through the ENHR provincial portion of $80,000 + ONHAP/FTHB federal-equivalent portions) and then gradually declines to $24,000 at $1.85 million.";
-          } else if (price < 1850000) {
-            ruleNote = "<strong>Ontario Enhanced Phase-Out:</strong> Between $1.5M and $1.85M, both enhanced portions phase down, providing <strong>$" + Math.round(totalRebate).toLocaleString() + "</strong> in combined relief on this $" + price.toLocaleString() + " purchase.";
-          } else {
-            ruleNote = "<strong>Ontario Limit Rule:</strong> Above the $1.85M ENHR ceiling, the enhanced provincial rebate and ONHAP do not apply. The standard provincial rebate of **$24,000** remains available with no upper purchase price cap.";
-          }
-        }
-      }
-
-      var elRuleNote = document.getElementById('out-rule-note');
-      if (elRuleNote) elRuleNote.innerHTML = ruleNote;
-
-    }
-
-    function openIntakeModal(source) {
-      document.getElementById('intakeModal').classList.add('active');
-    }
-    function closeIntakeModal() {
-      document.getElementById('intakeModal').classList.remove('active');
-    }
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeIntakeModal();
-    });
-
-    var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbysYey_FmE3UBLGOFHWs3298qZGwfNz-gr7at4oRp3ZIrs8TJ2U-YcSX4ZSD6NrTR5O/exec';
-
-    function handleIntakeSubmit(e) {
-      e.preventDefault();
-      var nameInput = document.getElementById('m_name');
-      var name = nameInput ? (nameInput.value || 'Client') : 'Client';
-      var phone = document.getElementById('m_phone').value;
-      var email = document.getElementById('m_email').value;
-      var price = document.getElementById('m_price').value || document.getElementById('m_price').placeholder || '';
-      var prov = document.getElementById('m_prov').value;
-      
-      var leadData = {
-        lead_type: 'new_build_buyer',
-        full_name: name,
-        phone: phone,
-        email: email,
-        purchase_price: price,
-        province: prov,
-        source_cta: 'Alberta Buyer Standalone Page'
-      };
-      
-      if (GOOGLE_SCRIPT_URL) {
-        fetch(GOOGLE_SCRIPT_URL, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(leadData)
-        }).catch(function(err) { console.log('Lead sync logged:', err); });
-      }
-
-      document.getElementById('displayClientName').innerText = name;
-      document.getElementById('intakeForm').style.display = 'none';
-      document.getElementById('intakeSuccessNotice').style.display = 'block';
-    }
-
-    updateCalculator();
-
-    // =========================================================================
-    // 5. HOMEOWNERS VIEW CALCULATOR CODE
-    // =========================================================================
-    // Home Equity Calculator Engine
-    function runEqCalc() {
-      var valEl = document.getElementById('eq-val-slider');
-      var mortEl = document.getElementById('eq-mort-slider');
-      if (!valEl || !mortEl) return;
-
-      var homeVal = parseFloat(valEl.value) || 650000;
-      var mortBal = parseFloat(mortEl.value) || 350000;
-
-      var vDisp = document.getElementById('eq-val-disp');
-      if (vDisp) vDisp.textContent = '$' + homeVal.toLocaleString();
-      var mDisp = document.getElementById('eq-mort-disp');
-      if (mDisp) mDisp.textContent = '$' + mortBal.toLocaleString();
-
-      var maxLoan = homeVal * 0.80;
-      var netCash = Math.max(0, maxLoan - mortBal);
-      var totalEquity = Math.max(0, homeVal - mortBal);
-
-      var nOut = document.getElementById('eq-net-cash-out');
-      if (nOut) nOut.textContent = '$' + Math.round(netCash).toLocaleString();
-      var eOut = document.getElementById('eq-total-equity-out');
-      if (eOut) eOut.textContent = '$' + Math.round(totalEquity).toLocaleString();
-      var lOut = document.getElementById('eq-max-loan-out');
-      if (lOut) lOut.textContent = '$' + Math.round(maxLoan).toLocaleString();
-      var pOut = document.getElementById('eq-payoff-out');
-      if (pOut) pOut.textContent = '$' + Math.round(mortBal).toLocaleString();
-    }
-
-    // Auto-run calculator on DOM ready
-    window.addEventListener('DOMContentLoaded', function() {
-      runEqCalc();
-    });
-
-</script>
-
-</body>
-</html
-    </section>
-
-    <!-- VIEW 5: PARTNERS -->
+    
+    </section><!-- Close view-alternative -->
     <section class="page-view" id="view-partners" style="display: none;">
         <!-- Subpage Hero -->
   <section class="subpage-hero">
@@ -3407,10 +2700,44 @@
       <p>Whether you have a complex self-employed file, a buyer with cash-to-close hurdles, or a shared project to structure, let's connect.</p>
       <button class="btn btn-accent" onclick="openPartnerModal()">Discuss a Scenario With Trevor →</button>
     </div>
-  </section>
     </section>
-</main>
+    <section class="contact-section" id="contact">
+    <div class="section-title-wrap">
+      <span class="section-eyebrow">Get in Touch</span>
+      <h2>Have a Question or Scenario? Send a Quick Message</h2>
+      <p>Fill out the form below and I will get back to you within 2 hours with clear, direct answers.</p>
+    </div>
 
+    <div class="contact-box-wrap">
+      <form id="contactForm" onsubmit="handleContactSubmit(event)">
+        <div class="contact-form-grid">
+          <div class="input-row">
+            <label for="contactName">Your Name *</label>
+            <input type="text" class="input-field" id="contactName" placeholder="First and last name" required />
+          </div>
+          <div class="input-row">
+            <label for="contactPhone">Phone Number *</label>
+            <input type="tel" class="input-field" id="contactPhone" placeholder="403-555-0199" required />
+          </div>
+          <div class="input-row">
+            <label for="contactEmail">Email Address *</label>
+            <input type="email" class="input-field" id="contactEmail" placeholder="you@example.com" required />
+          </div>
+        </div>
+        <div class="input-row" style="margin-top: 1rem;">
+          <label for="contactMessage">Message / Scenario Details *</label>
+          <textarea class="input-field" id="contactMessage" rows="4" placeholder="Briefly describe what you are looking to solve..." required style="resize: vertical; min-height: 100px; font-family: inherit;"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Send Message →</button>
+      </form>
+      <div id="contact-success" style="display: none; text-align: center; padding: 2rem 0;">
+        <div style="font-size: 3rem; margin-bottom: 1rem;">✉️</div>
+        <h3 style="color: var(--brand-green); font-size: 1.4rem; margin-bottom: 0.5rem; font-weight: 800;">Message Sent Successfully!</h3>
+        <p style="color: var(--text-body); font-size: 1rem;">Thank you! Your message has been routed to Trevor's secure inbox. He will reach out to you shortly.</p>
+      </div>
+    </div>
+  </section>
+</main>
 
 <footer>
     <div class="footer-inner">
@@ -3464,8 +2791,8 @@
     </div>
   </footer>
 
-<!-- 4-Step Intake Modal (With Clean SVG Icons & Exact Mustard) -->
-  <div class="modal-backdrop" id="snapshotModal">
+
+<div class="modal-backdrop" id="snapshotModal">
     <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalHeading">
       <div class="modal-top">
         <h3 id="modalHeading">Get Your Mortgage Snapshot</h3>
@@ -3518,162 +2845,530 @@
                 <div class="pill-sub">Check numbers & rate holds</div>
               </div>
             </div>
+            <input type="hidden" id="goalInput" value="Buying a Home" />
+          </div>
+
+          <!-- Step 2: Target Numbers -->
+          <div class="step-panel" id="panel-2">
+            <h4 style="font-size: 1.15rem; margin-bottom: 0.3rem;">What's the ballpark target?</h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">A rough estimate is completely fine:</p>
+            <div class="input-row">
+              <label id="valueLabel" for="targetVal">Target Purchase Price</label>
+              <input type="text" class="input-field" id="targetVal" placeholder="e.g. $550,000" />
+            </div>
+            <div class="input-row">
+              <label for="targetLoc">Location</label>
+              <input type="text" class="input-field" id="targetLoc" value="Calgary, AB" />
+            </div>
+            <button type="button" class="btn btn-primary" style="width: 100%;" onclick="showStep(3)">Continue →</button>
+          </div>
+
+          <!-- Step 3: Cash & Time -->
+          <div class="step-panel" id="panel-3">
+            <h4 style="font-size: 1.15rem; margin-bottom: 0.3rem;">Down payment & timeline</h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">Helps me narrow down the right lender options:</p>
+            <div class="input-row">
+              <label for="downVal">Available Savings or Down Payment</label>
+              <input type="text" class="input-field" id="downVal" placeholder="e.g. $35,000" />
+            </div>
+            <div class="input-row">
+              <label for="timeframeSelect">When are you looking to move?</label>
+              <select class="input-field" id="timeframeSelect">
+                <option value="0-3 Months (Active)">0–3 Months (Active / Making Offers)</option>
+                <option value="3-6 Months">3–6 Months</option>
+                <option value="6-12 Months">6–12 Months</option>
+                <option value="Just Exploring">Just Exploring Options</option>
+              </select>
+            </div>
+            <button type="button" class="btn btn-primary" style="width: 100%;" onclick="showStep(4)">Almost Done: Contact Info →</button>
+          </div>
+
+          <!-- Step 4: Contact -->
+          <div class="step-panel" id="panel-4">
+            <h4 style="font-size: 1.15rem; margin-bottom: 0.3rem;">Where should I send your snapshot?</h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">No credit check · No obligation · Straightforward advice</p>
+            <div class="input-row">
+              <label for="userName">Your Name</label>
+              <input type="text" class="input-field" id="userName" placeholder="First and last name" required />
+            </div>
+            <div class="input-row">
+              <label for="userPhone">Phone Number (for quick text updates)</label>
+              <input type="tel" class="input-field" id="userPhone" placeholder="403-555-0199" required />
+            </div>
+            <div class="input-row">
+              <label for="userEmail">Email Address</label>
+              <input type="email" class="input-field" id="userEmail" placeholder="you@example.com" required />
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send My Free Mortgage Snapshot →</button>
+          </div>
+
+          <!-- Confirmation -->
+          <div class="step-panel" id="panel-success">
+            <div style="text-align: center; padding: 1.5rem 0;">
+              <div style="font-size: 2.8rem; margin-bottom: 0.8rem;">✅</div>
+              <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Snapshot Request Received!</h3>
+              <p style="color: var(--text-body); font-size: 0.95rem; line-height: 1.6;">
+                Thanks <strong id="greetingName"></strong>. I'm reviewing your details and will follow up with your custom options shortly.
+              </p>
+              <button type="button" class="btn btn-secondary" style="margin-top: 1.5rem;" onclick="closeSnapshotModal()">Close</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </di
+
 
 <script>
+    // =========================================================================
+    // 1. SINGLE PAGE ROUTER (SPA MODULE)
+    // =========================================================================
     let activeStep = 1;
 
-    // Accessibility: Close modal on Escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        const modal = document.getElementById('snapshotModal');
-        if (modal && modal.classList.contains('active')) {
-          closeSnapshotModal();
+    function showPage(pageId, event) {
+        if (event) event.preventDefault();
+        
+        // Hide mobile header scrolling behavior and scroll back to top smoothly
+        window.scrollTo({ top: 0, behavior: 'instant' });
+
+        // Toggle Active Class in Header Nav Links
+        document.querySelectorAll('nav.nav-links a').forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === '#' + pageId) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+
+        // Toggle Page View Visibilities
+        document.querySelectorAll('.page-view').forEach(view => {
+            view.style.display = 'none';
+            view.classList.remove('active');
+        });
+
+        const targetView = document.getElementById('view-' + pageId);
+        if (targetView) {
+            targetView.style.display = 'block';
+            targetView.classList.add('active');
+            console.log("Navigated to:", pageId);
         }
-      }
+
+        // Push URL hash without page jump to enable deep-linking and browser navigation
+        if (window.location.hash !== '#' + pageId) {
+            history.pushState(null, null, '#' + pageId);
+        }
+    }
+
+    // Scroll to contact form smoothly - FIXED id target!
+    function scrollToContact(event) {
+        if (event) event.preventDefault();
+        const contactSec = document.getElementById('contact');
+        if (contactSec) {
+            contactSec.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    // Browser navigation (Back / Forward buttons) support
+    window.addEventListener('hashchange', handleRouting);
+    window.addEventListener('DOMContentLoaded', function() {
+        handleRouting();
+        // Initialize calculators
+        if (typeof updateCalculator === 'function') updateCalculator();
+        if (typeof runEqCalc === 'function') runEqCalc();
+        if (typeof runBuyCalc === 'function') runBuyCalc();
+    });
+
+    function handleRouting() {
+        let hash = window.location.hash.substring(1);
+        const validPages = ['home', 'buying', 'homeowners', 'alternative', 'partners'];
+        if (!validPages.includes(hash)) {
+            hash = 'home';
+        }
+        showPage(hash);
+    }
+
+    // =========================================================================
+    // 2. UNIVERSAL INTAKE MODAL (GOOGLE SHEET CRM WIRED)
+    // =========================================================================
+    // Close modal on Escape key for accessibility
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            const modal = document.getElementById('snapshotModal');
+            if (modal && modal.classList.contains('active')) {
+                closeSnapshotModal();
+            }
+        }
     });
 
     function openSnapshotModal(goal) {
-      if (goal) document.getElementById('goalInput').value = goal;
-      document.getElementById('snapshotModal').classList.add('active');
-      showStep(1);
+        if (goal) document.getElementById('goalInput').value = goal;
+        const modal = document.getElementById('snapshotModal');
+        if (modal) {
+            modal.classList.add('active');
+            showStep(1);
+        }
     }
 
     function closeSnapshotModal() {
-      document.getElementById('snapshotModal').classList.remove('active');
+        const modal = document.getElementById('snapshotModal');
+        if (modal) modal.classList.remove('active');
     }
 
     function chooseGoal(goal) {
-      document.getElementById('goalInput').value = goal;
-      const valLabel = document.getElementById('valueLabel');
-      if (goal.includes('Equity') || goal.includes('Debt')) {
-        valLabel.innerText = 'Estimated Current Home Value';
-      } else {
-        valLabel.innerText = 'Target Purchase Price';
-      }
-      showStep(2);
+        document.getElementById('goalInput').value = goal;
+        const valLabel = document.getElementById('valueLabel');
+        if (goal.includes('Equity') || goal.includes('Debt')) {
+            valLabel.innerText = 'Estimated Current Home Value';
+        } else {
+            valLabel.innerText = 'Target Purchase Price';
+        }
+        showStep(2);
     }
 
     function showStep(step) {
-      activeStep = step;
-      document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
-      document.querySelectorAll('.step-bar').forEach((b, i) => {
-        if (i < step) b.classList.add('active');
-        else b.classList.remove('active');
-      });
-      const target = document.getElementById('panel-' + step);
-      if (target) target.classList.add('active');
+        activeStep = step;
+        document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+        document.querySelectorAll('.step-bar').forEach((b, i) => {
+            if (i < step) b.classList.add('active');
+            else b.classList.remove('active');
+        });
+        const target = document.getElementById('panel-' + step);
+        if (target) target.classList.add('active');
     }
 
-    // Google Sheets CRM Hook
+    // Google Sheets CRM Hook for Multi-Step Modal Form
     document.getElementById('snapshotForm').addEventListener('submit', function(e) {
-      e.preventDefault();
+        e.preventDefault();
 
-      const lead = {
-        name: document.getElementById('userName').value,
-        phone: document.getElementById('userPhone').value,
-        email: document.getElementById('userEmail').value,
-        goal: document.getElementById('goalInput').value,
-        targetValue: document.getElementById('targetVal').value,
-        location: document.getElementById('targetLoc').value,
-        downPayment: document.getElementById('downVal').value,
-        timeline: document.getElementById('timeframeSelect').value,
-        source: 'Homepage (Sweet Spot v6)',
-        submittedAt: new Date().toISOString()
-      };
+        const lead = {
+            lead_type: 'general_buyer',
+            full_name: document.getElementById('userName').value,
+            phone: document.getElementById('userPhone').value,
+            email: document.getElementById('userEmail').value,
+            goal: document.getElementById('goalInput').value,
+            purchase_price: document.getElementById('targetVal').value,
+            location: document.getElementById('targetLoc').value,
+            savings_available: document.getElementById('downVal').value,
+            timeline: document.getElementById('timeframeSelect').value,
+            province: 'Alberta',
+            source_cta: 'Master SPA Multi-Step Intake',
+            submittedAt: new Date().toISOString()
+        };
 
-      document.getElementById('greetingName').innerText = lead.name;
+        const goal = lead.goal.toLowerCase();
+        if (goal.includes('buying') || goal.includes('pre-approval')) {
+            lead.lead_type = 'general_buyer';
+        } else if (goal.includes('equity') || goal.includes('debt')) {
+            lead.lead_type = 'renovators'; 
+        } else {
+            lead.lead_type = 'general_inquiry';
+        }
 
-      const scriptEndpoint = 'https://script.google.com/macros/s/AKfycbysYey_FmE3UBLGOFHWs3298qZGwfNz-gr7at4oRp3ZIrs8TJ2U-YcSX4ZSD6NrTR5O/exec';
-      if (scriptEndpoint && scriptEndpoint !== 'https://script.google.com/macros/s/AKfycbysYey_FmE3UBLGOFHWs3298qZGwfNz-gr7at4oRp3ZIrs8TJ2U-YcSX4ZSD6NrTR5O/exec') {
+        document.getElementById('greetingName').innerText = lead.full_name;
+
+        const scriptEndpoint = 'https://script.google.com/macros/s/AKfycbysYey_FmE3UBLGOFHWs3298qZGwfNz-gr7at4oRp3ZIrs8TJ2U-YcSX4ZSD6NrTR5O/exec';
+        
         fetch(scriptEndpoint, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(lead)
+        }).catch(err => console.log('Lead submission logged:', err));
+
+        document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+        document.getElementById('panel-success').classList.add('active');
+    });
+
+    // =========================================================================
+    // 3. UNIVERSAL FOOTER CONTACT FORM (GOOGLE SHEET CRM WIRED)
+    // =========================================================================
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const lead = {
+            lead_type: 'general_inquiry',
+            full_name: document.getElementById('contactName').value,
+            email: document.getElementById('contactEmail').value,
+            phone: document.getElementById('contactPhone').value,
+            province: 'Alberta',
+            details: document.getElementById('contactMessage').value,
+            source_cta: 'Universal Footer Contact Form',
+            submittedAt: new Date().toISOString()
+        };
+        
+        const scriptEndpoint = 'https://script.google.com/macros/s/AKfycbysYey_FmE3UBLGOFHWs3298qZGwfNz-gr7at4oRp3ZIrs8TJ2U-YcSX4ZSD6NrTR5O/exec';
+        
+        fetch(scriptEndpoint, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(lead)
+        }).then(() => {
+            document.getElementById('contactForm').style.display = 'none';
+            document.getElementById('contact-success').style.display = 'block';
+        }).catch(err => {
+            console.log('General contact submission logged:', err);
+            document.getElementById('contactForm').style.display = 'none';
+            document.getElementById('contact-success').style.display = 'block';
+        });
+    });
+
+    // =========================================================================
+    // 4. BUYING VIEW CALCULATOR CODE
+    // =========================================================================
+    var currentProvince = 'AB';
+    var currentBuyerStatus = 'fthb';
+    var currentOccupancy = 'owner';
+
+    function setProvince(prov) {
+      currentProvince = prov;
+      document.getElementById('btn-prov-ab').classList.toggle('active', prov === 'AB');
+      document.getElementById('btn-prov-on').classList.toggle('active', prov === 'ON');
+      updateCalculator();
+    }
+
+    function setBuyerStatus(status) {
+      currentBuyerStatus = status;
+      document.getElementById('btn-buyer-fthb').classList.toggle('active', status === 'fthb');
+      document.getElementById('btn-buyer-repeat').classList.toggle('active', status === 'repeat');
+
+      var subtext = document.getElementById('buyer-status-subtext');
+      if (status === 'fthb') {
+        subtext.textContent = "✓ First-time buyers qualify for the 100% GST rebate up to $1M (up to $50,000 maximum).";
+      } else {
+        subtext.textContent = "✓ Repeat & move-up buyers qualify for baseline statutory rebates (up to $24,000 in ON; up to $6,300 in AB).";
+      }
+      updateCalculator();
+    }
+
+    function setOccupancy(occ) {
+      currentOccupancy = occ;
+      document.getElementById('btn-occ-owner').classList.toggle('active', occ === 'owner');
+      document.getElementById('btn-occ-investor').classList.toggle('active', occ === 'investor');
+      
+      var sub = document.getElementById('occ-subtext');
+      if (occ === 'owner') {
+        sub.textContent = "✓ Primary residence purchasers qualify for immediate builder credit or down payment advance.";
+      } else {
+        sub.textContent = "⚠️ Investors must pay tax at closing and file the CRA NRRP rental rebate post-possession.";
+      }
+      updateCalculator();
+    }
+
+    function updateCalculator() {
+      var slider = document.getElementById('slider-price');
+      var price = slider ? (parseFloat(slider.value) || 550000) : 550000;
+      
+      var dispPrice = document.getElementById('disp-price');
+      if (dispPrice) dispPrice.textContent = "$" + price.toLocaleString();
+
+      var fedRebate = 0;
+      var provRebate = 0;
+      var onhapRebate = 0;
+      var totalTax = 0;
+      var taxDesc = "";
+      var fedDesc = "";
+      var provDesc = "";
+
+      // 1. Total Tax Calculation
+      if (currentProvince === 'AB') {
+        totalTax = price * 0.05;
+        taxDesc = "$" + Math.round(totalTax).toLocaleString() + " (5% GST)";
+      } else {
+        totalTax = price * 0.13;
+        taxDesc = "$" + Math.round(totalTax).toLocaleString() + " (13% HST)";
+      }
+
+      // 2. Federal Rebate Calculation
+      if (currentOccupancy === 'investor') {
+        if (price <= 350000) {
+          fedRebate = (price * 0.05) * 0.36;
+          fedDesc = "$" + Math.round(fedRebate).toLocaleString() + " (NRRP Baseline)";
+        } else if (price < 450000) {
+          fedRebate = 6300 * ((450000 - price) / 100000);
+          fedDesc = "$" + Math.round(fedRebate).toLocaleString() + " (Phasing Out)";
+        } else {
+          fedRebate = 0;
+          fedDesc = "$0 (Over $450k NRRP Cap)";
+        }
+      } else {
+        if (currentBuyerStatus === 'fthb') {
+          if (price <= 1000000) {
+            fedRebate = price * 0.05;
+            fedDesc = "$" + Math.round(fedRebate).toLocaleString() + " (100% FTHB Rebate)";
+          } else if (price < 1500000) {
+            fedRebate = 50000 * ((1500000 - price) / 500000);
+            fedDesc = "$" + Math.round(fedRebate).toLocaleString() + " (FTHB Partial Phase-out)";
+          } else {
+            fedRebate = 0;
+            fedDesc = "$0 (Over $1.5M FTHB Ceiling)";
+          }
+        } else {
+          if (price <= 350000) {
+            fedRebate = (price * 0.05) * 0.36;
+            fedDesc = "$" + Math.round(fedRebate).toLocaleString() + " (36% Baseline)";
+          } else if (price < 450000) {
+            fedRebate = 6300 * ((450000 - price) / 100000);
+            fedDesc = "$" + Math.round(fedRebate).toLocaleString() + " (Phasing Out)";
+          } else {
+            fedRebate = 0;
+            fedDesc = "$0 (Over $450k Cap)";
+          }
+        }
+      }
+
+      // 3. Provincial Rebate & ONHAP Calculation (Ontario 8% and 5% top-ups)
+      if (currentProvince === 'ON') {
+        if (price <= 1000000) {
+          provRebate = Math.min(price * 0.08, 80000);
+          provDesc = "$" + Math.round(provRebate).toLocaleString() + " (Enhanced ENHR/ENRRP)";
+          var grossONHAP = Math.min(price * 0.05, 50000);
+          onhapRebate = Math.max(0, grossONHAP - fedRebate);
+        } else if (price <= 1500000) {
+          provRebate = 80000;
+          provDesc = "$80,000 (Enhanced ENHR/ENRRP)";
+          var grossONHAP = 50000;
+          onhapRebate = Math.max(0, grossONHAP - fedRebate);
+        } else if (price < 1850000) {
+          var factor = (1850000 - price) / 350000;
+          provRebate = 24000 + (56000 * factor);
+          provDesc = "$" + Math.round(provRebate).toLocaleString() + " (ENHR/ENRRP Phase-down)";
+          var grossONHAP = 50000 * factor;
+          onhapRebate = Math.max(0, grossONHAP - fedRebate);
+        } else {
+          var provTax = price * 0.08;
+          provRebate = Math.min(24000, provTax * 0.75);
+          provDesc = "$" + Math.round(provRebate).toLocaleString() + " (Standard Cap)";
+          onhapRebate = 0;
+        }
+      } else {
+        provRebate = 0;
+        provDesc = "$0 (N/A in Alberta)";
+        onhapRebate = 0;
+      }
+
+      var totalRebate = fedRebate + provRebate + onhapRebate;
+
+      // Update DOM Safely
+      var elTotalTax = document.getElementById('out-total-tax');
+      if (elTotalTax) elTotalTax.textContent = taxDesc;
+
+      var elFed = document.getElementById('out-fed-rebate');
+      if (elFed) elFed.textContent = fedDesc;
+
+      var elProv = document.getElementById('out-prov-rebate');
+      if (elProv) {
+        if (currentProvince === 'ON') {
+          var provLabel = provDesc;
+          if (onhapRebate > 0) {
+            provLabel += " + $" + Math.round(onhapRebate).toLocaleString() + " ONHAP";
+          }
+          elProv.textContent = provLabel;
+        } else {
+          elProv.textContent = "$0 (N/A in Alberta)";
+        }
+      }
+
+      var elTotalRebate = document.getElementById('out-total-rebate');
+      if (elTotalRebate) elTotalRebate.textContent = "$" + Math.round(totalRebate).toLocaleString();
+
+      var elAdvAmt = document.getElementById('out-advance-amt');
+      var elAdvDesc = document.getElementById('out-advance-desc');
+      if (elAdvAmt && elAdvDesc) {
+        elAdvAmt.textContent = "$" + Math.round(totalRebate).toLocaleString();
+        if (currentOccupancy === 'owner') {
+          elAdvDesc.textContent = "Closing treatment depends on builder structure, lender policy and available financing programs.";
+        } else {
+          elAdvDesc.innerHTML = "Closing availability: <strong>Requires structure review.</strong><br>Closing treatment depends on builder structure, lender policy and available financing programs.";
+        }
+      }
+
+      // 4. Rule Notes Generation
+      var ruleNote = "";
+      if (currentProvince === 'AB') {
+        if (currentOccupancy === 'investor') {
+          ruleNote = "<strong>Alberta Investor Rule:</strong> Rental properties do not qualify for the First-Time Buyer top-up. Investors must pay the 5% GST upfront at closing and file the CRA NRRP rebate post-possession (eligible up to $450,000 only).";
+        } else if (currentBuyerStatus === 'fthb') {
+          if (price <= 1000000) {
+            ruleNote = "<strong>Alberta FTHB Advantage:</strong> Eligible first-time home buyers receive a <strong>100% full rebate of the 5% GST</strong> up to $1,000,000 (saving up to <strong>$50,000</strong>).";
+          } else if (price < 1500000) {
+            ruleNote = "<strong>Alberta FTHB Phase-Out:</strong> Between $1M and $1.5M, the first-time buyer GST rebate gradually reduces from $50,000 to $0. On this $" + price.toLocaleString() + " purchase, the eligible tax relief is <strong>$" + Math.round(fedRebate).toLocaleString() + "</strong>.";
+          } else {
+            ruleNote = "<strong>Above $1.5M Ceiling:</strong> In Alberta, new homes valued at or above $1.5M do not qualify for federal GST rebates. The full 5% GST is payable.";
+          }
+        } else {
+          if (price > 450000) {
+            ruleNote = "<strong>Alberta Repeat Buyer Rule:</strong> For repeat/move-up buyers, the standard federal GST rebate phases out completely above $450,000. Full 5% GST applies, but can be factored into mortgage financing.";
+          } else {
+            ruleNote = "<strong>Alberta Standard Rebate:</strong> Repeat buyers qualify for the 36% federal GST rebate on homes up to $350,000 (phasing out at $450k, max $6,300).";
+          }
+        }
+      } else {
+        if (currentOccupancy === 'investor') {
+          ruleNote = "<strong>Ontario Investor Rule:</strong> Qualifying Ontario rental-property purchasers may be eligible for the enhanced Ontario rental rebate (ENRRP) and ONHAP, providing combined relief of up to $130,000 depending on purchase price and program eligibility. Investors must pay tax at closing and apply to the CRA post-possession.";
+        } else {
+          if (price <= 1000000) {
+            ruleNote = "<strong>Ontario Enhanced Program (ENHR + ONHAP):</strong> Eligible Ontario new homes up to $1 million may receive relief equivalent to the full 13% HST. Maximum combined relief of $130,000 is maintained from $1 million to $1.5 million and then gradually declines to $24,000 at $1.85 million.";
+          } else if (price <= 1500000) {
+            ruleNote = "<strong>Ontario Combined Enhanced Program:</strong> Maximum combined relief of $130,000 is maintained from $1 million to $1.5 million (through the ENHR provincial portion of $80,000 + ONHAP/FTHB federal-equivalent portions) and then gradually declines to $24,000 at $1.85 million.";
+          } else if (price < 1850000) {
+            ruleNote = "<strong>Ontario Enhanced Phase-Out:</strong> Between $1.5M and $1.85M, both enhanced portions phase down, providing <strong>$" + Math.round(totalRebate).toLocaleString() + "</strong> in combined relief on this $" + price.toLocaleString() + " purchase.";
+          } else {
+            ruleNote = "<strong>Ontario Limit Rule:</strong> Above the $1.85M ENHR ceiling, the enhanced provincial rebate and ONHAP do not apply. The standard provincial rebate of **$24,000** remains available with no upper purchase price cap.";
+          }
+        }
+      }
+
+      var elRuleNote = document.getElementById('out-rule-note');
+      if (elRuleNote) elRuleNote.innerHTML = ruleNote;
+    }
+
+    function openIntakeModal(source) {
+      document.getElementById('intakeModal').classList.add('active');
+    }
+    function closeIntakeModal() {
+      document.getElementById('intakeModal').classList.remove('active');
+    }
+
+    var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbysYey_FmE3UBLGOFHWs3298qZGwfNz-gr7at4oRp3ZIrs8TJ2U-YcSX4ZSD6NrTR5O/exec';
+
+    function handleIntakeSubmit(e) {
+      e.preventDefault();
+      var nameInput = document.getElementById('m_name');
+      var name = nameInput ? (nameInput.value || 'Client') : 'Client';
+      var phone = document.getElementById('m_phone').value;
+      var email = document.getElementById('m_email').value;
+      var price = document.getElementById('m_price').value || document.getElementById('m_price').placeholder || '';
+      var prov = document.getElementById('m_prov').value;
+      
+      var leadData = {
+        lead_type: 'new_build_buyer',
+        full_name: name,
+        phone: phone,
+        email: email,
+        purchase_price: price,
+        province: prov,
+        source_cta: 'Alberta Buyer Standalone Page'
+      };
+      
+      if (GOOGLE_SCRIPT_URL) {
+        fetch(GOOGLE_SCRIPT_URL, {
           method: 'POST',
           mode: 'no-cors',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(lead)
-        }).catch(err => console.log('Lead logged:', err));
+          body: JSON.stringify(leadData)
+        }).catch(function(err) { console.log('Lead sync logged:', err); });
       }
 
-      document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
-      document.getElementById('panel-success').classList.add('active');
-    });
-  
-    // Calculator State & Engine for Buying Page
-    var buyAmortYears = 25;
-    var buyDownMode = 'pct';
-
-    function setAmort(yrs) {
-      buyAmortYears = yrs;
-      var b25 = document.getElementById('amort-btn-25');
-      var b30 = document.getElementById('amort-btn-30');
-      if (b25) b25.classList.toggle('active', yrs === 25);
-      if (b30) b30.classList.toggle('active', yrs === 30);
-      runBuyCalc();
+      document.getElementById('displayClientName').innerText = name;
+      document.getElementById('intakeForm').style.display = 'none';
+      document.getElementById('intakeSuccessNotice').style.display = 'block';
     }
 
-    function setDownMode(mode) {
-      buyDownMode = mode;
-      var bpct = document.getElementById('down-btn-pct');
-      var bdol = document.getElementById('down-btn-dol');
-      if (bpct) bpct.classList.toggle('active', mode === 'pct');
-      if (bdol) bdol.classList.toggle('active', mode === 'dol');
-      var modeDisp = document.getElementById('buy-down-mode-disp');
-      if (modeDisp) modeDisp.textContent = mode === 'pct' ? 'Percent' : 'Amount';
-      runBuyCalc();
-    }
-
-    function runBuyCalc() {
-      var priceEl = document.getElementById('buy-price-slider');
-      if (!priceEl) return;
-      var price = parseFloat(priceEl.value) || 550000;
-      var pDisp = document.getElementById('buy-price-disp');
-      if (pDisp) pDisp.textContent = '$' + price.toLocaleString();
-
-      var downSlider = parseFloat(document.getElementById('buy-down-slider').value) || 10;
-      var downAmount = 0;
-      var downPct = 0;
-
-      if (buyDownMode === 'pct') {
-        downPct = downSlider;
-        downAmount = price * (downPct / 100);
-        var dDisp = document.getElementById('buy-down-disp');
-        if (dDisp) dDisp.textContent = downPct + '% ($' + Math.round(downAmount).toLocaleString() + ')';
-      } else {
-        downAmount = downSlider * 10000;
-        downPct = (downAmount / price) * 100;
-        var dDisp = document.getElementById('buy-down-disp');
-        if (dDisp) dDisp.textContent = '$' + Math.round(downAmount).toLocaleString() + ' (' + downPct.toFixed(1) + '%)';
-      }
-
-      var rateInput = document.getElementById('buy-rate-input');
-      var annualRate = rateInput ? (parseFloat(rateInput.value) || 3.60) : 3.60;
-      var baseLoan = price - downAmount;
-      var cmhcPct = 0;
-
-      if (downPct < 20) {
-        if (downPct >= 15) cmhcPct = 0.0280;
-        else if (downPct >= 10) cmhcPct = 0.0310;
-        else cmhcPct = 0.0400;
-      }
-      var cmhcPrem = baseLoan * cmhcPct;
-      var totalLoan = baseLoan + cmhcPrem;
-
-      // Canadian Semi-Annual Compounding to Monthly Payment
-      var r = annualRate / 100;
-      var monthlyRate = Math.pow(1 + r / 2, 2 / 12) - 1;
-      var n = buyAmortYears * 12;
-      var monthlyPayment = totalLoan * (monthlyRate * Math.pow(1 + monthlyRate, n)) / (Math.pow(1 + monthlyRate, n) - 1);
-
-      var mOut = document.getElementById('buy-monthly-out');
-      if (mOut) mOut.textContent = '$' + Math.round(monthlyPayment).toLocaleString();
-      var dOut = document.getElementById('buy-down-val-out');
-      if (dOut) dOut.textContent = '$' + Math.round(downAmount).toLocaleString();
-      var cOut = document.getElementById('buy-cmhc-out');
-      if (cOut) cOut.textContent = cmhcPrem > 0 ? '$' + Math.round(cmhcPrem).toLocaleString() : '$0 (Conventional)';
-      var tOut = document.getElementById('buy-total-loan-out');
-      if (tOut) tOut.textContent = '$' + Math.round(totalLoan).toLocaleString();
-    }
-
-    // Home Equity Calculator Engine
+    // =========================================================================
+    // 5. HOMEOWNERS VIEW CALCULATOR CODE
+    // =========================================================================
     function runEqCalc() {
       var valEl = document.getElementById('eq-val-slider');
       var mortEl = document.getElementById('eq-mort-slider');
@@ -3701,72 +3396,15 @@
       if (pOut) pOut.textContent = '$' + Math.round(mortBal).toLocaleString();
     }
 
-    // CPA Drop Form Handler
-    function handleCpaSubmit(e) {
-      e.preventDefault();
-      var name = (document.getElementById('cpa_name') && document.getElementById('cpa_name').value) || 'Advisor';
-      var dName = document.getElementById('cpaDisplay');
-      if (dName) dName.innerText = name;
-      var f = document.getElementById('cpaDropForm');
-      if (f) f.style.display = 'none';
-      var n = document.getElementById('cpaSuccessNotice');
-      if (n) n.style.display = 'block';
+    // =========================================================================
+    // 6. PARTNERS VIEW SCRIPTS
+    // =========================================================================
+    function openPartnerModal() {
+        openSnapshotModal('Partner Collaboration');
     }
 
-    function resetCpaForm() {
-      var f = document.getElementById('cpaDropForm');
-      if (f) {
-        f.reset();
-        f.style.display = 'block';
-      }
-      var n = document.getElementById('cpaSuccessNotice');
-      if (n) n.style.display = 'none';
-    }
+</script>
 
-    // Auto-run calculators on DOM ready
-    
-    // Contact Form submission handler
-    function handleContactSubmit(e) {
-      e.preventDefault();
-      
-      var name = document.getElementById('contactName').value || '';
-      var phone = document.getElementById('contactPhone').value || '';
-      var email = document.getElementById('contactEmail').value || '';
-      var msg = document.getElementById('contactMessage').value || '';
-      
-      var leadData = {
-        lead_type: 'general_inquiry',
-        full_name: name,
-        email: email,
-        phone: phone,
-        scenario_notes: msg,
-        province: 'Alberta',
-        source_cta: 'Homepage Contact Form',
-        submittedAt: new Date().toISOString()
-      };
-      
-      var scriptEndpoint = 'https://script.google.com/macros/s/AKfycbysYey_FmE3UBLGOFHWs3298qZGwfNz-gr7at4oRp3ZIrs8TJ2U-YcSX4ZSD6NrTR5O/exec';
-      
-      fetch(scriptEndpoint, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(leadData)
-      }).catch(function(err) {
-        console.log('Contact submission error:', err);
-      });
-      
-      document.getElementById('contactForm').style.display = 'none';
-      document.getElementById('contact-success').style.display = 'block';
-    }
-
-    window.addEventListener
-('DOMContentLoaded', function() {
-      runBuyCalc();
-      runEqCalc();
-    });
-
-  </script>
 
 </body>
 </html>
