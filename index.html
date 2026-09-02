@@ -3,610 +3,1924 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Darian Stadnyk × Trevor Berry | Calgary Home Financing Hub</title>
+  <title>Trevor Mortgages | Full Website Interactive Review</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --perch-dark-green: #12453B;
-      --perch-light-green: #327766;
-      --perch-orange: #F7704F;
-      --perch-teal: #26A699;
-      --bg-light: #F8F9FA;
-      --card-bg: #FFFFFF;
-      --border-color: #DEE2E6;
-      --text-dark: #1B2421;
-      --text-muted: #6C757D;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: var(--bg-light);
-      color: var(--text-dark);
-      line-height: 1.5;
-    }
-    
-    /* Brand Bar */
-    .brand-bar {
-      background-color: #0c332b;
-      padding: 8px 20px;
-      font-size: 11px;
-      color: #A3CFBB;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      letter-spacing: 0.5px;
-    }
-    .brand-bar-inner {
-      max-width: 640px;
-      margin: 0 auto;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .brand-logo-group {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-weight: 700;
-      color: #FFF;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    .perch-pin {
-      width: 14px;
-      height: 14px;
-      fill: #FFF;
+      --bg-canvas: #FFFFFF;
+      --bg-subtle: #F8FAF9;
+      --bg-alt: #EFF4F1;
+      --border-subtle: #E2EAE5;
+      --border-focus: #12453B;
+      
+      --text-main: #131E1A;
+      --text-body: #394A43;
+      --text-muted: #647870;
+      
+      /* Official Perch Color Tokens */
+      --brand-green: #12453B;
+      --brand-green-hover: #0E362E;
+      --brand-green-light: #E7EFEA;
+      --accent-mustard: #EDAB2B;
+      --accent-mustard-hover: #D99518;
+      
+      --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --radius-sm: 6px;
+      --radius: 10px;
+      --radius-lg: 14px;
+      --shadow-sm: 0 1px 3px rgba(18, 69, 59, 0.05);
+      --shadow-card: 0 4px 20px rgba(18, 69, 59, 0.06);
+      --shadow-lg: 0 16px 40px rgba(18, 69, 59, 0.12);
     }
 
-    header {
-      background-color: var(--perch-dark-green);
-      color: #FFF;
-      padding: 18px 20px;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-main);
+      font-family: var(--font-family);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
-    .header-inner {
-      max-width: 640px;
+
+    /* Top Utility Strip */
+    .top-strip {
+      background-color: var(--bg-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.82rem;
+      padding: 0.5rem 0;
+      color: var(--text-muted);
+    }
+    .top-strip-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .top-strip a {
+      color: var(--brand-green);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .top-strip a:hover { text-decoration: underline; }
+
+    /* Clean Navigation - Only Trevor Berry, No Third Party Marks */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav-inner {
+      max-width: 1160px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 12px;
+      padding: 1.1rem 1.5rem;
     }
-    .container {
-      max-width: 640px;
+    .brand-link {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      gap: 2px;
+    }
+    .brand-name {
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      color: var(--brand-green);
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+    .brand-meta {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: #F7704F; /* Official Perch Orange */
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    nav.nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+    }
+    nav.nav-links a {
+      color: var(--text-body);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+    nav.nav-links a:hover, nav.nav-links a.active {
+      color: var(--brand-green);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.4rem;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1.5px solid transparent;
+      gap: 0.4rem;
+    }
+    .btn-primary {
+      background-color: var(--brand-green);
+      color: #FFFFFF;
+    }
+    .btn-primary:hover {
+      background-color: var(--brand-green-hover);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: transparent;
+      border-color: var(--border-subtle);
+      color: var(--text-main);
+    }
+    .btn-secondary:hover {
+      border-color: var(--brand-green);
+      background: var(--bg-subtle);
+    }
+    .btn-accent {
+      background-color: var(--accent-mustard);
+      color: #FFFFFF;
+    }
+    .btn-accent:hover {
+      background-color: var(--accent-mustard-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 4.5rem 1.5rem 4rem;
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--bg-subtle) 100%);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .hero-container {
+      max-width: 1160px;
       margin: 0 auto;
-      padding: 20px 16px 40px;
-    }
-    
-    /* Two Steps Guidance Box */
-    .two-steps-box {
-      background-color: #FFF;
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 14px 18px;
-      margin-bottom: 20px;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      grid-template-columns: 1.25fr 0.85fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+    .eyebrow-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--brand-green-light);
+      color: var(--brand-green);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.35rem 0.85rem;
+      border-radius: 30px;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 {
+      font-size: 2.75rem;
+      line-height: 1.18;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 span.accent {
+      color: var(--brand-green);
+    }
+    .hero p.lead {
+      font-size: 1.12rem;
+      line-height: 1.65;
+      color: var(--text-body);
+      margin-bottom: 2rem;
+    }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.2rem;
+      flex-wrap: wrap;
+    }
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .point-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .point-val {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--brand-green);
+      line-height: 1.1;
+    }
+    .point-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Headshot & Profile Card (Clean - No Tag Boxes) */
+    .profile-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-card);
       position: relative;
     }
-    .step-item {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-    }
-    .step-num {
-      background-color: #E8F3F1;
-      color: var(--perch-dark-green);
-      font-weight: 800;
-      font-size: 12px;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
+    .photo-wrap {
+      width: 100%;
+      aspect-ratio: 4/5;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--bg-alt);
+      margin-bottom: 1.2rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
-      margin-top: 1px;
+      position: relative;
     }
-    .step-text {
-      font-size: 12px;
-      line-height: 1.4;
-      color: #495057;
-    }
-    .step-text strong {
+    .photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
       display: block;
-      color: var(--perch-dark-green);
-      font-size: 12.5px;
-      margin-bottom: 2px;
+    }
+    .avatar-fallback {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: var(--brand-green);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 800;
+    }
+    .profile-info h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.15rem;
+    }
+    .profile-role {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--brand-green);
     }
 
-    .tab-toggle {
-      display: flex;
-      background-color: #E9ECEF;
-      border-radius: 8px;
-      padding: 4px;
-      margin-bottom: 20px;
+    /* Section Headers */
+    .section-title-wrap {
+      max-width: 720px;
+      margin: 0 auto 3rem;
+      text-align: center;
     }
-    .tab-btn {
-      flex: 1;
-      padding: 10px 0;
-      border: none;
-      border-radius: 6px;
+    .section-eyebrow {
+      color: var(--accent-mustard);
+      font-size: 0.82rem;
       font-weight: 700;
-      font-size: 14px;
-      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .section-title-wrap h2 {
+      font-size: 2.1rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      margin-bottom: 0.8rem;
+      line-height: 1.25;
+    }
+    .section-title-wrap p {
+      font-size: 1.05rem;
+      color: var(--text-body);
+    }
+
+    /* How I Work */
+    .principles-section {
+      padding: 4.5rem 1.5rem;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .principles-grid {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .principle-card {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 2rem;
+      transition: transform 0.2s ease;
+    }
+    .principle-card:hover {
+      transform: translateY(-2px);
+    }
+    .principle-icon-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      background: var(--brand-green-light);
+      color: var(--brand-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+    }
+    .principle-icon-wrap svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--brand-green);
+      stroke-width: 2;
+      fill: none;
+    }
+    .principle-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.6rem;
+    }
+    .principle-card p {
+      font-size: 0.94rem;
+      color: var(--text-body);
+      line-height: 1.6;
+    }
+
+    /* 3 Client Lanes */
+    .lanes-section {
+      padding: 4.5rem 1.5rem 5rem;
+      background: var(--bg-alt);
+    }
+    .lanes-grid {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+    }
+    .lane-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+    }
+    .lane-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card);
+    }
+    .lane-photo-header {
+      width: 100%;
+      height: 180px;
+      position: relative;
+      background: var(--brand-green-light);
+      overflow: hidden;
+    }
+    .lane-photo-header img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .lane-card:hover .lane-photo-header img {
+      transform: scale(1.03);
+    }
+    .lane-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(18, 69, 59, 0.92);
+      color: #FFFFFF;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.3rem 0.7rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      backdrop-filter: blur(4px);
+    }
+    .lane-content {
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .lane-card h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.8rem;
+    }
+    .lane-card p {
+      font-size: 0.94rem;
+      color: var(--text-body);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+    .lane-bullets {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+    .lane-bullets li {
+      font-size: 0.88rem;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .lane-bullets li::before {
+      content: "•";
+      color: var(--brand-green);
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    /* Partner Banner */
+    .partner-banner {
+      max-width: 1160px;
+      margin: 0 auto;
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 3rem;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .partner-banner h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.6rem;
+    }
+    .partner-banner p {
+      font-size: 0.96rem;
+      color: var(--text-body);
+      line-height: 1.6;
+    }
+    .partner-cta-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      align-items: flex-start;
+    }
+
+    /* 4-Step Intake Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(19, 30, 26, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.2rem;
+    }
+    .modal-backdrop.active { display: flex; }
+    .modal-dialog {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 540px;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+    }
+    .modal-top {
+      padding: 1.2rem 1.6rem;
+      background: var(--brand-green);
+      color: #FFFFFF;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-top h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+    .modal-close-btn {
       background: transparent;
-      color: var(--text-muted);
-      font-family: inherit;
+      border: none;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1.6rem;
+      line-height: 1;
+      cursor: pointer;
     }
-    .tab-btn.active {
-      background-color: var(--perch-dark-green);
-      color: #FFF;
+    .modal-close-btn:hover { color: #FFFFFF; }
+    .modal-body {
+      padding: 1.8rem;
     }
-    .grid-2 {
+    .step-track {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 1.5rem;
+    }
+    .step-bar {
+      height: 4px;
+      flex-grow: 1;
+      background: var(--border-subtle);
+      border-radius: 2px;
+      transition: background 0.25s ease;
+    }
+    .step-bar.active { background: var(--brand-green); }
+    .step-panel { display: none; }
+    .step-panel.active { display: block; }
+
+    .pill-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 20px;
+      gap: 0.8rem;
+      margin-top: 1rem;
     }
-    .listing-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 14px;
+    .pill-card {
+      background: var(--bg-subtle);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 1rem 0.9rem;
+      text-align: left;
       cursor: pointer;
       transition: all 0.15s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
     }
-    .listing-card.active {
-      border: 2px solid var(--perch-dark-green);
-      box-shadow: 0 4px 12px rgba(18, 69, 59, 0.12);
+    .pill-card:hover {
+      border-color: var(--brand-green);
+      background: #FFFFFF;
+      box-shadow: var(--shadow-sm);
     }
-    .calc-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
-      padding: 22px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
-      margin-bottom: 22px;
+    .pill-icon {
+      width: 24px;
+      height: 24px;
+      color: var(--brand-green);
+      margin-bottom: 0.2rem;
     }
-    .rate-badge {
-      background-color: #E8F3F1;
-      color: var(--perch-dark-green);
-      padding: 4px 10px;
-      border-radius: 6px;
-      font-size: 12px;
-      font-weight: 800;
-      display: inline-block;
+    .pill-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--brand-green);
+      stroke-width: 2;
+      fill: none;
     }
-    .btn-action {
-      display: inline-block;
-      text-align: center;
-      padding: 12px 10px;
-      border-radius: 6px;
-      font-size: 13px;
+    .pill-title {
       font-weight: 700;
-      text-decoration: none;
-      font-family: inherit;
-      cursor: pointer;
+      font-size: 0.92rem;
+      color: var(--text-main);
     }
-    .btn-outline {
-      background: #F8F9FA;
-      color: var(--text-dark);
-      border: 1px solid var(--border-color);
+    .pill-sub {
+      font-size: 0.76rem;
+      color: var(--text-muted);
     }
-    .btn-primary {
-      background: var(--perch-dark-green);
-      color: #FFF;
-      border: none;
+    .input-row {
+      margin-bottom: 1.1rem;
+    }
+    .input-row label {
+      display: block;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.35rem;
     }
     .input-field {
       width: 100%;
-      padding: 10px 12px;
-      border-radius: 6px;
-      border: 1px solid var(--border-color);
+      padding: 0.75rem 0.9rem;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
       font-family: inherit;
-      font-size: 14px;
+      font-size: 0.95rem;
+      background: #FFFFFF;
+      color: var(--text-main);
     }
-    
-    /* Contact Cards Grid */
-    .contact-grid {
+    .input-field:focus {
+      outline: none;
+      border-color: var(--brand-green);
+      box-shadow: 0 0 0 3px rgba(18, 69, 59, 0.08);
+    }
+
+    /* Footer - Brand Identity Compliant with Official Brokerage License Lockup */
+    footer {
+      background: #0E1814;
+      color: #FFFFFF;
+      padding: 4.5rem 1.5rem 2.5rem;
+      border-top: 1px solid #1C2B25;
+    }
+    .footer-inner {
+      max-width: 1160px;
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 22px;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
     }
-    .contact-card {
-      background: #FFF;
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 14px 16px;
+    .footer-main h4 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.01em;
+    }
+    .footer-main p {
+      color: #9BB0A7;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+    .footer-links h5 {
+      color: var(--accent-mustard);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+    }
+    .footer-links ul { list-style: none; }
+    .footer-links li {
+      margin-bottom: 0.55rem;
+      font-size: 0.9rem;
+    }
+    .footer-links a {
+      color: #C0D2CA;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: #FFFFFF; }
+
+    /* Official Brokerage License Strip with Perch Logo */
+    .brokerage-compliance-box {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding-top: 2.5rem;
+      border-top: 1px solid #1C2B25;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .brokerage-lockup-row {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .brokerage-brand-badge {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0.5rem 1rem;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius-sm);
+      line-height: 1.2;
+    }
+    .brokerage-brand-badge .badge-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: 0.04em;
+    }
+    .brokerage-brand-badge .badge-sub {
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--accent-mustard);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .brokerage-details {
+      font-size: 0.82rem;
+      color: #8CA399;
+      line-height: 1.6;
+    }
+    .legal-disclaimer {
+      font-size: 0.74rem;
+      color: #6C8278;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 900px) {
+      .hero-container { grid-template-columns: 1fr; }
+      .principles-grid, .lanes-grid, .footer-inner { grid-template-columns: 1fr; }
+      .partner-banner { grid-template-columns: 1fr; padding: 2rem; }
+      .hero h1 { font-size: 2.25rem; }
+    }
+  
+    /* Vibrant High-Contrast Calculator Design */
+    .calc-box-wrap {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      margin: 3.5rem 0;
+      box-shadow: 0 8px 30px rgba(18, 69, 59, 0.07);
+    }
+    .calc-header {
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .calc-header h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--brand-green);
+    }
+    .calc-header p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+    }
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2.8rem;
+      align-items: stretch;
+    }
+    .calc-inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      justify-content: space-between;
+    }
+    .calc-field label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.6rem;
+    }
+    .calc-field label span.val {
+      color: #F7704F; /* Perch Orange */
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+    .calc-range {
+      width: 100%;
+      accent-color: #F7704F; /* Perch Orange */
+      cursor: pointer;
+      height: 6px;
+    }
+    .calc-toggles {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .calc-toggle-btn {
+      padding: 0.55rem 1.1rem;
+      border: 1.5px solid var(--border-subtle);
+      background: var(--bg-subtle);
+      font-size: 0.85rem;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-family: var(--font-family);
+      color: var(--text-body);
+      transition: all 0.15s ease;
+    }
+    .calc-toggle-btn.active {
+      background: var(--brand-green);
+      color: #FFFFFF;
+      border-color: var(--brand-green);
+    }
+    .rate-input-box {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .rate-input-box input {
+      width: 110px;
+      padding: 0.55rem 0.85rem;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: var(--font-family);
+      color: var(--text-main);
+    }
+    .rate-input-box input:focus {
+      border-color: var(--brand-green);
+      outline: none;
+    }
+
+    /* Vibrant High-Contrast Result Card */
+    .calc-results {
+      background: #12453B; /* Deep Brand Green */
+      border-radius: var(--radius);
+      padding: 2.2rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      color: #FFFFFF;
+      box-shadow: 0 8px 24px rgba(18, 69, 59, 0.15);
+    }
+    .calc-metric-main {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 1.3rem;
+      margin-bottom: 1.3rem;
+      text-align: center;
+    }
+    .calc-metric-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #A3CFBB;
+    }
+    .calc-metric-num {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.1;
+      margin: 0.35rem 0;
+    }
+    .calc-metric-sub {
+      font-size: 0.85rem;
+      color: #D1DFD8;
+    }
+    .calc-breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.65rem 0;
+      font-size: 0.9rem;
+      color: #D1DFD8;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .calc-breakdown-row strong {
+      color: #FFFFFF;
+    }
+
+  </style>
+  <style>
+    /* Subpage Styles */
+    .subpage-hero {
+      padding: 4.5rem 1.5rem 3.5rem;
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--bg-subtle) 100%);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .subpage-hero-container {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .subpage-hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--text-main);
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.02em;
+    }
+    .subpage-hero p.lead {
+      font-size: 1.15rem;
+      color: var(--text-body);
+      line-height: 1.65;
+      margin-bottom: 2rem;
+    }
+    .content-section {
+      padding: 4.5rem 1.5rem;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .feature-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    .feature-box {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .feature-box h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.8rem;
+    }
+    .feature-box p {
+      font-size: 0.95rem;
+      color: var(--text-body);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .calc-card {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      margin: 3rem 0;
+    }
+    .calc-card h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+    .cta-banner-box {
+      background: var(--brand-green);
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      text-align: center;
+      margin: 4rem auto 0;
+      max-width: 900px;
+    }
+    .cta-banner-box h3 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+    }
+    .cta-banner-box p {
+      color: #C2D1CB;
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto 1.8rem;
+    }
+    @media (max-width: 800px) {
+      .feature-grid-2 { grid-template-columns: 1fr; }
+      .subpage-hero h1 { font-size: 2.2rem; }
+      .cta-banner-box { padding: 2rem; }
+    }
+
+    /* Interactive View Controller */
+    
+    
+    
+    /* Top Review Controller Bar */
+    
+    
+    
+    .review-tab-btn:hover, .review-tab-btn.active {
+      background: var(--accent-mustard);
+      color: #0E1814;
+      border-color: var(--accent-mustard);
+    }
+  
+    /* Vibrant High-Contrast Calculator Design */
+    .calc-box-wrap {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      margin: 3.5rem 0;
+      box-shadow: 0 8px 30px rgba(18, 69, 59, 0.07);
+    }
+    .calc-header {
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .calc-header h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--brand-green);
+    }
+    .calc-header p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+    }
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2.8rem;
+      align-items: stretch;
+    }
+    .calc-inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      justify-content: space-between;
+    }
+    .calc-field label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.6rem;
+    }
+    .calc-field label span.val {
+      color: #F7704F; /* Perch Orange */
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+    .calc-range {
+      width: 100%;
+      accent-color: #F7704F; /* Perch Orange */
+      cursor: pointer;
+      height: 6px;
+    }
+    .calc-toggles {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .calc-toggle-btn {
+      padding: 0.55rem 1.1rem;
+      border: 1.5px solid var(--border-subtle);
+      background: var(--bg-subtle);
+      font-size: 0.85rem;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-family: var(--font-family);
+      color: var(--text-body);
+      transition: all 0.15s ease;
+    }
+    .calc-toggle-btn.active {
+      background: var(--brand-green);
+      color: #FFFFFF;
+      border-color: var(--brand-green);
+    }
+    .rate-input-box {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .rate-input-box input {
+      width: 110px;
+      padding: 0.55rem 0.85rem;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: var(--font-family);
+      color: var(--text-main);
+    }
+    .rate-input-box input:focus {
+      border-color: var(--brand-green);
+      outline: none;
+    }
+
+    /* Vibrant High-Contrast Result Card */
+    .calc-results {
+      background: #12453B; /* Deep Brand Green */
+      border-radius: var(--radius);
+      padding: 2.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: #FFFFFF;
+      box-shadow: 0 8px 24px rgba(18, 69, 59, 0.15);
+    }
+    .calc-metric-main {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 1.3rem;
+      margin-bottom: 1.3rem;
+      text-align: center;
+    }
+    .calc-metric-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #A3CFBB;
+    }
+    .calc-metric-num {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.1;
+      margin: 0.35rem 0;
+    }
+    .calc-metric-sub {
+      font-size: 0.85rem;
+      color: #D1DFD8;
+    }
+    .calc-breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.65rem 0;
+      font-size: 0.9rem;
+      color: #D1DFD8;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .calc-breakdown-row strong {
+      color: #FFFFFF;
+    }
+
+  </style>
+
+  <style>
+    /* Strict Left-Edge Alignment (Phone, Logo, Headline) */
+    .top-strip {
+      background-color: var(--bg-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.82rem;
+      padding: 0.55rem 0;
+      color: var(--text-muted);
+    }
+    .top-strip-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .top-strip a {
+      color: var(--brand-green);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .top-strip a:hover { text-decoration: underline; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 1.1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-link {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      gap: 2px;
+    }
+    .brand-name {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      color: var(--brand-green);
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+    .brand-meta {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: #F7704F !important; /* Official Perch Orange */
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* Hero alignment matching 1160px grid */
+    .hero {
+      padding: 4.5rem 0 4rem;
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--bg-subtle) 100%);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .hero-container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 1.25fr 0.85fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    /* Button Enhancements */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem 1.5rem;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: var(--font-family);
+    }
+    .btn-primary {
+      background-color: var(--brand-green);
+      color: #FFFFFF;
+      border: 2px solid var(--brand-green);
+    }
+    .btn-primary:hover {
+      background-color: var(--brand-green-hover);
+      border-color: var(--brand-green-hover);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-1px);
     }
     
-    @media (max-width: 520px) {
-      .two-steps-box {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
+    /* Defined Secondary Button (How I Work & Lane Cards) */
+    .btn-secondary {
+      background: #FFFFFF;
+      border: 2px solid var(--brand-green);
+      color: var(--brand-green);
+      font-weight: 700;
+      box-shadow: 0 2px 6px rgba(18, 69, 59, 0.06);
+    }
+    .btn-secondary:hover {
+      background: var(--brand-green);
+      color: #FFFFFF;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(18, 69, 59, 0.12);
+    }
+
+    .btn-accent {
+      background-color: var(--accent-mustard);
+      color: #121E1A;
+      border: 2px solid var(--accent-mustard);
+      font-weight: 800;
+    }
+    .btn-accent:hover {
+      background-color: var(--accent-mustard-hover);
+      border-color: var(--accent-mustard-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Full-width card buttons */
+    .lane-content .btn-secondary {
+      width: 100%;
+      margin-top: 1rem;
     }
   </style>
+
 </head>
 <body>
 
-  <!-- Perch Identity Bar -->
-  <div class="brand-bar">
-    <div class="brand-bar-inner">
-      <div class="brand-logo-group">
-        <svg class="perch-pin" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-        </svg>
-        <span>TREVOR MORTGAGES</span>
-      </div>
-      <div style="font-weight: 500; font-size: 11px;">Powered by Perch</div>
+  <!-- Top Strip -->
+  <div class="top-strip">
+    <div class="top-strip-inner">
+      <span>Feel free to text or call: <a href="tel:4038701537">403-870-1537</a></span>
+      <span>40+ Canadian Lenders · Clear Solutions · Zero Hidden Fees</span>
     </div>
   </div>
 
+  <!-- Header Navigation -->
   <header>
-    <div class="header-inner">
-      <div>
-        <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.85;">Darian Stadnyk × Trevor Berry</div>
-        <div style="font-size: 17px; font-weight: 700; margin-top: 2px;">Calgary Home Financing Hub</div>
-      </div>
-      <a href="tel:5878880024" style="background-color: var(--perch-light-green); color: #FFF; padding: 7px 14px; border-radius: 6px; font-size: 13px; text-decoration: none; font-weight: 600; white-space: nowrap;">
-        Call Darian
+    <div class="nav-inner">
+      <a href="/" class="brand-link">
+        <span class="brand-name">TREVOR BERRY</span>
+        <span class="brand-meta">Mortgage Associate</span>
       </a>
+
+      <nav class="nav-links">
+        <a href="/" class="active">Home</a>
+        <a href="/buying">Buying</a>
+        <a href="/homeowners">Homeowners</a>
+        <a href="/alternative">Alternative</a>
+        <a href="/partners">Partners</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div>
+        <button class="btn btn-primary" onclick="openSnapshotModal('General Inquiry')">Get Mortgage Numbers</button>
+      </div>
     </div>
   </header>
 
-  <div class="container">
+  <main>
 
-    <!-- Two Steps, One Clear Plan Guidance Block -->
-    <div class="two-steps-box">
-      <div class="step-item">
-        <div class="step-num">1</div>
-        <div class="step-text">
-          <strong>Ask Darian About the Property</strong>
-          Book private showings, review market comps, and assess neighborhood value.
-        </div>
-      </div>
-      <div class="step-item">
-        <div class="step-num">2</div>
-        <div class="step-text">
-          <strong>Ask Trevor About Financing</strong>
-          Explore 40+ lenders, compare down payment strategies, and get pre-approved.
-        </div>
-      </div>
-    </div>
+    <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
 
-    <div class="tab-toggle">
-      <button id="tabListingsBtn" class="tab-btn active" onclick="switchTab('listings')">Darian's Active Listings</button>
-      <button id="tabCheckAnyBtn" class="tab-btn" onclick="switchTab('check_any')">Check Any Home</button>
-    </div>
-
-    <!-- Listings View -->
-    <div id="listingsView">
-      <div class="grid-2">
-        <div id="card-temple" class="listing-card active" onclick="selectListing('temple')">
-          <div style="font-size: 11px; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Temple, NE</div>
-          <div style="font-weight: 800; font-size: 17px; color: var(--perch-dark-green); margin-top: 2px;">$359,000</div>
-          <div style="font-size: 13px; margin-top: 4px; font-weight: 500;">252 Templeview Way NE</div>
-          <div style="font-size: 11px; color: #868E96; margin-top: 6px;">MLS® A2317927 · 3b/2ba · 1,140 sqft</div>
-        </div>
-
-        <div id="card-kingsland" class="listing-card" onclick="selectListing('kingsland')">
-          <div style="font-size: 11px; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Kingsland, SW</div>
-          <div style="font-weight: 800; font-size: 17px; color: var(--perch-dark-green); margin-top: 2px;">$685,000</div>
-          <div style="font-size: 13px; margin-top: 4px; font-weight: 500;">809 68 Avenue SW</div>
-          <div style="font-size: 11px; color: #868E96; margin-top: 6px;">MLS® A2339915 · 4b/2ba · 1,100 sqft</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Check Any Home View -->
-    <div id="checkAnyView" style="display: none; background: #FFF; padding: 18px 20px; border-radius: 10px; border: 1px solid var(--border-color); margin-bottom: 20px;">
-      <h3 style="font-size: 15px; font-weight: 700; color: var(--perch-dark-green); margin-bottom: 12px;">Calculate Payments for Any Calgary Property</h3>
-      <div class="grid-2" style="margin-bottom: 0;">
-        <div>
-          <label style="font-size: 12px; font-weight: 600; color: #495057; display: block; margin-bottom: 4px;">Purchase Price ($)</label>
-          <input id="customPriceInput" type="number" step="5000" value="550000" class="input-field" oninput="updateCustomNumbers()" />
-        </div>
-        <div>
-          <label style="font-size: 12px; font-weight: 600; color: #495057; display: block; margin-bottom: 4px;">Annual Taxes ($)</label>
-          <input id="customTaxesInput" type="number" step="100" value="3200" class="input-field" oninput="updateCustomNumbers()" />
-        </div>
-      </div>
-    </div>
-
-    <!-- Financing Calculator Card -->
-    <div class="calc-card">
-      <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid #EEE; padding-bottom: 16px;">
-        <div>
-          <span style="font-size: 12px; text-transform: uppercase; color: var(--text-muted); font-weight: 600; letter-spacing: 0.5px;">Estimated Monthly Cost</span>
-          <div style="font-size: 34px; font-weight: 800; color: var(--perch-dark-green); margin-top: 2px;">
-            $<span id="totalMonthlyDisplay">1,834</span><span style="font-size: 14px; font-weight: 500; color: var(--text-muted);">/mo</span>
-          </div>
-        </div>
-        <div style="text-align: right;">
-          <div class="rate-badge">3.65% Variable</div>
-          <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">30-Yr AM · Lowest Insured*</div>
-        </div>
-      </div>
-
-      <div style="margin-top: 16px; display: flex; justify-content: space-between; font-size: 14px; color: #495057;">
-        <span>Principal & Interest (30-yr Amortization):</span>
-        <strong style="color: var(--text-dark);">$<span id="piPaymentDisplay">1,620</span>/mo</strong>
-      </div>
-      <div style="margin-top: 8px; display: flex; justify-content: space-between; font-size: 14px; color: #495057;">
-        <span>Estimated Property Taxes:</span>
-        <strong style="color: var(--text-dark);">$<span id="taxDisplay">214</span>/mo</strong>
-      </div>
-      <div style="margin-top: 8px; display: flex; justify-content: space-between; font-size: 14px; color: #495057;">
-        <span>Down Payment Selected (<span id="dpPercentLabel">5</span>%):</span>
-        <strong style="color: var(--perch-dark-green);">$<span id="dpDollarsDisplay">17,950</span></strong>
-      </div>
-      <div style="margin-top: 8px; display: flex; justify-content: space-between; font-size: 13px; color: #6C757D;">
-        <span>Includes Mortgage Insurance (CMHC/Sagen):</span>
-        <span style="color: #495057;" id="insuranceDisplay">+$14,324 rolled in</span>
-      </div>
-
-      <!-- Down Payment Slider -->
-      <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #EEE;">
-        <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 700;">
-          <span>Adjust Down Payment:</span>
-          <span style="color: var(--perch-orange);" id="sliderValueText">5% ($17,950)</span>
-        </div>
-        <input id="dpSlider" type="range" min="5" max="25" step="5" value="5" style="width: 100%; margin-top: 8px; accent-color: var(--perch-orange); cursor: pointer;" oninput="recalculate()" />
-        <div style="display: flex; justify-content: space-between; font-size: 11px; color: #868E96; margin-top: 4px;">
-          <span>Min Down (5%)</span>
-          <span>10%</span>
-          <span>15%</span>
-          <span>20% (Uninsured)</span>
-          <span>25%</span>
-        </div>
-      </div>
-
-      <!-- Context-Aware Action Buttons -->
-      <div class="grid-2" style="margin-top: 22px; margin-bottom: 0;">
-        <a id="contextualActionBtn" href="sms:5878880024?body=Hi Darian, I have a question about 252 Templeview Way NE" class="btn-action btn-outline">
-          Ask Darian About Showing
-        </a>
-        <a href="https://app.myperch.io/auth/sign-up?referralCode=1RDE2DDY&advisorProfileId=8mvVdjPF" target="_blank" class="btn-action btn-primary">
-          Get Pre-Approved with Trevor
-        </a>
-      </div>
-    </div>
-
-    <!-- Dedicated Dual Contact Cards for Darian and Trevor -->
-    <div class="contact-grid">
-      <!-- Darian's Card -->
-      <div class="contact-card">
-        <div>
-          <div style="font-size: 13px; font-weight: 700; color: var(--perch-dark-green);">Darian Stadnyk</div>
-          <div style="font-size: 11.5px; color: var(--text-muted); margin-top: 1px;">Premiere Realty Direct · REALTOR®</div>
-          <p style="font-size: 12px; color: #495057; margin-top: 6px; line-height: 1.4;">
-            Local Calgary listing & showing specialist. Contact Darian for private viewings, neighborhood stats, and offer strategy.
-          </p>
-        </div>
-        <div style="margin-top: 12px; display: flex; gap: 8px;">
-          <a href="tel:5878880024" style="flex: 1; text-align: center; font-size: 12px; font-weight: 700; color: var(--perch-dark-green); text-decoration: none; border: 1px solid var(--border-color); padding: 7px; border-radius: 6px; background: #F8F9FA;">
-            587-888-0024
-          </a>
-          <a href="mailto:dariancstadnyk@gmail.com" style="flex: 1; text-align: center; font-size: 12px; font-weight: 700; color: var(--perch-dark-green); text-decoration: none; border: 1px solid var(--border-color); padding: 7px; border-radius: 6px; background: #F8F9FA;">
-            Email
-          </a>
-        </div>
-      </div>
-
-      <!-- Trevor's Card -->
-      <div class="contact-card">
-        <div>
-          <div style="font-size: 13px; font-weight: 700; color: var(--perch-dark-green);">Trevor Berry</div>
-          <div style="font-size: 11.5px; color: var(--text-muted); margin-top: 1px;">Mortgage Associate · Perch Brokerage</div>
-          <p style="font-size: 12px; color: #495057; margin-top: 6px; line-height: 1.4;">
-            Free access to 40+ lenders, at no cost to you — with custom advice built to save you money.
-          </p>
-        </div>
-        <div style="margin-top: 12px; display: flex; gap: 8px;">
-          <a href="tel:4038701537" style="flex: 1; text-align: center; font-size: 12px; font-weight: 700; color: var(--perch-dark-green); text-decoration: none; border: 1px solid var(--border-color); padding: 7px; border-radius: 6px; background: #F8F9FA;">
-            403-870-1537
-          </a>
-          <a href="mailto:tberry@myperch.io" style="flex: 1; text-align: center; font-size: 12px; font-weight: 700; color: var(--perch-dark-green); text-decoration: none; border: 1px solid var(--border-color); padding: 7px; border-radius: 6px; background: #F8F9FA;">
-            Email
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Lead Capture Form with Updated Direct Benefit Headline -->
-    <div class="calc-card" style="margin-bottom: 0;">
-      <div id="formContainer">
-        <h3 style="font-size: 16px; font-weight: 700; color: var(--perch-dark-green); margin-bottom: 4px;">
-          Want to see how much you could save on this property?
-        </h3>
-        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
-          Enter your details below. Trevor and Darian will send you the full breakdown of cash required to close, qualification hurdles, and rate options for this property.
+        <h1>Clear Mortgage Advice for <span class="accent">Everyday Buyers</span> & Complex Scenarios</h1>
+        <p class="lead">
+          I help you find the right lender, compare your real payment options, and set up a mortgage that actually fits your life — whether you're buying your first home, accessing equity to clear debt, or working through a tricky bank decline.
         </p>
 
-        <form id="leadForm" onsubmit="submitLead(event)">
-          <div style="margin-bottom: 10px;">
-            <input id="leadName" required placeholder="Full Name" class="input-field" />
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="openSnapshotModal('Purchase Strategy')">Get Your Mortgage Numbers →</button>
+          <a href="#how-i-help" class="btn btn-secondary">How I Work</a>
+        </div>
+
+        <div class="hero-points">
+          <div class="point-item">
+            <span class="point-val">40+</span>
+            <span class="point-label">Lenders Shopped</span>
           </div>
-          <div class="grid-2" style="margin-bottom: 12px;">
-            <input id="leadPhone" required type="tel" placeholder="Cell Phone" class="input-field" />
-            <input id="leadEmail" required type="email" placeholder="Email Address" class="input-field" />
+          <div class="point-item">
+            <span class="point-val">Unbiased</span>
+            <span class="point-label">Working for You</span>
           </div>
-          <button id="submitBtn" type="submit" class="btn-action" style="width: 100%; background: var(--perch-light-green); color: #FFF; border: none; font-size: 14px;">
-            Send Me the Numbers
-          </button>
-        </form>
+          <div class="point-item">
+            <span class="point-val">$0 Cost</span>
+            <span class="point-label">Standard Advisory</span>
+          </div>
+          <div class="point-item">
+            <span class="point-val">No Surprises</span>
+            <span class="point-label">Clear Closing Numbers</span>
+          </div>
+        </div>
       </div>
 
-      <div id="formSuccess" style="display: none; text-align: center; padding: 20px 10px;">
-        <div style="font-size: 36px; margin-bottom: 8px;">✓</div>
-        <h3 style="font-size: 18px; font-weight: 700; color: var(--perch-dark-green); margin-bottom: 6px;">Your Snapshot Request is In!</h3>
-        <p style="font-size: 13px; color: #495057; margin-bottom: 16px;">Trevor and Darian will follow up with your custom financing breakdown shortly.</p>
-        <a href="https://app.myperch.io/auth/sign-up?referralCode=1RDE2DDY&advisorProfileId=8mvVdjPF" target="_blank" class="btn-action btn-primary" style="display: inline-block; padding: 10px 18px;">
-          Skip the Line: Start Perch Client Portal
-        </a>
+      <!-- Advisor Profile Card (Clean - Photo & Title Only) -->
+      <div class="profile-card">
+        <div class="photo-wrap">
+          <img src="/assets/trevor-portrait-closeup.png" alt="Trevor Berry - Mortgage Associate" onerror="this.onerror=null; this.src='/trevor-headshot.jpg'; if(!this.complete || this.naturalWidth === 0){ this.parentElement.innerHTML='<div class=\'avatar-fallback\'>TB</div>'; }" />
+        </div>
+        <div class="profile-info">
+          <h3>Trevor Berry</h3>
+          <p class="profile-role">Mortgage Associate · Perch Mortgages</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How I Work (Conversational & Plain English) -->
+  <section class="principles-section" id="how-i-help">
+    <div class="section-title-wrap">
+      <span class="section-eyebrow">How I Work With You</span>
+      <h2>A Mortgage Should Fit Your Budget, Not Just a Bank Box</h2>
+      <p>A bank branch only sells their own retail products. I shop across 40+ lenders to build a plan around what you're actually trying to achieve.</p>
+    </div>
+
+    <div class="principles-grid">
+      <div class="principle-card">
+        <div class="principle-icon-wrap">
+          <!-- Clean SVG Analytics Icon -->
+          <svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        </div>
+        <h3>Setting Up Your Payments</h3>
+        <p>We'll look at 25 vs. 30-year amortizations to make sure your monthly cash flow stays comfortable, with prepayment options so you can pay down principal faster when it suits you.</p>
+      </div>
+
+      <div class="principle-card">
+        <div class="principle-icon-wrap">
+          <!-- Clean SVG Shield Icon -->
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Avoiding Costly Bank Penalties</h3>
+        <p>If life changes and you need to break your mortgage early, big bank penalty calculations can cost tens of thousands. I help place you with lenders that use fairer formulas.</p>
+      </div>
+
+      <div class="principle-card">
+        <div class="principle-icon-wrap">
+          <!-- Clean SVG Network Icon -->
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v6m0 6v6M3 12h6m6 0h6"/></svg>
+        </div>
+        <h3>Real Options Across 40+ Lenders</h3>
+        <p>From major banks and credit unions to competitive monolines and private equity, I find the lender that actually makes sense for your income, credit, and goals.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The 3 Lanes -->
+  <section class="lanes-section">
+    <div class="section-title-wrap">
+      <span class="section-eyebrow">How I Can Help</span>
+      <h2>Choose What You're Looking to Solve</h2>
+      <p>Select the path that matches what you're currently working on.</p>
+    </div>
+
+    <div class="lanes-grid">
+      <!-- Lane 1: Buying -->
+      <div class="lane-card">
+        <div class="lane-photo-header">
+          <img src="/assets/buying-exterior.jpg" alt="Purchasing a home" onerror="this.onerror=null; this.src='assets/buying-exterior.jpg'; if(!this.complete || this.naturalWidth === 0){ this.style.display='none'; }" />
+          <span class="lane-badge">Buying a Home</span>
+        </div>
+        <div class="lane-content">
+          <h3>Purchasing & Pre-Approvals</h3>
+          <p>I shop rates across 40+ lenders, secure 120-day rate holds, compare 25 vs. 30-year amortizations, and explore potential down payment programs to make purchasing realistic with zero surprises.</p>
+          <ul class="lane-bullets">
+            <li>Access to Canada's most competitive rates</li>
+            <li>120-day rate hold to protect against increases</li>
+            <li>Full cash-to-close, legal fees & closing cost clarity</li>
+          </ul>
+          <button class="btn btn-secondary" onclick="openSnapshotModal('Buying a Home')">Get Purchase Numbers →</button>
+        </div>
+      </div>
+
+      <!-- Lane 2: Homeowners & Equity -->
+      <div class="lane-card">
+        <div class="lane-photo-header">
+          <img src="/assets/interior-kitchen.jpg" alt="Renovations and home equity" onerror="this.onerror=null; this.src='assets/interior-kitchen.jpg'; if(!this.complete || this.naturalWidth === 0){ this.style.display='none'; }" />
+          <span class="lane-badge">Homeowners</span>
+        </div>
+        <div class="lane-content">
+          <h3>Equity & Debt Relief</h3>
+          <p>Wiping out 12–20% credit cards and car loans into one lower monthly payment, or funding renovations and legal suites without breaking a low-rate first mortgage.</p>
+          <ul class="lane-bullets">
+            <li>Consolidate high-interest debt & car loans into one payment</li>
+            <li>Access equity for legal basement suites or renos</li>
+            <li>Protect existing low-rate mortgages via 2nd mortgages / HELOCs</li>
+          </ul>
+          <button class="btn btn-secondary" onclick="openSnapshotModal('Homeowner Equity')">Get Equity Options →</button>
+        </div>
+      </div>
+
+      <!-- Lane 3: Alternative & Private -->
+      <div class="lane-card">
+        <div class="lane-photo-header">
+          <img src="/assets/condo-architecture.jpg" alt="Alternative mortgage lending" onerror="this.onerror=null; this.src='assets/condo-architecture.jpg'; if(!this.complete || this.naturalWidth === 0){ this.style.display='none'; }" />
+          <span class="lane-badge">Second Opinions</span>
+        </div>
+        <div class="lane-content">
+          <h3>When the Bank Says "No"</h3>
+          <p>A bank decline usually just means your file didn't fit their standard computer box. I work with common-sense lenders to get you financed and set up a plan back to prime rates.</p>
+          <ul class="lane-bullets">
+            <li>Stated income for self-employed write-offs</li>
+            <li>Bruised credit & past bankruptcy turnarounds</li>
+            <li>Short-term bridge loans with clear exit plans</li>
+          </ul>
+          <button class="btn btn-secondary" onclick="openSnapshotModal('Bank Decline')">Request Second Opinion →</button>
+        </div>
       </div>
     </div>
 
-    <footer style="margin-top: 28px; text-align: center; font-size: 11px; color: #868E96; line-height: 1.6;">
-      Trevor Berry is a licensed mortgage associate with Perch Mortgage Brokerage (RECA licensed in Alberta).
-      Calculations are estimates for illustration purposes only. O.A.C. Lowest insured rate 3.65% 5-yr variable on 30-year amortization for eligible purchasers. Mortgage default insurance included.
-    </footer>
+    <!-- Partner Banner -->
+    <div class="partner-banner">
+      <div>
+        <span style="color: var(--accent-mustard); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">Professional Collaborations</span>
+        <h3>Partnering with Industry Professionals</h3>
+        <p>I collaborate with real estate agents, accountants, builders, renovation contractors, and financial planners to give clients smooth closings, tax-efficient debt structures, and common-sense financing options that help deals move forward.</p>
+      </div>
+      <div class="partner-cta-box">
+        <button class="btn btn-accent" onclick="openSnapshotModal('Partner Collaboration')">Discuss a Scenario With Trevor →</button>
+        <a href="/partners" style="color: var(--brand-green); font-size: 0.92rem; font-weight: 700; text-decoration: underline;">Learn More About Working Together</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4-Step Intake Modal (With Clean SVG Icons & Exact Mustard) -->
+  <div class="modal-backdrop" id="snapshotModal">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalHeading">
+      <div class="modal-top">
+        <h3 id="modalHeading">Get Your Mortgage Snapshot</h3>
+        <button type="button" class="modal-close-btn" aria-label="Close modal" onclick="closeSnapshotModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="step-track">
+          <div class="step-bar active" id="bar-1"></div>
+          <div class="step-bar" id="bar-2"></div>
+          <div class="step-bar" id="bar-3"></div>
+          <div class="step-bar" id="bar-4"></div>
+        </div>
+
+        <form id="snapshotForm">
+          <!-- Step 1: Goal -->
+          <div class="step-panel active" id="panel-1">
+            <h4 style="font-size: 1.15rem; margin-bottom: 0.3rem;">What are you looking to figure out?</h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">Select what best fits your situation:</p>
+            <div class="pill-grid">
+              <div class="pill-card" onclick="chooseGoal('Buying a Home')">
+                <div class="pill-icon">
+                  <!-- SVG Home Icon -->
+                  <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <div class="pill-title">Buying a Home</div>
+                <div class="pill-sub">First-time, new build, or move-up</div>
+              </div>
+              <div class="pill-card" onclick="chooseGoal('Equity / Debt Relief')">
+                <div class="pill-icon">
+                  <!-- SVG Credit Card Icon -->
+                  <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                </div>
+                <div class="pill-title">Debt & Equity</div>
+                <div class="pill-sub">Credit cards, car loans, or renos</div>
+              </div>
+              <div class="pill-card" onclick="chooseGoal('Bank Declined / Alt')">
+                <div class="pill-icon">
+                  <!-- SVG Second Opinion / Switch Icon -->
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+                </div>
+                <div class="pill-title">Bank Said No</div>
+                <div class="pill-sub">Self-employed, credit, or 2nd opinion</div>
+              </div>
+              <div class="pill-card" onclick="chooseGoal('Pre-Approval / Explore')">
+                <div class="pill-icon">
+                  <!-- SVG Document / Check Icon -->
+                  <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                </div>
+                <div class="pill-title">Pre-Approval</div>
+                <div class="pill-sub">Check numbers & rate holds</div>
+              </div>
+            </div>
+            <input type="hidden" id="goalInput" value="Buying a Home" />
+          </div>
+
+          <!-- Step 2: Target Numbers -->
+          <div class="step-panel" id="panel-2">
+            <h4 style="font-size: 1.15rem; margin-bottom: 0.3rem;">What's the ballpark target?</h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">A rough estimate is completely fine:</p>
+            <div class="input-row">
+              <label id="valueLabel" for="targetVal">Target Purchase Price</label>
+              <input type="text" class="input-field" id="targetVal" placeholder="e.g. $550,000" />
+            </div>
+            <div class="input-row">
+              <label for="targetLoc">Location</label>
+              <input type="text" class="input-field" id="targetLoc" value="Calgary, AB" />
+            </div>
+            <button type="button" class="btn btn-primary" style="width: 100%;" onclick="showStep(3)">Continue →</button>
+          </div>
+
+          <!-- Step 3: Cash & Time -->
+          <div class="step-panel" id="panel-3">
+            <h4 style="font-size: 1.15rem; margin-bottom: 0.3rem;">Down payment & timeline</h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">Helps me narrow down the right lender options:</p>
+            <div class="input-row">
+              <label for="downVal">Available Savings or Down Payment</label>
+              <input type="text" class="input-field" id="downVal" placeholder="e.g. $35,000" />
+            </div>
+            <div class="input-row">
+              <label for="timeframeSelect">When are you looking to move?</label>
+              <select class="input-field" id="timeframeSelect">
+                <option value="0-3 Months (Active)">0–3 Months (Active / Making Offers)</option>
+                <option value="3-6 Months">3–6 Months</option>
+                <option value="6-12 Months">6–12 Months</option>
+                <option value="Just Exploring">Just Exploring Options</option>
+              </select>
+            </div>
+            <button type="button" class="btn btn-primary" style="width: 100%;" onclick="showStep(4)">Almost Done: Contact Info →</button>
+          </div>
+
+          <!-- Step 4: Contact -->
+          <div class="step-panel" id="panel-4">
+            <h4 style="font-size: 1.15rem; margin-bottom: 0.3rem;">Where should I send your snapshot?</h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">No credit check · No obligation · Straightforward advice</p>
+            <div class="input-row">
+              <label for="userName">Your Name</label>
+              <input type="text" class="input-field" id="userName" placeholder="First and last name" required />
+            </div>
+            <div class="input-row">
+              <label for="userPhone">Phone Number (for quick text updates)</label>
+              <input type="tel" class="input-field" id="userPhone" placeholder="403-555-0199" required />
+            </div>
+            <div class="input-row">
+              <label for="userEmail">Email Address</label>
+              <input type="email" class="input-field" id="userEmail" placeholder="you@example.com" required />
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send My Free Mortgage Snapshot →</button>
+          </div>
+
+          <!-- Confirmation -->
+          <div class="step-panel" id="panel-success">
+            <div style="text-align: center; padding: 1.5rem 0;">
+              <div style="font-size: 2.8rem; margin-bottom: 0.8rem;">✅</div>
+              <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Snapshot Request Received!</h3>
+              <p style="color: var(--text-body); font-size: 0.95rem; line-height: 1.6;">
+                Thanks <strong id="greetingName"></strong>. I'm reviewing your details and will follow up with your custom options shortly.
+              </p>
+              <button type="button" class="btn btn-secondary" style="margin-top: 1.5rem;" onclick="closeSnapshotModal()">Close</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 
-  <script>
-    const listings = {
-      temple: { address: "252 Templeview Way NE", price: 359000, taxes: 2571 },
-      kingsland: { address: "809 68 Avenue SW", price: 685000, taxes: 3850 }
-    };
-    let currentMode = 'listings';
-    let activeListingKey = 'temple';
-    let customPrice = 550000;
-    let customTaxes = 3200;
-    const rate = 3.65;
-    const amortizationYears = 30;
+  
+  
+  </main>
 
-    function getMinimumDownPayment(price) {
-      if (price <= 500000) {
-        return Math.round(price * 0.05);
+<footer id="contact">
+    <div class="footer-inner">
+      <div class="footer-main">
+        <h4>TREVOR BERRY</h4>
+        <p>Mortgage Associate with Perch Mortgages. Helping clients structure the right financing across 40+ lenders with clear, straightforward advice.</p>
+        <p style="color: var(--accent-mustard); font-weight: 700; font-size: 0.92rem;">
+          Direct: 403-870-1537 · tberry@myperch.io
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h5>Explore Financing</h5>
+        <ul>
+          <li><a href="/buying">Buying a Home & Pre-Approvals</a></li>
+          <li><a href="/homeowners">Equity & Debt Consolidation</a></li>
+          <li><a href="/alternative">Alternative & Bank Decline</a></li>
+          <li><a href="/partners">Partners & Collaborations</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h5>Credentials & Licensing</h5>
+        <ul>
+          <li>Licensed Mortgage Associate</li>
+          <li>Operating in Alberta & Across Canada</li>
+          <li>40+ Bank, Monoline & Private Lenders</li>
+          <li>Powered by Perch National Platform</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Official Brokerage Regulatory Lockup (Footer Only) -->
+    <div class="brokerage-compliance-box">
+      <div class="brokerage-lockup-row">
+        <a href="https://myperch.io" target="_blank" rel="noopener" class="perch-brand-lockup" title="Perch Mortgage Brokerage" style="display: inline-flex; align-items: center; gap: 0.75rem; text-decoration: none; color: #FFFFFF;">
+          <!-- Official Perch Logo (Bird-Pin + Wordmark) -->
+          <svg viewBox="0 0 152 44" fill="currentColor" style="height: 32px; width: auto; display: block;" aria-label="Perch">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M17 2C9.268 2 3 8.268 3 16C3 25.8 17 42 17 42C17 42 31 25.8 31 16C31 15.65 30.98 15.3 30.95 14.96C32.8 16.5 35.8 17.5 40 17.5V12.5C36.5 12.5 33.5 11 31.8 8.8C28.8 4.6 23.3 2 17 2ZM17 21C14.239 21 12 18.761 12 16C12 13.239 14.239 11 17 11C19.761 11 22 13.239 22 16C22 18.761 19.761 21 17 21Z" fill="currentColor"/>
+            <text x="46" y="30" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="28" font-weight="800" letter-spacing="-0.03em" fill="currentColor">perch</text>
+          </svg>
+        </a>
+        <div class="brokerage-details">
+          <strong>Trevor Berry</strong> is a licensed Mortgage Associate registered with <strong>Perch Mortgage Brokerage</strong>.<br />
+          Operating across Alberta, British Columbia, Ontario, and Canadian provinces through Perch's national brokerage platform.
+        </div>
+      </div>
+      <p class="legal-disclaimer">
+        Information, interest rates, and loan structures are for educational and illustrative purposes only O.A.C. Terms and rates are subject to borrower qualification and lender guidelines.
+      </p>
+    </div>
+  </footer>
+
+<!-- 4-Step Intake Modal (With Clean SVG Icons & Exact Mustard) -->
+  <div class="modal-backdrop" id="snapshotModal">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalHeading">
+      <div class="modal-top">
+        <h3 id="modalHeading">Get Your Mortgage Snapshot</h3>
+        <button type="button" class="modal-close-btn" aria-label="Close modal" onclick="closeSnapshotModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="step-track">
+          <div class="step-bar active" id="bar-1"></div>
+          <div class="step-bar" id="bar-2"></div>
+          <div class="step-bar" id="bar-3"></div>
+          <div class="step-bar" id="bar-4"></div>
+        </div>
+
+        <form id="snapshotForm">
+          <!-- Step 1: Goal -->
+          <div class="step-panel active" id="panel-1">
+            <h4 style="font-size: 1.15rem; margin-bottom: 0.3rem;">What are you looking to figure out?</h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">Select what best fits your situation:</p>
+            <div class="pill-grid">
+              <div class="pill-card" onclick="chooseGoal('Buying a Home')">
+                <div class="pill-icon">
+                  <!-- SVG Home Icon -->
+                  <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <div class="pill-title">Buying a Home</div>
+                <div class="pill-sub">First-time, new build, or move-up</div>
+              </div>
+              <div class="pill-card" onclick="chooseGoal('Equity / Debt Relief')">
+                <div class="pill-icon">
+                  <!-- SVG Credit Card Icon -->
+                  <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                </div>
+                <div class="pill-title">Debt & Equity</div>
+                <div class="pill-sub">Credit cards, car loans, or renos</div>
+              </div>
+              <div class="pill-card" onclick="chooseGoal('Bank Declined / Alt')">
+                <div class="pill-icon">
+                  <!-- SVG Second Opinion / Switch Icon -->
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+                </div>
+                <div class="pill-title">Bank Said No</div>
+                <div class="pill-sub">Self-employed, credit, or 2nd opinion</div>
+              </div>
+              <div class="pill-card" onclick="chooseGoal('Pre-Approval / Explore')">
+                <div class="pill-icon">
+                  <!-- SVG Document / Check Icon -->
+                  <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                </div>
+                <div class="pill-title">Pre-Approval</div>
+                <div class="pill-sub">Check numbers & rate holds</div>
+              </div>
+            </div>
+
+<script>
+    let activeStep = 1;
+
+    // Accessibility: Close modal on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        const modal = document.getElementById('snapshotModal');
+        if (modal && modal.classList.contains('active')) {
+          closeSnapshotModal();
+        }
+      }
+    });
+
+    function openSnapshotModal(goal) {
+      if (goal) document.getElementById('goalInput').value = goal;
+      document.getElementById('snapshotModal').classList.add('active');
+      showStep(1);
+    }
+
+    function closeSnapshotModal() {
+      document.getElementById('snapshotModal').classList.remove('active');
+    }
+
+    function chooseGoal(goal) {
+      document.getElementById('goalInput').value = goal;
+      const valLabel = document.getElementById('valueLabel');
+      if (goal.includes('Equity') || goal.includes('Debt')) {
+        valLabel.innerText = 'Estimated Current Home Value';
       } else {
-        return Math.round((500000 * 0.05) + ((price - 500000) * 0.10));
+        valLabel.innerText = 'Target Purchase Price';
       }
+      showStep(2);
     }
 
-    function switchTab(tab) {
-      currentMode = tab;
-      document.getElementById('tabListingsBtn').classList.toggle('active', tab === 'listings');
-      document.getElementById('tabCheckAnyBtn').classList.toggle('active', tab === 'check_any');
-      document.getElementById('listingsView').style.display = tab === 'listings' ? 'block' : 'none';
-      document.getElementById('checkAnyView').style.display = tab === 'check_any' ? 'block' : 'none';
-      recalculate();
+    function showStep(step) {
+      activeStep = step;
+      document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.step-bar').forEach((b, i) => {
+        if (i < step) b.classList.add('active');
+        else b.classList.remove('active');
+      });
+      const target = document.getElementById('panel-' + step);
+      if (target) target.classList.add('active');
     }
 
-    function selectListing(key) {
-      activeListingKey = key;
-      document.getElementById('card-temple').classList.toggle('active', key === 'temple');
-      document.getElementById('card-kingsland').classList.toggle('active', key === 'kingsland');
-      recalculate();
-    }
-
-    function updateCustomNumbers() {
-      customPrice = Math.max(100000, Number(document.getElementById('customPriceInput').value));
-      customTaxes = Math.max(0, Number(document.getElementById('customTaxesInput').value));
-      recalculate();
-    }
-
-    function recalculate() {
-      const price = currentMode === 'listings' ? listings[activeListingKey].price : customPrice;
-      const taxes = currentMode === 'listings' ? listings[activeListingKey].taxes : customTaxes;
-      const address = currentMode === 'listings' ? listings[activeListingKey].address : 'Calgary Property';
-
-      const minDp = getMinimumDownPayment(price);
-      const minDpPercent = Math.round((minDp / price) * 100);
-
-      const slider = document.getElementById('dpSlider');
-      let dpPercent = Number(slider.value);
-
-      let dpDollars = Math.round(price * (dpPercent / 100));
-      let labelText = `${dpPercent}%`;
-
-      if (dpDollars < minDp) {
-        dpDollars = minDp;
-        dpPercent = minDpPercent;
-        labelText = `Min Insured (${dpPercent}%)`;
-      }
-
-      const ltv = ((price - dpDollars) / price) * 100;
-
-      // CMHC/Sagen insurance premium + 0.20% surcharge for 30-year insured amortization
-      let cmhcRate = 0;
-      if (ltv > 90) cmhcRate = 0.042;
-      else if (ltv > 85) cmhcRate = 0.033;
-      else if (ltv > 80) cmhcRate = 0.030;
-      else cmhcRate = 0.00;
-
-      const insuranceAmount = Math.round((price - dpDollars) * cmhcRate);
-      const totalLoan = (price - dpDollars) + insuranceAmount;
-
-      // Canadian semi-annual compounding to monthly
-      const monthlyRate = Math.pow(Math.pow(1 + (rate / 100) / 2, 2), 1 / 12) - 1;
-      const n = amortizationYears * 12;
-      const monthlyPI = Math.round((totalLoan * (monthlyRate * Math.pow(1 + monthlyRate, n))) / (Math.pow(1 + monthlyRate, n) - 1));
-      const monthlyTax = Math.round(taxes / 12);
-      const totalCost = monthlyPI + monthlyTax;
-
-      document.getElementById('totalMonthlyDisplay').innerText = totalCost.toLocaleString();
-      document.getElementById('piPaymentDisplay').innerText = monthlyPI.toLocaleString();
-      document.getElementById('taxDisplay').innerText = monthlyTax.toLocaleString();
-      document.getElementById('dpPercentLabel').innerText = dpPercent;
-      document.getElementById('dpDollarsDisplay').innerText = dpDollars.toLocaleString();
-      document.getElementById('sliderValueText').innerText = `${labelText} ($${dpDollars.toLocaleString()})`;
-
-      if (insuranceAmount > 0) {
-        document.getElementById('insuranceDisplay').innerText = `+$${insuranceAmount.toLocaleString()} rolled in`;
-      } else {
-        document.getElementById('insuranceDisplay').innerText = `$0 (20%+ Conventional)`;
-      }
-
-      // Context-aware button handling based on active tab
-      const contextualBtn = document.getElementById('contextualActionBtn');
-      if (currentMode === 'listings') {
-        contextualBtn.innerText = 'Ask Darian About Showing';
-        contextualBtn.href = `sms:5878880024?body=Hi Darian, I have a question about ${encodeURIComponent(address)}`;
-      } else {
-        contextualBtn.innerText = 'Ask About This Property';
-        contextualBtn.href = `sms:5878880024?body=Hi Darian & Trevor, I am calculating numbers on a home ($${price.toLocaleString()}) and have a question`;
-      }
-    }
-
-    async function submitLead(e) {
+    // Google Sheets CRM Hook
+    document.getElementById('snapshotForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      const btn = document.getElementById('submitBtn');
-      btn.innerText = 'Sending...';
-      btn.disabled = true;
 
-      const price = currentMode === 'listings' ? listings[activeListingKey].price : customPrice;
-      const address = currentMode === 'listings' ? listings[activeListingKey].address : 'Custom Check Any Home';
-
-      const payload = {
-        lead_type: 'realtor_referral',
-        realtor_slug: 'darian',
-        first_name: document.getElementById('leadName').value,
-        phone: document.getElementById('leadPhone').value,
-        email: document.getElementById('leadEmail').value,
-        target_price: price,
-        goal_or_challenge: `Inquiry for ${address} ($${price.toLocaleString()})`,
-        consent_to_contact: true,
-        source_page: '/darian'
+      const lead = {
+        name: document.getElementById('userName').value,
+        phone: document.getElementById('userPhone').value,
+        email: document.getElementById('userEmail').value,
+        goal: document.getElementById('goalInput').value,
+        targetValue: document.getElementById('targetVal').value,
+        location: document.getElementById('targetLoc').value,
+        downPayment: document.getElementById('downVal').value,
+        timeline: document.getElementById('timeframeSelect').value,
+        source: 'Homepage (Sweet Spot v6)',
+        submittedAt: new Date().toISOString()
       };
 
-      try {
-        await fetch('/api/intake', {
+      document.getElementById('greetingName').innerText = lead.name;
+
+      const scriptEndpoint = 'https://script.google.com/macros/s/AKfycbysYey_FmE3UBLGOFHWs3298qZGwfNz-gr7at4oRp3ZIrs8TJ2U-YcSX4ZSD6NrTR5O/exec';
+      if (scriptEndpoint && scriptEndpoint !== 'https://script.google.com/macros/s/AKfycbysYey_FmE3UBLGOFHWs3298qZGwfNz-gr7at4oRp3ZIrs8TJ2U-YcSX4ZSD6NrTR5O/exec') {
+        fetch(scriptEndpoint, {
           method: 'POST',
+          mode: 'no-cors',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-      } catch (err) {
-        console.log('Submission registered');
+          body: JSON.stringify(lead)
+        }).catch(err => console.log('Lead logged:', err));
       }
 
-      document.getElementById('formContainer').style.display = 'none';
-      document.getElementById('formSuccess').style.display = 'block';
+      document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+      document.getElementById('panel-success').classList.add('active');
+    });
+  
+    // Calculator State & Engine for Buying Page
+    var buyAmortYears = 25;
+    var buyDownMode = 'pct';
+
+    function setAmort(yrs) {
+      buyAmortYears = yrs;
+      var b25 = document.getElementById('amort-btn-25');
+      var b30 = document.getElementById('amort-btn-30');
+      if (b25) b25.classList.toggle('active', yrs === 25);
+      if (b30) b30.classList.toggle('active', yrs === 30);
+      runBuyCalc();
     }
 
-    recalculate();
+    function setDownMode(mode) {
+      buyDownMode = mode;
+      var bpct = document.getElementById('down-btn-pct');
+      var bdol = document.getElementById('down-btn-dol');
+      if (bpct) bpct.classList.toggle('active', mode === 'pct');
+      if (bdol) bdol.classList.toggle('active', mode === 'dol');
+      var modeDisp = document.getElementById('buy-down-mode-disp');
+      if (modeDisp) modeDisp.textContent = mode === 'pct' ? 'Percent' : 'Amount';
+      runBuyCalc();
+    }
+
+    function runBuyCalc() {
+      var priceEl = document.getElementById('buy-price-slider');
+      if (!priceEl) return;
+      var price = parseFloat(priceEl.value) || 550000;
+      var pDisp = document.getElementById('buy-price-disp');
+      if (pDisp) pDisp.textContent = '$' + price.toLocaleString();
+
+      var downSlider = parseFloat(document.getElementById('buy-down-slider').value) || 10;
+      var downAmount = 0;
+      var downPct = 0;
+
+      if (buyDownMode === 'pct') {
+        downPct = downSlider;
+        downAmount = price * (downPct / 100);
+        var dDisp = document.getElementById('buy-down-disp');
+        if (dDisp) dDisp.textContent = downPct + '% ($' + Math.round(downAmount).toLocaleString() + ')';
+      } else {
+        downAmount = downSlider * 10000;
+        downPct = (downAmount / price) * 100;
+        var dDisp = document.getElementById('buy-down-disp');
+        if (dDisp) dDisp.textContent = '$' + Math.round(downAmount).toLocaleString() + ' (' + downPct.toFixed(1) + '%)';
+      }
+
+      var rateInput = document.getElementById('buy-rate-input');
+      var annualRate = rateInput ? (parseFloat(rateInput.value) || 3.60) : 3.60;
+      var baseLoan = price - downAmount;
+      var cmhcPct = 0;
+
+      if (downPct < 20) {
+        if (downPct >= 15) cmhcPct = 0.0280;
+        else if (downPct >= 10) cmhcPct = 0.0310;
+        else cmhcPct = 0.0400;
+      }
+      var cmhcPrem = baseLoan * cmhcPct;
+      var totalLoan = baseLoan + cmhcPrem;
+
+      // Canadian Semi-Annual Compounding to Monthly Payment
+      var r = annualRate / 100;
+      var monthlyRate = Math.pow(1 + r / 2, 2 / 12) - 1;
+      var n = buyAmortYears * 12;
+      var monthlyPayment = totalLoan * (monthlyRate * Math.pow(1 + monthlyRate, n)) / (Math.pow(1 + monthlyRate, n) - 1);
+
+      var mOut = document.getElementById('buy-monthly-out');
+      if (mOut) mOut.textContent = '$' + Math.round(monthlyPayment).toLocaleString();
+      var dOut = document.getElementById('buy-down-val-out');
+      if (dOut) dOut.textContent = '$' + Math.round(downAmount).toLocaleString();
+      var cOut = document.getElementById('buy-cmhc-out');
+      if (cOut) cOut.textContent = cmhcPrem > 0 ? '$' + Math.round(cmhcPrem).toLocaleString() : '$0 (Conventional)';
+      var tOut = document.getElementById('buy-total-loan-out');
+      if (tOut) tOut.textContent = '$' + Math.round(totalLoan).toLocaleString();
+    }
+
+    // Home Equity Calculator Engine
+    function runEqCalc() {
+      var valEl = document.getElementById('eq-val-slider');
+      var mortEl = document.getElementById('eq-mort-slider');
+      if (!valEl || !mortEl) return;
+
+      var homeVal = parseFloat(valEl.value) || 650000;
+      var mortBal = parseFloat(mortEl.value) || 350000;
+
+      var vDisp = document.getElementById('eq-val-disp');
+      if (vDisp) vDisp.textContent = '$' + homeVal.toLocaleString();
+      var mDisp = document.getElementById('eq-mort-disp');
+      if (mDisp) mDisp.textContent = '$' + mortBal.toLocaleString();
+
+      var maxLoan = homeVal * 0.80;
+      var netCash = Math.max(0, maxLoan - mortBal);
+      var totalEquity = Math.max(0, homeVal - mortBal);
+
+      var nOut = document.getElementById('eq-net-cash-out');
+      if (nOut) nOut.textContent = '$' + Math.round(netCash).toLocaleString();
+      var eOut = document.getElementById('eq-total-equity-out');
+      if (eOut) eOut.textContent = '$' + Math.round(totalEquity).toLocaleString();
+      var lOut = document.getElementById('eq-max-loan-out');
+      if (lOut) lOut.textContent = '$' + Math.round(maxLoan).toLocaleString();
+      var pOut = document.getElementById('eq-payoff-out');
+      if (pOut) pOut.textContent = '$' + Math.round(mortBal).toLocaleString();
+    }
+
+    // CPA Drop Form Handler
+    function handleCpaSubmit(e) {
+      e.preventDefault();
+      var name = (document.getElementById('cpa_name') && document.getElementById('cpa_name').value) || 'Advisor';
+      var dName = document.getElementById('cpaDisplay');
+      if (dName) dName.innerText = name;
+      var f = document.getElementById('cpaDropForm');
+      if (f) f.style.display = 'none';
+      var n = document.getElementById('cpaSuccessNotice');
+      if (n) n.style.display = 'block';
+    }
+
+    function resetCpaForm() {
+      var f = document.getElementById('cpaDropForm');
+      if (f) {
+        f.reset();
+        f.style.display = 'block';
+      }
+      var n = document.getElementById('cpaSuccessNotice');
+      if (n) n.style.display = 'none';
+    }
+
+    // Auto-run calculators on DOM ready
+    window.addEventListener('DOMContentLoaded', function() {
+      runBuyCalc();
+      runEqCalc();
+    });
+
   </script>
+
 </body>
 </html>

@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CPA &amp; Accounting Partnerships | Trevor Berry</title>
+  <meta name="description" content="CRA tax arrears resolution, private bridge capital, and secure client scenario drop portal for CPAs." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-canvas: #FFFFFF;
+      --bg-subtle: #F8FAF9;
+      --bg-alt: #EFF4F1;
+      --border-subtle: #E2EAE5;
+      --border-focus: #12453B;
+      
+      --text-main: #131E1A;
+      --text-body: #394A43;
+      --text-muted: #647870;
+      
+      /* Official Perch Brand Colors */
+      --brand-green: #12453B;
+      --brand-green-hover: #0E362E;
+      --brand-green-light: #E7EFEA;
+      --brand-secondary-green: #327766;
+      --accent-mustard: #EDAB2B;
+      --accent-mustard-hover: #D99518;
+      --accent-teal: #26A699;
+      --accent-orange: #F7704F;
+      
+      --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --radius-sm: 6px;
+      --radius: 10px;
+      --radius-lg: 14px;
+      --shadow-sm: 0 1px 3px rgba(18, 69, 59, 0.05);
+      --shadow-card: 0 4px 20px rgba(18, 69, 59, 0.06);
+      --shadow-lg: 0 16px 40px rgba(18, 69, 59, 0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-main);
+      font-family: var(--font-family);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Strip */
+    .top-strip {
+      background-color: var(--bg-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.84rem;
+      padding: 0.55rem 0;
+      color: var(--text-muted);
+    }
+    .top-strip-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .top-strip a {
+      color: var(--brand-green);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .top-strip a:hover { text-decoration: underline; }
+
+    /* Header Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 1.1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-link {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      gap: 2px;
+    }
+    .brand-name {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: var(--brand-green);
+      line-height: 1.1;
+    }
+    .brand-meta {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent-mustard);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    nav.nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+    }
+    nav.nav-links a {
+      color: var(--text-body);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+    nav.nav-links a:hover, nav.nav-links a.active {
+      color: var(--brand-green);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.4rem;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1.5px solid transparent;
+      gap: 0.4rem;
+      font-family: inherit;
+    }
+    .btn-primary {
+      background-color: var(--brand-green);
+      color: #FFFFFF;
+    }
+    .btn-primary:hover {
+      background-color: var(--brand-green-hover);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: transparent;
+      border-color: var(--border-subtle);
+      color: var(--text-main);
+    }
+    .btn-secondary:hover {
+      border-color: var(--brand-green);
+      background: var(--bg-subtle);
+    }
+    .btn-accent {
+      background-color: var(--accent-mustard);
+      color: #121E1A;
+      font-weight: 800;
+    }
+    .btn-accent:hover {
+      background-color: var(--accent-mustard-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Subpage Hero */
+    .subpage-hero {
+      padding: 4.5rem 0 3.8rem;
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--bg-subtle) 100%);
+      border-bottom: 1px solid var(--border-subtle);
+      text-align: center;
+    }
+    .subpage-hero-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .eyebrow-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--brand-green-light);
+      color: var(--brand-green);
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 0.35rem 0.9rem;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1.2rem;
+    }
+    .subpage-hero h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: var(--text-main);
+      margin-bottom: 1.2rem;
+      line-height: 1.2;
+    }
+    .subpage-hero h1 span.accent {
+      color: var(--brand-green);
+    }
+    .subpage-hero p.lead {
+      font-size: 1.12rem;
+      line-height: 1.65;
+      color: var(--text-body);
+      max-width: 780px;
+      margin: 0 auto 2.2rem;
+    }
+
+    /* Content Layout Containers */
+    .content-section {
+      padding: 4.5rem 0;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 4.5rem 1.5rem;
+    }
+    .section-title-wrap {
+      max-width: 780px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+    .section-eyebrow {
+      color: var(--accent-mustard);
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .section-title-wrap h2 {
+      font-size: 2.1rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      margin-bottom: 0.8rem;
+      line-height: 1.25;
+    }
+    .section-title-wrap p {
+      font-size: 1.05rem;
+      color: var(--text-body);
+    }
+
+    /* Feature Grids */
+    .feature-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    .feature-box {
+      background: var(--bg-subtle);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+    }
+    .feature-box h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+      color: var(--text-main);
+    }
+    .feature-box p {
+      font-size: 0.95rem;
+      color: var(--text-body);
+      line-height: 1.65;
+      margin-bottom: 1.2rem;
+    }
+    .lane-bullets {
+      list-style: none;
+    }
+    .lane-bullets li {
+      font-size: 0.88rem;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .lane-bullets li::before {
+      content: "•";
+      color: var(--brand-green);
+      font-size: 1.2rem;
+      font-weight: bold;
+      line-height: 1;
+    }
+
+    /* CTA Banner Box */
+    .cta-banner-box {
+      background: var(--brand-green);
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 3.5rem 2.5rem;
+      text-align: center;
+      margin: 3.5rem auto 0;
+      max-width: 980px;
+    }
+    .cta-banner-box h3 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+      letter-spacing: -0.02em;
+    }
+    .cta-banner-box p {
+      color: #C2D1CB;
+      font-size: 1.05rem;
+      max-width: 680px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+
+    /* Footer & Compliance */
+    footer {
+      background: #0E1814;
+      color: #FFFFFF;
+      padding: 4.5rem 0 2.5rem;
+      border-top: 1px solid #1C2B25;
+      margin-top: 5rem;
+    }
+    .footer-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+    }
+    .footer-main h4 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+    }
+    .footer-main p {
+      color: #9BB0A7;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+    .footer-links h5 {
+      color: var(--accent-mustard);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+    }
+    .footer-links ul { list-style: none; }
+    .footer-links li {
+      margin-bottom: 0.55rem;
+      font-size: 0.9rem;
+    }
+    .footer-links a {
+      color: #C0D2CA;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: #FFFFFF; }
+
+    .brokerage-compliance-box {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 0;
+      border-top: 1px solid #1C2B25;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .brokerage-lockup-row {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .brokerage-details {
+      font-size: 0.84rem;
+      color: #8CA399;
+      line-height: 1.6;
+    }
+    .legal-disclaimer {
+      font-size: 0.75rem;
+      color: #6C8278;
+      line-height: 1.6;
+    }
+
+    /* Modal Backdrop & Dialog */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(19, 30, 26, 0.72);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.2rem;
+    }
+    .modal-backdrop.active { display: flex; }
+    .modal-dialog {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 580px;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+    }
+    .modal-top {
+      padding: 1.3rem 1.8rem;
+      background: var(--brand-green);
+      color: #FFFFFF;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-top h3 { font-size: 1.25rem; font-weight: 800; }
+    .modal-close-btn {
+      background: transparent;
+      border: none;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+    .modal-close-btn:hover { color: #FFFFFF; }
+    .modal-body { padding: 2rem; }
+
+    @media (max-width: 900px) {
+      .feature-grid-2 { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .subpage-hero h1 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Strip -->
+  <div class="top-strip">
+    <div class="top-strip-inner">
+      <span>Feel free to text or call: <a href="tel:4038701537">403-870-1537</a></span>
+      <span>CPA Advisory Portal · Secure Scenario Drop · No Credit Pull Reviews</span>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="nav-inner">
+      <a href="/" class="brand-link">
+        <span class="brand-name">TREVOR BERRY</span>
+        <span class="brand-meta">Mortgage Associate</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/buying">Buying</a>
+        <a href="/homeowners">Homeowners</a>
+        <a href="/alternative">Alternative</a>
+        <a href="/partners" class="active">Partners</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div>
+        <button class="btn btn-primary" onclick="openCPAModal('General Header')">Request CPA Portal</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Subpage Hero -->
+    <section class="subpage-hero">
+      <div class="subpage-hero-container">
+        <div class="eyebrow-tag">
+          <span>CPA &amp; Tax Professional Portal</span>
+        </div>
+        <h1>Financing That Protects <span class="accent">Your Client's Corporate Structures</span></h1>
+        <p class="lead">
+          Retail bank branch underwriters reject legitimate write-offs and stall files over CRA liabilities. I collaborate directly with CPAs and tax professionals to resolve CRA arrears cleanly, underwrite net corporate income (T2), and fund complex files without forcing shareholder tax hits.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <button type="button" class="btn btn-primary" onclick="openCPAModal('CPA Hero')">Submit a Scenario for Review →</button>
+          <a href="#safe-drop" class="btn btn-secondary" style="border: 2px solid var(--brand-green); background: #FFFFFF; color: var(--brand-green);">Learn About the CPA Safe Drop ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- The CPA Safe Drop Portal Section -->
+    <section class="content-section" id="safe-drop">
+      <div style="background: #FFFFFF; border: 1.5px solid var(--brand-green); border-radius: var(--radius-lg); padding: 2.5rem 3rem; box-shadow: var(--shadow-card); position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; width: 6px; height: 100%; background: var(--accent-mustard);"></div>
+        <div style="display: flex; gap: 2.5rem; align-items: center; flex-wrap: wrap;">
+          <div style="flex: 1.2; min-width: 300px;">
+            <span style="font-size: 0.8rem; font-weight: 800; color: var(--accent-mustard); text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.4rem;">Secure Integration</span>
+            <h3 style="font-size: 1.6rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.8rem;">The CPA Safe Drop Link</h3>
+            <p style="font-size: 0.98rem; color: var(--text-body); line-height: 1.65; margin-bottom: 1.2rem;">
+              Outstanding CRA personal tax arrears, unremitted source deductions, or corporate GST/HST balances will instantly freeze traditional bank approvals. Instead of risking a files decline, use your <strong>Secure Scenario Drop Link</strong>. 
+            </p>
+            <p style="font-size: 0.92rem; color: var(--text-body); line-height: 1.65; margin-bottom: 1rem;">
+              Drop high-level numbers, corporate financials, or notice of assessments securely. Within <strong>24 business hours</strong>, I provide a clear feasibility review outlining:
+            </p>
+            <ul class="lane-bullets">
+              <li><strong>Zero Credit Impact:</strong> We run preliminary reviews without soft or hard credit inquiries.</li>
+              <li><strong>Direct Resolution Path:</strong> Exact capital structures (HELOC or private bridge) to pay the CRA and stop 9%+ daily compounding interest.</li>
+              <li><strong>Corporate-Friendly Lenders:</strong> Access to B-lenders and monoline underwriters who accept net business cash flow.</li>
+            </ul>
+          </div>
+          <div style="flex: 0.8; min-width: 250px; background: var(--bg-subtle); padding: 2rem; border-radius: var(--radius); border: 1px solid var(--border-subtle); text-align: center;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🔒</div>
+            <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--brand-green); margin-bottom: 0.5rem;">Confidential Scenario Drop</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">Submit a client file securely for Trevor's personal B2B review.</p>
+            <button type="button" class="btn btn-primary" style="width: 100%;" onclick="openCPAModal('CPA Safe Drop')">Open Scenario Drop Port →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Collaborative Frameworks -->
+    <section class="content-section" style="padding-top: 1rem;">
+      <div class="section-title-wrap">
+        <span class="section-eyebrow">Strategic Tax Solutions</span>
+        <h2>How We Solve complex Self-Employed &amp; Corporate Scenarios</h2>
+        <p>A true mortgage partner shouldn't disrupt your client's long-term corporate tax planning. We structure borrowing to align with your advice.</p>
+      </div>
+
+      <div class="feature-grid-2">
+        <div class="feature-box">
+          <div style="font-size: 0.8rem; font-weight: 800; color: var(--accent-mustard); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">Tax Debt Mitigation</div>
+          <h3>CRA Arrears &amp; Source Deduction Resolution</h3>
+          <p>
+            Once a CRA balance goes overdue, the government compound-interest engine begins. Big banks immediately freeze all active or pending financing files. We leverage residential equity or rapid private bridge loans to pay off personal tax, GST/HST, or source deduction arrears immediately—cleaning the sheet before liens are registered.
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <div style="font-size: 0.8rem; font-weight: 800; color: #F7704F; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">Underwriting Efficiency</div>
+          <h3>T2 Retained Earnings Underwriting</h3>
+          <p>
+            Traditional banks demand personal T4s or shareholder dividends, forcing clients to take an unnecessary, heavy personal income tax hit just to satisfy mortgage algorithms. I work with alternative underwriters who evaluate retained net earnings inside the operating company (T2), qualifying them while keeping capital in their business.
+          </p>
+        </div>
+
+        <div class="feature-box" style="grid-column: span 2;">
+          <div style="font-size: 0.8rem; font-weight: 800; color: var(--brand-green); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">Multi-Corporate Lending</div>
+          <h3>Holding Companies &amp; Inter-Corporate Structures</h3>
+          <p>
+            For clients expanding real estate portfolios, borrowing across Holdcos, Opcos, or family trusts is standard practice. We structure debt to align with inter-company loan policies, protect interest deductibility, and coordinate seamlessly with your tax planning parameters.
+          </p>
+        </div>
+      </div>
+
+      <!-- Lead Capture CTA -->
+      <div class="cta-banner-box">
+        <h3>Have a Client Stalled by an Outstanding Tax Balance?</h3>
+        <p>Don't wait for a bank decline. Send me a high-level overview of their equity, notice of assessment, or corporate net cash flow. I will review the file confidently within 24 hours.</p>
+        <button type="button" class="btn btn-accent" onclick="openCPAModal('CPA Bottom CTA')">
+          Consult with Trevor Berry on a Scenario →
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer with Official Brokerage Compliance -->
+  <footer id="contact">
+    <div class="footer-inner">
+      <div class="footer-main">
+        <h4>TREVOR BERRY</h4>
+        <p>Mortgage Associate with Perch Mortgages. Helping realtors, buyers, and builders structure smart financing across 40+ Canadian lenders.</p>
+        <p style="color: var(--accent-mustard); font-weight: 700; font-size: 0.92rem;">
+          Direct Line: 403-870-1537 · tberry@myperch.io
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h5>Client Advisory</h5>
+        <ul>
+          <li><a href="/buying">Buying a Home &amp; Pre-Approvals</a></li>
+          <li><a href="/buyer-rebate">New-Build Tax Rebate Guide</a></li>
+          <li><a href="/homeowners">Equity &amp; Debt Relief</a></li>
+          <li><a href="/alternative">Alternative &amp; Bank Declines</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h5>Professional Portals</h5>
+        <ul>
+          <li><a href="/realtors">Realtor Partner Hub</a></li>
+          <li><a href="/rebate-guide">Realtor GST/HST Guide</a></li>
+          <li><a href="/builders">Alberta Builder Hub</a></li>
+          <li><a href="/builders-ontario">Ontario Builder Program</a></li>
+          <li><a href="/renovators">Contractor Financing</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="brokerage-compliance-box">
+      <div class="brokerage-lockup-row">
+        <a href="https://myperch.io" target="_blank" rel="noopener" class="perch-brand-lockup" title="Perch Mortgage Brokerage" style="display: inline-flex; align-items: center; gap: 0.75rem; text-decoration: none; color: #FFFFFF;">
+          <svg viewBox="0 0 152 44" fill="currentColor" style="height: 32px; width: auto; display: block;" aria-label="Perch">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M17 2C9.268 2 3 8.268 3 16C3 25.8 17 42 17 42C17 42 31 25.8 31 16C31 15.65 30.98 15.3 30.95 14.96C32.8 16.5 35.8 17.5 40 17.5V12.5C36.5 12.5 33.5 11 31.8 8.8C28.8 4.6 23.3 2 17 2ZM17 21C14.239 21 12 18.761 12 16C12 13.239 14.239 11 17 11C19.761 11 22 13.239 22 16C22 18.761 19.761 21 17 21Z" fill="currentColor"/>
+            <text x="46" y="30" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="28" font-weight="800" letter-spacing="-0.03em" fill="currentColor">perch</text>
+          </svg>
+        </a>
+        <div class="brokerage-details">
+          <strong>Trevor Berry</strong> is a licensed Mortgage Associate registered with <strong>Perch Mortgage Brokerage</strong>.<br />
+          Operating across Alberta, British Columbia, Ontario, and Canadian provinces through Perch's national brokerage platform.
+        </div>
+      </div>
+      <p class="legal-disclaimer">
+        Information, interest rates, and loan structures are for educational and illustrative purposes only O.A.C. Terms and rates are subject to borrower qualification and lender guidelines.
+      </p>
+    </div>
+  </footer>
+
+  <!-- CPA Modal -->
+  <div class="modal-backdrop" id="cpaModal">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="cpaModalHeading">
+      <div class="modal-top">
+        <div>
+          <span style="font-size: 0.78rem; font-weight: 800; color: #EDAB2B; text-transform: uppercase; letter-spacing: 0.05em;">CPA Scenario Desk</span>
+          <h3 id="cpaModalHeading" style="margin-top: 0.2rem; font-size: 1.3rem;">Secure Client Scenario Drop</h3>
+        </div>
+        <button type="button" class="modal-close-btn" aria-label="Close modal" onclick="closeCPAModal()">&times;</button>
+      </div>
+      <div class="modal-body" style="padding: 1.8rem 2rem 2.2rem;">
+        <form id="cpaForm" onsubmit="handleCPASubmit(event)">
+          <div style="margin-bottom: 1.2rem;">
+            <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">CPA Partner Name &amp; Designation *</label>
+            <input type="text" id="c_name" placeholder="e.g. Sandra Mitchell, CPA, CA" required style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
+          </div>
+
+          <div style="margin-bottom: 1.2rem;">
+            <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Accounting Firm *</label>
+            <input type="text" id="c_company" placeholder="e.g. Mitchell &amp; Partners LLP" required style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.2rem;">
+            <div>
+              <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Direct Line *</label>
+              <input type="tel" id="c_phone" placeholder="403-000-0000" required style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
+            </div>
+            <div>
+              <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Secure Email *</label>
+              <input type="email" id="c_email" placeholder="sandra@mitchellcpa.ca" required style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
+            </div>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Confidential Scenario Notes (No PII Required)</label>
+            <textarea id="c_details" placeholder="e.g. Incorporated business owner seeking $800k purchase. Standard T4/T5 is low but Opco has $180k net retained earnings. No active arrears." style="width: 100%; height: 90px; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem; resize: none;"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.95rem; font-size: 1rem; font-weight: 800; justify-content: center;">
+            Submit Secure Scenario to Trevor →
+          </button>
+          <p style="font-size: 0.74rem; color: var(--text-muted); text-align: center; margin-top: 0.8rem;">
+            Asynchronous SSL encryption · Zero credit pull · Direct routing to Trevor Berry
+          </p>
+        </form>
+
+        <div id="cpaSuccessNotice" style="display: none; background: var(--brand-green-light); border: 2px solid var(--brand-green); border-radius: var(--radius); padding: 2rem 1.5rem; text-align: center;">
+          <div style="width: 48px; height: 48px; background: var(--brand-green); color: #FFFFFF; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem;">✓</div>
+          <h4 style="color: var(--brand-green); font-size: 1.3rem; margin-bottom: 0.5rem;">Thank You, <span id="displayCPAName">Partner</span>!</h4>
+          <p style="color: var(--text-body); font-size: 0.95rem; margin-bottom: 1.2rem;">
+            I have received your scenario submission. I am analyzing the corporate tax and underwriting structures, and will provide my feasibility analysis within 24 business hours.
+          </p>
+          <button type="button" class="btn btn-primary" onclick="closeCPAModal()">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openCPAModal(source) {
+      document.getElementById('cpaModal').classList.add('active');
+    }
+    function closeCPAModal() {
+      document.getElementById('cpaModal').classList.remove('active');
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeCPAModal();
+    });
+
+    function handleCPASubmit(e) {
+      e.preventDefault();
+      var name = document.getElementById('c_name').value || 'Partner';
+      document.getElementById('displayCPAName').innerText = name;
+      
+      var lead = {
+        lead_type: 'cpa_partner',
+        full_name: name,
+        company: document.getElementById('r_company') ? document.getElementById('r_company').value : (document.getElementById('c_company') ? document.getElementById('c_company').value : ''),
+        phone: document.getElementById('c_phone').value,
+        email: document.getElementById('c_email').value,
+        scenario_notes: document.getElementById('c_details').value,
+        source: 'accountants_portal',
+        submitted_at: new Date().toISOString()
+      };
+
+      // Asynchronous POST to CRM/Google Sheet endpoint
+      var scriptEndpoint = 'https://script.google.com/macros/s/AKfycbysYey_FmE3UBLGOFHWs3298qZGwfNz-gr7at4oRp3ZIrs8TJ2U-YcSX4ZSD6NrTR5O/exec';
+      if (scriptEndpoint && scriptEndpoint.indexOf('URL_HERE') === -1) {
+        fetch(scriptEndpoint, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(lead)
+        }).catch(err => console.log('Lead submission logged:', err));
+      }
+
+      document.getElementById('cpaForm').style.display = 'none';
+      document.getElementById('cpaSuccessNotice').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

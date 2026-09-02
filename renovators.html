@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contractor &amp; Renovator Partnerships | Trevor Berry</title>
+  <meta name="description" content="Custom renovation financing sheets co-branded for your contracting team. Fund kitchens, bathrooms, additions, and legal suites." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-canvas: #FFFFFF;
+      --bg-subtle: #F8FAF9;
+      --bg-alt: #EFF4F1;
+      --border-subtle: #E2EAE5;
+      --border-focus: #12453B;
+      
+      --text-main: #131E1A;
+      --text-body: #394A43;
+      --text-muted: #647870;
+      
+      /* Official Perch Brand Colors */
+      --brand-green: #12453B;
+      --brand-green-hover: #0E362E;
+      --brand-green-light: #E7EFEA;
+      --brand-secondary-green: #327766;
+      --accent-mustard: #EDAB2B;
+      --accent-mustard-hover: #D99518;
+      --accent-teal: #26A699;
+      --accent-orange: #F7704F;
+      
+      --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --radius-sm: 6px;
+      --radius: 10px;
+      --radius-lg: 14px;
+      --shadow-sm: 0 1px 3px rgba(18, 69, 59, 0.05);
+      --shadow-card: 0 4px 20px rgba(18, 69, 59, 0.06);
+      --shadow-lg: 0 16px 40px rgba(18, 69, 59, 0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-main);
+      font-family: var(--font-family);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Utility Strip */
+    .top-strip {
+      background-color: var(--bg-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.84rem;
+      padding: 0.55rem 0;
+      color: var(--text-muted);
+    }
+    .top-strip-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .top-strip a {
+      color: var(--brand-green);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .top-strip a:hover { text-decoration: underline; }
+
+    /* Header Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 1.1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-link {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      gap: 2px;
+    }
+    .brand-name {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: var(--brand-green);
+      line-height: 1.1;
+    }
+    .brand-meta {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent-mustard);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    nav.nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+    }
+    nav.nav-links a {
+      color: var(--text-body);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+    nav.nav-links a:hover, nav.nav-links a.active {
+      color: var(--brand-green);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.4rem;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1.5px solid transparent;
+      gap: 0.4rem;
+      font-family: inherit;
+    }
+    .btn-primary {
+      background-color: var(--brand-green);
+      color: #FFFFFF;
+    }
+    .btn-primary:hover {
+      background-color: var(--brand-green-hover);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: transparent;
+      border-color: var(--border-subtle);
+      color: var(--text-main);
+    }
+    .btn-secondary:hover {
+      border-color: var(--brand-green);
+      background: var(--bg-subtle);
+    }
+    .btn-accent {
+      background-color: var(--accent-mustard);
+      color: #121E1A;
+      font-weight: 800;
+    }
+    .btn-accent:hover {
+      background-color: var(--accent-mustard-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Subpage Hero */
+    .subpage-hero {
+      padding: 4.5rem 0 3.8rem;
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--bg-subtle) 100%);
+      border-bottom: 1px solid var(--border-subtle);
+      text-align: center;
+    }
+    .subpage-hero-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .eyebrow-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--brand-green-light);
+      color: var(--brand-green);
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 0.35rem 0.9rem;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1.2rem;
+    }
+    .subpage-hero h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: var(--text-main);
+      margin-bottom: 1.2rem;
+      line-height: 1.2;
+    }
+    .subpage-hero h1 span.accent {
+      color: var(--brand-green);
+    }
+    .subpage-hero p.lead {
+      font-size: 1.12rem;
+      line-height: 1.65;
+      color: var(--text-body);
+      max-width: 780px;
+      margin: 0 auto 2.2rem;
+    }
+
+    /* Content Layout Containers */
+    .content-section {
+      padding: 4.5rem 0;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 4.5rem 1.5rem;
+    }
+    .section-title-wrap {
+      max-width: 780px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+    .section-eyebrow {
+      color: var(--accent-mustard);
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .section-title-wrap h2 {
+      font-size: 2.1rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      margin-bottom: 0.8rem;
+      line-height: 1.25;
+    }
+    .section-title-wrap p {
+      font-size: 1.05rem;
+      color: var(--text-body);
+    }
+
+    /* Feature Grids */
+    .feature-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    .feature-box {
+      background: var(--bg-subtle);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+    }
+    .feature-box h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+      color: var(--text-main);
+    }
+    .feature-box p {
+      font-size: 0.95rem;
+      color: var(--text-body);
+      line-height: 1.65;
+      margin-bottom: 1.2rem;
+    }
+    .lane-bullets {
+      list-style: none;
+    }
+    .lane-bullets li {
+      font-size: 0.88rem;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .lane-bullets li::before {
+      content: "•";
+      color: var(--brand-green);
+      font-size: 1.2rem;
+      font-weight: bold;
+      line-height: 1;
+    }
+
+    /* Comparison Matrix Table */
+    .table-container {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow-x: auto;
+      margin: 3rem 0;
+      box-shadow: var(--shadow-sm);
+    }
+    table.matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+    table.matrix-table th {
+      background: var(--brand-green);
+      color: #FFFFFF;
+      padding: 1rem 1.4rem;
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: -0.01em;
+    }
+    table.matrix-table td {
+      padding: 1.1rem 1.4rem;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-body);
+    }
+    table.matrix-table tr:last-child td {
+      border-bottom: none;
+    }
+    table.matrix-table tr:nth-child(even) {
+      background: var(--bg-subtle);
+    }
+    table.matrix-table td strong {
+      color: var(--text-main);
+    }
+    .badge-check {
+      color: var(--brand-green);
+      font-weight: 800;
+    }
+
+    /* CTA Banner Box */
+    .cta-banner-box {
+      background: var(--brand-green);
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 3.5rem 2.5rem;
+      text-align: center;
+      margin: 3.5rem auto 0;
+      max-width: 980px;
+    }
+    .cta-banner-box h3 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+      letter-spacing: -0.02em;
+    }
+    .cta-banner-box p {
+      color: #C2D1CB;
+      font-size: 1.05rem;
+      max-width: 680px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+
+    /* Footer & Compliance */
+    footer {
+      background: #0E1814;
+      color: #FFFFFF;
+      padding: 4.5rem 0 2.5rem;
+      border-top: 1px solid #1C2B25;
+      margin-top: 5rem;
+    }
+    .footer-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+    }
+    .footer-main h4 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+    }
+    .footer-main p {
+      color: #9BB0A7;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+    .footer-links h5 {
+      color: var(--accent-mustard);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+    }
+    .footer-links ul { list-style: none; }
+    .footer-links li {
+      margin-bottom: 0.55rem;
+      font-size: 0.9rem;
+    }
+    .footer-links a {
+      color: #C0D2CA;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: #FFFFFF; }
+
+    .brokerage-compliance-box {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 0;
+      border-top: 1px solid #1C2B25;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .brokerage-lockup-row {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .brokerage-details {
+      font-size: 0.84rem;
+      color: #8CA399;
+      line-height: 1.6;
+    }
+    .legal-disclaimer {
+      font-size: 0.75rem;
+      color: #6C8278;
+      line-height: 1.6;
+    }
+
+    /* Modal Backdrop & Dialog */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(19, 30, 26, 0.72);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.2rem;
+    }
+    .modal-backdrop.active { display: flex; }
+    .modal-dialog {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 580px;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+    }
+    .modal-top {
+      padding: 1.3rem 1.8rem;
+      background: var(--brand-green);
+      color: #FFFFFF;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-top h3 { font-size: 1.25rem; font-weight: 800; }
+    .modal-close-btn {
+      background: transparent;
+      border: none;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+    .modal-close-btn:hover { color: #FFFFFF; }
+    .modal-body { padding: 2rem; }
+
+    @media (max-width: 900px) {
+      .feature-grid-2 { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .subpage-hero h1 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Strip -->
+  <div class="top-strip">
+    <div class="top-strip-inner">
+      <span>Feel free to text or call: <a href="tel:4038701537">403-870-1537</a></span>
+      <span>Contractor Partnerships · Custom Project Sheets · Low Equity Rates</span>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="nav-inner">
+      <a href="/" class="brand-link">
+        <span class="brand-name">TREVOR BERRY</span>
+        <span class="brand-meta">Mortgage Associate</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/buying">Buying</a>
+        <a href="/homeowners">Homeowners</a>
+        <a href="/alternative">Alternative</a>
+        <a href="/partners" class="active">Partners</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div>
+        <button class="btn btn-primary" onclick="openRenoModal('General Header')">Request Contractor Portal</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Subpage Hero -->
+    <section class="subpage-hero">
+      <div class="subpage-hero-container">
+        <div class="eyebrow-tag">
+          <span>Contractor &amp; Renovator Partnership</span>
+        </div>
+        <h1>Help Your Clients Say <span class="accent">Yes to Your Full Bid</span></h1>
+        <p class="lead">
+          Stop trimming down your scopes of work to fit tight cash reserves. Partner with me to structure low-interest mortgage equity solutions for kitchens, basements, or suites — turning a high out-of-pocket invoice into a comfortable monthly payment.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <button type="button" class="btn btn-primary" onclick="openRenoModal('Contractor Page Hero')">Co-Brand Your Estimating Sheets →</button>
+          <a href="#comparison" class="btn btn-secondary" style="border: 2px solid var(--brand-green); background: #FFFFFF; color: var(--brand-green);">Compare Project Financing ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Renovation Financing Comparison Section -->
+    <section class="content-section" id="comparison">
+      <div class="section-title-wrap">
+        <span class="section-eyebrow">The Finance Comparison</span>
+        <h2>Standard Invoicing vs. Home Equity Cash-to-Build</h2>
+        <p>Before asking your clients to deplete their emergency cash or sign for an expensive unsecured credit line, let's look at how home equity structure compares.</p>
+      </div>
+
+      <div class="table-container">
+        <table class="matrix-table">
+          <thead>
+            <tr>
+              <th>Feature / Strategy</th>
+              <th>Out-of-Pocket Cash</th>
+              <th>Unsecured Line of Credit</th>
+              <th>Trevor's Mortgage Equity Structure</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Interest Rate Range</strong></td>
+              <td>0% (Opportunity cost of lost investments)</td>
+              <td>8.0% to 13.5% (High monthly carry)</td>
+              <td><span class="badge-check">Prime mortgage rates (lowest borrowing cost available)</span></td>
+            </tr>
+            <tr>
+              <td><strong>Monthly Carrying Cost</strong></td>
+              <td>N/A, but drains liquid safety nets</td>
+              <td>High (typically requires rapid principal payback)</td>
+              <td><span class="badge-check">Lowest payment footprint (spread over 25-30 year amortization)</span></td>
+            </tr>
+            <tr>
+              <td><strong>Impact on Project Scope</strong></td>
+              <td>High pressure (client forces scope/material cuts)</td>
+              <td>Restricted (caps out at $25k to $50k)</td>
+              <td><span class="badge-check">Unlocks $50k to $150k+ to fund the entire dream design</span></td>
+            </tr>
+            <tr>
+              <td><strong>Builder Draw Schedule</strong></td>
+              <td>Subject to personal buyer liquidity delays</td>
+              <td>Scrambling (subject to card/transfer daily limits)</td>
+              <td><span class="badge-check">Guaranteed milestone advances deposited directly to trust</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Co-Branded Sheets Offer -->
+    <section class="content-section" style="padding-top: 0; padding-bottom: 2rem;">
+      <div style="background: #FFFFFF; border: 1.5px solid var(--brand-green); border-radius: var(--radius-lg); padding: 2.5rem 3rem; box-shadow: var(--shadow-card); position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; width: 6px; height: 100%; background: var(--accent-mustard);"></div>
+        <div style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
+          <div style="flex: 1.3; min-width: 300px;">
+            <span style="font-size: 0.8rem; font-weight: 800; color: var(--accent-mustard); text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.4rem;">Co-Branded Sales Assets</span>
+            <h3 style="font-size: 1.6rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.8rem;">I Will Build Co-Branded Project Financing Sheets for Your Bids</h3>
+            <p style="font-size: 0.98rem; color: var(--text-body); line-height: 1.65; margin-bottom: 1rem;">
+              Send me your estimate (e.g., a $100,000 basement suite or a $60,000 kitchen renovation). I will create a custom, co-branded PDF breakdown showing your client how this major capital improvement translates into a low mortgage-equity payment of under <strong>$350 a month</strong>. Your logo, your quote, and our low-rate math work together to close the sale.
+            </p>
+            <ul class="lane-bullets" style="margin-top: 1rem;">
+              <li>Overcome "sticker shock" immediately at presentation</li>
+              <li>Position financing options right on your estimated bill page</li>
+              <li>Absolutely zero cost or liability to your construction business</li>
+            </ul>
+          </div>
+          <div style="flex: 0.7; min-width: 250px; background: var(--bg-subtle); padding: 2rem; border-radius: var(--radius); border: 1px solid var(--border-subtle); text-align: center;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📄</div>
+            <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--brand-green); margin-bottom: 0.5rem;">Request Custom Sheet</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">Get a co-branded financing sample designed for your company.</p>
+            <button type="button" class="btn btn-primary" style="width: 100%;" onclick="openRenoModal('Co-Brand Request')">Request Co-Branded PDF →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Project Niches -->
+    <section class="content-section" style="padding-top: 1rem;">
+      <div class="section-title-wrap">
+        <span class="section-eyebrow">Project Capabilities</span>
+        <h2>3 Specialized Renovation Refinance Scenarios</h2>
+        <p>How we tailor the borrowing architecture based on the specific scope your client wants to execute.</p>
+      </div>
+
+      <div class="feature-grid-2">
+        <div class="feature-box">
+          <div style="font-size: 0.8rem; font-weight: 800; color: var(--accent-mustard); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">High-Yield Suites</div>
+          <h3>Legal Basement &amp; Detached Suites</h3>
+          <p>
+            Building a legal suite or a garden garage carriage house is incredibly profitable. I structure equity refinancing so that up to 50%–100% of the future projected rental revenue ($1,400 to $2,000+/mo) can be added to their household income to help them qualify for the mortgage.
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <div style="font-size: 0.8rem; font-weight: 800; color: #F7704F; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">Immediate Purchases</div>
+          <h3>Purchase Plus Improvements (PPI)</h3>
+          <p>
+            When a buyer finds a fixer-upper but lacks the cash to renovate, standard lenders decline them. I secure approval to roll up to $40,000 to $100,000+ of your renovation quote directly into their new home purchase mortgage before possession.
+          </p>
+        </div>
+
+        <div class="feature-box" style="grid-column: span 2;">
+          <div style="font-size: 0.8rem; font-weight: 800; color: var(--brand-green); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">Existing Equity</div>
+          <h3>Refinance Plus Improvements (RPI)</h3>
+          <p>
+            For homeowners with established equity, we replace their existing mortgage with an expanded, low-interest facility. This releases construction milestone cash directly to your business draw account based on completed progress inspections—keeping your trades paid and materials ordered on schedule.
+          </p>
+        </div>
+      </div>
+
+      <!-- Lead Capture CTA -->
+      <div class="cta-banner-box">
+        <h3>Have a Client Hesitant on a Large Reno Bid?</h3>
+        <p>Send me the project ballpark price and their current approximate mortgage status. I will analyze their equity limits and draw up a compliant payment option sheet.</p>
+        <button type="button" class="btn btn-accent" onclick="openRenoModal('Contractor Intake CTA')">
+          Collaborate on a Scenario with Trevor →
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer with Official Brokerage Compliance -->
+  <footer id="contact">
+    <div class="footer-inner">
+      <div class="footer-main">
+        <h4>TREVOR BERRY</h4>
+        <p>Mortgage Associate with Perch Mortgages. Helping realtors, buyers, and builders structure smart financing across 40+ Canadian lenders.</p>
+        <p style="color: var(--accent-mustard); font-weight: 700; font-size: 0.92rem;">
+          Direct Line: 403-870-1537 · tberry@myperch.io
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h5>Client Advisory</h5>
+        <ul>
+          <li><a href="/buying">Buying a Home &amp; Pre-Approvals</a></li>
+          <li><a href="/buyer-rebate">New-Build Tax Rebate Guide</a></li>
+          <li><a href="/homeowners">Equity &amp; Debt Relief</a></li>
+          <li><a href="/alternative">Alternative &amp; Bank Declines</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h5>Professional Portals</h5>
+        <ul>
+          <li><a href="/realtors">Realtor Partner Hub</a></li>
+          <li><a href="/rebate-guide">Realtor GST/HST Guide</a></li>
+          <li><a href="/builders">Alberta Builder Hub</a></li>
+          <li><a href="/builders-ontario">Ontario Builder Program</a></li>
+          <li><a href="/renovators">Contractor Financing</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="brokerage-compliance-box">
+      <div class="brokerage-lockup-row">
+        <a href="https://myperch.io" target="_blank" rel="noopener" class="perch-brand-lockup" title="Perch Mortgage Brokerage" style="display: inline-flex; align-items: center; gap: 0.75rem; text-decoration: none; color: #FFFFFF;">
+          <svg viewBox="0 0 152 44" fill="currentColor" style="height: 32px; width: auto; display: block;" aria-label="Perch">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M17 2C9.268 2 3 8.268 3 16C3 25.8 17 42 17 42C17 42 31 25.8 31 16C31 15.65 30.98 15.3 30.95 14.96C32.8 16.5 35.8 17.5 40 17.5V12.5C36.5 12.5 33.5 11 31.8 8.8C28.8 4.6 23.3 2 17 2ZM17 21C14.239 21 12 18.761 12 16C12 13.239 14.239 11 17 11C19.761 11 22 13.239 22 16C22 18.761 19.761 21 17 21Z" fill="currentColor"/>
+            <text x="46" y="30" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="28" font-weight="800" letter-spacing="-0.03em" fill="currentColor">perch</text>
+          </svg>
+        </a>
+        <div class="brokerage-details">
+          <strong>Trevor Berry</strong> is a licensed Mortgage Associate registered with <strong>Perch Mortgage Brokerage</strong>.<br />
+          Operating across Alberta, British Columbia, Ontario, and Canadian provinces through Perch's national brokerage platform.
+        </div>
+      </div>
+      <p class="legal-disclaimer">
+        Information, interest rates, and loan structures are for educational and illustrative purposes only O.A.C. Terms and rates are subject to borrower qualification and lender guidelines.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Contractor Modal -->
+  <div class="modal-backdrop" id="renoModal">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="renoModalHeading">
+      <div class="modal-top">
+        <div>
+          <span style="font-size: 0.78rem; font-weight: 800; color: #EDAB2B; text-transform: uppercase; letter-spacing: 0.05em;">Contractor Financing Hub</span>
+          <h3 id="renoModalHeading" style="margin-top: 0.2rem; font-size: 1.3rem;">Request Partner Boarding &amp; Quote Calculator</h3>
+        </div>
+        <button type="button" class="modal-close-btn" aria-label="Close modal" onclick="closeRenoModal()">&times;</button>
+      </div>
+      <div class="modal-body" style="padding: 1.8rem 2rem 2.2rem;">
+        <form id="renoForm" onsubmit="handleRenoSubmit(event)">
+          <div style="margin-bottom: 1.2rem;">
+            <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Your Name &amp; Title *</label>
+            <input type="text" id="r_name" placeholder="e.g. Robert Vance, Principal Estimator" required style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
+          </div>
+
+          <div style="margin-bottom: 1.2rem;">
+            <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Company Name *</label>
+            <input type="text" id="r_company" placeholder="e.g. Vance Construction, Calgary" required style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.2rem;">
+            <div>
+              <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Direct Cell *</label>
+              <input type="tel" id="r_phone" placeholder="403-000-0000" required style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
+            </div>
+            <div>
+              <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Work Email *</label>
+              <input type="email" id="r_email" placeholder="robert@vance.ca" required style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
+            </div>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">What projects do you primarily focus on?</label>
+            <input type="text" id="r_details" placeholder="e.g. Kitchens, Basements, Detached Suites" style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.95rem; font-size: 1rem; font-weight: 800; justify-content: center;">
+            Set Up Partner Account &amp; Quote Sheet →
+          </button>
+          <p style="font-size: 0.74rem; color: var(--text-muted); text-align: center; margin-top: 0.8rem;">
+            Direct onboarding · Zero cost to your company · CRM &amp; sheets integrated
+          </p>
+        </form>
+
+        <div id="renoSuccessNotice" style="display: none; background: var(--brand-green-light); border: 2px solid var(--brand-green); border-radius: var(--radius); padding: 2rem 1.5rem; text-align: center;">
+          <div style="width: 48px; height: 48px; background: var(--brand-green); color: #FFFFFF; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem;">✓</div>
+          <h4 style="color: var(--brand-green); font-size: 1.3rem; margin-bottom: 0.5rem;">Thank You, <span id="displayRenoName">Partner</span>!</h4>
+          <p style="color: var(--text-body); font-size: 0.95rem; margin-bottom: 1.2rem;">
+            I have received your registration. I am setting up your custom co-branded Estimating Template and will follow up shortly to coordinate!
+          </p>
+          <button type="button" class="btn btn-primary" onclick="closeRenoModal()">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openRenoModal(source) {
+      document.getElementById('renoModal').classList.add('active');
+    }
+    function closeRenoModal() {
+      document.getElementById('renoModal').classList.remove('active');
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeRenoModal();
+    });
+
+    function handleRenoSubmit(e) {
+      e.preventDefault();
+      var name = document.getElementById('r_name').value || 'Partner';
+      document.getElementById('displayRenoName').innerText = name;
+      
+      var lead = {
+        lead_type: 'contractor_partner',
+        full_name: name,
+        company: document.getElementById('r_company').value,
+        phone: document.getElementById('r_phone').value,
+        email: document.getElementById('r_email').value,
+        project_types: document.getElementById('r_details').value,
+        source: 'renovators_portal',
+        submitted_at: new Date().toISOString()
+      };
+
+      // Asynchronous POST to CRM/Google Sheet endpoint
+      var scriptEndpoint = 'https://script.google.com/macros/s/AKfycbysYey_FmE3UBLGOFHWs3298qZGwfNz-gr7at4oRp3ZIrs8TJ2U-YcSX4ZSD6NrTR5O/exec';
+      if (scriptEndpoint && scriptEndpoint.indexOf('URL_HERE') === -1) {
+        fetch(scriptEndpoint, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(lead)
+        }).catch(err => console.log('Lead submission logged:', err));
+      }
+
+      document.getElementById('renoForm').style.display = 'none';
+      document.getElementById('renoSuccessNotice').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
