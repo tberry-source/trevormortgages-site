@@ -1757,7 +1757,80 @@
         text-align: left !important;
         font-size: 0.78rem !important;
       }
-    }
+    
+      /* Surgical Mobile Fixes for Advisor Profile Card & Photo Area */
+      .profile-card {
+        max-width: 100% !important;
+        margin: 1.5rem 0 0 0 !important;
+        padding: 1.25rem !important;
+        display: flex !important;
+        flex-direction: row !important; /* Elegant row-based layout instead of giant vertical box */
+        align-items: center !important;
+        gap: 1.25rem !important;
+        text-align: left !important;
+        box-sizing: border-box !important;
+        border-radius: var(--radius) !important;
+        box-shadow: 0 4px 15px rgba(18, 69, 59, 0.05) !important;
+        background: #FFFFFF !important;
+        border: 1px solid var(--border-subtle) !important;
+      }
+      .photo-wrap {
+        width: 76px !important;
+        height: 76px !important;
+        aspect-ratio: 1/1 !important; /* Perfect circular profile picture */
+        border-radius: 50% !important;
+        margin-bottom: 0 !important;
+        margin-right: 0 !important;
+        flex-shrink: 0 !important;
+        overflow: hidden !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: var(--brand-green-light) !important;
+        border: 2px solid var(--border-subtle) !important;
+      }
+      .photo-wrap img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center top !important;
+        border-radius: 50% !important;
+        display: block !important;
+      }
+      .profile-info {
+        text-align: left !important;
+        margin-top: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+      }
+      .profile-info h3 {
+        font-size: 1.15rem !important;
+        font-weight: 800 !important;
+        color: var(--text-main) !important;
+        margin: 0 0 0.2rem 0 !important;
+        line-height: 1.2 !important;
+      }
+      .profile-role {
+        font-size: 0.82rem !important;
+        font-weight: 600 !important;
+        color: var(--brand-green) !important;
+        margin: 0 !important;
+        line-height: 1.3 !important;
+      }
+      .avatar-fallback {
+        width: 76px !important;
+        height: 76px !important;
+        border-radius: 50% !important;
+        font-size: 1.5rem !important;
+        background: var(--brand-green) !important;
+        color: #FFFFFF !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-weight: 800 !important;
+      }
+}
     
   </style>
 </head>
