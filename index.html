@@ -1452,6 +1452,15 @@
        MASTER MOBILE OPTIMIZATIONS (FIXES MARGINS, HEADERS, GRID ALIGNMENT & SCROLL)
        ========================================================================= */
     @media (max-width: 768px) {
+      /* Unified Grid-to-Flex stack for main Hero section on mobile */
+      .hero-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem !important;
+        align-items: stretch !important;
+        text-align: left !important;
+      }
+
       /* Force body to prevent horizontal overflow/scrolling completely */
       body, html {
         overflow-x: hidden !important;
@@ -2701,6 +2710,8 @@
       <button class="btn btn-accent" onclick="openPartnerModal()">Discuss a Scenario With Trevor →</button>
     </div>
     </section>
+    </section>
+    <!-- Close view-partners -->
     <section class="contact-section" id="contact">
     <div class="section-title-wrap">
       <span class="section-eyebrow">Get in Touch</span>
@@ -2916,7 +2927,7 @@
         </form>
       </div>
     </div>
-  </di
+  </div>
 
 
 <script>
