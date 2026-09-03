@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Realtor Partnerships & Open House Counter Package | Trevor Berry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-canvas: #FFFFFF;
+      --bg-subtle: #F8FAF9;
+      --bg-alt: #EFF4F1;
+      --border-subtle: #E2EAE5;
+      --border-focus: #12453B;
+      
+      --text-main: #131E1A;
+      --text-body: #394A43;
+      --text-muted: #647870;
+      
+      /* Official Perch Color Tokens */
+      --brand-green: #12453B;
+      --brand-green-hover: #0E362E;
+      --brand-green-light: #E7EFEA;
+      --accent-mustard: #EDAB2B;
+      --accent-mustard-hover: #D99518;
+      
+      --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --radius-sm: 6px;
+      --radius: 10px;
+      --radius-lg: 14px;
+      --shadow-sm: 0 1px 3px rgba(18, 69, 59, 0.05);
+      --shadow-card: 0 4px 20px rgba(18, 69, 59, 0.06);
+      --shadow-lg: 0 16px 40px rgba(18, 69, 59, 0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-main);
+      font-family: var(--font-family);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Utility Strip */
+    .top-strip {
+      background-color: var(--bg-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.82rem;
+      padding: 0.5rem 0;
+      color: var(--text-muted);
+    }
+    .top-strip-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .top-strip a {
+      color: var(--brand-green);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .top-strip a:hover { text-decoration: underline; }
+
+    /* Clean Navigation - Only Trevor Berry, No Third Party Marks */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 1.5rem;
+    }
+    .brand-link {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      gap: 2px;
+    }
+    .brand-name {
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      color: var(--brand-green);
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+    .brand-meta {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: #F7704F; /* Official Perch Orange */
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    nav.nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+    }
+    nav.nav-links a {
+      color: var(--text-body);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+    nav.nav-links a:hover, nav.nav-links a.active {
+      color: var(--brand-green);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.4rem;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1.5px solid transparent;
+      gap: 0.4rem;
+    }
+    .btn-primary {
+      background-color: var(--brand-green);
+      color: #FFFFFF;
+    }
+    .btn-primary:hover {
+      background-color: var(--brand-green-hover);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: transparent;
+      border-color: var(--border-subtle);
+      color: var(--text-main);
+    }
+    .btn-secondary:hover {
+      border-color: var(--brand-green);
+      background: var(--bg-subtle);
+    }
+    .btn-accent {
+      background-color: var(--accent-mustard);
+      color: #FFFFFF;
+    }
+    .btn-accent:hover {
+      background-color: var(--accent-mustard-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 4.5rem 1.5rem 4rem;
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--bg-subtle) 100%);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .hero-container {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.25fr 0.85fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+    .eyebrow-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--brand-green-light);
+      color: var(--brand-green);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.35rem 0.85rem;
+      border-radius: 30px;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 {
+      font-size: 2.75rem;
+      line-height: 1.18;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 span.accent {
+      color: var(--brand-green);
+    }
+    .hero p.lead {
+      font-size: 1.12rem;
+      line-height: 1.65;
+      color: var(--text-body);
+      margin-bottom: 2rem;
+    }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.2rem;
+      flex-wrap: wrap;
+    }
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .point-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .point-val {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--brand-green);
+      line-height: 1.1;
+    }
+    .point-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Headshot & Profile Card (Clean - No Tag Boxes) */
+    .profile-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-card);
+      position: relative;
+    }
+    .photo-wrap {
+      width: 100%;
+      aspect-ratio: 4/5;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--bg-alt);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .avatar-fallback {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: var(--brand-green);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 800;
+    }
+    .profile-info h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.15rem;
+    }
+    .profile-role {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--brand-green);
+    }
+
+    /* Section Headers */
+    .section-title-wrap {
+      max-width: 720px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+    .section-eyebrow {
+      color: var(--accent-mustard);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .section-title-wrap h2 {
+      font-size: 2.1rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      margin-bottom: 0.8rem;
+      line-height: 1.25;
+    }
+    .section-title-wrap p {
+      font-size: 1.05rem;
+      color: var(--text-body);
+    }
+
+    /* How I Work */
+    .principles-section {
+      padding: 4.5rem 1.5rem;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .principles-grid {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .principle-card {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 2rem;
+      transition: transform 0.2s ease;
+    }
+    .principle-card:hover {
+      transform: translateY(-2px);
+    }
+    .principle-icon-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      background: var(--brand-green-light);
+      color: var(--brand-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+    }
+    .principle-icon-wrap svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--brand-green);
+      stroke-width: 2;
+      fill: none;
+    }
+    .principle-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.6rem;
+    }
+    .principle-card p {
+      font-size: 0.94rem;
+      color: var(--text-body);
+      line-height: 1.6;
+    }
+
+    /* 3 Client Lanes */
+    .lanes-section {
+      padding: 4.5rem 1.5rem 5rem;
+      background: var(--bg-alt);
+    }
+    .lanes-grid {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+    }
+    .lane-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+    }
+    .lane-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card);
+    }
+    .lane-photo-header {
+      width: 100%;
+      height: 180px;
+      position: relative;
+      background: var(--brand-green-light);
+      overflow: hidden;
+    }
+    .lane-photo-header img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .lane-card:hover .lane-photo-header img {
+      transform: scale(1.03);
+    }
+    .lane-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(18, 69, 59, 0.92);
+      color: #FFFFFF;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.3rem 0.7rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      backdrop-filter: blur(4px);
+    }
+    .lane-content {
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .lane-card h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.8rem;
+    }
+    .lane-card p {
+      font-size: 0.94rem;
+      color: var(--text-body);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+    .lane-bullets {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+    .lane-bullets li {
+      font-size: 0.88rem;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .lane-bullets li::before {
+      content: "•";
+      color: var(--brand-green);
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    /* Partner Banner */
+    .partner-banner {
+      max-width: 1160px;
+      margin: 0 auto;
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 3rem;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .partner-banner h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.6rem;
+    }
+    .partner-banner p {
+      font-size: 0.96rem;
+      color: var(--text-body);
+      line-height: 1.6;
+    }
+    .partner-cta-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      align-items: flex-start;
+    }
+
+    /* 4-Step Intake Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(19, 30, 26, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.2rem;
+    }
+    .modal-backdrop.active { display: flex; }
+    .modal-dialog {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 540px;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+    }
+    .modal-top {
+      padding: 1.2rem 1.6rem;
+      background: var(--brand-green);
+      color: #FFFFFF;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-top h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+    .modal-close-btn {
+      background: transparent;
+      border: none;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1.6rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+    .modal-close-btn:hover { color: #FFFFFF; }
+    .modal-body {
+      padding: 1.8rem;
+    }
+    .step-track {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 1.5rem;
+    }
+    .step-bar {
+      height: 4px;
+      flex-grow: 1;
+      background: var(--border-subtle);
+      border-radius: 2px;
+      transition: background 0.25s ease;
+    }
+    .step-bar.active { background: var(--brand-green); }
+    .step-panel { display: none; }
+    .step-panel.active { display: block; }
+
+    .pill-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+    .pill-card {
+      background: var(--bg-subtle);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 1rem 0.9rem;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .pill-card:hover {
+      border-color: var(--brand-green);
+      background: #FFFFFF;
+      box-shadow: var(--shadow-sm);
+    }
+    .pill-icon {
+      width: 24px;
+      height: 24px;
+      color: var(--brand-green);
+      margin-bottom: 0.2rem;
+    }
+    .pill-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--brand-green);
+      stroke-width: 2;
+      fill: none;
+    }
+    .pill-title {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--text-main);
+    }
+    .pill-sub {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+    .input-row {
+      margin-bottom: 1.1rem;
+    }
+    .input-row label {
+      display: block;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.35rem;
+    }
+    .input-field {
+      width: 100%;
+      padding: 0.75rem 0.9rem;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.95rem;
+      background: #FFFFFF;
+      color: var(--text-main);
+    }
+    .input-field:focus {
+      outline: none;
+      border-color: var(--brand-green);
+      box-shadow: 0 0 0 3px rgba(18, 69, 59, 0.08);
+    }
+
+    /* Footer - Brand Identity Compliant with Official Brokerage License Lockup */
+    footer {
+      background: #0E1814;
+      color: #FFFFFF;
+      padding: 4.5rem 1.5rem 2.5rem;
+      border-top: 1px solid #1C2B25;
+    }
+    .footer-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+    }
+    .footer-main h4 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.01em;
+    }
+    .footer-main p {
+      color: #9BB0A7;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+    .footer-links h5 {
+      color: var(--accent-mustard);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+    }
+    .footer-links ul { list-style: none; }
+    .footer-links li {
+      margin-bottom: 0.55rem;
+      font-size: 0.9rem;
+    }
+    .footer-links a {
+      color: #C0D2CA;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: #FFFFFF; }
+
+    /* Official Brokerage License Strip with Perch Logo */
+    .brokerage-compliance-box {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding-top: 2.5rem;
+      border-top: 1px solid #1C2B25;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .brokerage-lockup-row {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .brokerage-brand-badge {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0.5rem 1rem;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius-sm);
+      line-height: 1.2;
+    }
+    .brokerage-brand-badge .badge-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: 0.04em;
+    }
+    .brokerage-brand-badge .badge-sub {
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--accent-mustard);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .brokerage-details {
+      font-size: 0.82rem;
+      color: #8CA399;
+      line-height: 1.6;
+    }
+    .legal-disclaimer {
+      font-size: 0.74rem;
+      color: #6C8278;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 900px) {
+      .hero-container { grid-template-columns: 1fr; }
+      .principles-grid, .lanes-grid, .footer-inner { grid-template-columns: 1fr; }
+      .partner-banner { grid-template-columns: 1fr; padding: 2rem; }
+      .hero h1 { font-size: 2.25rem; }
+    }
+  
+    /* Vibrant High-Contrast Calculator Design */
+    .calc-box-wrap {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      margin: 3.5rem 0;
+      box-shadow: 0 8px 30px rgba(18, 69, 59, 0.07);
+    }
+    .calc-header {
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .calc-header h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--brand-green);
+    }
+    .calc-header p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+    }
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2.8rem;
+      align-items: stretch;
+    }
+    .calc-inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      justify-content: space-between;
+    }
+    .calc-field label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.6rem;
+    }
+    .calc-field label span.val {
+      color: #F7704F; /* Perch Orange */
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+    .calc-range {
+      width: 100%;
+      accent-color: #F7704F; /* Perch Orange */
+      cursor: pointer;
+      height: 6px;
+    }
+    .calc-toggles {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .calc-toggle-btn {
+      padding: 0.55rem 1.1rem;
+      border: 1.5px solid var(--border-subtle);
+      background: var(--bg-subtle);
+      font-size: 0.85rem;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-family: var(--font-family);
+      color: var(--text-body);
+      transition: all 0.15s ease;
+    }
+    .calc-toggle-btn.active {
+      background: var(--brand-green);
+      color: #FFFFFF;
+      border-color: var(--brand-green);
+    }
+    .rate-input-box {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .rate-input-box input {
+      width: 110px;
+      padding: 0.55rem 0.85rem;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: var(--font-family);
+      color: var(--text-main);
+    }
+    .rate-input-box input:focus {
+      border-color: var(--brand-green);
+      outline: none;
+    }
+
+    /* Vibrant High-Contrast Result Card */
+    .calc-results {
+      background: #12453B; /* Deep Brand Green */
+      border-radius: var(--radius);
+      padding: 2.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: #FFFFFF;
+      box-shadow: 0 8px 24px rgba(18, 69, 59, 0.15);
+    }
+    .calc-metric-main {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 1.3rem;
+      margin-bottom: 1.3rem;
+      text-align: center;
+    }
+    .calc-metric-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #A3CFBB;
+    }
+    .calc-metric-num {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.1;
+      margin: 0.35rem 0;
+    }
+    .calc-metric-sub {
+      font-size: 0.85rem;
+      color: #D1DFD8;
+    }
+    .calc-breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.65rem 0;
+      font-size: 0.9rem;
+      color: #D1DFD8;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .calc-breakdown-row strong {
+      color: #FFFFFF;
+    }
+
+  </style>
+  <style>
+    /* Subpage Styles */
+    .subpage-hero {
+      padding: 4.5rem 1.5rem 3.5rem;
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--bg-subtle) 100%);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .subpage-hero-container {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .subpage-hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--text-main);
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.02em;
+    }
+    .subpage-hero p.lead {
+      font-size: 1.15rem;
+      color: var(--text-body);
+      line-height: 1.65;
+      margin-bottom: 2rem;
+    }
+    .content-section {
+      padding: 4.5rem 1.5rem;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .feature-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    .feature-box {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .feature-box h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.8rem;
+    }
+    .feature-box p {
+      font-size: 0.95rem;
+      color: var(--text-body);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .calc-card {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      margin: 3rem 0;
+    }
+    .calc-card h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+    .cta-banner-box {
+      background: var(--brand-green);
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      text-align: center;
+      margin: 4rem auto 0;
+      max-width: 900px;
+    }
+    .cta-banner-box h3 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+    }
+    .cta-banner-box p {
+      color: #C2D1CB;
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto 1.8rem;
+    }
+    @media (max-width: 800px) {
+      .feature-grid-2 { grid-template-columns: 1fr; }
+      .subpage-hero h1 { font-size: 2.2rem; }
+      .cta-banner-box { padding: 2rem; }
+    }
+
+    /* Interactive View Controller */
+    
+    
+    
+    /* Top Review Controller Bar */
+    
+    
+    
+    .review-tab-btn:hover, .review-tab-btn.active {
+      background: var(--accent-mustard);
+      color: #0E1814;
+      border-color: var(--accent-mustard);
+    }
+  
+    /* Vibrant High-Contrast Calculator Design */
+    .calc-box-wrap {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      margin: 3.5rem 0;
+      box-shadow: 0 8px 30px rgba(18, 69, 59, 0.07);
+    }
+    .calc-header {
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .calc-header h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--brand-green);
+    }
+    .calc-header p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+    }
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2.8rem;
+      align-items: stretch;
+    }
+    .calc-inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      justify-content: space-between;
+    }
+    .calc-field label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.6rem;
+    }
+    .calc-field label span.val {
+      color: #F7704F; /* Perch Orange */
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+    .calc-range {
+      width: 100%;
+      accent-color: #F7704F; /* Perch Orange */
+      cursor: pointer;
+      height: 6px;
+    }
+    .calc-toggles {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .calc-toggle-btn {
+      padding: 0.55rem 1.1rem;
+      border: 1.5px solid var(--border-subtle);
+      background: var(--bg-subtle);
+      font-size: 0.85rem;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-family: var(--font-family);
+      color: var(--text-body);
+      transition: all 0.15s ease;
+    }
+    .calc-toggle-btn.active {
+      background: var(--brand-green);
+      color: #FFFFFF;
+      border-color: var(--brand-green);
+    }
+    .rate-input-box {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .rate-input-box input {
+      width: 110px;
+      padding: 0.55rem 0.85rem;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: var(--font-family);
+      color: var(--text-main);
+    }
+    .rate-input-box input:focus {
+      border-color: var(--brand-green);
+      outline: none;
+    }
+
+    /* Vibrant High-Contrast Result Card */
+    .calc-results {
+      background: #12453B; /* Deep Brand Green */
+      border-radius: var(--radius);
+      padding: 2.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: #FFFFFF;
+      box-shadow: 0 8px 24px rgba(18, 69, 59, 0.15);
+    }
+    .calc-metric-main {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 1.3rem;
+      margin-bottom: 1.3rem;
+      text-align: center;
+    }
+    .calc-metric-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #A3CFBB;
+    }
+    .calc-metric-num {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.1;
+      margin: 0.35rem 0;
+    }
+    .calc-metric-sub {
+      font-size: 0.85rem;
+      color: #D1DFD8;
+    }
+    .calc-breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.65rem 0;
+      font-size: 0.9rem;
+      color: #D1DFD8;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .calc-breakdown-row strong {
+      color: #FFFFFF;
+    }
+
+  </style>
+
+  <style>
+    /* Strict Left-Edge Alignment (Phone, Logo, Headline) */
+    .top-strip {
+      background-color: var(--bg-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.82rem;
+      padding: 0.55rem 0;
+      color: var(--text-muted);
+    }
+    .top-strip-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .top-strip a {
+      color: var(--brand-green);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .top-strip a:hover { text-decoration: underline; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 1.1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-link {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      gap: 2px;
+    }
+    .brand-name {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      color: var(--brand-green);
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+    .brand-meta {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: #F7704F !important; /* Official Perch Orange */
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* Hero alignment matching 1160px grid */
+    .hero {
+      padding: 4.5rem 0 4rem;
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--bg-subtle) 100%);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .hero-container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 1.25fr 0.85fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    /* Button Enhancements */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem 1.5rem;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: var(--font-family);
+    }
+    .btn-primary {
+      background-color: var(--brand-green);
+      color: #FFFFFF;
+      border: 2px solid var(--brand-green);
+    }
+    .btn-primary:hover {
+      background-color: var(--brand-green-hover);
+      border-color: var(--brand-green-hover);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-1px);
+    }
+    
+    /* Defined Secondary Button (How I Work & Lane Cards) */
+    .btn-secondary {
+      background: #FFFFFF;
+      border: 2px solid var(--brand-green);
+      color: var(--brand-green);
+      font-weight: 700;
+      box-shadow: 0 2px 6px rgba(18, 69, 59, 0.06);
+    }
+    .btn-secondary:hover {
+      background: var(--brand-green);
+      color: #FFFFFF;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(18, 69, 59, 0.12);
+    }
+
+    .btn-accent {
+      background-color: var(--accent-mustard);
+      color: #121E1A;
+      border: 2px solid var(--accent-mustard);
+      font-weight: 800;
+    }
+    .btn-accent:hover {
+      background-color: var(--accent-mustard-hover);
+      border-color: var(--accent-mustard-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Full-width card buttons */
+    .lane-content .btn-secondary {
+      width: 100%;
+      margin-top: 1rem;
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- Top Strip -->
+  <div class="top-strip">
+    <div class="top-strip-inner">
+      <span>Feel free to text or call: <a href="tel:4038701537">403-870-1537</a></span>
+      <span>40+ Canadian Lenders · Clear Solutions · Zero Hidden Fees</span>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="nav-inner">
+      <a href="/" class="brand-link">
+        <span class="brand-name">TREVOR BERRY</span>
+        <span class="brand-meta">Mortgage Associate</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/buying">Buying</a>
+        <a href="/homeowners">Homeowners</a>
+        <a href="/alternative">Alternative</a>
+        <a href="/partners" class="active">Partners</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div>
+        <button class="btn btn-primary" onclick="openSnapshotModal('General Inquiry')">Get Mortgage Numbers</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Subpage Hero -->
+    <section class="subpage-hero">
+      <div class="subpage-hero-container">
+        <div class="eyebrow-tag">
+          <span>Calgary Realtor Partner Program</span>
+        </div>
+        <h1>Give Every Listing Its Own <span class="accent">Financing Advantage</span></h1>
+        <p class="lead">
+          Banks close at 5 and hand buyers a generic rate sheet. I give my realtor partners a co-branded listing hub, turn-key open house counter displays, down payment solutions for stuck buyers, and a compliant 5% referral fee — so your listings move faster and your clients stay yours.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <a href="https://darian.trevormortgages.ca" target="_blank" rel="noopener" class="btn btn-primary" style="font-size: 0.95rem;">See a Live Example ↗</a>
+          <a href="#partner-pillars" class="btn btn-secondary" style="border: 2px solid var(--brand-green); background: #FFFFFF; color: var(--brand-green);">Explore Partner Benefits ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="content-section" id="partner-pillars">
+      <div class="section-title-wrap">
+        <span class="section-eyebrow">The Partnership Advantage</span>
+        <h2>How I Help You Win More Listings & Close More Deals</h2>
+        <p>A true mortgage partner shouldn't just be an order-taker. I give you marketing tools that impress sellers and financing strategies that keep buyers moving forward.</p>
+      </div>
+
+      <div class="feature-grid-2">
+        <!-- 1. Co-Branded Hubs -->
+        <div class="feature-box">
+          <div style="font-size: 0.8rem; font-weight: 800; color: #F7704F; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">Digital Listing Portals</div>
+          <h3>Live Co-Branded Listing Hubs</h3>
+          <p>
+            Every partner agent receives a dedicated, mobile-optimized co-branded website (e.g. <code>yourname.trevormortgages.ca</code>) featuring your contact info, active listings, and property-specific payment sliders.
+          </p>
+          <ul class="lane-bullets">
+            <li>Built, customized, and hosted at zero cost to you</li>
+            <li>Features your contact info, active listings, and property payment math</li>
+            <li>Captures motivated pre-approval buyer leads directly into your inbox</li>
+          </ul>
+        </div>
+
+        <!-- 2. Open House Counter Display & Pre-Approval Kit -->
+        <div class="feature-box">
+          <div style="font-size: 0.8rem; font-weight: 800; color: #EDAB2B; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">Open House Setup</div>
+          <h3>Open House Counter Display & Card Stand</h3>
+          <p>
+            No more scrambling before a weekend open house or handing out disposable paper sheets. For your listings, I provide a clear acrylic counter display linking visitors straight to your online feature sheet and payment slider, with a matching stand holding my mortgage cards so buyers can easily get pre-approved. It is totally free to you, and I will mail or personally drop off the display assets directly to you.
+          </p>
+          <ul class="lane-bullets">
+            <li>Clean 8.5×11 acrylic display linking visitors directly to your online feature sheet</li>
+            <li>Matching business card stand with my cards so buyers can easily access pre-approval</li>
+            <li>Totally free to you — I will mail or drop off display assets to your office or listing</li>
+          </ul>
+        </div>
+
+        <!-- 3. Down Payment Assistance & Rebates -->
+        <div class="feature-box" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 0.8rem; font-weight: 800; color: #26A699; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">Buyer Solutions</div>
+            <h3>Down Payment Solutions & GST/HST Rebates</h3>
+            <p>
+              When qualified buyers are short on cash-to-close or deposit funds, deals can easily stall out. I structure down payment assistance and leverage federal GST/HST New Housing Rebates credited right to closing costs so buyers can write with confidence.
+            </p>
+            <ul class="lane-bullets" style="margin-bottom: 1.2rem;">
+              <li>Federal GST/HST New Housing Rebates structured directly into buyer closing statements</li>
+              <li>Down payment assistance options to bridge cash-to-close shortfalls for stuck buyers</li>
+              <li>Protects your transaction and keeps your client moving forward without delays</li>
+            </ul>
+          </div>
+          <div>
+            <a href="/rebate" style="display: inline-flex; align-items: center; gap: 0.4rem; color: var(--brand-green); font-weight: 700; font-size: 0.92rem; text-decoration: underline;">
+              See the GST/HST New Housing Rebate Guide →
+            </a>
+          </div>
+        </div>
+
+        <!-- 4. Referral Compensation & Support -->
+        <div class="feature-box">
+          <div style="font-size: 0.8rem; font-weight: 800; color: #12453B; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">Brokerage Compliance</div>
+          <h3>Transparent 5% Referral Fee</h3>
+          <p>
+            Every referral is backed by a formal brokerage-to-brokerage agreement, with 5% of my commission paid directly to your brokerage upon file funding so it is fully compliant with provincial licensing rules.
+          </p>
+          <ul class="lane-bullets">
+            <li>5% of my commission paid directly to your brokerage so it is fully compliant</li>
+            <li>Formal brokerage-to-brokerage referral agreement structure</li>
+            <li>Dedicated support team working evenings and weekends to keep deals moving</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Live Hub Demo Showcase (Darian Model) -->
+      <div style="background: var(--bg-alt); border: 1.5px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 3rem; margin: 4rem 0 2rem;">
+        <div style="max-width: 820px; margin: 0 auto; text-align: center;">
+          <span style="font-weight: 800; color: #F7704F; text-transform: uppercase; font-size: 0.82rem; letter-spacing: 0.05em;">Live Working Example</span>
+          <h3 style="font-size: 1.8rem; font-weight: 800; color: var(--text-main); margin: 0.5rem 0 1rem;">Experience the Partner Hub Model</h3>
+          <p style="color: var(--text-body); font-size: 1.05rem; line-height: 1.6; margin-bottom: 0.8rem;">See how a live partner hub utilizes custom payment calculations, buyer capture tools, and open house marketing materials to make listings easier to sell.</p>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 2rem;">Live example, built for Darian Stadnyk (Premiere Realty Direct)</p>
+          <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <a href="https://darian.trevormortgages.ca" target="_blank" rel="noopener" class="btn btn-primary" style="font-size: 1rem;">See a Live Example ↗</a>
+            <button type="button" class="btn btn-secondary" style="border: 2px solid var(--brand-green); background: #FFFFFF; color: var(--brand-green); font-size: 1rem;" onclick="openRealtorModal()">Request Your Custom Hub & Display Kit</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to Action Banner -->
+      <div class="cta-banner-box" style="margin-top: 3.5rem;">
+        <h3>Ready to Make Your Next Listing Easier to Sell?</h3>
+        <p>Let's do a 15-minute call — I'll walk you through the referral agreement, set up your co-branded hub, or get your first open house package ready.</p>
+        <button class="btn btn-accent" onclick="openRealtorModal()">Connect With Trevor Berry →</button>
+      </div>
+    </section>
+</main>
+
+<footer id="contact">
+    <div class="footer-inner">
+      <div class="footer-main">
+        <h4>TREVOR BERRY</h4>
+        <p>Mortgage Associate with Perch Mortgages. Helping clients structure the right financing across 40+ lenders with clear, straightforward advice.</p>
+        <p style="color: var(--accent-mustard); font-weight: 700; font-size: 0.92rem;">
+          Direct: 403-870-1537 · tberry@myperch.io
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h5>Explore Financing</h5>
+        <ul>
+          <li><a href="/buying">Buying a Home & Pre-Approvals</a></li>
+          <li><a href="/homeowners">Equity & Debt Consolidation</a></li>
+          <li><a href="/alternative">Alternative & Bank Decline</a></li>
+          <li><a href="/partners">Partners & Collaborations</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h5>Credentials & Licensing</h5>
+        <ul>
+          <li>Licensed Mortgage Associate</li>
+          <li>Operating in Alberta & Across Canada</li>
+          <li>40+ Bank, Monoline & Private Lenders</li>
+          <li>Powered by Perch National Platform</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Official Brokerage Regulatory Lockup (Footer Only) -->
+    <div class="brokerage-compliance-box">
+      <div class="brokerage-lockup-row">
+        <a href="https://myperch.io" target="_blank" rel="noopener" class="perch-brand-lockup" title="Perch Mortgage Brokerage" style="display: inline-flex; align-items: center; gap: 0.75rem; text-decoration: none; color: #FFFFFF;">
+          <!-- Official Perch Logo (Bird-Pin + Wordmark) -->
+          <svg viewBox="0 0 152 44" fill="currentColor" style="height: 32px; width: auto; display: block;" aria-label="Perch">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M17 2C9.268 2 3 8.268 3 16C3 25.8 17 42 17 42C17 42 31 25.8 31 16C31 15.65 30.98 15.3 30.95 14.96C32.8 16.5 35.8 17.5 40 17.5V12.5C36.5 12.5 33.5 11 31.8 8.8C28.8 4.6 23.3 2 17 2ZM17 21C14.239 21 12 18.761 12 16C12 13.239 14.239 11 17 11C19.761 11 22 13.239 22 16C22 18.761 19.761 21 17 21Z" fill="currentColor"/>
+            <text x="46" y="30" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="28" font-weight="800" letter-spacing="-0.03em" fill="currentColor">perch</text>
+          </svg>
+        </a>
+        <div class="brokerage-details">
+          <strong>Trevor Berry</strong> is a licensed Mortgage Associate registered with <strong>Perch Mortgage Brokerage</strong>.<br />
+          Operating across Alberta, British Columbia, Ontario, and Canadian provinces through Perch's national brokerage platform.
+        </div>
+      </div>
+      <p class="legal-disclaimer">
+        Information, interest rates, and loan structures are for educational and illustrative purposes only O.A.C. Terms and rates are subject to borrower qualification and lender guidelines.
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- Dedicated Realtor Partner Modal -->
+  <div class="modal-backdrop" id="realtorModal">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="realtorModalHeading" style="max-width: 580px;">
+      <div class="modal-top">
+        <div>
+          <span style="font-size: 0.78rem; font-weight: 800; color: #F7704F; text-transform: uppercase; letter-spacing: 0.05em;">Realtor Partner Desk</span>
+          <h3 id="realtorModalHeading" style="margin-top: 0.2rem; font-size: 1.35rem;">Request Your Co-Branded Hub & Display Kit</h3>
+        </div>
+        <button type="button" class="modal-close-btn" aria-label="Close modal" onclick="closeRealtorModal()">&times;</button>
+      </div>
+      <div class="modal-body" style="padding: 1.8rem 2rem 2.2rem;">
+        <form id="realtorForm" onsubmit="handleRealtorSubmit(event)">
+          <div style="margin-bottom: 1.2rem;">
+            <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Your Name *</label>
+            <input type="text" id="realtor_name" placeholder="e.g. Sarah Jenkins" required style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
+          </div>
+
+          <div style="margin-bottom: 1.2rem;">
+            <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Real Estate Brokerage *</label>
+            <input type="text" id="realtor_brokerage" placeholder="e.g. RE/MAX, eXp, Royal LePage, Century 21" required style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.2rem;">
+            <div>
+              <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Direct Cell Phone *</label>
+              <input type="tel" id="realtor_phone" placeholder="403-000-0000" required style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
+            </div>
+            <div>
+              <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Email Address *</label>
+              <input type="email" id="realtor_email" placeholder="sarah@brokerage.ca" required style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
+            </div>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Upcoming Listing Address (Optional)</label>
+            <input type="text" id="realtor_listing" placeholder="e.g. 124 Copperpond Landing SE (to build test hub & flyer)" style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
+            <span style="font-size: 0.76rem; color: var(--text-muted); display: block; margin-top: 0.3rem;">If provided, I will set up a preview hub and open house counter display mock-up for your review.</span>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.95rem; font-size: 1rem; font-weight: 800; justify-content: center;">
+            Request My Co-Branded Hub & Display Kit →
+          </button>
+          <p style="font-size: 0.74rem; color: var(--text-muted); text-align: center; margin-top: 0.8rem;">
+            Direct cell response within 2 hours · Brokerage compliant · Zero obligation
+          </p>
+        </form>
+
+        <div id="realtorSuccessNotice" style="display: none; background: var(--brand-green-light); border: 2px solid var(--brand-green); border-radius: var(--radius); padding: 2rem 1.5rem; text-align: center;">
+          <div style="width: 48px; height: 48px; background: var(--brand-green); color: #FFFFFF; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem;">✓</div>
+          <h4 style="color: var(--brand-green); font-size: 1.3rem; margin-bottom: 0.5rem;">Thank You, <span id="realtorDisplay">Partner</span>!</h4>
+          <p style="color: var(--text-body); font-size: 0.95rem; margin-bottom: 1.2rem;">
+            I have received your request. I'll reach out directly to your cell to confirm your hub subdomain and get your open house counter package ready.
+          </p>
+          <button type="button" class="btn btn-primary" onclick="closeRealtorModal()">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openRealtorModal() {
+      document.getElementById('realtorModal').classList.add('active');
+    }
+    function closeRealtorModal() {
+      document.getElementById('realtorModal').classList.remove('active');
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeRealtorModal();
+    });
+
+    function handleRealtorSubmit(e) {
+      e.preventDefault();
+      var name = document.getElementById('realtor_name').value || 'Partner';
+      document.getElementById('realtorDisplay').innerText = name;
+      document.getElementById('realtorForm').style.display = 'none';
+      document.getElementById('realtorSuccessNotice').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

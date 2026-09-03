@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Trevor Mortgages | Clear Solutions & Unbiased Mortgage Advice</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   
   <style>
@@ -1210,11 +1210,48 @@
     }
 
     /* Cards & Informational Grid */
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .phases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .phase-card {
+      background: #FFFFFF;
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-sm);
+    }
+
     .feature-grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
       margin: 3.5rem 0;
+    }
+    .feature-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 3.5rem 0;
+    }
+    .phases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
     }
     .feature-box {
       background: var(--bg-subtle);
@@ -1452,6 +1489,25 @@
        MASTER MOBILE OPTIMIZATIONS (FIXES MARGINS, HEADERS, GRID ALIGNMENT & SCROLL)
        ========================================================================= */
     @media (max-width: 768px) {
+      /* Spacing between cards/bubbles on mobile to prevent touching */
+      .feature-box,
+      .principle-card,
+      .lane-card,
+      .pill-card,
+      .phase-card {
+        margin-bottom: 1.5rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      /* Remove bottom margin on the last item to prevent extra page-bottom gap */
+      .feature-box:last-child,
+      .principle-card:last-child,
+      .lane-card:last-child,
+      .pill-card:last-child,
+      .phase-card:last-child {
+        margin-bottom: 0 !important;
+      }
+
       /* Unified Grid-to-Flex stack for main Hero section on mobile */
       .hero-container {
         display: flex !important;
@@ -1605,6 +1661,8 @@
       .lanes-grid, 
       .feature-grid-2, 
       .feature-grid-3, 
+      .phases-grid,
+      .partners-grid,
       .footer-inner, 
       .pill-grid {
         grid-template-columns: 1fr !important;
@@ -1732,13 +1790,22 @@
       }
 
       /* Modal Optimization on Mobile */
+      .modal-backdrop {
+        overflow-y: auto !important;
+      }
       .modal-dialog {
         max-width: 100% !important;
         margin: 0 !important;
         border-radius: var(--radius) !important;
+        max-height: calc(100vh - 2.4rem) !important;
+        display: flex !important;
+        flex-direction: column !important;
       }
       .modal-body {
         padding: 1.2rem !important;
+        overflow-y: auto !important;
+        flex-grow: 1 !important;
+        -webkit-overflow-scrolling: touch !important;
       }
 
       /* Centering Footer elements properly */
@@ -2049,59 +2116,22 @@
   
   
   
-  <!-- Contact Form Section -->
-  <section class="contact-section" id="contact">
-    <div class="section-title-wrap">
-      <span class="section-eyebrow">Get in Touch</span>
-      <h2>Have a Question or Scenario? Send a Quick Message</h2>
-      <p>Fill out the form below and I will get back to you within 2 hours with clear, direct answers.</p>
-    </div>
-
-    <div class="contact-box-wrap">
-      <form id="contactForm" onsubmit="handleContactSubmit(event)">
-        <div class="contact-form-grid">
-          <div class="input-row">
-            <label for="contactName">Your Name *</label>
-            <input type="text" class="input-field" id="contactName" placeholder="First and last name" required />
-          </div>
-          <div class="input-row">
-            <label for="contactPhone">Phone Number *</label>
-            <input type="tel" class="input-field" id="contactPhone" placeholder="403-555-0199" required />
-          </div>
-          <div class="input-row">
-            <label for="contactEmail">Email Address *</label>
-            <input type="email" class="input-field" id="contactEmail" placeholder="you@example.com" required />
-          </div>
-        </div>
-        <div class="input-row" style="margin-top: 1rem;">
-          <label for="contactMessage">Message / Scenario Details *</label>
-          <textarea class="input-field" id="contactMessage" rows="4" placeholder="Briefly describe what you are looking to solve..." required style="resize: vertical; min-height: 100px; font-family: inherit;"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Send Message →</button>
-      </form>
-      <div id="contact-success" style="display: none; text-align: center; padding: 2rem 0;">
-        <div style="font-size: 3rem; margin-bottom: 1rem;">✉️</div>
-        <h3 style="color: var(--brand-green); font-size: 1.4rem; margin-bottom: 0.5rem; font-weight: 800;">Message Sent Successfully!</h3>
-        <p style="color: var(--text-body); font-size: 1rem;">Thank you! Your message has been routed to Trevor's secure inbox. He will reach out to you shortly.</p>
-      </div>
-    </div>
   </section>
-    </section>
 
-    <!-- VIEW 2: BUYING -->
+        <!-- VIEW 2: BUYING -->
     <section class="page-view" id="view-buying" style="display: none;">
         <section class="subpage-hero">
       <div class="subpage-hero-container">
         <div class="eyebrow-tag">
-          <span>Home Buyer Advisory · New Construction Advantage</span>
+          <span>Pre-Approvals & Rate Holds · Calgary & Area</span>
         </div>
-        <h1>Buy a Newly Built Home with <span class="accent">Less Cash Out of Pocket</span></h1>
+        <h1>Secure Your Financing & <span class="accent">Shop for a Calgary Home with Confidence</span></h1>
         <p class="lead">
-          Why wait months after closing for tax refunds? Discover how newly built home GST and HST rebates can be structured directly into your down payment and closing costs — unlocking up to $50,000+ in immediate closing relief across Alberta and Ontario.
+          Don't let rising rates or complex lender rules stall your home purchase. We secure a 120-day rate hold, map out your down payment, and explore custom options (including our Buy.ca program and cash incentives) to ensure zero closing-day surprises.
         </p>
         <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-          <a href="#calculator" class="btn btn-primary" style="font-size: 0.95rem;">Calculate Your Rebate Advance ↓</a>
-          <button type="button" class="btn btn-secondary" style="border: 2px solid var(--brand-green); background: #FFFFFF; color: var(--brand-green);" onclick="openIntakeModal('Buyer Rebate Consultation')">Get Your Down Payment Snapshot →</button>
+          <button class="btn btn-primary" style="font-size: 0.95rem;" onclick="document.getElementById('buying-calculator').scrollIntoView({ behavior: 'smooth' })">Calculate Your Purchase Numbers ↓</button>
+          <button type="button" class="btn btn-secondary" style="border: 2px solid var(--brand-green); background: #FFFFFF; color: var(--brand-green);" onclick="openIntakeModal('Pre-Approval Consultation')">Get Your Buyer Snapshot →</button>
         </div>
       </div>
     </section>
@@ -2109,105 +2139,117 @@
     <section class="content-section" style="padding-top: 0; padding-bottom: 2rem;">
       <div class="feature-grid-3">
         <div class="feature-box">
-          <span class="tag">Up to $50,000 Relief</span>
-          <h3>100% GST Rebate for First-Time Buyers</h3>
+          <span class="tag">Rate Protection</span>
+          <h3>120-Day Fixed Rate Holds</h3>
           <p>
-            Under official CRA rules, eligible first-time home buyers qualify for a 100% rebate of the 5% federal GST on new builds up to $1,000,000 (phasing out between $1M and $1.5M).
+            Interest rates can fluctuate while you shop. We secure a written 120-day rate lock across major monolines and banks, giving you complete budget protection and peace of mind.
           </p>
           <ul class="lane-bullets">
-            <li>Saves up to $50,000 in federal tax on new construction</li>
-            <li>Available across Alberta, Ontario, and all provinces</li>
-            <li>Must be occupied as your primary place of residence</li>
+            <li>Lock in today's best rates before you start shopping</li>
+            <li>Full rate protection for up to 4 months of house hunting</li>
+            <li>If rates go down, your locked rate matches the lower market rate</li>
           </ul>
         </div>
 
         <div class="feature-box">
-          <span class="tag">Advance at Closing</span>
-          <h3>Bridging Your Down Payment Gap</h3>
+          <span class="tag">Down Payment Solutions</span>
+          <h3>Down Payment Programs & Buy.ca</h3>
           <p>
-            Normally, builder show-home contracts simply reduce the sticker price, leaving you to supply 100% of your down payment from savings. We structure the rebate so funds arrive on possession day.
+            Struggling with cash-to-close? We help you explore specialized programs like the Buy.ca 1.5% down payment cash bonus, gifted down payments, and new-build rebate advances.
           </p>
           <ul class="lane-bullets">
-            <li>Rebates advanced directly onto the Statement of Adjustments</li>
-            <li>Reduces liquid cash required to close the purchase</li>
-            <li>Prevents last-minute scrambling for parental gift funds</li>
+            <li>Structured gift letter support from family members</li>
+            <li>Buy.ca program to advance 1.5% commission toward down payment</li>
+            <li>Structure rebates assignment directly onto Statements of Adjustments</li>
           </ul>
         </div>
 
         <div class="feature-box">
-          <span class="tag">Repeat Buyers Included</span>
-          <h3>You Do NOT Have to Be a First-Time Buyer</h3>
+          <span class="tag">Unbiased Shopping</span>
+          <h3>We Shop 40+ Lenders For You</h3>
           <p>
-            Repeat and move-up buyers still qualify for baseline tax rebates! In Ontario, buyers get 75% of the provincial HST back up to $24,000 with NO upper purchase price limit.
+            Standard retail banks can only sell you their own financial products. We shop the entire Canadian wholesale market—prime, alternative, and private—to find your perfect fit.
           </p>
           <ul class="lane-bullets">
-            <li>Ontario: Full $24,000 provincial rebate on any price point</li>
-            <li>Alberta: Up to $6,300 federal GST rebate under $450k</li>
-            <li>Individual rental investors qualify under separate CRA rules</li>
+            <li>Access monolines with lower penalty calculations</li>
+            <li>Flexible stated-income programs for self-employed buyers</li>
+            <li>Common-sense alternative products for credit challenges</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Interactive Rebate Calculator -->
-    <section class="content-section" id="calculator" style="padding-top: 1rem;">
+    <!-- Interactive Purchase Calculator -->
+    <section class="content-section" id="buying-calculator" style="padding-top: 1rem;">
       <div class="section-title-wrap">
         <span class="section-eyebrow">Interactive Estimator</span>
-        <h2>New Build Rebate &amp; Down Payment Advance Calculator</h2>
-        <p>Test your target purchase price and eligibility status to see how much tax relief you can unlock at closing.</p>
+        <h2>Calgary Mortgage Purchase &amp; Pre-Approval Calculator</h2>
+        <p>Calculate your estimated monthly payment, CMHC insurance premiums, and total cash required to close.</p>
       </div>
 
       <div class="calc-card-container">
         <div class="calc-top-header">
-          <h3>Estimate Your New-Build Tax Advance</h3>
-          <p>Provincial tax relief, first-time buyer top-ups, and down payment advance potential</p>
+          <h3>Estimate Your Home Purchase Math</h3>
+          <p>Verify down payment rules, amortization periods, and estimated monthly payments</p>
         </div>
 
         <div class="calc-layout-grid">
           <div class="calc-input-block">
-            <!-- Locked to Alberta -->
-
-            <!-- 2. Buyer Status -->
+            <!-- Amortization -->
             <div class="calc-field-row">
-              <span class="calc-field-title">1. Buyer Eligibility Status</span>
+              <span class="calc-field-title">1. Amortization Period</span>
               <div class="toggle-row-group">
-                <button type="button" class="toggle-pill-btn active" id="btn-buyer-fthb" onclick="setBuyerStatus('fthb')">
-                  First-Time Home Buyer (FTHB)
+                <button type="button" class="toggle-pill-btn active" id="btn-buy-amort25" onclick="setBuyAmort(25)">
+                  25 Years (Standard)
                 </button>
-                <button type="button" class="toggle-pill-btn" id="btn-buyer-repeat" onclick="setBuyerStatus('repeat')">
-                  Repeat / Move-Up Buyer
+                <button type="button" class="toggle-pill-btn" id="btn-buy-amort30" onclick="setBuyAmort(30)">
+                  30 Years (Uninsured)
                 </button>
               </div>
-              <span style="font-size: 0.78rem; color: var(--brand-green); font-weight: 700; margin-top: 0.2rem;" id="buyer-status-subtext">
-                ✓ First-time buyers qualify for the 100% GST rebate up to $1M (up to $50,000 maximum).
+              <span style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem;" id="buy-amort-subtext">
+                ✓ 25 years is standard for insured mortgages (< 20% down payment).
               </span>
             </div>
 
-            <!-- 3. Occupancy -->
-            <div class="calc-field-row">
-              <span class="calc-field-title">2. Occupancy Intention</span>
-              <div class="toggle-row-group">
-                <button type="button" class="toggle-pill-btn active" id="btn-occ-owner" onclick="setOccupancy('owner')">Primary Residence</button>
-                <button type="button" class="toggle-pill-btn" id="btn-occ-investor" onclick="setOccupancy('investor')">Investor / Rental</button>
-              </div>
-              <span style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem;" id="occ-subtext">
-                ✓ Primary residence purchasers qualify for immediate builder credit or down payment advance.
-              </span>
-            </div>
-
-            <!-- 4. Price Slider -->
+            <!-- Price Slider -->
             <div class="calc-field-row">
               <div class="calc-label-header">
-                <span class="calc-field-title">4. Target Purchase Price:</span>
-                <span class="calc-display-val" id="disp-price">$550,000</span>
+                <span class="calc-field-title">2. Ballpark Purchase Price:</span>
+                <span class="calc-display-val" id="disp-buy-price">$550,000</span>
               </div>
-              <input type="range" class="calc-slider-input" id="slider-price" min="250000" max="2000000" step="5000" value="550000" oninput="updateCalculator()" />
+              <input type="range" class="calc-slider-input" id="slider-buy-price" min="200000" max="1500000" step="5000" value="550000" oninput="runPurchaseCalc()" />
               <div class="slider-scale-limits">
-                <span>$250K</span>
+                <span>$200K</span>
+                <span>$550K</span>
                 <span>$1M</span>
                 <span>$1.5M</span>
-                <span>$1.85M</span>
-                <span>$2M</span>
+              </div>
+            </div>
+
+            <!-- Down Payment Slider -->
+            <div class="calc-field-row">
+              <div class="calc-label-header">
+                <span class="calc-field-title">3. Down Payment:</span>
+                <span class="calc-display-val" id="disp-buy-down">10% ($55,000)</span>
+              </div>
+              <input type="range" class="calc-slider-input" id="slider-buy-down" min="5" max="35" step="1" value="10" oninput="runPurchaseCalc()" />
+              <div class="slider-scale-limits">
+                <span id="buy-min-down-lbl">Min 5%</span>
+                <span>10%</span>
+                <span>20% (No CMHC)</span>
+                <span>35%</span>
+              </div>
+            </div>
+
+            <!-- Rate Input -->
+            <div class="calc-field-row">
+              <span class="calc-field-title">4. Mortgage Interest Rate</span>
+              <div class="rate-box-row" style="display: flex; align-items: center; gap: 0.8rem; margin-top: 0.4rem;">
+                <div class="rate-input-wrap" style="display: inline-flex; align-items: center; background: #FFFFFF; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 0.4rem 0.8rem; width: 110px;">
+                  <input type="number" id="input-buy-rate" value="3.60" step="0.05" min="1.0" max="15.0" style="border: none; outline: none; font-family: inherit; font-size: 1.05rem; font-weight: 800; color: var(--text-main); width: 60px;" oninput="runPurchaseCalc()" />
+                  <span style="font-weight: 800; color: var(--text-body); margin-left: 0.3rem;">%</span>
+                </div>
+                <span class="rate-tag" style="font-size: 0.78rem; color: var(--text-muted);">Current benchmark (editable)</span>
               </div>
             </div>
           </div>
@@ -2215,41 +2257,40 @@
           <!-- Right: Output Card -->
           <div class="calc-results-box">
             <div class="results-hero-metric">
-              <div class="metric-subtitle">Estimated Rebate Eligible</div>
-              <div class="metric-bignum" id="out-advance-amt">$0</div>
-              <div class="metric-caption" id="out-advance-desc">Closing treatment depends on builder structure, lender policy and available financing programs.</div>
+              <div class="metric-subtitle">Estimated Monthly Payment</div>
+              <div class="metric-bignum" id="out-buy-monthly">$2,536</div>
+              <div class="metric-caption">Includes principal and interest payment. Est. Property Taxes: <span id="out-buy-taxes">+$252/mo</span></div>
             </div>
 
             <div class="rebate-breakdown-table">
               <div class="breakdown-line">
-                <span>Total Tax on New Build:</span>
-                <strong id="out-total-tax">$0</strong>
+                <span>Purchase Price:</span>
+                <strong id="out-buy-price-disp">$550,000</strong>
               </div>
               <div class="breakdown-line">
-                <span>Federal GST Rebate Portion:</span>
-                <strong id="out-fed-rebate">$0</strong>
+                <span>Down Payment Amount:</span>
+                <strong id="out-buy-down-disp">$55,000</strong>
               </div>
               <div class="breakdown-line">
-                <span>Provincial Rebate Portion:</span>
-                <strong id="out-prov-rebate">$0</strong>
+                <span>CMHC Default Insurance:</span>
+                <strong id="out-buy-cmhc-disp">$15,345</strong>
               </div>
               <div class="breakdown-line highlight">
-                <span>Total Rebate Eligible:</span>
-                <strong id="out-total-rebate">$0</strong>
+                <span>Total Mortgage Financed:</span>
+                <strong id="out-buy-total-financed">$510,345</strong>
+              </div>
+              <div class="breakdown-line" style="border-top: 1px dashed var(--border-subtle); padding-top: 0.5rem; margin-top: 0.5rem;">
+                <span>Estimated Cash to Close:</span>
+                <strong id="out-buy-cash-close">$57,500</strong>
               </div>
             </div>
 
-            <div class="rule-explainer-box" id="out-rule-note">
-              Select values to calculate new-build statutory rebate eligibility.
+            <div class="rule-explainer-box" id="out-buy-note" style="font-size: 0.82rem; line-height: 1.5; color: var(--text-body); background: var(--bg-alt); padding: 0.9rem 1.1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); margin-top: 1rem;">
+              <strong>Closing Day Note:</strong> Cash to close includes your down payment and an estimated $2,500 for standard legal fees, title insurance, and disbursements.
             </div>
 
-            <!-- Callout: Potential Closing Strategy -->
-            <div style="background: rgba(237, 171, 43, 0.08); border-left: 3px solid var(--accent-mustard); padding: 0.8rem 1rem; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 0.8rem; color: #D1D5DB; line-height: 1.5; margin-top: 0.5rem;">
-              <strong>Potential Closing Strategy:</strong> Depending on builder treatment, lender guidelines and available Perch programs, some rebate value may potentially be incorporated into a down-payment or closing strategy. Trevor will review the specific transaction before representing any amount as available at closing.
-            </div>
-
-            <button type="button" class="btn btn-accent" style="width: 100%; justify-content: center;" onclick="openIntakeModal('Calculator Snapshot Request')"  style="width: 100%; justify-content: center;" onclick="openIntakeModal('Calculator Snapshot Request')">
-              Get My Custom Down Payment Snapshot →
+            <button type="button" class="btn btn-accent" style="width: 100%; justify-content: center; margin-top: 1rem;" onclick="openIntakeModal('Purchase Calculator Snapshot')">
+              Request My Buyer Snapshot →
             </button>
           </div>
         </div>
@@ -2260,13 +2301,13 @@
     <section class="content-section" style="padding-top: 0;">
       <div class="cta-banner-box">
         <h3>Ready to Calculate Your Exact Closing Math?</h3>
-        <p>I will analyze your target purchase price, calculate your eligible Calgary GST rebates, evaluate builder deposit schedules, and connect you with 40+ wholesale lenders.</p>
+        <p>I will shop competitive rates, lock in your 120-day pre-approval, evaluate your down payment strategies, and connect you with 40+ wholesale lenders.</p>
         <button type="button" class="btn btn-accent" onclick="openIntakeModal('General Buyer Inquiry')">Get Your Mortgage Snapshot →</button>
       </div>
     </section>
     </section>
 
-    <!-- VIEW 3: HOMEOWNERS -->
+<!-- VIEW 3: HOMEOWNERS -->
     <section class="page-view" id="view-homeowners" style="display: none;">
         <!-- Subpage Hero Section -->
   <section class="subpage-hero">
@@ -2280,7 +2321,7 @@
       </p>
       <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
         <button class="btn btn-primary" onclick="openSnapshotModal('Homeowner Equity')">Your Equity Options →</button>
-        <a href="#scenarios" class="btn btn-secondary">Explore Refinance Scenarios ↓</a>
+        <button type="button" class="btn btn-secondary" onclick="document.getElementById('scenarios').scrollIntoView({ behavior: 'smooth' })">Explore Refinance Scenarios ↓</button>
       </div>
     </div>
   </section>
@@ -2453,7 +2494,7 @@
       </p>
       <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
         <button class="btn btn-primary" onclick="openSnapshotModal('Bank Decline')">Request a Second Opinion →</button>
-        <a href="#solutions" class="btn btn-secondary" style="border: 2px solid var(--brand-green); background: #FFFFFF; color: var(--brand-green);">How Alternative Lending Works ↓</a>
+        <button type="button" class="btn btn-secondary" style="border: 2px solid var(--brand-green); background: #FFFFFF; color: var(--brand-green); font-family: inherit; font-size: inherit; cursor: pointer;" onclick="document.getElementById('solutions').scrollIntoView({ behavior: 'smooth' })">How Alternative Lending Works ↓</button>
       </div>
     </div>
   </section>
@@ -2500,18 +2541,18 @@
 
     <div class="calc-card">
       <h3>The Alternative-to-Prime Bridge Framework</h3>
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 1.5rem;">
-        <div style="background: #FFFFFF; padding: 1.5rem; border-radius: 8px;">
+      <div class="phases-grid">
+        <div class="phase-card">
           <div style="font-size: 0.8rem; font-weight: 700; color: var(--accent-mustard);">PHASE 1</div>
           <div style="font-weight: 800; font-size: 1.1rem; margin: 0.3rem 0; color: var(--text-main);">Secure Financing</div>
           <p style="font-size: 0.88rem; color: var(--text-body);">Solve the immediate funding deadline with common-sense B-lender or equity capital.</p>
         </div>
-        <div style="background: #FFFFFF; padding: 1.5rem; border-radius: 8px;">
+        <div class="phase-card">
           <div style="font-size: 0.8rem; font-weight: 700; color: var(--accent-mustard);">PHASE 2</div>
           <div style="font-weight: 800; font-size: 1.1rem; margin: 0.3rem 0; color: var(--text-main);">Execute the Fix</div>
           <p style="font-size: 0.88rem; color: var(--text-body);">Targeted credit score rebuilding, debt paydowns, or seasoning 2 years of business financials.</p>
         </div>
-        <div style="background: #FFFFFF; padding: 1.5rem; border-radius: 8px;">
+        <div class="phase-card">
           <div style="font-size: 0.8rem; font-weight: 700; color: var(--brand-green);">PHASE 3</div>
           <div style="font-weight: 800; font-size: 1.1rem; margin: 0.3rem 0; color: var(--brand-green);">Graduate to Prime</div>
           <p style="font-size: 0.88rem; color: var(--text-body);">Transition back into an A-tier lender at standard discounted market interest rates.</p>
@@ -2540,7 +2581,7 @@
       </p>
       <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
         <button class="btn btn-primary" onclick="openPartnerModal()">Discuss a Scenario With Trevor →</button>
-        <a href="#verticals" class="btn btn-secondary">Explore Partner Programs ↓</a>
+        <button type="button" class="btn btn-secondary" onclick="document.getElementById('verticals').scrollIntoView({ behavior: 'smooth' })">Explore Partner Programs ↓</button>
       </div>
     </div>
   </section>
@@ -2553,7 +2594,7 @@
       <p>Select your field below to explore tailored partner programs, dedicated resources, and live client tools.</p>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin: 3rem 0;">
+    <div class="partners-grid">
       
       <!-- 1. Realtors -->
       <div class="feature-box" style="display: flex; flex-direction: column; justify-content: space-between;">
@@ -2564,10 +2605,10 @@
             Turn every listing into a high-converting financing portal. We build property-specific payment hubs, provide down payment rebate programs, and offer a 5% referral fee structure to reward high-performing agent collaborations.
           </p>
           <ul class="lane-bullets" style="margin-bottom: 1.5rem;">
-            <li><strong>Customized Financing for Every Listing:</strong> Co-branded subdomains with live payment & down payment sliders for each property</li>
-            <li><strong>Down Payment Rebate Program:</strong> Assisting buyers with cash-to-close hurdles through strategic rebate & Perch bonus programs</li>
-            <li><strong>5% Referral Fee Structure:</strong> Compliant professional referral fees on closed client mortgages</li>
-            <li><strong>Open House Marketing Kit:</strong> Print-ready 8.5×11 feature sheets with instant QR code payment breakdowns</li>
+            <li>Co-branded subdomains with live payment & down payment sliders for each property</li>
+            <li>Assisting buyers with cash-to-close hurdles through strategic rebate & Perch bonus programs</li>
+            <li>Compliant professional referral fees on closed client mortgages</li>
+            <li>Print-ready 8.5×11 feature sheets with instant QR code payment breakdowns</li>
           </ul>
         </div>
         <div>
@@ -2622,10 +2663,10 @@
             Close more quotes for main floor renovations, kitchens, and bathrooms ($30k–$120k+). Instead of homeowners stalling because of savings, give them an easy refinance strategy that turns a $60k project into an affordable ~$290/month payment.
           </p>
           <ul class="lane-bullets" style="margin-bottom: 1.5rem;">
-            <li><strong>Main Floor, Kitchen & Bathroom Financing:</strong> Turn intimidating cash quotes into low monthly carrying costs using equity</li>
-            <li><strong>The Contractor Refinance Tool:</strong> Simple point-of-sale financing framework your estimators can use right at the kitchen table</li>
-            <li><strong>Purchase-Plus-Improvements:</strong> Buyers roll renovation budgets directly into their purchase mortgage on possession day</li>
-            <li><strong>Zero Delay on Trade Invoices:</strong> Project equity approved and deposited before demo day starts</li>
+            <li>Turn intimidating cash quotes into low monthly carrying costs using equity</li>
+            <li>Simple point-of-sale financing framework your estimators can use right at the kitchen table</li>
+            <li>Buyers roll renovation budgets directly into their purchase mortgage on possession day</li>
+            <li>Project equity approved and deposited before demo day starts</li>
           </ul>
         </div>
         <div>
@@ -2652,55 +2693,6 @@
         </div>
       </div>
 
-    </div>
-
-    <!-- Co-Branded Technology Showcase (Darian Demo) -->
-    <div class="calc-card" style="margin: 4rem 0;">
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 1rem;">
-        <div>
-          <span style="color: #F7704F; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Live Technology Proof</span>
-          <h3 style="font-size: 1.5rem; margin-top: 0.2rem;">The Co-Branded Partner Hub in Action</h3>
-        </div>
-        <a href="https://darian.trevormortgages.ca" target="_blank" rel="noopener" class="btn btn-primary">
-          See Live Darian Hub Demo ↗
-        </a>
-      </div>
-
-      <div style="display: grid; grid-template-columns: 1.3fr 0.9fr; gap: 2.5rem; align-items: center;">
-        <div>
-          <p style="font-size: 0.98rem; line-height: 1.65; color: var(--text-body); margin-bottom: 1.2rem;">
-            Partners don't just get business cards—they get custom digital infrastructure. Every co-branded page gives your clients dynamic, property-specific mortgage numbers tied directly to your active listings or projects.
-          </p>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-            <div style="background: #FFFFFF; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
-              <strong style="color: var(--brand-green); font-size: 0.9rem;">Custom Subdomain</strong>
-              <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.2rem;">e.g. <code>darian.trevormortgages.ca</code></p>
-            </div>
-            <div style="background: #FFFFFF; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
-              <strong style="color: var(--brand-green); font-size: 0.9rem;">Print-Ready QR Flyers</strong>
-              <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.2rem;">8.5×11 sheets for open houses</p>
-            </div>
-            <div style="background: #FFFFFF; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
-              <strong style="color: var(--brand-green); font-size: 0.9rem;">Property Sliders</strong>
-              <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.2rem;">Down payment & amortization</p>
-            </div>
-            <div style="background: #FFFFFF; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
-              <strong style="color: var(--brand-green); font-size: 0.9rem;">Zero Brokerage Cost</strong>
-              <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.2rem;">Included 100% complimentary</p>
-            </div>
-          </div>
-        </div>
-
-        <div style="background: var(--brand-green); color: #FFFFFF; border-radius: var(--radius-lg); padding: 2rem; text-align: center;">
-          <h4 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.6rem;">Want Your Own Co-Branded Hub?</h4>
-          <p style="font-size: 0.88rem; color: #C2D1CB; line-height: 1.5; margin-bottom: 1.5rem;">
-            Send me your next listing or project address, and I will have your customized hub and print QR flyers ready in 24 hours.
-          </p>
-          <button class="btn btn-accent" style="width: 100%; justify-content: center;" onclick="openPartnerModal()">
-            Request Your Co-Branded Hub →
-          </button>
-        </div>
-      </div>
     </div>
 
     <!-- Bottom Action Banner -->
@@ -2987,7 +2979,7 @@
         // Initialize calculators
         if (typeof updateCalculator === 'function') updateCalculator();
         if (typeof runEqCalc === 'function') runEqCalc();
-        if (typeof runBuyCalc === 'function') runBuyCalc();
+        if (typeof runPurchaseCalc === 'function') runPurchaseCalc();
     });
 
     function handleRouting() {
@@ -3375,6 +3367,107 @@
       document.getElementById('displayClientName').innerText = name;
       document.getElementById('intakeForm').style.display = 'none';
       document.getElementById('intakeSuccessNotice').style.display = 'block';
+    }
+
+    // =========================================================================
+    // 4b. BUYING VIEW CALCULATOR CODE
+    // =========================================================================
+    window.buyAmortYears = 25;
+
+    function setBuyAmort(yrs) {
+        window.buyAmortYears = yrs;
+        document.getElementById('btn-buy-amort25').classList.toggle('active', yrs === 25);
+        document.getElementById('btn-buy-amort30').classList.toggle('active', yrs === 30);
+        runPurchaseCalc();
+    }
+
+    function runPurchaseCalc() {
+        var priceSlider = document.getElementById('slider-buy-price');
+        var price = priceSlider ? (parseFloat(priceSlider.value) || 550000) : 550000;
+        
+        var dispPrice = document.getElementById('disp-buy-price');
+        if (dispPrice) dispPrice.textContent = "$" + price.toLocaleString();
+
+        // Enforce dynamic minimum down payment based on Canadian rules
+        var minDownAmt = 0;
+        if (price >= 1000000) {
+            minDownAmt = price * 0.20;
+        } else if (price > 500000) {
+            minDownAmt = 25000 + (price - 500000) * 0.10;
+        } else {
+            minDownAmt = price * 0.05;
+        }
+
+        var minDownPct = (minDownAmt / price) * 100;
+        var downSlider = document.getElementById('slider-buy-down');
+        if (!downSlider) return;
+        
+        // Update down payment slider min dynamically
+        var roundedMinPct = Math.ceil(minDownPct);
+        downSlider.min = roundedMinPct;
+        
+        // If current slider value is less than min, adjust it
+        var currentDownPct = parseFloat(downSlider.value);
+        if (currentDownPct < roundedMinPct) {
+            currentDownPct = roundedMinPct;
+            downSlider.value = roundedMinPct;
+        }
+
+        var lbl = document.getElementById('buy-min-down-lbl');
+        if (lbl) lbl.textContent = "Min " + roundedMinPct + "%";
+        
+        var downAmount = price * (currentDownPct / 100);
+        var dispBuyDown = document.getElementById('disp-buy-down');
+        if (dispBuyDown) dispBuyDown.textContent = currentDownPct + "% ($" + Math.round(downAmount).toLocaleString() + ")";
+
+        var baseLoan = price - downAmount;
+        var cmhcPct = 0;
+        if (currentDownPct < 20) {
+            if (currentDownPct >= 15) cmhcPct = 0.0280;
+            else if (currentDownPct >= 10) cmhcPct = 0.0310;
+            else cmhcPct = 0.0400;
+        }
+        var cmhcPrem = baseLoan * cmhcPct;
+        var totalLoan = baseLoan + cmhcPrem;
+
+        // Amortization check (uninsured can do 30 years, insured must do 25 years)
+        var buyAmortYears = window.buyAmortYears || 25;
+        if (currentDownPct < 20 && buyAmortYears > 25) {
+            buyAmortYears = 25;
+            window.buyAmortYears = 25;
+            document.getElementById('btn-buy-amort25').classList.add('active');
+            document.getElementById('btn-buy-amort30').classList.remove('active');
+            document.getElementById('buy-amort-subtext').textContent = "⚠️ Insured mortgages (< 20% down) are capped at a 25-year amortization.";
+        } else if (currentDownPct < 20) {
+            document.getElementById('buy-amort-subtext').textContent = "✓ 25 years is standard for insured mortgages (< 20% down payment).";
+        } else {
+            document.getElementById('buy-amort-subtext').textContent = "✓ Conventional mortgages (20%+ down) are eligible for 30-year amortizations.";
+        }
+
+        // Calculations
+        var rateInput = document.getElementById('input-buy-rate');
+        var annualRate = rateInput ? (parseFloat(rateInput.value) || 3.60) : 3.60;
+
+        // Canadian Semi-Annual Compounding
+        var r = annualRate / 100;
+        var monthlyRate = Math.pow(1 + r / 2, 2 / 12) - 1;
+        var n = buyAmortYears * 12;
+        var monthlyPayment = 0;
+        if (totalLoan > 0) {
+            monthlyPayment = totalLoan * (monthlyRate * Math.pow(1 + monthlyRate, n)) / (Math.pow(1 + monthlyRate, n) - 1);
+        }
+
+        // Estimated Property Taxes (~0.55% of price annually in Calgary)
+        var monthlyTaxes = Math.round((price * 0.0055) / 12);
+
+        // Update UI
+        document.getElementById('out-buy-monthly').textContent = "$" + Math.round(monthlyPayment).toLocaleString();
+        document.getElementById('out-buy-taxes').textContent = "+$" + monthlyTaxes + "/mo";
+        document.getElementById('out-buy-price-disp').textContent = "$" + Math.round(price).toLocaleString();
+        document.getElementById('out-buy-down-disp').textContent = "$" + Math.round(downAmount).toLocaleString() + " (" + currentDownPct + "%)";
+        document.getElementById('out-buy-cmhc-disp').textContent = cmhcPrem > 0 ? "$" + Math.round(cmhcPrem).toLocaleString() : "$0 (Conventional)";
+        document.getElementById('out-buy-total-financed').textContent = "$" + Math.round(totalLoan).toLocaleString();
+        document.getElementById('out-buy-cash-close').textContent = "$" + Math.round(downAmount + 2500).toLocaleString();
     }
 
     // =========================================================================
