@@ -512,7 +512,8 @@
       display: flex;
       flex-direction: column;
       gap: 0.8rem;
-      align-items: flex-start;
+      align-items: center;
+      text-align: center;
     }
 
     /* Calculator Design on Homepage */
@@ -1693,7 +1694,7 @@
       }
       .partner-cta-box {
         width: 100% !important;
-        align-items: stretch !important;
+        align-items: center !important;
       }
       .partner-cta-box .btn {
         width: 100% !important;
@@ -1958,7 +1959,7 @@
 
         <div class="hero-actions">
           <button class="btn btn-primary" onclick="openSnapshotModal('Purchase Strategy')">Get Your Mortgage Numbers →</button>
-          <a href="#how-i-help" class="btn btn-secondary">How I Work</a>
+          <a href="#how-i-help" class="btn btn-secondary" onclick="scrollToElement('how-i-help', event)">How I Work</a>
         </div>
 
         <div class="hero-points">
@@ -1971,8 +1972,8 @@
             <span class="point-label">Working for You</span>
           </div>
           <div class="point-item">
-            <span class="point-val">$0 Cost</span>
-            <span class="point-label">Standard Advisory</span>
+            <span class="point-val">Free To Use</span>
+            <span class="point-label">Standard Residential</span>
           </div>
           <div class="point-item">
             <span class="point-val">No Surprises</span>
@@ -2105,7 +2106,7 @@
       </div>
       <div class="partner-cta-box">
         <button class="btn btn-accent" onclick="openSnapshotModal('Partner Collaboration')">Discuss a Scenario With Trevor →</button>
-        <a href="#partners" onclick="showPage('partners', event)" style="color: var(--brand-green); font-size: 0.92rem; font-weight: 700; text-decoration: underline;">Learn More About Working Together</a>
+        <a href="#partners" onclick="showPage('partners', event)" style="color: var(--brand-green); font-size: 0.92rem; font-weight: 700; text-decoration: underline; margin: 0 auto; display: inline-block;">Learn More About Working Together</a>
       </div>
     </div>
   </section>
@@ -2131,7 +2132,7 @@
         </p>
         <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
           <button class="btn btn-primary" style="font-size: 0.95rem;" onclick="document.getElementById('buying-calculator').scrollIntoView({ behavior: 'smooth' })">Calculate Your Purchase Numbers ↓</button>
-          <button type="button" class="btn btn-secondary" style="border: 2px solid var(--brand-green); background: #FFFFFF; color: var(--brand-green);" onclick="openIntakeModal('Pre-Approval Consultation')">Get Your Buyer Snapshot →</button>
+          <button type="button" class="btn btn-secondary" style="border: 2px solid var(--brand-green); background: #FFFFFF; color: var(--brand-green);" onclick="openSnapshotModal('Pre-Approval Consultation')">Get Your Buyer Snapshot →</button>
         </div>
       </div>
     </section>
@@ -2153,9 +2154,9 @@
 
         <div class="feature-box">
           <span class="tag">Down Payment Solutions</span>
-          <h3>Down Payment Programs & Buy.ca</h3>
+          <h3>Down Payment Programs, Buy.ca &amp; Government Incentives</h3>
           <p>
-            Struggling with cash-to-close? We help you explore specialized programs like the Buy.ca 1.5% down payment cash bonus, gifted down payments, and new-build rebate advances.
+            Struggling with cash-to-close? We help you explore specialized programs like the <a href="https://myperch.io/programs/down-payment-bonus/" target="_blank" rel="noopener" style="color: var(--brand-green); font-weight: 700; text-decoration: underline;">Perch Down Payment Bonus Program</a>, the Buy.ca 1.5% down payment cash bonus, gifted down payments, the Federal First-Time Home Buyer Incentive, and local housing grants.
           </p>
           <ul class="lane-bullets">
             <li>Structured gift letter support from family members</li>
@@ -2285,11 +2286,9 @@
               </div>
             </div>
 
-            <div class="rule-explainer-box" id="out-buy-note" style="font-size: 0.82rem; line-height: 1.5; color: var(--text-body); background: var(--bg-alt); padding: 0.9rem 1.1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); margin-top: 1rem;">
-              <strong>Closing Day Note:</strong> Cash to close includes your down payment and an estimated $2,500 for standard legal fees, title insurance, and disbursements.
-            </div>
+<!-- Removed Closing Day Note Box -->
 
-            <button type="button" class="btn btn-accent" style="width: 100%; justify-content: center; margin-top: 1rem;" onclick="openIntakeModal('Purchase Calculator Snapshot')">
+            <button type="button" class="btn btn-accent" style="width: 100%; justify-content: center; margin-top: 1rem;" onclick="openSnapshotModal('Purchase Calculator Snapshot')">
               Request My Buyer Snapshot →
             </button>
           </div>
@@ -2302,7 +2301,7 @@
       <div class="cta-banner-box">
         <h3>Ready to Calculate Your Exact Closing Math?</h3>
         <p>I will shop competitive rates, lock in your 120-day pre-approval, evaluate your down payment strategies, and connect you with 40+ wholesale lenders.</p>
-        <button type="button" class="btn btn-accent" onclick="openIntakeModal('General Buyer Inquiry')">Get Your Mortgage Snapshot →</button>
+        <button type="button" class="btn btn-accent" onclick="openSnapshotModal('General Buyer Inquiry')">Get Your Mortgage Snapshot →</button>
       </div>
     </section>
     </section>
@@ -2712,7 +2711,7 @@
     </div>
 
     <div class="contact-box-wrap">
-      <form id="contactForm" onsubmit="handleContactSubmit(event)">
+      <form id="contactForm">
         <div class="contact-form-grid">
           <div class="input-row">
             <label for="contactName">Your Name *</label>
@@ -2927,6 +2926,22 @@
     // 1. SINGLE PAGE ROUTER (SPA MODULE)
     // =========================================================================
     let activeStep = 1;
+
+    // Scroll smoothly to a specific element on the page, switching views to 'home' if necessary
+    function scrollToElement(id, event) {
+        if (event) event.preventDefault();
+        const currentHash = window.location.hash;
+        if (currentHash !== '#home' && currentHash !== '') {
+            showPage('home');
+        }
+        setTimeout(() => {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }, 150);
+    }
+
 
     function showPage(pageId, event) {
         if (event) event.preventDefault();
@@ -3328,10 +3343,10 @@
     }
 
     function openIntakeModal(source) {
-      document.getElementById('intakeModal').classList.add('active');
+      openSnapshotModal(source);
     }
     function closeIntakeModal() {
-      document.getElementById('intakeModal').classList.remove('active');
+      closeSnapshotModal();
     }
 
     var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbysYey_FmE3UBLGOFHWs3298qZGwfNz-gr7at4oRp3ZIrs8TJ2U-YcSX4ZSD6NrTR5O/exec';
@@ -3430,16 +3445,19 @@
         var cmhcPrem = baseLoan * cmhcPct;
         var totalLoan = baseLoan + cmhcPrem;
 
-        // Amortization check (uninsured can do 30 years, insured must do 25 years)
+        // Amortization check (uninsured can do 30 years, insured must do 25 years unless first-time buyer/new build)
         var buyAmortYears = window.buyAmortYears || 25;
-        if (currentDownPct < 20 && buyAmortYears > 25) {
+        var canDo30YrInsured = (currentBuyerStatus === 'fthb'); // First-time buyers on new builds/homes can access 30-year insured
+        if (currentDownPct < 20 && buyAmortYears > 25 && !canDo30YrInsured) {
             buyAmortYears = 25;
             window.buyAmortYears = 25;
             document.getElementById('btn-buy-amort25').classList.add('active');
             document.getElementById('btn-buy-amort30').classList.remove('active');
-            document.getElementById('buy-amort-subtext').textContent = "⚠️ Insured mortgages (< 20% down) are capped at a 25-year amortization.";
+            document.getElementById('buy-amort-subtext').textContent = "⚠️ Insured mortgages (< 20% down) are capped at 25 years for repeat buyers.";
+        } else if (currentDownPct < 20 && buyAmortYears > 25 && canDo30YrInsured) {
+            document.getElementById('buy-amort-subtext').textContent = "✓ Eligible 30-year amortization active for first-time buyers on new construction.";
         } else if (currentDownPct < 20) {
-            document.getElementById('buy-amort-subtext').textContent = "✓ 25 years is standard for insured mortgages (< 20% down payment).";
+            document.getElementById('buy-amort-subtext').textContent = "✓ 25 years is standard. First-time buyers can select 30-year amortizations.";
         } else {
             document.getElementById('buy-amort-subtext').textContent = "✓ Conventional mortgages (20%+ down) are eligible for 30-year amortizations.";
         }
