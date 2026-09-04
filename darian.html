@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Darian Stadnyk × Trevor Berry | Calgary Home Financing Hub</title>
+  <title>Darian Stadnyk × Trevor Berry | Instant Monthly Payment Estimates</title>
   <meta name="description" content="Calculate accurate monthly mortgage payments, down payment requirements, and property taxes for Darian Stadnyk's Calgary listings." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -788,6 +788,33 @@
       align-items: center;
       gap: 1rem;
     }
+
+    /* Safari and Mobile Input Visibility Patch */
+    .rate-input-wrap input {
+      background: transparent !important;
+      color: #FFFFFF !important;
+      border: none !important;
+      outline: none !important;
+      -webkit-appearance: none !important;
+    }
+    
+    /* Responsive Contact Alignment Fix */
+    @media (max-width: 1024px) {
+      .team-cards-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+      }
+      .micro-team-strip {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 1rem !important;
+      }
+      .strip-divider {
+        display: none !important;
+      }
+    }
+    
   </style>
 </head>
 <body>
@@ -803,7 +830,7 @@
         <span class="brand-x">×</span>
         <div class="brand-col">
           <span class="brand-col-name">TREVOR BERRY</span>
-          <span class="brand-col-meta orange">Mortgage Associate · Perch</span>
+          <span class="brand-col-meta orange">Mortgage Associate · Perch Mortgage Brokerage</span>
         </div>
       </div>
 
@@ -819,10 +846,10 @@
 
     <!-- Clean Hub Hero Header (NO specific address pinned at the top) -->
     <div class="hub-hero">
-      <div class="prop-eyebrow">Calgary Home Financing Hub</div>
-      <h1 class="hub-title">Live Monthly Payments & Down Payment Options</h1>
+      <div class="prop-eyebrow">Instant Monthly Payment Estimates</div>
+      <h1 class="hub-title">See the Monthly Cost of Darian’s Listings</h1>
       <p class="hub-lead">
-        Select one of Darian's active listings below to view live monthly payments, down payment options, and carrying costs—or run custom numbers for any home in Calgary.
+        Adjust the down payment, amortization and rate—or run the numbers on any Calgary home.
       </p>
 
       <!-- Clean Micro-Team Strip -->
@@ -865,7 +892,7 @@
             <div class="prop-card-address">252 Templeview Way NE</div>
             <div class="prop-card-meta">
               Temple, Calgary · MLS® A2317927<br />
-              3 Beds · 2 Baths · 1,140 sq ft
+              2 + 1 Beds · 2 Baths · 1,140 sq ft
             </div>
           </div>
           <div>
@@ -874,7 +901,7 @@
               <span class="prop-card-price-val">$359,000</span>
             </div>
             <div class="prop-card-status" id="status-prop-1">
-              <span>✓ Currently Calculating</span>
+              <span>✓ Selected</span>
             </div>
           </div>
         </div>
@@ -886,7 +913,7 @@
             <div class="prop-card-address">809 68 Avenue SW</div>
             <div class="prop-card-meta">
               Kingsland, Calgary · MLS® A2339915<br />
-              4 Beds · 2 Baths · 1,100 sq ft
+              2 + 2 Beds · 2 Baths · 1,100 sq ft
             </div>
           </div>
           <div>
@@ -934,7 +961,7 @@
           <div class="calc-focus-name" id="calc-focus-name">252 Templeview Way NE</div>
         </div>
         <div class="calc-focus-specs" id="calc-focus-specs">
-          Temple, Calgary · 3 Beds · 2 Baths · 1,140 sq ft · Est. Taxes: $214/mo
+          Temple, Calgary · 2 + 1 Beds · 2 Baths · 1,140 sq ft · Est. Taxes: $214/mo
         </div>
       </div>
 
@@ -975,6 +1002,17 @@
             </div>
           </div>
 
+          <!-- First-Time Buyer or New Build? -->
+          <div class="calc-field-group">
+            <div class="calc-label-row">
+              <span>First-Time Buyer or New Build?</span>
+            </div>
+            <div class="btn-toggle-group">
+              <button type="button" class="toggle-pill-btn active" id="btn-fthb-yes" onclick="setFTHB(true)">Yes</button>
+              <button type="button" class="toggle-pill-btn" id="btn-fthb-no" onclick="setFTHB(false)">No</button>
+            </div>
+          </div>
+
           <!-- Amortization Period -->
           <div class="calc-field-group">
             <div class="calc-label-row">
@@ -983,6 +1021,9 @@
             <div class="btn-toggle-group">
               <button type="button" class="toggle-pill-btn active" id="btn-amort-25" onclick="setAmortization(25)">25 Years</button>
               <button type="button" class="toggle-pill-btn" id="btn-amort-30" onclick="setAmortization(30)">30 Years</button>
+            </div>
+            <div id="amort-warning" style="display: none; color: #F7704F; font-size: 0.8rem; margin-top: 0.5rem; line-height: 1.2;">
+              * 30-year insured amortization is only available for eligible first-time buyers and new builds. Calculation reverted to 25 years.
             </div>
           </div>
 
@@ -1026,6 +1067,17 @@
                 <span>Default Insurance (CMHC):</span>
                 <strong id="out-cmhc-premium">$10,016</strong>
               </div>
+              <div class="breakdown-row" style="border-top: 1px solid #1E2823; margin-top: 0.5rem; padding-top: 0.5rem;">
+                <span>Est. Closing Costs (~1.5%):</span>
+                <strong id="out-closing-costs">$5,385</strong>
+              </div>
+              <div class="breakdown-row" style="font-size: 1.05rem; color: #FFFFFF; font-weight: 700; margin-top: 0.3rem;">
+                <span>Estimated Cash Needed:</span>
+                <strong id="out-cash-needed" style="color: var(--accent-mustard);">$41,285</strong>
+              </div>
+              <div style="font-size: 0.72rem; color: #9CA3AF; line-height: 1.2; margin-top: 0.8rem; text-align: center; font-style: italic;">
+                * Closing-cost estimate is illustrative, excludes adjustments, and varies by transaction.
+              </div>
               <div class="breakdown-row total-row">
                 <span>Total Mortgage Financed:</span>
                 <strong id="out-total-financed">$333,116</strong>
@@ -1035,10 +1087,13 @@
 
           <div class="calc-action-btns">
             <a href="tel:4038701537" class="btn-action-gold">
-              Ask Trevor About Financing This Home →
+              Call Trevor to Pre-Qualify →
             </a>
-            <a href="tel:5878880024" class="btn-action-outline">
-              Ask Darian About a Showing →
+            <div style="font-size: 0.78rem; color: #9CA3AF; text-align: center; margin-top: 0.4rem; font-weight: 500;">
+              No credit pull required for an initial review.
+            </div>
+            <a href="tel:5878880024" class="btn-action-outline" id="btn-darian-showing">
+              Call Darian About a Showing →
             </a>
           </div>
         </div>
@@ -1048,17 +1103,20 @@
 
     <!-- Quick Savings / Pre-Approval Inquiry Box -->
     <div class="inquiry-card">
-      <h3>Want to See What You Qualify For on This Property?</h3>
-      <p>Send me a quick note and I will run your complete qualification scenario across 40+ wholesale lenders with no credit impact.</p>
+      <h3>Want to Know If You Can Afford This Home?</h3>
+      <p>Send me a few details and I’ll calculate your approximate purchasing power and financing options. An initial review does not require a credit pull.</p>
       
       <form onsubmit="handleInquiry(event)">
         <div class="inquiry-form-grid">
           <input type="text" class="inquiry-input" placeholder="Your Name *" required id="inq_name" />
           <input type="tel" class="inquiry-input" placeholder="Your Phone Number *" required id="inq_phone" />
           <input type="email" class="inquiry-input" placeholder="Your Email Address *" required id="inq_email" />
-          <button type="submit" class="inquiry-btn">Get My Numbers →</button>
+          <button type="submit" class="inquiry-btn">Check My Buying Power →</button>
         </div>
-      </form>
+        <p style="font-size: 0.75rem; color: #9CA3AF; margin-top: 1rem; text-align: center; line-height: 1.3;">
+            By submitting, you agree to be contacted regarding your mortgage inquiry. Your information will not be sold or shared for marketing purposes. <a href="https://trevormortgages.ca/privacy" target="_blank" style="color: var(--accent-mustard); text-decoration: underline;">Privacy Policy</a>.
+          </p>
+        </form>
       <div id="inquiry-success" style="display: none; color: var(--accent-mustard); font-weight: 800; margin-top: 1.2rem; font-size: 1.05rem;">
         ✓ Request received! Trevor will text or email your numbers shortly.
       </div>
@@ -1098,7 +1156,7 @@
             </div>
           </div>
           <p class="team-bio">
-            Structuring competitive mortgage financing across 40+ Canadian lenders. Pre-approvals, rate holds, and clear purchase math with zero broker fees on standard purchases.
+            Structuring competitive mortgage financing across 40+ Canadian lenders. Pre-approvals, rate holds, and clear purchase math with no broker fee to the borrower for most standard lender-paid purchase mortgages (any applicable fee is fully disclosed before proceeding).
           </p>
         </div>
         <div>
@@ -1127,19 +1185,20 @@
     var currentSelection = 1;
     var currentDownMode = 'pct';
     var amortYears = 25;
+    var isFTHB = true;
 
     var properties = {
       1: {
         address: "252 Templeview Way NE",
         community: "Temple, Calgary",
-        specs: "3 Beds · 2 Baths · 1,140 sq ft · MLS® A2317927",
+        specs: "2 + 1 Beds · 2 Baths · 1,140 sq ft · MLS® A2317927",
         price: 359000,
         monthlyTax: 214
       },
       2: {
         address: "809 68 Avenue SW",
         community: "Kingsland, Calgary",
-        specs: "4 Beds · 2 Baths · 1,100 sq ft · MLS® A2339915",
+        specs: "2 + 2 Beds · 2 Baths · 1,100 sq ft · MLS® A2339915",
         price: 685000,
         monthlyTax: 310
       }
@@ -1154,9 +1213,9 @@
       document.getElementById('card-prop-custom').classList.toggle('active', id === 'custom');
 
       // Update status badges
-      document.getElementById('status-prop-1').innerHTML = id === 1 ? '<span>✓ Currently Calculating</span>' : '<span>Click to Calculate →</span>';
-      document.getElementById('status-prop-2').innerHTML = id === 2 ? '<span>✓ Currently Calculating</span>' : '<span>Click to Calculate →</span>';
-      document.getElementById('status-prop-custom').innerHTML = id === 'custom' ? '<span>✓ Currently Calculating</span>' : '<span>Click to Calculate →</span>';
+      document.getElementById('status-prop-1').innerHTML = id === 1 ? '<span>✓ Selected</span>' : '<span>Click to Calculate →</span>';
+      document.getElementById('status-prop-2').innerHTML = id === 2 ? '<span>✓ Selected</span>' : '<span>Click to Calculate →</span>';
+      document.getElementById('status-prop-custom').innerHTML = id === 'custom' ? '<span>✓ Selected</span>' : '<span>Click to Calculate →</span>';
 
       var bannerName = document.getElementById('calc-focus-name');
       var bannerSpecs = document.getElementById('calc-focus-specs');
@@ -1166,11 +1225,17 @@
         bannerName.textContent = "Custom Calgary Property Estimate";
         bannerSpecs.textContent = "Adjust sliders below to test payments on any home price in Calgary · Est. Taxes: $250/mo";
         priceSlider.value = 550000;
+        if (document.getElementById('btn-darian-showing')) {
+          document.getElementById('btn-darian-showing').style.display = 'none';
+        }
       } else {
         var p = properties[id];
         bannerName.textContent = p.address;
         bannerSpecs.textContent = p.community + " · " + p.specs + " · Est. Taxes: $" + p.monthlyTax + "/mo";
         priceSlider.value = p.price;
+        if (document.getElementById('btn-darian-showing')) {
+          document.getElementById('btn-darian-showing').style.display = 'inline-block';
+        }
       }
 
       runHubCalc();
@@ -1198,6 +1263,13 @@
         slider.step = "2500";
         slider.value = (Math.round((price * 0.10) / 1000) * 1000).toString();
       }
+      runHubCalc();
+    }
+
+    function setFTHB(val) {
+      isFTHB = val;
+      document.getElementById('btn-fthb-yes').classList.toggle('active', val === true);
+      document.getElementById('btn-fthb-no').classList.toggle('active', val === false);
       runHubCalc();
     }
 
@@ -1239,19 +1311,41 @@
       var annualRate = rateInput ? (parseFloat(rateInput.value) || 3.60) : 3.60;
       var baseLoan = price - downAmount;
       var cmhcPct = 0;
+      var tempAmortYears = amortYears;
 
       if (downPct < 20) {
-        if (downPct >= 15) cmhcPct = 0.0280;
-        else if (downPct >= 10) cmhcPct = 0.0310;
-        else cmhcPct = 0.0400;
+        if (amortYears === 30) {
+          if (!isFTHB) {
+            document.getElementById('amort-warning').style.display = 'block';
+            tempAmortYears = 25;
+            if (downPct >= 15) cmhcPct = 0.0280;
+            else if (downPct >= 10) cmhcPct = 0.0310;
+            else cmhcPct = 0.0400;
+          } else {
+            document.getElementById('amort-warning').style.display = 'none';
+            tempAmortYears = 30;
+            if (downPct >= 15) cmhcPct = 0.0300;
+            else if (downPct >= 10) cmhcPct = 0.0330;
+            else cmhcPct = 0.0425;
+          }
+        } else {
+          document.getElementById('amort-warning').style.display = 'none';
+          tempAmortYears = 25;
+          if (downPct >= 15) cmhcPct = 0.0280;
+          else if (downPct >= 10) cmhcPct = 0.0310;
+          else cmhcPct = 0.0400;
+        }
+      } else {
+        document.getElementById('amort-warning').style.display = 'none';
       }
+
       var cmhcPrem = baseLoan * cmhcPct;
       var totalLoan = baseLoan + cmhcPrem;
 
       // Canadian Semi-Annual Compounding
       var r = annualRate / 100;
       var monthlyRate = Math.pow(1 + r / 2, 2 / 12) - 1;
-      var n = amortYears * 12;
+      var n = tempAmortYears * 12;
       var monthlyPayment = totalLoan * (monthlyRate * Math.pow(1 + monthlyRate, n)) / (Math.pow(1 + monthlyRate, n) - 1);
 
       // Taxes based on selection
@@ -1267,6 +1361,11 @@
       document.getElementById('out-down-required').textContent = "$" + Math.round(downAmount).toLocaleString();
       document.getElementById('out-cmhc-premium').textContent = cmhcPrem > 0 ? "$" + Math.round(cmhcPrem).toLocaleString() : "$0 (Conventional)";
       document.getElementById('out-total-financed').textContent = "$" + Math.round(totalLoan).toLocaleString();
+
+      var closingCosts = Math.round(price * 0.015);
+      var cashNeeded = Math.round(downAmount + closingCosts);
+      document.getElementById('out-closing-costs').textContent = "$" + closingCosts.toLocaleString();
+      document.getElementById('out-cash-needed').textContent = "$" + cashNeeded.toLocaleString();
     }
 
     function handleInquiry(e) {

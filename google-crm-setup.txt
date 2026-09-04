@@ -1,0 +1,282 @@
+================================================================================
+          MORTGAGE BROKER OPERATING SYSTEM: GOOGLE SHEET & CRM SETUP GUIDE
+                     OPERATIONAL BLUEPRINT & DEPLOYMENT PACKAGE
+================================================================================
+
+This document contains the complete, production-ready backend configuration and 
+source code to connect your marketing pages (buyers, builders, realtors, CPAs, 
+planners, and renovators) to an automated, self-healing, multi-tab CRM hosted 
+securely on Google Sheets.
+
+With this setup:
+1. All landing pages automatically route leads to their own dedicated tabs.
+2. New tabs, formatted with Perch Green headers (#12453B), are auto-generated.
+3. You receive real-time email alerts whenever a client submits a scenario.
+4. It features overlapping protection (LockService) so no lead data is lost.
+
+--------------------------------------------------------------------------------
+PART 1: GOOGLE SHEET SET UP
+--------------------------------------------------------------------------------
+
+1. Log into your Google account and go to: https://sheets.google.com
+2. Create a blank spreadsheet and name it: 
+   "New Build & Partner Leads - Trevor Berry"
+3. Delete any default tabs so you just have a single blank sheet (it can be named 
+   anything; the script will automatically initialize the tabs).
+4. Copy the URL of your new Google Sheet from your browser address bar 
+   (e.g., https://docs.google.com/spreadsheets/d/YOUR_SPREADSHEET_ID/edit).
+5. Keep this tab open.
+
+--------------------------------------------------------------------------------
+PART 2: THE MULTI-TAB GOOGLE APPS SCRIPT SOURCE CODE
+--------------------------------------------------------------------------------
+
+1. In your Google Sheet, click on "Extensions" in the top menu, then select "Apps Script".
+2. Erase any default code in the editor (the empty "myFunction" block).
+3. Copy and paste the entire code block below into the editor:
+
+```javascript
+/**
+ * TREVOR BERRY - PERCH MORTGAGES MASTER CRM INTAKE API
+ * Version: 2.1 (Multi-Tab Routing, Auto-Formatter, and Real-Time Notifications)
+ */
+
+function doPost(e) {
+  var lock = LockService.getScriptLock();
+  try {
+    // Wait up to 30 seconds for a lock to prevent concurrent write collisions
+    lock.waitLock(30000); 
+    
+    var sheetFile = SpreadsheetApp.getActiveSpreadsheet();
+    var data = JSON.parse(e.postData.contents);
+    
+    // Determine target tab based on lead type payload
+    var leadType = data.lead_type || 'general_inquiry';
+    var sheetName = "General Leads";
+    var headers = ["Timestamp", "Lead Type", "Full Name", "Email", "Phone", "Province", "Source Page"];
+    
+    // Multi-Tab Routing Logic & Header Blueprints
+    if (leadType === 'buyer_ontario' || leadType === 'buyer_alberta' || leadType === 'general_buyer' || leadType === 'new_build_buyer' || leadType === 'new_build_ontario') {
+      sheetName = "Buyer Leads";
+      headers = ["Timestamp", "Lead Type", "Full Name", "Email", "Phone", "Target Price", "Savings/Equity", "Buy.ca Interest", "Province", "Source Page"];
+    } else if (leadType === 'builders_ontario' || leadType === 'builders_alberta' || leadType === 'builders_b2b' || leadType === 'builder_partner' || leadType === 'builder_lead_recovery') {
+      sheetName = "Builder Partners";
+      headers = ["Timestamp", "Lead Type", "Full Name", "Company/Developer", "Email", "Phone", "Development Details", "Province", "Source Page"];
+    } else if (leadType === 'realtor_guide' || leadType === 'realtors_b2b') {
+      sheetName = "Realtor Partners";
+      headers = ["Timestamp", "Lead Type", "Full Name", "Brokerage", "Email", "Phone", "Realtor-Brokerage", "Province", "Source Page"];
+    } else if (leadType === 'accountants' || leadType === 'cpa_referral' || leadType === 'cpa_partner' || leadType === 'cpa_client_intake') {
+      sheetName = "CPA Partners";
+      headers = ["Timestamp", "Lead Type", "Full Name", "Accounting Firm", "Email", "Phone", "Scenario Notes", "Province", "Source Page"];
+    } else if (leadType === 'renovators' || leadType === 'contractor_partner' || leadType === 'reno_client_intake') {
+      sheetName = "Renovator Partners";
+      headers = ["Timestamp", "Lead Type", "Full Name", "Contracting Firm", "Email", "Phone", "Project/Scenario Info", "Province", "Source Page"];
+    } else if (leadType === 'planners' || leadType === 'financial_planner' || leadType === 'planner_partner' || leadType === 'planner_client_intake') {
+      sheetName = "Financial Planners";
+      headers = ["Timestamp", "Lead Type", "Full Name", "Firm", "Email", "Phone", "Collaboration Details", "Province", "Source Page"];
+    } else if (leadType === 'realtor_hub_darian') {
+      sheetName = "Darian Stadnyk Leads";
+      headers = ["Timestamp", "Lead Type", "Buyer Name", "Email", "Phone", "Selected Address", "Selected Price", "Down Payment", "Interest Rate", "Total Monthly", "CMHC Premium", "Financed Amt"];
+    }
+    
+    // Find or automatically generate sheet tab
+    var sheet = sheetFile.getSheetByName(sheetName);
+    if (!sheet) {
+      sheet = sheetFile.insertSheet(sheetName);
+      sheet.appendRow(headers);
+      
+      // Auto-Format Headers (Perch Green Background #12453B with Bold White Text)
+      var headerRange = sheet.getRange(1, 1, 1, headers.length);
+      headerRange.setFontWeight("bold");
+      headerRange.setBackground("#12453B"); 
+      headerRange.setFontColor("#FFFFFF");
+      headerRange.setFontFamily("Plus Jakarta Sans");
+      sheet.setFrozenRows(1);
+    }
+    
+    // Safely Map Payload Data to Sheet Columns
+    var timestamp = new Date();
+    var rowData = [];
+    
+    if (sheetName === "Buyer Leads") {
+      rowData = [
+        timestamp,
+        leadType,
+        data.full_name || '',
+        data.email || '',
+        data.phone || '',
+        data.purchase_price || '',
+        data.savings_available || '',
+        data.buyca_interest || '',
+        data.province || '',
+        data.source_cta || ''
+      ];
+    } else if (sheetName === "Builder Partners") {
+      rowData = [
+        timestamp,
+        leadType,
+        data.full_name || data.name || '',
+        data.company || data.builder_company || '',
+        data.email || '',
+        data.phone || '',
+        data.development_details || data.details || '',
+        data.province || '',
+        data.source_cta || ''
+      ];
+    } else if (sheetName === "Realtor Partners") {
+      rowData = [
+        timestamp,
+        leadType,
+        data.full_name || '',
+        data.company || '',
+        data.email || '',
+        data.phone || '',
+        data.scenario_notes || '',
+        data.province || '',
+        data.source_cta || ''
+      ];
+    } else if (sheetName === "CPA Partners") {
+      rowData = [
+        timestamp,
+        leadType,
+        data.full_name || '',
+        data.company || '',
+        data.email || '',
+        data.phone || '',
+        data.scenario_notes || data.details || '',
+        data.province || 'Alberta',
+        data.source_cta || ''
+      ];
+    } else if (sheetName === "Renovator Partners") {
+      rowData = [
+        timestamp,
+        leadType,
+        data.full_name || '',
+        data.company || '',
+        data.email || '',
+        data.phone || '',
+        data.details || data.scenario_notes || '',
+        data.province || 'Alberta',
+        data.source_cta || ''
+      ];
+    } else if (sheetName === "Financial Planners") {
+      rowData = [
+        timestamp,
+        leadType,
+        data.full_name || '',
+        data.company || '',
+        data.email || '',
+        data.phone || '',
+        data.details || data.scenario_notes || '',
+        data.province || 'Alberta',
+        data.source_cta || ''
+      ];
+    } else if (sheetName === "Darian Stadnyk Leads") {
+      rowData = [
+        timestamp,
+        leadType,
+        data.full_name || data.name || '',
+        data.email || '',
+        data.phone || '',
+        data.selected_address || '',
+        data.purchase_price || '',
+        data.down_payment || '',
+        data.interest_rate || '',
+        data.total_monthly || '',
+        data.cmhc_premium || '',
+        data.financed_amt || ''
+      ];
+    } else {
+      rowData = [
+        timestamp,
+        leadType,
+        data.full_name || data.name || '',
+        data.email || '',
+        data.phone || '',
+        data.province || '',
+        data.source_cta || ''
+      ];
+    }
+    
+    // Append the lead row and auto-adjust widths for legibility
+    sheet.appendRow(rowData);
+    sheet.autoResizeColumns(1, headers.length);
+    
+    // Send Asynchronous Email Alert to Trevor
+    try {
+      MailApp.sendEmail({
+        to: "tberry@myperch.io",
+        subject: "🚨 Master CRM Alert: " + (data.full_name || data.name || "New Scenario") + " (" + sheetName + ")",
+        body: "Hey Trevor,\n\n" +
+              "A new scenario has been captured and routed successfully.\n\n" +
+              "--- SENDER PROFILE ---\n" +
+              "Target Folder/Tab: " + sheetName + "\n" +
+              "Name: " + (data.full_name || data.name || "Not Provided") + "\n" +
+              "Phone: " + (data.phone || "Not Provided") + "\n" +
+              "Email: " + (data.email || "Not Provided") + "\n" +
+              "Location: " + (data.location || data.province || "N/A") + "\n" +
+              "Form Source: " + (data.source_cta || "Direct Capture Form") + "\n\n" +
+              "--- SPECIFICS CAPTURED ---\n" +
+              "Price/Val: " + (data.purchase_price || data.targetValue || "N/A") + "\n" +
+              "Funds/Savings: " + (data.savings_available || data.downPayment || "N/A") + "\n" +
+              "Referrer/Company: " + (data.company || "N/A") + "\n" +
+              "Notes: " + (data.details || data.scenario_notes || data.timeline || "N/A") + "\n\n" +
+              "➔ Access Master CRM Sheet: " + sheetFile.getUrl() + "\n\n" +
+              "All the best,\n" +
+              "Mortgage Broker Operating System (MBOS)"
+      });
+    } catch (eMailErr) {
+      // Silent catch so script completes even if email quota is exceeded
+    }
+    
+    return ContentService.createTextOutput(JSON.stringify({ status: "success" }))
+                         .setMimeType(ContentService.MimeType.JSON);
+                         
+  } catch (error) {
+    return ContentService.createTextOutput(JSON.stringify({ status: "error", message: error.toString() }))
+                         .setMimeType(ContentService.MimeType.JSON);
+  } finally {
+    lock.releaseLock();
+  }
+}
+```
+
+--------------------------------------------------------------------------------
+PART 3: HOW TO DEPLOY AS A WEB API (DO THIS IN 60 SECONDS)
+--------------------------------------------------------------------------------
+
+1. Once the code is pasted into Google Apps Script, click the **Save (floppy disk) icon**
+   at the top of the editor.
+2. Click the blue **"Deploy"** button in the top right, then select **"New deployment"**.
+3. In the "Select type" sidebar menu, click the **Gear icon** and choose **"Web app"**.
+4. Configure the settings exactly as follows:
+   * **Description:** Trevor Mortgages Master CRM API
+   * **Execute as:** "Me" (your Google Email)
+   * **Who has access:** "Anyone"  <-- CRITICAL (This allows your secure frontend scripts 
+                                      to POST data without requiring authentication keys)
+5. Click **"Deploy"**.
+6. Google will request authorization. Click **"Authorize access"**, select your Google 
+   account, click **"Advanced"** (bottom left), and click **"Go to Trevor Mortgages (unsafe)"** 
+   to grant database writing permissions.
+7. Under "Web app", copy the **"URL"** provided. It will look like this:
+   `https://script.google.com/macros/s/AKfycb..._YOUR_DEPLOY_ID.../exec`
+8. Keep this URL handy.
+
+--------------------------------------------------------------------------------
+PART 4: WIRING UP YOUR LANDING PAGES
+--------------------------------------------------------------------------------
+
+To make all of your landing pages fully active, replace the placeholder URL 
+in your HTML scripts with your newly copied Web App URL:
+
+* For **buyer-ontario-standalone-v7.txt** (line ~1,185):
+  `var GOOGLE_SCRIPT_URL = 'YOUR_WEB_APP_URL_HERE';`
+* For **realtor-hub-standalone-v4.txt** (line ~1,073):
+  `const scriptEndpoint = 'YOUR_WEB_APP_URL_HERE';`
+* For **renovators-page-v2.txt**, **accountants-page-v2.txt**, and **planners-page-v2.txt** 
+  (located near the bottom script blocks):
+  `const scriptEndpoint = 'YOUR_WEB_APP_URL_HERE';`
+
+All done! Your custom CRM backend is officially fully prepared and ready to capture 
+deals automatically on Cloudflare!
+================================================================================

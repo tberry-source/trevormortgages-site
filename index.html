@@ -470,6 +470,9 @@
       margin: 0 0 1.5rem 0;
     }
     .lane-bullets li {
+      padding-left: 1.25rem !important;
+      position: relative !important;
+      list-style: none !important;
       position: relative;
       padding-left: 1.25rem;
       font-size: 0.88rem;
@@ -478,6 +481,9 @@
       line-height: 1.5;
     }
     .lane-bullets li::before {
+      position: absolute !important;
+      left: 0 !important;
+      top: -0.1rem !important;
       content: "•";
       position: absolute;
       left: 0;
@@ -1292,6 +1298,9 @@
       margin: 0 0 1.5rem 0;
     }
     .lane-bullets li {
+      padding-left: 1.25rem !important;
+      position: relative !important;
+      list-style: none !important;
       position: relative;
       padding-left: 1.25rem;
       font-size: 0.86rem;
@@ -1300,6 +1309,9 @@
       line-height: 1.5;
     }
     .lane-bullets li::before {
+      position: absolute !important;
+      left: 0 !important;
+      top: -0.1rem !important;
       content: "•";
       position: absolute;
       left: 0;
@@ -1496,7 +1508,7 @@
     /* =========================================================================
        MASTER MOBILE OPTIMIZATIONS (FIXES MARGINS, HEADERS, GRID ALIGNMENT & SCROLL)
        ========================================================================= */
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       /* Spacing between cards/bubbles on mobile to prevent touching */
       .feature-box,
       .principle-card,
@@ -1916,6 +1928,38 @@
       }
 }
     
+
+    /* Premium Mobile Header Scroll Optimization */
+    @media (max-width: 1024px) {
+      .nav-inner {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.6rem !important;
+        padding: 0.8rem 1rem !important;
+      }
+      nav.nav-links {
+        width: 100% !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        gap: 1.1rem !important;
+        padding-bottom: 0.4rem !important;
+        display: flex !important;
+        justify-content: flex-start !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+      nav.nav-links::-webkit-scrollbar {
+        display: none !important;
+      }
+      nav.nav-links a {
+        font-size: 0.88rem !important;
+        padding: 0.2rem 0 !important;
+        display: inline-block !important;
+      }
+      .nav-inner > div:last-child {
+        display: none !important; /* Hide CTA button on mobile header to preserve vital space */
+      }
+    }
+    
   </style>
 
 </head>
@@ -1938,11 +1982,11 @@
       </a>
 
       <nav class="nav-links">
-        <a href="/index.html#home" class="active" onclick="handleHeaderNav('home', event)">Home</a>
-        <a href="/index.html#buying" onclick="handleHeaderNav('buying', event)">Buying</a>
-        <a href="/index.html#homeowners" onclick="handleHeaderNav('homeowners', event)">Homeowners</a>
-        <a href="/index.html#alternative" onclick="handleHeaderNav('alternative', event)">Alternative</a>
-        <a href="/index.html#partners" onclick="handleHeaderNav('partners', event)">Partners</a>
+        <a href="index.html#home" class="active" onclick="handleHeaderNav('home', event)">Home</a>
+        <a href="index.html#buying" onclick="handleHeaderNav('buying', event)">Buying</a>
+        <a href="index.html#homeowners" onclick="handleHeaderNav('homeowners', event)">Homeowners</a>
+        <a href="index.html#alternative" onclick="handleHeaderNav('alternative', event)">Alternative</a>
+        <a href="index.html#partners" onclick="handleHeaderNav('partners', event)">Partners</a>
         <a href="/index.html#contact" onclick="handleHeaderNav('contact', event)">Contact</a>
       </nav>
 
@@ -2618,7 +2662,7 @@
           </ul>
         </div>
         <div>
-          <a href="/realtors" class="btn btn-secondary" style="width: 100%; justify-content: center;">Explore Realtor Hub & Resources →</a>
+          <a href="realtors.html" class="btn btn-secondary" style="width: 100%; justify-content: center;">Explore Realtor Hub & Resources →</a>
         </div>
       </div>
 
@@ -2637,8 +2681,8 @@
           </ul>
         </div>
         <div style="display: flex; gap: 0.5rem; width: 100%;">
-          <a href="/builders" class="btn btn-secondary" style="flex: 1; justify-content: center; font-size: 0.82rem; padding: 0.6rem 0.3rem;">Alberta Builders →</a>
-          <a href="/builders-ontario" class="btn btn-secondary" style="flex: 1; justify-content: center; font-size: 0.82rem; padding: 0.6rem 0.3rem;">Ontario Builders →</a>
+          <a href="builders.html" class="btn btn-secondary" style="flex: 1; justify-content: center; font-size: 0.82rem; padding: 0.6rem 0.3rem;">Alberta Builders →</a>
+          <a href="builders-ontario.html" class="btn btn-secondary" style="flex: 1; justify-content: center; font-size: 0.82rem; padding: 0.6rem 0.3rem;">Ontario Builders →</a>
         </div>
       </div>
 
@@ -2657,7 +2701,7 @@
           </ul>
         </div>
         <div>
-          <a href="/accountants" class="btn btn-secondary" style="width: 100%; justify-content: center;">Open CPA Scenario Desk & Resources →</a>
+          <a href="accountants.html" class="btn btn-secondary" style="width: 100%; justify-content: center;">Open CPA Scenario Desk & Resources →</a>
         </div>
       </div>
 
@@ -2677,7 +2721,7 @@
           </ul>
         </div>
         <div>
-          <a href="/renovators" class="btn btn-secondary" style="width: 100%; justify-content: center;">Explore Contractor Financing Programs →</a>
+          <a href="renovators.html" class="btn btn-secondary" style="width: 100%; justify-content: center;">Explore Contractor Financing Programs →</a>
         </div>
       </div>
 
@@ -2696,7 +2740,7 @@
           </ul>
         </div>
         <div>
-          <a href="/planners" class="btn btn-secondary" style="width: 100%; justify-content: center;">Explore Wealth & Planner Solutions →</a>
+          <a href="planners.html" class="btn btn-secondary" style="width: 100%; justify-content: center;">Explore Wealth & Planner Solutions →</a>
         </div>
       </div>
 
@@ -2953,7 +2997,7 @@
 
     function handleHeaderNav(pageId, event) {
         const path = window.location.pathname;
-        const isHomePage = path === '' || path === '/' || path.endsWith('index.html') || path.includes('localhost');
+        const isHomePage = path === '/' || path.endsWith('index.html') || path === '' || path.includes('localhost');
         
         if (isHomePage) {
             if (event) event.preventDefault();

@@ -279,6 +279,9 @@
       margin: 0 0 1.5rem 0;
     }
     .lane-bullets li {
+      padding-left: 1.25rem !important;
+      position: relative !important;
+      list-style: none !important;
       position: relative;
       padding-left: 1.25rem;
       font-size: 0.88rem;
@@ -287,6 +290,9 @@
       line-height: 1.5;
     }
     .lane-bullets li::before {
+      position: absolute !important;
+      left: 0 !important;
+      top: -0.1rem !important;
       content: "•";
       position: absolute;
       left: 0;
@@ -435,11 +441,56 @@
     .modal-close-btn:hover { color: #FFFFFF; }
     .modal-body { padding: 2rem; }
 
-    @media (max-width: 900px) {
+    @media (max-width: 1024px) {
       .feature-grid-2 { grid-template-columns: 1fr; }
       .footer-inner { grid-template-columns: 1fr; }
       .subpage-hero h1 { font-size: 2.2rem; }
     }
+
+    /* Responsive Header & Navigation scroll */
+    @media (max-width: 1024px) {
+      .nav-inner {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.6rem !important;
+        padding: 0.8rem 1rem !important;
+      }
+      nav.nav-links {
+        width: 100% !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        gap: 1.1rem !important;
+        padding-bottom: 0.4rem !important;
+        display: flex !important;
+        justify-content: flex-start !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+      nav.nav-links::-webkit-scrollbar {
+        display: none !important;
+      }
+      nav.nav-links a {
+        font-size: 0.88rem !important;
+        padding: 0.2rem 0 !important;
+        display: inline-block !important;
+      }
+      .nav-inner > div:last-child {
+        display: none !important;
+      }
+    }
+    .active-classifier {
+      background-color: var(--accent-mustard) !important;
+      border-color: var(--accent-mustard) !important;
+      color: #121E1A !important;
+    }
+    
+
+    @media (max-width: 1024px) {
+      #cpa-classifier-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+      }
+    }
+    
   </style>
 </head>
 <body>
@@ -569,7 +620,112 @@
   </main>
 
   <!-- Footer with Official Brokerage Compliance -->
-  <footer id="contact">
+  
+    <!-- Shareable Client Pre-Qualification Classifier Tool -->
+    <section class="content-section" id="cpa-client-tool" style="padding-top: 2rem;">
+      <div class="section-title-wrap">
+        <span class="section-eyebrow">CPA Client Tool</span>
+        <h2>Self-Employed (BFS) Lender Fit Classifier</h2>
+        <p>A shareable pre-qualification tool you can send directly to clients. Let them check their scenario parameters and see which mortgage tiers they fit before you structure corporate distributions.</p>
+      </div>
+
+      <div style="background: var(--bg-subtle); border: 1.5px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2.5rem; max-width: 1000px; margin: 0 auto; box-shadow: var(--shadow-card);">
+        <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 2.5rem; align-items: start;" id="cpa-classifier-grid">
+          
+          <!-- Left Panel Selector -->
+          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+            
+            <!-- Credit Score Selector -->
+            <div>
+              <label style="display: block; font-size: 0.9rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">1. Estimated Client Credit Score</label>
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
+                <button type="button" class="btn btn-secondary active-classifier" id="cpa-cr-720" onclick="setCPAClassCredit(720)" style="font-size: 0.82rem; padding: 0.6rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); cursor: pointer; font-weight:700;">Excellent (720+)</button>
+                <button type="button" class="btn btn-secondary" id="cpa-cr-650" onclick="setCPAClassCredit(650)" style="font-size: 0.82rem; padding: 0.6rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); cursor: pointer; font-weight:700;">Good (650-719)</button>
+                <button type="button" class="btn btn-secondary" id="cpa-cr-580" onclick="setCPAClassCredit(580)" style="font-size: 0.82rem; padding: 0.6rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); cursor: pointer; font-weight:700;">Fair (580-649)</button>
+                <button type="button" class="btn btn-secondary" id="cpa-cr-300" onclick="setCPAClassCredit(300)" style="font-size: 0.82rem; padding: 0.6rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); cursor: pointer; font-weight:700;">Challenged (&lt;580)</button>
+              </div>
+            </div>
+
+            <!-- Income Structure Selector -->
+            <div>
+              <label style="display: block; font-size: 0.9rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">2. BFS Income Verification Mode</label>
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
+                <button type="button" class="btn btn-secondary active-classifier" id="cpa-inc-t4" onclick="setCPAClassIncome('t4')" style="font-size: 0.82rem; padding: 0.6rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); cursor: pointer; font-weight:700;">T4 Salary / Draw</button>
+                <button type="button" class="btn btn-secondary" id="cpa-inc-stated" onclick="setCPAClassIncome('stated')" style="font-size: 0.82rem; padding: 0.6rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); cursor: pointer; font-weight:700;">Stated / BFS Deposits</button>
+                <button type="button" class="btn btn-secondary" id="cpa-inc-holdco" onclick="setCPAClassIncome('holdco')" style="font-size: 0.82rem; padding: 0.6rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); cursor: pointer; font-weight:700;">Holding Co (T2)</button>
+                <button type="button" class="btn btn-secondary" id="cpa-inc-assets" onclick="setCPAClassIncome('assets')" style="font-size: 0.82rem; padding: 0.6rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); cursor: pointer; font-weight:700;">High Liquid Assets</button>
+              </div>
+            </div>
+
+            <!-- Down Payment/Equity Position -->
+            <div>
+              <label style="display: block; font-size: 0.9rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">3. Equity / Down Payment Position</label>
+              <div style="display: flex; gap: 0.5rem;">
+                <button type="button" class="btn btn-secondary active-classifier" id="cpa-eq-20" onclick="setCPAClassEquity(20)" style="flex:1; font-size: 0.82rem; padding: 0.6rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); cursor: pointer; font-weight:700;">20% or More (High Equity)</button>
+                <button type="button" class="btn btn-secondary" id="cpa-eq-5" onclick="setCPAClassEquity(5)" style="flex:1; font-size: 0.82rem; padding: 0.6rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); cursor: pointer; font-weight:700;">Under 20% (High-Ratio)</button>
+              </div>
+            </div>
+
+            <!-- Tax Arrears Selector -->
+            <div>
+              <label style="display: block; font-size: 0.9rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">4. Outstanding CRA Personal/Corp Arrears</label>
+              <div style="display: flex; gap: 0.5rem;">
+                <button type="button" class="btn btn-secondary active-classifier" id="cpa-tax-none" onclick="setCPAClassTax(false)" style="flex:1; font-size: 0.82rem; padding: 0.6rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); cursor: pointer; font-weight:700;">Fully Paid / Up-to-Date</button>
+                <button type="button" class="btn btn-secondary" id="cpa-tax-yes" onclick="setCPAClassTax(true)" style="flex:1; font-size: 0.82rem; padding: 0.6rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); cursor: pointer; font-weight:700;">CRA Balance Owing</button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Results Panel -->
+          <div style="background: var(--brand-green); color: #FFFFFF; border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow-lg);" id="cpa-class-card">
+            <span style="font-size: 0.72rem; font-weight: 800; color: var(--accent-mustard); text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.2rem;">Lending Classification</span>
+            <h3 id="cpa-class-title" style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.8rem; color: #FFFFFF; line-height: 1.2;">PRIME A-LENDER FIT</h3>
+            
+            <div style="background: rgba(255,255,255,0.08); border-left: 3px solid var(--accent-mustard); padding: 0.8rem 1rem; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 0.82rem; line-height: 1.5; color: #E2EAE5; margin-bottom: 1.2rem;" id="cpa-class-desc">
+              Your client's strong profile qualifies for bank-rate mortgages. Let's structure a re-advanceable facility (Smith Manoeuvre) to feed your asset plan.
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 1.2rem; margin-bottom: 1.2rem;">
+              <div style="display: flex; justify-content: space-between;">
+                <span>Estimated BFS Rate:</span>
+                <strong id="cpa-class-rate" style="color: #FFFFFF; font-weight: 800;">3.49% - 4.19%</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span>Lender Class:</span>
+                <strong id="cpa-class-tier" style="color: #FFFFFF; font-weight: 800;">Prime Banks &amp; Monolines</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span>CRA Audit Clearance:</span>
+                <strong id="cpa-class-audit" style="color: #FFFFFF; font-weight: 800;">Pre-Approved</strong>
+              </div>
+            </div>
+
+            <!-- Mini Intake Form inside Card -->
+            <form id="cpaClassifierForm" onsubmit="handleCPAClassifierSubmit(event)">
+              <div style="margin-bottom: 0.8rem;">
+                <input type="text" id="cpac_client_name" placeholder="Client Name / Tag (e.g. David BFS)" style="width: 100%; padding: 0.65rem 0.8rem; border-radius: var(--radius-sm); border: none; font-size: 0.88rem; color: #111827; background: #FFFFFF;" />
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0.8rem;">
+                <input type="tel" id="cpac_advisor_phone" placeholder="Your Phone" style="width: 100%; padding: 0.65rem 0.8rem; border-radius: var(--radius-sm); border: none; font-size: 0.88rem; color: #111827; background: #FFFFFF;" />
+                <input type="email" id="cpac_advisor_email" placeholder="Your Email" style="width: 100%; padding: 0.65rem 0.8rem; border-radius: var(--radius-sm); border: none; font-size: 0.88rem; color: #111827; background: #FFFFFF;" />
+              </div>
+              <button type="submit" class="btn btn-accent" style="width: 100%; justify-content: center; font-weight: 800; font-size: 0.92rem; padding: 0.75rem 1rem;">Coordinate File with Trevor →</button>
+            </form>
+
+            <div id="cpaClassifierSuccess" style="display: none; text-align: center; padding: 1rem 0;">
+              <span style="font-size: 1.5rem; display: block; margin-bottom: 0.4rem;">✓</span>
+              <strong style="color: var(--accent-mustard); font-size: 0.95rem;">File Details Registered!</strong>
+              <p style="font-size: 0.78rem; color: #E2EAE5; margin-top: 0.2rem;">I will analyze this combination and contact you shortly with the BFS qualification outline.</p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+    
+<footer id="contact">
     <div class="footer-inner">
       <div class="footer-main">
         <h4>TREVOR BERRY</h4>
@@ -582,21 +738,21 @@
       <div class="footer-links">
         <h5>Client Advisory</h5>
         <ul>
-          <li><a href="/buying">Buying a Home &amp; Pre-Approvals</a></li>
-          <li><a href="/buyer-rebate">New-Build Tax Rebate Guide</a></li>
-          <li><a href="/homeowners">Equity &amp; Debt Relief</a></li>
-          <li><a href="/alternative">Alternative &amp; Bank Declines</a></li>
+          <li><a href="index.html#buying">Buying a Home &amp; Pre-Approvals</a></li>
+          <li><a href="buyer-rebate.html">New-Build Tax Rebate Guide</a></li>
+          <li><a href="index.html#homeowners">Equity &amp; Debt Relief</a></li>
+          <li><a href="index.html#alternative">Alternative &amp; Bank Declines</a></li>
         </ul>
       </div>
 
       <div class="footer-links">
         <h5>Professional Portals</h5>
         <ul>
-          <li><a href="/realtors">Realtor Partner Hub</a></li>
-          <li><a href="/rebate-guide">Realtor GST/HST Guide</a></li>
-          <li><a href="/builders">Alberta Builder Hub</a></li>
-          <li><a href="/builders-ontario">Ontario Builder Program</a></li>
-          <li><a href="/renovators">Contractor Financing</a></li>
+          <li><a href="realtors.html">Realtor Partner Hub</a></li>
+          <li><a href="rebate-guide.html">Realtor GST/HST Guide</a></li>
+          <li><a href="builders.html">Alberta Builder Hub</a></li>
+          <li><a href="builders-ontario.html">Ontario Builder Program</a></li>
+          <li><a href="renovators.html">Contractor Financing</a></li>
         </ul>
       </div>
     </div>
@@ -634,22 +790,22 @@
         <form id="cpaForm" onsubmit="handleCPASubmit(event)">
           <div style="margin-bottom: 1.2rem;">
             <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">CPA Partner Name &amp; Designation *</label>
-            <input type="text" id="c_name" placeholder="e.g. Sandra Mitchell, CPA, CA" required style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
+            <input type="text" id="c_name" placeholder="e.g. Sandra Mitchell, CPA, CA" style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
           </div>
 
           <div style="margin-bottom: 1.2rem;">
             <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Accounting Firm *</label>
-            <input type="text" id="c_company" placeholder="e.g. Mitchell &amp; Partners LLP" required style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
+            <input type="text" id="c_company" placeholder="e.g. Mitchell &amp; Partners LLP" style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
           </div>
 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.2rem;">
             <div>
               <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Direct Line *</label>
-              <input type="tel" id="c_phone" placeholder="403-000-0000" required style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
+              <input type="tel" id="c_phone" placeholder="403-000-0000" style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
             </div>
             <div>
               <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Secure Email *</label>
-              <input type="email" id="c_email" placeholder="sandra@mitchellcpa.ca" required style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
+              <input type="email" id="c_email" placeholder="sandra@mitchellcpa.ca" style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
             </div>
           </div>
 
@@ -719,6 +875,202 @@
       document.getElementById('cpaForm').style.display = 'none';
       document.getElementById('cpaSuccessNotice').style.display = 'block';
     }
-  </script>
+  
+    // =========================================================================
+    // BFS LENDER FIT CLASSIFIER LOGIC FOR CPAS
+    // =========================================================================
+    let cpaClassCredit = 720;
+    let cpaClassIncome = 't4';
+    let cpaClassEquity = 20;
+    let cpaClassTax = false;
+
+    function setCPAClassCredit(score) {
+      cpaClassCredit = score;
+      document.querySelectorAll('#cpa-client-tool [id^="cpa-cr-"]').forEach(btn => btn.classList.remove('active-classifier'));
+      document.getElementById('cpa-cr-' + score).classList.add('active-classifier');
+      runCPAClassifier();
+    }
+
+    function setCPAClassIncome(mode) {
+      cpaClassIncome = mode;
+      document.querySelectorAll('#cpa-client-tool [id^="cpa-inc-"]').forEach(btn => btn.classList.remove('active-classifier'));
+      document.getElementById('cpa-inc-' + mode).classList.add('active-classifier');
+      runCPAClassifier();
+    }
+
+    function setCPAClassEquity(pct) {
+      cpaClassEquity = pct;
+      document.querySelectorAll('#cpa-client-tool [id^="cpa-eq-"]').forEach(btn => btn.classList.remove('active-classifier'));
+      document.getElementById('cpa-eq-' + pct).classList.add('active-classifier');
+      runCPAClassifier();
+    }
+
+    function setCPAClassTax(hasArrears) {
+      cpaClassTax = hasArrears;
+      document.querySelectorAll('#cpa-client-tool [id^="cpa-tax-"]').forEach(btn => btn.classList.remove('active-classifier'));
+      document.getElementById('cpa-tax-' + (hasArrears ? 'yes' : 'none')).classList.add('active-classifier');
+      runCPAClassifier();
+    }
+
+    function runCPAClassifier() {
+      let title = "PRIME A-LENDER FIT";
+      let desc = "Client qualifies for bank-rate mortgages. Let's structure a re-advanceable Smith Manoeuvre HELOC to convert personal principal into tax-deductible investment capital.";
+      let rate = "3.49% - 4.19%";
+      let tier = "Prime Bank & Monoline";
+      let audit = "Pre-Approved (CRA Clear)";
+      let cardBg = "var(--brand-green)";
+
+      if (cpaClassTax) {
+        title = "PRIVATE BRIDGE ADVANCE";
+        desc = "Active CRA tax arrears or source deduction balances owing will instantly block A and B banks. We structure short-term interest-only bridge capital to pay off the CRA, stopping 9%+ compounding daily interest, while keeping investment assets completely untouched.";
+        rate = "6.99% - 8.99%";
+        tier = "Private Asset-Backed Fund";
+        audit = "Arrears Clearance Refinance";
+        cardBg = "#1C201E";
+      } else if (cpaClassCredit < 580) {
+        title = "PRIVATE / EQUITY FIRST";
+        desc = "A challenged credit profile requires an equity-based solution. We place the client with a private lender based on home equity, then provide a written exit roadmap to rebuild credit scores and transition back to institutional prime lenders within 12–24 months.";
+        rate = "7.25% - 9.00%";
+        tier = "Private Equity / Mortgage Fund";
+        audit = "Equity-Backed Approval";
+        cardBg = "#2E1C18";
+      } else if (cpaClassIncome === 'stated' && cpaClassEquity >= 20) {
+        title = "ALTERNATIVE B-LENDER";
+        desc = "Client has low net personal income but strong business cash deposits. We verify 6–12 months of corporate bank statement deposits to qualify them without artificially inflating their personal taxable salary.";
+        rate = "4.79% - 5.89%";
+        tier = "Alternative (B-Bank) Stated Income";
+        audit = "BFS Deposit Underwrite";
+        cardBg = "#12342E";
+      } else if (cpaClassIncome === 'holdco' && cpaClassEquity >= 20) {
+        title = "HOLDING COMPANY T2 FIT";
+        desc = "Client is purchasing through an active holding company. We utilize specialized commercial-backed corporate B-lenders that underwrite net business cash flow to keep the asset off personal balance sheets.";
+        rate = "4.99% - 6.19%";
+        tier = "Corporate Holdco Program";
+        audit = "T2 Corporate File Review";
+        cardBg = "#1F2335";
+      } else if (cpaClassCredit < 650 || cpaClassIncome === 'stated') {
+        title = "ALTERNATIVE (B) PROGRAM";
+        desc = "Slight credit bruising or self-employed stated-income guidelines require an alternative underwriter. Requires a minimum of 20% down payment or equity to qualify under non-conforming stated-income tiers.";
+        rate = "4.99% - 5.99%";
+        tier = "Alternative B-Lender Program";
+        audit = "BFS Self-Declared Audit";
+        cardBg = "#1F2B24";
+      }
+
+      document.getElementById('cpa-class-title').textContent = title;
+      document.getElementById('cpa-class-desc').innerHTML = desc;
+      document.getElementById('cpa-class-rate').textContent = rate;
+      document.getElementById('cpa-class-tier').textContent = tier;
+      document.getElementById('cpa-class-audit').textContent = audit;
+      document.getElementById('cpa-class-card').style.backgroundColor = cardBg;
+    }
+
+    function handleCPAClassifierSubmit(e) {
+      e.preventDefault();
+      let name = document.getElementById('cpac_client_name').value;
+      let phone = document.getElementById('cpac_advisor_phone').value;
+      let email = document.getElementById('cpac_advisor_email').value;
+      
+      let payload = {
+        lead_type: 'accountants',
+        full_name: name,
+        company: 'CPA Client Classifier',
+        phone: phone,
+        email: email,
+        scenario_notes: `CPA Shared Client: Credit: ${cpaClassCredit}, Income: ${cpaClassIncome}, Equity: ${cpaClassEquity}%, Tax Arrears: ${cpaClassTax}. Estimated Tier: ` + document.getElementById('cpa-class-title').textContent,
+        province: 'Alberta',
+        source_cta: 'Accountants Client Fit Classifier'
+      };
+
+      let endpoint = 'https://script.google.com/macros/s/AKfycbysYey_FmE3UBLGOFHWs3298qZGwfNz-gr7at4oRp3ZIrs8TJ2U-YcSX4ZSD6NrTR5O/exec';
+      fetch(endpoint, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).catch(err => console.log('CPA log error:', err));
+
+      document.getElementById('cpaClassifierForm').style.display = 'none';
+      document.getElementById('cpaClassifierSuccess').style.display = 'block';
+    }
+    
+
+    // =========================================================================
+    // BFS LENDER FIT CLASSIFIER LOGIC
+    // =========================================================================
+    var cpaParams = {
+        credit: 'excellent',
+        income: 'salaried',
+        equity: 'conventional',
+        arrears: 'none'
+    };
+
+    function setCpaClassifier(param, val) {
+        cpaParams[param] = val;
+        
+        // Update active classes
+        if (param === 'credit') {
+            document.getElementById('cpa-cred-ex').classList.toggle('active', val === 'excellent');
+            document.getElementById('cpa-cred-gd').classList.toggle('active', val === 'good');
+            document.getElementById('cpa-cred-fr').classList.toggle('active', val === 'fair');
+            document.getElementById('cpa-cred-br').classList.toggle('active', val === 'bruised');
+        } else if (param === 'income') {
+            document.getElementById('cpa-inc-sal').classList.toggle('active', val === 'salaried');
+            document.getElementById('cpa-inc-bfs').classList.toggle('active', val === 'self-employed');
+            document.getElementById('cpa-inc-ret').classList.toggle('active', val === 'retired');
+            document.getElementById('cpa-inc-hld').classList.toggle('active', val === 'holding-co');
+        } else if (param === 'equity') {
+            document.getElementById('cpa-eq-conv').classList.toggle('active', val === 'conventional');
+            document.getElementById('cpa-eq-ins').classList.toggle('active', val === 'insured');
+        } else if (param === 'arrears') {
+            document.getElementById('cpa-tax-none').classList.toggle('active', val === 'none');
+            document.getElementById('cpa-tax-act').classList.toggle('active', val === 'active');
+        }
+        
+        runCpaClassifier();
+    }
+
+    function runCpaClassifier() {
+        var title = document.getElementById('cpa-lender-title');
+        var desc = document.getElementById('cpa-lender-desc');
+        var rates = document.getElementById('cpa-lender-rates');
+        
+        if (cpaParams.arrears === 'active') {
+            title.textContent = "🚨 PRIVATE EQUITY / BRIDGE RESOLUTION";
+            desc.innerHTML = "<strong>Active CRA tax arrears or source deduction balances owing will instantly decline standard bank files.</strong> We structure short-term interest-only bridge capital to clear liabilities, stop high compounding CRA penalties, and transition you cleanly back into bank pre-approval.";
+            rates.textContent = "6.99% - 8.99% (Interest-Only)";
+        } else if (cpaParams.credit === 'bruised') {
+            title.textContent = "💼 PRIVATE MORTGAGE STRUCTURE";
+            desc.innerHTML = "<strong>Credit challenges below 580 require asset-backed or high-equity underwriting.</strong> If you maintain a strong 20%+ principal position, we can secure non-income qualified private capital with a clear written 12-to-24 month exit roadmap back to standard rates.";
+            rates.textContent = "6.99% - 7.99%";
+        } else if (cpaParams.income === 'holding-co' || cpaParams.income === 'self-employed') {
+            if (cpaParams.credit === 'fair') {
+                title.textContent = "💼 ALTERNATIVE B-LENDER OPTION";
+                desc.innerHTML = "<strong>Business-for-self (BFS) structures with fair credit qualify for B-lenders.</strong> We utilize bank statement stated income programs that verify actual deposits without requiring high net taxable personal draws (Line 15000).";
+                rates.textContent = "4.99% - 5.89%";
+            } else {
+                title.textContent = "🏆 NET BFS STATEMENT PROGRAM";
+                desc.innerHTML = "<strong>Excellent/Good credit BFS profiles are eligible for specialized monoline BFS stated programs.</strong> We qualify you based on corporate bank flow and T2 schedules, preserving corporate wealth without forcing massive personal tax hits.";
+                rates.textContent = "4.59% - 5.19%";
+            }
+        } else if (cpaParams.income === 'retired') {
+            title.textContent = "🏆 PORTFOLIO ASSET DRAWDOWN LENDER";
+            desc.innerHTML = "<strong>Standard retail bank branches fail to qualify retirees because their liquid withdrawals are categorized as 'non-verifiable'.</strong> We structure portfolio-asset net-worth programs that qualify retirees based on liquid investment holdings rather than traditional pension income.";
+            rates.textContent = "3.59% - 4.29%";
+        } else {
+            // Salaried, traditional, clean
+            if (cpaParams.equity === 'insured') {
+                title.textContent = "🏆 PRIME MONOLINE UNINSURED / INSURED";
+                desc.innerHTML = "<strong>Traditional high-credit files with traditional down payments qualify for best-rate prime monolines.</strong> Monoline brokers offer standard discounted rates with significantly lower prepayment penalty calculations than major commercial banks.";
+                rates.textContent = "3.49% - 4.19%";
+            } else {
+                title.textContent = "🏆 A-LENDER PRIME RE-ADVANCE HELOC";
+                desc.innerHTML = "<strong>A conventional 20%+ equity position on excellent credit qualifies for immediate re-advanceable capital.</strong> This is the exact structure needed to implement the Smith Manoeuvre, converting regular principal payments into a tax-deductible wealth engine.";
+                rates.textContent = "3.49% - 3.89%";
+            }
+        }
+    }
+    
+</script>
 </body>
 </html>

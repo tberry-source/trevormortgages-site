@@ -275,8 +275,13 @@
     }
     .lane-bullets {
       list-style: none;
+      padding: 0 !important;
+      margin: 0 0 1.5rem 0 !important;
     }
     .lane-bullets li {
+      padding-left: 1.25rem !important;
+      position: relative !important;
+      list-style: none !important;
       font-size: 0.88rem;
       color: var(--text-main);
       margin-bottom: 0.5rem;
@@ -285,6 +290,9 @@
       gap: 0.5rem;
     }
     .lane-bullets li::before {
+      position: absolute !important;
+      left: 0 !important;
+      top: -0.1rem !important;
       content: "•";
       color: var(--brand-green);
       font-size: 1.2rem;
@@ -431,7 +439,7 @@
     .modal-close-btn:hover { color: #FFFFFF; }
     .modal-body { padding: 2rem; }
 
-    @media (max-width: 900px) {
+    @media (max-width: 1024px) {
       .feature-grid-2 { grid-template-columns: 1fr; }
       .footer-inner { grid-template-columns: 1fr; }
       .subpage-hero h1 { font-size: 2.2rem; }
@@ -610,6 +618,38 @@
       color: #FFFFFF;
     }
 
+
+    /* Header Responsive Layout */
+    @media (max-width: 1024px) {
+      .nav-inner {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.6rem !important;
+        padding: 0.8rem 1rem !important;
+      }
+      nav.nav-links {
+        width: 100% !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        gap: 1.1rem !important;
+        padding-bottom: 0.4rem !important;
+        display: flex !important;
+        justify-content: flex-start !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+      nav.nav-links::-webkit-scrollbar {
+        display: none !important;
+      }
+      nav.nav-links a {
+        font-size: 0.88rem !important;
+        padding: 0.2rem 0 !important;
+        display: inline-block !important;
+      }
+      .nav-inner > div:last-child {
+        display: none !important;
+      }
+    }
+    
   </style>
 </head>
 <body>
@@ -870,21 +910,21 @@
       <div class="footer-links">
         <h5>Client Advisory</h5>
         <ul>
-          <li><a href="/buying">Buying a Home &amp; Pre-Approvals</a></li>
-          <li><a href="/buyer-rebate">New-Build Tax Rebate Guide</a></li>
-          <li><a href="/homeowners">Equity &amp; Debt Relief</a></li>
-          <li><a href="/alternative">Alternative &amp; Bank Declines</a></li>
+          <li><a href="index.html#buying">Buying a Home &amp; Pre-Approvals</a></li>
+          <li><a href="buyer-rebate.html">New-Build Tax Rebate Guide</a></li>
+          <li><a href="index.html#homeowners">Equity &amp; Debt Relief</a></li>
+          <li><a href="index.html#alternative">Alternative &amp; Bank Declines</a></li>
         </ul>
       </div>
 
       <div class="footer-links">
         <h5>Professional Portals</h5>
         <ul>
-          <li><a href="/realtors">Realtor Partner Hub</a></li>
-          <li><a href="/rebate-guide">Realtor GST/HST Guide</a></li>
-          <li><a href="/builders">Alberta Builder Hub</a></li>
-          <li><a href="/builders-ontario">Ontario Builder Program</a></li>
-          <li><a href="/renovators">Contractor Financing</a></li>
+          <li><a href="realtors.html">Realtor Partner Hub</a></li>
+          <li><a href="rebate-guide.html">Realtor GST/HST Guide</a></li>
+          <li><a href="builders.html">Alberta Builder Hub</a></li>
+          <li><a href="builders-ontario.html">Ontario Builder Program</a></li>
+          <li><a href="renovators.html">Contractor Financing</a></li>
         </ul>
       </div>
     </div>
@@ -921,12 +961,12 @@
       <div class="modal-body" style="padding: 1.8rem 2rem 2.2rem;">
         <form id="plannerForm" onsubmit="handlePlannerSubmit(event)">
           <div style="margin-bottom: 1.2rem;">
-            <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Advisor Name &amp; Designation *</label>
-            <input type="text" id="p_name" placeholder="e.g. Sandra Mitchell, CFP, CFA" required style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
+            <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Your Name (Advisor or Client) *</label>
+            <input type="text" id="p_name" placeholder="e.g. Sandra Mitchell" style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
           </div>
 
           <div style="margin-bottom: 1.2rem;">
-            <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Firm Name *</label>
+            <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Company or Firm Name (Optional)</label>
             <input type="text" id="p_company" placeholder="e.g. Mitchell Wealth Management" required style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
           </div>
 
