@@ -436,6 +436,180 @@
       .footer-inner { grid-template-columns: 1fr; }
       .subpage-hero h1 { font-size: 2.2rem; }
     }
+
+    /* =========================================================================
+       LENDER FIT CLASSIFIER WIDGET
+       ========================================================================= */
+    .classifier-section {
+      background: var(--bg-subtle);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 5rem 1.5rem;
+    }
+    .classifier-container {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    @media (max-width: 960px) {
+      .classifier-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+    .classifier-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .control-block {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .control-block h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--brand-green);
+      margin-bottom: 0.4rem;
+    }
+    .control-block p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+    }
+    
+    /* Option Grid cards */
+    .option-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 500px) {
+      .option-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .option-card {
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 1.1rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    .option-card:hover {
+      border-color: var(--brand-green);
+      background: var(--brand-green-light);
+    }
+    .option-card.active {
+      border-color: var(--brand-green);
+      background: var(--brand-green-light);
+      box-shadow: 0 0 0 1px var(--brand-green);
+    }
+    .option-card-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.2rem;
+    }
+    .option-card-desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    /* Result Panel Styling */
+    .classifier-result-wrap {
+      position: sticky;
+      top: 100px;
+    }
+    .result-card {
+      background: #131E1A; /* Premium Deep Perch Green/Charcoal */
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #1E2E27;
+    }
+    .result-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 6px;
+      height: 100%;
+      background: var(--accent-mustard);
+    }
+    .result-card h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .fit-badge {
+      display: inline-block;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--accent-mustard);
+      background: rgba(237, 171, 43, 0.12);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-sm);
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(237, 171, 43, 0.25);
+    }
+    .result-details {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #D1D5DB;
+      margin-bottom: 2rem;
+    }
+    .result-bullets {
+      list-style: none;
+      margin: 1.2rem 0;
+    }
+    .result-bullets li {
+      position: relative;
+      padding-left: 1.4rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.85rem;
+      color: #E5E7EB;
+    }
+    .result-bullets li::before {
+      content: "✓";
+      color: var(--accent-mustard);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .rate-indicator {
+      border-top: 1px dashed rgba(255, 255, 255, 0.15);
+      padding-top: 1.2rem;
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .rate-label {
+      font-size: 0.85rem;
+      color: #9CA3AF;
+    }
+    .rate-value {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #FFFFFF;
+    }
+
   </style>
 </head>
 <body>
@@ -457,11 +631,11 @@
       </a>
 
       <nav class="nav-links">
-        <a href="/">Home</a>
-        <a href="/buying">Buying</a>
-        <a href="/homeowners">Homeowners</a>
-        <a href="/alternative">Alternative</a>
-        <a href="/partners" class="active">Partners</a>
+        <a href="/index.html#home">Home</a>
+        <a href="/index.html#buying">Buying</a>
+        <a href="/index.html#homeowners">Homeowners</a>
+        <a href="/index.html#alternative">Alternative</a>
+        <a href="/index.html#partners" class="active">Partners</a>
         <a href="#contact">Contact</a>
       </nav>
 
@@ -539,6 +713,137 @@
           </p>
         </div>
       </div>
+
+
+    <!-- STANDALONE INTERACTIVE MODULE: LENDER FIT CLASSIFIER -->
+    <section class="classifier-section" id="classifier">
+      <div class="section-title-wrap">
+        <span class="section-eyebrow">Advisor Scenario Screener</span>
+        <h2>Client Lender Fit &amp; Qualification Classifier</h2>
+        <p>Run high-level scenarios to instantly pre-screen what tier of financing, pricing, and underwriter guidelines fit your client's current balance sheet profile.</p>
+      </div>
+
+      <div class="classifier-container">
+        
+        <!-- Selection Controls -->
+        <div class="classifier-controls">
+          
+          <!-- Control 1: Credit Tier -->
+          <div class="control-block">
+            <h3>1. Credit Score Profile</h3>
+            <p>Select the credit rating tier matching the primary applicant's history.</p>
+            <div class="option-grid">
+              <div class="option-card active" onclick="setClassifierParam('credit', 'excellent')" id="card-credit-excellent">
+                <div class="option-card-title">Excellent (720+)</div>
+                <div class="option-card-desc">Clean historical repayment. Top tier A-lender bank eligibility.</div>
+              </div>
+              <div class="option-card" onclick="setClassifierParam('credit', 'good')" id="card-credit-good">
+                <div class="option-card-title">Good (650 - 719)</div>
+                <div class="option-card-desc">Standard credit history. Clean access to monoline wholesale prime options.</div>
+              </div>
+              <div class="option-card" onclick="setClassifierParam('credit', 'fair')" id="card-credit-fair">
+                <div class="option-card-title">Fair (580 - 649)</div>
+                <div class="option-card-desc">Minor late payments, credit utilization, or past consumer proposal.</div>
+              </div>
+              <div class="option-card" onclick="setClassifierParam('credit', 'bruised')" id="card-credit-bruised">
+                <div class="option-card-title">Challenged (&lt; 580)</div>
+                <div class="option-card-desc">Active collections, severe rating hits, or bankruptcy. Requires asset focus.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Control 2: Income Structure -->
+          <div class="control-block">
+            <h3>2. Income Verification Method</h3>
+            <p>Select how the household income is declared and underwritten.</p>
+            <div class="option-grid">
+              <div class="option-card active" onclick="setClassifierParam('income', 'salaried')" id="card-income-salaried">
+                <div class="option-card-title">Standard T4 Salaried</div>
+                <div class="option-card-desc">Consistent salaried employment, verifiable via standard job letter &amp; paystubs.</div>
+              </div>
+              <div class="option-card" onclick="setClassifierParam('income', 'self-employed')" id="card-income-self-employed">
+                <div class="option-card-title">Self-Employed (BFS)</div>
+                <div class="option-card-desc">Sole proprietor or incorporated professional utilizing legitimate tax write-offs.</div>
+              </div>
+              <div class="option-card" onclick="setClassifierParam('income', 'retired')" id="card-income-retired">
+                <div class="option-card-title">Retired / Wealth Assets</div>
+                <div class="option-card-desc">Relying on CPP, OAS, corporate dividends, RRIF drawdowns, or liquid assets.</div>
+              </div>
+              <div class="option-card" onclick="setClassifierParam('income', 'holding-co')" id="card-income-holding-co">
+                <div class="option-card-title">Holding Co / Complex</div>
+                <div class="option-card-desc">Inter-company loans, rental portfolios, or active corporate balance sheets.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Control 3: Equity / LTV Position -->
+          <div class="control-block">
+            <h3>3. Available Equity / Down Payment Position</h3>
+            <p>Select the loan-to-value (LTV) structure or available cash assets.</p>
+            <div class="option-grid">
+              <div class="option-card active" onclick="setClassifierParam('equity', 'conventional')" id="card-equity-conventional">
+                <div class="option-card-title">20%+ Equity / Down</div>
+                <div class="option-card-desc">Conventional positioning. No mandatory CMHC default insurance. Max flexibility.</div>
+              </div>
+              <div class="option-card" onclick="setClassifierParam('equity', 'insured')" id="card-equity-insured">
+                <div class="option-card-title">Under 20% (High Ratio)</div>
+                <div class="option-card-desc">Insured mortgage structure. Capped guidelines and requires 25-yr amortization max.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Control 4: Active CRA Arrears or Source Debt -->
+          <div class="control-block">
+            <h3>4. Active CRA Balances or Unsecured Debt</h3>
+            <p>Are there outstanding personal/corporate tax liabilities or extreme credit card debt?</p>
+            <div class="option-grid">
+              <div class="option-card active" onclick="setClassifierParam('arrears', 'none')" id="card-arrears-none">
+                <div class="option-card-title">Fully Clear / Standard</div>
+                <div class="option-card-desc">CRA accounts fully paid up-to-date. Normal consumer debt carrying ratios.</div>
+              </div>
+              <div class="option-card" onclick="setClassifierParam('arrears', 'active')" id="card-arrears-active">
+                <div class="option-card-title">Active CRA/Tax Arrears</div>
+                <div class="option-card-desc">Outstanding tax notices, corporate source deductions, or severe debt load.</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Classification Box -->
+        <div class="classifier-result-wrap">
+          <div class="result-card">
+            <h3>Lender Class Assessment</h3>
+            <div class="fit-badge" id="fit-badge-display">A-LENDER Prime Bank</div>
+            
+            <p class="result-details" id="fit-desc-display">
+              The client qualifies for top-tier, prime retail financing. High-credit and T4 employment structures enable access to Canada's lowest interest rates with traditional lenders.
+            </p>
+
+            <h4 style="font-size: 0.95rem; font-weight: 800; color: #FFFFFF; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.4rem;">Structuring Opportunities:</h4>
+            <ul class="result-bullets" id="fit-bullets-display">
+              <li>Eligible for immediate re-advanceable Smith Manoeuvre setups</li>
+              <li>Cleanest access to 120-day fixed rate locks &amp; bank prime specials</li>
+              <li>Fully automated income underwriting with minimal paper hassle</li>
+            </ul>
+
+            <div class="rate-indicator">
+              <span class="rate-label">Est. Underwriting Rates:</span>
+              <span class="rate-value" id="fit-rate-display">3.49% - 4.19%</span>
+            </div>
+
+            <button type="button" class="btn btn-accent" style="width: 100%; justify-content: center; margin-top: 1.5rem; font-weight: 800;" onclick="openPlannerModal('Lender Classifier Result CTA')">
+              Coordinate This Scenario With Trevor →
+            </button>
+            <p style="font-size: 0.74rem; color: #9CA3AF; text-align: center; margin-top: 0.6rem; line-height: 1.4;">
+              Zero-credit pull review · Complete Wealth Strategy Alignment
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
 
       <!-- Lead Capture CTA -->
       <div class="cta-banner-box">
@@ -702,6 +1007,110 @@
       document.getElementById('plannerForm').style.display = 'none';
       document.getElementById('plannerSuccessNotice').style.display = 'block';
     }
+
+    // =========================================================================
+    // LENDER FIT CLASSIFIER LOGIC
+    // =========================================================================
+    var classParams = {
+      credit: 'excellent',
+      income: 'salaried',
+      equity: 'conventional',
+      arrears: 'none'
+    };
+
+    function setClassifierParam(type, value) {
+      classParams[type] = value;
+      
+      // Update UI Active states
+      var prefix = 'card-' + type + '-';
+      var cards = document.querySelectorAll('[id^="' + prefix + '"]');
+      cards.forEach(card => card.classList.remove('active'));
+      
+      var target = document.getElementById(prefix + value);
+      if (target) target.classList.add('active');
+      
+      runLenderClassification();
+    }
+
+    function runLenderClassification() {
+      var badge = document.getElementById('fit-badge-display');
+      var desc = document.getElementById('fit-desc-display');
+      var bullets = document.getElementById('fit-bullets-display');
+      var rates = document.getElementById('fit-rate-display');
+
+      // Rule Engine logic:
+      // Private/Bridge is triggered if credit is bruised, OR active CRA arrears exist, OR complex holding company structures with limited equity
+      if (classParams.arrears === 'active' || classParams.credit === 'bruised') {
+        badge.textContent = "PRIVATE / BRIDGE CAPITAL";
+        badge.style.color = "var(--accent-orange)";
+        badge.style.borderColor = "rgba(247, 112, 79, 0.4)";
+        badge.style.background = "rgba(247, 112, 79, 0.12)";
+        desc.textContent = "Your client matches a specialized Asset-Backed or Bridge financing tier. Traditional bank guidelines freeze completely over active CRA arrears, tax collections, or severe credit score challenges. We utilize short-term private or equity-based bridge mortgages to pay off CRA compound interest cleanly, establish an exit plan, and protect your asset-under-management balance.";
+        bullets.innerHTML = "<li>CRA Personal &amp; Corporate tax arrears cleared in full at closing</li>" +
+                            "<li>Interest-only short term bridge structures available to preserve client cash flow</li>" +
+                            "<li>Underwritten strictly on property equity, balance sheets, and viable exit-to-prime schedules</li>" +
+                            "<li>Protects you from having to force liquidate your client's wealth portfolio</li>";
+        rates.textContent = "6.99% - 8.99%";
+      }
+      // Alternative B-Lender is triggered if income is self-employed (BFS), retired/wealth (complex), or credit is fair, with clear tax arrears
+      else if (classParams.income === 'self-employed' || classParams.income === 'retired' || classParams.income === 'holding-co' || classParams.credit === 'fair') {
+        badge.textContent = "ALTERNATIVE B-LENDER";
+        badge.style.color = "var(--accent-mustard)";
+        badge.style.borderColor = "rgba(237, 171, 43, 0.4)";
+        badge.style.background = "rgba(237, 171, 43, 0.12)";
+        
+        if (classParams.income === 'self-employed') {
+          desc.textContent = "Your client qualifies for a Common-Sense Alternative B-Lender. For self-employed entrepreneurs (BFS), retail bank computer algorithms reject write-offs. Alternative underwriters respect business bank statement deposits and corporate earnings, avoiding tax hits and T4 inflation.";
+          bullets.innerHTML = "<li>Stated-income and 6-12 month bank statement cash flow programs</li>" +
+                              "<li>Aligns business entity equity without forcing salary withdrawals</li>" +
+                              "<li>Exit strategies built-in to cleanly migrate clients back to prime banks over 24-36 months</li>";
+        } else if (classParams.income === 'retired' || classParams.income === 'holding-co') {
+          desc.textContent = "Your client qualifies for Equity-Based or Alternative Wealth-Management Underwriting. Traditional retail underwriters decline assets or investments that don't match typical salary paystubs. We place these with customized lenders who structure asset-depletion (net worth) lending programs.";
+          bullets.innerHTML = "<li>Asset-depletion &amp; Net Worth program (underwrites global investment net worth)</li>" +
+                              "<li>Holding company corporate structure and rental portfolio alignments</li>" +
+                              "<li>Retirement cash flow protection to mitigate portfolio drawdown / sequence risk</li>";
+        } else {
+          desc.textContent = "Your client qualifies for an Alternative prime-adjacent program. Fair credit scores or past credit hits are approved cleanly based on solid income and a 20%+ equity/down payment structure, with a clear path to rebuild credit.";
+          bullets.innerHTML = "<li>Approvals for minor late payments, high credit line utilization, or past consumer proposals</li>" +
+                              "<li>Underwritten on solid property equity combined with household income verification</li>" +
+                              "<li>Clean re-establishment programs to restore top-tier prime score inside 24 months</li>";
+        }
+        rates.textContent = "4.79% - 5.89%";
+      }
+      // Monoline A-Lender (Good credit, standard income, wants fairer prepayments)
+      else if (classParams.credit === 'good') {
+        badge.textContent = "MONOLINE A-LENDER";
+        badge.style.color = "var(--accent-teal)";
+        badge.style.borderColor = "rgba(38, 166, 153, 0.4)";
+        badge.style.background = "rgba(38, 166, 153, 0.12)";
+        desc.textContent = "Your client matches a Premium Wholesale Monoline A-Lender. Unlike massive retail banks that carry heavy overhead, monolines specialize exclusively in prime mortgages. They offer identical low prime rates but use much fairer prepayment penalty calculations (Standard IRD vs. retail bank penalties).";
+        bullets.innerHTML = "<li>Substantially lower penalty structures (often saving $10,000+ if broken early)</li>" +
+                            "<li>Full 120-day rate lock options with maximum term flexibility</li>" +
+                            "<li>Direct, manual underwriting and quick turnarounds with wholesale-only lenders</li>";
+        rates.textContent = "3.59% - 4.29%";
+      }
+      // Excellent Prime Bank (Standard prime underwrite)
+      else {
+        badge.textContent = "A-LENDER PRIME BANK";
+        badge.style.color = "#EDAB2B";
+        badge.style.borderColor = "rgba(237, 171, 43, 0.4)";
+        badge.style.background = "rgba(237, 171, 43, 0.12)";
+        desc.textContent = "The client qualifies for top-tier, prime retail financing. High-credit and T4 employment structures enable access to Canada's lowest interest rates with traditional lenders. Perfectly positioned for specialized leverage structures.";
+        bullets.innerHTML = "<li>Eligible for immediate re-advanceable Smith Manoeuvre setups</li>" +
+                            "<li>Cleanest access to 120-day fixed rate locks &amp; bank prime specials</li>" +
+                            "<li>Fully automated income underwriting with minimal paper hassle</li>";
+        rates.textContent = "3.49% - 4.19%";
+      }
+
+      // Overriding restriction: Insured mortgages (<20% down) cannot do alternative B-lending or private bridge easily without solid clean profile
+      if (classParams.equity === 'insured' && (classParams.credit === 'bruised' || classParams.credit === 'fair')) {
+        badge.textContent = "SPECIALIZED CO-SIGN / BRIDGE ONLY";
+        badge.style.color = "var(--accent-orange)";
+        rates.textContent = "Underwriting Review Required";
+        desc.textContent = "⚠️ Insured High-Ratio mortgages (under 20% down payment) are heavily restricted by federal CMHC guidelines. Credit scores under 640 or income issues require a strong co-signer, or a larger equity injection (20%+) to access Alternative B-lending files. Let's discuss a feasibility review.";
+      }
+    }
+
   </script>
 </body>
 </html>

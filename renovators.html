@@ -275,20 +275,24 @@
     }
     .lane-bullets {
       list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem 0;
     }
     .lane-bullets li {
+      position: relative;
+      padding-left: 1.25rem;
       font-size: 0.88rem;
       color: var(--text-main);
-      margin-bottom: 0.5rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.5rem;
+      margin-bottom: 0.6rem;
+      line-height: 1.5;
     }
     .lane-bullets li::before {
       content: "•";
-      color: var(--brand-green);
-      font-size: 1.2rem;
-      font-weight: bold;
+      position: absolute;
+      left: 0;
+      top: -0.05rem;
+      color: var(--brand-green); /* Matches contractor theme */
+      font-size: 1.3rem;
       line-height: 1;
     }
 
@@ -499,12 +503,12 @@
       </a>
 
       <nav class="nav-links">
-        <a href="/">Home</a>
-        <a href="/buying">Buying</a>
-        <a href="/homeowners">Homeowners</a>
-        <a href="/alternative">Alternative</a>
-        <a href="/partners" class="active">Partners</a>
-        <a href="#contact">Contact</a>
+        <a href="/index.html#home">Home</a>
+        <a href="/index.html#buying">Buying</a>
+        <a href="/index.html#homeowners">Homeowners</a>
+        <a href="/index.html#alternative">Alternative</a>
+        <a href="/index.html#partners" class="active">Partners</a>
+        <a href="/index.html#contact">Contact</a>
       </nav>
 
       <div>
@@ -528,6 +532,119 @@
           <button type="button" class="btn btn-primary" onclick="openRenoModal('Contractor Page Hero')">Co-Brand Your Estimating Sheets →</button>
           <a href="#comparison" class="btn btn-secondary" style="border: 2px solid var(--brand-green); background: #FFFFFF; color: var(--brand-green);">Compare Project Financing ↓</a>
         </div>
+      </div>
+    </section>
+
+    <!-- Interactive Co-Branded Reno Calculator Demo -->
+    <section class="content-section" id="reno-calculator" style="padding-top: 2rem; padding-bottom: 2rem; background: var(--bg-subtle);">
+      <div class="section-title-wrap">
+        <span class="section-eyebrow">Interactive Demo</span>
+        <h2>Live Co-Branded Estimator Demo</h2>
+        <p>This is a live preview of how your custom, co-branded financing estimator looks! Play with the project buttons or budget slider to see how it converts large lump-sum quotes into low mortgage equity payments.</p>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2.5rem; max-width: 900px; margin: 0 auto; box-shadow: var(--shadow-card);">
+        
+        <!-- Fake Co-Branded Header Lockup Card -->
+        <div style="background: var(--brand-green); color: #FFFFFF; padding: 1.25rem 2rem; border-radius: var(--radius); margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div style="text-align: left;">
+            <div style="font-size: 0.68rem; font-weight: 800; color: var(--accent-mustard); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.2rem;">Co-Branded Contractor Program</div>
+            <div style="font-size: 1.15rem; font-weight: 800; letter-spacing: -0.02em;">PRECISION HOMES &amp; DESIGN</div>
+            <div style="font-size: 0.78rem; color: #C0D2CA; margin-top: 0.1rem;">Official Estimating &amp; Design Partner</div>
+          </div>
+          <div style="font-size: 1.8rem; font-weight: 300; color: rgba(255,255,255,0.3); line-height: 1;">×</div>
+          <div style="text-align: right;">
+            <div style="font-size: 0.68rem; font-weight: 800; color: var(--accent-mustard); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.2rem;">Direct Financing Desk</div>
+            <div style="font-size: 1.15rem; font-weight: 800; letter-spacing: -0.02em;">TREVOR BERRY</div>
+            <div style="font-size: 0.78rem; color: #C0D2CA; margin-top: 0.1rem;">Licensed Mortgage Associate · Perch</div>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; flex-wrap: wrap;">
+          <!-- Left Column: Inputs -->
+          <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 1.5rem;">
+            <div>
+              <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--brand-green); margin-bottom: 1.2rem;">1. Select Project Type or Custom Budget</h4>
+              
+              <!-- Project Presets -->
+              <div style="display: grid; grid-template-columns: 1fr; gap: 0.75rem; margin-bottom: 1.5rem;">
+                <button type="button" class="btn btn-secondary" style="justify-content: space-between; text-align: left; padding: 0.8rem 1.2rem; width: 100%; border: 1px solid var(--border-subtle); background: var(--bg-subtle);" onclick="setRenoProject(25000, 'Bathroom Remodel')">
+                  <span>Bathroom Refresh</span>
+                  <strong>$25,000</strong>
+                </button>
+                <button type="button" class="btn btn-secondary" style="justify-content: space-between; text-align: left; padding: 0.8rem 1.2rem; width: 100%; border: 1px solid var(--border-subtle); background: var(--bg-subtle);" onclick="setRenoProject(55000, 'Kitchen Remodel')">
+                  <span>Kitchen Overhaul</span>
+                  <strong>$55,000</strong>
+                </button>
+                <button type="button" class="btn btn-secondary" style="justify-content: space-between; text-align: left; padding: 0.8rem 1.2rem; width: 100%; border: 1px solid var(--border-subtle); background: var(--bg-subtle);" onclick="setRenoProject(95000, 'Legal Basement Suite')">
+                  <span>Legal Basement Suite</span>
+                  <strong>$95,000</strong>
+                </button>
+              </div>
+
+              <!-- Custom Slider -->
+              <div class="slider-container" style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
+                <div class="slider-label-row" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.88rem; font-weight: 700;">
+                  <span>Or Enter Custom Project Cost:</span>
+                  <span style="color: var(--brand-green); font-size: 1.05rem;" id="reno-cost-val">$55,000</span>
+                </div>
+                <input type="range" min="15000" max="200000" step="5000" value="55000" id="slider-reno" style="width: 100%; cursor: pointer;" oninput="updateRenoCalc(this.value)">
+                <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">
+                  <span>Min $15k</span>
+                  <span>Max $200k</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="background: var(--bg-subtle); padding: 1.2rem; border-radius: var(--radius); border: 1px solid var(--border-subtle); margin-top: 1rem;">
+              <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">💡 Contractor Kitchen Table Tip:</div>
+              <p style="font-size: 0.82rem; color: var(--text-body); line-height: 1.55;">
+                When you present a $60,000 kitchen quote to a client, they focus on that massive out-of-pocket hit. Sliding it to a monthly payment footprint of ~$290/month makes the project highly digestible and keeps your full scope alive!
+              </p>
+            </div>
+          </div>
+
+          <!-- Right Column: Financing Outputs -->
+          <div style="display: flex; flex-direction: column; justify-content: space-between; background: var(--bg-subtle); padding: 2rem; border-radius: var(--radius-lg); border: 1.5px solid var(--border-subtle);">
+            <div>
+              <div style="font-size: 0.8rem; font-weight: 800; color: var(--accent-mustard); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.2rem;">Monthly Comparison</div>
+              <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--text-main); margin-bottom: 1.5rem;" id="reno-project-label">Kitchen Overhaul ($55,000)</h4>
+
+              <!-- Option A: Mortgage Refinance -->
+              <div style="background: #FFFFFF; border: 1.5px solid var(--brand-green); border-radius: var(--radius); padding: 1.2rem; margin-bottom: 1.2rem; position: relative;">
+                <div style="position: absolute; top: -0.6rem; right: 1rem; background: var(--brand-green); color: #FFFFFF; font-size: 0.65rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em;">Trevor's Mortgage Equity</div>
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 0.2rem;">
+                  <span style="font-size: 0.82rem; color: var(--text-muted); font-weight: 600;">Monthly Carrying Cost:</span>
+                  <strong style="font-size: 1.5rem; color: var(--brand-green);" id="out-reno-mortgage-payment">$266/mo</strong>
+                </div>
+                <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 0.4rem; border-top: 1px dashed var(--border-subtle); padding-top: 0.4rem;">
+                  Based on a standard 3.60% prime interest rate amortized over 25 years.
+                </div>
+              </div>
+
+              <!-- Option B: Unsecured Bank LOC -->
+              <div style="background: #FFFFFF; border: 1px solid var(--border-subtle); border-radius: var(--radius); padding: 1.2rem; opacity: 0.85;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                  <span style="font-size: 0.82rem; color: var(--text-muted); font-weight: 600;">Floating Bank LOC Carry:</span>
+                  <strong style="font-size: 1.25rem; color: #EF5350;" id="out-reno-loc-payment">$741/mo</strong>
+                </div>
+                <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 0.4rem; border-top: 1px dashed var(--border-subtle); padding-top: 0.4rem;">
+                  Based on standard floating unsecured terms (10.50% interest, 10-year repayment).
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 2rem;">
+              <button type="button" class="btn btn-accent" style="width: 100%; justify-content: center; font-size: 1rem; padding: 0.9rem;" onclick="openRenoModal('Co-Brand Slider Demo')">
+                Co-Brand This Tool for My Business →
+              </button>
+              <div style="text-align: center; margin-top: 0.6rem; font-size: 0.72rem; color: var(--text-muted);">
+                Sample calculations only. Client structures depend on appraisal equity limits O.A.C.
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -603,6 +720,119 @@
             <button type="button" class="btn btn-primary" style="width: 100%;" onclick="openRenoModal('Co-Brand Request')">Request Co-Branded PDF →</button>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Interactive Co-Branded Reno Calculator Demo -->
+    <section class="content-section" id="reno-calculator" style="padding-top: 2rem; padding-bottom: 2rem; background: var(--bg-subtle);">
+      <div class="section-title-wrap">
+        <span class="section-eyebrow">Interactive Demo</span>
+        <h2>Live Co-Branded Estimator Demo</h2>
+        <p>This is a live preview of how your custom, co-branded financing estimator looks! Play with the project buttons or budget slider to see how it converts large lump-sum quotes into low mortgage equity payments.</p>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2.5rem; max-width: 900px; margin: 0 auto; box-shadow: var(--shadow-card);">
+        
+        <!-- Fake Co-Branded Header Lockup Card -->
+        <div style="background: var(--brand-green); color: #FFFFFF; padding: 1.25rem 2rem; border-radius: var(--radius); margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div style="text-align: left;">
+            <div style="font-size: 0.68rem; font-weight: 800; color: var(--accent-mustard); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.2rem;">Co-Branded Contractor Program</div>
+            <div style="font-size: 1.15rem; font-weight: 800; letter-spacing: -0.02em;">PRECISION HOMES &amp; DESIGN</div>
+            <div style="font-size: 0.78rem; color: #C0D2CA; margin-top: 0.1rem;">Official Estimating &amp; Design Partner</div>
+          </div>
+          <div style="font-size: 1.8rem; font-weight: 300; color: rgba(255,255,255,0.3); line-height: 1;">×</div>
+          <div style="text-align: right;">
+            <div style="font-size: 0.68rem; font-weight: 800; color: var(--accent-mustard); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.2rem;">Direct Financing Desk</div>
+            <div style="font-size: 1.15rem; font-weight: 800; letter-spacing: -0.02em;">TREVOR BERRY</div>
+            <div style="font-size: 0.78rem; color: #C0D2CA; margin-top: 0.1rem;">Licensed Mortgage Associate · Perch</div>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; flex-wrap: wrap;">
+          <!-- Left Column: Inputs -->
+          <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 1.5rem;">
+            <div>
+              <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--brand-green); margin-bottom: 1.2rem;">1. Select Project Type or Custom Budget</h4>
+              
+              <!-- Project Presets -->
+              <div style="display: grid; grid-template-columns: 1fr; gap: 0.75rem; margin-bottom: 1.5rem;">
+                <button type="button" class="btn btn-secondary" style="justify-content: space-between; text-align: left; padding: 0.8rem 1.2rem; width: 100%; border: 1px solid var(--border-subtle); background: var(--bg-subtle);" onclick="setRenoProject(25000, 'Bathroom Remodel')">
+                  <span>Bathroom Refresh</span>
+                  <strong>$25,000</strong>
+                </button>
+                <button type="button" class="btn btn-secondary" style="justify-content: space-between; text-align: left; padding: 0.8rem 1.2rem; width: 100%; border: 1px solid var(--border-subtle); background: var(--bg-subtle);" onclick="setRenoProject(55000, 'Kitchen Remodel')">
+                  <span>Kitchen Overhaul</span>
+                  <strong>$55,000</strong>
+                </button>
+                <button type="button" class="btn btn-secondary" style="justify-content: space-between; text-align: left; padding: 0.8rem 1.2rem; width: 100%; border: 1px solid var(--border-subtle); background: var(--bg-subtle);" onclick="setRenoProject(95000, 'Legal Basement Suite')">
+                  <span>Legal Basement Suite</span>
+                  <strong>$95,000</strong>
+                </button>
+              </div>
+
+              <!-- Custom Slider -->
+              <div class="slider-container" style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
+                <div class="slider-label-row" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.88rem; font-weight: 700;">
+                  <span>Or Enter Custom Project Cost:</span>
+                  <span style="color: var(--brand-green); font-size: 1.05rem;" id="reno-cost-val">$55,000</span>
+                </div>
+                <input type="range" min="15000" max="200000" step="5000" value="55000" id="slider-reno" style="width: 100%; cursor: pointer;" oninput="updateRenoCalc(this.value)">
+                <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">
+                  <span>Min $15k</span>
+                  <span>Max $200k</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="background: var(--bg-subtle); padding: 1.2rem; border-radius: var(--radius); border: 1px solid var(--border-subtle); margin-top: 1rem;">
+              <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">💡 Contractor Kitchen Table Tip:</div>
+              <p style="font-size: 0.82rem; color: var(--text-body); line-height: 1.55;">
+                When you present a $60,000 kitchen quote to a client, they focus on that massive out-of-pocket hit. Sliding it to a monthly payment footprint of ~$290/month makes the project highly digestible and keeps your full scope alive!
+              </p>
+            </div>
+          </div>
+
+          <!-- Right Column: Financing Outputs -->
+          <div style="display: flex; flex-direction: column; justify-content: space-between; background: var(--bg-subtle); padding: 2rem; border-radius: var(--radius-lg); border: 1.5px solid var(--border-subtle);">
+            <div>
+              <div style="font-size: 0.8rem; font-weight: 800; color: var(--accent-mustard); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.2rem;">Monthly Comparison</div>
+              <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--text-main); margin-bottom: 1.5rem;" id="reno-project-label">Kitchen Overhaul ($55,000)</h4>
+
+              <!-- Option A: Mortgage Refinance -->
+              <div style="background: #FFFFFF; border: 1.5px solid var(--brand-green); border-radius: var(--radius); padding: 1.2rem; margin-bottom: 1.2rem; position: relative;">
+                <div style="position: absolute; top: -0.6rem; right: 1rem; background: var(--brand-green); color: #FFFFFF; font-size: 0.65rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em;">Trevor's Mortgage Equity</div>
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 0.2rem;">
+                  <span style="font-size: 0.82rem; color: var(--text-muted); font-weight: 600;">Monthly Carrying Cost:</span>
+                  <strong style="font-size: 1.5rem; color: var(--brand-green);" id="out-reno-mortgage-payment">$266/mo</strong>
+                </div>
+                <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 0.4rem; border-top: 1px dashed var(--border-subtle); padding-top: 0.4rem;">
+                  Based on a standard 3.60% prime interest rate amortized over 25 years.
+                </div>
+              </div>
+
+              <!-- Option B: Unsecured Bank LOC -->
+              <div style="background: #FFFFFF; border: 1px solid var(--border-subtle); border-radius: var(--radius); padding: 1.2rem; opacity: 0.85;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                  <span style="font-size: 0.82rem; color: var(--text-muted); font-weight: 600;">Floating Bank LOC Carry:</span>
+                  <strong style="font-size: 1.25rem; color: #EF5350;" id="out-reno-loc-payment">$741/mo</strong>
+                </div>
+                <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 0.4rem; border-top: 1px dashed var(--border-subtle); padding-top: 0.4rem;">
+                  Based on standard floating unsecured terms (10.50% interest, 10-year repayment).
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 2rem;">
+              <button type="button" class="btn btn-accent" style="width: 100%; justify-content: center; font-size: 1rem; padding: 0.9rem;" onclick="openRenoModal('Co-Brand Slider Demo')">
+                Co-Brand This Tool for My Business →
+              </button>
+              <div style="text-align: center; margin-top: 0.6rem; font-size: 0.72rem; color: var(--text-muted);">
+                Sample calculations only. Client structures depend on appraisal equity limits O.A.C.
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -762,6 +992,47 @@
   </div>
 
   <script>
+    function setRenoProject(amount, label) {
+        var slider = document.getElementById('slider-reno');
+        if (slider) {
+            slider.value = amount;
+            updateRenoCalc(amount, label);
+        }
+    }
+
+    function updateRenoCalc(amount, customLabel) {
+        var numAmount = parseFloat(amount) || 55000;
+        var costDisp = document.getElementById('reno-cost-val');
+        if (costDisp) costDisp.textContent = "$" + numAmount.toLocaleString();
+
+        var labelDisp = document.getElementById('reno-project-label');
+        if (labelDisp) {
+            if (customLabel) {
+                labelDisp.textContent = customLabel + " ($" + numAmount.toLocaleString() + ")";
+            } else {
+                labelDisp.textContent = "Custom Project Scope ($" + numAmount.toLocaleString() + ")";
+            }
+        }
+
+        // Calculation Option A: Mortgage Refinance (3.60% interest, 25 years = 300 months)
+        var r_mort = 3.60 / 100;
+        var monthlyRate_mort = Math.pow(1 + r_mort / 2, 2 / 12) - 1;
+        var n_mort = 25 * 12;
+        var pmt_mort = numAmount * (monthlyRate_mort * Math.pow(1 + monthlyRate_mort, n_mort)) / (Math.pow(1 + monthlyRate_mort, n_mort) - 1);
+
+        // Calculation Option B: Unsecured Bank LOC (10.50% interest, 10 years = 120 months)
+        var r_loc = 10.50 / 100 / 12;
+        var n_loc = 10 * 12;
+        var pmt_loc = numAmount * (r_loc * Math.pow(1 + r_loc, n_loc)) / (Math.pow(1 + r_loc, n_loc) - 1);
+
+        document.getElementById('out-reno-mortgage-payment').textContent = "$" + Math.round(pmt_mort).toLocaleString() + "/mo";
+        document.getElementById('out-reno-loc-payment').textContent = "$" + Math.round(pmt_loc).toLocaleString() + "/mo";
+    }
+
+    // Initialize reno calculator
+    window.addEventListener('DOMContentLoaded', function() {
+        if (typeof updateRenoCalc === 'function') updateRenoCalc(55000, 'Kitchen Overhaul');
+    });
     function openRenoModal(source) {
       document.getElementById('renoModal').classList.add('active');
     }

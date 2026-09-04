@@ -466,21 +466,25 @@
     }
     .lane-bullets {
       list-style: none;
-      margin-bottom: 2rem;
+      padding: 0;
+      margin: 0 0 1.5rem 0;
     }
     .lane-bullets li {
+      position: relative;
+      padding-left: 1.25rem;
       font-size: 0.88rem;
       color: var(--text-main);
-      margin-bottom: 0.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      margin-bottom: 0.6rem;
+      line-height: 1.5;
     }
     .lane-bullets li::before {
       content: "•";
+      position: absolute;
+      left: 0;
+      top: -0.05rem;
       color: var(--brand-green);
-      font-size: 1.2rem;
-      font-weight: bold;
+      font-size: 1.3rem;
+      line-height: 1;
     }
 
     /* Partner Banner */
@@ -1284,21 +1288,24 @@
     }
     .lane-bullets {
       list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem 0;
     }
     .lane-bullets li {
+      position: relative;
+      padding-left: 1.25rem;
       font-size: 0.86rem;
       color: var(--text-main);
       margin-bottom: 0.6rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.5rem;
       line-height: 1.5;
     }
     .lane-bullets li::before {
       content: "•";
+      position: absolute;
+      left: 0;
+      top: -0.05rem;
       color: var(--brand-green);
-      font-size: 1.2rem;
-      font-weight: bold;
+      font-size: 1.3rem;
       line-height: 1;
     }
 
@@ -1931,12 +1938,12 @@
       </a>
 
       <nav class="nav-links">
-        <a href="#home" class="active" onclick="showPage('home', event)">Home</a>
-        <a href="#buying" onclick="showPage('buying', event)">Buying</a>
-        <a href="#homeowners" onclick="showPage('homeowners', event)">Homeowners</a>
-        <a href="#alternative" onclick="showPage('alternative', event)">Alternative</a>
-        <a href="#partners" onclick="showPage('partners', event)">Partners</a>
-        <a href="#contact" onclick="scrollToContact(event)">Contact</a>
+        <a href="/index.html#home" class="active" onclick="handleHeaderNav('home', event)">Home</a>
+        <a href="/index.html#buying" onclick="handleHeaderNav('buying', event)">Buying</a>
+        <a href="/index.html#homeowners" onclick="handleHeaderNav('homeowners', event)">Homeowners</a>
+        <a href="/index.html#alternative" onclick="handleHeaderNav('alternative', event)">Alternative</a>
+        <a href="/index.html#partners" onclick="handleHeaderNav('partners', event)">Partners</a>
+        <a href="/index.html#contact" onclick="handleHeaderNav('contact', event)">Contact</a>
       </nav>
 
       <div>
@@ -2184,7 +2191,7 @@
     <section class="content-section" id="buying-calculator" style="padding-top: 1rem;">
       <div class="section-title-wrap">
         <span class="section-eyebrow">Interactive Estimator</span>
-        <h2>Calgary Mortgage Purchase &amp; Pre-Approval Calculator</h2>
+        <h2>Mortgage Purchase &amp; Pre-Approval Calculator</h2>
         <p>Calculate your estimated monthly payment, CMHC insurance premiums, and total cash required to close.</p>
       </div>
 
@@ -2629,8 +2636,9 @@
             <li>Lead recovery desk for buyers who walked away from showhomes</li>
           </ul>
         </div>
-        <div>
-          <a href="/builders" class="btn btn-secondary" style="width: 100%; justify-content: center;">Explore Builder Financing Programs →</a>
+        <div style="display: flex; gap: 0.5rem; width: 100%;">
+          <a href="/builders" class="btn btn-secondary" style="flex: 1; justify-content: center; font-size: 0.82rem; padding: 0.6rem 0.3rem;">Alberta Builders →</a>
+          <a href="/builders-ontario" class="btn btn-secondary" style="flex: 1; justify-content: center; font-size: 0.82rem; padding: 0.6rem 0.3rem;">Ontario Builders →</a>
         </div>
       </div>
 
@@ -2942,6 +2950,24 @@
         }, 150);
     }
 
+
+    function handleHeaderNav(pageId, event) {
+        const path = window.location.pathname;
+        const isHomePage = path === '' || path === '/' || path.endsWith('index.html') || path.includes('localhost');
+        
+        if (isHomePage) {
+            if (event) event.preventDefault();
+            if (pageId === 'contact') {
+                scrollToContact();
+            } else {
+                showPage(pageId);
+                // Force hash update
+                if (window.location.hash !== '#' + pageId) {
+                    history.pushState(null, null, '#' + pageId);
+                }
+            }
+        }
+    }
 
     function showPage(pageId, event) {
         if (event) event.preventDefault();
