@@ -445,30 +445,31 @@
       .subpage-hero h1 { font-size: 2.2rem; }
     }
 
+
     /* =========================================================================
-       LENDER FIT CLASSIFIER WIDGET
+       CLIENT CAPITAL STRATEGY SCREEN (TOOL 2)
        ========================================================================= */
-    .classifier-section {
+    .planner-tool-section {
       background: var(--bg-subtle);
       border-top: 1px solid var(--border-subtle);
       border-bottom: 1px solid var(--border-subtle);
       padding: 5rem 1.5rem;
     }
-    .classifier-container {
+    .planner-tool-container {
       max-width: 1160px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 3rem;
       align-items: start;
     }
     @media (max-width: 960px) {
-      .classifier-container {
+      .planner-tool-container {
         grid-template-columns: 1fr;
         gap: 2.5rem;
       }
     }
-    .classifier-controls {
+    .planner-tool-controls {
       display: flex;
       flex-direction: column;
       gap: 2rem;
@@ -491,8 +492,6 @@
       color: var(--text-muted);
       margin-bottom: 1.2rem;
     }
-    
-    /* Option Grid cards */
     .option-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -531,14 +530,12 @@
       color: var(--text-muted);
       line-height: 1.35;
     }
-
-    /* Result Panel Styling */
-    .classifier-result-wrap {
+    .planner-result-wrap {
       position: sticky;
       top: 100px;
     }
     .result-card {
-      background: #131E1A; /* Premium Deep Perch Green/Charcoal */
+      background: #131E1A;
       color: #FFFFFF;
       border-radius: var(--radius-lg);
       padding: 2.5rem;
@@ -547,6 +544,125 @@
       overflow: hidden;
       border: 1px solid #1E2E27;
     }
+    .result-card h3 {
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-mustard);
+      margin-bottom: 0.6rem;
+    }
+    .result-card .main-opp-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 1.2rem;
+      color: #FFFFFF;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 1rem;
+    }
+    .result-card .opp-desc {
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: #C2D1CB;
+      margin-bottom: 1.5rem;
+    }
+    .result-card .sub-opps-heading {
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #26A699;
+      margin-bottom: 0.8rem;
+    }
+    .result-card .sub-opps-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.8rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .result-card .sub-opps-list li {
+      font-size: 0.88rem;
+      color: #E2EAE5;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      line-height: 1.45;
+    }
+    .result-card .sub-opps-list li::before {
+      content: "•";
+      color: var(--accent-mustard);
+      font-weight: bold;
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+    .result-card .planning-areas-box {
+      background: #14221C;
+      border-left: 3px solid var(--accent-mustard);
+      padding: 0.9rem 1.1rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin-bottom: 1.5rem;
+    }
+    .result-card .planning-areas-box h4 {
+      font-size: 0.84rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--accent-mustard);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.05em;
+    }
+    .result-card .planning-areas-box ul {
+      list-style: none;
+      font-size: 0.84rem;
+      color: #C2D1CB;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .result-card .planning-areas-box ul li {
+      display: flex;
+      gap: 0.4rem;
+    }
+    .result-card .planning-areas-box ul li::before {
+      content: "→";
+      color: var(--accent-mustard);
+    }
+    .scenario-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    @media (max-width: 860px) {
+      .scenario-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .scenario-card {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 1.8rem 1.5rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .scenario-card h4 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--brand-green);
+      margin-bottom: 0.6rem;
+      line-height: 1.35;
+    }
+    .scenario-card p {
+      font-size: 0.88rem;
+      color: var(--text-body);
+      line-height: 1.5;
+    }
+
     .result-card::before {
       content: "";
       position: absolute;
@@ -755,132 +871,310 @@
       </div>
 
 
-    <!-- STANDALONE INTERACTIVE MODULE: LENDER FIT CLASSIFIER -->
-    <section class="classifier-section" id="classifier">
+
+    <!-- STANDALONE INTERACTIVE MODULE: CLIENT CAPITAL STRATEGY SCREEN (TOOL 2) -->
+    <section class="planner-tool-section" id="classifier">
       <div class="section-title-wrap">
-        <span class="section-eyebrow">Advisor Scenario Screener</span>
-        <h2>Client Lender Fit &amp; Qualification Classifier</h2>
-        <p>Run high-level scenarios to instantly pre-screen what tier of financing, pricing, and underwriter guidelines fit your client's current balance sheet profile.</p>
+        <span class="section-eyebrow">Strategic Advisor Tool</span>
+        <h2>Client Capital Strategy Screen</h2>
+        <p>Identify situations where mortgage or home-equity financing may be worth comparing with other ways of accessing capital, before decisions are finalized.</p>
       </div>
 
-      <div class="classifier-container">
+      <div class="planner-tool-container">
         
         <!-- Selection Controls -->
-        <div class="classifier-controls">
+        <div class="planner-tool-controls">
           
-          <!-- Control 1: Credit Tier -->
+          <!-- Question 1: Client Profile -->
           <div class="control-block">
-            <h3>1. Credit Score Profile</h3>
-            <p>Select the credit rating tier matching the primary applicant's history.</p>
+            <h3>1. Client Profile</h3>
+            <p>Select the option that best describes the client's business or personal structure.</p>
             <div class="option-grid">
-              <div class="option-card active" onclick="setClassifierParam('credit', 'excellent')" id="card-credit-excellent">
-                <div class="option-card-title">Excellent (720+)</div>
-                <div class="option-card-desc">Clean historical repayment. Top tier A-lender bank eligibility.</div>
+              <div class="option-card active" onclick="setPlannerParam('profile', 'business')" id="card-profile-business">
+                <div class="option-card-title">Incorporated Business Owner</div>
+                <div class="option-card-desc">Owner of an active operating company or professional corporation.</div>
               </div>
-              <div class="option-card" onclick="setClassifierParam('credit', 'good')" id="card-credit-good">
-                <div class="option-card-title">Good (650 - 719)</div>
-                <div class="option-card-desc">Standard credit history. Clean access to monoline wholesale prime options.</div>
+              <div class="option-card" onclick="setPlannerParam('profile', 'investor')" id="card-profile-investor">
+                <div class="option-card-title">Investor / Real Estate Owner</div>
+                <div class="option-card-desc">Client with investments, rentals, or plans to acquire additional properties.</div>
               </div>
-              <div class="option-card" onclick="setClassifierParam('credit', 'fair')" id="card-credit-fair">
-                <div class="option-card-title">Fair (580 - 649)</div>
-                <div class="option-card-desc">Minor late payments, credit utilization, or past consumer proposal.</div>
+              <div class="option-card" onclick="setPlannerParam('profile', 'high-income')" id="card-profile-high-income">
+                <div class="option-card-title">High-Income / High-Net-Worth</div>
+                <div class="option-card-desc">Strong income streams, established capital assets, or both.</div>
               </div>
-              <div class="option-card" onclick="setClassifierParam('credit', 'bruised')" id="card-credit-bruised">
-                <div class="option-card-title">Challenged (&lt; 580)</div>
-                <div class="option-card-desc">Active collections, severe rating hits, or bankruptcy. Requires asset focus.</div>
+              <div class="option-card" onclick="setPlannerParam('profile', 'retired')" id="card-profile-retired">
+                <div class="option-card-title">Retired / Approaching Retirement</div>
+                <div class="option-card-desc">Relying on pensions, registered assets, or accumulated equity.</div>
+              </div>
+              <div class="option-card" onclick="setPlannerParam('profile', 'complex')" id="card-profile-complex" style="grid-column: span 2;">
+                <div class="option-card-title">Complex Corporate / Holdco Structure</div>
+                <div class="option-card-desc">Multiple companies, holding companies, inter-company loans, or complex ownership.</div>
               </div>
             </div>
           </div>
 
-          <!-- Control 2: Income Structure -->
+          <!-- Question 2: Property / Equity Position -->
           <div class="control-block">
-            <h3>2. Income Verification Method</h3>
-            <p>Select how the household income is declared and underwritten.</p>
+            <h3>2. Property / Equity Position</h3>
+            <p>What is the client's current real estate asset and equity structure?</p>
             <div class="option-grid">
-              <div class="option-card active" onclick="setClassifierParam('income', 'salaried')" id="card-income-salaried">
-                <div class="option-card-title">Standard T4 Salaried</div>
-                <div class="option-card-desc">Consistent salaried employment, verifiable via standard job letter &amp; paystubs.</div>
+              <div class="option-card active" onclick="setPlannerParam('equity', 'free')" id="card-equity-free">
+                <div class="option-card-title">Mortgage Free</div>
+                <div class="option-card-desc">Owns property outright with 100% available equity.</div>
               </div>
-              <div class="option-card" onclick="setClassifierParam('income', 'self-employed')" id="card-income-self-employed">
-                <div class="option-card-title">Self-Employed (BFS)</div>
-                <div class="option-card-desc">Sole proprietor or incorporated professional utilizing legitimate tax write-offs.</div>
+              <div class="option-card" onclick="setPlannerParam('equity', 'over50')" id="card-equity-over50">
+                <div class="option-card-title">50%+ Equity</div>
+                <div class="option-card-desc">Substantial established equity and low outstanding balance.</div>
               </div>
-              <div class="option-card" onclick="setClassifierParam('income', 'retired')" id="card-income-retired">
-                <div class="option-card-title">Retired / Wealth Assets</div>
-                <div class="option-card-desc">Relying on CPP, OAS, corporate dividends, RRIF drawdowns, or liquid assets.</div>
+              <div class="option-card" onclick="setPlannerParam('equity', '25to50')" id="card-equity-25to50">
+                <div class="option-card-title">25% - 50% Equity</div>
+                <div class="option-card-desc">Moderate equity; standard remaining mortgage leverage.</div>
               </div>
-              <div class="option-card" onclick="setClassifierParam('income', 'holding-co')" id="card-income-holding-co">
-                <div class="option-card-title">Holding Co / Complex</div>
-                <div class="option-card-desc">Inter-company loans, rental portfolios, or active corporate balance sheets.</div>
+              <div class="option-card" onclick="setPlannerParam('equity', 'under25')" id="card-equity-under25">
+                <div class="option-card-title">Less Than 25% Equity</div>
+                <div class="option-card-desc">High-leverage purchase or recent refinance. Limited room.</div>
+              </div>
+              <div class="option-card" onclick="setPlannerParam('equity', 'none')" id="card-equity-none" style="grid-column: span 2;">
+                <div class="option-card-title">No Current Property / Purchase Planned</div>
+                <div class="option-card-desc">Client is looking to purchase their first property or holds no real estate.</div>
               </div>
             </div>
           </div>
 
-          <!-- Control 3: Equity / LTV Position -->
+          <!-- Question 3: Where is the Liquidity? -->
           <div class="control-block">
-            <h3>3. Available Equity / Down Payment Position</h3>
-            <p>Select the loan-to-value (LTV) structure or available cash assets.</p>
+            <h3>3. Where is the Client's Liquidity?</h3>
+            <p>Where is the bulk of the client's accessible capital or wealth concentrated?</p>
             <div class="option-grid">
-              <div class="option-card active" onclick="setClassifierParam('equity', 'conventional')" id="card-equity-conventional">
-                <div class="option-card-title">20%+ Equity / Down</div>
-                <div class="option-card-desc">Conventional positioning. No mandatory CMHC default insurance. Max flexibility.</div>
+              <div class="option-card active" onclick="setPlannerParam('liquidity', 'personal')" id="card-liquidity-personal">
+                <div class="option-card-title">Mostly Personal Cash</div>
+                <div class="option-card-desc">Held directly in standard chequing or savings accounts.</div>
               </div>
-              <div class="option-card" onclick="setClassifierParam('equity', 'insured')" id="card-equity-insured">
-                <div class="option-card-title">Under 20% (High Ratio)</div>
-                <div class="option-card-desc">Insured mortgage structure. Capped guidelines and requires 25-yr amortization max.</div>
+              <div class="option-card" onclick="setPlannerParam('liquidity', 'corporate')" id="card-liquidity-corporate">
+                <div class="option-card-title">Mostly Corporate</div>
+                <div class="option-card-desc">Retained earnings, Holdco reserves, or corporate cash.</div>
+              </div>
+              <div class="option-card" onclick="setPlannerParam('liquidity', 'non-reg')" id="card-liquidity-non-reg">
+                <div class="option-card-title">Non-Registered Investments</div>
+                <div class="option-card-desc">Stocks, bonds, or mutual funds held in taxable accounts.</div>
+              </div>
+              <div class="option-card" onclick="setPlannerParam('liquidity', 'registered')" id="card-liquidity-registered">
+                <div class="option-card-title">RRSP / RRIF / Registered Assets</div>
+                <div class="option-card-desc">Tax-deferred retirement savings or locked-in plans.</div>
+              </div>
+              <div class="option-card" onclick="setPlannerParam('liquidity', 'equity')" id="card-liquidity-equity">
+                <div class="option-card-title">Real Estate Equity</div>
+                <div class="option-card-desc">Illiquid paper wealth locked inside their real estate assets.</div>
+              </div>
+              <div class="option-card" onclick="setPlannerParam('liquidity', 'mix')" id="card-liquidity-mix">
+                <div class="option-card-title">Mix of Several Sources</div>
+                <div class="option-card-desc">Capital is divided across personal, corporate, and investments.</div>
+              </div>
+              <div class="option-card" onclick="setPlannerParam('liquidity', 'limited')" id="card-liquidity-limited" style="grid-column: span 2;">
+                <div class="option-card-title">Limited Liquidity</div>
+                <div class="option-card-desc">Most capital is tied up in business operations or illiquid structures.</div>
               </div>
             </div>
           </div>
 
-          <!-- Control 4: Active CRA Arrears or Source Debt -->
+          <!-- Question 4: Capital Requirement -->
           <div class="control-block">
-            <h3>4. Active CRA Balances or Unsecured Debt</h3>
-            <p>Are there outstanding personal/corporate tax liabilities or extreme credit card debt?</p>
+            <h3>4. Capital Requirement Purpose</h3>
+            <p>What is the primary objective or transaction requiring funding?</p>
             <div class="option-grid">
-              <div class="option-card active" onclick="setClassifierParam('arrears', 'none')" id="card-arrears-none">
-                <div class="option-card-title">Fully Clear / Standard</div>
-                <div class="option-card-desc">CRA accounts fully paid up-to-date. Normal consumer debt carrying ratios.</div>
+              <div class="option-card active" onclick="setPlannerParam('need', 'property')" id="card-need-property">
+                <div class="option-card-title">Purchase Another Property</div>
+                <div class="option-card-desc">Down payment or purchase funds for residential or rental investment.</div>
               </div>
-              <div class="option-card" onclick="setClassifierParam('arrears', 'active')" id="card-arrears-active">
-                <div class="option-card-title">Active CRA/Tax Arrears</div>
-                <div class="option-card-desc">Outstanding tax notices, corporate source deductions, or severe debt load.</div>
+              <div class="option-card" onclick="setPlannerParam('need', 'investment')" id="card-need-investment">
+                <div class="option-card-title">Investment Opportunity</div>
+                <div class="option-card-desc">Non-registered securities, private equity, or business shares.</div>
+              </div>
+              <div class="option-card" onclick="setPlannerParam('need', 'business')" id="card-need-business">
+                <div class="option-card-title">Business Capital</div>
+                <div class="option-card-desc">Funding inventory, expansion, corporate operations, or Holdco needs.</div>
+              </div>
+              <div class="option-card" onclick="setPlannerParam('need', 'reno')" id="card-need-reno">
+                <div class="option-card-title">Renovation / Property Expense</div>
+                <div class="option-card-desc">Large-scale additions, basement suites, kitchen remodels, or repairs.</div>
+              </div>
+              <div class="option-card" onclick="setPlannerParam('need', 'personal')" id="card-need-personal">
+                <div class="option-card-title">Large Personal Purchase</div>
+                <div class="option-card-desc">Major travel, education, family gifts, or unexpected personal expenditures.</div>
+              </div>
+              <div class="option-card" onclick="setPlannerParam('need', 'debt')" id="card-need-debt">
+                <div class="option-card-title">Debt / Cash-Flow Restructuring</div>
+                <div class="option-card-desc">Consolidating high-interest loans, tax arrears, or other liabilities.</div>
+              </div>
+              <div class="option-card" onclick="setPlannerParam('need', 'retirement')" id="card-need-retirement">
+                <div class="option-card-title">Retirement / Lifestyle Cash Flow</div>
+                <div class="option-card-desc">Supplementing active retirement income or financing lifestyle assets.</div>
+              </div>
+              <div class="option-card" onclick="setPlannerParam('need', 'general')" id="card-need-general">
+                <div class="option-card-title">General Long-Term Planning</div>
+                <div class="option-card-desc">Establishing defensive liquidity buffers or optimizing leverage structures.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 5: Funding Plan -->
+          <div class="control-block">
+            <h3>5. Proposed Funding Plan</h3>
+            <p>How is the client currently considering accessing these funds?</p>
+            <div class="option-grid">
+              <div class="option-card active" onclick="setPlannerParam('funding', 'cash')" id="card-funding-cash">
+                <div class="option-card-title">Use Personal Cash</div>
+                <div class="option-card-desc">Draining direct personal savings and emergency reserves.</div>
+              </div>
+              <div class="option-card" onclick="setPlannerParam('funding', 'investments')" id="card-funding-investments">
+                <div class="option-card-title">Sell Taxable Investments</div>
+                <div class="option-card-desc">Liquidating non-registered portfolios (triggering capital gains).</div>
+              </div>
+              <div class="option-card" onclick="setPlannerParam('funding', 'registered')" id="card-funding-registered">
+                <div class="option-card-title">Withdraw Registered Funds</div>
+                <div class="option-card-desc">Drawing from RRSP/RRIF (triggering immediate personal income tax).</div>
+              </div>
+              <div class="option-card" onclick="setPlannerParam('funding', 'corp')" id="card-funding-corp">
+                <div class="option-card-title">Withdraw Corporate Capital</div>
+                <div class="option-card-desc">Taking direct corporate withdrawals or shareholder loans.</div>
+              </div>
+              <div class="option-card" onclick="setPlannerParam('funding', 'dividend')" id="card-funding-dividend">
+                <div class="option-card-title">Increase Salary or Dividends</div>
+                <div class="option-card-desc">Boosting taxable personal compensation (triggering higher bracket hits).</div>
+              </div>
+              <div class="option-card" onclick="setPlannerParam('funding', 'asset')" id="card-funding-asset">
+                <div class="option-card-title">Sell Another Asset</div>
+                <div class="option-card-desc">Liquidating a vehicle, recreational property, or other asset.</div>
+              </div>
+              <div class="option-card" onclick="setPlannerParam('funding', 'credit')" id="card-funding-credit">
+                <div class="option-card-title">Use Existing Retail Credit</div>
+                <div class="option-card-desc">Borrowing via floating personal lines of credit or high-rate credit cards.</div>
+              </div>
+              <div class="option-card" onclick="setPlannerParam('funding', 'unsure')" id="card-funding-unsure">
+                <div class="option-card-title">Not Sure Yet</div>
+                <div class="option-card-desc">Currently exploring the most cost-efficient funding path.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 6: Primary Planning Priority -->
+          <div class="control-block">
+            <h3>6. Primary Planning Priority</h3>
+            <p>What is the most important financial outcome for this scenario?</p>
+            <div class="option-grid">
+              <div class="option-card active" onclick="setPlannerParam('priority', 'liquidity')" id="card-priority-liquidity">
+                <div class="option-card-title">Preserve Portfolio Liquidity</div>
+                <div class="option-card-desc">Keep capital invested in active markets rather than sinking it into real estate.</div>
+              </div>
+              <div class="option-card" onclick="setPlannerParam('priority', 'avoid-selling')" id="card-priority-avoid-selling">
+                <div class="option-card-title">Avoid Liquidating Investments</div>
+                <div class="option-card-desc">Prevent triggering capital gains taxes or breaking long-term compound growth.</div>
+              </div>
+              <div class="option-card" onclick="setPlannerParam('priority', 'minimize-cash')" id="card-priority-minimize-cash">
+                <div class="option-card-title">Minimize Personal Cash Out of Pocket</div>
+                <div class="option-card-desc">Solve the immediate capital gap using low-cost leveraged structures.</div>
+              </div>
+              <div class="option-card" onclick="setPlannerParam('priority', 'access-equity')" id="card-priority-access-equity">
+                <div class="option-card-title">Unlock Inactive Home Equity</div>
+                <div class="option-card-desc">Release inactive capital locked in their property for productive use.</div>
+              </div>
+              <div class="option-card" onclick="setPlannerParam('priority', 'cash-flow')" id="card-priority-cash-flow">
+                <div class="option-card-title">Improve Monthly Household Cash Flow</div>
+                <div class="option-card-desc">Lower required payments and eliminate high-cost monthly consumer carrying bills.</div>
+              </div>
+              <div class="option-card" onclick="setPlannerParam('priority', 'acquire')" id="card-priority-acquire">
+                <div class="option-card-title">Acquire Additional Long-Term Assets</div>
+                <div class="option-card-desc">Secure competitive leverage options to purchase properties or investments.</div>
+              </div>
+              <div class="option-card" onclick="setPlannerParam('priority', 'business')" id="card-priority-business">
+                <div class="option-card-title">Support Business Operational Capital</div>
+                <div class="option-card-desc">Provide non-dilutive funds for expansion, inventory, or operational needs.</div>
+              </div>
+              <div class="option-card" onclick="setPlannerParam('priority', 'flexibility')" id="card-priority-flexibility">
+                <div class="option-card-title">Retirement Income Flexibility</div>
+                <div class="option-card-desc">Access tax-efficient wealth reserves without disrupting pension or tax brackets.</div>
+              </div>
+              <div class="option-card" onclick="setPlannerParam('priority', 'general')" id="card-priority-general" style="grid-column: span 2;">
+                <div class="option-card-title">General Strategic Mortgage &amp; Debt Review</div>
+                <div class="option-card-desc">Verify whether their current mortgage amortization aligns with their wealth plan.</div>
               </div>
             </div>
           </div>
 
         </div>
 
-        <!-- Right Classification Box -->
-        <div class="classifier-result-wrap">
+        <!-- Right: Potential Planning Opportunity Card -->
+        <div class="planner-result-wrap">
           <div class="result-card">
-            <h3>Lender Class Assessment</h3>
-            <div class="fit-badge" id="fit-badge-display">A-LENDER Prime Bank</div>
+            <h3>Potential Planning Opportunity</h3>
+            <div class="main-opp-title" id="opp-primary-title">EQUITY VS. LIQUIDATION REVIEW</div>
             
-            <p class="result-details" id="fit-desc-display">
-              The client qualifies for top-tier, prime retail financing. High-credit and T4 employment structures enable access to Canada's lowest interest rates with traditional lenders.
+            <p class="opp-desc" id="opp-primary-desc">
+              The client has available property equity and is considering using cash, selling investments or drawing from other assets to meet a capital need. It may be worth comparing mortgage or home-equity financing before assets are liquidated.
             </p>
 
-            <h4 style="font-size: 0.95rem; font-weight: 800; color: #FFFFFF; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.4rem;">Structuring Opportunities:</h4>
-            <ul class="result-bullets" id="fit-bullets-display">
-              <li>Eligible for immediate re-advanceable Smith Manoeuvre setups</li>
-              <li>Cleanest access to 120-day fixed rate locks &amp; bank prime specials</li>
-              <li>Fully automated income underwriting with minimal paper hassle</li>
-            </ul>
-
-            <div class="rate-indicator">
-              <span class="rate-label">Est. Underwriting Rates:</span>
-              <span class="rate-value" id="fit-rate-display">3.49% - 4.19%</span>
+            <div class="planning-areas-box">
+              <h4>Potential Areas to Model:</h4>
+              <ul id="opp-primary-areas">
+                <li>Mortgage equity takeout or structured refinance</li>
+                <li>Low-cost Home Equity Line of Credit (HELOC)</li>
+                <li>Re-advanceable mortgage structures to support compounding</li>
+              </ul>
             </div>
 
-            <button type="button" class="btn btn-accent" style="width: 100%; justify-content: center; margin-top: 1.5rem; font-weight: 800;" onclick="openPlannerModal('Lender Classifier Result CTA')">
-              Coordinate This Scenario With Trevor →
+            <div id="opp-secondary-box" style="margin-bottom: 1.8rem; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 1.2rem;">
+              <div class="sub-opps-heading">Also Worth Reviewing:</div>
+              <ul class="sub-opps-list" id="opp-secondary-list">
+                <li>Investment Financing Review</li>
+                <li>Corporate Liquidity Review</li>
+              </ul>
+            </div>
+
+            <button type="button" class="btn btn-accent" style="width: 100%; justify-content: center; font-weight: 800; font-size: 1rem; padding: 0.9rem;" onclick="triggerPlannerStrategyCTA()">
+              Review This Strategy with Trevor →
             </button>
-            <p style="font-size: 0.74rem; color: #9CA3AF; text-align: center; margin-top: 0.6rem; line-height: 1.4;">
-              Zero-credit pull review · Complete Wealth Strategy Alignment
+            <p style="font-size: 0.76rem; color: #9CA3AF; text-align: center; margin-top: 0.6rem; line-height: 1.45;">
+              I will provide the mortgage and financing side of the comparison so you can evaluate it alongside the client's tax and financial plan. No credit pull required.
             </p>
           </div>
         </div>
 
+      </div>
+
+      <!-- Concise "When to Bring Trevor In" cards grid directly below the tool -->
+      <div style="max-width: 1160px; margin: 4.5rem auto 0; padding-top: 4rem; border-top: 1px solid var(--border-subtle);">
+        <div class="section-title-wrap" style="margin-bottom: 2rem;">
+          <span class="section-eyebrow">Strategic Milestones</span>
+          <h2>When to Bring Trevor into Your Planning Process</h2>
+          <p>Key indicators where structuring a low-cost debt facility makes strategic sense before executing your planning changes.</p>
+        </div>
+
+        <div class="scenario-grid">
+          <div class="scenario-card">
+            <h4>1. Business Owner Needs Personal Capital</h4>
+            <p>Before creating a significant personal distribution solely to fund a purchase or expense, see what financing options may be available to avoid tax-heavy brackets.</p>
+          </div>
+          <div class="scenario-card">
+            <h4>2. Selling Investments for Property Purchase</h4>
+            <p>Compare mortgage or home equity financing before liquidating a taxable portfolio, preserving compound growth and avoiding immediate capital gains.</p>
+          </div>
+          <div class="scenario-card">
+            <h4>3. Mortgage-Free or High-Equity Client</h4>
+            <p>Explore whether existing, dormant home equity could provide a tax-efficient, non-registered source of wealth building or backup reserves.</p>
+          </div>
+          <div class="scenario-card">
+            <h4>4. Investor Acquiring Another Property</h4>
+            <p>Review how existing equity, re-advanceable structures, and current financing can support the next acquisition without compromising personal cash limits.</p>
+          </div>
+          <div class="scenario-card">
+            <h4>5. Approaching Retirement</h4>
+            <p>Compare equity-access structures with registered or investment withdrawals to optimize cash flow and protect long-term retirement liquidity.</p>
+          </div>
+          <div class="scenario-card">
+            <h4>6. Complex Corporate Income</h4>
+            <p>Review self-employed lender options and Holdco programs before altering salary or dividend allocations solely to pass mortgage qualification checks.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1049,108 +1343,243 @@
     }
 
     // =========================================================================
-    // LENDER FIT CLASSIFIER LOGIC
+
     // =========================================================================
-    var classParams = {
-      credit: 'excellent',
-      income: 'salaried',
-      equity: 'conventional',
-      arrears: 'none'
+    // CLIENT CAPITAL STRATEGY SCREEN (TOOL 2) - WEIGHTED SCORING ENGINE
+    // =========================================================================
+    var plannerParams = {
+        profile: 'business',
+        equity: 'free',
+        liquidity: 'personal',
+        need: 'property',
+        funding: 'cash',
+        priority: 'liquidity'
     };
 
-    function setClassifierParam(type, value) {
-      classParams[type] = value;
-      
-      // Update UI Active states
-      var prefix = 'card-' + type + '-';
-      var cards = document.querySelectorAll('[id^="' + prefix + '"]');
-      cards.forEach(card => card.classList.remove('active'));
-      
-      var target = document.getElementById(prefix + value);
-      if (target) target.classList.add('active');
-      
-      runLenderClassification();
-    }
-
-    function runLenderClassification() {
-      var badge = document.getElementById('fit-badge-display');
-      var desc = document.getElementById('fit-desc-display');
-      var bullets = document.getElementById('fit-bullets-display');
-      var rates = document.getElementById('fit-rate-display');
-
-      // Rule Engine logic:
-      // Private/Bridge is triggered if credit is bruised, OR active CRA arrears exist, OR complex holding company structures with limited equity
-      if (classParams.arrears === 'active' || classParams.credit === 'bruised') {
-        badge.textContent = "PRIVATE / BRIDGE CAPITAL";
-        badge.style.color = "var(--accent-orange)";
-        badge.style.borderColor = "rgba(247, 112, 79, 0.4)";
-        badge.style.background = "rgba(247, 112, 79, 0.12)";
-        desc.textContent = "Your client matches a specialized Asset-Backed or Bridge financing tier. Traditional bank guidelines freeze completely over active CRA arrears, tax collections, or severe credit score challenges. We utilize short-term private or equity-based bridge mortgages to pay off CRA compound interest cleanly, establish an exit plan, and protect your asset-under-management balance.";
-        bullets.innerHTML = "<li>CRA Personal &amp; Corporate tax arrears cleared in full at closing</li>" +
-                            "<li>Interest-only short term bridge structures available to preserve client cash flow</li>" +
-                            "<li>Underwritten strictly on property equity, balance sheets, and viable exit-to-prime schedules</li>" +
-                            "<li>Protects you from having to force liquidate your client's wealth portfolio</li>";
-        rates.textContent = "6.99% - 8.99%";
-      }
-      // Alternative B-Lender is triggered if income is self-employed (BFS), retired/wealth (complex), or credit is fair, with clear tax arrears
-      else if (classParams.income === 'self-employed' || classParams.income === 'retired' || classParams.income === 'holding-co' || classParams.credit === 'fair') {
-        badge.textContent = "ALTERNATIVE B-LENDER";
-        badge.style.color = "var(--accent-mustard)";
-        badge.style.borderColor = "rgba(237, 171, 43, 0.4)";
-        badge.style.background = "rgba(237, 171, 43, 0.12)";
+    function setPlannerParam(type, val) {
+        plannerParams[type] = val;
         
-        if (classParams.income === 'self-employed') {
-          desc.textContent = "Your client qualifies for a Common-Sense Alternative B-Lender. For self-employed entrepreneurs (BFS), retail bank computer algorithms reject write-offs. Alternative underwriters respect business bank statement deposits and corporate earnings, avoiding tax hits and T4 inflation.";
-          bullets.innerHTML = "<li>Stated-income and 6-12 month bank statement cash flow programs</li>" +
-                              "<li>Aligns business entity equity without forcing salary withdrawals</li>" +
-                              "<li>Exit strategies built-in to cleanly migrate clients back to prime banks over 24-36 months</li>";
-        } else if (classParams.income === 'retired' || classParams.income === 'holding-co') {
-          desc.textContent = "Your client qualifies for Equity-Based or Alternative Wealth-Management Underwriting. Traditional retail underwriters decline assets or investments that don't match typical salary paystubs. We place these with customized lenders who structure asset-depletion (net worth) lending programs.";
-          bullets.innerHTML = "<li>Asset-depletion &amp; Net Worth program (underwrites global investment net worth)</li>" +
-                              "<li>Holding company corporate structure and rental portfolio alignments</li>" +
-                              "<li>Retirement cash flow protection to mitigate portfolio drawdown / sequence risk</li>";
-        } else {
-          desc.textContent = "Your client qualifies for an Alternative prime-adjacent program. Fair credit scores or past credit hits are approved cleanly based on solid income and a 20%+ equity/down payment structure, with a clear path to rebuild credit.";
-          bullets.innerHTML = "<li>Approvals for minor late payments, high credit line utilization, or past consumer proposals</li>" +
-                              "<li>Underwritten on solid property equity combined with household income verification</li>" +
-                              "<li>Clean re-establishment programs to restore top-tier prime score inside 24 months</li>";
-        }
-        rates.textContent = "4.79% - 5.89%";
-      }
-      // Monoline A-Lender (Good credit, standard income, wants fairer prepayments)
-      else if (classParams.credit === 'good') {
-        badge.textContent = "MONOLINE A-LENDER";
-        badge.style.color = "var(--accent-teal)";
-        badge.style.borderColor = "rgba(38, 166, 153, 0.4)";
-        badge.style.background = "rgba(38, 166, 153, 0.12)";
-        desc.textContent = "Your client matches a Premium Wholesale Monoline A-Lender. Unlike massive retail banks that carry heavy overhead, monolines specialize exclusively in prime mortgages. They offer identical low prime rates but use much fairer prepayment penalty calculations (Standard IRD vs. retail bank penalties).";
-        bullets.innerHTML = "<li>Substantially lower penalty structures (often saving $10,000+ if broken early)</li>" +
-                            "<li>Full 120-day rate lock options with maximum term flexibility</li>" +
-                            "<li>Direct, manual underwriting and quick turnarounds with wholesale-only lenders</li>";
-        rates.textContent = "3.59% - 4.29%";
-      }
-      // Excellent Prime Bank (Standard prime underwrite)
-      else {
-        badge.textContent = "A-LENDER PRIME BANK";
-        badge.style.color = "#EDAB2B";
-        badge.style.borderColor = "rgba(237, 171, 43, 0.4)";
-        badge.style.background = "rgba(237, 171, 43, 0.12)";
-        desc.textContent = "The client qualifies for top-tier, prime retail financing. High-credit and T4 employment structures enable access to Canada's lowest interest rates with traditional lenders. Perfectly positioned for specialized leverage structures.";
-        bullets.innerHTML = "<li>Eligible for immediate re-advanceable Smith Manoeuvre setups</li>" +
-                            "<li>Cleanest access to 120-day fixed rate locks &amp; bank prime specials</li>" +
-                            "<li>Fully automated income underwriting with minimal paper hassle</li>";
-        rates.textContent = "3.49% - 4.19%";
-      }
+        // Update selection card classes
+        document.querySelectorAll('[id^="card-' + type + '-"]').forEach(card => {
+            card.classList.remove('active');
+        });
+        var activeCard = document.getElementById('card-' + type + '-' + val);
+        if (activeCard) activeCard.classList.add('active');
 
-      // Overriding restriction: Insured mortgages (<20% down) cannot do alternative B-lending or private bridge easily without solid clean profile
-      if (classParams.equity === 'insured' && (classParams.credit === 'bruised' || classParams.credit === 'fair')) {
-        badge.textContent = "SPECIALIZED CO-SIGN / BRIDGE ONLY";
-        badge.style.color = "var(--accent-orange)";
-        rates.textContent = "Underwriting Review Required";
-        desc.textContent = "⚠️ Insured High-Ratio mortgages (under 20% down payment) are heavily restricted by federal CMHC guidelines. Credit scores under 640 or income issues require a strong co-signer, or a larger equity injection (20%+) to access Alternative B-lending files. Let's discuss a feasibility review.";
-      }
+        runPlannerStrategy();
     }
 
-  </script>
+    // Opportunity Database
+    var OPPORTUNITIES = {
+        'A': {
+            title: "EQUITY VS. LIQUIDATION REVIEW",
+            desc: "The client has available property equity and is considering using cash, selling investments or drawing from other assets to meet a capital need. It may be worth comparing mortgage or home-equity financing before assets are liquidated.",
+            areas: [
+                "Structured mortgage refinance or home equity takeout",
+                "Establishing a low-cost Home Equity Line of Credit (HELOC)",
+                "Evaluating the cost of borrowing versus the opportunity cost of portfolio liquidation"
+            ]
+        },
+        'B': {
+            title: "CORPORATE LIQUIDITY REVIEW",
+            desc: "The client appears to have capital available within a corporation but requires funds personally. Before determining how much money needs to be moved from the corporation, mortgage or home-equity financing may be worth modeling alongside the client’s tax plan.",
+            areas: [
+                "Personal mortgage financing structures utilizing corporate cash flow metrics",
+                "Holding company (Holdco) or inter-company borrowing options",
+                "Coordinating the loan structure with the client's accountant to evaluate tax-bracket impacts"
+            ]
+        },
+        'C': {
+            title: "INVESTMENT FINANCING REVIEW",
+            desc: "The client is considering using existing capital or property equity to acquire an investment or additional property. A financing review may help determine whether available equity or mortgage structure can support the strategy.",
+            areas: [
+                "Coordinating the borrowing structure with the client's accountant or tax advisor",
+                "Re-advanceable HELOC or investment-borrowing structures",
+                "Evaluating down-payment financing and borrowing capacity across multiple properties"
+            ]
+        },
+        'D': {
+            title: "BUSINESS OWNER FINANCING REVIEW",
+            desc: "The client’s personal taxable income may not tell the full story of their mortgage options. A financing review can assess available lender programs for incorporated or self-employed clients before major changes are made solely to improve mortgage qualification.",
+            areas: [
+                "Reviewing options before changing salary or dividend distributions solely to pass bank branch checks",
+                "Utilizing business-for-self (BFS) stated-income and bank-statement lender programs",
+                "Assessing corporate retained earnings and business strength for qualification"
+            ]
+        },
+        'E': {
+            title: "RETIREMENT EQUITY REVIEW",
+            desc: "The client has accumulated property equity and may be considering using investments, registered assets or other savings for a significant cash requirement. Mortgage and home-equity options may be worth comparing as part of the broader retirement plan.",
+            areas: [
+                "Modeling low-interest equity release to preserve registered retirement assets",
+                "Assessing cash-flow impact on personal pensions and registered withdrawals",
+                "Coordinating options with the financial planner to protect long-term portfolio life"
+            ]
+        },
+        'F': {
+            title: "STRATEGY REVIEW RECOMMENDED",
+            desc: "The client's mix of property equity, investments, corporate holdings, or capital requirements doesn't fit neatly into a single automated category. A personalized strategy review will map out viable financing options before any financial commitments are locked in.",
+            areas: [
+                "Mapping out custom equity release and refinancing capacities",
+                "Analyzing multi-lender programs for incorporated, retired, or investment-heavy clients",
+                "Reviewing interest optimization and repayment scheduling with your client's advisory team"
+            ]
+        }
+    };
+
+    function runPlannerStrategy() {
+        var profile = plannerParams.profile;
+        var equity = plannerParams.equity;
+        var liquidity = plannerParams.liquidity;
+        var need = plannerParams.need;
+        var funding = plannerParams.funding;
+        var priority = plannerParams.priority;
+
+        // Reset scores
+        var scores = { 'A': 0, 'B': 0, 'C': 0, 'D': 0, 'E': 0 };
+
+        // 1. Score Equity vs. Liquidation (A)
+        if (equity === 'free' || equity === 'over50') {
+            scores['A'] += 3;
+        } else if (equity === '25to50') {
+            scores['A'] += 1;
+        }
+        if (funding === 'cash' || funding === 'investments' || funding === 'registered') {
+            scores['A'] += 3;
+        }
+        if (priority === 'avoid-selling' || priority === 'minimize-cash' || priority === 'liquidity') {
+            scores['A'] += 2;
+        }
+
+        // 2. Score Corporate Liquidity Review (B)
+        if (profile === 'business' || profile === 'complex') {
+            scores['B'] += 2;
+        }
+        if (liquidity === 'corporate') {
+            scores['B'] += 4;
+        }
+        if (funding === 'corp' || funding === 'dividend') {
+            scores['B'] += 4;
+        }
+
+        // 3. Score Investment Financing Review (C)
+        if (profile === 'investor' || profile === 'complex') {
+            scores['C'] += 2;
+        }
+        if (need === 'property' || need === 'investment') {
+            scores['C'] += 4;
+        }
+        if (priority === 'acquire' || priority === 'access-equity') {
+            scores['C'] += 2;
+        }
+
+        // 4. Score Business Owner Financing Review (D)
+        if (profile === 'business' || profile === 'complex') {
+            scores['D'] += 4;
+        }
+        if (liquidity === 'corporate') {
+            scores['D'] += 2;
+        }
+        if (need === 'business') {
+            scores['D'] += 3;
+        }
+
+        // 5. Score Retirement Equity Review (E)
+        if (profile === 'retired') {
+            scores['E'] += 5;
+        }
+        if (equity === 'free' || equity === 'over50' || equity === '25to50') {
+            scores['E'] += 2;
+        }
+        if (liquidity === 'registered' || liquidity === 'non-reg') {
+            scores['E'] += 2;
+        }
+        if (need === 'retirement' || need === 'personal') {
+            scores['E'] += 2;
+        }
+
+        // Find primary and secondary opportunities
+        var sortedOpps = Object.keys(scores).sort((a, b) => scores[b] - scores[a]);
+        var primaryKey = sortedOpps[0];
+        var primaryScore = scores[primaryKey];
+
+        var primaryKeyFinal = 'F'; // Default to Strategy Review
+        var secondaryKeys = [];
+
+        if (primaryScore >= 3) {
+            primaryKeyFinal = primaryKey;
+            
+            // Find secondary opportunities that have scores >= 2
+            for (var i = 1; i < sortedOpps.length; i++) {
+                var k = sortedOpps[i];
+                if (scores[k] >= 2 && secondaryKeys.length < 2) {
+                    secondaryKeys.push(k);
+                }
+            }
+        }
+
+        // Render Primary Result
+        var opp = OPPORTUNITIES[primaryKeyFinal];
+        document.getElementById('opp-primary-title').textContent = opp.title;
+        document.getElementById('opp-primary-desc').textContent = opp.desc;
+
+        // Render Primary Areas
+        var areasList = document.getElementById('opp-primary-areas');
+        areasList.innerHTML = '';
+        opp.areas.forEach(area => {
+            var li = document.createElement('li');
+            li.textContent = area;
+            areasList.appendChild(li);
+        });
+
+        // Render Secondary Box
+        var secBox = document.getElementById('opp-secondary-box');
+        var secList = document.getElementById('opp-secondary-list');
+        if (secondaryKeys.length > 0 && primaryKeyFinal !== 'F') {
+            secBox.style.display = 'block';
+            secList.innerHTML = '';
+            secondaryKeys.forEach(k => {
+                var li = document.createElement('li');
+                li.textContent = OPPORTUNITIES[k].title;
+                secList.appendChild(li);
+            });
+        } else {
+            secBox.style.display = 'none';
+        }
+    }
+
+    function triggerPlannerStrategyCTA() {
+        var profileText = document.getElementById('card-profile-' + plannerParams.profile).querySelector('.option-card-title').textContent;
+        var equityText = document.getElementById('card-equity-' + plannerParams.equity).querySelector('.option-card-title').textContent;
+        var liquidityText = document.getElementById('card-liquidity-' + plannerParams.liquidity).querySelector('.option-card-title').textContent;
+        var needText = document.getElementById('card-need-' + plannerParams.need).querySelector('.option-card-title').textContent;
+        var fundingText = document.getElementById('card-funding-' + plannerParams.funding).querySelector('.option-card-title').textContent;
+        var priorityText = document.getElementById('card-priority-' + plannerParams.priority).querySelector('.option-card-title').textContent;
+
+        var primaryOppTitle = document.getElementById('opp-primary-title').textContent;
+
+        // Format summary for the lead form
+        var summary = "CLIENT CAPITAL STRATEGY SCREEN SUMMARIZED:\n" +
+                      "- Client Profile: " + profileText + "\n" +
+                      "- Property / Equity Position: " + equityText + "\n" +
+                      "- Liquidity Concentration: " + liquidityText + "\n" +
+                      "- Capital Need Purpose: " + needText + "\n" +
+                      "- Proposed Funding Plan: " + fundingText + "\n" +
+                      "- Primary Planning Priority: " + priorityText + "\n" +
+                      "- Primary Identified Planning Opportunity: " + primaryOppTitle;
+
+        // Pre-fill the details box in the modal form
+        document.getElementById('p_details').value = summary;
+
+        // Open the modal
+        openPlannerModal('Capital Strategy Screen CTA');
+    }
+
+    // Run strategy once on DOM Ready
+    window.addEventListener('DOMContentLoaded', function() {
+        if (typeof runPlannerStrategy === 'function') runPlannerStrategy();
+    });
+
+</script>
 </body>
 </html>
