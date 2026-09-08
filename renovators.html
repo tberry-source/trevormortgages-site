@@ -491,32 +491,46 @@
 
     /* Header Responsive Layout */
     @media (max-width: 1024px) {
+      /* Header Menu - Compact, Wrapped & Centered (NO HORIZONTAL SWIPING!) */
       .nav-inner {
         flex-direction: column !important;
         align-items: center !important;
-        gap: 0.6rem !important;
-        padding: 0.8rem 1rem !important;
+        gap: 0.8rem !important;
+        padding: 0.8rem 0 !important;
+        text-align: center !important;
+      }
+      .brand-link {
+        align-items: center !important;
+        text-align: center !important;
+        margin-bottom: 0.2rem !important;
+      }
+      .brand-name {
+        font-size: 1.15rem !important;
+        letter-spacing: 0.02em !important;
+        text-align: center !important;
+      }
+      .brand-meta {
+        font-size: 0.72rem !important;
+        text-align: center !important;
+      }
+      .nav-inner > div:last-child {
+        display: none !important; /* Hide the desk cta button */
       }
       nav.nav-links {
         width: 100% !important;
-        overflow-x: auto !important;
-        white-space: nowrap !important;
-        gap: 1.1rem !important;
-        padding-bottom: 0.4rem !important;
         display: flex !important;
-        justify-content: flex-start !important;
-        -webkit-overflow-scrolling: touch !important;
-      }
-      nav.nav-links::-webkit-scrollbar {
-        display: none !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 0.5rem 1rem !important;
+        padding: 0.2rem 0 !important;
+        overflow: visible !important;
+        white-space: normal !important;
       }
       nav.nav-links a {
-        font-size: 0.88rem !important;
-        padding: 0.2rem 0 !important;
+        font-size: 0.82rem !important;
+        font-weight: 700 !important;
+        padding: 0.25rem 0.4rem !important;
         display: inline-block !important;
-      }
-      .nav-inner > div:last-child {
-        display: none !important;
       }
     }
     
@@ -541,12 +555,12 @@
       </a>
 
       <nav class="nav-links">
-        <a href="/index.html#home">Home</a>
+        <a href="index.html">Home</a>
         <a href="/index.html#buying">Buying</a>
-        <a href="/index.html#homeowners">Homeowners</a>
+        <a href="index.htmlowners">Homeowners</a>
         <a href="/index.html#alternative">Alternative</a>
         <a href="/index.html#partners" class="active">Partners</a>
-        <a href="/index.html#contact">Contact</a>
+        <a href="index.html#contact">Contact</a>
       </nav>
 
       <div>
@@ -823,7 +837,7 @@
         <ul>
           <li><a href="index.html#buying">Buying a Home &amp; Pre-Approvals</a></li>
           <li><a href="buyer-rebate.html">New-Build Tax Rebate Guide</a></li>
-          <li><a href="index.html#homeowners">Equity &amp; Debt Relief</a></li>
+          <li><a href="index.htmlowners">Equity &amp; Debt Relief</a></li>
           <li><a href="index.html#alternative">Alternative &amp; Bank Declines</a></li>
         </ul>
       </div>
@@ -986,7 +1000,7 @@
       };
 
       // Asynchronous POST to CRM/Google Sheet endpoint
-      var scriptEndpoint = 'https://script.google.com/macros/s/AKfycbysYey_FmE3UBLGOFHWs3298qZGwfNz-gr7at4oRp3ZIrs8TJ2U-YcSX4ZSD6NrTR5O/exec';
+      var scriptEndpoint = 'https://script.google.com/macros/s/AKfycbxunHTb9xivp_KH2UNceJvwaYayIAxSmkeAJRJ8SKzE0ECkIl6mGD9ROpmTMz2x7z5K/exec';
       if (scriptEndpoint && scriptEndpoint.indexOf('URL_HERE') === -1) {
         fetch(scriptEndpoint, {
           method: 'POST',

@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Realtor Partnerships & Open House Counter Package | Trevor Berry</title>
+  <title>Realtor GST & HST New Construction Rebate Guide | Trevor Berry</title>
+  <meta name="description" content="A strategic guide for Realtors on how new-build GST and HST rebates can be advanced toward buyer down payments and closing costs across Alberta and Ontario." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -25,17 +26,20 @@
       --brand-green-light: #E7EFEA;
       --accent-mustard: #EDAB2B;
       --accent-mustard-hover: #D99518;
+      --accent-teal: #26A699;
+      --accent-orange: #F7704F;
       
       --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       --radius-sm: 6px;
       --radius: 10px;
-      --radius-lg: 14px;
+      --radius-lg: 16px;
       --shadow-sm: 0 1px 3px rgba(18, 69, 59, 0.05);
       --shadow-card: 0 4px 20px rgba(18, 69, 59, 0.06);
       --shadow-lg: 0 16px 40px rgba(18, 69, 59, 0.12);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
       background-color: var(--bg-canvas);
       color: var(--text-main);
@@ -48,8 +52,8 @@
     .top-strip {
       background-color: var(--bg-subtle);
       border-bottom: 1px solid var(--border-subtle);
-      font-size: 0.82rem;
-      padding: 0.5rem 0;
+      font-size: 0.84rem;
+      padding: 0.55rem 0;
       color: var(--text-muted);
     }
     .top-strip-inner {
@@ -59,6 +63,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
     }
     .top-strip a {
       color: var(--brand-green);
@@ -67,7 +73,7 @@
     }
     .top-strip a:hover { text-decoration: underline; }
 
-    /* Clean Navigation - Only Trevor Berry, No Third Party Marks */
+    /* Main Navigation Header */
     header {
       position: sticky;
       top: 0;
@@ -79,10 +85,10 @@
     .nav-inner {
       max-width: 1160px;
       margin: 0 auto;
+      padding: 1.1rem 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.1rem 1.5rem;
     }
     .brand-link {
       display: flex;
@@ -91,22 +97,19 @@
       gap: 2px;
     }
     .brand-name {
-      font-size: 1.3rem;
+      font-size: 1.35rem;
       font-weight: 800;
-      letter-spacing: 0.02em;
+      letter-spacing: -0.01em;
       color: var(--brand-green);
       line-height: 1.1;
-      text-transform: uppercase;
     }
     .brand-meta {
       font-size: 0.78rem;
-      font-weight: 800;
-      color: #F7704F; /* Official Perch Orange */
-      letter-spacing: 0.06em;
+      font-weight: 700;
+      color: var(--accent-mustard);
+      letter-spacing: 0.05em;
       text-transform: uppercase;
-      margin-top: 2px;
     }
-
     nav.nav-links {
       display: flex;
       align-items: center;
@@ -123,7 +126,7 @@
       color: var(--brand-green);
     }
 
-    /* Buttons */
+    /* Standard Button Components */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -137,6 +140,7 @@
       transition: all 0.2s ease;
       border: 1.5px solid transparent;
       gap: 0.4rem;
+      font-family: inherit;
     }
     .btn-primary {
       background-color: var(--brand-green);
@@ -148,7 +152,7 @@
       transform: translateY(-1px);
     }
     .btn-secondary {
-      background: transparent;
+      background: #FFFFFF;
       border-color: var(--border-subtle);
       color: var(--text-main);
     }
@@ -158,148 +162,75 @@
     }
     .btn-accent {
       background-color: var(--accent-mustard);
-      color: #FFFFFF;
+      color: #121E1A;
+      font-weight: 800;
     }
     .btn-accent:hover {
       background-color: var(--accent-mustard-hover);
       transform: translateY(-1px);
     }
 
-    /* Hero Section */
-    .hero {
-      padding: 4.5rem 1.5rem 4rem;
+    /* Subpage Hero Section */
+    .subpage-hero {
+      padding: 4.5rem 0 3.8rem;
       background: linear-gradient(180deg, #FFFFFF 0%, var(--bg-subtle) 100%);
       border-bottom: 1px solid var(--border-subtle);
+      text-align: center;
     }
-    .hero-container {
-      max-width: 1160px;
+    .subpage-hero-container {
+      max-width: 900px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.25fr 0.85fr;
-      gap: 3.5rem;
-      align-items: center;
+      padding: 0 1.5rem;
     }
     .eyebrow-tag {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.4rem;
       background: var(--brand-green-light);
       color: var(--brand-green);
       font-size: 0.8rem;
-      font-weight: 700;
-      padding: 0.35rem 0.85rem;
-      border-radius: 30px;
+      font-weight: 800;
+      padding: 0.35rem 0.9rem;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
       margin-bottom: 1.2rem;
     }
-    .hero h1 {
+    .subpage-hero h1 {
       font-size: 2.75rem;
-      line-height: 1.18;
       font-weight: 800;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.025em;
       color: var(--text-main);
       margin-bottom: 1.2rem;
+      line-height: 1.2;
     }
-    .hero h1 span.accent {
+    .subpage-hero h1 span.accent {
       color: var(--brand-green);
     }
-    .hero p.lead {
+    .subpage-hero p.lead {
       font-size: 1.12rem;
       line-height: 1.65;
       color: var(--text-body);
-      margin-bottom: 2rem;
-    }
-    .hero-actions {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 2.2rem;
-      flex-wrap: wrap;
-    }
-    .hero-points {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.8rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border-subtle);
-    }
-    .point-item {
-      display: flex;
-      flex-direction: column;
-    }
-    .point-val {
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: var(--brand-green);
-      line-height: 1.1;
-    }
-    .point-label {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      font-weight: 600;
+      max-width: 780px;
+      margin: 0 auto 2.2rem;
     }
 
-    /* Headshot & Profile Card (Clean - No Tag Boxes) */
-    .profile-card {
-      background: #FFFFFF;
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      padding: 1.5rem;
-      box-shadow: var(--shadow-card);
-      position: relative;
+    /* Content Layout Containers */
+    .content-section {
+      padding: 4.5rem 0;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 4.5rem 1.5rem;
     }
-    .photo-wrap {
-      width: 100%;
-      aspect-ratio: 4/5;
-      border-radius: var(--radius);
-      overflow: hidden;
-      background: var(--bg-alt);
-      margin-bottom: 1.2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-    .photo-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-    }
-    .avatar-fallback {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      background: var(--brand-green);
-      color: #FFFFFF;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      font-weight: 800;
-    }
-    .profile-info h3 {
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: var(--text-main);
-      margin-bottom: 0.15rem;
-    }
-    .profile-role {
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--brand-green);
-    }
-
-    /* Section Headers */
     .section-title-wrap {
-      max-width: 720px;
+      max-width: 780px;
       margin: 0 auto 3rem;
       text-align: center;
     }
     .section-eyebrow {
       color: var(--accent-mustard);
       font-size: 0.82rem;
-      font-weight: 700;
+      font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       margin-bottom: 0.5rem;
@@ -318,330 +249,363 @@
       color: var(--text-body);
     }
 
-    /* How I Work */
-    .principles-section {
-      padding: 4.5rem 1.5rem;
+    /* --- INTERACTIVE REBATE ADVANCE CALCULATOR --- */
+    .calc-card-container {
       background: #FFFFFF;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      padding: 2.5rem;
+      margin: 2.5rem auto 4rem;
+      max-width: 1040px;
+    }
+    .calc-top-header {
+      text-align: center;
+      margin-bottom: 2.2rem;
+      padding-bottom: 1.5rem;
       border-bottom: 1px solid var(--border-subtle);
     }
-    .principles-grid {
-      max-width: 1160px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-    }
-    .principle-card {
-      background: var(--bg-subtle);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius);
-      padding: 2rem;
-      transition: transform 0.2s ease;
-    }
-    .principle-card:hover {
-      transform: translateY(-2px);
-    }
-    .principle-icon-wrap {
-      width: 44px;
-      height: 44px;
-      border-radius: var(--radius-sm);
-      background: var(--brand-green-light);
+    .calc-top-header h3 {
+      font-size: 1.7rem;
+      font-weight: 800;
       color: var(--brand-green);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.2rem;
+      margin-bottom: 0.4rem;
     }
-    .principle-icon-wrap svg {
-      width: 22px;
-      height: 22px;
-      stroke: var(--brand-green);
-      stroke-width: 2;
-      fill: none;
-    }
-    .principle-card h3 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--text-main);
-      margin-bottom: 0.6rem;
-    }
-    .principle-card p {
-      font-size: 0.94rem;
-      color: var(--text-body);
-      line-height: 1.6;
+    .calc-top-header p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
     }
 
-    /* 3 Client Lanes */
-    .lanes-section {
-      padding: 4.5rem 1.5rem 5rem;
-      background: var(--bg-alt);
+    .calc-layout-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2.5rem;
+      align-items: start;
     }
-    .lanes-grid {
-      max-width: 1160px;
-      margin: 0 auto;
+
+    /* Left Inputs */
+    .calc-input-block {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+    }
+    .calc-field-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .calc-label-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .calc-field-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .calc-display-val {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--brand-green);
+    }
+    .calc-slider-input {
+      width: 100%;
+      accent-color: var(--brand-green);
+      cursor: pointer;
+      height: 6px;
+    }
+    .slider-scale-limits {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-top: 0.2rem;
+    }
+
+    /* Province Selectors (Pill Group) */
+    .prov-selector-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+    }
+    .prov-btn {
+      padding: 0.75rem 0.8rem;
+      border: 1.5px solid var(--border-subtle);
+      background: var(--bg-subtle);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-body);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .prov-btn span.sub {
+      font-size: 0.74rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+    .prov-btn:hover {
+      border-color: var(--brand-green);
+      background: #FFFFFF;
+    }
+    .prov-btn.active {
+      background: var(--brand-green);
+      border-color: var(--brand-green);
+      color: #FFFFFF;
+    }
+    .prov-btn.active span.sub {
+      color: #A7F3D0;
+    }
+
+    /* Occupancy Toggle */
+    .toggle-row-group {
+      display: flex;
+      gap: 0.6rem;
+    }
+    .toggle-pill-btn {
+      flex: 1;
+      padding: 0.65rem 0.8rem;
+      border: 1.5px solid var(--border-subtle);
+      background: var(--bg-subtle);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--text-body);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-align: center;
+    }
+    .toggle-pill-btn.active {
+      background: var(--brand-green);
+      border-color: var(--brand-green);
+      color: #FFFFFF;
+    }
+
+    /* Right Output Pane */
+    .calc-results-box {
+      background: #0E1814;
+      color: #FFFFFF;
+      border-radius: var(--radius);
+      padding: 2.2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+      box-shadow: var(--shadow-card);
+    }
+    .results-hero-metric {
+      text-align: center;
+      padding-bottom: 1.4rem;
+      border-bottom: 1px solid #1F2E28;
+    }
+    .metric-subtitle {
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: var(--accent-mustard);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.3rem;
+    }
+    .metric-bignum {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+    .metric-caption {
+      font-size: 0.82rem;
+      color: #9CA3AF;
+      margin-top: 0.4rem;
+    }
+
+    /* Breakdown Table */
+    .rebate-breakdown-table {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+    .breakdown-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.88rem;
+      color: #D1D5DB;
+    }
+    .breakdown-line strong {
+      color: #FFFFFF;
+      font-size: 0.92rem;
+    }
+    .breakdown-line.highlight {
+      background: rgba(237, 171, 43, 0.12);
+      border: 1px solid rgba(237, 171, 43, 0.3);
+      padding: 0.6rem 0.8rem;
+      border-radius: var(--radius-sm);
+      margin-top: 0.2rem;
+    }
+    .breakdown-line.highlight strong {
+      color: var(--accent-mustard);
+      font-size: 1.05rem;
+    }
+
+    .rule-explainer-box {
+      background: #14221C;
+      border-left: 3px solid var(--accent-mustard);
+      padding: 0.8rem 1rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.8rem;
+      color: #C2D1CB;
+      line-height: 1.5;
+    }
+
+    /* Cards & Informational Grid */
+    .feature-grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
-      margin-bottom: 3.5rem;
+      margin: 3.5rem 0;
     }
-    .lane-card {
-      background: #FFFFFF;
-      border: 1px solid var(--border-subtle);
+    .feature-box {
+      background: var(--bg-subtle);
+      border: 1.5px solid var(--border-subtle);
       border-radius: var(--radius-lg);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: var(--shadow-sm);
-      transition: all 0.2s ease;
+      padding: 2.2rem 1.8rem;
     }
-    .lane-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-card);
-    }
-    .lane-photo-header {
-      width: 100%;
-      height: 180px;
-      position: relative;
-      background: var(--brand-green-light);
-      overflow: hidden;
-    }
-    .lane-photo-header img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-    .lane-card:hover .lane-photo-header img {
-      transform: scale(1.03);
-    }
-    .lane-badge {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-      background: rgba(18, 69, 59, 0.92);
-      color: #FFFFFF;
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 0.3rem 0.7rem;
-      border-radius: 4px;
+    .feature-box .tag {
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: var(--accent-mustard);
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      backdrop-filter: blur(4px);
+      margin-bottom: 0.5rem;
+      display: block;
     }
-    .lane-content {
-      padding: 1.8rem;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-    .lane-card h3 {
-      font-size: 1.35rem;
+    .feature-box h3 {
+      font-size: 1.28rem;
       font-weight: 800;
-      color: var(--text-main);
       margin-bottom: 0.8rem;
+      color: var(--text-main);
+      line-height: 1.3;
     }
-    .lane-card p {
+    .feature-box p {
       font-size: 0.94rem;
       color: var(--text-body);
       line-height: 1.6;
-      margin-bottom: 1.5rem;
-      flex-grow: 1;
+      margin-bottom: 1.2rem;
     }
     .lane-bullets {
       list-style: none;
-      margin-bottom: 2rem;
+      padding: 0 !important;
+      margin: 0 0 1.5rem 0 !important;
     }
     .lane-bullets li {
-      font-size: 0.88rem;
+      padding-left: 1.25rem !important;
+      position: relative !important;
+      list-style: none !important;
+      font-size: 0.86rem;
       color: var(--text-main);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 0.5rem;
+      line-height: 1.5;
     }
     .lane-bullets li::before {
+      position: absolute !important;
+      left: 0 !important;
+      top: -0.1rem !important;
       content: "•";
       color: var(--brand-green);
       font-size: 1.2rem;
       font-weight: bold;
+      line-height: 1;
     }
 
-    /* Partner Banner */
-    .partner-banner {
-      max-width: 1160px;
-      margin: 0 auto;
+    /* Comparison Matrix Table */
+    .table-container {
       background: #FFFFFF;
-      border: 1px solid var(--border-subtle);
+      border: 1.5px solid var(--border-subtle);
       border-radius: var(--radius-lg);
-      padding: 2.5rem 3rem;
-      display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 2.5rem;
-      align-items: center;
+      overflow-x: auto;
+      margin: 3rem 0;
       box-shadow: var(--shadow-sm);
     }
-    .partner-banner h3 {
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: var(--text-main);
-      margin-bottom: 0.6rem;
-    }
-    .partner-banner p {
-      font-size: 0.96rem;
-      color: var(--text-body);
-      line-height: 1.6;
-    }
-    .partner-cta-box {
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-      align-items: flex-start;
-    }
-
-    /* 4-Step Intake Modal */
-    .modal-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(19, 30, 26, 0.6);
-      backdrop-filter: blur(4px);
-      z-index: 999;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 1.2rem;
-    }
-    .modal-backdrop.active { display: flex; }
-    .modal-dialog {
-      background: #FFFFFF;
-      border-radius: var(--radius-lg);
+    table.matrix-table {
       width: 100%;
-      max-width: 540px;
-      box-shadow: var(--shadow-lg);
-      overflow: hidden;
-      border: 1px solid var(--border-subtle);
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
     }
-    .modal-top {
-      padding: 1.2rem 1.6rem;
+    table.matrix-table th {
       background: var(--brand-green);
       color: #FFFFFF;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .modal-top h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-    }
-    .modal-close-btn {
-      background: transparent;
-      border: none;
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 1.6rem;
-      line-height: 1;
-      cursor: pointer;
-    }
-    .modal-close-btn:hover { color: #FFFFFF; }
-    .modal-body {
-      padding: 1.8rem;
-    }
-    .step-track {
-      display: flex;
-      gap: 6px;
-      margin-bottom: 1.5rem;
-    }
-    .step-bar {
-      height: 4px;
-      flex-grow: 1;
-      background: var(--border-subtle);
-      border-radius: 2px;
-      transition: background 0.25s ease;
-    }
-    .step-bar.active { background: var(--brand-green); }
-    .step-panel { display: none; }
-    .step-panel.active { display: block; }
-
-    .pill-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.8rem;
-      margin-top: 1rem;
-    }
-    .pill-card {
-      background: var(--bg-subtle);
-      border: 1.5px solid var(--border-subtle);
-      border-radius: var(--radius);
-      padding: 1rem 0.9rem;
-      text-align: left;
-      cursor: pointer;
-      transition: all 0.15s ease;
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-    }
-    .pill-card:hover {
-      border-color: var(--brand-green);
-      background: #FFFFFF;
-      box-shadow: var(--shadow-sm);
-    }
-    .pill-icon {
-      width: 24px;
-      height: 24px;
-      color: var(--brand-green);
-      margin-bottom: 0.2rem;
-    }
-    .pill-icon svg {
-      width: 22px;
-      height: 22px;
-      stroke: var(--brand-green);
-      stroke-width: 2;
-      fill: none;
-    }
-    .pill-title {
-      font-weight: 700;
-      font-size: 0.92rem;
-      color: var(--text-main);
-    }
-    .pill-sub {
-      font-size: 0.76rem;
-      color: var(--text-muted);
-    }
-    .input-row {
-      margin-bottom: 1.1rem;
-    }
-    .input-row label {
-      display: block;
-      font-size: 0.86rem;
-      font-weight: 600;
-      color: var(--text-main);
-      margin-bottom: 0.35rem;
-    }
-    .input-field {
-      width: 100%;
-      padding: 0.75rem 0.9rem;
-      border: 1.5px solid var(--border-subtle);
-      border-radius: var(--radius-sm);
-      font-family: inherit;
+      padding: 1rem 1.4rem;
+      font-weight: 800;
       font-size: 0.95rem;
-      background: #FFFFFF;
+      letter-spacing: -0.01em;
+    }
+    table.matrix-table td {
+      padding: 1.1rem 1.4rem;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-body);
+    }
+    table.matrix-table tr:last-child td {
+      border-bottom: none;
+    }
+    table.matrix-table tr:nth-child(even) {
+      background: var(--bg-subtle);
+    }
+    table.matrix-table td strong {
       color: var(--text-main);
     }
-    .input-field:focus {
-      outline: none;
-      border-color: var(--brand-green);
-      box-shadow: 0 0 0 3px rgba(18, 69, 59, 0.08);
+    .badge-check {
+      color: var(--brand-green);
+      font-weight: 800;
     }
 
-    /* Footer - Brand Identity Compliant with Official Brokerage License Lockup */
+    /* CTA Banner Box */
+    .cta-banner-box {
+      background: var(--brand-green);
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 3.5rem 2.5rem;
+      text-align: center;
+      margin: 3.5rem auto 0;
+      max-width: 980px;
+    }
+    .cta-banner-box h3 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+      letter-spacing: -0.02em;
+    }
+    .cta-banner-box p {
+      color: #C2D1CB;
+      font-size: 1.05rem;
+      max-width: 680px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+
+    /* Footer & Compliance */
     footer {
       background: #0E1814;
       color: #FFFFFF;
-      padding: 4.5rem 1.5rem 2.5rem;
+      padding: 4.5rem 0 2.5rem;
       border-top: 1px solid #1C2B25;
+      margin-top: 5rem;
     }
     .footer-inner {
       max-width: 1160px;
       margin: 0 auto;
+      padding: 0 1.5rem;
       display: grid;
       grid-template-columns: 1.4fr 1fr 1fr;
       gap: 3rem;
@@ -651,7 +615,6 @@
       font-size: 1.25rem;
       font-weight: 800;
       margin-bottom: 0.6rem;
-      letter-spacing: -0.01em;
     }
     .footer-main p {
       color: #9BB0A7;
@@ -679,11 +642,10 @@
     }
     .footer-links a:hover { color: #FFFFFF; }
 
-    /* Official Brokerage License Strip with Perch Logo */
     .brokerage-compliance-box {
       max-width: 1160px;
       margin: 0 auto;
-      padding-top: 2.5rem;
+      padding: 2.5rem 1.5rem 0;
       border-top: 1px solid #1C2B25;
       display: flex;
       flex-direction: column;
@@ -695,591 +657,73 @@
       gap: 1.5rem;
       flex-wrap: wrap;
     }
-    .brokerage-brand-badge {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 0.5rem 1rem;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: var(--radius-sm);
-      line-height: 1.2;
-    }
-    .brokerage-brand-badge .badge-title {
-      font-size: 1.05rem;
-      font-weight: 800;
-      color: #FFFFFF;
-      letter-spacing: 0.04em;
-    }
-    .brokerage-brand-badge .badge-sub {
-      font-size: 0.68rem;
-      font-weight: 600;
-      color: var(--accent-mustard);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
     .brokerage-details {
-      font-size: 0.82rem;
+      font-size: 0.84rem;
       color: #8CA399;
       line-height: 1.6;
     }
     .legal-disclaimer {
-      font-size: 0.74rem;
+      font-size: 0.75rem;
       color: #6C8278;
       line-height: 1.6;
     }
 
-    @media (max-width: 900px) {
-      .hero-container { grid-template-columns: 1fr; }
-      .principles-grid, .lanes-grid, .footer-inner { grid-template-columns: 1fr; }
-      .partner-banner { grid-template-columns: 1fr; padding: 2rem; }
-      .hero h1 { font-size: 2.25rem; }
-    }
-  
-    /* Vibrant High-Contrast Calculator Design */
-    .calc-box-wrap {
-      background: #FFFFFF;
-      border: 1.5px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      padding: 2.5rem;
-      margin: 3.5rem 0;
-      box-shadow: 0 8px 30px rgba(18, 69, 59, 0.07);
-    }
-    .calc-header {
-      border-bottom: 1px solid var(--border-subtle);
-      padding-bottom: 1.2rem;
-      margin-bottom: 2rem;
-    }
-    .calc-header h3 {
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: var(--brand-green);
-    }
-    .calc-header p {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      margin-top: 0.3rem;
-    }
-    .calc-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 2.8rem;
-      align-items: stretch;
-    }
-    .calc-inputs {
-      display: flex;
-      flex-direction: column;
-      gap: 1.8rem;
-      justify-content: space-between;
-    }
-    .calc-field label {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.92rem;
-      font-weight: 700;
-      color: var(--text-main);
-      margin-bottom: 0.6rem;
-    }
-    .calc-field label span.val {
-      color: #F7704F; /* Perch Orange */
-      font-size: 1.1rem;
-      font-weight: 800;
-    }
-    .calc-range {
-      width: 100%;
-      accent-color: #F7704F; /* Perch Orange */
-      cursor: pointer;
-      height: 6px;
-    }
-    .calc-toggles {
-      display: flex;
-      gap: 0.5rem;
-    }
-    .calc-toggle-btn {
-      padding: 0.55rem 1.1rem;
-      border: 1.5px solid var(--border-subtle);
-      background: var(--bg-subtle);
-      font-size: 0.85rem;
-      font-weight: 700;
-      border-radius: var(--radius-sm);
-      cursor: pointer;
-      font-family: var(--font-family);
-      color: var(--text-body);
-      transition: all 0.15s ease;
-    }
-    .calc-toggle-btn.active {
-      background: var(--brand-green);
-      color: #FFFFFF;
-      border-color: var(--brand-green);
-    }
-    .rate-input-box {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .rate-input-box input {
-      width: 110px;
-      padding: 0.55rem 0.85rem;
-      border: 1.5px solid var(--border-subtle);
-      border-radius: var(--radius-sm);
-      font-size: 1rem;
-      font-weight: 700;
-      font-family: var(--font-family);
-      color: var(--text-main);
-    }
-    .rate-input-box input:focus {
-      border-color: var(--brand-green);
-      outline: none;
-    }
-
-    /* Vibrant High-Contrast Result Card */
-    .calc-results {
-      background: #12453B; /* Deep Brand Green */
-      border-radius: var(--radius);
-      padding: 2.2rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      color: #FFFFFF;
-      box-shadow: 0 8px 24px rgba(18, 69, 59, 0.15);
-    }
-    .calc-metric-main {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-      padding-bottom: 1.3rem;
-      margin-bottom: 1.3rem;
-      text-align: center;
-    }
-    .calc-metric-label {
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #A3CFBB;
-    }
-    .calc-metric-num {
-      font-size: 2.8rem;
-      font-weight: 800;
-      color: #FFFFFF;
-      line-height: 1.1;
-      margin: 0.35rem 0;
-    }
-    .calc-metric-sub {
-      font-size: 0.85rem;
-      color: #D1DFD8;
-    }
-    .calc-breakdown-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 0.65rem 0;
-      font-size: 0.9rem;
-      color: #D1DFD8;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    .calc-breakdown-row strong {
-      color: #FFFFFF;
-    }
-
-  </style>
-  <style>
-    /* Subpage Styles */
-    .subpage-hero {
-      padding: 4.5rem 1.5rem 3.5rem;
-      background: linear-gradient(180deg, #FFFFFF 0%, var(--bg-subtle) 100%);
-      border-bottom: 1px solid var(--border-subtle);
-    }
-    .subpage-hero-container {
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .subpage-hero h1 {
-      font-size: 2.8rem;
-      font-weight: 800;
-      line-height: 1.2;
-      color: var(--text-main);
-      margin-bottom: 1.2rem;
-      letter-spacing: -0.02em;
-    }
-    .subpage-hero p.lead {
-      font-size: 1.15rem;
-      color: var(--text-body);
-      line-height: 1.65;
-      margin-bottom: 2rem;
-    }
-    .content-section {
-      padding: 4.5rem 1.5rem;
-      max-width: 1080px;
-      margin: 0 auto;
-    }
-    .feature-grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin: 3rem 0;
-    }
-    .feature-box {
-      background: #FFFFFF;
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      padding: 2.2rem;
-      box-shadow: var(--shadow-sm);
-    }
-    .feature-box h3 {
-      font-size: 1.3rem;
-      font-weight: 800;
-      color: var(--text-main);
-      margin-bottom: 0.8rem;
-    }
-    .feature-box p {
-      font-size: 0.95rem;
-      color: var(--text-body);
-      line-height: 1.6;
-      margin-bottom: 1rem;
-    }
-    .calc-card {
-      background: var(--bg-subtle);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      padding: 2.5rem;
-      margin: 3rem 0;
-    }
-    .calc-card h3 {
-      font-size: 1.4rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-      color: var(--text-main);
-    }
-    .cta-banner-box {
-      background: var(--brand-green);
-      color: #FFFFFF;
-      border-radius: var(--radius-lg);
-      padding: 3rem;
-      text-align: center;
-      margin: 4rem auto 0;
-      max-width: 900px;
-    }
-    .cta-banner-box h3 {
-      font-size: 1.8rem;
-      font-weight: 800;
-      margin-bottom: 0.8rem;
-    }
-    .cta-banner-box p {
-      color: #C2D1CB;
-      font-size: 1.05rem;
-      max-width: 600px;
-      margin: 0 auto 1.8rem;
-    }
-    @media (max-width: 800px) {
-      .feature-grid-2 { grid-template-columns: 1fr; }
-      .subpage-hero h1 { font-size: 2.2rem; }
-      .cta-banner-box { padding: 2rem; }
-    }
-
-    /* Interactive View Controller */
-    
-    
-    
-    /* Top Review Controller Bar */
-    
-    
-    
-    .review-tab-btn:hover, .review-tab-btn.active {
-      background: var(--accent-mustard);
-      color: #0E1814;
-      border-color: var(--accent-mustard);
-    }
-  
-    /* Vibrant High-Contrast Calculator Design */
-    .calc-box-wrap {
-      background: #FFFFFF;
-      border: 1.5px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      padding: 2.5rem;
-      margin: 3.5rem 0;
-      box-shadow: 0 8px 30px rgba(18, 69, 59, 0.07);
-    }
-    .calc-header {
-      border-bottom: 1px solid var(--border-subtle);
-      padding-bottom: 1.2rem;
-      margin-bottom: 2rem;
-    }
-    .calc-header h3 {
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: var(--brand-green);
-    }
-    .calc-header p {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      margin-top: 0.3rem;
-    }
-    .calc-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 2.8rem;
-      align-items: stretch;
-    }
-    .calc-inputs {
-      display: flex;
-      flex-direction: column;
-      gap: 1.8rem;
-      justify-content: space-between;
-    }
-    .calc-field label {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.92rem;
-      font-weight: 700;
-      color: var(--text-main);
-      margin-bottom: 0.6rem;
-    }
-    .calc-field label span.val {
-      color: #F7704F; /* Perch Orange */
-      font-size: 1.1rem;
-      font-weight: 800;
-    }
-    .calc-range {
-      width: 100%;
-      accent-color: #F7704F; /* Perch Orange */
-      cursor: pointer;
-      height: 6px;
-    }
-    .calc-toggles {
-      display: flex;
-      gap: 0.5rem;
-    }
-    .calc-toggle-btn {
-      padding: 0.55rem 1.1rem;
-      border: 1.5px solid var(--border-subtle);
-      background: var(--bg-subtle);
-      font-size: 0.85rem;
-      font-weight: 700;
-      border-radius: var(--radius-sm);
-      cursor: pointer;
-      font-family: var(--font-family);
-      color: var(--text-body);
-      transition: all 0.15s ease;
-    }
-    .calc-toggle-btn.active {
-      background: var(--brand-green);
-      color: #FFFFFF;
-      border-color: var(--brand-green);
-    }
-    .rate-input-box {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .rate-input-box input {
-      width: 110px;
-      padding: 0.55rem 0.85rem;
-      border: 1.5px solid var(--border-subtle);
-      border-radius: var(--radius-sm);
-      font-size: 1rem;
-      font-weight: 700;
-      font-family: var(--font-family);
-      color: var(--text-main);
-    }
-    .rate-input-box input:focus {
-      border-color: var(--brand-green);
-      outline: none;
-    }
-
-    /* Vibrant High-Contrast Result Card */
-    .calc-results {
-      background: #12453B; /* Deep Brand Green */
-      border-radius: var(--radius);
-      padding: 2.2rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      color: #FFFFFF;
-      box-shadow: 0 8px 24px rgba(18, 69, 59, 0.15);
-    }
-    .calc-metric-main {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-      padding-bottom: 1.3rem;
-      margin-bottom: 1.3rem;
-      text-align: center;
-    }
-    .calc-metric-label {
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #A3CFBB;
-    }
-    .calc-metric-num {
-      font-size: 2.8rem;
-      font-weight: 800;
-      color: #FFFFFF;
-      line-height: 1.1;
-      margin: 0.35rem 0;
-    }
-    .calc-metric-sub {
-      font-size: 0.85rem;
-      color: #D1DFD8;
-    }
-    .calc-breakdown-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 0.65rem 0;
-      font-size: 0.9rem;
-      color: #D1DFD8;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    .calc-breakdown-row strong {
-      color: #FFFFFF;
-    }
-
-  </style>
-
-  <style>
-    /* Strict Left-Edge Alignment (Phone, Logo, Headline) */
-    .top-strip {
-      background-color: var(--bg-subtle);
-      border-bottom: 1px solid var(--border-subtle);
-      font-size: 0.82rem;
-      padding: 0.55rem 0;
-      color: var(--text-muted);
-    }
-    .top-strip-inner {
-      max-width: 1160px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .top-strip a {
-      color: var(--brand-green);
-      text-decoration: none;
-      font-weight: 700;
-    }
-    .top-strip a:hover { text-decoration: underline; }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border-subtle);
-    }
-    .nav-inner {
-      max-width: 1160px;
-      margin: 0 auto;
-      padding: 1.1rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .brand-link {
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      gap: 2px;
-    }
-    .brand-name {
-      font-size: 1.35rem;
-      font-weight: 800;
-      letter-spacing: 0.02em;
-      color: var(--brand-green);
-      line-height: 1.1;
-      text-transform: uppercase;
-    }
-    .brand-meta {
-      font-size: 0.78rem;
-      font-weight: 800;
-      color: #F7704F !important; /* Official Perch Orange */
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    /* Hero alignment matching 1160px grid */
-    .hero {
-      padding: 4.5rem 0 4rem;
-      background: linear-gradient(180deg, #FFFFFF 0%, var(--bg-subtle) 100%);
-      border-bottom: 1px solid var(--border-subtle);
-    }
-    .hero-container {
-      max-width: 1160px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-      display: grid;
-      grid-template-columns: 1.25fr 0.85fr;
-      gap: 3.5rem;
-      align-items: center;
-    }
-
-    /* Button Enhancements */
-    .btn {
-      display: inline-flex;
+    /* Modal Backdrop & Dialog */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(19, 30, 26, 0.72);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+      display: none;
       align-items: center;
       justify-content: center;
-      padding: 0.8rem 1.5rem;
-      border-radius: var(--radius);
-      font-weight: 700;
-      font-size: 0.92rem;
-      text-decoration: none;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      font-family: var(--font-family);
+      padding: 1.2rem;
     }
-    .btn-primary {
-      background-color: var(--brand-green);
-      color: #FFFFFF;
-      border: 2px solid var(--brand-green);
-    }
-    .btn-primary:hover {
-      background-color: var(--brand-green-hover);
-      border-color: var(--brand-green-hover);
-      box-shadow: var(--shadow-sm);
-      transform: translateY(-1px);
-    }
-    
-    /* Defined Secondary Button (How I Work & Lane Cards) */
-    .btn-secondary {
+    .modal-backdrop.active { display: flex; }
+    .modal-dialog {
       background: #FFFFFF;
-      border: 2px solid var(--brand-green);
-      color: var(--brand-green);
-      font-weight: 700;
-      box-shadow: 0 2px 6px rgba(18, 69, 59, 0.06);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 580px;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
     }
-    .btn-secondary:hover {
+    .modal-top {
+      padding: 1.3rem 1.8rem;
       background: var(--brand-green);
       color: #FFFFFF;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(18, 69, 59, 0.12);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
+    .modal-top h3 { font-size: 1.25rem; font-weight: 800; }
+    .modal-close-btn {
+      background: transparent;
+      border: none;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+    .modal-close-btn:hover { color: #FFFFFF; }
+    .modal-body { padding: 2rem; }
 
-    .btn-accent {
-      background-color: var(--accent-mustard);
-      color: #121E1A;
-      border: 2px solid var(--accent-mustard);
-      font-weight: 800;
-    }
-    .btn-accent:hover {
-      background-color: var(--accent-mustard-hover);
-      border-color: var(--accent-mustard-hover);
-      transform: translateY(-1px);
-    }
-
-    /* Full-width card buttons */
-    .lane-content .btn-secondary {
-      width: 100%;
-      margin-top: 1rem;
+    @media (max-width: 1024px) {
+      .calc-layout-grid { grid-template-columns: 1fr; }
+      .feature-grid-3 { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .subpage-hero h1 { font-size: 2.2rem; }
     }
   </style>
-
 </head>
 <body>
 
-  <!-- Top Strip -->
+  <!-- Top Utility Strip -->
   <div class="top-strip">
     <div class="top-strip-inner">
       <span>Feel free to text or call: <a href="tel:4038701537">403-870-1537</a></span>
-      <span>40+ Canadian Lenders · Clear Solutions · Zero Hidden Fees</span>
+      <span>GST/HST Advance Strategies · 40+ Lenders · Professional Tax Compliance</span>
     </div>
   </div>
 
@@ -1293,15 +737,15 @@
 
       <nav class="nav-links">
         <a href="/">Home</a>
-        <a href="/buying">Buying</a>
-        <a href="/homeowners">Homeowners</a>
-        <a href="/alternative">Alternative</a>
-        <a href="/partners" class="active">Partners</a>
+        <a href="index.html#buying">Buying</a>
+        <a href="index.htmlowners">Homeowners</a>
+        <a href="index.html#alternative">Alternative</a>
+        <a href="index.html#partners" class="active">Partners</a>
         <a href="#contact">Contact</a>
       </nav>
 
       <div>
-        <button class="btn btn-primary" onclick="openSnapshotModal('General Inquiry')">Get Mortgage Numbers</button>
+        <button class="btn btn-primary" onclick="openRebateModal('General Inquiry')">Verify a Rebate Scenario</button>
       </div>
     </div>
   </header>
@@ -1311,151 +755,368 @@
     <section class="subpage-hero">
       <div class="subpage-hero-container">
         <div class="eyebrow-tag">
-          <span>Calgary Realtor Partner Program</span>
+          <span>Realtor Strategy Blueprint · Multi-Provincial</span>
         </div>
-        <h1>Give Every Listing Its Own <span class="accent">Financing Advantage</span></h1>
+        <h1>The Realtor's Strategic Guide to <span class="accent">New-Build GST &amp; HST Rebates</span></h1>
         <p class="lead">
-          Banks close at 5 and hand buyers a generic rate sheet. I give my realtor partners a co-branded listing hub, turn-key open house counter displays, down payment solutions for stuck buyers, and a compliant 5% referral fee — so your listings move faster and your clients stay yours.
+          When buyers walk through a new build or presale show home, unexpected tax math and cash-to-close shortfalls kill deals right before condition removal. Here is how provincial rebates work on the legal Statement of Adjustments, how they can be advanced toward down payments, and how to protect your transactions across Alberta and Ontario.
         </p>
         <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-          <a href="https://darian.trevormortgages.ca" target="_blank" rel="noopener" class="btn btn-primary" style="font-size: 0.95rem;">See a Live Example ↗</a>
-          <a href="#partner-pillars" class="btn btn-secondary" style="border: 2px solid var(--brand-green); background: #FFFFFF; color: var(--brand-green);">Explore Partner Benefits ↓</a>
+          <a href="#calculator" class="btn btn-primary">Calculate Rebate Advance ↓</a>
+          <button type="button" class="btn btn-secondary" onclick="openRebateModal('New Build Rebate Help')">Structure a Deal with Trevor →</button>
         </div>
       </div>
     </section>
 
-    <!-- Main Content Section -->
-    <section class="content-section" id="partner-pillars">
-      <div class="section-title-wrap">
-        <span class="section-eyebrow">The Partnership Advantage</span>
-        <h2>How I Help You Win More Listings & Close More Deals</h2>
-        <p>A true mortgage partner shouldn't just be an order-taker. I give you marketing tools that impress sellers and financing strategies that keep buyers moving forward.</p>
-      </div>
-
-      <div class="feature-grid-2">
-        <!-- 1. Co-Branded Hubs -->
-        <div class="feature-box">
-          <div style="font-size: 0.8rem; font-weight: 800; color: #F7704F; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">Digital Listing Portals</div>
-          <h3>Live Co-Branded Listing Hubs</h3>
-          <p>
-            Every partner agent receives a dedicated, mobile-optimized co-branded website (e.g. <code>yourname.trevormortgages.ca</code>) featuring your contact info, active listings, and property-specific payment sliders.
-          </p>
-          <ul class="lane-bullets">
-            <li>Built, customized, and hosted at zero cost to you</li>
-            <li>Features your contact info, active listings, and property payment math</li>
-            <li>Captures motivated pre-approval buyer leads directly into your inbox</li>
-          </ul>
-        </div>
-
-        <!-- 2. Open House Counter Display & Pre-Approval Kit -->
-        <div class="feature-box">
-          <div style="font-size: 0.8rem; font-weight: 800; color: #EDAB2B; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">Open House Setup</div>
-          <h3>Open House Counter Display & Card Stand</h3>
-          <p>
-            No more scrambling before a weekend open house or handing out disposable paper sheets. For your listings, I provide a clear acrylic counter display linking visitors straight to your online feature sheet and payment slider, with a matching stand holding my mortgage cards so buyers can easily get pre-approved. It is totally free to you, and I will mail or personally drop off the display assets directly to you.
-          </p>
-          <ul class="lane-bullets">
-            <li>Clean 8.5×11 acrylic display linking visitors directly to your online feature sheet</li>
-            <li>Matching business card stand with my cards so buyers can easily access pre-approval</li>
-            <li>Totally free to you — I will mail or drop off display assets to your office or listing</li>
-          </ul>
-        </div>
-
-        <!-- 3. Down Payment Assistance & Rebates -->
-        <div class="feature-box" style="display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="font-size: 0.8rem; font-weight: 800; color: #26A699; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">Buyer Solutions</div>
-            <h3>Down Payment Solutions & GST/HST Rebates</h3>
-            <p>
-              When qualified buyers are short on cash-to-close or deposit funds, deals can easily stall out. I structure down payment assistance and leverage federal GST/HST New Housing Rebates credited right to closing costs so buyers can write with confidence.
+    
+    <!-- Myth Busting & Buyer Eligibility Clarity -->
+    <section class="content-section" style="padding-top: 0; padding-bottom: 2rem;">
+      <div style="background: #FFFFFF; border: 1.5px solid var(--brand-green); border-radius: var(--radius-lg); padding: 2.2rem 2.5rem; box-shadow: var(--shadow-card); position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; width: 6px; height: 100%; background: var(--accent-mustard);"></div>
+        <div style="display: flex; gap: 1.5rem; align-items: flex-start; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 280px;">
+            <span style="font-size: 0.8rem; font-weight: 800; color: var(--accent-mustard); text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.4rem;">CRA Guide RC4028 Rule Clarity</span>
+            <h3 style="font-size: 1.45rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.8rem;">Common Misconception: Do Buyers Need to Be First-Time Buyers?</h3>
+            <p style="font-size: 0.95rem; color: var(--text-body); line-height: 1.65; margin-bottom: 1rem;">
+              <strong>No. Any eligible Canadian purchaser</strong> (repeat buyers, move-up families, downsizers, or relocations) buying a newly constructed home as their primary residence qualifies for statutory GST/HST new housing rebates.
             </p>
-            <ul class="lane-bullets" style="margin-bottom: 1.2rem;">
-              <li>Federal GST/HST New Housing Rebates structured directly into buyer closing statements</li>
-              <li>Down payment assistance options to bridge cash-to-close shortfalls for stuck buyers</li>
-              <li>Protects your transaction and keeps your client moving forward without delays</li>
-            </ul>
-          </div>
-          <div>
-            <a href="/rebate" style="display: inline-flex; align-items: center; gap: 0.4rem; color: var(--brand-green); font-weight: 700; font-size: 0.92rem; text-decoration: underline;">
-              See the GST/HST New Housing Rebate Guide →
-            </a>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1.2rem;">
+              <div style="background: var(--bg-subtle); padding: 1.1rem 1.2rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                <strong style="color: var(--brand-green); font-size: 0.92rem; display: block; margin-bottom: 0.3rem;">Standard Baseline Rebate (All Buyers):</strong>
+                <p style="font-size: 0.84rem; color: var(--text-body); margin: 0; line-height: 1.5;">
+                  Available to <em>all buyers</em>. In Alberta, covers 36% of GST up to $350k ($6,300 max, phasing out at $450k). In Ontario, covers 75% of provincial HST up to <strong>$24,000 with NO purchase price cap</strong>.
+                </p>
+              </div>
+              <div style="background: var(--bg-subtle); padding: 1.1rem 1.2rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                <strong style="color: var(--accent-mustard); font-size: 0.92rem; display: block; margin-bottom: 0.3rem;">Enhanced FTHB Top-Up (First-Time Only):</strong>
+                <p style="font-size: 0.84rem; color: var(--text-body); margin: 0; line-height: 1.5;">
+                  Specifically for first-time buyers. Provides a <strong>100% rebate of the 5% GST</strong> on new homes up to <strong>$1,000,000 (up to $50,000 maximum)</strong>, phasing out linearly up to $1.5M.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- 4. Referral Compensation & Support -->
-        <div class="feature-box">
-          <div style="font-size: 0.8rem; font-weight: 800; color: #12453B; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">Brokerage Compliance</div>
-          <h3>Transparent 5% Referral Fee</h3>
+    <!-- Interactive Multi-Provincial Rebate Calculator -->
+    <section class="content-section" id="calculator" style="padding-top: 2rem;">
+      <div class="section-title-wrap">
+        <span class="section-eyebrow">Interactive Estimator</span>
+        <h2>New Construction Rebate &amp; Down Payment Advance Estimator</h2>
+        <p>Select your province and property purchase price to see the exact tax credit available and how much can be advanced toward your buyer's closing requirements.</p>
+      </div>
+
+      <div class="calc-card-container">
+        <div class="calc-top-header">
+          <h3>Rebate Advance Estimator</h3>
+          <p>Provincial tax amounts, phase-out thresholds, and down payment advance potential</p>
+        </div>
+
+        <div class="calc-layout-grid">
+          <!-- Left: Sliders & Controls -->
+          <div class="calc-input-block">
+            <!-- 1. Province Selector -->
+            <div class="calc-field-row">
+              <span class="calc-field-title">1. Select Province</span>
+              <div class="prov-selector-grid">
+                <button type="button" class="prov-btn active" id="btn-prov-ab" onclick="setProvince('AB')">
+                  <span>Alberta &amp; 5% GST Provinces</span>
+                  <span class="sub">5% Federal GST · Phase-out up to $1.5M for FTHB</span>
+                </button>
+                <button type="button" class="prov-btn" id="btn-prov-on" onclick="setProvince('ON')">
+                  <span>Ontario (13% HST)</span>
+                  <span class="sub">Up to $24,000 Prov. Rebate (No Cap) + FTHB Relief</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- 2. Buyer Status (FTHB Top-Up vs Standard) -->
+            <div class="calc-field-row">
+              <span class="calc-field-title">2. Buyer Eligibility Status</span>
+              <div class="toggle-row-group">
+                <button type="button" class="toggle-pill-btn active" id="btn-buyer-fthb" onclick="setBuyerStatus('fthb')">
+                  First-Time Home Buyer (FTHB)
+                </button>
+                <button type="button" class="toggle-pill-btn" id="btn-buyer-repeat" onclick="setBuyerStatus('repeat')">
+                  Repeat / Move-Up Buyer
+                </button>
+              </div>
+              <span style="font-size: 0.78rem; color: var(--brand-green); font-weight: 700; margin-top: 0.2rem;" id="buyer-status-subtext">
+                ✓ First-time buyers qualify for the enhanced FTHB top-up (100% GST rebate up to $1M / max $50,000).
+              </span>
+            </div>
+
+            <!-- 3. Buyer Occupancy Status -->
+            <div class="calc-field-row">
+              <span class="calc-field-title">3. Occupancy Intention</span>
+              <div class="toggle-row-group">
+                <button type="button" class="toggle-pill-btn active" id="btn-occ-owner" onclick="setOccupancy('owner')">Primary Residence</button>
+                <button type="button" class="toggle-pill-btn" id="btn-occ-investor" onclick="setOccupancy('investor')">Investor / Rental</button>
+              </div>
+              <span style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem;" id="occ-subtext">
+                ✓ Primary residence purchasers qualify for immediate builder assignment or cash-to-close advance.
+              </span>
+            </div>
+
+            <!-- 4. Purchase Price Slider -->
+            <div class="calc-field-row">
+              <div class="calc-label-header">
+                <span class="calc-field-title">4. Purchase Price (Before Tax):</span>
+                <span class="calc-display-val" id="disp-price">$550,000</span>
+              </div>
+              <input type="range" class="calc-slider-input" id="slider-price" min="250000" max="2000000" step="5000" value="550000" oninput="updateCalculator()" />
+              <div class="slider-scale-limits">
+                <span>$250K</span>
+                <span>$1M</span>
+                <span>$1.5M</span>
+                <span>$1.85M</span>
+                <span>$2M</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Output Card -->
+          <div class="calc-results-box">
+            <div class="results-hero-metric">
+              <div class="metric-subtitle">Estimated Rebate Eligible</div>
+              <div class="metric-bignum" id="out-advance-amt">$0</div>
+              <div class="metric-caption" id="out-advance-desc">Closing treatment depends on builder structure, lender policy and available financing programs.</div>
+            </div>
+
+            <div class="rebate-breakdown-table">
+              <div class="breakdown-line">
+                <span>Total Tax on New Build:</span>
+                <strong id="out-total-tax">$0</strong>
+              </div>
+              <div class="breakdown-line">
+                <span>Federal GST Rebate Portion:</span>
+                <strong id="out-fed-rebate">$0</strong>
+              </div>
+              <div class="breakdown-line">
+                <span>Provincial Rebate Portion:</span>
+                <strong id="out-prov-rebate">$0</strong>
+              </div>
+              <div class="breakdown-line highlight">
+                <span>Total Rebate Eligible:</span>
+                <strong id="out-total-rebate">$0</strong>
+              </div>
+            </div>
+
+            <div class="rule-explainer-box" id="out-rule-note">
+              Select values to calculate new-build statutory rebate eligibility.
+            </div>
+
+            <!-- Callout: Potential Closing Strategy -->
+            <div style="background: rgba(237, 171, 43, 0.08); border-left: 3px solid var(--accent-mustard); padding: 0.8rem 1rem; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 0.8rem; color: #D1D5DB; line-height: 1.5; margin-top: 0.5rem;">
+              <strong>Potential Closing Strategy:</strong> Depending on builder treatment, lender guidelines and available Perch programs, some rebate value may potentially be incorporated into a down-payment or closing strategy. Trevor will review the specific transaction before representing any amount as available at closing.
+            </div>
+
+            <button type="button" class="btn btn-accent" style="width: 100%; justify-content: center;" onclick="openRebateModal('Calculator Result Inquiry')"  style="width: 100%; justify-content: center;" onclick="openRebateModal('Calculator Result Inquiry')">
+              Structure This Advance For My Buyer →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The 3-Step Advance & Payoff Lifecycle -->
+    <section class="content-section" style="padding-top: 0;">
+      <div class="section-title-wrap">
+        <span class="section-eyebrow">Practical Deal Mechanics</span>
+        <h2>The 3-Step Advance &amp; Payoff Lifecycle</h2>
+        <p>A missing $15,000 on possession day can unravel months of hard work. Here is the exact closing sequence showing how the builder assigns credit entitlement, how funds are advanced to the lawyer at closing, and how CRA proceeds pay off the advance.</p>
+      </div>
+
+      <!-- 3-Step Flow Cards -->
+      <div class="feature-grid-3">
+        <!-- Step 1 -->
+        <div class="feature-box" style="border-top: 4px solid var(--accent-mustard);">
+          <span class="tag">Step 01 · Contract Stage</span>
+          <h3>1. Builder Credit Assignment</h3>
           <p>
-            Every referral is backed by a formal brokerage-to-brokerage agreement, with 5% of my commission paid directly to your brokerage upon file funding so it is fully compliant with provincial licensing rules.
+            In the purchase contract, the builder assigns the rebate and credit entitlement to the buyer rather than locking it into a generic price discount.
           </p>
           <ul class="lane-bullets">
-            <li>5% of my commission paid directly to your brokerage so it is fully compliant</li>
-            <li>Formal brokerage-to-brokerage referral agreement structure</li>
-            <li>Dedicated support team working evenings and weekends to keep deals moving</li>
+            <li>The buyer retains entitlement to the statutory federal and provincial tax rebate</li>
+            <li>Purchase agreement language is pre-cleared for lender underwriting approval</li>
+            <li>Eliminates confusion between builder sticker price and actual buyer closing cash</li>
+          </ul>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="feature-box" style="border-top: 4px solid var(--brand-green); background: #FFFFFF; box-shadow: var(--shadow-card);">
+          <span class="tag" style="color: var(--brand-green);">Step 02 · Possession Day</span>
+          <h3>2. Closing Funds Advanced</h3>
+          <p>
+            On closing day, we advance the approved rebate amount directly to the conveyancing real estate lawyer's trust account to satisfy the down payment.
+          </p>
+          <ul class="lane-bullets">
+            <li>Funds arrive directly on the lawyer's Statement of Adjustments as buyer down payment</li>
+            <li>Satisfies lender minimum equity thresholds so mortgage conditions clear</li>
+            <li>The builder gets paid 100% of their contract purchase funds with zero closing delay</li>
+          </ul>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="feature-box" style="border-top: 4px solid #F7704F;">
+          <span class="tag" style="color: #F7704F;">Step 03 · Post-Possession</span>
+          <h3>3. CRA Submission &amp; Payoff</h3>
+          <p>
+            The appropriate CRA/Ontario rebate application is completed based on occupancy and transaction type to claim the government refund.
+          </p>
+          <ul class="lane-bullets">
+            <li>We supply the complete paperwork package and documentation checklist for the CRA</li>
+            <li>When the CRA issues the rebate refund cheque or direct deposit, it pays off the advance</li>
+            <li>Buyer gets into the home today without liquidating emergency cash or investments</li>
           </ul>
         </div>
       </div>
 
-      <!-- Live Hub Demo Showcase (Darian Model) -->
-      <div style="background: var(--bg-alt); border: 1.5px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 3rem; margin: 4rem 0 2rem;">
-        <div style="max-width: 820px; margin: 0 auto; text-align: center;">
-          <span style="font-weight: 800; color: #F7704F; text-transform: uppercase; font-size: 0.82rem; letter-spacing: 0.05em;">Live Working Example</span>
-          <h3 style="font-size: 1.8rem; font-weight: 800; color: var(--text-main); margin: 0.5rem 0 1rem;">Experience the Partner Hub Model</h3>
-          <p style="color: var(--text-body); font-size: 1.05rem; line-height: 1.6; margin-bottom: 0.8rem;">See how a live partner hub utilizes custom payment calculations, buyer capture tools, and open house marketing materials to make listings easier to sell.</p>
-          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 2rem;">Live example, built for Darian Stadnyk (Premiere Realty Direct)</p>
-          <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-            <a href="https://darian.trevormortgages.ca" target="_blank" rel="noopener" class="btn btn-primary" style="font-size: 1rem;">See a Live Example ↗</a>
-            <button type="button" class="btn btn-secondary" style="border: 2px solid var(--brand-green); background: #FFFFFF; color: var(--brand-green); font-size: 1rem;" onclick="openRealtorModal()">Request Your Custom Hub & Display Kit</button>
-          </div>
+      <!-- Real Estate Lawyer & Conveyancing Coordination Note -->
+      <div style="background: var(--bg-subtle); border: 1.5px dashed var(--brand-green); border-radius: var(--radius); padding: 1.6rem 2rem; margin: 2rem 0 3.5rem; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+        <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--brand-green-light); color: var(--brand-green); display: inline-flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 800; flex-shrink: 0;">⚖️</div>
+        <div style="flex: 1; min-width: 280px;">
+          <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.3rem;">Conveyancing Lawyer Coordination</h4>
+          <p style="font-size: 0.88rem; color: var(--text-body); line-height: 1.55; margin: 0;">
+            I work directly with your buyer's real estate conveyancer to ensure the advance paperwork, trust ledger entries, and builder assignment forms align seamlessly before closing day. Zero scrambles, zero closing delays.
+          </p>
         </div>
+      </div>
+
+      <!-- Provincial Comparison Matrix Table -->
+      <div class="section-title-wrap" style="margin-top: 4rem;">
+        <span class="section-eyebrow">Provincial Breakdown</span>
+        <h2>Alberta vs. Ontario: Side-by-Side Tax Comparison</h2>
+        <p>Rules and cash-back caps differ dramatically depending on the province your buyer is purchasing in.</p>
+      </div>
+
+      
+    <!-- Two Ways Rebates Are Applied: Price Discount vs. Down Payment Bonus -->
+    <section class="content-section" style="padding-top: 1rem; padding-bottom: 3rem;">
+      <div class="section-title-wrap">
+        <span class="section-eyebrow">Capitalizing The Tax Credit</span>
+        <h2>Standard Builder Price Discount vs. The Down Payment Bonus</h2>
+        <p>Most buyers and agents don't realize that standard builder rebate assignment doesn't solve the down payment barrier. Here is how specialized advance financing changes the equation.</p>
+      </div>
+
+      <div class="feature-grid-2" style="margin-top: 2rem;">
+        <!-- Column 1: The Traditional Builder Way -->
+        <div class="feature-box" style="border-left: 4px solid #9CA3AF;">
+          <span class="tag" style="color: #6B7280;">Traditional Builder Practice</span>
+          <h3>The Standard Builder Assignment</h3>
+          <p>
+            When a buyer signs a standard builder contract stating <em>"Price includes GST/HST with rebate assigned to builder,"</em> the builder simply takes the tax credit to offset their gross sticker price.
+          </p>
+          <ul class="lane-bullets">
+            <li><strong>The Problem:</strong> The buyer still has to come up with 100% of their 5% to 20% down payment from their own bank account.</li>
+            <li><strong>Cash-to-Close Crunch:</strong> Legal adjustments, land transfer taxes, and closing fees still have to be paid out-of-pocket on closing day.</li>
+            <li><strong>Deal Risk:</strong> Buyers with strong income but modest savings walk away from show homes because they cannot hit deposit milestones.</li>
+          </ul>
+        </div>
+
+        <!-- Column 2: The Down Payment Bonus Advance -->
+        <div class="feature-box" style="border-left: 4px solid var(--accent-mustard); background: #FFFFFF; box-shadow: var(--shadow-card);">
+          <span class="tag" style="color: var(--accent-mustard);">Specialized Lending Program</span>
+          <h3>The Down Payment Bonus Advance</h3>
+          <p>
+            Through specialized proprietary lending structures (available for qualifying new construction in Ontario), the value of the tax rebate is paired with partner cashback and advanced directly at closing.
+          </p>
+          <ul class="lane-bullets">
+            <li><strong>Funds the Down Payment:</strong> Advances between <strong>13% and 20% of the purchase price</strong> directly on the Statement of Adjustments.</li>
+            <li><strong>Available to Repeat Buyers &amp; Investors:</strong> Not limited to first-time buyers; applies to any residential property of <strong>1 to 4 units</strong>.</li>
+            <li><strong>Closes Stalled Deals:</strong> Allows buyers who are $15,000–$50,000+ short on cash-to-close to remove financing conditions and close.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+<div class="table-container">
+        <table class="matrix-table">
+          <thead>
+            <tr>
+              <th>Feature / Provision</th>
+              <th>Alberta &amp; 5% GST Provinces</th>
+              <th>Ontario (13% Combined HST)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>New Home Sales Tax Rate</strong></td>
+              <td>5% Federal GST</td>
+              <td>13% HST (5% Federal + 8% Provincial)</td>
+            </tr>
+            <tr>
+              <td><strong>First-Time Buyer (FTHB) Primary Residence</strong></td>
+              <td><span class="badge-check">100% of GST up to $1M (Max $50,000)</span>, phasing out linearly up to $1.5M.</td>
+              <td><span class="badge-check">Up to $130,000 combined relief</span> under the Enhanced Program (subject to eligibility, timelines, and FMV limits).</td>
+            </tr>
+            <tr>
+              <td><strong>Repeat / Move-Up Primary Residence</strong></td>
+              <td>36% of GST up to $350k (Max $6,300, phased out at $450k).</td>
+              <td><span class="badge-check">Up to $130,000 combined relief</span> under ENHR + ONHAP during the temporary enhanced qualifying window.</td>
+            </tr>
+            <tr>
+              <td><strong>Rental Investor Properties (1-4 Units)</strong></td>
+              <td>Pay full GST if over $450k; file CRA NRRP rental rebate if under $450k.</td>
+              <td><span class="badge-check">Up to $130,000 combined relief</span> under ENRRP + ONHAP during the temporary qualifying window (paid post-closing).</td>
+            </tr>
+            <tr>
+              <td><strong>Down Payment Bonus Advance Program</strong></td>
+              <td>Standard down payment rules &amp; builder deposit terms.</td>
+              <td><span class="badge-check">Eligible for 13%–20% Down Payment Advance at closing (1–4 units)</span> via Perch Capital.</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       <!-- Call to Action Banner -->
-      <div class="cta-banner-box" style="margin-top: 3.5rem;">
-        <h3>Ready to Make Your Next Listing Easier to Sell?</h3>
-        <p>Let's do a 15-minute call — I'll walk you through the referral agreement, set up your co-branded hub, or get your first open house package ready.</p>
-        <button class="btn btn-accent" onclick="openRealtorModal()">Connect With Trevor Berry →</button>
+      <div class="cta-banner-box">
+        <h3>Have a Buyer Looking at New Construction?</h3>
+        <p>Send me the purchase price and target possession date. I will verify their exact rebate qualification, pre-screen lender down payment rules, and help you structure a firm offer.</p>
+        <button type="button" class="btn btn-accent" onclick="openRebateModal('Realtor Lead Submission')">
+          Review a Buyer Scenario with Trevor →
+        </button>
       </div>
     </section>
-</main>
+  </main>
 
-<footer id="contact">
+  <!-- Footer with Official Brokerage Compliance -->
+  <footer id="contact">
     <div class="footer-inner">
       <div class="footer-main">
         <h4>TREVOR BERRY</h4>
-        <p>Mortgage Associate with Perch Mortgages. Helping clients structure the right financing across 40+ lenders with clear, straightforward advice.</p>
+        <p>Mortgage Associate with Perch Mortgages. Helping realtors, buyers, and builders structure smart financing across 40+ Canadian lenders.</p>
         <p style="color: var(--accent-mustard); font-weight: 700; font-size: 0.92rem;">
-          Direct: 403-870-1537 · tberry@myperch.io
+          Direct Line: 403-870-1537 · tberry@myperch.io
         </p>
       </div>
 
       <div class="footer-links">
-        <h5>Explore Financing</h5>
+        <h5>Explore Advisory</h5>
         <ul>
-          <li><a href="/buying">Buying a Home & Pre-Approvals</a></li>
-          <li><a href="/homeowners">Equity & Debt Consolidation</a></li>
-          <li><a href="/alternative">Alternative & Bank Decline</a></li>
-          <li><a href="/partners">Partners & Collaborations</a></li>
+          <li><a href="index.html#buying">Buying a Home &amp; Pre-Approvals</a></li>
+          <li><a href="index.htmlowners">Equity &amp; Debt Consolidation</a></li>
+          <li><a href="realtors.html">Realtor Partner Desk</a></li>
+          <li><a href="index.html#partners">All Professional Partnerships</a></li>
         </ul>
       </div>
 
       <div class="footer-links">
-        <h5>Credentials & Licensing</h5>
+        <h5>Credentials &amp; Platform</h5>
         <ul>
           <li>Licensed Mortgage Associate</li>
-          <li>Operating in Alberta & Across Canada</li>
-          <li>40+ Bank, Monoline & Private Lenders</li>
-          <li>Powered by Perch National Platform</li>
+          <li>Alberta, Ontario &amp; National Coverage</li>
+          <li>40+ Bank, Monoline &amp; Private Lenders</li>
+          <li>Powered by Perch Brokerage Platform</li>
         </ul>
       </div>
     </div>
 
-    <!-- Official Brokerage Regulatory Lockup (Footer Only) -->
+    <!-- Brokerage Regulatory Lockup -->
     <div class="brokerage-compliance-box">
       <div class="brokerage-lockup-row">
         <a href="https://myperch.io" target="_blank" rel="noopener" class="perch-brand-lockup" title="Perch Mortgage Brokerage" style="display: inline-flex; align-items: center; gap: 0.75rem; text-decoration: none; color: #FFFFFF;">
-          <!-- Official Perch Logo (Bird-Pin + Wordmark) -->
           <svg viewBox="0 0 152 44" fill="currentColor" style="height: 32px; width: auto; display: block;" aria-label="Perch">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M17 2C9.268 2 3 8.268 3 16C3 25.8 17 42 17 42C17 42 31 25.8 31 16C31 15.65 30.98 15.3 30.95 14.96C32.8 16.5 35.8 17.5 40 17.5V12.5C36.5 12.5 33.5 11 31.8 8.8C28.8 4.6 23.3 2 17 2ZM17 21C14.239 21 12 18.761 12 16C12 13.239 14.239 11 17 11C19.761 11 22 13.239 22 16C22 18.761 19.761 21 17 21Z" fill="currentColor"/>
             <text x="46" y="30" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="28" font-weight="800" letter-spacing="-0.03em" fill="currentColor">perch</text>
@@ -1467,89 +1128,355 @@
         </div>
       </div>
       <p class="legal-disclaimer">
-        Information, interest rates, and loan structures are for educational and illustrative purposes only O.A.C. Terms and rates are subject to borrower qualification and lender guidelines.
+        Information, GST/HST tax calculations, and loan structures are for educational and illustrative purposes only O.A.C. Tax rules are subject to CRA guidelines and conveyancing legal interpretation.
       </p>
     </div>
   </footer>
 
-
-  <!-- Dedicated Realtor Partner Modal -->
-  <div class="modal-backdrop" id="realtorModal">
-    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="realtorModalHeading" style="max-width: 580px;">
+  <!-- Dedicated Realtor Rebate Inquiry Modal -->
+  <div class="modal-backdrop" id="rebateModal">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <div class="modal-top">
-        <div>
-          <span style="font-size: 0.78rem; font-weight: 800; color: #F7704F; text-transform: uppercase; letter-spacing: 0.05em;">Realtor Partner Desk</span>
-          <h3 id="realtorModalHeading" style="margin-top: 0.2rem; font-size: 1.35rem;">Request Your Co-Branded Hub & Display Kit</h3>
-        </div>
-        <button type="button" class="modal-close-btn" aria-label="Close modal" onclick="closeRealtorModal()">&times;</button>
+        <h3 id="modalTitle">Review a New-Build Rebate Scenario</h3>
+        <button type="button" class="modal-close-btn" aria-label="Close modal" onclick="closeRebateModal()">&times;</button>
       </div>
-      <div class="modal-body" style="padding: 1.8rem 2rem 2.2rem;">
-        <form id="realtorForm" onsubmit="handleRealtorSubmit(event)">
-          <div style="margin-bottom: 1.2rem;">
-            <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Your Name *</label>
-            <input type="text" id="realtor_name" placeholder="e.g. Sarah Jenkins" required style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
+      <div class="modal-body">
+        <form id="rebateForm" onsubmit="handleRebateSubmit(event)">
+          <div style="margin-bottom: 1.1rem;">
+            <label style="display: block; font-size: 0.88rem; font-weight: 700; margin-bottom: 0.35rem;">Your Name *</label>
+            <input type="text" id="m_name" placeholder="e.g. Sarah Jenkins" required style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
           </div>
 
-          <div style="margin-bottom: 1.2rem;">
-            <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Real Estate Brokerage *</label>
-            <input type="text" id="realtor_brokerage" placeholder="e.g. RE/MAX, eXp, Royal LePage, Century 21" required style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
+          <div style="margin-bottom: 1.1rem;">
+            <label style="display: block; font-size: 0.88rem; font-weight: 700; margin-bottom: 0.35rem;">Real Estate Brokerage *</label>
+            <input type="text" id="m_brokerage" placeholder="e.g. RE/MAX, eXp, Royal LePage, Century 21" required style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.2rem;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.1rem;">
             <div>
-              <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Direct Cell Phone *</label>
-              <input type="tel" id="realtor_phone" placeholder="403-000-0000" required style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
+              <label style="display: block; font-size: 0.88rem; font-weight: 700; margin-bottom: 0.35rem;">Direct Cell Phone *</label>
+              <input type="tel" id="m_phone" placeholder="403-000-0000" required style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
             </div>
             <div>
-              <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Email Address *</label>
-              <input type="email" id="realtor_email" placeholder="sarah@brokerage.ca" required style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
+              <label style="display: block; font-size: 0.88rem; font-weight: 700; margin-bottom: 0.35rem;">Email Address *</label>
+              <input type="email" id="m_email" placeholder="sarah@brokerage.ca" required style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
             </div>
           </div>
 
           <div style="margin-bottom: 1.5rem;">
-            <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Upcoming Listing Address (Optional)</label>
-            <input type="text" id="realtor_listing" placeholder="e.g. 124 Copperpond Landing SE (to build test hub & flyer)" style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
-            <span style="font-size: 0.76rem; color: var(--text-muted); display: block; margin-top: 0.3rem;">If provided, I will set up a preview hub and open house counter display mock-up for your review.</span>
+            <label style="display: block; font-size: 0.88rem; font-weight: 700; margin-bottom: 0.35rem;">Property Price &amp; Province / Community (Optional)</label>
+            <input type="text" id="m_details" placeholder="e.g. $625k Detached in Calgary or $750k Presale in Ontario" style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
+            <span style="font-size: 0.76rem; color: var(--text-muted); display: block; margin-top: 0.3rem;">I will run the exact tax adjustments and cash-to-close requirements.</span>
           </div>
 
           <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.95rem; font-size: 1rem; font-weight: 800; justify-content: center;">
-            Request My Co-Branded Hub & Display Kit →
+            Verify This Scenario with Trevor →
           </button>
           <p style="font-size: 0.74rem; color: var(--text-muted); text-align: center; margin-top: 0.8rem;">
-            Direct cell response within 2 hours · Brokerage compliant · Zero obligation
+            Direct cell response within 2 hours · No credit pull required · 100% confidential
           </p>
         </form>
 
-        <div id="realtorSuccessNotice" style="display: none; background: var(--brand-green-light); border: 2px solid var(--brand-green); border-radius: var(--radius); padding: 2rem 1.5rem; text-align: center;">
+        <div id="rebateSuccessNotice" style="display: none; background: var(--brand-green-light); border: 2px solid var(--brand-green); border-radius: var(--radius); padding: 2rem 1.5rem; text-align: center;">
           <div style="width: 48px; height: 48px; background: var(--brand-green); color: #FFFFFF; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem;">✓</div>
-          <h4 style="color: var(--brand-green); font-size: 1.3rem; margin-bottom: 0.5rem;">Thank You, <span id="realtorDisplay">Partner</span>!</h4>
+          <h4 style="color: var(--brand-green); font-size: 1.3rem; margin-bottom: 0.5rem;">Scenario Received, <span id="displayRealtorName">Partner</span>!</h4>
           <p style="color: var(--text-body); font-size: 0.95rem; margin-bottom: 1.2rem;">
-            I have received your request. I'll reach out directly to your cell to confirm your hub subdomain and get your open house counter package ready.
+            I am reviewing the tax rules and down payment advance options for your buyer. I'll reach out directly to your cell with numbers you can rely on.
           </p>
-          <button type="button" class="btn btn-primary" onclick="closeRealtorModal()">Done</button>
+          <button type="button" class="btn btn-primary" onclick="closeRebateModal()">Done</button>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Interactive Calculator JavaScript -->
   <script>
-    function openRealtorModal() {
-      document.getElementById('realtorModal').classList.add('active');
+    var currentProvince = 'AB';
+    var currentBuyerStatus = 'fthb';
+    var currentOccupancy = 'owner';
+
+    function setProvince(prov) {
+      currentProvince = prov;
+      var btnAb = document.getElementById('btn-prov-ab');
+      var btnOn = document.getElementById('btn-prov-on');
+      if (btnAb) btnAb.classList.toggle('active', prov === 'AB');
+      if (btnOn) btnOn.classList.toggle('active', prov === 'ON');
+      updateCalculator();
     }
-    function closeRealtorModal() {
-      document.getElementById('realtorModal').classList.remove('active');
+
+    function setBuyerStatus(status) {
+      currentBuyerStatus = status;
+      var btnFthb = document.getElementById('btn-buyer-fthb');
+      var btnRepeat = document.getElementById('btn-buyer-repeat');
+      if (btnFthb) btnFthb.classList.toggle('active', status === 'fthb');
+      if (btnRepeat) btnRepeat.classList.toggle('active', status === 'repeat');
+
+      var subtext = document.getElementById('buyer-status-subtext');
+      if (subtext) {
+        if (status === 'fthb') {
+          subtext.textContent = "✓ First-time buyers qualify for the enhanced FTHB top-up (100% GST rebate up to $1M / max $50,000).";
+          subtext.style.color = "var(--brand-green)";
+        } else {
+          subtext.textContent = "Standard New Housing Rebate applies (phases out at $450,000 federally, $24k max provincial in ON).";
+          subtext.style.color = "var(--text-muted)";
+        }
+      }
+      updateCalculator();
+    }
+
+    function setOccupancy(occ) {
+      currentOccupancy = occ;
+      var btnOwner = document.getElementById('btn-occ-owner');
+      var btnInvestor = document.getElementById('btn-occ-investor');
+      if (btnOwner) btnOwner.classList.toggle('active', occ === 'owner');
+      if (btnInvestor) btnInvestor.classList.toggle('active', occ === 'investor');
+      
+      var sub = document.getElementById('occ-subtext');
+      if (sub) {
+        if (occ === 'owner') {
+          sub.textContent = "✓ Primary residence purchasers qualify for immediate builder credit and closing advances.";
+          sub.style.color = "var(--text-muted)";
+        } else {
+          sub.textContent = "⚠️ Investors must pay tax at closing and file the CRA NRRP rental rebate post-possession.";
+          sub.style.color = "#B45309";
+        }
+      }
+      updateCalculator();
+    }
+
+        function updateCalculator() {
+      var slider = document.getElementById('slider-price');
+      var price = slider ? (parseFloat(slider.value) || 550000) : 550000;
+      
+      var dispPrice = document.getElementById('disp-price');
+      if (dispPrice) dispPrice.textContent = "$" + price.toLocaleString();
+
+      var fedRebate = 0;
+      var provRebate = 0;
+      var onhapRebate = 0;
+      var totalTax = 0;
+      var taxDesc = "";
+      var ruleNote = "";
+      var fedDesc = "";
+      var provDesc = "";
+
+      // 1. Total Tax Calculation
+      if (currentProvince === 'AB') {
+        totalTax = price * 0.05;
+        taxDesc = "$" + Math.round(totalTax).toLocaleString() + " (5% GST)";
+      } else {
+        totalTax = price * 0.13;
+        taxDesc = "$" + Math.round(totalTax).toLocaleString() + " (13% HST)";
+      }
+
+      // 2. Federal Rebate Calculation
+      if (currentOccupancy === 'investor') {
+        // Investor NRRP: Standard baseline rules only up to $450k
+        if (price <= 350000) {
+          fedRebate = (price * 0.05) * 0.36;
+          fedDesc = "$" + Math.round(fedRebate).toLocaleString() + " (NRRP Baseline)";
+        } else if (price < 450000) {
+          fedRebate = 6300 * ((450000 - price) / 100000);
+          fedDesc = "$" + Math.round(fedRebate).toLocaleString() + " (Phasing Out)";
+        } else {
+          fedRebate = 0;
+          fedDesc = "$0 (Over $450k NRRP Cap)";
+        }
+      } else {
+        // Owner Occupied: Check First-Time Buyer vs Repeat
+        if (currentBuyerStatus === 'fthb') {
+          // CRA First-Time Home Buyers' GST/HST Rebate (Up to $50,000 maximum on $1M, phases out at $1.5M)
+          if (price <= 1000000) {
+            fedRebate = price * 0.05;
+            fedDesc = "$" + Math.round(fedRebate).toLocaleString() + " (100% FTHB Rebate)";
+          } else if (price < 1500000) {
+            fedRebate = 50000 * ((1500000 - price) / 500000);
+            fedDesc = "$" + Math.round(fedRebate).toLocaleString() + " (FTHB Partial Phase-out)";
+          } else {
+            fedRebate = 0;
+            fedDesc = "$0 (Over $1.5M FTHB Ceiling)";
+          }
+        } else {
+          // Standard Baseline New Housing Rebate
+          if (price <= 350000) {
+            fedRebate = (price * 0.05) * 0.36;
+            fedDesc = "$" + Math.round(fedRebate).toLocaleString() + " (36% Baseline)";
+          } else if (price < 450000) {
+            fedRebate = 6300 * ((450000 - price) / 100000);
+            fedDesc = "$" + Math.round(fedRebate).toLocaleString() + " (Phasing Out)";
+          } else {
+            fedRebate = 0;
+            fedDesc = "$0 (Over $450k Cap)";
+          }
+        }
+      }
+
+      // 3. Provincial Rebate & ONHAP Calculation (Ontario 8% and 5% top-ups)
+      if (currentProvince === 'ON') {
+        // Both owners and qualifying rental investors qualify under the temporary 2026 Ontario Enhanced program
+        if (price <= 1000000) {
+          provRebate = Math.min(price * 0.08, 80000);
+          provDesc = "$" + Math.round(provRebate).toLocaleString() + " (Enhanced ENHR/ENRRP)";
+          var grossONHAP = Math.min(price * 0.05, 50000);
+          onhapRebate = Math.max(0, grossONHAP - fedRebate);
+        } else if (price <= 1500000) {
+          provRebate = 80000;
+          provDesc = "$80,000 (Enhanced ENHR/ENRRP)";
+          var grossONHAP = 50000;
+          onhapRebate = Math.max(0, grossONHAP - fedRebate);
+        } else if (price < 1850000) {
+          var factor = (1850000 - price) / 350000;
+          provRebate = 24000 + (56000 * factor);
+          provDesc = "$" + Math.round(provRebate).toLocaleString() + " (ENHR/ENRRP Phase-down)";
+          var grossONHAP = 50000 * factor;
+          onhapRebate = Math.max(0, grossONHAP - fedRebate);
+        } else {
+          // $1.85M and above: standard Ontario provincial new-housing/rental rebate (75% of 8%, max $24,000)
+          var provTax = price * 0.08;
+          provRebate = Math.min(24000, provTax * 0.75);
+          provDesc = "$" + Math.round(provRebate).toLocaleString() + " (Standard Cap)";
+          onhapRebate = 0;
+        }
+      } else {
+        provRebate = 0;
+        provDesc = "$0 (N/A in Alberta)";
+        onhapRebate = 0;
+      }
+
+      var totalRebate = fedRebate + provRebate + onhapRebate;
+
+      // Update DOM Safely
+      var elTotalTax = document.getElementById('out-total-tax');
+      if (elTotalTax) elTotalTax.textContent = taxDesc;
+
+      var elFed = document.getElementById('out-fed-rebate');
+      if (elFed) elFed.textContent = fedDesc;
+
+      var elProv = document.getElementById('out-prov-rebate');
+      if (elProv) {
+        if (currentProvince === 'ON') {
+          var provLabel = provDesc;
+          if (onhapRebate > 0) {
+            provLabel += " + $" + Math.round(onhapRebate).toLocaleString() + " ONHAP";
+          }
+          elProv.textContent = provLabel;
+        } else {
+          elProv.textContent = "$0 (N/A in Alberta)";
+        }
+      }
+
+      var elTotalRebate = document.getElementById('out-total-rebate');
+      if (elTotalRebate) elTotalRebate.textContent = "$" + Math.round(totalRebate).toLocaleString();
+
+      var elAdvAmt = document.getElementById('out-advance-amt');
+      var elAdvDesc = document.getElementById('out-advance-desc');
+      if (elAdvAmt && elAdvDesc) {
+        elAdvAmt.textContent = "$" + Math.round(totalRebate).toLocaleString();
+        if (currentOccupancy === 'owner') {
+          elAdvDesc.textContent = "Closing treatment depends on builder structure, lender policy and available financing programs.";
+        } else {
+          elAdvDesc.innerHTML = "Closing availability: <strong>Requires structure review.</strong><br>Closing treatment depends on builder structure, lender policy and available financing programs.";
+        }
+      }
+
+      // 4. Rule Notes Generation
+      if (currentProvince === 'AB') {
+        if (currentOccupancy === 'investor') {
+          ruleNote = "<strong>Alberta Investor Rule:</strong> Rental properties do not qualify for the First-Time Buyer top-up. Investors must pay the 5% GST upfront at closing and file the CRA NRRP rebate post-possession (eligible up to $450,000 only).";
+        } else if (currentBuyerStatus === 'fthb') {
+          if (price <= 1000000) {
+            ruleNote = "<strong>Alberta FTHB Advantage:</strong> Eligible first-time home buyers receive a <strong>100% full rebate of the 5% GST</strong> up to $1,000,000 (saving up to <strong>$50,000</strong>).";
+          } else if (price < 1500000) {
+            ruleNote = "<strong>Alberta FTHB Phase-Out:</strong> Between $1M and $1.5M, the first-time buyer GST rebate gradually reduces from $50,000 to $0. On this $" + price.toLocaleString() + " purchase, the eligible tax relief is <strong>$" + Math.round(fedRebate).toLocaleString() + "</strong>.";
+          } else {
+            ruleNote = "<strong>Above $1.5M Ceiling:</strong> In Alberta, new homes valued at or above $1.5M do not qualify for federal GST rebates. The full 5% GST is payable.";
+          }
+        } else {
+          if (price > 450000) {
+            ruleNote = "<strong>Alberta Repeat Buyer Rule:</strong> For repeat/move-up buyers, the standard federal GST rebate phases out completely above $450,000. Full 5% GST applies, but can be factored into mortgage financing.";
+          } else {
+            ruleNote = "<strong>Alberta Standard Rebate:</strong> Repeat buyers qualify for the 36% federal GST rebate on homes up to $350,000 (phasing out at $450k, max $6,300).";
+          }
+        }
+      } else {
+        // Ontario
+        if (currentOccupancy === 'investor') {
+          ruleNote = "<strong>Ontario Investor Rule:</strong> Qualifying Ontario rental-property purchasers may be eligible for the enhanced Ontario rental rebate (ENRRP) and ONHAP, providing combined relief of up to $130,000 depending on purchase price and program eligibility. Investors must pay tax at closing and apply to the CRA post-possession.";
+        } else {
+          // Owner Occupied
+          if (price <= 1000000) {
+            ruleNote = "<strong>Ontario Enhanced Program (ENHR + ONHAP):</strong> Eligible Ontario new homes up to $1 million may receive relief equivalent to the full 13% HST. Maximum combined relief of $130,000 is maintained from $1 million to $1.5 million and then gradually declines to $24,000 at $1.85 million.";
+          } else if (price <= 1500000) {
+            ruleNote = "<strong>Ontario Combined Enhanced Program:</strong> Maximum combined relief of $130,000 is maintained from $1 million to $1.5 million (through the ENHR provincial portion of $80,000 + ONHAP/FTHB federal-equivalent portions) and then gradually declines to $24,000 at $1.85 million.";
+          } else if (price < 1850000) {
+            ruleNote = "<strong>Ontario Enhanced Phase-Out:</strong> Between $1.5M and $1.85M, both enhanced portions phase down, providing <strong>$" + Math.round(totalRebate).toLocaleString() + "</strong> in combined relief on this $" + price.toLocaleString() + " purchase.";
+          } else {
+            ruleNote = "<strong>Ontario Limit Rule:</strong> Above the $1.85M ENHR ceiling, the enhanced provincial rebate and ONHAP do not apply. The standard provincial rebate of **$24,000** remains available with no upper purchase price cap.";
+          }
+        }
+      }
+
+      var elRuleNote = document.getElementById('out-rule-note');
+      if (elRuleNote) elRuleNote.innerHTML = ruleNote;
+
+    }
+
+    // Modal Control Functions
+    function openRebateModal(scenario) {
+      var modal = document.getElementById('rebateModal');
+      if (modal) modal.classList.add('active');
+    }
+    function closeRebateModal() {
+      var modal = document.getElementById('rebateModal');
+      if (modal) modal.classList.remove('active');
     }
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeRealtorModal();
+      if (e.key === 'Escape') closeRebateModal();
     });
 
-    function handleRealtorSubmit(e) {
+    function handleRebateSubmit(e) {
       e.preventDefault();
-      var name = document.getElementById('realtor_name').value || 'Partner';
-      document.getElementById('realtorDisplay').innerText = name;
-      document.getElementById('realtorForm').style.display = 'none';
-      document.getElementById('realtorSuccessNotice').style.display = 'block';
+      var nameInput = document.getElementById('m_name');
+      var name = nameInput ? (nameInput.value || 'Partner') : 'Partner';
+      
+      var disp = document.getElementById('displayRealtorName');
+      if (disp) disp.innerText = name;
+      
+      var lead = {
+        lead_type: 'realtor_guide',
+        full_name: name,
+        company: document.getElementById('m_brokerage') ? document.getElementById('m_brokerage').value : '',
+        phone: document.getElementById('m_phone').value,
+        email: document.getElementById('m_email').value,
+        scenario_notes: document.getElementById('m_details').value,
+        source: 'realtor_guide_portal',
+        submitted_at: new Date().toISOString()
+      };
+
+      // Asynchronous POST to CRM/Google Sheet endpoint
+      var scriptEndpoint = 'https://script.google.com/macros/s/AKfycbxunHTb9xivp_KH2UNceJvwaYayIAxSmkeAJRJ8SKzE0ECkIl6mGD9ROpmTMz2x7z5K/exec';
+      if (scriptEndpoint && scriptEndpoint.indexOf('URL_HERE') === -1) {
+        fetch(scriptEndpoint, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(lead)
+        }).catch(err => console.log('Lead submission logged:', err));
+      }
+      
+      var form = document.getElementById('rebateForm');
+      if (form) form.style.display = 'none';
+      
+      var notice = document.getElementById('rebateSuccessNotice');
+      if (notice) notice.style.display = 'block';
     }
+
+    // Initialize Calculator on DOM Ready
+    window.addEventListener('DOMContentLoaded', function() {
+      updateCalculator();
+    });
+    // Also call immediately in case DOM is already loaded
+    updateCalculator();
   </script>
 </body>
 </html>
