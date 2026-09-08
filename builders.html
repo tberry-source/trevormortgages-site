@@ -715,7 +715,195 @@
       .footer-inner { grid-template-columns: 1fr; }
       .subpage-hero h1 { font-size: 2.2rem; }
     }
-  </style>
+  
+    /* =========================================================================
+       MASTER MOBILE OPTIMIZATIONS (UNIFIED MOBILE FIXES - VERSION 27)
+       ========================================================================= */
+    @media (max-width: 1024px) {
+      /* Force body to prevent horizontal overflow/scrolling completely */
+      body, html {
+        overflow-x: hidden !important;
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Unified Container Margins - No Elements Touch the Edge! */
+      .hero, 
+      .principles-section, 
+      .lanes-section, 
+      .contact-section, 
+      .subpage-hero, 
+      .content-section, 
+      footer {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+        box-sizing: border-box !important;
+      }
+
+      .hero-container, 
+      .subpage-hero-container, 
+      .footer-inner, 
+      .brokerage-compliance-box {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      /* Center headers symmetrically on mobile */
+      .subpage-hero {
+        padding-top: 2.2rem !important;
+        padding-bottom: 2rem !important;
+        text-align: center !important;
+      }
+      .subpage-hero h1 {
+        font-size: 1.85rem !important;
+        line-height: 1.25 !important;
+        text-align: center !important;
+      }
+      .subpage-hero p.lead {
+        font-size: 0.98rem !important;
+        line-height: 1.55 !important;
+        text-align: center !important;
+        margin: 0 auto 1.5rem !important;
+      }
+      .eyebrow-tag {
+        display: inline-flex !important;
+        justify-content: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+      }
+
+      /* Section Title Alignments - Centered for Symmetrical Mobile Layout */
+      .section-title-wrap {
+        text-align: center !important;
+        margin-bottom: 2rem !important;
+        padding: 0 !important;
+      }
+      .section-title-wrap h2 {
+        font-size: 1.8rem !important;
+        text-align: center !important;
+        line-height: 1.25 !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      .section-title-wrap p {
+        font-size: 0.96rem !important;
+        text-align: center !important;
+        line-height: 1.5 !important;
+        margin: 0 auto !important;
+      }
+      .section-eyebrow {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+      }
+
+      /* Header Menu - Compact, Wrapped & Centered (NO HORIZONTAL SWIPING!) */
+      .nav-inner {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.8rem !important;
+        padding: 0.8rem 0 !important;
+        text-align: center !important;
+      }
+      .brand-link {
+        align-items: center !important;
+        text-align: center !important;
+        margin-bottom: 0.2rem !important;
+      }
+      .brand-name {
+        font-size: 1.15rem !important;
+        letter-spacing: 0.02em !important;
+        text-align: center !important;
+      }
+      .brand-meta {
+        font-size: 0.72rem !important;
+        text-align: center !important;
+      }
+      .nav-inner > div:last-child {
+        display: none !important; /* Hide desktop CTA button */
+      }
+      nav.nav-links {
+        width: 100% !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 0.5rem 1rem !important;
+        padding: 0.2rem 0 !important;
+        overflow: visible !important;
+        white-space: normal !important;
+      }
+      nav.nav-links a {
+        font-size: 0.82rem !important;
+        font-weight: 700 !important;
+        padding: 0.25rem 0.4rem !important;
+        display: inline-block !important;
+      }
+
+      /* Stack grids and elements into clean single-column layout */
+      .feature-grid-2,
+      .footer-inner,
+      .principles-grid,
+      .lanes-grid,
+      .team-cards-grid,
+      .inquiry-form-grid,
+      .property-cards-grid,
+      .classifier-container,
+      #cpa-classifier-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+      }
+      .feature-box,
+      .principle-card,
+      .lane-card,
+      .pill-card,
+      .phase-card,
+      .calc-card,
+      .option-card,
+      .team-card {
+        margin-bottom: 1.5rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        grid-column: span 1 !important; /* Override double-wide grid cells on mobile */
+      }
+      .feature-box:last-child,
+      .principle-card:last-child,
+      .lane-card:last-child,
+      .pill-card:last-child,
+      .phase-card:last-child {
+        margin-bottom: 0 !important;
+      }
+
+      /* Dynamic form stacking (e.g. CPA classifier and inputs) */
+      .form-grid-2,
+      .form-row-2,
+      [style*="display: grid; grid-template-columns: repeat(2, 1fr)"],
+      [style*="display: grid; grid-template-columns: 1fr 1fr"],
+      [style*="display: flex; gap: 0.5rem"] {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.8rem !important;
+      }
+      
+      /* Padding adjustments to prevent text squishing in cards */
+      .classifier-card-container,
+      [style*="padding: 2.5rem"],
+      [style*="padding: 2rem"] {
+        padding: 1.25rem !important;
+      }
+
+      /* Sticky result panel reset */
+      .classifier-result-wrap {
+        position: static !important;
+      }
+    }
+
+    </style>
 </head>
 <body>
 
@@ -731,18 +919,18 @@
   <!-- Header Navigation -->
   <header>
     <div class="nav-inner">
-      <a href="/" class="brand-link">
+      <a href="index.html#home" class="brand-link">
         <span class="brand-name">TREVOR BERRY</span>
         <span class="brand-meta">Mortgage Associate</span>
       </a>
 
       <nav class="nav-links">
-        <a href="/">Home</a>
+        <a href="index.html#home">Home</a>
         <a href="index.html#buying">Buying</a>
         <a href="index.html#homeowners">Homeowners</a>
         <a href="index.html#alternative">Alternative</a>
         <a href="index.html#partners" class="active">Partners</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html#contact">Contact</a>
       </nav>
 
       <div>
