@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kyla × Trevor Berry | Instant Monthly Payment Estimates</title>
-  <meta name="description" content="Calculate accurate monthly mortgage payments, down payment requirements, and property taxes for Kyla's Calgary listings." />
+  <title>Kyla Faulconer × Trevor Berry | Calgary & Airdrie Home Financing Hub</title>
+  <meta name="description" content="Calculate accurate monthly mortgage payments, down payment requirements, and property taxes for Kyla Faulconer's Airdrie & Calgary listings." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -817,32 +817,109 @@
     
   
     /* =========================================================================
-       MASTER VERSION 34 MOBILE RESPONSIVE & GRID OVERRIDE
+       MASTER MOBILE RESPONSIVE FIXES (PERFECT CENTERING & ZERO OVERFLOW)
        ========================================================================= */
     @media (max-width: 1024px) {
       html, body {
+        overflow-x: hidden !important;
+        max-width: 100vw !important;
         width: 100% !important;
+        position: relative !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      
+      /* Global Layout & Padding Reset */
+      .hero, .subpage-hero, .content-section, .principles-section, .lanes-section, .contact-section, footer {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+        box-sizing: border-box !important;
         max-width: 100vw !important;
         overflow-x: hidden !important;
+      }
+      
+      .hero-container, .subpage-hero-container, .footer-inner, .brokerage-compliance-box {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      /* Headings & Text Centering */
+      .subpage-hero {
+        text-align: center !important;
+      }
+      .subpage-hero h1 {
+        font-size: 1.8rem !important;
+        line-height: 1.25 !important;
+        text-align: center !important;
+      }
+      .subpage-hero p.lead {
+        font-size: 0.96rem !important;
+        line-height: 1.55 !important;
+        text-align: center !important;
+        margin: 0 auto 1.5rem !important;
+      }
+      .section-title-wrap {
+        text-align: center !important;
+        margin-bottom: 2rem !important;
+        padding: 0 !important;
+      }
+      .section-title-wrap h2 {
+        font-size: 1.75rem !important;
+        text-align: center !important;
+        line-height: 1.25 !important;
+      }
+      .section-title-wrap p {
+        font-size: 0.95rem !important;
+        text-align: center !important;
+        line-height: 1.5 !important;
+        margin: 0 auto !important;
+      }
+
+      /* Reset inline min-widths, span 2, 2-column grids & heavy paddings on mobile */
+      [style*="min-width"] {
+        min-width: 0 !important;
+      }
+      [style*="grid-column: span 2"] {
+        grid-column: span 1 !important;
+      }
+      [style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+      }
+      [style*="padding: 2.5rem"], [style*="padding: 3rem"], [style*="padding: 2.2rem"] {
+        padding: 1.25rem !important;
+      }
+      
+      .feature-grid-2, .feature-grid-3, .property-cards-grid, .calc-card-grid, .team-cards-grid, .inquiry-form-grid, .partners-grid, .planner-tool-container, .option-grid, .scenario-grid, #cpa-classifier-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+      }
+
+      .feature-box, .principle-card, .lane-card, .pill-card, .phase-card, .cta-banner-box, .calc-card-wrap, .inquiry-card, .team-card {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
         box-sizing: border-box !important;
       }
       
-      /* Mobile Header Navigation - 3x2 Symmetrical Grid */
+      /* Navigation Header */
       .nav-inner {
         flex-direction: column !important;
         align-items: center !important;
-        gap: 0.8rem !important;
+        gap: 0.6rem !important;
         padding: 0.8rem 0 !important;
         text-align: center !important;
       }
       .brand-link {
         align-items: center !important;
         text-align: center !important;
-        margin-bottom: 0.2rem !important;
       }
       .brand-name {
         font-size: 1.15rem !important;
-        letter-spacing: 0.02em !important;
         text-align: center !important;
       }
       .brand-meta {
@@ -854,102 +931,20 @@
       }
       nav.nav-links {
         width: 100% !important;
-        max-width: 380px !important;
-        margin: 0 auto !important;
-        display: grid !important;
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 0.4rem 0.5rem !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 0.4rem 0.8rem !important;
         padding: 0.2rem 0 !important;
-        justify-items: center !important;
-        align-items: center !important;
-        overflow: visible !important;
-        white-space: normal !important;
       }
       nav.nav-links a {
         font-size: 0.82rem !important;
         font-weight: 700 !important;
-        padding: 0.3rem 0.2rem !important;
-        display: block !important;
-        text-align: center !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-        white-space: nowrap !important;
-      }
-
-      /* Centered Subpage Heroes and Section Titles */
-      .subpage-hero {
-        padding-top: 2rem !important;
-        padding-bottom: 1.8rem !important;
-        text-align: center !important;
-      }
-      .subpage-hero h1 {
-        font-size: 1.85rem !important;
-        line-height: 1.25 !important;
-        text-align: center !important;
-      }
-      .subpage-hero p.lead {
-        font-size: 0.98rem !important;
-        line-height: 1.55 !important;
-        text-align: center !important;
-        margin: 0 auto 1.5rem !important;
-      }
-      .section-title-wrap {
-        text-align: center !important;
-        margin-bottom: 2rem !important;
-      }
-      .section-title-wrap h2 {
-        text-align: center !important;
-      }
-      .section-title-wrap p {
-        text-align: center !important;
-      }
-
-      /* Compact Paddings & Reset Stretched Containers */
-      .content-section, 
-      .hero-container, 
-      .subpage-hero-container {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-        width: 100% !important;
-        max-width: 100vw !important;
-        box-sizing: border-box !important;
-      }
-
-      div[style*="padding: 2.5rem"],
-      div[style*="padding: 2.2rem"],
-      div[style*="padding: 3rem"],
-      div[style*="padding: 2rem"],
-      .feature-box,
-      .calc-card-container,
-      .cta-banner-box {
-        padding: 1.25rem 1rem !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-      }
-
-      div[style*="min-width"] {
-        min-width: 0 !important;
-        width: 100% !important;
-      }
-
-      div[style*="display: flex"],
-      div[style*="display:grid"],
-      div[style*="display: grid"] {
-        grid-template-columns: 1fr !important;
-        flex-direction: column !important;
-        gap: 1.2rem !important;
-      }
-
-      /* Grid Column Spans Reset */
-      .feature-box[style*="span 2"],
-      div[style*="span 2"],
-      .option-card[style*="span 2"] {
-        grid-column: span 1 !important;
+        padding: 0.2rem 0.3rem !important;
       }
     }
-  </style>
 
+  </style>
 </head>
 <body>
 
@@ -958,8 +953,8 @@
     <div class="partner-nav-inner">
       <div class="co-brand-lockup">
         <div class="brand-col">
-          <span class="brand-col-name">KYLA</span>
-          <span class="brand-col-meta">Real Estate Associate</span>
+          <span class="brand-col-name">KYLA FAULCONER</span>
+          <span class="brand-col-meta">CENTURY 21 Bravo Realty</span>
         </div>
         <span class="brand-x">×</span>
         <div class="brand-col">
@@ -991,8 +986,8 @@
         <div class="strip-item">
           <div class="strip-badge">🏡</div>
           <div class="strip-text">
-            <strong>Property & Showings:</strong> Kyla 
-            <a href="tel:5878880024" class="strip-phone">587-888-0024</a>
+            <strong>Property & Showings:</strong> Kyla Faulconer 
+            <a href="tel:5877777875" class="strip-phone">587-777-7875</a>
           </div>
         </div>
         <div class="strip-divider"></div>
@@ -1019,20 +1014,20 @@
 
       <div class="property-cards-grid">
         
-        <!-- Property 1 -->
+        <!-- Property 1: Kyla's Airdrie Listing -->
         <div class="prop-card active" id="card-prop-1" onclick="selectProperty(1)">
           <div>
-            <span class="prop-card-tag tag-featured">Featured Listing</span>
-            <div class="prop-card-address">312 Marda Loop Rise SW</div>
+            <span class="prop-card-tag tag-featured">Featured Airdrie Listing</span>
+            <div class="prop-card-address">103 - 760 Railway Gate SW</div>
             <div class="prop-card-meta">
-              Marda Loop, Calgary · MLS® A2442002<br />
-              2 Beds · 2.5 Baths · 1,280 sq ft
+              Midtown, Airdrie · MLS® A30149729<br />
+              2 Beds · 2.5 Baths · 1,180 sq ft
             </div>
           </div>
           <div>
             <div class="prop-card-price-row">
               <span class="prop-card-price-lbl">Asking Price</span>
-              <span class="prop-card-price-val">$3</span>
+              <span class="prop-card-price-val">$369,900</span>
             </div>
             <div class="prop-card-status" id="status-prop-1">
               <span>✓ Selected</span>
@@ -1040,32 +1035,11 @@
           </div>
         </div>
 
-        <!-- Property 2 -->
-        <div class="prop-card" id="card-prop-2" onclick="selectProperty(2)">
-          <div>
-            <span class="prop-card-tag tag-featured">Featured Listing</span>
-            <div class="prop-card-address">118 Altadore Street SW</div>
-            <div class="prop-card-meta">
-              Altadore, Calgary · MLS® A2439115<br />
-              4 Beds · 3.5 Baths · 2,100 sq ft
-            </div>
-          </div>
-          <div>
-            <div class="prop-card-price-row">
-              <span class="prop-card-price-lbl">Asking Price</span>
-              <span class="prop-card-price-val">$6</span>
-            </div>
-            <div class="prop-card-status" id="status-prop-2">
-              <span>Click to Calculate →</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Property 3: Custom Calculator -->
+        <!-- Property 2: Custom Property -->
         <div class="prop-card" id="card-prop-custom" onclick="selectProperty('custom')">
           <div>
             <span class="prop-card-tag tag-custom">Custom Property</span>
-            <div class="prop-card-address">Any Calgary Home</div>
+            <div class="prop-card-address">Any Calgary / Airdrie Home</div>
             <div class="prop-card-meta">
               Found another home you love?<br />
               Test any custom purchase price from $200k to $1.5M+
@@ -1082,8 +1056,7 @@
           </div>
         </div>
 
-      </div>
-    </section>
+      </div></section>
 
     <!-- STEP 2: THE INTERACTIVE CALCULATOR CARD -->
     <div class="calc-card-wrap" id="calculator-section">
@@ -1092,10 +1065,10 @@
       <div class="calc-focus-banner">
         <div>
           <div class="calc-focus-label">Now Calculating:</div>
-          <div class="calc-focus-name" id="calc-focus-name">312 Marda Loop Rise SW</div>
+          <div class="calc-focus-name" id="calc-focus-name">252 Templeview Way NE</div>
         </div>
         <div class="calc-focus-specs" id="calc-focus-specs">
-          Marda Loop, Calgary · 2 Beds · 2.5 Baths · 1,280 sq ft · Est. Taxes: $290/mo
+          Temple, Calgary · 2 + 1 Beds · 2 Baths · 1,140 sq ft · Est. Taxes: $214/mo
         </div>
       </div>
 
@@ -1108,9 +1081,9 @@
           <div class="calc-field-group">
             <div class="calc-label-row">
               <span>Purchase Price:</span>
-              <span class="calc-num-callout" id="calc-price-disp">$3</span>
+              <span class="calc-num-callout" id="calc-price-disp">$359,000</span>
             </div>
-            <input type="range" class="slider-range" id="slider-price" min="200000" max="1500000" step="5000" value="540000" oninput="runHubCalc()" />
+            <input type="range" class="slider-range" id="slider-price" min="200000" max="1500000" step="5000" value="359000" oninput="runHubCalc()" />
             <div class="slider-bounds">
               <span>$200k</span>
               <span>$850k</span>
@@ -1191,7 +1164,7 @@
               </div>
               <div class="breakdown-row">
                 <span>Est. Property Taxes:</span>
-                <strong id="out-tax-amount">+$290/mo</strong>
+                <strong id="out-tax-amount">+$214/mo</strong>
               </div>
               <div class="breakdown-row">
                 <span>Down Payment Required:</span>
@@ -1226,8 +1199,8 @@
             <div style="font-size: 0.78rem; color: #9CA3AF; text-align: center; margin-top: 0.4rem; font-weight: 500;">
               No credit pull required for an initial review.
             </div>
-            <a href="tel:5878880024" class="btn-action-outline" id="btn-kyla-showing">
-              Contact Kyla About a Showing →
+            <a href="tel:5877777875" class="btn-action-outline" id="btn-kyla-showing">
+              Call Kyla About a Showing →
             </a>
           </div>
         </div>
@@ -1248,7 +1221,7 @@
           <button type="submit" class="inquiry-btn">Check My Buying Power →</button>
         </div>
         <p style="font-size: 0.75rem; color: #9CA3AF; margin-top: 1rem; text-align: center; line-height: 1.3;">
-            By submitting, you agree to be contacted regarding ymy mortgage inquiry. Your information will not be sold or shared for marketing purposes. <a href="https://trevormortgages.ca/privacy" target="_blank" style="color: var(--accent-mustard); text-decoration: underline;">Privacy Policy</a>.
+            By submitting, you agree to be contacted regarding your mortgage inquiry. Your information will not be sold or shared for marketing purposes. <a href="https://trevormortgages.ca/privacy" target="_blank" style="color: var(--accent-mustard); text-decoration: underline;">Privacy Policy</a>.
           </p>
         </form>
       <div id="inquiry-success" style="display: none; color: var(--accent-mustard); font-weight: 800; margin-top: 1.2rem; font-size: 1.05rem;">
@@ -1258,14 +1231,1287 @@
 
     <!-- Dedicated Team Contact Cards -->
     <div class="team-cards-grid">
-      <!-- Kyla -->
+        <!-- Kyla Faulconer -->
+        <div class="team-card">
+          <div>
+            <div class="team-card-top">
+              <div class="team-avatar-initials" style="background: #E8F5E9; color: #2E7D32;">KF</div>
+              <div>
+                <div class="team-name">Kyla Faulconer</div>
+                <div class="team-title">Realtor · CENTURY 21 Bravo Realty</div>
+              </div>
+            </div>
+            <p class="team-bio">
+              Helping Calgary & Airdrie home buyers find the right neighborhood, evaluate property condition, and negotiate with confidence. Reach out to schedule a private walkthrough.
+            </p>
+          </div>
+          <div>
+            <a href="tel:5877777875" class="team-contact-btn btn-green-outline" style="width: 100%;">
+              Call or Text Kyla: 587-777-7875
+            </a>
+          </div>
+        </div>
+
+        <!-- Trevor Berry -->
+        <div class="team-card">
+          <div>
+            <div class="team-card-top">
+              <div class="team-avatar-initials">TB</div>
+              <div>
+                <div class="team-name">Trevor Berry</div>
+                <div class="team-title">Mortgage Associate · Perch Mortgages</div>
+              </div>
+            </div>
+            <p class="team-bio">
+              Structuring competitive mortgage financing across 40+ Canadian lenders. Pre-approvals, rate holds, and clear purchase math with no broker fee to the borrower for most standard lender-paid purchase mortgages (any applicable fee is fully disclosed before proceeding).
+            </p>
+          </div>
+          <div>
+            <a href="tel:4038701537" class="team-contact-btn btn-green-fill" style="width: 100%;">
+              Call or Text Trevor: 403-870-1537
+            </a>
+          </div>
+        </div>
+      </div>l lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kyla Faulconer × Trevor Berry | Calgary & Airdrie Home Financing Hub</title>
+  <meta name="description" content="Calculate accurate monthly mortgage payments, down payment requirements, and property taxes for Kyla Faulconer's Airdrie & Calgary listings." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-canvas: #0C100E;         /* Deep Matte Obsidian Canvas from Handout */
+      --bg-subtle: #101613;         /* Dark Charcoal-Green */
+      --bg-alt: #141D19;            /* Deep Obsidian-Green */
+      --border-subtle: #1A2420;     /* Luxury Framing Green from Handout */
+      --border-focus: #EDAB2B;      /* Signature Gold/Mustard */
+      
+      --text-main: #FFFFFF;         /* Pristine White Text */
+      --text-body: #E5E7EB;         /* Extremely readable Light Grey */
+      --text-muted: #9CA3AF;        /* Muted Silver Text */
+      
+      /* Official Perch Brand Tokens - Modified for Premium Dark Luxury */
+      --brand-green: #EDAB2B;       /* Use Gold/Mustard as the main brand highlight in dark mode */
+      --brand-green-hover: #D99518;
+      --brand-green-light: #1E2823; /* Dark green background with gold text */
+      --brand-green-dark: #0A0E0C;
+      --accent-mustard: #EDAB2B;
+      --accent-mustard-hover: #D99518;
+      --accent-orange: #F7704F;
+      --accent-teal: #26A699;
+      
+      --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --radius-sm: 8px;
+      --radius: 12px;
+      --radius-lg: 20px;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+      --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.6);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-subtle);
+      color: var(--text-main);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Co-Branded Top Header */
+    .partner-nav {
+      background: var(--bg-canvas);
+      border-bottom: 1.5px solid var(--border-subtle);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0.85rem 1.5rem;
+    }
+    .partner-nav-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .co-brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .brand-col {
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-col-name {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+    }
+    .brand-col-meta {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .brand-col-meta.orange {
+      color: var(--accent-orange);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .brand-x {
+      color: var(--accent-mustard);
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+    .quick-contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--brand-green-light);
+      color: var(--accent-mustard);
+      padding: 0.5rem 1.1rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .quick-contact-btn:hover {
+      background: var(--brand-green);
+      color: #FFFFFF;
+    }
+
+    /* Main Container */
+    .hub-container {
+      max-width: 1080px;
+      margin: 2.2rem auto 4rem;
+      padding: 0 1.5rem;
+    }
+
+    /* Clean Hub Header (No confusing specific address at top) */
+    .hub-hero {
+      background: var(--bg-canvas);
+      border-radius: var(--radius-lg);
+      border: 1.5px solid var(--border-subtle);
+      padding: 2.4rem 2.4rem 2rem;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .prop-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--brand-green-light);
+      color: var(--accent-mustard);
+      font-size: 0.76rem;
+      font-weight: 800;
+      padding: 0.35rem 0.9rem;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.9rem;
+    }
+    .hub-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text-main);
+      line-height: 1.2;
+      margin-bottom: 0.6rem;
+    }
+    .hub-lead {
+      font-size: 1.05rem;
+      color: var(--text-body);
+      max-width: 720px;
+      margin: 0 auto 1.6rem;
+      line-height: 1.6;
+    }
+
+    /* Sleek Inline Micro-Team Guidance Bar */
+    .micro-team-strip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-subtle);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 0.9rem 1.4rem;
+      max-width: 820px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      gap: 1.4rem;
+    }
+    .strip-item {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+    .strip-badge {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--bg-canvas);
+      border: 1.5px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .strip-text {
+      font-size: 0.9rem;
+      color: var(--text-body);
+    }
+    .strip-text strong {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+    .strip-phone {
+      color: var(--accent-mustard);
+      font-weight: 700;
+      text-decoration: none;
+      margin-left: 0.25rem;
+    }
+    .strip-phone:hover {
+      text-decoration: underline;
+    }
+    .strip-divider {
+      width: 1px;
+      height: 24px;
+      background: var(--border-subtle);
+    }
+
+    /* SECTION 1: PROMINENT PROPERTY PICKER */
+    .picker-section {
+      margin-bottom: 2.2rem;
+    }
+    .section-heading-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .section-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* 3-Card Property Picker Grid (Evenly Aligned) */
+    .property-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+    @media (max-width: 860px) {
+      .property-cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .prop-card {
+      background: var(--bg-subtle);
+      border: 2px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+    .prop-card:hover {
+      border-color: var(--accent-mustard);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .prop-card.active {
+      border-color: var(--accent-mustard);
+      background: var(--bg-alt);
+      box-shadow: 0 0 0 3px rgba(18, 69, 59, 0.12);
+    }
+    .prop-card-tag {
+      align-self: flex-start;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.65rem;
+      border-radius: 20px;
+      margin-bottom: 0.8rem;
+    }
+    .tag-openhouse {
+      background: #FFF4E5;
+      color: #B45309;
+    }
+    .tag-featured {
+      background: var(--brand-green-light);
+      color: var(--accent-mustard);
+    }
+    .tag-custom {
+      background: #EDE9FE;
+      color: #6D28D9;
+    }
+    
+    .prop-card-address {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.3;
+      margin-bottom: 0.35rem;
+    }
+    .prop-card-meta {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+    .prop-card-price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 0.9rem;
+      margin-top: auto;
+    }
+    .prop-card-price-lbl {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .prop-card-price-val {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--accent-mustard);
+    }
+    .prop-card-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-top: 0.75rem;
+      color: var(--text-muted);
+    }
+    .prop-card.active .prop-card-status {
+      color: var(--accent-mustard);
+      font-weight: 800;
+    }
+
+    /* SECTION 2: THE INTERACTIVE CALCULATOR CARD */
+    .calc-card-wrap {
+      background: var(--bg-subtle);
+      border-radius: var(--radius-lg);
+      border: 1.5px solid var(--border-subtle);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      margin-bottom: 2.2rem;
+    }
+    
+    /* Top Banner identifying the active property */
+    .calc-focus-banner {
+      background: var(--bg-alt);
+      border-bottom: 1.5px solid var(--border-subtle);
+      padding: 1rem 1.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    .calc-focus-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .calc-focus-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--accent-mustard);
+    }
+    .calc-focus-specs {
+      font-size: 0.85rem;
+      color: var(--text-body);
+      font-weight: 600;
+    }
+
+    .calc-card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 860px) {
+      .calc-card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Left: Inputs & Sliders */
+    .calc-left-inputs {
+      padding: 2.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+    }
+    .calc-field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+    .calc-label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .calc-num-callout {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--accent-mustard);
+    }
+
+    /* Slider Range */
+    .slider-range {
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      background: #D8E4DF;
+      outline: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+      margin: 0.35rem 0;
+    }
+    .slider-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--accent-orange);
+      cursor: pointer;
+      border: 3px solid #FFFFFF;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      transition: transform 0.15s;
+    }
+    .slider-range::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+    .slider-bounds {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Clean 2-Button Toggle Groups (50/50 Aligned) */
+    .btn-toggle-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      margin-top: 0.4rem;
+    }
+    .toggle-pill-btn {
+      padding: 0.55rem 0.8rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--border-subtle);
+      background: var(--bg-canvas);
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-body);
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+    .toggle-pill-btn:hover {
+      border-color: var(--accent-mustard);
+    }
+    .toggle-pill-btn.active {
+      background: var(--brand-green);
+      border-color: var(--accent-mustard);
+      color: #FFFFFF;
+    }
+
+    /* Interest Rate Row */
+    .rate-box-row {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .rate-input-wrap {
+      display: inline-flex;
+      align-items: center;
+      background: var(--bg-canvas);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.4rem 0.8rem;
+      width: 110px;
+    }
+    .rate-input-wrap input {
+      border: none;
+      outline: none;
+      font-family: inherit;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-main);
+      width: 60px;
+    }
+    .rate-tag {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Right: Results Card (Forest Green #0A2923) */
+    .calc-right-results {
+      background: var(--brand-green-dark);
+      color: #FFFFFF;
+      padding: 2.4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .result-metric-header {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent-mustard);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.35rem;
+    }
+    .result-main-num {
+      font-size: 2.7rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .result-sub {
+      font-size: 0.82rem;
+      color: var(--accent-mustard);
+      margin-top: 0.35rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .breakdown-table {
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding-top: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      color: #C2DFD2;
+    }
+    .breakdown-row strong {
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+    .breakdown-row.total-row {
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 0.75rem;
+      margin-top: 0.3rem;
+      font-size: 0.95rem;
+    }
+    .breakdown-row.total-row strong {
+      color: var(--accent-mustard);
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+
+    /* Action Buttons in Results Card */
+    .calc-action-btns {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .btn-action-gold {
+      background: var(--accent-mustard);
+      color: #131E1A;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 0.9rem 1.4rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      text-align: center;
+      display: block;
+      transition: all 0.2s;
+      box-shadow: 0 4px 14px rgba(237, 171, 43, 0.35);
+    }
+    .btn-action-gold:hover {
+      background: var(--accent-mustard-hover);
+      transform: translateY(-1px);
+    }
+    .btn-action-outline {
+      background: transparent;
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.75rem 1.2rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      text-align: center;
+      display: block;
+      transition: all 0.2s;
+    }
+    .btn-action-outline:hover {
+      border-color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    /* Inquiry Card */
+    .inquiry-card {
+      background: var(--bg-subtle);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 2rem 2.2rem;
+      margin-bottom: 2.2rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .inquiry-card h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.35rem;
+    }
+    .inquiry-card p {
+      font-size: 0.92rem;
+      color: var(--text-body);
+      margin-bottom: 1.2rem;
+    }
+    .inquiry-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr auto;
+      gap: 0.75rem;
+    }
+    @media (max-width: 860px) {
+      .inquiry-form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .inquiry-input {
+      padding: 0.75rem 0.9rem;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.92rem;
+      color: var(--text-main);
+    }
+    .inquiry-input:focus {
+      outline: none;
+      border-color: var(--accent-mustard);
+      box-shadow: 0 0 0 3px rgba(18, 69, 59, 0.08);
+    }
+    .inquiry-btn {
+      background: var(--brand-green);
+      color: #FFFFFF;
+      font-family: inherit;
+      font-weight: 800;
+      font-size: 0.92rem;
+      padding: 0.75rem 1.4rem;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .inquiry-btn:hover {
+      background: var(--brand-green-hover);
+    }
+
+    /* Team Cards Grid */
+    .team-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 760px) {
+      .team-cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .team-card {
+      background: var(--bg-subtle);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .team-card-top {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .team-avatar-initials {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: var(--brand-green-light);
+      color: var(--accent-mustard);
+      font-weight: 800;
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #FFFFFF;
+      box-shadow: var(--shadow-sm);
+      flex-shrink: 0;
+    }
+    .team-avatar-initials.darian {
+      background: #FFF4E5;
+      color: #B45309;
+    }
+    .team-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+    .team-title {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .team-bio {
+      font-size: 0.9rem;
+      color: var(--text-body);
+      line-height: 1.55;
+      margin-bottom: 1.2rem;
+    }
+    .team-contact-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.1rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-green-fill {
+      background: var(--brand-green);
+      color: #FFFFFF;
+    }
+    .btn-green-fill:hover {
+      background: var(--brand-green-hover);
+    }
+    .btn-green-outline {
+      border: 1.5px solid var(--accent-mustard);
+      color: var(--accent-mustard);
+      background: transparent;
+    }
+    .btn-green-outline:hover {
+      background: var(--brand-green-light);
+    }
+
+    /* Footer Regulatory Strip */
+    .hub-footer {
+      border-top: 1.5px solid var(--border-subtle);
+      margin-top: 4rem;
+      padding: 2.2rem 1.5rem;
+      background: var(--bg-canvas);
+    }
+    .hub-footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .hub-footer-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    /* Safari and Mobile Input Visibility Patch */
+    .rate-input-wrap input {
+      background: transparent !important;
+      color: #FFFFFF !important;
+      border: none !important;
+      outline: none !important;
+      -webkit-appearance: none !important;
+    }
+    
+    /* Responsive Contact Alignment Fix */
+    @media (max-width: 1024px) {
+      .team-cards-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+      }
+      .micro-team-strip {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 1rem !important;
+      }
+      .strip-divider {
+        display: none !important;
+      }
+    }
+    
+  
+    /* =========================================================================
+       MASTER MOBILE RESPONSIVE FIXES (PERFECT CENTERING & ZERO OVERFLOW)
+       ========================================================================= */
+    @media (max-width: 1024px) {
+      html, body {
+        overflow-x: hidden !important;
+        max-width: 100vw !important;
+        width: 100% !important;
+        position: relative !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      
+      /* Global Layout & Padding Reset */
+      .hero, .subpage-hero, .content-section, .principles-section, .lanes-section, .contact-section, footer {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+        box-sizing: border-box !important;
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+      }
+      
+      .hero-container, .subpage-hero-container, .footer-inner, .brokerage-compliance-box {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      /* Headings & Text Centering */
+      .subpage-hero {
+        text-align: center !important;
+      }
+      .subpage-hero h1 {
+        font-size: 1.8rem !important;
+        line-height: 1.25 !important;
+        text-align: center !important;
+      }
+      .subpage-hero p.lead {
+        font-size: 0.96rem !important;
+        line-height: 1.55 !important;
+        text-align: center !important;
+        margin: 0 auto 1.5rem !important;
+      }
+      .section-title-wrap {
+        text-align: center !important;
+        margin-bottom: 2rem !important;
+        padding: 0 !important;
+      }
+      .section-title-wrap h2 {
+        font-size: 1.75rem !important;
+        text-align: center !important;
+        line-height: 1.25 !important;
+      }
+      .section-title-wrap p {
+        font-size: 0.95rem !important;
+        text-align: center !important;
+        line-height: 1.5 !important;
+        margin: 0 auto !important;
+      }
+
+      /* Reset inline min-widths, span 2, 2-column grids & heavy paddings on mobile */
+      [style*="min-width"] {
+        min-width: 0 !important;
+      }
+      [style*="grid-column: span 2"] {
+        grid-column: span 1 !important;
+      }
+      [style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+      }
+      [style*="padding: 2.5rem"], [style*="padding: 3rem"], [style*="padding: 2.2rem"] {
+        padding: 1.25rem !important;
+      }
+      
+      .feature-grid-2, .feature-grid-3, .property-cards-grid, .calc-card-grid, .team-cards-grid, .inquiry-form-grid, .partners-grid, .planner-tool-container, .option-grid, .scenario-grid, #cpa-classifier-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+      }
+
+      .feature-box, .principle-card, .lane-card, .pill-card, .phase-card, .cta-banner-box, .calc-card-wrap, .inquiry-card, .team-card {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      
+      /* Navigation Header */
+      .nav-inner {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.6rem !important;
+        padding: 0.8rem 0 !important;
+        text-align: center !important;
+      }
+      .brand-link {
+        align-items: center !important;
+        text-align: center !important;
+      }
+      .brand-name {
+        font-size: 1.15rem !important;
+        text-align: center !important;
+      }
+      .brand-meta {
+        font-size: 0.72rem !important;
+        text-align: center !important;
+      }
+      .nav-inner > div:last-child {
+        display: none !important;
+      }
+      nav.nav-links {
+        width: 100% !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 0.4rem 0.8rem !important;
+        padding: 0.2rem 0 !important;
+      }
+      nav.nav-links a {
+        font-size: 0.82rem !important;
+        font-weight: 700 !important;
+        padding: 0.2rem 0.3rem !important;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Top Sticky Co-Branded Bar -->
+  <header class="partner-nav">
+    <div class="partner-nav-inner">
+      <div class="co-brand-lockup">
+        <div class="brand-col">
+          <span class="brand-col-name">KYLA FAULCONER</span>
+          <span class="brand-col-meta">CENTURY 21 Bravo Realty</span>
+        </div>
+        <span class="brand-x">×</span>
+        <div class="brand-col">
+          <span class="brand-col-name">TREVOR BERRY</span>
+          <span class="brand-col-meta orange">Mortgage Associate · Perch Mortgage Brokerage</span>
+        </div>
+      </div>
+
+      <div>
+        <a href="tel:4038701537" class="quick-contact-btn">
+          <span>📞 Call or Text Trevor</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="hub-container">
+
+    <!-- Clean Hub Hero Header (NO specific address pinned at the top) -->
+    <div class="hub-hero">
+      <div class="prop-eyebrow">Instant Monthly Payment Estimates</div>
+      <h1 class="hub-title">See the Monthly Cost of Kyla’s Listings</h1>
+      <p class="hub-lead">
+        Adjust the down payment, amortization and rate—or run the numbers on any Calgary home.
+      </p>
+
+      <!-- Clean Micro-Team Strip -->
+      <div class="micro-team-strip">
+        <div class="strip-item">
+          <div class="strip-badge">🏡</div>
+          <div class="strip-text">
+            <strong>Property & Showings:</strong> Kyla Faulconer 
+            <a href="tel:5877777875" class="strip-phone">587-777-7875</a>
+          </div>
+        </div>
+        <div class="strip-divider"></div>
+        <div class="strip-item">
+          <div class="strip-badge">📊</div>
+          <div class="strip-text">
+            <strong>Financing & Pre-Approval:</strong> Trevor Berry 
+            <a href="tel:4038701537" class="strip-phone">403-870-1537</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 1: PROMINENT, UNAMBIGUOUS PROPERTY SELECTOR -->
+    <section class="picker-section">
+      <div class="section-heading-row">
+        <div class="section-title">
+          <span>Step 1: Select a Property to Calculate</span>
+        </div>
+        <div class="section-sub">
+          Click any card below to load that property's exact price and property tax numbers
+        </div>
+      </div>
+
+      <div class="property-cards-grid">
+        
+        <!-- Property 1: Kyla's Airdrie Listing -->
+        <div class="prop-card active" id="card-prop-1" onclick="selectProperty(1)">
+          <div>
+            <span class="prop-card-tag tag-featured">Featured Airdrie Listing</span>
+            <div class="prop-card-address">103 - 760 Railway Gate SW</div>
+            <div class="prop-card-meta">
+              Midtown, Airdrie · MLS® A30149729<br />
+              2 Beds · 2.5 Baths · 1,180 sq ft
+            </div>
+          </div>
+          <div>
+            <div class="prop-card-price-row">
+              <span class="prop-card-price-lbl">Asking Price</span>
+              <span class="prop-card-price-val">$369,900</span>
+            </div>
+            <div class="prop-card-status" id="status-prop-1">
+              <span>✓ Selected</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Property 2: Custom Property -->
+        <div class="prop-card" id="card-prop-custom" onclick="selectProperty('custom')">
+          <div>
+            <span class="prop-card-tag tag-custom">Custom Property</span>
+            <div class="prop-card-address">Any Calgary / Airdrie Home</div>
+            <div class="prop-card-meta">
+              Found another home you love?<br />
+              Test any custom purchase price from $200k to $1.5M+
+            </div>
+          </div>
+          <div>
+            <div class="prop-card-price-row">
+              <span class="prop-card-price-lbl">Purchase Price</span>
+              <span class="prop-card-price-val" id="custom-card-price-disp">$550,000</span>
+            </div>
+            <div class="prop-card-status" id="status-prop-custom">
+              <span>Click to Calculate →</span>
+            </div>
+          </div>
+        </div>
+
+      </div></section>
+
+    <!-- STEP 2: THE INTERACTIVE CALCULATOR CARD -->
+    <div class="calc-card-wrap" id="calculator-section">
+      
+      <!-- Top banner identifying what property is being calculated -->
+      <div class="calc-focus-banner">
+        <div>
+          <div class="calc-focus-label">Now Calculating:</div>
+          <div class="calc-focus-name" id="calc-focus-name">252 Templeview Way NE</div>
+        </div>
+        <div class="calc-focus-specs" id="calc-focus-specs">
+          Temple, Calgary · 2 + 1 Beds · 2 Baths · 1,140 sq ft · Est. Taxes: $214/mo
+        </div>
+      </div>
+
+      <div class="calc-card-grid">
+        
+        <!-- Left: Sliders & Settings -->
+        <div class="calc-left-inputs">
+          
+          <!-- Purchase Price Field -->
+          <div class="calc-field-group">
+            <div class="calc-label-row">
+              <span>Purchase Price:</span>
+              <span class="calc-num-callout" id="calc-price-disp">$359,000</span>
+            </div>
+            <input type="range" class="slider-range" id="slider-price" min="200000" max="1500000" step="5000" value="359000" oninput="runHubCalc()" />
+            <div class="slider-bounds">
+              <span>$200k</span>
+              <span>$850k</span>
+              <span>$1.5M</span>
+            </div>
+          </div>
+
+          <!-- Down Payment Field -->
+          <div class="calc-field-group">
+            <div class="calc-label-row">
+              <span>Down Payment (<span id="down-mode-label">%</span>):</span>
+              <span class="calc-num-callout" id="calc-down-disp">10% ($35,900)</span>
+            </div>
+            <input type="range" class="slider-range" id="slider-down" min="5" max="35" step="1" value="10" oninput="runHubCalc()" />
+            <div class="slider-bounds">
+              <span id="dp-min-bound">Min 5%</span>
+              <span>20% (Uninsured)</span>
+              <span>35%</span>
+            </div>
+            <div class="btn-toggle-group">
+              <button type="button" class="toggle-pill-btn active" id="btn-mode-pct" onclick="setDownPaymentMode('pct')">% Down</button>
+              <button type="button" class="toggle-pill-btn" id="btn-mode-dol" onclick="setDownPaymentMode('dol')">$ Amount</button>
+            </div>
+          </div>
+
+          <!-- First-Time Buyer or New Build? -->
+          <div class="calc-field-group">
+            <div class="calc-label-row">
+              <span>First-Time Buyer or New Build?</span>
+            </div>
+            <div class="btn-toggle-group">
+              <button type="button" class="toggle-pill-btn active" id="btn-fthb-yes" onclick="setFTHB(true)">Yes</button>
+              <button type="button" class="toggle-pill-btn" id="btn-fthb-no" onclick="setFTHB(false)">No</button>
+            </div>
+          </div>
+
+          <!-- Amortization Period -->
+          <div class="calc-field-group">
+            <div class="calc-label-row">
+              <span>Amortization Period</span>
+            </div>
+            <div class="btn-toggle-group">
+              <button type="button" class="toggle-pill-btn active" id="btn-amort-25" onclick="setAmortization(25)">25 Years</button>
+              <button type="button" class="toggle-pill-btn" id="btn-amort-30" onclick="setAmortization(30)">30 Years</button>
+            </div>
+            <div id="amort-warning" style="display: none; color: #F7704F; font-size: 0.8rem; margin-top: 0.5rem; line-height: 1.2;">
+              * 30-year insured amortization is only available for eligible first-time buyers and new builds. Calculation reverted to 25 years.
+            </div>
+          </div>
+
+          <!-- Interest Rate Assumption -->
+          <div class="calc-field-group">
+            <div class="calc-label-row">
+              <span>Mortgage Interest Rate</span>
+            </div>
+            <div class="rate-box-row">
+              <div class="rate-input-wrap">
+                <input type="number" id="input-rate" value="3.60" step="0.05" min="1.0" max="15.0" oninput="runHubCalc()" />
+                <span style="font-weight: 800; color: var(--text-body); margin-left: 0.3rem;">%</span>
+              </div>
+              <span class="rate-tag">sample current rate</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Monthly Carrying Costs Panel -->
+        <div class="calc-right-results">
+          <div>
+            <div class="result-metric-header">Estimated Total Monthly Cost</div>
+            <div class="result-main-num" id="out-total-monthly">$1,898</div>
+            <div class="result-sub">Includes mortgage principal, interest & property taxes</div>
+
+            <div class="breakdown-table">
+              <div class="breakdown-row">
+                <span>Mortgage Payment:</span>
+                <strong id="out-mort-payment">$1,684/mo</strong>
+              </div>
+              <div class="breakdown-row">
+                <span>Est. Property Taxes:</span>
+                <strong id="out-tax-amount">+$214/mo</strong>
+              </div>
+              <div class="breakdown-row">
+                <span>Down Payment Required:</span>
+                <strong id="out-down-required">$35,900</strong>
+              </div>
+              <div class="breakdown-row">
+                <span>Default Insurance (CMHC):</span>
+                <strong id="out-cmhc-premium">$10,016</strong>
+              </div>
+              <div class="breakdown-row" style="border-top: 1px solid #1E2823; margin-top: 0.5rem; padding-top: 0.5rem;">
+                <span>Est. Closing Costs (~1.5%):</span>
+                <strong id="out-closing-costs">$5,385</strong>
+              </div>
+              <div class="breakdown-row" style="font-size: 1.05rem; color: #FFFFFF; font-weight: 700; margin-top: 0.3rem;">
+                <span>Estimated Cash Needed:</span>
+                <strong id="out-cash-needed" style="color: var(--accent-mustard);">$41,285</strong>
+              </div>
+              <div style="font-size: 0.72rem; color: #9CA3AF; line-height: 1.2; margin-top: 0.8rem; text-align: center; font-style: italic;">
+                * Closing-cost estimate is illustrative, excludes adjustments, and varies by transaction.
+              </div>
+              <div class="breakdown-row total-row">
+                <span>Total Mortgage Financed:</span>
+                <strong id="out-total-financed">$333,116</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc-action-btns">
+            <a href="tel:4038701537" class="btn-action-gold">
+              Call Trevor to Pre-Qualify →
+            </a>
+            <div style="font-size: 0.78rem; color: #9CA3AF; text-align: center; margin-top: 0.4rem; font-weight: 500;">
+              No credit pull required for an initial review.
+            </div>
+            <a href="tel:5877777875" class="btn-action-outline" id="btn-kyla-showing">
+              Call Kyla About a Showing →
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Quick Savings / Pre-Approval Inquiry Box -->
+    <div class="inquiry-card">
+      <h3>Want to Know If You Can Afford This Home?</h3>
+      <p>Send me a few details and I’ll calculate your approximate purchasing power and financing options. An initial review does not require a credit pull.</p>
+      
+      <form onsubmit="handleInquiry(event)">
+        <div class="inquiry-form-grid">
+          <input type="text" class="inquiry-input" placeholder="Your Name *" required id="inq_name" />
+          <input type="tel" class="inquiry-input" placeholder="Your Phone Number *" required id="inq_phone" />
+          <input type="email" class="inquiry-input" placeholder="Your Email Address *" required id="inq_email" />
+          <button type="submit" class="inquiry-btn">Check My Buying Power →</button>
+        </div>
+        <p style="font-size: 0.75rem; color: #9CA3AF; margin-top: 1rem; text-align: center; line-height: 1.3;">
+            By submitting, you agree to be contacted regarding your mortgage inquiry. Your information will not be sold or shared for marketing purposes. <a href="https://trevormortgages.ca/privacy" target="_blank" style="color: var(--accent-mustard); text-decoration: underline;">Privacy Policy</a>.
+          </p>
+        </form>
+      <div id="inquiry-success" style="display: none; color: var(--accent-mustard); font-weight: 800; margin-top: 1.2rem; font-size: 1.05rem;">
+        ✓ Request received! Trevor will text or email your numbers shortly.
+      </div>
+    </div>
+
+    <!-- Dedicated Team Contact Cards -->
+    <div class="team-cards-grid">
+      <!-- Darian Stadnyk -->
       <div class="team-card">
         <div>
           <div class="team-card-top">
-            <div class="team-avatar-initials kyla">K</div>
+            <div class="team-avatar-initials darian">DS</div>
             <div>
-              <div class="team-name">Kyla</div>
-              <div class="team-title">Realtor · Real Estate Associate</div>
+              <div class="team-name">Darian Stadnyk</div>
+              <div class="team-title">Realtor · Premiere Realty Direct</div>
             </div>
           </div>
           <p class="team-bio">
@@ -1273,8 +2519,8 @@
           </p>
         </div>
         <div>
-          <a href="tel:5878880024" class="team-contact-btn btn-green-outline" style="width: 100%;">
-            Co-Branded Realtor Partner: Kyla
+          <a href="tel:5877777875" class="team-contact-btn btn-green-outline" style="width: 100%;">
+            Call or Text Darian: 587-888-0024
           </a>
         </div>
       </div>
@@ -1323,41 +2569,36 @@
 
     var properties = {
       1: {
-        address: "312 Marda Loop Rise SW",
-        community: "Marda Loop, Calgary",
-        specs: "2 Beds · 2.5 Baths · 1,280 sq ft",
-        price: 540000,
-        monthlyTax: 290
-      },
-      2: {
-        address: "118 Altadore Street SW",
-        community: "Altadore, Calgary",
-        specs: "4 Beds · 3.5 Baths · 2,100 sq ft",
-        price: 895000,
-        monthlyTax: 420
+        address: "103 - 760 Railway Gate SW",
+        community: "Midtown, Airdrie",
+        specs: "2 Beds · 2.5 Baths · 1,180 sq ft · MLS® A30149729",
+        price: 369900,
+        monthlyTax: 210
       }
     };
 
     function selectProperty(id) {
       currentSelection = id;
 
-      // Update card active states
-      document.getElementById('card-prop-1').classList.toggle('active', id === 1);
-      document.getElementById('card-prop-2').classList.toggle('active', id === 2);
-      document.getElementById('card-prop-custom').classList.toggle('active', id === 'custom');
+      var card1 = document.getElementById('card-prop-1');
+      if (card1) card1.classList.toggle('active', id === 1);
+      
+      var cardCustom = document.getElementById('card-prop-custom');
+      if (cardCustom) cardCustom.classList.toggle('active', id === 'custom');
 
-      // Update status badges
-      document.getElementById('status-prop-1').innerHTML = id === 1 ? '<span>✓ Selected</span>' : '<span>Click to Calculate →</span>';
-      document.getElementById('status-prop-2').innerHTML = id === 2 ? '<span>✓ Selected</span>' : '<span>Click to Calculate →</span>';
-      document.getElementById('status-prop-custom').innerHTML = id === 'custom' ? '<span>✓ Selected</span>' : '<span>Click to Calculate →</span>';
+      var status1 = document.getElementById('status-prop-1');
+      if (status1) status1.innerHTML = id === 1 ? '<span>✓ Selected</span>' : '<span>Click to Calculate →</span>';
+      
+      var statusCustom = document.getElementById('status-prop-custom');
+      if (statusCustom) statusCustom.innerHTML = id === 'custom' ? '<span>✓ Selected</span>' : '<span>Click to Calculate →</span>';
 
       var bannerName = document.getElementById('calc-focus-name');
       var bannerSpecs = document.getElementById('calc-focus-specs');
       var priceSlider = document.getElementById('slider-price');
 
       if (id === 'custom') {
-        bannerName.textContent = "Custom Calgary Property Estimate";
-        bannerSpecs.textContent = "Adjust sliders below to test payments on any home price in Calgary · Est. Taxes: $250/mo";
+        bannerName.textContent = "Custom Calgary / Airdrie Property Estimate";
+        bannerSpecs.textContent = "Adjust sliders below to test payments on any home price in Calgary or Airdrie · Est. Taxes: $250/mo";
         priceSlider.value = 550000;
         if (document.getElementById('btn-kyla-showing')) {
           document.getElementById('btn-kyla-showing').style.display = 'none';
@@ -1382,7 +2623,7 @@
       document.getElementById('down-mode-label').textContent = mode === 'pct' ? '%' : '$';
 
       var slider = document.getElementById('slider-down');
-      var price = parseFloat(document.getElementById('slider-price').value) || 540000;
+      var price = parseFloat(document.getElementById('slider-price').value) || 359000;
 
       if (mode === 'pct') {
         slider.min = "5";
@@ -1416,7 +2657,7 @@
 
     function runHubCalc() {
       var priceSlider = document.getElementById('slider-price');
-      var price = parseFloat(priceSlider.value) || 540000;
+      var price = parseFloat(priceSlider.value) || 359000;
       document.getElementById('calc-price-disp').textContent = "$" + price.toLocaleString();
 
       if (currentSelection === 'custom') {
@@ -1453,7 +2694,7 @@
             document.getElementById('amort-warning').style.display = 'block';
             tempAmortYears = 25;
             if (downPct >= 15) cmhcPct = 0.0280;
-            else if (downPct >= 10) cmhcPct = 0.0420;
+            else if (downPct >= 10) cmhcPct = 0.0310;
             else cmhcPct = 0.0400;
           } else {
             document.getElementById('amort-warning').style.display = 'none';
@@ -1466,7 +2707,7 @@
           document.getElementById('amort-warning').style.display = 'none';
           tempAmortYears = 25;
           if (downPct >= 15) cmhcPct = 0.0280;
-          else if (downPct >= 10) cmhcPct = 0.0420;
+          else if (downPct >= 10) cmhcPct = 0.0310;
           else cmhcPct = 0.0400;
         }
       } else {
@@ -1483,8 +2724,8 @@
       var monthlyPayment = totalLoan * (monthlyRate * Math.pow(1 + monthlyRate, n)) / (Math.pow(1 + monthlyRate, n) - 1);
 
       // Taxes based on selection
-      var monthlyTax = 290;
-      if (currentSelection === 2) monthlyTax = 420;
+      var monthlyTax = 214;
+      if (currentSelection === 2) monthlyTax = 310;
       else if (currentSelection === 'custom') monthlyTax = Math.round(price * 0.0055 / 12);
 
       var totalMonthly = monthlyPayment + monthlyTax;
