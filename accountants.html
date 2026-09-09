@@ -507,109 +507,220 @@
     
   
     /* =========================================================================
-       MASTER MOBILE RESPONSIVE FIXES (PERFECT CENTERING & ZERO OVERFLOW)
+       MASTER MOBILE OPTIMIZATIONS (UNIFIED MOBILE FIXES - VERSION 27)
        ========================================================================= */
     @media (max-width: 1024px) {
-      html, body {
+      /* Force body to prevent horizontal overflow/scrolling completely */
+      body, html {
         overflow-x: hidden !important;
-        max-width: 100vw !important;
-        width: 100% !important;
-        position: relative !important;
-        margin: 0 !important;
-        padding: 0 !important;
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 0;
       }
-      
-      /* Global Layout & Padding Reset */
-      .hero, .subpage-hero, .content-section, .principles-section, .lanes-section, .contact-section, footer {
+
+      /* Unified Container Margins - No Elements Touch the Edge! */
+      .hero, 
+      .principles-section, 
+      .lanes-section, 
+      .contact-section, 
+      .subpage-hero, 
+      .content-section, 
+      footer {
         padding-left: 1.25rem !important;
         padding-right: 1.25rem !important;
-        padding-top: 2rem !important;
-        padding-bottom: 2rem !important;
-        box-sizing: border-box !important;
-        max-width: 100vw !important;
-        overflow-x: hidden !important;
-      }
-      
-      .hero-container, .subpage-hero-container, .footer-inner, .brokerage-compliance-box {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        width: 100% !important;
-        max-width: 100% !important;
         box-sizing: border-box !important;
       }
 
-      /* Headings & Text Centering */
+      .hero-container, 
+      .subpage-hero-container, 
+      .footer-inner, 
+      .brokerage-compliance-box {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      /* Center headers symmetrically on mobile */
       .subpage-hero {
+        padding-top: 2.2rem !important;
+        padding-bottom: 2rem !important;
         text-align: center !important;
       }
       .subpage-hero h1 {
-        font-size: 1.8rem !important;
+        font-size: 1.85rem !important;
         line-height: 1.25 !important;
         text-align: center !important;
       }
       .subpage-hero p.lead {
-        font-size: 0.96rem !important;
+        font-size: 0.98rem !important;
         line-height: 1.55 !important;
         text-align: center !important;
         margin: 0 auto 1.5rem !important;
       }
+      .eyebrow-tag {
+        display: inline-flex !important;
+        justify-content: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+      }
+
+      /* Section Title Alignments - Centered for Symmetrical Mobile Layout */
       .section-title-wrap {
         text-align: center !important;
         margin-bottom: 2rem !important;
         padding: 0 !important;
       }
       .section-title-wrap h2 {
-        font-size: 1.75rem !important;
+        font-size: 1.8rem !important;
         text-align: center !important;
         line-height: 1.25 !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
       }
       .section-title-wrap p {
-        font-size: 0.95rem !important;
+        font-size: 0.96rem !important;
         text-align: center !important;
         line-height: 1.5 !important;
         margin: 0 auto !important;
       }
-
-      /* Reset inline min-widths, span 2, 2-column grids & heavy paddings on mobile */
-      [style*="min-width"] {
-        min-width: 0 !important;
-      }
-      [style*="grid-column: span 2"] {
-        grid-column: span 1 !important;
-      }
-      [style*="grid-template-columns"] {
-        grid-template-columns: 1fr !important;
-      }
-      [style*="padding: 2.5rem"], [style*="padding: 3rem"], [style*="padding: 2.2rem"] {
-        padding: 1.25rem !important;
-      }
-      
-      .feature-grid-2, .feature-grid-3, .property-cards-grid, .calc-card-grid, .team-cards-grid, .inquiry-form-grid, .partners-grid, .planner-tool-container, .option-grid, .scenario-grid, #cpa-classifier-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1.25rem !important;
+      .section-eyebrow {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
       }
 
-      .feature-box, .principle-card, .lane-card, .pill-card, .phase-card, .cta-banner-box, .calc-card-wrap, .inquiry-card, .team-card {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-      }
-      
-      /* Navigation Header */
+      /* Header Menu - Compact, Wrapped & Centered (NO HORIZONTAL SWIPING!) */
       .nav-inner {
         flex-direction: column !important;
         align-items: center !important;
-        gap: 0.6rem !important;
+        gap: 0.8rem !important;
         padding: 0.8rem 0 !important;
         text-align: center !important;
       }
       .brand-link {
         align-items: center !important;
         text-align: center !important;
+        margin-bottom: 0.2rem !important;
       }
       .brand-name {
         font-size: 1.15rem !important;
+        letter-spacing: 0.02em !important;
+        text-align: center !important;
+      }
+      .brand-meta {
+        font-size: 0.72rem !important;
+        text-align: center !important;
+      }
+      .nav-inner > div:last-child {
+        display: none !important; /* Hide desktop CTA button */
+      }
+      nav.nav-links {
+        width: 100% !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 0.5rem 1rem !important;
+        padding: 0.2rem 0 !important;
+        overflow: visible !important;
+        white-space: normal !important;
+      }
+      nav.nav-links a {
+        font-size: 0.82rem !important;
+        font-weight: 700 !important;
+        padding: 0.25rem 0.4rem !important;
+        display: inline-block !important;
+      }
+
+      /* Stack grids and elements into clean single-column layout */
+      .feature-grid-2,
+      .footer-inner,
+      .principles-grid,
+      .lanes-grid,
+      .team-cards-grid,
+      .inquiry-form-grid,
+      .property-cards-grid,
+      .classifier-container,
+      #cpa-classifier-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+      }
+      .feature-box,
+      .principle-card,
+      .lane-card,
+      .pill-card,
+      .phase-card,
+      .calc-card,
+      .option-card,
+      .team-card {
+        margin-bottom: 1.5rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        grid-column: span 1 !important; /* Override double-wide grid cells on mobile */
+      }
+      .feature-box:last-child,
+      .principle-card:last-child,
+      .lane-card:last-child,
+      .pill-card:last-child,
+      .phase-card:last-child {
+        margin-bottom: 0 !important;
+      }
+
+      /* Dynamic form stacking (e.g. CPA classifier and inputs) */
+      .form-grid-2,
+      .form-row-2,
+      [style*="display: grid; grid-template-columns: repeat(2, 1fr)"],
+      [style*="display: grid; grid-template-columns: 1fr 1fr"],
+      [style*="display: flex; gap: 0.5rem"] {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.8rem !important;
+      }
+      
+      /* Padding adjustments to prevent text squishing in cards */
+      .classifier-card-container,
+      [style*="padding: 2.5rem"],
+      [style*="padding: 2rem"] {
+        padding: 1.25rem !important;
+      }
+
+      /* Sticky result panel reset */
+      .classifier-result-wrap {
+        position: static !important;
+      }
+    }
+
+    
+    /* =========================================================================
+       MASTER VERSION 34 MOBILE RESPONSIVE & GRID OVERRIDE
+       ========================================================================= */
+    @media (max-width: 1024px) {
+      html, body {
+        width: 100% !important;
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+      }
+      
+      /* Mobile Header Navigation - 3x2 Symmetrical Grid */
+      .nav-inner {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.8rem !important;
+        padding: 0.8rem 0 !important;
+        text-align: center !important;
+      }
+      .brand-link {
+        align-items: center !important;
+        text-align: center !important;
+        margin-bottom: 0.2rem !important;
+      }
+      .brand-name {
+        font-size: 1.15rem !important;
+        letter-spacing: 0.02em !important;
         text-align: center !important;
       }
       .brand-meta {
@@ -621,20 +732,102 @@
       }
       nav.nav-links {
         width: 100% !important;
-        display: flex !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        gap: 0.4rem 0.8rem !important;
+        max-width: 380px !important;
+        margin: 0 auto !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 0.4rem 0.5rem !important;
         padding: 0.2rem 0 !important;
+        justify-items: center !important;
+        align-items: center !important;
+        overflow: visible !important;
+        white-space: normal !important;
       }
       nav.nav-links a {
         font-size: 0.82rem !important;
         font-weight: 700 !important;
-        padding: 0.2rem 0.3rem !important;
+        padding: 0.3rem 0.2rem !important;
+        display: block !important;
+        text-align: center !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        white-space: nowrap !important;
+      }
+
+      /* Centered Subpage Heroes and Section Titles */
+      .subpage-hero {
+        padding-top: 2rem !important;
+        padding-bottom: 1.8rem !important;
+        text-align: center !important;
+      }
+      .subpage-hero h1 {
+        font-size: 1.85rem !important;
+        line-height: 1.25 !important;
+        text-align: center !important;
+      }
+      .subpage-hero p.lead {
+        font-size: 0.98rem !important;
+        line-height: 1.55 !important;
+        text-align: center !important;
+        margin: 0 auto 1.5rem !important;
+      }
+      .section-title-wrap {
+        text-align: center !important;
+        margin-bottom: 2rem !important;
+      }
+      .section-title-wrap h2 {
+        text-align: center !important;
+      }
+      .section-title-wrap p {
+        text-align: center !important;
+      }
+
+      /* Compact Paddings & Reset Stretched Containers */
+      .content-section, 
+      .hero-container, 
+      .subpage-hero-container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        box-sizing: border-box !important;
+      }
+
+      div[style*="padding: 2.5rem"],
+      div[style*="padding: 2.2rem"],
+      div[style*="padding: 3rem"],
+      div[style*="padding: 2rem"],
+      .feature-box,
+      .calc-card-container,
+      .cta-banner-box {
+        padding: 1.25rem 1rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      div[style*="min-width"] {
+        min-width: 0 !important;
+        width: 100% !important;
+      }
+
+      div[style*="display: flex"],
+      div[style*="display:grid"],
+      div[style*="display: grid"] {
+        grid-template-columns: 1fr !important;
+        flex-direction: column !important;
+        gap: 1.2rem !important;
+      }
+
+      /* Grid Column Spans Reset */
+      .feature-box[style*="span 2"],
+      div[style*="span 2"],
+      .option-card[style*="span 2"] {
+        grid-column: span 1 !important;
       }
     }
-
   </style>
+
 </head>
 <body>
 
@@ -649,13 +842,13 @@
   <!-- Header Navigation -->
   <header>
     <div class="nav-inner">
-      <a href="/" class="brand-link">
+      <a href="index.html#home" class="brand-link">
         <span class="brand-name">TREVOR BERRY</span>
         <span class="brand-meta">Mortgage Associate</span>
       </a>
 
       <nav class="nav-links">
-        <a href="index.html">Home</a>
+        <a href="index.html#home">Home</a>
         <a href="index.html#buying">Buying</a>
         <a href="index.html#homeowners">Homeowners</a>
         <a href="index.html#alternative">Alternative</a>
@@ -692,7 +885,7 @@
       <div style="background: #FFFFFF; border: 1.5px solid var(--brand-green); border-radius: var(--radius-lg); padding: 2.5rem 3rem; box-shadow: var(--shadow-card); position: relative; overflow: hidden;">
         <div style="position: absolute; top: 0; left: 0; width: 6px; height: 100%; background: var(--accent-mustard);"></div>
         <div style="display: flex; gap: 2.5rem; align-items: center; flex-wrap: wrap;">
-          <div style="flex: 1; min-width: 0;">
+          <div style="flex: 1.2; min-width: 300px;">
             <span style="font-size: 0.8rem; font-weight: 800; color: var(--accent-mustard); text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.4rem;">Secure Integration</span>
             <h3 style="font-size: 1.6rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.8rem;">The CPA Safe Drop Link</h3>
             <p style="font-size: 0.98rem; color: var(--text-body); line-height: 1.65; margin-bottom: 1.2rem;">
@@ -702,12 +895,12 @@
               Drop high-level numbers, corporate financials, or notice of assessments securely. Within <strong>24 business hours</strong>, I provide a clear feasibility review outlining:
             </p>
             <ul class="lane-bullets">
-              <li><strong>Zero Credit Impact:</strong> We run preliminary reviews without soft or hard credit inquiries.</li>
+              <li><strong>Zero Credit Impact:</strong> I run preliminary reviews without soft or hard credit inquiries.</li>
               <li><strong>Direct Resolution Path:</strong> Exact capital structures (HELOC or private bridge) to pay the CRA and stop 9%+ daily compounding interest.</li>
               <li><strong>Corporate-Friendly Lenders:</strong> Access to B-lenders and monoline underwriters who accept net business cash flow.</li>
             </ul>
           </div>
-          <div style="flex: 0.8; min-width: 0; background: var(--bg-subtle); padding: 2rem; border-radius: var(--radius); border: 1px solid var(--border-subtle); text-align: center;">
+          <div style="flex: 0.8; min-width: 250px; background: var(--bg-subtle); padding: 2rem; border-radius: var(--radius); border: 1px solid var(--border-subtle); text-align: center;">
             <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🔒</div>
             <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--brand-green); margin-bottom: 0.5rem;">Confidential Scenario Drop</h4>
             <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">Submit a client file securely for Trevor's personal B2B review.</p>
@@ -721,8 +914,8 @@
     <section class="content-section" style="padding-top: 1rem;">
       <div class="section-title-wrap">
         <span class="section-eyebrow">Strategic Tax Solutions</span>
-        <h2>How We Solve complex Self-Employed &amp; Corporate Scenarios</h2>
-        <p>A true mortgage partner shouldn't disrupt your client's long-term corporate tax planning. We structure borrowing to align with your advice.</p>
+        <h2>How I Solve complex Self-Employed &amp; Corporate Scenarios</h2>
+        <p>A true mortgage partner shouldn't disrupt ymy client's long-term corporate tax planning. I structure borrowing to align with ymy advice.</p>
       </div>
 
       <div class="feature-grid-2">
@@ -730,7 +923,7 @@
           <div style="font-size: 0.8rem; font-weight: 800; color: var(--accent-mustard); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">Tax Debt Mitigation</div>
           <h3>CRA Arrears &amp; Source Deduction Resolution</h3>
           <p>
-            Once a CRA balance goes overdue, the government compound-interest engine begins. Big banks immediately freeze all active or pending financing files. We leverage residential equity or rapid private bridge loans to pay off personal tax, GST/HST, or source deduction arrears immediately—cleaning the sheet before liens are registered.
+            Once a CRA balance goes overdue, the government compound-interest engine begins. Big banks immediately freeze all active or pending financing files. I leverage residential equity or rapid private bridge loans to pay off personal tax, GST/HST, or source deduction arrears immediately—cleaning the sheet before liens are registered.
           </p>
         </div>
 
@@ -746,7 +939,7 @@
           <div style="font-size: 0.8rem; font-weight: 800; color: var(--brand-green); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">Multi-Corporate Lending</div>
           <h3>Holding Companies &amp; Inter-Corporate Structures</h3>
           <p>
-            For clients expanding real estate portfolios, borrowing across Holdcos, Opcos, or family trusts is standard practice. We structure debt to align with inter-company loan policies, protect interest deductibility, and coordinate seamlessly with your tax planning parameters.
+            For clients expanding real estate portfolios, borrowing across Holdcos, Opcos, or family trusts is standard practice. I structure debt to align with inter-company loan policies, protect interest deductibility, and coordinate seamlessly with your tax planning parameters.
           </p>
         </div>
       </div>
@@ -826,7 +1019,7 @@
             <h3 id="cpa-class-title" style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.8rem; color: #FFFFFF; line-height: 1.2;">PRIME A-LENDER FIT</h3>
             
             <div style="background: rgba(255,255,255,0.08); border-left: 3px solid var(--accent-mustard); padding: 0.8rem 1rem; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 0.82rem; line-height: 1.5; color: #E2EAE5; margin-bottom: 1.2rem;" id="cpa-class-desc">
-              Your client's strong profile qualifies for bank-rate mortgages. Let's structure a re-advanceable facility (Smith Manoeuvre) to feed your asset plan.
+              Ymy client's strong profile qualifies for bank-rate mortgages. Let's structure a re-advanceable facility (Smith Manoeuvre) to feed your asset plan.
             </div>
 
             <div style="display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 1.2rem; margin-bottom: 1.2rem;">
@@ -1065,28 +1258,28 @@
 
       if (cpaClassTax) {
         title = "PRIVATE BRIDGE ADVANCE";
-        desc = "Active CRA tax arrears or source deduction balances owing will instantly block A and B banks. We structure short-term interest-only bridge capital to pay off the CRA, stopping 9%+ compounding daily interest, while keeping investment assets completely untouched.";
+        desc = "Active CRA tax arrears or source deduction balances owing will instantly block A and B banks. I structure short-term interest-only bridge capital to pay off the CRA, stopping 9%+ compounding daily interest, while keeping investment assets completely untouched.";
         rate = "6.99% - 8.99%";
         tier = "Private Asset-Backed Fund";
         audit = "Arrears Clearance Refinance";
         cardBg = "#1C201E";
       } else if (cpaClassCredit < 580) {
         title = "PRIVATE / EQUITY FIRST";
-        desc = "A challenged credit profile requires an equity-based solution. We place the client with a private lender based on home equity, then provide a written exit roadmap to rebuild credit scores and transition back to institutional prime lenders within 12–24 months.";
+        desc = "A challenged credit profile requires an equity-based solution. I place the client with a private lender based on home equity, then provide a written exit roadmap to rebuild credit scores and transition back to institutional prime lenders within 12–24 months.";
         rate = "7.25% - 9.00%";
         tier = "Private Equity / Mortgage Fund";
         audit = "Equity-Backed Approval";
         cardBg = "#2E1C18";
       } else if (cpaClassIncome === 'stated' && cpaClassEquity >= 20) {
         title = "ALTERNATIVE B-LENDER";
-        desc = "Client has low net personal income but strong business cash deposits. We verify 6–12 months of corporate bank statement deposits to qualify them without artificially inflating their personal taxable salary.";
+        desc = "Client has low net personal income but strong business cash deposits. I verify 6–12 months of corporate bank statement deposits to qualify them without artificially inflating their personal taxable salary.";
         rate = "4.79% - 5.89%";
         tier = "Alternative (B-Bank) Stated Income";
         audit = "BFS Deposit Underwrite";
         cardBg = "#12342E";
       } else if (cpaClassIncome === 'holdco' && cpaClassEquity >= 20) {
         title = "HOLDING COMPANY T2 FIT";
-        desc = "Client is purchasing through an active holding company. We utilize specialized commercial-backed corporate B-lenders that underwrite net business cash flow to keep the asset off personal balance sheets.";
+        desc = "Client is purchasing through an active holding company. I utilize specialized commercial-backed corporate B-lenders that underwrite net business cash flow to keep the asset off personal balance sheets.";
         rate = "4.99% - 6.19%";
         tier = "Corporate Holdco Program";
         audit = "T2 Corporate File Review";
@@ -1180,7 +1373,7 @@
         
         if (cpaParams.arrears === 'active') {
             title.textContent = "🚨 PRIVATE EQUITY / BRIDGE RESOLUTION";
-            desc.innerHTML = "<strong>Active CRA tax arrears or source deduction balances owing will instantly decline standard bank files.</strong> We structure short-term interest-only bridge capital to clear liabilities, stop high compounding CRA penalties, and transition you cleanly back into bank pre-approval.";
+            desc.innerHTML = "<strong>Active CRA tax arrears or source deduction balances owing will instantly decline standard bank files.</strong> I structure short-term interest-only bridge capital to clear liabilities, stop high compounding CRA penalties, and transition you cleanly back into bank pre-approval.";
             rates.textContent = "6.99% - 8.99% (Interest-Only)";
         } else if (cpaParams.credit === 'bruised') {
             title.textContent = "💼 PRIVATE MORTGAGE STRUCTURE";
@@ -1189,16 +1382,16 @@
         } else if (cpaParams.income === 'holding-co' || cpaParams.income === 'self-employed') {
             if (cpaParams.credit === 'fair') {
                 title.textContent = "💼 ALTERNATIVE B-LENDER OPTION";
-                desc.innerHTML = "<strong>Business-for-self (BFS) structures with fair credit qualify for B-lenders.</strong> We utilize bank statement stated income programs that verify actual deposits without requiring high net taxable personal draws (Line 15000).";
+                desc.innerHTML = "<strong>Business-for-self (BFS) structures with fair credit qualify for B-lenders.</strong> I utilize bank statement stated income programs that verify actual deposits without requiring high net taxable personal draws (Line 15000).";
                 rates.textContent = "4.99% - 5.89%";
             } else {
                 title.textContent = "🏆 NET BFS STATEMENT PROGRAM";
-                desc.innerHTML = "<strong>Excellent/Good credit BFS profiles are eligible for specialized monoline BFS stated programs.</strong> We qualify you based on corporate bank flow and T2 schedules, preserving corporate wealth without forcing massive personal tax hits.";
+                desc.innerHTML = "<strong>Excellent/Good credit BFS profiles are eligible for specialized monoline BFS stated programs.</strong> I qualify you based on corporate bank flow and T2 schedules, preserving corporate wealth without forcing massive personal tax hits.";
                 rates.textContent = "4.59% - 5.19%";
             }
         } else if (cpaParams.income === 'retired') {
             title.textContent = "🏆 PORTFOLIO ASSET DRAWDOWN LENDER";
-            desc.innerHTML = "<strong>Standard retail bank branches fail to qualify retirees because their liquid withdrawals are categorized as 'non-verifiable'.</strong> We structure portfolio-asset net-worth programs that qualify retirees based on liquid investment holdings rather than traditional pension income.";
+            desc.innerHTML = "<strong>Standard retail bank branches fail to qualify retirees because their liquid withdrawals are categorized as 'non-verifiable'.</strong> I structure portfolio-asset net-worth programs that qualify retirees based on liquid investment holdings rather than traditional pension income.";
             rates.textContent = "3.59% - 4.29%";
         } else {
             // Salaried, traditional, clean

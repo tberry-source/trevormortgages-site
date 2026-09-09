@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Darian Stadnyk × Trevor Berry | Instant Monthly Payment Estimates</title>
-  <meta name="description" content="Calculate accurate monthly mortgage payments, down payment requirements, and property taxes for Darian Stadnyk's Calgary listings." />
+  <title>Kyla × Trevor Berry | Instant Monthly Payment Estimates</title>
+  <meta name="description" content="Calculate accurate monthly mortgage payments, down payment requirements, and property taxes for Kyla's Calgary listings." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -817,204 +817,6 @@
     
   
     /* =========================================================================
-       MASTER MOBILE OPTIMIZATIONS (FIXES MARGINS, HEADERS, GRID ALIGNMENT & SCROLL)
-       ========================================================================= */
-    @media (max-width: 1024px) {
-      /* Spacing between cards/bubbles on mobile to prevent touching */
-      .feature-box,
-      .principle-card,
-      .lane-card,
-      .pill-card,
-      .phase-card,
-      .calc-card,
-      .option-card,
-      .team-card {
-        margin-bottom: 1.5rem !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-      }
-      /* Remove bottom margin on the last item to prevent extra page-bottom gap */
-      .feature-box:last-child,
-      .principle-card:last-child,
-      .lane-card:last-child,
-      .pill-card:last-child,
-      .phase-card:last-child,
-      .option-card:last-child,
-      .team-card:last-child {
-        margin-bottom: 0 !important;
-      }
-
-      /* Unified Grid-to-Flex stack for main Hero section on mobile */
-      .hero-container {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 2rem !important;
-        align-items: stretch !important;
-        text-align: left !important;
-      }
-
-      /* Force body to prevent horizontal overflow/scrolling completely */
-      body, html {
-        overflow-x: hidden !important;
-        position: relative;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-      }
-
-      /* Unified Container Margins - No Elements Touches the Edge! */
-      .hero, 
-      .principles-section, 
-      .lanes-section, 
-      .contact-section, 
-      .subpage-hero, 
-      .content-section, 
-      footer {
-        padding-left: 1.25rem !important;
-        padding-right: 1.25rem !important;
-        box-sizing: border-box !important;
-      }
-
-      .hero-container, 
-      .subpage-hero-container, 
-      .footer-inner, 
-      .brokerage-compliance-box {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-      }
-
-      /* Header Menu - Compact, Wrapped & Centered (NO HORIZONTAL SWIPING!) */
-      .nav-inner {
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 0.8rem !important;
-        padding: 0.8rem 0 !important;
-        text-align: center !important;
-      }
-      .brand-link {
-        align-items: center !important;
-        text-align: center !important;
-        margin-bottom: 0.2rem !important;
-      }
-      .brand-name {
-        font-size: 1.15rem !important;
-        letter-spacing: 0.02em !important;
-        text-align: center !important;
-      }
-      .brand-meta {
-        font-size: 0.72rem !important;
-        text-align: center !important;
-      }
-      .nav-inner > div:last-child {
-        display: none !important; /* Hide the desk cta button */
-      }
-      nav.nav-links {
-        width: 100% !important;
-        display: flex !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        gap: 0.5rem 1rem !important;
-        padding: 0.2rem 0 !important;
-        overflow: visible !important;
-        white-space: normal !important;
-      }
-      nav.nav-links a {
-        font-size: 0.82rem !important;
-        font-weight: 700 !important;
-        padding: 0.25rem 0.4rem !important;
-        display: inline-block !important;
-      }
-
-      /* Section Title Alignments - Centered for Balanced Reading */
-      .section-title-wrap {
-        text-align: center !important;
-        margin-bottom: 2rem !important;
-        padding: 0 !important;
-      }
-      .section-title-wrap h2 {
-        font-size: 1.8rem !important;
-        text-align: center !important;
-        line-height: 1.25 !important;
-      }
-      .section-title-wrap p {
-        font-size: 0.96rem !important;
-        text-align: center !important;
-        line-height: 1.5 !important;
-        margin: 0 auto !important;
-      }
-
-      /* Subpage Hero and Titles Mobile Formatting */
-      .subpage-hero {
-        padding-top: 2.2rem !important;
-        padding-bottom: 2rem !important;
-        text-align: center !important;
-      }
-      .subpage-hero h1 {
-        font-size: 1.85rem !important;
-        line-height: 1.25 !important;
-        text-align: center !important;
-      }
-      .subpage-hero p.lead {
-        font-size: 0.98rem !important;
-        line-height: 1.55 !important;
-        text-align: center !important;
-        margin: 0 auto 1.5rem !important;
-      }
-
-      /* Stack Grids cleanly into 1 Column with standard borders and margin safety */
-      .principles-grid, 
-      .lanes-grid, 
-      .feature-grid-2,
-      .property-cards-grid,
-      .team-cards-grid,
-      .calc-grid,
-      .calc-card-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
-      }
-
-      /* Fix the CPA classifier grid to prevent horizontal overflow */
-      #cpa-classifier-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
-      }
-
-      /* Mobile styling for inner card padding & stacked forms */
-      .classifier-card-container {
-        padding: 1.25rem !important;
-      }
-      .form-grid-2,
-      .form-row-2 {
-        grid-template-columns: 1fr !important;
-        gap: 0.8rem !important;
-      }
-
-      /* Align the top strip text properly on phone widths */
-      .top-strip-inner {
-        flex-direction: column !important;
-        text-align: center !important;
-        gap: 0.4rem !important;
-        padding: 0 1rem !important;
-      }
-      .top-strip-inner span:last-child {
-        display: none !important; /* Hide secondary text to save space */
-      }
-      
-      /* Scale Darian listings contact card cleanly on phone layouts */
-      .micro-team-strip {
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-        gap: 1rem !important;
-      }
-      .strip-divider {
-        display: none !important;
-      }
-    }
-
-    /* =========================================================================
        MASTER VERSION 34 MOBILE RESPONSIVE & GRID OVERRIDE
        ========================================================================= */
     @media (max-width: 1024px) {
@@ -1156,8 +958,8 @@
     <div class="partner-nav-inner">
       <div class="co-brand-lockup">
         <div class="brand-col">
-          <span class="brand-col-name">DARIAN STADNYK</span>
-          <span class="brand-col-meta">Premiere Realty Direct</span>
+          <span class="brand-col-name">KYLA</span>
+          <span class="brand-col-meta">Real Estate Associate</span>
         </div>
         <span class="brand-x">×</span>
         <div class="brand-col">
@@ -1179,7 +981,7 @@
     <!-- Clean Hub Hero Header (NO specific address pinned at the top) -->
     <div class="hub-hero">
       <div class="prop-eyebrow">Instant Monthly Payment Estimates</div>
-      <h1 class="hub-title">See the Monthly Cost of Darian’s Listings</h1>
+      <h1 class="hub-title">See the Monthly Cost of Kyla’s Listings</h1>
       <p class="hub-lead">
         Adjust the down payment, amortization and rate—or run the numbers on any Calgary home.
       </p>
@@ -1189,7 +991,7 @@
         <div class="strip-item">
           <div class="strip-badge">🏡</div>
           <div class="strip-text">
-            <strong>Property & Showings:</strong> Darian Stadnyk 
+            <strong>Property & Showings:</strong> Kyla 
             <a href="tel:5878880024" class="strip-phone">587-888-0024</a>
           </div>
         </div>
@@ -1221,16 +1023,16 @@
         <div class="prop-card active" id="card-prop-1" onclick="selectProperty(1)">
           <div>
             <span class="prop-card-tag tag-featured">Featured Listing</span>
-            <div class="prop-card-address">252 Templeview Way NE</div>
+            <div class="prop-card-address">312 Marda Loop Rise SW</div>
             <div class="prop-card-meta">
-              Temple, Calgary · MLS® A2317927<br />
-              2 + 1 Beds · 2 Baths · 1,140 sq ft
+              Marda Loop, Calgary · MLS® A2442002<br />
+              2 Beds · 2.5 Baths · 1,280 sq ft
             </div>
           </div>
           <div>
             <div class="prop-card-price-row">
               <span class="prop-card-price-lbl">Asking Price</span>
-              <span class="prop-card-price-val">$359,000</span>
+              <span class="prop-card-price-val">$3</span>
             </div>
             <div class="prop-card-status" id="status-prop-1">
               <span>✓ Selected</span>
@@ -1242,16 +1044,16 @@
         <div class="prop-card" id="card-prop-2" onclick="selectProperty(2)">
           <div>
             <span class="prop-card-tag tag-featured">Featured Listing</span>
-            <div class="prop-card-address">809 68 Avenue SW</div>
+            <div class="prop-card-address">118 Altadore Street SW</div>
             <div class="prop-card-meta">
-              Kingsland, Calgary · MLS® A2339915<br />
-              2 + 2 Beds · 2 Baths · 1,100 sq ft
+              Altadore, Calgary · MLS® A2439115<br />
+              4 Beds · 3.5 Baths · 2,100 sq ft
             </div>
           </div>
           <div>
             <div class="prop-card-price-row">
               <span class="prop-card-price-lbl">Asking Price</span>
-              <span class="prop-card-price-val">$685,000</span>
+              <span class="prop-card-price-val">$6</span>
             </div>
             <div class="prop-card-status" id="status-prop-2">
               <span>Click to Calculate →</span>
@@ -1290,10 +1092,10 @@
       <div class="calc-focus-banner">
         <div>
           <div class="calc-focus-label">Now Calculating:</div>
-          <div class="calc-focus-name" id="calc-focus-name">252 Templeview Way NE</div>
+          <div class="calc-focus-name" id="calc-focus-name">312 Marda Loop Rise SW</div>
         </div>
         <div class="calc-focus-specs" id="calc-focus-specs">
-          Temple, Calgary · 2 + 1 Beds · 2 Baths · 1,140 sq ft · Est. Taxes: $214/mo
+          Marda Loop, Calgary · 2 Beds · 2.5 Baths · 1,280 sq ft · Est. Taxes: $290/mo
         </div>
       </div>
 
@@ -1306,9 +1108,9 @@
           <div class="calc-field-group">
             <div class="calc-label-row">
               <span>Purchase Price:</span>
-              <span class="calc-num-callout" id="calc-price-disp">$359,000</span>
+              <span class="calc-num-callout" id="calc-price-disp">$3</span>
             </div>
-            <input type="range" class="slider-range" id="slider-price" min="200000" max="1500000" step="5000" value="359000" oninput="runHubCalc()" />
+            <input type="range" class="slider-range" id="slider-price" min="200000" max="1500000" step="5000" value="540000" oninput="runHubCalc()" />
             <div class="slider-bounds">
               <span>$200k</span>
               <span>$850k</span>
@@ -1389,7 +1191,7 @@
               </div>
               <div class="breakdown-row">
                 <span>Est. Property Taxes:</span>
-                <strong id="out-tax-amount">+$214/mo</strong>
+                <strong id="out-tax-amount">+$290/mo</strong>
               </div>
               <div class="breakdown-row">
                 <span>Down Payment Required:</span>
@@ -1424,8 +1226,8 @@
             <div style="font-size: 0.78rem; color: #9CA3AF; text-align: center; margin-top: 0.4rem; font-weight: 500;">
               No credit pull required for an initial review.
             </div>
-            <a href="tel:5878880024" class="btn-action-outline" id="btn-darian-showing">
-              Call Darian About a Showing →
+            <a href="tel:5878880024" class="btn-action-outline" id="btn-kyla-showing">
+              Contact Kyla About a Showing →
             </a>
           </div>
         </div>
@@ -1456,14 +1258,14 @@
 
     <!-- Dedicated Team Contact Cards -->
     <div class="team-cards-grid">
-      <!-- Darian Stadnyk -->
+      <!-- Kyla -->
       <div class="team-card">
         <div>
           <div class="team-card-top">
-            <div class="team-avatar-initials darian">DS</div>
+            <div class="team-avatar-initials kyla">K</div>
             <div>
-              <div class="team-name">Darian Stadnyk</div>
-              <div class="team-title">Realtor · Premiere Realty Direct</div>
+              <div class="team-name">Kyla</div>
+              <div class="team-title">Realtor · Real Estate Associate</div>
             </div>
           </div>
           <p class="team-bio">
@@ -1472,7 +1274,7 @@
         </div>
         <div>
           <a href="tel:5878880024" class="team-contact-btn btn-green-outline" style="width: 100%;">
-            Call or Text Darian: 587-888-0024
+            Co-Branded Realtor Partner: Kyla
           </a>
         </div>
       </div>
@@ -1521,18 +1323,18 @@
 
     var properties = {
       1: {
-        address: "252 Templeview Way NE",
-        community: "Temple, Calgary",
-        specs: "2 + 1 Beds · 2 Baths · 1,140 sq ft · MLS® A2317927",
-        price: 359000,
-        monthlyTax: 214
+        address: "312 Marda Loop Rise SW",
+        community: "Marda Loop, Calgary",
+        specs: "2 Beds · 2.5 Baths · 1,280 sq ft",
+        price: 540000,
+        monthlyTax: 290
       },
       2: {
-        address: "809 68 Avenue SW",
-        community: "Kingsland, Calgary",
-        specs: "2 + 2 Beds · 2 Baths · 1,100 sq ft · MLS® A2339915",
-        price: 685000,
-        monthlyTax: 310
+        address: "118 Altadore Street SW",
+        community: "Altadore, Calgary",
+        specs: "4 Beds · 3.5 Baths · 2,100 sq ft",
+        price: 895000,
+        monthlyTax: 420
       }
     };
 
@@ -1557,16 +1359,16 @@
         bannerName.textContent = "Custom Calgary Property Estimate";
         bannerSpecs.textContent = "Adjust sliders below to test payments on any home price in Calgary · Est. Taxes: $250/mo";
         priceSlider.value = 550000;
-        if (document.getElementById('btn-darian-showing')) {
-          document.getElementById('btn-darian-showing').style.display = 'none';
+        if (document.getElementById('btn-kyla-showing')) {
+          document.getElementById('btn-kyla-showing').style.display = 'none';
         }
       } else {
         var p = properties[id];
         bannerName.textContent = p.address;
         bannerSpecs.textContent = p.community + " · " + p.specs + " · Est. Taxes: $" + p.monthlyTax + "/mo";
         priceSlider.value = p.price;
-        if (document.getElementById('btn-darian-showing')) {
-          document.getElementById('btn-darian-showing').style.display = 'inline-block';
+        if (document.getElementById('btn-kyla-showing')) {
+          document.getElementById('btn-kyla-showing').style.display = 'inline-block';
         }
       }
 
@@ -1580,7 +1382,7 @@
       document.getElementById('down-mode-label').textContent = mode === 'pct' ? '%' : '$';
 
       var slider = document.getElementById('slider-down');
-      var price = parseFloat(document.getElementById('slider-price').value) || 359000;
+      var price = parseFloat(document.getElementById('slider-price').value) || 540000;
 
       if (mode === 'pct') {
         slider.min = "5";
@@ -1614,7 +1416,7 @@
 
     function runHubCalc() {
       var priceSlider = document.getElementById('slider-price');
-      var price = parseFloat(priceSlider.value) || 359000;
+      var price = parseFloat(priceSlider.value) || 540000;
       document.getElementById('calc-price-disp').textContent = "$" + price.toLocaleString();
 
       if (currentSelection === 'custom') {
@@ -1651,7 +1453,7 @@
             document.getElementById('amort-warning').style.display = 'block';
             tempAmortYears = 25;
             if (downPct >= 15) cmhcPct = 0.0280;
-            else if (downPct >= 10) cmhcPct = 0.0310;
+            else if (downPct >= 10) cmhcPct = 0.0420;
             else cmhcPct = 0.0400;
           } else {
             document.getElementById('amort-warning').style.display = 'none';
@@ -1664,7 +1466,7 @@
           document.getElementById('amort-warning').style.display = 'none';
           tempAmortYears = 25;
           if (downPct >= 15) cmhcPct = 0.0280;
-          else if (downPct >= 10) cmhcPct = 0.0310;
+          else if (downPct >= 10) cmhcPct = 0.0420;
           else cmhcPct = 0.0400;
         }
       } else {
@@ -1681,8 +1483,8 @@
       var monthlyPayment = totalLoan * (monthlyRate * Math.pow(1 + monthlyRate, n)) / (Math.pow(1 + monthlyRate, n) - 1);
 
       // Taxes based on selection
-      var monthlyTax = 214;
-      if (currentSelection === 2) monthlyTax = 310;
+      var monthlyTax = 290;
+      if (currentSelection === 2) monthlyTax = 420;
       else if (currentSelection === 'custom') monthlyTax = Math.round(price * 0.0055 / 12);
 
       var totalMonthly = monthlyPayment + monthlyTax;
@@ -1715,7 +1517,7 @@
       var propertyAddress = document.getElementById('calc-focus-name').textContent || '';
       
       var leadData = {
-        lead_type: 'realtor_hub_darian',
+        lead_type: 'realtor_hub_kyla',
         full_name: name,
         email: email,
         phone: phone,
@@ -1723,7 +1525,7 @@
         savings_available: "$" + parseFloat(down).toLocaleString(),
         scenario_notes: "Calculated " + propertyAddress + " with " + down + "% down at " + rate + "%. Monthly estimate: " + monthly,
         province: 'Alberta',
-        source_cta: 'Darian Hub Inquiry Card',
+        source_cta: 'Kyla Hub Inquiry Card',
         submittedAt: new Date().toISOString()
       };
       
