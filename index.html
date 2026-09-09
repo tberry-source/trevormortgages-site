@@ -1505,7 +1505,6 @@
     
 
 
-    
     /* =========================================================================
        MASTER MOBILE OPTIMIZATIONS (FIXES MARGINS, HEADERS, GRID ALIGNMENT & SCROLL)
        ========================================================================= */
@@ -1515,10 +1514,7 @@
       .principle-card,
       .lane-card,
       .pill-card,
-      .phase-card,
-      .calc-card,
-      .option-card,
-      .team-card {
+      .phase-card {
         margin-bottom: 1.5rem !important;
         width: 100% !important;
         box-sizing: border-box !important;
@@ -1528,9 +1524,7 @@
       .principle-card:last-child,
       .lane-card:last-child,
       .pill-card:last-child,
-      .phase-card:last-child,
-      .option-card:last-child,
-      .team-card:last-child {
+      .phase-card:last-child {
         margin-bottom: 0 !important;
       }
 
@@ -1540,7 +1534,7 @@
         flex-direction: column !important;
         gap: 2rem !important;
         align-items: stretch !important;
-        text-align: left !important;
+        text-align: center !important;
       }
 
       /* Force body to prevent horizontal overflow/scrolling completely */
@@ -1617,9 +1611,9 @@
         display: inline-block !important;
       }
 
-      /* Section Title Alignments - Centered for Balanced Reading */
+      /* Section Title Alignments - Left-Aligned for Natural Reading */
       .section-title-wrap {
-        text-align: center !important;
+        text-align: left !important;
         margin-bottom: 2rem !important;
         padding: 0 !important;
       }
@@ -1635,10 +1629,40 @@
         margin: 0 auto !important;
       }
 
+      /* Hero Content Spacing on Mobile */
+      .hero {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+      }
+      .hero h1 {
+        font-size: 1.85rem !important;
+        line-height: 1.25 !important;
+        text-align: center !important;
+      }
+      .hero p.lead {
+        font-size: 0.98rem !important;
+        line-height: 1.55 !important;
+        text-align: left !important;
+        margin-bottom: 1.5rem !important;
+      }
+      .hero-actions {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.75rem !important;
+        width: 100% !important;
+      }
+      .hero-actions .btn {
+        width: 100% !important;
+      }
+      .hero-points {
+        gap: 1.2rem !important;
+        justify-content: space-between !important;
+      }
+
       /* Subpage Hero and Titles Mobile Formatting */
       .subpage-hero {
-        padding-top: 2.2rem !important;
-        padding-bottom: 2rem !important;
+        padding-top: 2rem !important;
+        padding-bottom: 1.8rem !important;
         text-align: center !important;
       }
       .subpage-hero h1 {
@@ -1656,54 +1680,288 @@
       /* Stack Grids cleanly into 1 Column with standard borders and margin safety */
       .principles-grid, 
       .lanes-grid, 
-      .feature-grid-2,
-      .property-cards-grid,
-      .team-cards-grid,
-      .calc-grid,
+      .feature-grid-2, 
+      .feature-grid-3, 
+      .phases-grid,
+      .partners-grid,
+      .footer-inner, 
+      .pill-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.2rem !important;
+        width: 100% !important;
+      }
+
+      /* Stacking standard cards and adding clean inner margins */
+      .principle-card, 
+      .lane-card, 
+      .feature-box, 
+      .pill-card {
+        padding: 1.5rem 1.25rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      .lane-photo-header {
+        height: 150px !important;
+      }
+
+      /* Partner & Ad Banners stack on mobile with margin insets */
+      .partner-banner {
+        grid-template-columns: 1fr !important;
+        padding: 1.5rem 1.25rem !important;
+        gap: 1.5rem !important;
+        margin-top: 2rem !important;
+      }
+      .partner-cta-box {
+        width: 100% !important;
+        align-items: center !important;
+      }
+      .partner-cta-box .btn {
+        width: 100% !important;
+      }
+
+      .cta-banner-box {
+        padding: 1.8rem 1.25rem !important;
+        margin-top: 2rem !important;
+        border-radius: var(--radius) !important;
+      }
+      .cta-banner-box h3 {
+        font-size: 1.45rem !important;
+        line-height: 1.3 !important;
+      }
+      .cta-banner-box p {
+        font-size: 0.92rem !important;
+        margin-bottom: 1.5rem !important;
+      }
+
+      /* Mobile Calculator Optimization - Vertical Stacking & Full-Width Inputs */
+      .calc-grid, 
+      .calc-layout-grid, 
       .calc-card-grid {
         grid-template-columns: 1fr !important;
         gap: 1.5rem !important;
+        width: 100% !important;
       }
 
-      /* Fix the CPA classifier grid to prevent horizontal overflow */
-      #cpa-classifier-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
+      .calc-box-wrap, 
+      .calc-card, 
+      .calc-card-container {
+        padding: 1.5rem 1.25rem !important;
+        margin: 1.5rem 0 !important;
+        border-radius: var(--radius) !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
       }
 
-      /* Mobile styling for inner card padding & stacked forms */
-      .classifier-card-container {
-        padding: 1.25rem !important;
-      }
-      .form-grid-2,
-      .form-row-2 {
-        grid-template-columns: 1fr !important;
-        gap: 0.8rem !important;
+      .calc-inputs, 
+      .calc-input-block, 
+      .calc-left-inputs {
+        padding: 0 !important;
+        gap: 1.2rem !important;
+        width: 100% !important;
       }
 
-      /* Align the top strip text properly on phone widths */
-      .top-strip-inner {
+      .calc-results, 
+      .calc-results-box, 
+      .calc-right-results {
+        padding: 1.5rem 1.25rem !important;
+        border-radius: var(--radius) !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      .calc-metric-num, 
+      .metric-bignum, 
+      .result-main-num {
+        font-size: 2.2rem !important;
+      }
+
+      .calc-breakdown-row, 
+      .breakdown-row, 
+      .calc-output-row {
+        font-size: 0.85rem !important;
+        padding: 0.5rem 0 !important;
+      }
+
+      .rate-input-box {
+        width: 100% !important;
+      }
+      .rate-input-box input {
+        width: 100% !important;
+      }
+
+      /* Sliding / Stacking Toggle buttons for Sliders on Mobile */
+      .toggle-row-group {
         flex-direction: column !important;
-        text-align: center !important;
         gap: 0.4rem !important;
-        padding: 0 1rem !important;
       }
-      .top-strip-inner span:last-child {
-        display: none !important; /* Hide secondary text to save space */
-      }
-      
-      /* Scale Darian listings contact card cleanly on phone layouts */
-      .micro-team-strip {
-        flex-direction: column !important;
-        align-items: center !important;
+      .toggle-pill-btn, .calc-toggle-btn {
+        width: 100% !important;
         text-align: center !important;
+        padding: 0.6rem !important;
+      }
+
+      /* Contact Form Optimization on Mobile */
+      .contact-box-wrap {
+        padding: 1.5rem 1.25rem !important;
+      }
+      .contact-form-grid {
+        grid-template-columns: 1fr !important;
         gap: 1rem !important;
       }
-      .strip-divider {
+
+      /* Modal Optimization on Mobile */
+      .modal-backdrop {
+        overflow-y: auto !important;
+      }
+      .modal-dialog {
+        max-width: 100% !important;
+        margin: 0 !important;
+        border-radius: var(--radius) !important;
+        max-height: calc(100vh - 2.4rem) !important;
+        display: flex !important;
+        flex-direction: column !important;
+      }
+      .modal-body {
+        padding: 1.2rem !important;
+        overflow-y: auto !important;
+        flex-grow: 1 !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+
+      /* Centering Footer elements properly */
+      footer {
+        padding-top: 3rem !important;
+        padding-bottom: 2rem !important;
+      }
+      .footer-main {
+        text-align: left !important;
+        margin-bottom: 1.5rem !important;
+      }
+      .footer-links {
+        text-align: left !important;
+        margin-bottom: 1.5rem !important;
+      }
+      .brokerage-lockup-row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 1.2rem !important;
+      }
+      .brokerage-brand-badge {
+        align-self: flex-start !important;
+      }
+      .brokerage-details, .legal-disclaimer {
+        text-align: left !important;
+        font-size: 0.78rem !important;
+      }
+    
+      /* Surgical Mobile Fixes for Advisor Profile Card & Photo Area */
+      .profile-card {
+        max-width: 100% !important;
+        margin: 1.5rem 0 0 0 !important;
+        padding: 1.25rem !important;
+        display: flex !important;
+        flex-direction: row !important; /* Elegant row-based layout instead of giant vertical box */
+        align-items: center !important;
+        gap: 1.25rem !important;
+        text-align: left !important;
+        box-sizing: border-box !important;
+        border-radius: var(--radius) !important;
+        box-shadow: 0 4px 15px rgba(18, 69, 59, 0.05) !important;
+        background: #FFFFFF !important;
+        border: 1px solid var(--border-subtle) !important;
+      }
+      .photo-wrap {
+        width: 76px !important;
+        height: 76px !important;
+        aspect-ratio: 1/1 !important; /* Perfect circular profile picture */
+        border-radius: 50% !important;
+        margin-bottom: 0 !important;
+        margin-right: 0 !important;
+        flex-shrink: 0 !important;
+        overflow: hidden !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: var(--brand-green-light) !important;
+        border: 2px solid var(--border-subtle) !important;
+      }
+      .photo-wrap img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center top !important;
+        border-radius: 50% !important;
+        display: block !important;
+      }
+      .profile-info {
+        text-align: left !important;
+        margin-top: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+      }
+      .profile-info h3 {
+        font-size: 1.15rem !important;
+        font-weight: 800 !important;
+        color: var(--text-main) !important;
+        margin: 0 0 0.2rem 0 !important;
+        line-height: 1.2 !important;
+      }
+      .profile-role {
+        font-size: 0.82rem !important;
+        font-weight: 600 !important;
+        color: var(--brand-green) !important;
+        margin: 0 !important;
+        line-height: 1.3 !important;
+      }
+      .avatar-fallback {
+        width: 76px !important;
+        height: 76px !important;
+        border-radius: 50% !important;
+        font-size: 1.5rem !important;
+        background: var(--brand-green) !important;
+        color: #FFFFFF !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-weight: 800 !important;
+      }
+}
+    
+
+    /* Premium Mobile Header Scroll Optimization */
+    @media (max-width: 1024px) {
+      .nav-inner {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.6rem !important;
+        padding: 0.8rem 1rem !important;
+      }
+      nav.nav-links {
+        width: 100% !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        gap: 1.1rem !important;
+        padding-bottom: 0.4rem !important;
+        display: flex !important;
+        justify-content: flex-start !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+      nav.nav-links::-webkit-scrollbar {
         display: none !important;
       }
+      nav.nav-links a {
+        font-size: 0.88rem !important;
+        padding: 0.2rem 0 !important;
+        display: inline-block !important;
+      }
+      .nav-inner > div:last-child {
+        display: none !important; /* Hide CTA button on mobile header to preserve vital space */
+      }
     }
-</style>
+    
+  </style>
 
 </head>
 <body>

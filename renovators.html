@@ -536,90 +536,109 @@
     
   
     /* =========================================================================
-       MASTER MOBILE OPTIMIZATIONS (FIXES MARGINS, HEADERS, GRID ALIGNMENT & SCROLL)
+       MASTER MOBILE RESPONSIVE FIXES (PERFECT CENTERING & ZERO OVERFLOW)
        ========================================================================= */
     @media (max-width: 1024px) {
-      /* Spacing between cards/bubbles on mobile to prevent touching */
-      .feature-box,
-      .principle-card,
-      .lane-card,
-      .pill-card,
-      .phase-card,
-      .calc-card,
-      .option-card,
-      .team-card {
-        margin-bottom: 1.5rem !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-      }
-      /* Remove bottom margin on the last item to prevent extra page-bottom gap */
-      .feature-box:last-child,
-      .principle-card:last-child,
-      .lane-card:last-child,
-      .pill-card:last-child,
-      .phase-card:last-child,
-      .option-card:last-child,
-      .team-card:last-child {
-        margin-bottom: 0 !important;
-      }
-
-      /* Unified Grid-to-Flex stack for main Hero section on mobile */
-      .hero-container {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 2rem !important;
-        align-items: stretch !important;
-        text-align: left !important;
-      }
-
-      /* Force body to prevent horizontal overflow/scrolling completely */
-      body, html {
+      html, body {
         overflow-x: hidden !important;
-        position: relative;
-        width: 100%;
-        margin: 0;
-        padding: 0;
+        max-width: 100vw !important;
+        width: 100% !important;
+        position: relative !important;
+        margin: 0 !important;
+        padding: 0 !important;
       }
-
-      /* Unified Container Margins - No Elements Touches the Edge! */
-      .hero, 
-      .principles-section, 
-      .lanes-section, 
-      .contact-section, 
-      .subpage-hero, 
-      .content-section, 
-      footer {
+      
+      /* Global Layout & Padding Reset */
+      .hero, .subpage-hero, .content-section, .principles-section, .lanes-section, .contact-section, footer {
         padding-left: 1.25rem !important;
         padding-right: 1.25rem !important;
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
         box-sizing: border-box !important;
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
       }
-
-      .hero-container, 
-      .subpage-hero-container, 
-      .footer-inner, 
-      .brokerage-compliance-box {
+      
+      .hero-container, .subpage-hero-container, .footer-inner, .brokerage-compliance-box {
         padding-left: 0 !important;
         padding-right: 0 !important;
         width: 100% !important;
+        max-width: 100% !important;
         box-sizing: border-box !important;
       }
 
-      /* Header Menu - Compact, Wrapped & Centered (NO HORIZONTAL SWIPING!) */
+      /* Headings & Text Centering */
+      .subpage-hero {
+        text-align: center !important;
+      }
+      .subpage-hero h1 {
+        font-size: 1.8rem !important;
+        line-height: 1.25 !important;
+        text-align: center !important;
+      }
+      .subpage-hero p.lead {
+        font-size: 0.96rem !important;
+        line-height: 1.55 !important;
+        text-align: center !important;
+        margin: 0 auto 1.5rem !important;
+      }
+      .section-title-wrap {
+        text-align: center !important;
+        margin-bottom: 2rem !important;
+        padding: 0 !important;
+      }
+      .section-title-wrap h2 {
+        font-size: 1.75rem !important;
+        text-align: center !important;
+        line-height: 1.25 !important;
+      }
+      .section-title-wrap p {
+        font-size: 0.95rem !important;
+        text-align: center !important;
+        line-height: 1.5 !important;
+        margin: 0 auto !important;
+      }
+
+      /* Reset inline min-widths, span 2, 2-column grids & heavy paddings on mobile */
+      [style*="min-width"] {
+        min-width: 0 !important;
+      }
+      [style*="grid-column: span 2"] {
+        grid-column: span 1 !important;
+      }
+      [style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+      }
+      [style*="padding: 2.5rem"], [style*="padding: 3rem"], [style*="padding: 2.2rem"] {
+        padding: 1.25rem !important;
+      }
+      
+      .feature-grid-2, .feature-grid-3, .property-cards-grid, .calc-card-grid, .team-cards-grid, .inquiry-form-grid, .partners-grid, .planner-tool-container, .option-grid, .scenario-grid, #cpa-classifier-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+      }
+
+      .feature-box, .principle-card, .lane-card, .pill-card, .phase-card, .cta-banner-box, .calc-card-wrap, .inquiry-card, .team-card {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      
+      /* Navigation Header */
       .nav-inner {
         flex-direction: column !important;
         align-items: center !important;
-        gap: 0.8rem !important;
+        gap: 0.6rem !important;
         padding: 0.8rem 0 !important;
         text-align: center !important;
       }
       .brand-link {
         align-items: center !important;
         text-align: center !important;
-        margin-bottom: 0.2rem !important;
       }
       .brand-name {
         font-size: 1.15rem !important;
-        letter-spacing: 0.02em !important;
         text-align: center !important;
       }
       .brand-meta {
@@ -627,112 +646,24 @@
         text-align: center !important;
       }
       .nav-inner > div:last-child {
-        display: none !important; /* Hide the desk cta button */
+        display: none !important;
       }
       nav.nav-links {
         width: 100% !important;
         display: flex !important;
         flex-wrap: wrap !important;
         justify-content: center !important;
-        gap: 0.5rem 1rem !important;
+        gap: 0.4rem 0.8rem !important;
         padding: 0.2rem 0 !important;
-        overflow: visible !important;
-        white-space: normal !important;
       }
       nav.nav-links a {
         font-size: 0.82rem !important;
         font-weight: 700 !important;
-        padding: 0.25rem 0.4rem !important;
-        display: inline-block !important;
-      }
-
-      /* Section Title Alignments - Centered for Balanced Reading */
-      .section-title-wrap {
-        text-align: center !important;
-        margin-bottom: 2rem !important;
-        padding: 0 !important;
-      }
-      .section-title-wrap h2 {
-        font-size: 1.8rem !important;
-        text-align: center !important;
-        line-height: 1.25 !important;
-      }
-      .section-title-wrap p {
-        font-size: 0.96rem !important;
-        text-align: center !important;
-        line-height: 1.5 !important;
-        margin: 0 auto !important;
-      }
-
-      /* Subpage Hero and Titles Mobile Formatting */
-      .subpage-hero {
-        padding-top: 2.2rem !important;
-        padding-bottom: 2rem !important;
-        text-align: center !important;
-      }
-      .subpage-hero h1 {
-        font-size: 1.85rem !important;
-        line-height: 1.25 !important;
-        text-align: center !important;
-      }
-      .subpage-hero p.lead {
-        font-size: 0.98rem !important;
-        line-height: 1.55 !important;
-        text-align: center !important;
-        margin: 0 auto 1.5rem !important;
-      }
-
-      /* Stack Grids cleanly into 1 Column with standard borders and margin safety */
-      .principles-grid, 
-      .lanes-grid, 
-      .feature-grid-2,
-      .property-cards-grid,
-      .team-cards-grid,
-      .calc-grid,
-      .calc-card-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
-      }
-
-      /* Fix the CPA classifier grid to prevent horizontal overflow */
-      #cpa-classifier-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
-      }
-
-      /* Mobile styling for inner card padding & stacked forms */
-      .classifier-card-container {
-        padding: 1.25rem !important;
-      }
-      .form-grid-2,
-      .form-row-2 {
-        grid-template-columns: 1fr !important;
-        gap: 0.8rem !important;
-      }
-
-      /* Align the top strip text properly on phone widths */
-      .top-strip-inner {
-        flex-direction: column !important;
-        text-align: center !important;
-        gap: 0.4rem !important;
-        padding: 0 1rem !important;
-      }
-      .top-strip-inner span:last-child {
-        display: none !important; /* Hide secondary text to save space */
-      }
-      
-      /* Scale Darian listings contact card cleanly on phone layouts */
-      .micro-team-strip {
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-        gap: 1rem !important;
-      }
-      .strip-divider {
-        display: none !important;
+        padding: 0.2rem 0.3rem !important;
       }
     }
-</style>
+
+  </style>
 </head>
 <body>
 
@@ -747,7 +678,7 @@
   <!-- Header Navigation -->
   <header>
     <div class="nav-inner">
-      <a href="index.html" class="brand-link">
+      <a href="/" class="brand-link">
         <span class="brand-name">TREVOR BERRY</span>
         <span class="brand-meta">Mortgage Associate</span>
       </a>
@@ -951,7 +882,7 @@
       <div style="background: #FFFFFF; border: 1.5px solid var(--brand-green); border-radius: var(--radius-lg); padding: 2.5rem 3rem; box-shadow: var(--shadow-card); position: relative; overflow: hidden;">
         <div style="position: absolute; top: 0; left: 0; width: 6px; height: 100%; background: var(--accent-mustard);"></div>
         <div style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
-          <div style="flex: 1.3; min-width: 300px;">
+          <div style="flex: 1; min-width: 0;">
             <span style="font-size: 0.8rem; font-weight: 800; color: var(--accent-mustard); text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.4rem;">Co-Branded Sales Assets</span>
             <h3 style="font-size: 1.6rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.8rem;">I Will Build Co-Branded Project Financing Sheets for Your Bids</h3>
             <p style="font-size: 0.98rem; color: var(--text-body); line-height: 1.65; margin-bottom: 1rem;">
@@ -963,7 +894,7 @@
               <li>Absolutely zero cost or liability to your construction business</li>
             </ul>
           </div>
-          <div style="flex: 0.7; min-width: 250px; background: var(--bg-subtle); padding: 2rem; border-radius: var(--radius); border: 1px solid var(--border-subtle); text-align: center;">
+          <div style="flex: 0.7; min-width: 0; background: var(--bg-subtle); padding: 2rem; border-radius: var(--radius); border: 1px solid var(--border-subtle); text-align: center;">
             <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📄</div>
             <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--brand-green); margin-bottom: 0.5rem;">Request Custom Sheet</h4>
             <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">Get a co-branded financing sample designed for your company.</p>
