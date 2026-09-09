@@ -1961,7 +1961,329 @@
       }
     }
     
+  
+    /* =========================================================================
+       MASTER MOBILE OPTIMIZATIONS (UNIFIED MOBILE FIXES - VERSION 27)
+       ========================================================================= */
+    @media (max-width: 1024px) {
+      /* Force body to prevent horizontal overflow/scrolling completely */
+      body, html {
+        overflow-x: hidden !important;
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Unified Container Margins - No Elements Touch the Edge! */
+      .hero, 
+      .principles-section, 
+      .lanes-section, 
+      .contact-section, 
+      .subpage-hero, 
+      .content-section, 
+      footer {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+        box-sizing: border-box !important;
+      }
+
+      .hero-container, 
+      .subpage-hero-container, 
+      .footer-inner, 
+      .brokerage-compliance-box {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      /* Center headers symmetrically on mobile */
+      .subpage-hero {
+        padding-top: 2.2rem !important;
+        padding-bottom: 2rem !important;
+        text-align: center !important;
+      }
+      .subpage-hero h1 {
+        font-size: 1.85rem !important;
+        line-height: 1.25 !important;
+        text-align: center !important;
+      }
+      .subpage-hero p.lead {
+        font-size: 0.98rem !important;
+        line-height: 1.55 !important;
+        text-align: center !important;
+        margin: 0 auto 1.5rem !important;
+      }
+      .eyebrow-tag {
+        display: inline-flex !important;
+        justify-content: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+      }
+
+      /* Section Title Alignments - Centered for Symmetrical Mobile Layout */
+      .section-title-wrap {
+        text-align: center !important;
+        margin-bottom: 2rem !important;
+        padding: 0 !important;
+      }
+      .section-title-wrap h2 {
+        font-size: 1.8rem !important;
+        text-align: center !important;
+        line-height: 1.25 !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      .section-title-wrap p {
+        font-size: 0.96rem !important;
+        text-align: center !important;
+        line-height: 1.5 !important;
+        margin: 0 auto !important;
+      }
+      .section-eyebrow {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+      }
+
+      /* Header Menu - Compact, Wrapped & Centered (NO HORIZONTAL SWIPING!) */
+      .nav-inner {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.8rem !important;
+        padding: 0.8rem 0 !important;
+        text-align: center !important;
+      }
+      .brand-link {
+        align-items: center !important;
+        text-align: center !important;
+        margin-bottom: 0.2rem !important;
+      }
+      .brand-name {
+        font-size: 1.15rem !important;
+        letter-spacing: 0.02em !important;
+        text-align: center !important;
+      }
+      .brand-meta {
+        font-size: 0.72rem !important;
+        text-align: center !important;
+      }
+      .nav-inner > div:last-child {
+        display: none !important; /* Hide desktop CTA button */
+      }
+      nav.nav-links {
+        width: 100% !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 0.5rem 1rem !important;
+        padding: 0.2rem 0 !important;
+        overflow: visible !important;
+        white-space: normal !important;
+      }
+      nav.nav-links a {
+        font-size: 0.82rem !important;
+        font-weight: 700 !important;
+        padding: 0.25rem 0.4rem !important;
+        display: inline-block !important;
+      }
+
+      /* Stack grids and elements into clean single-column layout */
+      .feature-grid-2,
+      .footer-inner,
+      .principles-grid,
+      .lanes-grid,
+      .team-cards-grid,
+      .inquiry-form-grid,
+      .property-cards-grid,
+      .classifier-container,
+      #cpa-classifier-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+      }
+      .feature-box,
+      .principle-card,
+      .lane-card,
+      .pill-card,
+      .phase-card,
+      .calc-card,
+      .option-card,
+      .team-card {
+        margin-bottom: 1.5rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        grid-column: span 1 !important; /* Override double-wide grid cells on mobile */
+      }
+      .feature-box:last-child,
+      .principle-card:last-child,
+      .lane-card:last-child,
+      .pill-card:last-child,
+      .phase-card:last-child {
+        margin-bottom: 0 !important;
+      }
+
+      /* Dynamic form stacking (e.g. CPA classifier and inputs) */
+      .form-grid-2,
+      .form-row-2,
+      [style*="display: grid; grid-template-columns: repeat(2, 1fr)"],
+      [style*="display: grid; grid-template-columns: 1fr 1fr"],
+      [style*="display: flex; gap: 0.5rem"] {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.8rem !important;
+      }
+      
+      /* Padding adjustments to prevent text squishing in cards */
+      .classifier-card-container,
+      [style*="padding: 2.5rem"],
+      [style*="padding: 2rem"] {
+        padding: 1.25rem !important;
+      }
+
+      /* Sticky result panel reset */
+      .classifier-result-wrap {
+        position: static !important;
+      }
+    }
+
+    
+    /* =========================================================================
+       MASTER VERSION 34 MOBILE RESPONSIVE & GRID OVERRIDE
+       ========================================================================= */
+    @media (max-width: 1024px) {
+      html, body {
+        width: 100% !important;
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+      }
+      
+      /* Mobile Header Navigation - 3x2 Symmetrical Grid */
+      .nav-inner {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.8rem !important;
+        padding: 0.8rem 0 !important;
+        text-align: center !important;
+      }
+      .brand-link {
+        align-items: center !important;
+        text-align: center !important;
+        margin-bottom: 0.2rem !important;
+      }
+      .brand-name {
+        font-size: 1.15rem !important;
+        letter-spacing: 0.02em !important;
+        text-align: center !important;
+      }
+      .brand-meta {
+        font-size: 0.72rem !important;
+        text-align: center !important;
+      }
+      .nav-inner > div:last-child {
+        display: none !important;
+      }
+      nav.nav-links {
+        width: 100% !important;
+        max-width: 380px !important;
+        margin: 0 auto !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 0.4rem 0.5rem !important;
+        padding: 0.2rem 0 !important;
+        justify-items: center !important;
+        align-items: center !important;
+        overflow: visible !important;
+        white-space: normal !important;
+      }
+      nav.nav-links a {
+        font-size: 0.82rem !important;
+        font-weight: 700 !important;
+        padding: 0.3rem 0.2rem !important;
+        display: block !important;
+        text-align: center !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        white-space: nowrap !important;
+      }
+
+      /* Centered Subpage Heroes and Section Titles */
+      .subpage-hero {
+        padding-top: 2rem !important;
+        padding-bottom: 1.8rem !important;
+        text-align: center !important;
+      }
+      .subpage-hero h1 {
+        font-size: 1.85rem !important;
+        line-height: 1.25 !important;
+        text-align: center !important;
+      }
+      .subpage-hero p.lead {
+        font-size: 0.98rem !important;
+        line-height: 1.55 !important;
+        text-align: center !important;
+        margin: 0 auto 1.5rem !important;
+      }
+      .section-title-wrap {
+        text-align: center !important;
+        margin-bottom: 2rem !important;
+      }
+      .section-title-wrap h2 {
+        text-align: center !important;
+      }
+      .section-title-wrap p {
+        text-align: center !important;
+      }
+
+      /* Compact Paddings & Reset Stretched Containers */
+      .content-section, 
+      .hero-container, 
+      .subpage-hero-container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        box-sizing: border-box !important;
+      }
+
+      div[style*="padding: 2.5rem"],
+      div[style*="padding: 2.2rem"],
+      div[style*="padding: 3rem"],
+      div[style*="padding: 2rem"],
+      .feature-box,
+      .calc-card-container,
+      .cta-banner-box {
+        padding: 1.25rem 1rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      div[style*="min-width"] {
+        min-width: 0 !important;
+        width: 100% !important;
+      }
+
+      div[style*="display: flex"],
+      div[style*="display:grid"],
+      div[style*="display: grid"] {
+        grid-template-columns: 1fr !important;
+        flex-direction: column !important;
+        gap: 1.2rem !important;
+      }
+
+      /* Grid Column Spans Reset */
+      .feature-box[style*="span 2"],
+      div[style*="span 2"],
+      .option-card[style*="span 2"] {
+        grid-column: span 1 !important;
+      }
+    }
   </style>
+
 
 </head>
 <body>
@@ -1983,7 +2305,7 @@
       </a>
 
       <nav class="nav-links">
-        <a href="index.html" class="active" onclick="handleHeaderNav('home', event)">Home</a>
+        <a href="index.html#home" class="active" onclick="handleHeaderNav('home', event)">Home</a>
         <a href="index.html#buying" onclick="handleHeaderNav('buying', event)">Buying</a>
         <a href="index.html#homeowners" onclick="handleHeaderNav('homeowners', event)">Homeowners</a>
         <a href="index.html#alternative" onclick="handleHeaderNav('alternative', event)">Alternative</a>
@@ -2071,7 +2393,7 @@
           <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
         <h3>Avoiding Costly Bank Penalties</h3>
-        <p>If life changes and you need to break your mortgage early, big bank penalty calculations can cost tens of thousands. I help place you with lenders that use fairer formulas.</p>
+        <p>If life changes and you need to break ymy mortgage early, big bank penalty calculations can cost tens of thousands. I help place you with lenders that use fairer formulas.</p>
       </div>
 
       <div class="principle-card">
@@ -2180,11 +2502,11 @@
         </div>
         <h1>Secure Your Financing & <span class="accent">Shop for Your New Home with Confidence</span></h1>
         <p class="lead">
-          Don't let rising rates or complex lender rules stall your home purchase. We secure a 120-day rate hold, map out your down payment, and explore custom options (including our Buy.ca program and cash incentives) to ensure zero closing-day surprises.
+          Don't let rising rates or complex lender rules stall your home purchase. I secure a 120-day rate hold, map out your down payment, and explore custom options (including my Buy.ca program and cash incentives) to ensure zero closing-day surprises.
         </p>
         <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
           <button class="btn btn-primary" style="font-size: 0.95rem;" onclick="document.getElementById('buying-calculator').scrollIntoView({ behavior: 'smooth' })">Calculate Your Purchase Numbers ↓</button>
-          <button type="button" class="btn btn-secondary" style="border: 2px solid var(--brand-green); background: #FFFFFF; color: var(--brand-green);" onclick="openSnapshotModal('Pre-Approval Consultation')">Get Your Buyer Snapshot →</button>
+          <button type="button" class="btn btn-secondary" style="border: 2px solid var(--brand-green); background: #FFFFFF; color: var(--brand-green);" onclick="openSnapshotModal('Pre-Approval Consultation')">Get Ymy Buyer Snapshot →</button>
         </div>
       </div>
     </section>
@@ -2195,7 +2517,7 @@
           <span class="tag">Rate Protection</span>
           <h3>120-Day Fixed Rate Holds</h3>
           <p>
-            Interest rates can fluctuate while you shop. We secure a written 120-day rate lock across major monolines and banks, giving you complete budget protection and peace of mind.
+            Interest rates can fluctuate while you shop. I secure a written 120-day rate lock across major monolines and banks, giving you complete budget protection and peace of mind.
           </p>
           <ul class="lane-bullets">
             <li>Lock in today's best rates before you start shopping</li>
@@ -2208,7 +2530,7 @@
           <span class="tag">Down Payment Solutions</span>
           <h3>Down Payment Programs, Buy.ca &amp; Government Incentives</h3>
           <p>
-            Struggling with cash-to-close? We help you explore specialized programs like the <a href="https://myperch.io/programs/down-payment-bonus/" target="_blank" rel="noopener" style="color: var(--brand-green); font-weight: 700; text-decoration: underline;">Perch Down Payment Bonus Program</a>, the Buy.ca 1.5% down payment cash bonus, gifted down payments, the Federal First-Time Home Buyer Incentive, and local housing grants.
+            Struggling with cash-to-close? I help you explore specialized programs like the <a href="https://myperch.io/programs/down-payment-bonus/" target="_blank" rel="noopener" style="color: var(--brand-green); font-weight: 700; text-decoration: underline;">Perch Down Payment Bonus Program</a>, the Buy.ca 1.5% down payment cash bonus, gifted down payments, the Federal First-Time Home Buyer Incentive, and local housing grants.
           </p>
           <ul class="lane-bullets">
             <li>Structured gift letter support from family members</li>
@@ -2221,7 +2543,7 @@
           <span class="tag">Unbiased Shopping</span>
           <h3>We Shop 40+ Lenders For You</h3>
           <p>
-            Standard retail banks can only sell you their own financial products. We shop the entire Canadian wholesale market—prime, alternative, and private—to find your perfect fit.
+            Standard retail banks can only sell you their own financial products. I shop the entire Canadian wholesale market—prime, alternative, and private—to find your perfect fit.
           </p>
           <ul class="lane-bullets">
             <li>Access monolines with lower penalty calculations</li>
@@ -2389,7 +2711,7 @@
     <div class="feature-grid-2">
       <div class="feature-box">
         <h3>Consolidating Credit Cards & Car Loans</h3>
-        <p>It's common to carry an $800/mo vehicle loan at 8.5% and $15,000 on credit cards at 19.99%. By rolling high-interest consumer debt into your mortgage equity, homeowners frequently reduce monthly obligations by $800 to $1,500+ every month.</p>
+        <p>It's common to carry an $800/mo vehicle loan at 8.5% and $15,000 on credit cards at 19.99%. By rolling high-interest consumer debt into ymy mortgage equity, homeowners frequently reduce monthly obligations by $800 to $1,500+ every month.</p>
         <ul class="lane-bullets">
           <li>One simple monthly payment instead of juggling multiple high-rate bills</li>
           <li>Dramatically cuts total non-deductible interest paid over time</li>
@@ -2399,7 +2721,7 @@
 
       <div class="feature-box">
         <h3>Preserving Your Low-Rate First Mortgage</h3>
-        <p>If you have an existing first mortgage locked in at a low fixed rate (such as 2% to 3%), breaking it to refinance triggers massive bank penalties and forfeits your rate. Instead, we structure secondary mortgage solutions or customized equity facilities that leave your primary low-rate mortgage completely untouched.</p>
+        <p>If you have an existing first mortgage locked in at a low fixed rate (such as 2% to 3%), breaking it to refinance triggers massive bank penalties and forfeits your rate. Instead, I structure secondary mortgage solutions or customized equity facilities that leave your primary low-rate mortgage completely untouched.</p>
         <ul class="lane-bullets">
           <li>Zero bank prepayment penalties on your existing first mortgage</li>
           <li>Maintain your low locked-in rate on your primary principal balance</li>
@@ -2561,7 +2883,7 @@
     <div class="feature-grid-2">
       <div class="feature-box">
         <h3>Self-Employed & Business Owners</h3>
-        <p>If you're a contractor, consultant, or business owner, your accountant works hard to maximize legitimate tax write-offs. That's great for your tax bill, but big banks look strictly at your Line 15000 net income and decline your mortgage. I use stated-income and bank statement programs that verify real cash flow.</p>
+        <p>If you're a contractor, consultant, or business owner, your accountant works hard to maximize legitimate tax write-offs. That's great for your tax bill, but big banks look strictly at your Line 15000 net income and decline ymy mortgage. I use stated-income and bank statement programs that verify real cash flow.</p>
         <ul class="lane-bullets">
           <li>Qualify based on 6–12 months of actual business bank deposits</li>
           <li>No need to artificially inflate your taxable income</li>
@@ -2628,7 +2950,7 @@
       </div>
       <h1>Collaborations That Help <span class="accent">Clients & Deals Move Forward</span></h1>
       <p class="lead">
-        I partner with real estate agents, builders, CPAs, renovation companies, and corporate accountants. Together, we provide clients with common-sense financing structures, smooth closings, and specialized lending resources.
+        I partner with real estate agents, builders, CPAs, renovation companies, and corporate accountants. Together, I provide clients with common-sense financing structures, smooth closings, and specialized lending resources.
       </p>
       <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
         <button class="btn btn-primary" onclick="openPartnerModal()">Discuss a Scenario With Trevor →</button>
@@ -2732,7 +3054,7 @@
           <div style="font-size: 0.8rem; font-weight: 800; color: #6678FF; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">Corporate Accountants & Financial Planners</div>
           <h3 style="font-size: 1.35rem; margin-bottom: 0.8rem;">Balance Sheet & Wealth Alignment</h3>
           <p style="font-size: 0.94rem; color: var(--text-body); line-height: 1.6; margin-bottom: 1.2rem;">
-            A mortgage is typically the single largest liability on your client's balance sheet. I collaborate with accountants, bookkeepers, and planners to align debt amortization, liquidity buffers, and interest deductibility with long-term wealth goals.
+            A mortgage is typically the single largest liability on ymy client's balance sheet. I collaborate with accountants, bookkeepers, and planners to align debt amortization, liquidity buffers, and interest deductibility with long-term wealth goals.
           </p>
           <ul class="lane-bullets" style="margin-bottom: 1.5rem;">
             <li>The Smith Manoeuvre & investment tax-deductibility setups</li>
@@ -2963,7 +3285,7 @@
               <div style="font-size: 2.8rem; margin-bottom: 0.8rem;">✅</div>
               <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Snapshot Request Received!</h3>
               <p style="color: var(--text-body); font-size: 0.95rem; line-height: 1.6;">
-                Thanks <strong id="greetingName"></strong>. I'm reviewing your details and will follow up with your custom options shortly.
+                Thanks <strong id="greetingName"></strong>. I'm reviewing your details and will follow up with ymy custom options shortly.
               </p>
               <button type="button" class="btn btn-secondary" style="margin-top: 1.5rem;" onclick="closeSnapshotModal()">Close</button>
             </div>
