@@ -734,6 +734,133 @@
       font-size: 0.75rem;
       line-height: 1.5;
     }
+  
+/* =========================================================================
+   ABSOLUTE MOBILE VIEWPORT LOCK - ZERO HORIZONTAL MOVEMENT / SWAY
+   ========================================================================= */
+*, *::before, *::after {
+  box-sizing: border-box !important;
+}
+
+html {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+/* Strict containment on all container elements */
+header, nav, main, section, footer, form,
+.hub-container, .hub-hero, .picker-section, .calc-card-wrap,
+.inquiry-card, .team-cards-grid, .partner-nav, .hub-footer,
+.subpage-hero, .content-section, .calc-card, .feature-box,
+.property-cards-grid, .calc-card-grid, .inquiry-form-grid,
+.micro-team-strip, .rate-box-row, .breakdown-table, .calc-left-inputs, .calc-right-results {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    position: relative !important;
+  }
+
+  .hub-container,
+  .partner-nav-inner,
+  .hub-footer-inner,
+  .subpage-hero-container {
+    padding-left: 0.85rem !important;
+    padding-right: 0.85rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .hub-hero,
+  .picker-section,
+  .calc-card-wrap,
+  .calc-left-inputs,
+  .calc-right-results,
+  .inquiry-card,
+  .team-card,
+  .prop-card {
+    padding-left: 0.85rem !important;
+    padding-right: 0.85rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .property-cards-grid,
+  .calc-card-grid,
+  .inquiry-form-grid,
+  .team-cards-grid,
+  .feature-grid-2,
+  .feature-grid-3,
+  .calc-layout-grid,
+  .calc-grid {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .calc-left-inputs,
+  .calc-right-results,
+  .prop-card,
+  .team-card,
+  .strip-item,
+  .inquiry-input,
+  .inquiry-btn,
+  .btn-action-gold,
+  .btn-action-outline,
+  .team-contact-btn {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  input[type="range"], .slider-range {
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .micro-team-strip {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 0.6rem !important;
+    padding: 0.8rem 0.85rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .strip-divider {
+    display: none !important;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -753,7 +880,7 @@
         </div>
       </div>
 
-
+      
     </div>
   </header>
 
@@ -762,12 +889,13 @@
     <!-- Clean Hub Hero Header (NO specific address pinned at the top) -->
     <div class="hub-hero">
       <div class="prop-eyebrow">Instant Monthly Payment Estimates</div>
-      <h1 class="hub-title">See What Darian’s Listings Could Cost You Monthly</h1>
+      <h1 class="hub-title">See What Darian’s Listing Could Cost You Monthly</h1>
       <p class="hub-lead">
-        Buying a home isn’t only about whether you can qualify for the mortgage.<br />Sometimes the bigger question is: <strong>How much cash will I actually need upfront and what will I have left after I move in?</strong>
+        Buying a home isn’t only about whether you can qualify for the mortgage.<br />
+        Sometimes the bigger question is: <strong>How much cash will I actually need upfront and what will I have left after I move in?</strong>
       </p>
       <div class="hub-lead-callout">
-        💡 There may be more options than you realize, including different down payment strategies, rate shopping, and ways to structure your mortgage more effectively. Choose one of Darian’s Calgary listings below to see the numbers in about 10 seconds, and let’s figure out how to save you money together.
+        💡 <strong>There may be more options than you realize</strong>, including different down payment strategies, rate shopping, and ways to structure your mortgage more effectively. Choose one of Darian’s Calgary listings below to see the numbers in about 10 seconds, and let’s figure out how to save you money together.
       </div>
 
       <!-- Clean Micro-Team Strip -->
@@ -775,7 +903,7 @@
         <div class="strip-item">
           <div class="strip-badge">🏡</div>
           <div class="strip-text">
-            <strong>Property & Showings:</strong> Darian Stadnyk <a href="sms:5878880024" class="strip-phone">Text 587-888-0024</a>
+            <strong>Property & Showings:</strong> Darian Stadnyk
           </div>
         </div>
         <div class="strip-divider"></div>
@@ -783,7 +911,17 @@
           <div class="strip-badge">📊</div>
           <div class="strip-text">
             <strong>Financing & Pre-Approval:</strong> Trevor Berry 
-            <a href="sms:4038701537" class="strip-phone">Text 403-870-1537</a>
+            <a href="sms:4038701537" class="strip-phone">403-870-1537</a>
+          </div>
+        </div>
+      </div>
+    </div>
+        <div class="strip-divider"></div>
+        <div class="strip-item">
+          <div class="strip-badge">📊</div>
+          <div class="strip-text">
+            <strong>Financing & Pre-Approval:</strong> Trevor Berry 
+            <a href="sms:4038701537" class="strip-phone">403-870-1537</a>
           </div>
         </div>
       </div>
@@ -1010,7 +1148,7 @@
               No credit pull required for an initial review.
             </div>
             <a href="sms:5878880024" class="btn-action-outline" id="btn-darian-showing">
-              Text Darian About a Showing →
+              Call Darian About a Showing →
             </a>
           </div>
         </div>
@@ -1079,6 +1217,39 @@
         <div>
           <a href="sms:4038701537" class="team-contact-btn btn-green-fill" style="width: 100%;">
             Text Trevor: 403-870-1537
+          </a>
+        </div>
+      </div>
+    </div>
+          </div>
+          <p class="team-bio">
+            Helping Calgary home buyers find the right neighborhood, evaluate property condition, and negotiate with confidence. Reach out to schedule a private walkthrough.
+          </p>
+        </div>
+        <div>
+          <a href="sms:5878880024" class="team-contact-btn btn-green-outline" style="width: 100%;">
+            Call or Text Darian: 587-888-0024
+          </a>
+        </div>
+      </div>
+
+      <!-- Trevor Berry -->
+      <div class="team-card">
+        <div>
+          <div class="team-card-top">
+            <div class="team-avatar-initials">TB</div>
+            <div>
+              <div class="team-name">Trevor Berry</div>
+              <div class="team-title">Mortgage Associate · Perch Mortgages</div>
+            </div>
+          </div>
+          <p class="team-bio">
+            Structuring competitive mortgage financing across 40+ Canadian lenders. Pre-approvals, rate holds, and clear purchase math with no broker fee to the borrower for most standard lender-paid purchase mortgages (any applicable fee is fully disclosed before proceeding).
+          </p>
+        </div>
+        <div>
+          <a href="sms:4038701537" class="team-contact-btn btn-green-fill" style="width: 100%;">
+            Call or Text Trevor: 403-870-1537
           </a>
         </div>
       </div>
