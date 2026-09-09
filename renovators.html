@@ -536,9 +536,42 @@
     
   
     /* =========================================================================
-       MASTER MOBILE OPTIMIZATIONS (UNIFIED MOBILE FIXES - VERSION 27)
+       MASTER MOBILE OPTIMIZATIONS (FIXES MARGINS, HEADERS, GRID ALIGNMENT & SCROLL)
        ========================================================================= */
     @media (max-width: 1024px) {
+      /* Spacing between cards/bubbles on mobile to prevent touching */
+      .feature-box,
+      .principle-card,
+      .lane-card,
+      .pill-card,
+      .phase-card,
+      .calc-card,
+      .option-card,
+      .team-card {
+        margin-bottom: 1.5rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      /* Remove bottom margin on the last item to prevent extra page-bottom gap */
+      .feature-box:last-child,
+      .principle-card:last-child,
+      .lane-card:last-child,
+      .pill-card:last-child,
+      .phase-card:last-child,
+      .option-card:last-child,
+      .team-card:last-child {
+        margin-bottom: 0 !important;
+      }
+
+      /* Unified Grid-to-Flex stack for main Hero section on mobile */
+      .hero-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem !important;
+        align-items: stretch !important;
+        text-align: left !important;
+      }
+
       /* Force body to prevent horizontal overflow/scrolling completely */
       body, html {
         overflow-x: hidden !important;
@@ -548,7 +581,7 @@
         padding: 0;
       }
 
-      /* Unified Container Margins - No Elements Touch the Edge! */
+      /* Unified Container Margins - No Elements Touches the Edge! */
       .hero, 
       .principles-section, 
       .lanes-section, 
@@ -569,57 +602,6 @@
         padding-right: 0 !important;
         width: 100% !important;
         box-sizing: border-box !important;
-      }
-
-      /* Center headers symmetrically on mobile */
-      .subpage-hero {
-        padding-top: 2.2rem !important;
-        padding-bottom: 2rem !important;
-        text-align: center !important;
-      }
-      .subpage-hero h1 {
-        font-size: 1.85rem !important;
-        line-height: 1.25 !important;
-        text-align: center !important;
-      }
-      .subpage-hero p.lead {
-        font-size: 0.98rem !important;
-        line-height: 1.55 !important;
-        text-align: center !important;
-        margin: 0 auto 1.5rem !important;
-      }
-      .eyebrow-tag {
-        display: inline-flex !important;
-        justify-content: center !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        text-align: center !important;
-      }
-
-      /* Section Title Alignments - Centered for Symmetrical Mobile Layout */
-      .section-title-wrap {
-        text-align: center !important;
-        margin-bottom: 2rem !important;
-        padding: 0 !important;
-      }
-      .section-title-wrap h2 {
-        font-size: 1.8rem !important;
-        text-align: center !important;
-        line-height: 1.25 !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-      }
-      .section-title-wrap p {
-        font-size: 0.96rem !important;
-        text-align: center !important;
-        line-height: 1.5 !important;
-        margin: 0 auto !important;
-      }
-      .section-eyebrow {
-        text-align: center !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        display: block !important;
       }
 
       /* Header Menu - Compact, Wrapped & Centered (NO HORIZONTAL SWIPING!) */
@@ -645,7 +627,7 @@
         text-align: center !important;
       }
       .nav-inner > div:last-child {
-        display: none !important; /* Hide desktop CTA button */
+        display: none !important; /* Hide the desk cta button */
       }
       nav.nav-links {
         width: 100% !important;
@@ -664,129 +646,28 @@
         display: inline-block !important;
       }
 
-      /* Stack grids and elements into clean single-column layout */
-      .feature-grid-2,
-      .footer-inner,
-      .principles-grid,
-      .lanes-grid,
-      .team-cards-grid,
-      .inquiry-form-grid,
-      .property-cards-grid,
-      .classifier-container,
-      #cpa-classifier-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
-      }
-      .feature-box,
-      .principle-card,
-      .lane-card,
-      .pill-card,
-      .phase-card,
-      .calc-card,
-      .option-card,
-      .team-card {
-        margin-bottom: 1.5rem !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-        grid-column: span 1 !important; /* Override double-wide grid cells on mobile */
-      }
-      .feature-box:last-child,
-      .principle-card:last-child,
-      .lane-card:last-child,
-      .pill-card:last-child,
-      .phase-card:last-child {
-        margin-bottom: 0 !important;
-      }
-
-      /* Dynamic form stacking (e.g. CPA classifier and inputs) */
-      .form-grid-2,
-      .form-row-2,
-      [style*="display: grid; grid-template-columns: repeat(2, 1fr)"],
-      [style*="display: grid; grid-template-columns: 1fr 1fr"],
-      [style*="display: flex; gap: 0.5rem"] {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 0.8rem !important;
-      }
-      
-      /* Padding adjustments to prevent text squishing in cards */
-      .classifier-card-container,
-      [style*="padding: 2.5rem"],
-      [style*="padding: 2rem"] {
-        padding: 1.25rem !important;
-      }
-
-      /* Sticky result panel reset */
-      .classifier-result-wrap {
-        position: static !important;
-      }
-    }
-
-    
-    /* =========================================================================
-       MASTER VERSION 34 MOBILE RESPONSIVE & GRID OVERRIDE
-       ========================================================================= */
-    @media (max-width: 1024px) {
-      html, body {
-        width: 100% !important;
-        max-width: 100vw !important;
-        overflow-x: hidden !important;
-        box-sizing: border-box !important;
-      }
-      
-      /* Mobile Header Navigation - 3x2 Symmetrical Grid */
-      .nav-inner {
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 0.8rem !important;
-        padding: 0.8rem 0 !important;
+      /* Section Title Alignments - Centered for Balanced Reading */
+      .section-title-wrap {
         text-align: center !important;
+        margin-bottom: 2rem !important;
+        padding: 0 !important;
       }
-      .brand-link {
-        align-items: center !important;
+      .section-title-wrap h2 {
+        font-size: 1.8rem !important;
         text-align: center !important;
-        margin-bottom: 0.2rem !important;
+        line-height: 1.25 !important;
       }
-      .brand-name {
-        font-size: 1.15rem !important;
-        letter-spacing: 0.02em !important;
+      .section-title-wrap p {
+        font-size: 0.96rem !important;
         text-align: center !important;
-      }
-      .brand-meta {
-        font-size: 0.72rem !important;
-        text-align: center !important;
-      }
-      .nav-inner > div:last-child {
-        display: none !important;
-      }
-      nav.nav-links {
-        width: 100% !important;
-        max-width: 380px !important;
+        line-height: 1.5 !important;
         margin: 0 auto !important;
-        display: grid !important;
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 0.4rem 0.5rem !important;
-        padding: 0.2rem 0 !important;
-        justify-items: center !important;
-        align-items: center !important;
-        overflow: visible !important;
-        white-space: normal !important;
-      }
-      nav.nav-links a {
-        font-size: 0.82rem !important;
-        font-weight: 700 !important;
-        padding: 0.3rem 0.2rem !important;
-        display: block !important;
-        text-align: center !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-        white-space: nowrap !important;
       }
 
-      /* Centered Subpage Heroes and Section Titles */
+      /* Subpage Hero and Titles Mobile Formatting */
       .subpage-hero {
-        padding-top: 2rem !important;
-        padding-bottom: 1.8rem !important;
+        padding-top: 2.2rem !important;
+        padding-bottom: 2rem !important;
         text-align: center !important;
       }
       .subpage-hero h1 {
@@ -800,63 +681,58 @@
         text-align: center !important;
         margin: 0 auto 1.5rem !important;
       }
-      .section-title-wrap {
-        text-align: center !important;
-        margin-bottom: 2rem !important;
-      }
-      .section-title-wrap h2 {
-        text-align: center !important;
-      }
-      .section-title-wrap p {
-        text-align: center !important;
-      }
 
-      /* Compact Paddings & Reset Stretched Containers */
-      .content-section, 
-      .hero-container, 
-      .subpage-hero-container {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-        width: 100% !important;
-        max-width: 100vw !important;
-        box-sizing: border-box !important;
-      }
-
-      div[style*="padding: 2.5rem"],
-      div[style*="padding: 2.2rem"],
-      div[style*="padding: 3rem"],
-      div[style*="padding: 2rem"],
-      .feature-box,
-      .calc-card-container,
-      .cta-banner-box {
-        padding: 1.25rem 1rem !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-      }
-
-      div[style*="min-width"] {
-        min-width: 0 !important;
-        width: 100% !important;
-      }
-
-      div[style*="display: flex"],
-      div[style*="display:grid"],
-      div[style*="display: grid"] {
+      /* Stack Grids cleanly into 1 Column with standard borders and margin safety */
+      .principles-grid, 
+      .lanes-grid, 
+      .feature-grid-2,
+      .property-cards-grid,
+      .team-cards-grid,
+      .calc-grid,
+      .calc-card-grid {
         grid-template-columns: 1fr !important;
-        flex-direction: column !important;
-        gap: 1.2rem !important;
+        gap: 1.5rem !important;
       }
 
-      /* Grid Column Spans Reset */
-      .feature-box[style*="span 2"],
-      div[style*="span 2"],
-      .option-card[style*="span 2"] {
-        grid-column: span 1 !important;
+      /* Fix the CPA classifier grid to prevent horizontal overflow */
+      #cpa-classifier-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+      }
+
+      /* Mobile styling for inner card padding & stacked forms */
+      .classifier-card-container {
+        padding: 1.25rem !important;
+      }
+      .form-grid-2,
+      .form-row-2 {
+        grid-template-columns: 1fr !important;
+        gap: 0.8rem !important;
+      }
+
+      /* Align the top strip text properly on phone widths */
+      .top-strip-inner {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 0.4rem !important;
+        padding: 0 1rem !important;
+      }
+      .top-strip-inner span:last-child {
+        display: none !important; /* Hide secondary text to save space */
+      }
+      
+      /* Scale Darian listings contact card cleanly on phone layouts */
+      .micro-team-strip {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 1rem !important;
+      }
+      .strip-divider {
+        display: none !important;
       }
     }
-  </style>
-
+</style>
 </head>
 <body>
 
@@ -871,13 +747,13 @@
   <!-- Header Navigation -->
   <header>
     <div class="nav-inner">
-      <a href="index.html#home" class="brand-link">
+      <a href="index.html" class="brand-link">
         <span class="brand-name">TREVOR BERRY</span>
         <span class="brand-meta">Mortgage Associate</span>
       </a>
 
       <nav class="nav-links">
-        <a href="index.html#home">Home</a>
+        <a href="index.html">Home</a>
         <a href="index.html#buying">Buying</a>
         <a href="index.html#homeowners">Homeowners</a>
         <a href="index.html#alternative">Alternative</a>
@@ -914,7 +790,7 @@
       <div class="section-title-wrap">
         <span class="section-eyebrow">Interactive Demo</span>
         <h2>Live Co-Branded Estimator Demo</h2>
-        <p>This is a live preview of how ymy custom, co-branded financing estimator looks! Play with the project buttons or budget slider to see how it converts large lump-sum quotes into low mortgage equity payments.</p>
+        <p>This is a live preview of how your custom, co-branded financing estimator looks! Play with the project buttons or budget slider to see how it converts large lump-sum quotes into low mortgage equity payments.</p>
       </div>
 
       <div style="background: #FFFFFF; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2.5rem; max-width: 900px; margin: 0 auto; box-shadow: var(--shadow-card);">
@@ -1027,7 +903,7 @@
       <div class="section-title-wrap">
         <span class="section-eyebrow">The Finance Comparison</span>
         <h2>Standard Invoicing vs. Home Equity Cash-to-Build</h2>
-        <p>Before asking ymy clients to deplete their emergency cash or sign for an expensive unsecured credit line, let's look at how home equity structure compares.</p>
+        <p>Before asking your clients to deplete their emergency cash or sign for an expensive unsecured credit line, let's look at how home equity structure compares.</p>
       </div>
 
       <div class="table-container">
@@ -1079,7 +955,7 @@
             <span style="font-size: 0.8rem; font-weight: 800; color: var(--accent-mustard); text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.4rem;">Co-Branded Sales Assets</span>
             <h3 style="font-size: 1.6rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.8rem;">I Will Build Co-Branded Project Financing Sheets for Your Bids</h3>
             <p style="font-size: 0.98rem; color: var(--text-body); line-height: 1.65; margin-bottom: 1rem;">
-              Send me your estimate (e.g., a $100,000 basement suite or a $60,000 kitchen renovation). I will create a custom, co-branded PDF breakdown showing ymy client how this major capital improvement translates into a low mortgage-equity payment of under <strong>$350 a month</strong>. Your logo, your quote, and my low-rate math work together to close the sale.
+              Send me your estimate (e.g., a $100,000 basement suite or a $60,000 kitchen renovation). I will create a custom, co-branded PDF breakdown showing your client how this major capital improvement translates into a low mortgage-equity payment of under <strong>$350 a month</strong>. Your logo, your quote, and our low-rate math work together to close the sale.
             </p>
             <ul class="lane-bullets" style="margin-top: 1rem;">
               <li>Overcome "sticker shock" immediately at presentation</li>
@@ -1103,7 +979,7 @@
       <div class="section-title-wrap">
         <span class="section-eyebrow">Project Capabilities</span>
         <h2>3 Specialized Renovation Refinance Scenarios</h2>
-        <p>How I tailor the borrowing architecture based on the specific scope ymy client wants to execute.</p>
+        <p>How we tailor the borrowing architecture based on the specific scope your client wants to execute.</p>
       </div>
 
       <div class="feature-grid-2">
@@ -1127,7 +1003,7 @@
           <div style="font-size: 0.8rem; font-weight: 800; color: var(--brand-green); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">Existing Equity</div>
           <h3>Refinance Plus Improvements (RPI)</h3>
           <p>
-            For homeowners with established equity, we replace their existing mortgage with an expanded, low-interest facility. This releases construction milestone cash directly to ymy business draw account based on completed progress inspections—keeping your trades paid and materials ordered on schedule.
+            For homeowners with established equity, we replace their existing mortgage with an expanded, low-interest facility. This releases construction milestone cash directly to your business draw account based on completed progress inspections—keeping your trades paid and materials ordered on schedule.
           </p>
         </div>
       </div>
@@ -1245,7 +1121,7 @@
           <div style="width: 48px; height: 48px; background: var(--brand-green); color: #FFFFFF; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem;">✓</div>
           <h4 style="color: var(--brand-green); font-size: 1.3rem; margin-bottom: 0.5rem;">Thank You, <span id="displayRenoName">Partner</span>!</h4>
           <p style="color: var(--text-body); font-size: 0.95rem; margin-bottom: 1.2rem;">
-            I have received your registration. I am setting up ymy custom co-branded Estimating Template and will follow up shortly to coordinate!
+            I have received your registration. I am setting up your custom co-branded Estimating Template and will follow up shortly to coordinate!
           </p>
           <button type="button" class="btn btn-primary" onclick="closeRenoModal()">Done</button>
         </div>

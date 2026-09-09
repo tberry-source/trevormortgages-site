@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Luc × Trevor Berry | Calgary Home Financing Hub</title>
-  <meta name="description" content="Calculate accurate monthly mortgage payments, down payment requirements, and property taxes for Luc's Calgary listings." />
+  <meta name="description" content="Calculate accurate monthly mortgage payments, down payment requirements, and property taxes with Luc." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -734,13 +734,72 @@
       font-size: 0.75rem;
       line-height: 1.5;
     }
+  
+    /* Mobile Overflow & Margin Guards */
+    @media (max-width: 768px) {
+      .hub-container {
+        padding: 0 0.85rem 3rem !important;
+        margin-top: 1rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+      }
+      .hub-hero {
+        padding: 1.5rem 1rem !important;
+        margin-bottom: 1.5rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .hub-title {
+        font-size: 1.55rem !important;
+        line-height: 1.25 !important;
+      }
+      .hub-lead {
+        font-size: 0.92rem !important;
+        line-height: 1.55 !important;
+      }
+      .hub-lead-callout {
+        padding: 0.75rem 0.85rem !important;
+        font-size: 0.85rem !important;
+      }
+      .property-cards-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.85rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .prop-card {
+        padding: 1rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .calc-card-wrap, .calc-left-inputs, .calc-right-results, .inquiry-card, .team-card {
+        padding: 1.15rem 0.85rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .calc-focus-banner {
+        padding: 0.75rem 0.85rem !important;
+      }
+      .inquiry-form-grid {
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+      }
+      .team-cards-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
   </style>
 </head>
 <body>
 
   <!-- Top Sticky Co-Branded Bar -->
   <header class="partner-nav">
-    <div class="partner-nav-inner">
+    <div class="partner-nav-inner" style="justify-content: center;">
       <div class="co-brand-lockup">
         <div class="brand-col">
           <span class="brand-col-name">LUC</span>
@@ -752,12 +811,6 @@
           <span class="brand-col-meta orange">Mortgage Associate · Perch Mortgage Brokerage</span>
         </div>
       </div>
-
-      <div>
-        <a href="tel:4038701537" class="quick-contact-btn">
-          <span>📞 Call or Text Trevor</span>
-        </a>
-      </div>
     </div>
   </header>
 
@@ -766,10 +819,11 @@
     <!-- Clean Hub Hero Header (NO specific address pinned at the top) -->
     <div class="hub-hero">
       <div class="prop-eyebrow">Instant Monthly Payment Estimates</div>
-      <h1 class="hub-title">See What Luc’s Listings Could Cost You Monthly</h1>
+      <h1 class="hub-title">See What Your Next Home Could Cost You Monthly</h1>
       <p class="hub-lead">
         Buying a home isn’t only about whether you can qualify for the mortgage.<br />
-        Sometimes the bigger question is: <strong>How much cash will I actually need upfront and what will I have left after I move in?</strong>
+        Sometimes the bigger question is:<br />
+        <strong>How much cash will I actually need upfront and what will I have left after I move in?</strong>
       </p>
       <div class="hub-lead-callout">
         💡 There may be more options than you realize, including different down payment strategies, rate shopping, and ways to structure your mortgage more effectively. Use the custom property calculator below to test numbers on any Calgary home in 10 seconds, and let’s figure out how to save you money together.
@@ -780,19 +834,18 @@
         <div class="strip-item">
           <div class="strip-badge">🏡</div>
           <div class="strip-text">
-            <strong>Property & Showings:</strong> Luc 
-            <a href="sms:403-870-1537" class="strip-phone">Text 403-870-1537</a>
+            <strong>Property & Showings:</strong> Luc
           </div>
         </div>
         <div class="strip-divider"></div>
         <div class="strip-item">
-          <div class="strip-badge">💬</div>
+          <div class="strip-badge">📱</div>
           <div class="strip-text">
             <strong>Financing & Pre-Approval:</strong> Trevor Berry 
-            <a href="sms:4038701537" class="strip-phone">Text 403-870-1537</a>
+            <a href="sms:4038701537" class="strip-phone">403-870-1537</a>
           </div>
         </div>
-      </div>
+      </div></div>
     </div>
 
     <!-- STEP 1: PROMINENT, UNAMBIGUOUS PROPERTY SELECTOR -->
@@ -806,14 +859,16 @@
         </div>
       </div>
 
-      <div class="property-cards-grid" style="grid-template-columns: 1fr; max-width: 600px; margin: 0 auto;">
-        <!-- Property 1: Custom Calculator -->
+      <div class="property-cards-grid" style="grid-template-columns: 1fr; max-width: 580px; margin: 0 auto;">
+        
+        <!-- Custom Property Card -->
         <div class="prop-card active" id="card-prop-custom" onclick="selectProperty('custom')">
           <div>
             <span class="prop-card-tag tag-custom">Custom Property Calculator</span>
             <div class="prop-card-address">Any Calgary Home</div>
             <div class="prop-card-meta">
-              Slide to test exact monthly payments, down payments, and closing costs on any home price from $200k to $1.5M+
+              Found a home you love?<br />
+              Test any custom purchase price from $200k to $1.5M+
             </div>
           </div>
           <div>
@@ -826,7 +881,8 @@
             </div>
           </div>
         </div>
-      </div>
+
+      </div></div>
     </section>
 
     <!-- STEP 2: THE INTERACTIVE CALCULATOR CARD -->
@@ -964,13 +1020,11 @@
           </div>
 
           <div class="calc-action-btns">
-            <a href="sms:4038701537" class="btn-action-gold">
-              Text Trevor to Pre-Qualify →
-            </a>
+            <a href="sms:4038701537" class="btn-action-gold">Text Trevor to Pre-Qualify →</a>
             <div style="font-size: 0.78rem; color: #9CA3AF; text-align: center; margin-top: 0.4rem; font-weight: 500;">
               No credit pull required for an initial review.
             </div>
-            <a href="sms:403-870-1537" class="btn-action-outline" id="btn-luc-showing">Text Luc About a Showing →</a>
+            <a href="#calculator-section" class="btn-action-outline" id="btn-luc-showing">Contact Luc About a Showing</a>
           </div>
         </div>
 
@@ -1007,15 +1061,15 @@
             <div class="team-avatar-initials luc">L</div>
             <div>
               <div class="team-name">Luc</div>
-              <div class="team-title">Real Estate Associate</div>
+              <div class="team-title">Realtor · Real Estate Associate</div>
             </div>
           </div>
           <p class="team-bio">
-            Helping home buyers find the right neighborhood, evaluate property value, and negotiate with confidence. Reach out to schedule a showing or discuss your home search.
+            Helping Calgary home buyers find the right neighborhood, evaluate property condition, and negotiate with confidence. Reach out to schedule a private walkthrough.
           </p>
         </div>
         <div>
-          <a href="sms:403-870-1537" class="team-contact-btn btn-green-outline" style="width: 100%;">Text Luc: 403-870-1537</a>
+          <a href="#calculator-section" class="team-contact-btn btn-green-outline" style="width: 100%;">Contact Luc for Showings</a>
         </div>
       </div>
 
@@ -1034,12 +1088,10 @@
           </p>
         </div>
         <div>
-          <a href="sms:4038701537" class="team-contact-btn btn-green-fill" style="width: 100%;">
-            Text Trevor: 403-870-1537
-          </a>
+          <a href="sms:4038701537" class="team-contact-btn btn-green-fill" style="width: 100%;">Text Trevor: 403-870-1537</a>
         </div>
       </div>
-    </div>
+    </div></div>
 
   </main>
 
@@ -1084,16 +1136,16 @@
         bannerName.textContent = "Custom Calgary Property Estimate";
         bannerSpecs.textContent = "Adjust sliders below to test payments on any home price in Calgary · Est. Taxes: $250/mo";
         priceSlider.value = 550000;
-        if (document.getElementById('btn-luc-showing')) {
-          document.getElementById('btn-luc-showing').style.display = 'none';
+        if (document.getElementById('btn-darian-showing')) {
+          document.getElementById('btn-darian-showing').style.display = 'none';
         }
       } else {
         var p = properties[id];
         bannerName.textContent = p.address;
         bannerSpecs.textContent = p.community + " · " + p.specs + " · Est. Taxes: $" + p.monthlyTax + "/mo";
         priceSlider.value = p.price;
-        if (document.getElementById('btn-luc-showing')) {
-          document.getElementById('btn-luc-showing').style.display = 'inline-block';
+        if (document.getElementById('btn-darian-showing')) {
+          document.getElementById('btn-darian-showing').style.display = 'inline-block';
         }
       }
 
