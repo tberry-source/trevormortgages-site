@@ -736,145 +736,132 @@
     }
   
 /* =========================================================================
-   CLEAN MASTER MOBILE RESPONSIVE STYLES (PARTNER PAGES)
+   ABSOLUTE MOBILE VIEWPORT LOCK - ZERO HORIZONTAL MOVEMENT / SWAY
    ========================================================================= */
-@media (max-width: 860px) {
+*, *::before, *::after {
+  box-sizing: border-box !important;
+}
+
+html {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+/* Strict containment on all container elements */
+header, nav, main, section, footer, form,
+.hub-container, .hub-hero, .picker-section, .calc-card-wrap,
+.inquiry-card, .team-cards-grid, .partner-nav, .hub-footer,
+.subpage-hero, .content-section, .calc-card, .feature-box,
+.property-cards-grid, .calc-card-grid, .inquiry-form-grid,
+.micro-team-strip, .rate-box-row, .breakdown-table, .calc-left-inputs, .calc-right-results {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 768px) {
   html, body {
     overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
     position: relative !important;
+  }
+
+  .hub-container,
+  .partner-nav-inner,
+  .hub-footer-inner,
+  .subpage-hero-container {
+    padding-left: 0.85rem !important;
+    padding-right: 0.85rem !important;
     width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
     box-sizing: border-box !important;
   }
-  .partner-nav {
-    padding: 0.75rem 0.85rem !important;
+
+  .hub-hero,
+  .picker-section,
+  .calc-card-wrap,
+  .calc-left-inputs,
+  .calc-right-results,
+  .inquiry-card,
+  .team-card,
+  .prop-card {
+    padding-left: 0.85rem !important;
+    padding-right: 0.85rem !important;
     width: 100% !important;
+    max-width: 100% !important;
     box-sizing: border-box !important;
   }
-  .partner-nav-inner {
-    width: 100% !important;
-    justify-content: center !important;
-    text-align: center !important;
-  }
-  .co-brand-lockup {
-    gap: 0.5rem !important;
-    margin: 0 auto !important;
-    justify-content: center !important;
-  }
-  .brand-col-name {
-    font-size: 0.82rem !important;
-  }
-  .brand-col-meta {
-    font-size: 0.65rem !important;
-  }
-  .hub-container {
-    padding: 0 1rem 3rem !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-  .hub-hero {
-    padding: 1.8rem 1rem 1.5rem !important;
-    margin: 1rem 0 1.8rem !important;
-  }
-  .hub-title {
-    font-size: 1.6rem !important;
-    line-height: 1.25 !important;
-    margin-bottom: 0.8rem !important;
-  }
-  .hub-lead {
-    font-size: 0.92rem !important;
-    line-height: 1.5 !important;
-  }
-  .property-cards-grid, .calc-card-grid, .team-cards-grid, .inquiry-form-grid {
+
+  .property-cards-grid,
+  .calc-card-grid,
+  .inquiry-form-grid,
+  .team-cards-grid,
+  .feature-grid-2,
+  .feature-grid-3,
+  .calc-layout-grid,
+  .calc-grid {
     grid-template-columns: 1fr !important;
-    gap: 1.25rem !important;
     width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
-  .calc-left-inputs, .calc-right-results, .inquiry-card, .team-card, .prop-card {
-    padding: 1.25rem 1rem !important;
+
+  .calc-left-inputs,
+  .calc-right-results,
+  .prop-card,
+  .team-card,
+  .strip-item,
+  .inquiry-input,
+  .inquiry-btn,
+  .btn-action-gold,
+  .btn-action-outline,
+  .team-contact-btn {
+    min-width: 0 !important;
+    max-width: 100% !important;
     width: 100% !important;
     box-sizing: border-box !important;
   }
-  .calc-focus-banner {
-    padding: 0.85rem 1rem !important;
+
+  input[type="range"], .slider-range {
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .micro-team-strip {
     flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 0.3rem !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 0.6rem !important;
+    padding: 0.8rem 0.85rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .strip-divider {
+    display: none !important;
   }
 }
 
-
-/* =========================================================================
-   CLEAN MASTER MOBILE RESPONSIVE STYLES (PARTNER PAGES)
-   ========================================================================= */
-@media (max-width: 860px) {
-  html, body {
-    overflow-x: hidden !important;
-    position: relative !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    box-sizing: border-box !important;
-  }
-  .partner-nav {
-    padding: 0.75rem 0.85rem !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-  .partner-nav-inner {
-    width: 100% !important;
-    justify-content: center !important;
-    text-align: center !important;
-  }
-  .co-brand-lockup {
-    gap: 0.5rem !important;
-    margin: 0 auto !important;
-    justify-content: center !important;
-  }
-  .brand-col-name {
-    font-size: 0.82rem !important;
-  }
-  .brand-col-meta {
-    font-size: 0.65rem !important;
-  }
-  .hub-container {
-    padding: 0 1rem 3rem !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-  .hub-hero {
-    padding: 1.8rem 1rem 1.5rem !important;
-    margin: 1rem 0 1.8rem !important;
-  }
-  .hub-title {
-    font-size: 1.6rem !important;
-    line-height: 1.25 !important;
-    margin-bottom: 0.8rem !important;
-  }
-  .hub-lead {
-    font-size: 0.92rem !important;
-    line-height: 1.5 !important;
-  }
-  .property-cards-grid, .calc-card-grid, .team-cards-grid, .inquiry-form-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1.25rem !important;
-    width: 100% !important;
-  }
-  .calc-left-inputs, .calc-right-results, .inquiry-card, .team-card, .prop-card {
-    padding: 1.25rem 1rem !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-  .calc-focus-banner {
-    padding: 0.85rem 1rem !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 0.3rem !important;
-  }
-}
-
-</style>
+  </style>
 </head>
 <body>
 
@@ -893,11 +880,7 @@
         </div>
       </div>
 
-      <div>
-        <a href="tel:4038701537" class="quick-contact-btn">
-          <span>📞 Call or Text Trevor</span>
-        </a>
-      </div>
+      
     </div>
   </header>
 
@@ -906,13 +889,13 @@
     <!-- Clean Hub Hero Header (NO specific address pinned at the top) -->
     <div class="hub-hero">
       <div class="prop-eyebrow">Instant Monthly Payment Estimates</div>
-      <h1 class="hub-title">See What Darian’s Listings Could Cost You Monthly</h1>
+      <h1 class="hub-title">See What Darian’s Listing Could Cost You Monthly</h1>
       <p class="hub-lead">
         Buying a home isn’t only about whether you can qualify for the mortgage.<br />
         Sometimes the bigger question is: <strong>How much cash will I actually need upfront and what will I have left after I move in?</strong>
       </p>
       <div class="hub-lead-callout">
-        💡 There may be more options than you realize, including different down payment strategies, rate shopping, and ways to structure your mortgage more effectively. Choose one of Darian’s Calgary listings below to see the numbers in about 10 seconds, and let’s figure out how to save you money together.
+        💡 <strong>There may be more options than you realize</strong>, including different down payment strategies, rate shopping, and ways to structure your mortgage more effectively. Choose one of Darian’s Calgary listings below to see the numbers in about 10 seconds, and let’s figure out how to save you money together.
       </div>
 
       <!-- Clean Micro-Team Strip -->
@@ -920,16 +903,25 @@
         <div class="strip-item">
           <div class="strip-badge">🏡</div>
           <div class="strip-text">
-            <strong>Property & Showings:</strong> Darian 
-            <a href="sms:587-888-0024" class="strip-phone">Text 587-888-0024</a>
+            <strong>Property & Showings:</strong> Darian Stadnyk
           </div>
         </div>
         <div class="strip-divider"></div>
         <div class="strip-item">
-          <div class="strip-badge">💬</div>
+          <div class="strip-badge">📊</div>
           <div class="strip-text">
             <strong>Financing & Pre-Approval:</strong> Trevor Berry 
-            <a href="sms:4038701537" class="strip-phone">Text 403-870-1537</a>
+            <a href="sms:4038701537" class="strip-phone">403-870-1537</a>
+          </div>
+        </div>
+      </div>
+    </div>
+        <div class="strip-divider"></div>
+        <div class="strip-item">
+          <div class="strip-badge">📊</div>
+          <div class="strip-text">
+            <strong>Financing & Pre-Approval:</strong> Trevor Berry 
+            <a href="sms:4038701537" class="strip-phone">403-870-1537</a>
           </div>
         </div>
       </div>
@@ -939,7 +931,7 @@
     <section class="picker-section">
       <div class="section-heading-row">
         <div class="section-title">
-          <span>Step 1: Select a Property to Calculate</span>
+          <span>Step 1: Select one of Darian’s Listings or Test a Custom Price</span>
         </div>
         <div class="section-sub">
           Click any card below to load that property's exact price and property tax numbers
@@ -947,6 +939,7 @@
       </div>
 
       <div class="property-cards-grid">
+        
         <!-- Property 1 -->
         <div class="prop-card active" id="card-prop-1" onclick="selectProperty(1)">
           <div>
@@ -1009,6 +1002,7 @@
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -1153,7 +1147,9 @@
             <div style="font-size: 0.78rem; color: #9CA3AF; text-align: center; margin-top: 0.4rem; font-weight: 500;">
               No credit pull required for an initial review.
             </div>
-            <a href="sms:587-888-0024" class="btn-action-outline" id="btn-darian-showing">Text Darian About a Showing →</a>
+            <a href="sms:5878880024" class="btn-action-outline" id="btn-darian-showing">
+              Call Darian About a Showing →
+            </a>
           </div>
         </div>
 
@@ -1190,15 +1186,17 @@
             <div class="team-avatar-initials darian">DS</div>
             <div>
               <div class="team-name">Darian Stadnyk</div>
-              <div class="team-title">Premiere Realty Direct</div>
+              <div class="team-title">Realtor · Premiere Realty Direct</div>
             </div>
           </div>
           <p class="team-bio">
-            I shop across 40+ Canadian lenders to help find the right mortgage fit for you — not just the first option available.<br /><br />I can help with pre-approvals, rate holds, and clear purchase numbers so you know what everything looks like before you move forward.<br /><br /><strong>No fee — I am free to use.</strong>
+            Helping Calgary home buyers find the right neighborhood, evaluate property condition, and negotiate with confidence. Reach out to schedule a private walkthrough.
           </p>
         </div>
         <div>
-          <a href="sms:587-888-0024" class="team-contact-btn btn-green-outline" style="width: 100%;">Text Darian: 587-888-0024</a>
+          <a href="sms:5878880024" class="team-contact-btn btn-green-outline" style="width: 100%;">
+            Text Darian: 587-888-0024
+          </a>
         </div>
       </div>
 
@@ -1213,12 +1211,45 @@
             </div>
           </div>
           <p class="team-bio">
-            I shop across 40+ Canadian lenders to help find the right mortgage fit for you — not just the first option available.<br /><br />I can help with pre-approvals, rate holds, and clear purchase numbers so you know what everything looks like before you move forward.<br /><br />For most standard lender-paid purchase mortgages, there’s no broker fee to you. If a fee ever applies, I’ll make sure you know about it upfront.
+            I shop across 40+ Canadian lenders to help find the right mortgage fit for you — not just the first option available.<br /><br />I can help with pre-approvals, rate holds, and clear purchase numbers so you know what everything looks like before you move forward.<br /><br /><strong>No fee — I am free to use.</strong>
           </p>
         </div>
         <div>
           <a href="sms:4038701537" class="team-contact-btn btn-green-fill" style="width: 100%;">
             Text Trevor: 403-870-1537
+          </a>
+        </div>
+      </div>
+    </div>
+          </div>
+          <p class="team-bio">
+            Helping Calgary home buyers find the right neighborhood, evaluate property condition, and negotiate with confidence. Reach out to schedule a private walkthrough.
+          </p>
+        </div>
+        <div>
+          <a href="sms:5878880024" class="team-contact-btn btn-green-outline" style="width: 100%;">
+            Call or Text Darian: 587-888-0024
+          </a>
+        </div>
+      </div>
+
+      <!-- Trevor Berry -->
+      <div class="team-card">
+        <div>
+          <div class="team-card-top">
+            <div class="team-avatar-initials">TB</div>
+            <div>
+              <div class="team-name">Trevor Berry</div>
+              <div class="team-title">Mortgage Associate · Perch Mortgages</div>
+            </div>
+          </div>
+          <p class="team-bio">
+            Structuring competitive mortgage financing across 40+ Canadian lenders. Pre-approvals, rate holds, and clear purchase math with no broker fee to the borrower for most standard lender-paid purchase mortgages (any applicable fee is fully disclosed before proceeding).
+          </p>
+        </div>
+        <div>
+          <a href="sms:4038701537" class="team-contact-btn btn-green-fill" style="width: 100%;">
+            Call or Text Trevor: 403-870-1537
           </a>
         </div>
       </div>
