@@ -838,326 +838,6 @@
         text-align: center !important;
       }
     }
-  
-    /* =========================================================================
-       DYNAMIC RESPONSIVE FORM & GRID STYLING
-       ========================================================================= */
-    .classifier-card-container {
-      background: var(--bg-subtle);
-      border: 1.5px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      padding: 2.5rem;
-      max-width: 1000px;
-      margin: 0 auto;
-      box-shadow: var(--shadow-card);
-    }
-    .form-grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-    .form-row-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.5rem;
-    }
-    @media (max-width: 1024px) {
-      .classifier-card-container {
-        padding: 1.25rem !important;
-      }
-      .form-grid-2 {
-        grid-template-columns: 1fr !important;
-        gap: 0.8rem !important;
-      }
-      .form-row-2 {
-        grid-template-columns: 1fr !important;
-        gap: 0.8rem !important;
-      }
-      /* Responsive Grid Span override to prevent horizontal scrolling */
-      [style*="grid-column: span 2"],
-      [style*="grid-column: span 3"],
-      .feature-box[style*="grid-column: span 2"] {
-        grid-column: span 1 !important;
-      }
-      /* Centered top strip on mobile and hide secondary span */
-      .top-strip-inner {
-        flex-direction: column !important;
-        gap: 0.25rem !important;
-        text-align: center !important;
-        align-items: center !important;
-        padding: 0.4rem 1rem !important;
-      }
-      .top-strip-inner span:last-child {
-        display: none !important;
-      }
-    }
-
-  
-    /* =========================================================================
-       MASTER RESPONSIVE MOBILE OVERRIDES (SOLVES WRAPPING, OVERFLOW & PADDING)
-       ========================================================================= */
-    @media (max-width: 1024px) {
-      html, body {
-        overflow-x: hidden !important;
-        width: 100% !important;
-        max-width: 100vw !important;
-      }
-
-      /* 1. Header Navigation: 3 Column Grid (3 top, 3 bottom) */
-      header .nav-inner {
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 0.6rem !important;
-        padding: 0.6rem 0.8rem !important;
-        text-align: center !important;
-      }
-      nav.nav-links {
-        width: 100% !important;
-        display: grid !important;
-        grid-template-columns: repeat(3, auto) !important;
-        justify-content: center !important;
-        align-items: center !important;
-        gap: 0.5rem 1rem !important;
-        padding: 0.2rem 0 !important;
-        overflow: visible !important;
-        white-space: normal !important;
-        text-align: center !important;
-      }
-      nav.nav-links a {
-        font-size: 0.82rem !important;
-        font-weight: 700 !important;
-        padding: 0.2rem 0.3rem !important;
-        display: inline-block !important;
-        text-align: center !important;
-      }
-
-      /* 2. Subpage Hero and Section Titles Centering */
-      .subpage-hero {
-        padding: 2.2rem 1rem 1.8rem !important;
-        text-align: center !important;
-      }
-      .subpage-hero h1 {
-        font-size: 1.85rem !important;
-        line-height: 1.25 !important;
-        text-align: center !important;
-      }
-      .subpage-hero p.lead {
-        font-size: 0.96rem !important;
-        line-height: 1.55 !important;
-        text-align: center !important;
-        margin: 0 auto 1.2rem !important;
-      }
-      .section-title-wrap {
-        text-align: center !important;
-        margin-bottom: 1.8rem !important;
-        padding: 0 !important;
-      }
-      .section-title-wrap h2 {
-        font-size: 1.75rem !important;
-        text-align: center !important;
-        line-height: 1.25 !important;
-      }
-      .section-title-wrap p {
-        font-size: 0.95rem !important;
-        text-align: center !important;
-        line-height: 1.5 !important;
-        margin: 0 auto !important;
-      }
-
-      /* 3. Eliminate Container Padding / Min-Width Overflow (CPA, Renos, Realtor, Case Studies) */
-      .content-section, 
-      .hero,
-      .principles-section,
-      .lanes-section,
-      .contact-section,
-      footer {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-        box-sizing: border-box !important;
-      }
-
-      /* Case study boxes, classifier containers, co-brand boxes */
-      .cobrand-showcase-box,
-      .cpa-classifier-box,
-      .calc-card-container,
-      .cta-banner-box,
-      .feature-box,
-      .lane-card,
-      .principle-card {
-        padding: 1.25rem 1rem !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-      }
-
-      .cobrand-flex-wrap {
-        gap: 1.2rem !important;
-      }
-
-      .cobrand-left-col,
-      .cobrand-right-col {
-        min-width: 0 !important;
-        width: 100% !important;
-        flex: none !important;
-        padding: 1.25rem 1rem !important;
-        box-sizing: border-box !important;
-      }
-
-      /* Grid layout forced stack to single column */
-      #cpa-classifier-grid,
-      .feature-grid-2,
-      .feature-grid-3,
-      .principles-grid,
-      .lanes-grid,
-      .calc-grid,
-      .form-grid-2,
-      .form-row-2 {
-        grid-template-columns: 1fr !important;
-        gap: 1.2rem !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-      }
-
-      /* Card span overrides */
-      .feature-box[style*="grid-column"],
-      div[style*="grid-column: span"] {
-        grid-column: span 1 !important;
-      }
-
-      /* Universal element bounds safety */
-      *[style*="min-width"] {
-        min-width: 0 !important;
-      }
-    }
-
-
-/* =========================================================================
-   ABSOLUTE MOBILE VIEWPORT LOCK - ZERO HORIZONTAL MOVEMENT / SWAY
-   ========================================================================= */
-*, *::before, *::after {
-  box-sizing: border-box !important;
-}
-
-html {
-  overflow-x: hidden !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  position: relative !important;
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  overflow-x: hidden !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  position: relative !important;
-  word-break: break-word !important;
-  overflow-wrap: break-word !important;
-}
-
-/* Strict containment on all container elements */
-header, nav, main, section, footer, form,
-.hub-container, .hub-hero, .picker-section, .calc-card-wrap,
-.inquiry-card, .team-cards-grid, .partner-nav, .hub-footer,
-.subpage-hero, .content-section, .calc-card, .feature-box,
-.property-cards-grid, .calc-card-grid, .inquiry-form-grid,
-.micro-team-strip, .rate-box-row, .breakdown-table, .calc-left-inputs, .calc-right-results {
-  max-width: 100% !important;
-  box-sizing: border-box !important;
-}
-
-@media (max-width: 768px) {
-  html, body {
-    overflow-x: hidden !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    position: relative !important;
-  }
-
-  .hub-container,
-  .partner-nav-inner,
-  .hub-footer-inner,
-  .subpage-hero-container {
-    padding-left: 0.85rem !important;
-    padding-right: 0.85rem !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    box-sizing: border-box !important;
-  }
-
-  .hub-hero,
-  .picker-section,
-  .calc-card-wrap,
-  .calc-left-inputs,
-  .calc-right-results,
-  .inquiry-card,
-  .team-card,
-  .prop-card {
-    padding-left: 0.85rem !important;
-    padding-right: 0.85rem !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  .property-cards-grid,
-  .calc-card-grid,
-  .inquiry-form-grid,
-  .team-cards-grid,
-  .feature-grid-2,
-  .feature-grid-3,
-  .calc-layout-grid,
-  .calc-grid {
-    grid-template-columns: 1fr !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  .calc-left-inputs,
-  .calc-right-results,
-  .prop-card,
-  .team-card,
-  .strip-item,
-  .inquiry-input,
-  .inquiry-btn,
-  .btn-action-gold,
-  .btn-action-outline,
-  .team-contact-btn {
-    min-width: 0 !important;
-    max-width: 100% !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  input[type="range"], .slider-range {
-    max-width: 100% !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  .micro-team-strip {
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    gap: 0.6rem !important;
-    padding: 0.8rem 0.85rem !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  .strip-divider {
-    display: none !important;
-  }
-}
-
   </style>
 </head>
 <body>
@@ -1174,18 +854,18 @@ header, nav, main, section, footer, form,
   <!-- Header Navigation -->
   <header>
     <div class="nav-inner">
-      <a href="index.html" class="brand-link">
+      <a href="/" class="brand-link">
         <span class="brand-name">TREVOR BERRY</span>
         <span class="brand-meta">Mortgage Associate</span>
       </a>
 
       <nav class="nav-links">
-        <a href="index.html#home">Home</a>
+        <a href="/">Home</a>
         <a href="index.html#buying" class="active">Buying</a>
-        <a href="index.html#homeowners">Homeowners</a>
-        <a href="index.html#alternative">Alternative</a>
-        <a href="index.html#partners">Partners</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="index.html#homeowners" class="">Homeowners</a>
+        <a href="index.html#alternative" class="">Alternative</a>
+        <a href="index.html#partners" class="">Partners</a>
+        <a href="#contact">Contact</a>
       </nav>
 
       <div>
@@ -1231,7 +911,7 @@ header, nav, main, section, footer, form,
           <span class="tag">Advance at Closing</span>
           <h3>Bridging Your <span style="white-space: nowrap;">Down Payment Gap</span></h3>
           <p>
-            Normally, builder show-home contracts simply reduce the sticker price, leaving you to supply 100% of your down payment from savings. I structure the rebate so funds arrive on possession day.
+            Normally, builder show-home contracts simply reduce the sticker price, leaving you to supply 100% of your down payment from savings. We structure the rebate so funds arrive on possession day.
           </p>
           <ul class="lane-bullets">
             <li>Rebates advanced directly onto the Statement of Adjustments</li>
@@ -1443,7 +1123,7 @@ header, nav, main, section, footer, form,
             <input type="text" id="m_name" placeholder="e.g. David Miller" required style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
           </div>
 
-          <div class="form-grid-2" style="margin-bottom: 1.2rem;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.2rem;">
             <div>
               <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Direct Cell Phone *</label>
               <input type="tel" id="m_phone" placeholder="403-000-0000" required style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />

@@ -4,11 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rohit Makhija × Trevor Berry | Calgary & Cochrane Home Financing Hub</title>
-  <meta name="description" content="Calculate accurate monthly mortgage payments, down payment requirements, and property taxes for Darian Stadnyk's Calgary listings." />
+  <meta name="description" content="Calculate accurate monthly mortgage payments, down payment requirements, and property taxes for Rohit Makhija's listings." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
+
     :root {
       /* Handout-Inspired Color Palette: 70% Light / 30% Dark */
       --bg-canvas: #FAF8F5;         /* Warm Cream / Off-White Primary Background */
@@ -40,13 +41,22 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; }
+    html { 
+      scroll-behavior: smooth; 
+      font-size: 16px; 
+      overflow-x: hidden !important; 
+      width: 100% !important;
+    }
     body {
       font-family: var(--font-family);
       background-color: var(--bg-canvas);
       color: var(--text-main);
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      position: relative !important;
     }
 
     /* Co-Branded Top Header (Dark Charcoal Handout Header) */
@@ -56,19 +66,24 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      padding: 0.85rem 1.5rem;
+      padding: 0.85rem 1.25rem;
+      width: 100% !important;
     }
     .partner-nav-inner {
       max-width: 1080px;
       margin: 0 auto;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center; /* Centered co-brand lockup */
+      width: 100% !important;
     }
     .co-brand-lockup {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
     }
     .brand-col {
       display: flex;
@@ -92,41 +107,28 @@
       font-size: 0.9rem;
     }
 
-    .quick-contact-btn {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: var(--text-light);
-      padding: 0.45rem 0.9rem;
-      border-radius: var(--radius-sm);
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-    .quick-contact-btn:hover {
-      background: var(--accent-gold);
-      border-color: var(--accent-gold);
-      color: var(--bg-dark);
-    }
-
     /* Main Container */
     .hub-container {
       max-width: 1080px;
       margin: 0 auto;
-      padding: 0 1.25rem 4rem;
+      padding: 0 1rem 4rem;
+      width: 100% !important;
+      box-sizing: border-box !important;
     }
 
     /* Hero Banner (Dark Charcoal Editorial Header) */
     .hub-hero {
       background: var(--bg-dark);
       color: var(--text-light);
-      padding: 3rem 2rem;
+      padding: 2.5rem 1.5rem 2rem;
       border-radius: var(--radius-lg);
-      margin: 1.5rem 0 2.5rem;
+      margin: 1.25rem 0 2rem;
       text-align: center;
       box-shadow: var(--shadow-md);
       position: relative;
       border: 1px solid var(--border-dark);
+      width: 100% !important;
+      box-sizing: border-box !important;
     }
     .prop-eyebrow {
       display: inline-block;
@@ -138,29 +140,29 @@
       margin-bottom: 0.8rem;
     }
     .hub-title {
-      font-size: 2.2rem;
+      font-size: 2.1rem;
       font-weight: 800;
       letter-spacing: -0.025em;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.1rem;
       line-height: 1.25;
       color: var(--text-light);
     }
     .hub-lead {
-      font-size: 1.02rem;
+      font-size: 1rem;
       color: var(--text-light-body);
       max-width: 820px;
-      margin: 0 auto 1.8rem;
+      margin: 0 auto 1.5rem;
       line-height: 1.65;
     }
     .hub-lead-callout {
-      background: rgba(197, 155, 39, 0.1);
-      border-left: 3px solid var(--accent-gold);
-      padding: 0.85rem 1.2rem;
+      background: rgba(197, 155, 39, 0.12);
+      border-left: 3.5px solid var(--accent-gold);
+      padding: 0.85rem 1.15rem;
       border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
       color: #F3E8C8;
       font-size: 0.92rem;
       text-align: left;
-      margin: 0 auto 1.8rem;
+      margin: 0 auto 1.6rem;
       max-width: 780px;
       line-height: 1.55;
     }
@@ -213,45 +215,49 @@
 
     /* Section Heading Row */
     .section-heading-row {
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
       text-align: center;
     }
-    .section-title span {
-      font-size: 1.45rem;
+    .section-title {
+      font-size: 1.4rem;
       font-weight: 800;
       color: var(--text-main);
       letter-spacing: -0.015em;
     }
     .section-sub {
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       color: var(--text-muted);
       margin-top: 0.3rem;
     }
 
-    /* Step 1: Property Selector Grid (Light Background) */
+    /* Step 1: Property Selector Grid */
     .picker-section {
-      margin-bottom: 2.5rem;
+      margin-bottom: 2.2rem;
+      width: 100% !important;
     }
     .property-cards-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
       gap: 1.2rem;
+      width: 100% !important;
+      box-sizing: border-box !important;
     }
-    @media (max-width: 860px) {
-      .property-cards-grid { grid-template-columns: 1fr; }
-    }
+    .property-cards-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .property-cards-grid.cols-2 { grid-template-columns: repeat(2, 1fr); max-width: 820px; margin: 0 auto; }
+    .property-cards-grid.cols-1 { grid-template-columns: 1fr; max-width: 620px; margin: 0 auto; }
 
     .prop-card {
       background: var(--bg-subtle);
       border: 1.5px solid var(--border-subtle);
       border-radius: var(--radius);
-      padding: 1.4rem;
+      padding: 1.35rem;
       cursor: pointer;
       transition: all 0.2s ease;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       box-shadow: var(--shadow-sm);
+      width: 100% !important;
+      box-sizing: border-box !important;
     }
     .prop-card:hover {
       border-color: var(--accent-gold);
@@ -311,24 +317,29 @@
       font-weight: 800;
       color: var(--text-main);
     }
+    .prop-card-status {
+      margin-top: 0.4rem;
+    }
     .prop-card-status span {
       font-size: 0.8rem;
       font-weight: 700;
       color: var(--accent-gold-hover);
     }
 
-    /* Step 2: Calculator Card (Light Input Panel vs Dark Result Panel) */
+    /* Step 2: Calculator Card */
     .calc-card-wrap {
       background: var(--bg-subtle);
       border: 1.5px solid var(--border-subtle);
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-md);
       overflow: hidden;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2.2rem;
+      width: 100% !important;
+      box-sizing: border-box !important;
     }
     .calc-focus-banner {
       background: var(--bg-alt);
-      padding: 1rem 1.5rem;
+      padding: 1rem 1.35rem;
       border-bottom: 1px solid var(--border-subtle);
       display: flex;
       justify-content: space-between;
@@ -356,18 +367,17 @@
     .calc-card-grid {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
-    }
-    @media (max-width: 860px) {
-      .calc-card-grid { grid-template-columns: 1fr; }
+      width: 100% !important;
+      box-sizing: border-box !important;
     }
 
-    /* Left Input Area (Light) */
+    /* Left Input Area */
     .calc-left-inputs {
-      padding: 2rem;
+      padding: 1.75rem;
       background: var(--bg-subtle);
     }
     .calc-field-group {
-      margin-bottom: 1.6rem;
+      margin-bottom: 1.5rem;
     }
     .calc-label-row {
       display: flex;
@@ -384,13 +394,15 @@
       color: var(--accent-gold-hover);
     }
     .slider-range {
-      width: 100%;
+      width: 100% !important;
+      max-width: 100% !important;
       height: 8px;
       border-radius: 4px;
       background: #E5E0D8;
       outline: none;
       accent-color: var(--accent-gold);
       cursor: pointer;
+      box-sizing: border-box !important;
     }
     .slider-bounds {
       display: flex;
@@ -454,11 +466,11 @@
       font-weight: 600;
     }
 
-    /* Right Result Area (Handout Dark Panel Contrast) */
+    /* Right Result Area */
     .calc-right-results {
       background: var(--bg-dark);
       color: var(--text-light);
-      padding: 2rem;
+      padding: 1.8rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -473,7 +485,7 @@
       margin-bottom: 0.3rem;
     }
     .result-main-num {
-      font-size: 2.6rem;
+      font-size: 2.5rem;
       font-weight: 800;
       letter-spacing: -0.03em;
       color: #FFFFFF;
@@ -483,13 +495,13 @@
     .result-sub {
       font-size: 0.82rem;
       color: var(--text-light-body);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.4rem;
     }
 
     .breakdown-table {
       border-top: 1px solid var(--border-dark);
       padding-top: 1rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.4rem;
     }
     .breakdown-row {
       display: flex;
@@ -500,6 +512,12 @@
     }
     .breakdown-row strong {
       color: #FFFFFF;
+    }
+    .breakdown-row.total-row {
+      border-top: 1px dashed rgba(255, 255, 255, 0.2);
+      padding-top: 0.65rem;
+      margin-top: 0.5rem;
+      font-size: 0.92rem;
     }
 
     .calc-action-btns {
@@ -541,27 +559,29 @@
       color: var(--accent-gold);
     }
 
-    /* Inquiry Card (White Light Panel) */
+    /* Inquiry Card */
     .inquiry-card {
       background: var(--bg-subtle);
       border: 1.5px solid var(--border-subtle);
       border-radius: var(--radius-lg);
-      padding: 2.2rem 2rem;
+      padding: 2rem 1.5rem;
       box-shadow: var(--shadow-sm);
-      margin-bottom: 2.5rem;
+      margin-bottom: 2.2rem;
       text-align: center;
+      width: 100% !important;
+      box-sizing: border-box !important;
     }
     .inquiry-card h3 {
-      font-size: 1.45rem;
+      font-size: 1.4rem;
       font-weight: 800;
       color: var(--text-main);
       margin-bottom: 0.6rem;
     }
     .inquiry-card p {
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       color: var(--text-body);
       max-width: 680px;
-      margin: 0 auto 1.5rem;
+      margin: 0 auto 1.4rem;
       line-height: 1.55;
     }
 
@@ -571,18 +591,19 @@
       gap: 0.75rem;
       max-width: 820px;
       margin: 0 auto;
-    }
-    @media (max-width: 760px) {
-      .inquiry-form-grid { grid-template-columns: 1fr; }
+      width: 100% !important;
+      box-sizing: border-box !important;
     }
 
     .inquiry-input {
-      padding: 0.75rem 1rem;
+      padding: 0.75rem 0.9rem;
       border: 1.5px solid var(--border-subtle);
       border-radius: var(--radius-sm);
       font-size: 0.9rem;
       outline: none;
       background: var(--bg-canvas);
+      width: 100% !important;
+      box-sizing: border-box !important;
     }
     .inquiry-input:focus {
       border-color: var(--accent-gold);
@@ -611,20 +632,21 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
-    }
-    @media (max-width: 760px) {
-      .team-cards-grid { grid-template-columns: 1fr; }
+      width: 100% !important;
+      box-sizing: border-box !important;
     }
 
     .team-card {
       background: var(--bg-subtle);
       border: 1.5px solid var(--border-subtle);
       border-radius: var(--radius);
-      padding: 1.8rem;
+      padding: 1.6rem;
       box-shadow: var(--shadow-sm);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      width: 100% !important;
+      box-sizing: border-box !important;
     }
     .team-card-top {
       display: flex;
@@ -633,13 +655,13 @@
       margin-bottom: 1rem;
     }
     .team-avatar-initials {
-      width: 50px;
-      height: 50px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       background: var(--bg-dark);
       color: var(--accent-gold);
       font-weight: 800;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -650,6 +672,21 @@
       background: #F3E8C8;
       color: #856404;
       border-color: #856404;
+    }
+    .team-avatar-initials.kyla {
+      background: #FEF3C7;
+      color: #92400E;
+      border-color: #92400E;
+    }
+    .team-avatar-initials.rohit {
+      background: #FEE2E2;
+      color: #991B1B;
+      border-color: #991B1B;
+    }
+    .team-avatar-initials.luc {
+      background: #E0E7FF;
+      color: #3730A3;
+      border-color: #3730A3;
     }
     .team-name {
       font-size: 1.15rem;
@@ -696,14 +733,16 @@
       color: var(--bg-dark);
     }
 
-    /* Footer (Dark Charcoal Handout Footer) */
+    /* Footer */
     .hub-footer {
       background: var(--bg-dark);
       color: var(--text-light-body);
-      padding: 3rem 1.5rem 2rem;
+      padding: 2.5rem 1.25rem 2rem;
       margin-top: 4rem;
       border-top: 1px solid var(--border-dark);
       font-size: 0.8rem;
+      width: 100% !important;
+      box-sizing: border-box !important;
     }
     .hub-footer-inner {
       max-width: 1080px;
@@ -734,138 +773,68 @@
       font-size: 0.75rem;
       line-height: 1.5;
     }
-  
-/* =========================================================================
-   ABSOLUTE MOBILE VIEWPORT LOCK - ZERO HORIZONTAL MOVEMENT / SWAY
-   ========================================================================= */
-*, *::before, *::after {
-  box-sizing: border-box !important;
-}
 
-html {
-  overflow-x: hidden !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  position: relative !important;
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  overflow-x: hidden !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  position: relative !important;
-  word-break: break-word !important;
-  overflow-wrap: break-word !important;
-}
-
-/* Strict containment on all container elements */
-header, nav, main, section, footer, form,
-.hub-container, .hub-hero, .picker-section, .calc-card-wrap,
-.inquiry-card, .team-cards-grid, .partner-nav, .hub-footer,
-.subpage-hero, .content-section, .calc-card, .feature-box,
-.property-cards-grid, .calc-card-grid, .inquiry-form-grid,
-.micro-team-strip, .rate-box-row, .breakdown-table, .calc-left-inputs, .calc-right-results {
-  max-width: 100% !important;
-  box-sizing: border-box !important;
-}
-
-@media (max-width: 768px) {
-  html, body {
-    overflow-x: hidden !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    position: relative !important;
-  }
-
-  .hub-container,
-  .partner-nav-inner,
-  .hub-footer-inner,
-  .subpage-hero-container {
-    padding-left: 0.85rem !important;
-    padding-right: 0.85rem !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    box-sizing: border-box !important;
-  }
-
-  .hub-hero,
-  .picker-section,
-  .calc-card-wrap,
-  .calc-left-inputs,
-  .calc-right-results,
-  .inquiry-card,
-  .team-card,
-  .prop-card {
-    padding-left: 0.85rem !important;
-    padding-right: 0.85rem !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  .property-cards-grid,
-  .calc-card-grid,
-  .inquiry-form-grid,
-  .team-cards-grid,
-  .feature-grid-2,
-  .feature-grid-3,
-  .calc-layout-grid,
-  .calc-grid {
-    grid-template-columns: 1fr !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  .calc-left-inputs,
-  .calc-right-results,
-  .prop-card,
-  .team-card,
-  .strip-item,
-  .inquiry-input,
-  .inquiry-btn,
-  .btn-action-gold,
-  .btn-action-outline,
-  .team-contact-btn {
-    min-width: 0 !important;
-    max-width: 100% !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  input[type="range"], .slider-range {
-    max-width: 100% !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  .micro-team-strip {
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    gap: 0.6rem !important;
-    padding: 0.8rem 0.85rem !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  .strip-divider {
-    display: none !important;
-  }
-}
+    /* STRICT MOBILE RESPONSIVE GUARDS (ZERO HORIZONTAL SWAY) */
+    @media (max-width: 768px) {
+      .hub-container {
+        padding: 0 0.85rem 3rem !important;
+      }
+      .hub-hero {
+        padding: 1.8rem 1rem 1.5rem !important;
+        margin: 1rem 0 1.5rem !important;
+      }
+      .hub-title {
+        font-size: 1.65rem !important;
+      }
+      .hub-lead {
+        font-size: 0.92rem !important;
+      }
+      .hub-lead-callout {
+        font-size: 0.86rem !important;
+        padding: 0.75rem 0.9rem !important;
+      }
+      .property-cards-grid.cols-3,
+      .property-cards-grid.cols-2,
+      .property-cards-grid.cols-1 {
+        grid-template-columns: 1fr !important;
+      }
+      .calc-card-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .calc-right-results {
+        border-left: none !important;
+        border-top: 1px solid var(--border-dark) !important;
+        padding: 1.35rem 1.15rem !important;
+      }
+      .calc-left-inputs {
+        padding: 1.35rem 1.15rem !important;
+      }
+      .inquiry-form-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .team-cards-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .micro-team-strip {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 0.75rem !important;
+        padding: 0.75rem 0.9rem !important;
+      }
+      .strip-divider {
+        display: none !important;
+      }
+      .result-main-num {
+        font-size: 2.1rem !important;
+      }
+    }
 
   </style>
 </head>
 <body>
 
-  <!-- Top Sticky Co-Branded Bar -->
+  <!-- Sticky Header Bar -->
   <header class="partner-nav">
     <div class="partner-nav-inner">
       <div class="co-brand-lockup">
@@ -879,43 +848,34 @@ header, nav, main, section, footer, form,
           <span class="brand-col-meta orange">Mortgage Associate · Perch Mortgage Brokerage</span>
         </div>
       </div>
-
-      
     </div>
   </header>
 
   <main class="hub-container">
 
-    <!-- Clean Hub Hero Header (NO specific address pinned at the top) -->
+    <!-- Hero Header -->
     <div class="hub-hero">
       <div class="prop-eyebrow">Instant Monthly Payment Estimates</div>
       <h1 class="hub-title">See What Rohit’s Listing Could Cost You Monthly</h1>
       <p class="hub-lead">
         Buying a home isn’t only about whether you can qualify for the mortgage.<br />
-        Sometimes the bigger question is: <strong>How much cash will I actually need upfront and what will I have left after I move in?</strong>
+        Sometimes the bigger question is:<br />
+        <strong>How much cash will I actually need upfront and what will I have left after I move in?</strong><br /><br />
+        There may be more options than you realize, including different down payment strategies, rate shopping, and ways to structure your mortgage more effectively.
       </p>
       <div class="hub-lead-callout">
-        💡 <strong>There may be more options than you realize</strong>, including different down payment strategies, rate shopping, and ways to structure your mortgage more effectively. Use the custom property calculator below to test numbers on any Calgary, Cochrane, or Auburn Bay home to see the numbers in about 10 seconds, and let’s figure out how to save you money together.
+        💡 <strong>Use the custom property calculator below</strong> to test numbers on any Calgary, Cochrane, or Auburn Bay home in 10 seconds, and let’s figure out how to save you money together.
       </div>
 
-      <!-- Clean Micro-Team Strip -->
+      <!-- Micro-Team Strip -->
       <div class="micro-team-strip">
         <div class="strip-item">
           <div class="strip-badge">🏡</div>
           <div class="strip-text">
-            <strong>Property & Showings:</strong> Rohit Makhija
+            <strong>Property & Showings:</strong> Rohit Makhija 
+            <a href="https://rohitmakhija.ca/" target="_blank" class="strip-phone">rohitmakhija.ca</a>
           </div>
         </div>
-        <div class="strip-divider"></div>
-        <div class="strip-item">
-          <div class="strip-badge">📊</div>
-          <div class="strip-text">
-            <strong>Financing & Pre-Approval:</strong> Trevor Berry 
-            <a href="sms:4038701537" class="strip-phone">403-870-1537</a>
-          </div>
-        </div>
-      </div>
-    </div>
         <div class="strip-divider"></div>
         <div class="strip-item">
           <div class="strip-badge">📊</div>
@@ -927,18 +887,18 @@ header, nav, main, section, footer, form,
       </div>
     </div>
 
-    <!-- STEP 1: PROMINENT, UNAMBIGUOUS PROPERTY SELECTOR -->
+    <!-- Step 1: Property Selector Grid -->
     <section class="picker-section">
       <div class="section-heading-row">
         <div class="section-title">
           <span>Step 1: Select Rohit’s Listing or Test a Custom Price</span>
         </div>
         <div class="section-sub">
-          Adjust the slider or enter any purchase price to calculate exact monthly carrying costs
+          Click the custom property card below to calculate exact monthly payment & down payment numbers
         </div>
       </div>
 
-      <div class="property-cards-grid" style="grid-template-columns: 1fr; max-width: 600px; margin: 0 auto;">
+      <div class="property-cards-grid cols-1">
         
         <!-- Custom Property Card -->
         <div class="prop-card active" id="card-prop-custom" onclick="selectProperty('custom')">
@@ -964,32 +924,26 @@ header, nav, main, section, footer, form,
       </div>
     </section>
 
-    <!-- STEP 2: THE INTERACTIVE CALCULATOR CARD -->
+    <!-- Step 2: Calculator Card -->
     <div class="calc-card-wrap" id="calculator-section">
-      
-      <!-- Top banner identifying what property is being calculated -->
       <div class="calc-focus-banner">
         <div>
           <div class="calc-focus-label">Now Calculating:</div>
-          <div class="calc-focus-name" id="calc-focus-name">252 Templeview Way NE</div>
+          <div class="calc-focus-name" id="calc-focus-name">Custom Calgary / Cochrane Estimate</div>
         </div>
         <div class="calc-focus-specs" id="calc-focus-specs">
-          Temple, Calgary · 2 + 1 Beds · 2 Baths · 1,140 sq ft · Est. Taxes: $214/mo
+          Adjust sliders below to test payments on any home price in Calgary or Cochrane · Est. Taxes: $250/mo
         </div>
       </div>
 
       <div class="calc-card-grid">
-        
-        <!-- Left: Sliders & Settings -->
         <div class="calc-left-inputs">
-          
-          <!-- Purchase Price Field -->
           <div class="calc-field-group">
             <div class="calc-label-row">
               <span>Purchase Price:</span>
-              <span class="calc-num-callout" id="calc-price-disp">$359,000</span>
+              <span class="calc-num-callout" id="calc-price-disp">$550,000</span>
             </div>
-            <input type="range" class="slider-range" id="slider-price" min="200000" max="1500000" step="5000" value="359000" oninput="runHubCalc()" />
+            <input type="range" class="slider-range" id="slider-price" min="200000" max="1500000" step="5000" value="550000" oninput="runHubCalc()" />
             <div class="slider-bounds">
               <span>$200k</span>
               <span>$850k</span>
@@ -997,11 +951,10 @@ header, nav, main, section, footer, form,
             </div>
           </div>
 
-          <!-- Down Payment Field -->
           <div class="calc-field-group">
             <div class="calc-label-row">
               <span>Down Payment (<span id="down-mode-label">%</span>):</span>
-              <span class="calc-num-callout" id="calc-down-disp">10% ($35,900)</span>
+              <span class="calc-num-callout" id="calc-down-disp">10% ($55,000)</span>
             </div>
             <input type="range" class="slider-range" id="slider-down" min="5" max="35" step="1" value="10" oninput="runHubCalc()" />
             <div class="slider-bounds">
@@ -1015,7 +968,6 @@ header, nav, main, section, footer, form,
             </div>
           </div>
 
-          <!-- First-Time Buyer or New Build? -->
           <div class="calc-field-group">
             <div class="calc-label-row">
               <span>First-Time Buyer or New Build?</span>
@@ -1026,7 +978,6 @@ header, nav, main, section, footer, form,
             </div>
           </div>
 
-          <!-- Amortization Period -->
           <div class="calc-field-group">
             <div class="calc-label-row">
               <span>Amortization Period</span>
@@ -1040,7 +991,6 @@ header, nav, main, section, footer, form,
             </div>
           </div>
 
-          <!-- Interest Rate Assumption -->
           <div class="calc-field-group">
             <div class="calc-label-row">
               <span>Mortgage Interest Rate</span>
@@ -1053,47 +1003,45 @@ header, nav, main, section, footer, form,
               <span class="rate-tag">sample current rate</span>
             </div>
           </div>
-
         </div>
 
-        <!-- Right: Monthly Carrying Costs Panel -->
         <div class="calc-right-results">
           <div>
             <div class="result-metric-header">Estimated Total Monthly Cost</div>
-            <div class="result-main-num" id="out-total-monthly">$1,898</div>
+            <div class="result-main-num" id="out-total-monthly">$2,831</div>
             <div class="result-sub">Includes mortgage principal, interest & property taxes</div>
 
             <div class="breakdown-table">
               <div class="breakdown-row">
                 <span>Mortgage Payment:</span>
-                <strong id="out-mort-payment">$1,684/mo</strong>
+                <strong id="out-mort-payment">$2,579/mo</strong>
               </div>
               <div class="breakdown-row">
                 <span>Est. Property Taxes:</span>
-                <strong id="out-tax-amount">+$214/mo</strong>
+                <strong id="out-tax-amount">+$252/mo</strong>
               </div>
               <div class="breakdown-row">
                 <span>Down Payment Required:</span>
-                <strong id="out-down-required">$35,900</strong>
+                <strong id="out-down-required">$55,000</strong>
               </div>
               <div class="breakdown-row">
                 <span>Default Insurance (CMHC):</span>
-                <strong id="out-cmhc-premium">$10,016</strong>
+                <strong id="out-cmhc-premium">$15,345</strong>
               </div>
-              <div class="breakdown-row" style="border-top: 1px solid #1E2823; margin-top: 0.5rem; padding-top: 0.5rem;">
+              <div class="breakdown-row" style="border-top: 1px dashed rgba(255,255,255,0.2); margin-top: 0.5rem; padding-top: 0.5rem;">
                 <span>Est. Closing Costs (~1.5%):</span>
-                <strong id="out-closing-costs">$5,385</strong>
+                <strong id="out-closing-costs">$8,250</strong>
               </div>
               <div class="breakdown-row" style="font-size: 1.05rem; color: #FFFFFF; font-weight: 700; margin-top: 0.3rem;">
                 <span>Estimated Cash Needed:</span>
-                <strong id="out-cash-needed" style="color: var(--accent-mustard);">$41,285</strong>
+                <strong id="out-cash-needed" style="color: var(--accent-gold);">$63,250</strong>
               </div>
               <div style="font-size: 0.72rem; color: #9CA3AF; line-height: 1.2; margin-top: 0.8rem; text-align: center; font-style: italic;">
                 * Closing-cost estimate is illustrative, excludes adjustments, and varies by transaction.
               </div>
               <div class="breakdown-row total-row">
                 <span>Total Mortgage Financed:</span>
-                <strong id="out-total-financed">$333,116</strong>
+                <strong id="out-total-financed">$510,345</strong>
               </div>
             </div>
           </div>
@@ -1102,19 +1050,18 @@ header, nav, main, section, footer, form,
             <a href="sms:4038701537" class="btn-action-gold">
               Text Trevor to Pre-Qualify →
             </a>
-            <div style="font-size: 0.78rem; color: #9CA3AF; text-align: center; margin-top: 0.4rem; font-weight: 500;">
+            <div style="font-size: 0.78rem; color: #9CA3AF; text-align: center; margin-top: 0.2rem; font-weight: 500;">
               No credit pull required for an initial review.
             </div>
-            <a href="https://rohitmakhija.ca/" target="_blank" class="btn-action-outline" id="btn-rohit-showing">
+            <a href="https://rohitmakhija.ca/" target="_blank" class="btn-action-outline">
               Visit Rohit's Website & Listings →
             </a>
           </div>
         </div>
-
       </div>
     </div>
 
-    <!-- Quick Savings / Pre-Approval Inquiry Box -->
+    <!-- Inquiry Card -->
     <div class="inquiry-card">
       <h3>Want to Know If You Can Afford This Home?</h3>
       <p>Send me a few details and I’ll calculate your approximate purchasing power and financing options. An initial review does not require a credit pull.</p>
@@ -1126,18 +1073,18 @@ header, nav, main, section, footer, form,
           <input type="email" class="inquiry-input" placeholder="Your Email Address *" required id="inq_email" />
           <button type="submit" class="inquiry-btn">Check My Buying Power →</button>
         </div>
-        <p style="font-size: 0.75rem; color: #9CA3AF; margin-top: 1rem; text-align: center; line-height: 1.3;">
-            By submitting, you agree to be contacted regarding your mortgage inquiry. Your information will not be sold or shared for marketing purposes. <a href="https://trevormortgages.ca/privacy" target="_blank" style="color: var(--accent-mustard); text-decoration: underline;">Privacy Policy</a>.
-          </p>
-        </form>
-      <div id="inquiry-success" style="display: none; color: var(--accent-mustard); font-weight: 800; margin-top: 1.2rem; font-size: 1.05rem;">
+        <p style="font-size: 0.75rem; color: #6B7280; margin-top: 1rem; text-align: center;">
+          By submitting, you agree to be contacted regarding your mortgage inquiry. <a href="https://trevormortgages.ca/privacy" target="_blank" style="color: var(--accent-gold-hover);">Privacy Policy</a>.
+        </p>
+      </form>
+      <div id="inquiry-success" style="display: none; color: var(--accent-gold-hover); font-weight: 800; margin-top: 1.2rem; font-size: 1.05rem;">
         ✓ Request received! Trevor will text or email your numbers shortly.
       </div>
     </div>
 
-    <!-- Dedicated Team Contact Cards -->
+    <!-- Team Cards -->
     <div class="team-cards-grid">
-      <!-- Rohit Makhija -->
+      <!-- Rohit -->
       <div class="team-card">
         <div>
           <div class="team-card-top">
@@ -1148,17 +1095,17 @@ header, nav, main, section, footer, form,
             </div>
           </div>
           <p class="team-bio">
-            Helping Calgary, Auburn Bay, and Cochrane home buyers evaluate listings, analyze market trends, and negotiate with confidence.
+            Helping Calgary, Auburn Bay, and Cochrane home buyers find the right property, evaluate market value, and make confident moves. Visit my website to view my current listings.
           </p>
         </div>
         <div>
-          <a href="https://rohitmakhija.ca/" target="_blank" class="team-contact-btn btn-green-outline" style="width: 100%;">
+          <a href="https://rohitmakhija.ca/" target="_blank" class="team-contact-btn btn-green-outline">
             Visit Rohit's Website & Listings →
           </a>
         </div>
       </div>
 
-      <!-- Trevor Berry -->
+      <!-- Trevor -->
       <div class="team-card">
         <div>
           <div class="team-card-top">
@@ -1173,41 +1120,8 @@ header, nav, main, section, footer, form,
           </p>
         </div>
         <div>
-          <a href="sms:4038701537" class="team-contact-btn btn-green-fill" style="width: 100%;">
+          <a href="sms:4038701537" class="team-contact-btn btn-green-fill">
             Text Trevor: 403-870-1537
-          </a>
-        </div>
-      </div>
-    </div>
-          </div>
-          <p class="team-bio">
-            Helping Calgary home buyers find the right neighborhood, evaluate property condition, and negotiate with confidence. Reach out to schedule a private walkthrough.
-          </p>
-        </div>
-        <div>
-          <a href="https://rohitmakhija.ca/" target="_blank" class="team-contact-btn btn-green-outline" style="width: 100%;">
-            Call or Text Darian: 587-888-0024
-          </a>
-        </div>
-      </div>
-
-      <!-- Trevor Berry -->
-      <div class="team-card">
-        <div>
-          <div class="team-card-top">
-            <div class="team-avatar-initials">TB</div>
-            <div>
-              <div class="team-name">Trevor Berry</div>
-              <div class="team-title">Mortgage Associate · Perch Mortgages</div>
-            </div>
-          </div>
-          <p class="team-bio">
-            Structuring competitive mortgage financing across 40+ Canadian lenders. Pre-approvals, rate holds, and clear purchase math with no broker fee to the borrower for most standard lender-paid purchase mortgages (any applicable fee is fully disclosed before proceeding).
-          </p>
-        </div>
-        <div>
-          <a href="sms:4038701537" class="team-contact-btn btn-green-fill" style="width: 100%;">
-            Call or Text Trevor: 403-870-1537
           </a>
         </div>
       </div>
@@ -1215,15 +1129,18 @@ header, nav, main, section, footer, form,
 
   </main>
 
-  <!-- Footer Regulatory Strip -->
   <footer class="hub-footer">
     <div class="hub-footer-inner">
-      <div class="hub-footer-left">
-        <strong>Trevor Berry</strong> &nbsp;·&nbsp; Licensed Mortgage Associate with Perch Mortgage Brokerage
+      <div>
+        <h4>Rohit Makhija × Trevor Berry</h4>
+        <p>Co-Branded Calgary & Cochrane Home Financing Portal</p>
       </div>
       <div>
-        Calculations for educational illustration O.A.C. Terms and rates subject to borrower qualification.
+        <p>Perch Mortgage Brokerage · Calgary, Alberta</p>
       </div>
+    </div>
+    <div class="hub-footer-bottom">
+      © 2026 Trevor Berry & Rohit Makhija. All rights reserved. | <a href="https://trevormortgages.ca/privacy" style="color: #9CA3AF;">Privacy Policy</a>
     </div>
   </footer>
 
@@ -1233,11 +1150,8 @@ header, nav, main, section, footer, form,
     var amortYears = 25;
     var isFTHB = true;
 
-    var properties = {};
-
     function selectProperty(id) {
       currentSelection = 'custom';
-
       var cardCustom = document.getElementById('card-prop-custom');
       if (cardCustom) cardCustom.classList.add('active');
 
@@ -1248,36 +1162,28 @@ header, nav, main, section, footer, form,
       var bannerSpecs = document.getElementById('calc-focus-specs');
       var priceSlider = document.getElementById('slider-price');
 
-      bannerName.textContent = "Custom Property Estimate";
-      bannerSpecs.textContent = "Adjust sliders below to test payments on any home price in Calgary, Auburn Bay, or Cochrane · Est. Taxes: $250/mo";
+      bannerName.textContent = "Custom Calgary / Cochrane Estimate";
+      bannerSpecs.textContent = "Adjust sliders below to test payments on any home price in Calgary or Cochrane · Est. Taxes: $250/mo";
       priceSlider.value = 550000;
-
-      if (document.getElementById('btn-rohit-showing')) {
-        document.getElementById('btn-rohit-showing').style.display = 'inline-block';
-      }
 
       runHubCalc();
     }
-function setDownPaymentMode(mode) {
+
+    function setDownPaymentMode(mode) {
       currentDownMode = mode;
       document.getElementById('btn-mode-pct').classList.toggle('active', mode === 'pct');
       document.getElementById('btn-mode-dol').classList.toggle('active', mode === 'dol');
       document.getElementById('down-mode-label').textContent = mode === 'pct' ? '%' : '$';
 
       var slider = document.getElementById('slider-down');
-      var price = parseFloat(document.getElementById('slider-price').value) || 359000;
+      var price = parseFloat(document.getElementById('slider-price').value) || 550000;
 
       if (mode === 'pct') {
-        slider.min = "5";
-        slider.max = "35";
-        slider.step = "1";
-        slider.value = "10";
+        slider.min = "5"; slider.max = "35"; slider.step = "1"; slider.value = "10";
       } else {
         var minDol = Math.round((price * 0.05) / 1000) * 1000;
         var maxDol = Math.round((price * 0.35) / 1000) * 1000;
-        slider.min = minDol.toString();
-        slider.max = maxDol.toString();
-        slider.step = "2500";
+        slider.min = minDol.toString(); slider.max = maxDol.toString(); slider.step = "2500";
         slider.value = (Math.round((price * 0.10) / 1000) * 1000).toString();
       }
       runHubCalc();
@@ -1299,26 +1205,20 @@ function setDownPaymentMode(mode) {
 
     function runHubCalc() {
       var priceSlider = document.getElementById('slider-price');
-      var price = parseFloat(priceSlider.value) || 359000;
+      var price = parseFloat(priceSlider.value) || 550000;
       document.getElementById('calc-price-disp').textContent = "$" + price.toLocaleString();
-
-      if (currentSelection === 'custom') {
-        document.getElementById('custom-card-price-disp').textContent = "$" + price.toLocaleString();
-      }
+      document.getElementById('custom-card-price-disp').textContent = "$" + price.toLocaleString();
 
       var slider = document.getElementById('slider-down');
       var downVal = parseFloat(slider.value) || 10;
-      var downAmount = 0;
-      var downPct = 0;
+      var downAmount = 0; var downPct = 0;
 
       if (currentDownMode === 'pct') {
-        downPct = downVal;
-        downAmount = price * (downPct / 100);
+        downPct = downVal; downAmount = price * (downPct / 100);
         document.getElementById('calc-down-disp').textContent = downPct + "% ($" + Math.round(downAmount).toLocaleString() + ")";
         document.getElementById('dp-min-bound').textContent = "Min 5%";
       } else {
-        downAmount = downVal;
-        downPct = (downAmount / price) * 100;
+        downAmount = downVal; downPct = (downAmount / price) * 100;
         document.getElementById('calc-down-disp').textContent = "$" + Math.round(downAmount).toLocaleString() + " (" + downPct.toFixed(1) + "%)";
         var minDol = Math.round((price * 0.05) / 1000) * 1000;
         document.getElementById('dp-min-bound').textContent = "Min $" + minDol.toLocaleString();
@@ -1327,8 +1227,7 @@ function setDownPaymentMode(mode) {
       var rateInput = document.getElementById('input-rate');
       var annualRate = rateInput ? (parseFloat(rateInput.value) || 3.60) : 3.60;
       var baseLoan = price - downAmount;
-      var cmhcPct = 0;
-      var tempAmortYears = amortYears;
+      var cmhcPct = 0; var tempAmortYears = amortYears;
 
       if (downPct < 20) {
         if (amortYears === 30) {
@@ -1359,17 +1258,12 @@ function setDownPaymentMode(mode) {
       var cmhcPrem = baseLoan * cmhcPct;
       var totalLoan = baseLoan + cmhcPrem;
 
-      // Canadian Semi-Annual Compounding
       var r = annualRate / 100;
       var monthlyRate = Math.pow(1 + r / 2, 2 / 12) - 1;
       var n = tempAmortYears * 12;
       var monthlyPayment = totalLoan * (monthlyRate * Math.pow(1 + monthlyRate, n)) / (Math.pow(1 + monthlyRate, n) - 1);
 
-      // Taxes based on selection
-      var monthlyTax = 214;
-      if (currentSelection === 2) monthlyTax = 310;
-      else if (currentSelection === 'custom') monthlyTax = Math.round(price * 0.0055 / 12);
-
+      var monthlyTax = Math.round(price * 0.0055 / 12);
       var totalMonthly = monthlyPayment + monthlyTax;
 
       document.getElementById('out-total-monthly').textContent = "$" + Math.round(totalMonthly).toLocaleString();
@@ -1387,50 +1281,27 @@ function setDownPaymentMode(mode) {
 
     function handleInquiry(e) {
       e.preventDefault();
-      
-      var name = document.getElementById('inq_name').value || '';
-      var phone = document.getElementById('inq_phone').value || '';
-      var email = document.getElementById('inq_email').value || '';
-      
-      var price = document.getElementById('slider-price').value || '';
-      var down = document.getElementById('slider-down').value || '';
-      var rate = document.getElementById('input-rate').value || '';
-      var monthly = document.getElementById('out-total-monthly').textContent || '';
-      
-      var propertyAddress = document.getElementById('calc-focus-name').textContent || '';
-      
       var leadData = {
         lead_type: 'realtor_hub_rohit',
-        full_name: name,
-        email: email,
-        phone: phone,
-        purchase_price: "$" + parseFloat(price).toLocaleString(),
-        savings_available: "$" + parseFloat(down).toLocaleString(),
-        scenario_notes: "Calculated " + propertyAddress + " with " + down + "% down at " + rate + "%. Monthly estimate: " + monthly,
+        full_name: document.getElementById('inq_name').value || '',
+        phone: document.getElementById('inq_phone').value || '',
+        email: document.getElementById('inq_email').value || '',
+        purchase_price: "$" + (parseFloat(document.getElementById('slider-price').value) || 0).toLocaleString(),
+        savings_available: "$" + (parseFloat(document.getElementById('slider-down').value) || 0).toLocaleString(),
+        scenario_notes: "Calculated Rohit Hub with Custom Price",
         province: 'Alberta',
         source_cta: 'Rohit Hub Inquiry Card',
         submittedAt: new Date().toISOString()
       };
-      
-      var scriptEndpoint = 'https://script.google.com/macros/s/AKfycbxunHTb9xivp_KH2UNceJvwaYayIAxSmkeAJRJ8SKzE0ECkIl6mGD9ROpmTMz2x7z5K/exec';
-      
-      // Submit asynchronously to Apps Script
-      fetch(scriptEndpoint, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(leadData)
-      }).catch(function(err) {
-        console.log('Lead submission error:', err);
-      });
-      
-      var f = e.target;
-      f.style.display = 'none';
+      fetch('https://script.google.com/macros/s/AKfycbxunHTb9xivp_KH2UNceJvwaYayIAxSmkeAJRJ8SKzE0ECkIl6mGD9ROpmTMz2x7z5K/exec', {
+        method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(leadData)
+      }).catch(function(err){ console.log(err); });
+      e.target.style.display = 'none';
       document.getElementById('inquiry-success').style.display = 'block';
     }
 
     window.addEventListener('DOMContentLoaded', function() {
-      selectProperty(1);
+      selectProperty('custom');
     });
   </script>
 </body>

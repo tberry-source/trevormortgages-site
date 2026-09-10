@@ -2015,272 +2015,6 @@
       }
     }
 
-  
-    /* =========================================================================
-       MASTER RESPONSIVE MOBILE OVERRIDES (SOLVES WRAPPING, OVERFLOW & PADDING)
-       ========================================================================= */
-    @media (max-width: 1024px) {
-      html, body {
-        overflow-x: hidden !important;
-        width: 100% !important;
-        max-width: 100vw !important;
-      }
-
-      /* 1. Header Navigation: 3 Column Grid (3 top, 3 bottom) */
-      header .nav-inner {
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 0.6rem !important;
-        padding: 0.6rem 0.8rem !important;
-        text-align: center !important;
-      }
-      nav.nav-links {
-        width: 100% !important;
-        display: grid !important;
-        grid-template-columns: repeat(3, auto) !important;
-        justify-content: center !important;
-        align-items: center !important;
-        gap: 0.5rem 1rem !important;
-        padding: 0.2rem 0 !important;
-        overflow: visible !important;
-        white-space: normal !important;
-        text-align: center !important;
-      }
-      nav.nav-links a {
-        font-size: 0.82rem !important;
-        font-weight: 700 !important;
-        padding: 0.2rem 0.3rem !important;
-        display: inline-block !important;
-        text-align: center !important;
-      }
-
-      /* 2. Subpage Hero and Section Titles Centering */
-      .subpage-hero {
-        padding: 2.2rem 1rem 1.8rem !important;
-        text-align: center !important;
-      }
-      .subpage-hero h1 {
-        font-size: 1.85rem !important;
-        line-height: 1.25 !important;
-        text-align: center !important;
-      }
-      .subpage-hero p.lead {
-        font-size: 0.96rem !important;
-        line-height: 1.55 !important;
-        text-align: center !important;
-        margin: 0 auto 1.2rem !important;
-      }
-      .section-title-wrap {
-        text-align: center !important;
-        margin-bottom: 1.8rem !important;
-        padding: 0 !important;
-      }
-      .section-title-wrap h2 {
-        font-size: 1.75rem !important;
-        text-align: center !important;
-        line-height: 1.25 !important;
-      }
-      .section-title-wrap p {
-        font-size: 0.95rem !important;
-        text-align: center !important;
-        line-height: 1.5 !important;
-        margin: 0 auto !important;
-      }
-
-      /* 3. Eliminate Container Padding / Min-Width Overflow (CPA, Renos, Realtor, Case Studies) */
-      .content-section, 
-      .hero,
-      .principles-section,
-      .lanes-section,
-      .contact-section,
-      footer {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-        box-sizing: border-box !important;
-      }
-
-      /* Case study boxes, classifier containers, co-brand boxes */
-      .cobrand-showcase-box,
-      .cpa-classifier-box,
-      .calc-card-container,
-      .cta-banner-box,
-      .feature-box,
-      .lane-card,
-      .principle-card {
-        padding: 1.25rem 1rem !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-      }
-
-      .cobrand-flex-wrap {
-        gap: 1.2rem !important;
-      }
-
-      .cobrand-left-col,
-      .cobrand-right-col {
-        min-width: 0 !important;
-        width: 100% !important;
-        flex: none !important;
-        padding: 1.25rem 1rem !important;
-        box-sizing: border-box !important;
-      }
-
-      /* Grid layout forced stack to single column */
-      #cpa-classifier-grid,
-      .feature-grid-2,
-      .feature-grid-3,
-      .principles-grid,
-      .lanes-grid,
-      .calc-grid,
-      .form-grid-2,
-      .form-row-2 {
-        grid-template-columns: 1fr !important;
-        gap: 1.2rem !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-      }
-
-      /* Card span overrides */
-      .feature-box[style*="grid-column"],
-      div[style*="grid-column: span"] {
-        grid-column: span 1 !important;
-      }
-
-      /* Universal element bounds safety */
-      *[style*="min-width"] {
-        min-width: 0 !important;
-      }
-    }
-
-
-/* =========================================================================
-   ABSOLUTE MOBILE VIEWPORT LOCK - ZERO HORIZONTAL MOVEMENT / SWAY
-   ========================================================================= */
-*, *::before, *::after {
-  box-sizing: border-box !important;
-}
-
-html {
-  overflow-x: hidden !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  position: relative !important;
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  overflow-x: hidden !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  position: relative !important;
-  word-break: break-word !important;
-  overflow-wrap: break-word !important;
-}
-
-/* Strict containment on all container elements */
-header, nav, main, section, footer, form,
-.hub-container, .hub-hero, .picker-section, .calc-card-wrap,
-.inquiry-card, .team-cards-grid, .partner-nav, .hub-footer,
-.subpage-hero, .content-section, .calc-card, .feature-box,
-.property-cards-grid, .calc-card-grid, .inquiry-form-grid,
-.micro-team-strip, .rate-box-row, .breakdown-table, .calc-left-inputs, .calc-right-results {
-  max-width: 100% !important;
-  box-sizing: border-box !important;
-}
-
-@media (max-width: 768px) {
-  html, body {
-    overflow-x: hidden !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    position: relative !important;
-  }
-
-  .hub-container,
-  .partner-nav-inner,
-  .hub-footer-inner,
-  .subpage-hero-container {
-    padding-left: 0.85rem !important;
-    padding-right: 0.85rem !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    box-sizing: border-box !important;
-  }
-
-  .hub-hero,
-  .picker-section,
-  .calc-card-wrap,
-  .calc-left-inputs,
-  .calc-right-results,
-  .inquiry-card,
-  .team-card,
-  .prop-card {
-    padding-left: 0.85rem !important;
-    padding-right: 0.85rem !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  .property-cards-grid,
-  .calc-card-grid,
-  .inquiry-form-grid,
-  .team-cards-grid,
-  .feature-grid-2,
-  .feature-grid-3,
-  .calc-layout-grid,
-  .calc-grid {
-    grid-template-columns: 1fr !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  .calc-left-inputs,
-  .calc-right-results,
-  .prop-card,
-  .team-card,
-  .strip-item,
-  .inquiry-input,
-  .inquiry-btn,
-  .btn-action-gold,
-  .btn-action-outline,
-  .team-contact-btn {
-    min-width: 0 !important;
-    max-width: 100% !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  input[type="range"], .slider-range {
-    max-width: 100% !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  .micro-team-strip {
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    gap: 0.6rem !important;
-    padding: 0.8rem 0.85rem !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  .strip-divider {
-    display: none !important;
-  }
-}
-
   </style>
 
 </head>
@@ -2382,7 +2116,7 @@ header, nav, main, section, footer, form,
           <svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
         </div>
         <h3>Setting Up Your Payments</h3>
-        <p>I'll look at 25 vs. 30-year amortizations to make sure your monthly cash flow stays comfortable, with prepayment options so you can pay down principal faster when it suits you.</p>
+        <p>We'll look at 25 vs. 30-year amortizations to make sure your monthly cash flow stays comfortable, with prepayment options so you can pay down principal faster when it suits you.</p>
       </div>
 
       <div class="principle-card">
@@ -2500,7 +2234,7 @@ header, nav, main, section, footer, form,
         </div>
         <h1>Secure Your Financing & <span class="accent">Shop for Your New Home with Confidence</span></h1>
         <p class="lead">
-          Don't let rising rates or complex lender rules stall your home purchase. I secure a 120-day rate hold, map out your down payment, and explore custom options (including my Buy.ca program and cash incentives) to ensure zero closing-day surprises.
+          Don't let rising rates or complex lender rules stall your home purchase. We secure a 120-day rate hold, map out your down payment, and explore custom options (including our Buy.ca program and cash incentives) to ensure zero closing-day surprises.
         </p>
         <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
           <button class="btn btn-primary" style="font-size: 0.95rem;" onclick="document.getElementById('buying-calculator').scrollIntoView({ behavior: 'smooth' })">Calculate Your Purchase Numbers ↓</button>
@@ -2515,7 +2249,7 @@ header, nav, main, section, footer, form,
           <span class="tag">Rate Protection</span>
           <h3>120-Day Fixed Rate Holds</h3>
           <p>
-            Interest rates can fluctuate while you shop. I secure a written 120-day rate lock across major monolines and banks, giving you complete budget protection and peace of mind.
+            Interest rates can fluctuate while you shop. We secure a written 120-day rate lock across major monolines and banks, giving you complete budget protection and peace of mind.
           </p>
           <ul class="lane-bullets">
             <li>Lock in today's best rates before you start shopping</li>
@@ -2528,7 +2262,7 @@ header, nav, main, section, footer, form,
           <span class="tag">Down Payment Solutions</span>
           <h3>Down Payment Programs, Buy.ca &amp; Government Incentives</h3>
           <p>
-            Struggling with cash-to-close? I help you explore specialized programs like the <a href="https://myperch.io/programs/down-payment-bonus/" target="_blank" rel="noopener" style="color: var(--brand-green); font-weight: 700; text-decoration: underline;">Perch Down Payment Bonus Program</a>, the Buy.ca 1.5% down payment cash bonus, gifted down payments, the Federal First-Time Home Buyer Incentive, and local housing grants.
+            Struggling with cash-to-close? We help you explore specialized programs like the <a href="https://myperch.io/programs/down-payment-bonus/" target="_blank" rel="noopener" style="color: var(--brand-green); font-weight: 700; text-decoration: underline;">Perch Down Payment Bonus Program</a>, the Buy.ca 1.5% down payment cash bonus, gifted down payments, the Federal First-Time Home Buyer Incentive, and local housing grants.
           </p>
           <ul class="lane-bullets">
             <li>Structured gift letter support from family members</li>
@@ -2539,9 +2273,9 @@ header, nav, main, section, footer, form,
 
         <div class="feature-box">
           <span class="tag">Unbiased Shopping</span>
-          <h3>I Shop 40+ Lenders For You</h3>
+          <h3>We Shop 40+ Lenders For You</h3>
           <p>
-            Standard retail banks can only sell you their own financial products. I shop the entire Canadian wholesale market—prime, alternative, and private—to find your perfect fit.
+            Standard retail banks can only sell you their own financial products. We shop the entire Canadian wholesale market—prime, alternative, and private—to find your perfect fit.
           </p>
           <ul class="lane-bullets">
             <li>Access monolines with lower penalty calculations</li>
@@ -2719,7 +2453,7 @@ header, nav, main, section, footer, form,
 
       <div class="feature-box">
         <h3>Preserving Your Low-Rate First Mortgage</h3>
-        <p>If you have an existing first mortgage locked in at a low fixed rate (such as 2% to 3%), breaking it to refinance triggers massive bank penalties and forfeits your rate. Instead, I structure secondary mortgage solutions or customized equity facilities that leave your primary low-rate mortgage completely untouched.</p>
+        <p>If you have an existing first mortgage locked in at a low fixed rate (such as 2% to 3%), breaking it to refinance triggers massive bank penalties and forfeits your rate. Instead, we structure secondary mortgage solutions or customized equity facilities that leave your primary low-rate mortgage completely untouched.</p>
         <ul class="lane-bullets">
           <li>Zero bank prepayment penalties on your existing first mortgage</li>
           <li>Maintain your low locked-in rate on your primary principal balance</li>
@@ -2874,7 +2608,7 @@ header, nav, main, section, footer, form,
   <section class="content-section" id="solutions">
     <div class="section-title-wrap">
       <span class="section-eyebrow">Common Scenarios</span>
-      <h2>Who I Help Beyond the Bank Branch</h2>
+      <h2>Who We Help Beyond the Bank Branch</h2>
       <p>Real people with real income whose tax returns or credit history don't fit Big-5 bank guidelines.</p>
     </div>
 
@@ -2948,7 +2682,7 @@ header, nav, main, section, footer, form,
       </div>
       <h1>Collaborations That Help <span class="accent">Clients & Deals Move Forward</span></h1>
       <p class="lead">
-        I partner with real estate agents, builders, CPAs, renovation companies, and corporate accountants. Together with my partners, I provide clients with common-sense financing structures, smooth closings, and specialized lending resources.
+        I partner with real estate agents, builders, CPAs, renovation companies, and corporate accountants. Together, we provide clients with common-sense financing structures, smooth closings, and specialized lending resources.
       </p>
       <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
         <button class="btn btn-primary" onclick="openPartnerModal()">Discuss a Scenario With Trevor →</button>
@@ -2973,7 +2707,7 @@ header, nav, main, section, footer, form,
           <div style="font-size: 0.8rem; font-weight: 800; color: #F7704F; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">Real Estate Agents</div>
           <h3 style="font-size: 1.35rem; margin-bottom: 0.8rem;">Realtor Partner Hub & Listing Tools</h3>
           <p style="font-size: 0.94rem; color: var(--text-body); line-height: 1.6; margin-bottom: 1.2rem;">
-            Turn every listing into a high-converting financing portal. I build property-specific payment hubs, provide down payment rebate programs, and offer a 5% referral fee structure to reward high-performing agent collaborations.
+            Turn every listing into a high-converting financing portal. We build property-specific payment hubs, provide down payment rebate programs, and offer a 5% referral fee structure to reward high-performing agent collaborations.
           </p>
           <ul class="lane-bullets" style="margin-bottom: 1.5rem;">
             <li>Co-branded subdomains with live payment & down payment sliders for each property</li>
