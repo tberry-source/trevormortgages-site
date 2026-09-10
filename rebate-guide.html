@@ -715,7 +715,579 @@
       .footer-inner { grid-template-columns: 1fr; }
       .subpage-hero h1 { font-size: 2.2rem; }
     }
-  </style>
+  
+    /* =========================================================================
+       MASTER MOBILE OPTIMIZATIONS (UNIFIED MOBILE FIXES - VERSION 27)
+       ========================================================================= */
+    @media (max-width: 1024px) {
+      /* Force body to prevent horizontal overflow/scrolling completely */
+      body, html {
+        overflow-x: hidden !important;
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Unified Container Margins - No Elements Touch the Edge! */
+      .hero, 
+      .principles-section, 
+      .lanes-section, 
+      .contact-section, 
+      .subpage-hero, 
+      .content-section, 
+      footer {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+        box-sizing: border-box !important;
+      }
+
+      .hero-container, 
+      .subpage-hero-container, 
+      .footer-inner, 
+      .brokerage-compliance-box {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      /* Center headers symmetrically on mobile */
+      .subpage-hero {
+        padding-top: 2.2rem !important;
+        padding-bottom: 2rem !important;
+        text-align: center !important;
+      }
+      .subpage-hero h1 {
+        font-size: 1.85rem !important;
+        line-height: 1.25 !important;
+        text-align: center !important;
+      }
+      .subpage-hero p.lead {
+        font-size: 0.98rem !important;
+        line-height: 1.55 !important;
+        text-align: center !important;
+        margin: 0 auto 1.5rem !important;
+      }
+      .eyebrow-tag {
+        display: inline-flex !important;
+        justify-content: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+      }
+
+      /* Section Title Alignments - Centered for Symmetrical Mobile Layout */
+      .section-title-wrap {
+        text-align: center !important;
+        margin-bottom: 2rem !important;
+        padding: 0 !important;
+      }
+      .section-title-wrap h2 {
+        font-size: 1.8rem !important;
+        text-align: center !important;
+        line-height: 1.25 !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      .section-title-wrap p {
+        font-size: 0.96rem !important;
+        text-align: center !important;
+        line-height: 1.5 !important;
+        margin: 0 auto !important;
+      }
+      .section-eyebrow {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+      }
+
+      /* Header Menu - Compact, Wrapped & Centered (NO HORIZONTAL SWIPING!) */
+      .nav-inner {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.8rem !important;
+        padding: 0.8rem 0 !important;
+        text-align: center !important;
+      }
+      .brand-link {
+        align-items: center !important;
+        text-align: center !important;
+        margin-bottom: 0.2rem !important;
+      }
+      .brand-name {
+        font-size: 1.15rem !important;
+        letter-spacing: 0.02em !important;
+        text-align: center !important;
+      }
+      .brand-meta {
+        font-size: 0.72rem !important;
+        text-align: center !important;
+      }
+      .nav-inner > div:last-child {
+        display: none !important; /* Hide desktop CTA button */
+      }
+      nav.nav-links {
+        width: 100% !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 0.5rem 1rem !important;
+        padding: 0.2rem 0 !important;
+        overflow: visible !important;
+        white-space: normal !important;
+      }
+      nav.nav-links a {
+        font-size: 0.82rem !important;
+        font-weight: 700 !important;
+        padding: 0.25rem 0.4rem !important;
+        display: inline-block !important;
+      }
+
+      /* Stack grids and elements into clean single-column layout */
+      .feature-grid-2,
+      .footer-inner,
+      .principles-grid,
+      .lanes-grid,
+      .team-cards-grid,
+      .inquiry-form-grid,
+      .property-cards-grid,
+      .classifier-container,
+      #cpa-classifier-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+      }
+      .feature-box,
+      .principle-card,
+      .lane-card,
+      .pill-card,
+      .phase-card,
+      .calc-card,
+      .option-card,
+      .team-card {
+        margin-bottom: 1.5rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        grid-column: span 1 !important; /* Override double-wide grid cells on mobile */
+      }
+      .feature-box:last-child,
+      .principle-card:last-child,
+      .lane-card:last-child,
+      .pill-card:last-child,
+      .phase-card:last-child {
+        margin-bottom: 0 !important;
+      }
+
+      /* Dynamic form stacking (e.g. CPA classifier and inputs) */
+      .form-grid-2,
+      .form-row-2,
+      
+      
+      /* Padding adjustments to prevent text squishing in cards */
+      .classifier-card-container,
+      
+
+      /* Sticky result panel reset */
+      .classifier-result-wrap {
+        position: static !important;
+      }
+    }
+
+    
+    
+       ========================================================================= */
+    @media (max-width: 1024px) {
+      html, body {
+        width: 100% !important;
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+      }
+      
+      /* Mobile Header Navigation - 3x2 Symmetrical Grid */
+      .nav-inner {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.8rem !important;
+        padding: 0.8rem 0 !important;
+        text-align: center !important;
+      }
+      .brand-link {
+        align-items: center !important;
+        text-align: center !important;
+        margin-bottom: 0.2rem !important;
+      }
+      .brand-name {
+        font-size: 1.15rem !important;
+        letter-spacing: 0.02em !important;
+        text-align: center !important;
+      }
+      .brand-meta {
+        font-size: 0.72rem !important;
+        text-align: center !important;
+      }
+      .nav-inner > div:last-child {
+        display: none !important;
+      }
+      nav.nav-links {
+        width: 100% !important;
+        max-width: 380px !important;
+        margin: 0 auto !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 0.4rem 0.5rem !important;
+        padding: 0.2rem 0 !important;
+        justify-items: center !important;
+        align-items: center !important;
+        overflow: visible !important;
+        white-space: normal !important;
+      }
+      nav.nav-links a {
+        font-size: 0.82rem !important;
+        font-weight: 700 !important;
+        padding: 0.3rem 0.2rem !important;
+        display: block !important;
+        text-align: center !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        white-space: nowrap !important;
+      }
+
+      /* Centered Subpage Heroes and Section Titles */
+      .subpage-hero {
+        padding-top: 2rem !important;
+        padding-bottom: 1.8rem !important;
+        text-align: center !important;
+      }
+      .subpage-hero h1 {
+        font-size: 1.85rem !important;
+        line-height: 1.25 !important;
+        text-align: center !important;
+      }
+      .subpage-hero p.lead {
+        font-size: 0.98rem !important;
+        line-height: 1.55 !important;
+        text-align: center !important;
+        margin: 0 auto 1.5rem !important;
+      }
+      .section-title-wrap {
+        text-align: center !important;
+        margin-bottom: 2rem !important;
+      }
+      .section-title-wrap h2 {
+        text-align: center !important;
+      }
+      .section-title-wrap p {
+        text-align: center !important;
+      }
+
+      /* Compact Paddings & Reset Stretched Containers */
+      .content-section, 
+      .hero-container, 
+      .subpage-hero-container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        box-sizing: border-box !important;
+      }
+
+      div
+
+      div
+
+      div
+
+      /* Grid Column Spans Reset */
+      .feature-box
+    }
+  
+/* =========================================================================
+   CLEAN MASTER MOBILE RESPONSIVE STYLES (MAIN SITE PAGES)
+   ========================================================================= */
+@media (max-width: 860px) {
+  html, body {
+    overflow-x: hidden !important;
+    position: relative !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .top-strip {
+    font-size: 0.78rem !important;
+    padding: 0.4rem 0 !important;
+  }
+  .top-strip-inner {
+    padding: 0 1rem !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+  .nav-inner {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 0.85rem 1rem !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .brand-link {
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+  .brand-name {
+    font-size: 1.15rem !important;
+    text-align: center !important;
+  }
+  .brand-meta {
+    font-size: 0.72rem !important;
+    text-align: center !important;
+  }
+  .nav-cta-wrap {
+    display: none !important;
+  }
+  nav.nav-links {
+    width: 100% !important;
+    max-width: 380px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0.5rem 0.8rem !important;
+    padding: 0 !important;
+  }
+  nav.nav-links a {
+    font-size: 0.85rem !important;
+    font-weight: 700 !important;
+    padding: 0.2rem 0.4rem !important;
+    display: inline-block !important;
+    text-align: center !important;
+  }
+  .subpage-hero {
+    padding: 2.2rem 1rem 2rem !important;
+  }
+  .subpage-hero-container {
+    padding: 0 !important;
+  }
+  .subpage-hero h1 {
+    font-size: 1.75rem !important;
+    line-height: 1.25 !important;
+  }
+  .subpage-hero p.lead {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+  }
+  .content-section {
+    padding: 2rem 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .section-title-wrap {
+    margin-bottom: 1.5rem !important;
+  }
+  .section-title-wrap h2 {
+    font-size: 1.55rem !important;
+  }
+  .section-title-wrap p {
+    font-size: 0.92rem !important;
+  }
+  .feature-grid-2, .feature-grid-3, .feature-grid-4, .calc-layout-grid, .form-grid-2, .form-row-2 {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+    width: 100% !important;
+  }
+  .feature-box, .calc-card-container, .classifier-card-container, .pill-card, .lane-card, .option-card {
+    padding: 1.35rem 1.1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    grid-column: span 1 !important;
+  }
+  .cta-banner-box {
+    padding: 2rem 1.1rem !important;
+  }
+  .cta-banner-box h3 {
+    font-size: 1.45rem !important;
+  }
+  .cta-banner-box p {
+    font-size: 0.92rem !important;
+  }
+  .table-container {
+    margin: 1.2rem 0 !important;
+    border-radius: 8px !important;
+    width: 100% !important;
+  }
+  table.matrix-table {
+    font-size: 0.82rem !important;
+  }
+  table.matrix-table th, table.matrix-table td {
+    padding: 0.65rem 0.75rem !important;
+  }
+  footer {
+    padding: 3rem 1rem 2rem !important;
+  }
+  .footer-inner {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  .brokerage-compliance-box {
+    padding: 1.5rem 1rem 0 !important;
+  }
+  .brokerage-lockup-row {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+}
+
+
+/* =========================================================================
+   CLEAN MASTER MOBILE RESPONSIVE STYLES (MAIN SITE PAGES)
+   ========================================================================= */
+@media (max-width: 860px) {
+  html, body {
+    overflow-x: hidden !important;
+    position: relative !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .top-strip {
+    font-size: 0.78rem !important;
+    padding: 0.4rem 0 !important;
+  }
+  .top-strip-inner {
+    padding: 0 1rem !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+  .nav-inner {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 0.85rem 1rem !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .brand-link {
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+  .brand-name {
+    font-size: 1.15rem !important;
+    text-align: center !important;
+  }
+  .brand-meta {
+    font-size: 0.72rem !important;
+    text-align: center !important;
+  }
+  .nav-cta-wrap {
+    display: none !important;
+  }
+  nav.nav-links {
+    width: 100% !important;
+    max-width: 380px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0.5rem 0.8rem !important;
+    padding: 0 !important;
+  }
+  nav.nav-links a {
+    font-size: 0.85rem !important;
+    font-weight: 700 !important;
+    padding: 0.2rem 0.4rem !important;
+    display: inline-block !important;
+    text-align: center !important;
+  }
+  .subpage-hero {
+    padding: 2.2rem 1rem 2rem !important;
+  }
+  .subpage-hero-container {
+    padding: 0 !important;
+  }
+  .subpage-hero h1 {
+    font-size: 1.75rem !important;
+    line-height: 1.25 !important;
+  }
+  .subpage-hero p.lead {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+  }
+  .content-section {
+    padding: 2rem 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .section-title-wrap {
+    margin-bottom: 1.5rem !important;
+  }
+  .section-title-wrap h2 {
+    font-size: 1.55rem !important;
+  }
+  .section-title-wrap p {
+    font-size: 0.92rem !important;
+  }
+  .feature-grid-2, .feature-grid-3, .feature-grid-4, .calc-layout-grid, .form-grid-2, .form-row-2 {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+    width: 100% !important;
+  }
+  .feature-box, .calc-card-container, .classifier-card-container, .pill-card, .lane-card, .option-card {
+    padding: 1.35rem 1.1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    grid-column: span 1 !important;
+  }
+  .cta-banner-box {
+    padding: 2rem 1.1rem !important;
+  }
+  .cta-banner-box h3 {
+    font-size: 1.45rem !important;
+  }
+  .cta-banner-box p {
+    font-size: 0.92rem !important;
+  }
+  .table-container {
+    margin: 1.2rem 0 !important;
+    border-radius: 8px !important;
+    width: 100% !important;
+  }
+  table.matrix-table {
+    font-size: 0.82rem !important;
+  }
+  table.matrix-table th, table.matrix-table td {
+    padding: 0.65rem 0.75rem !important;
+  }
+  footer {
+    padding: 3rem 1rem 2rem !important;
+  }
+  .footer-inner {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  .brokerage-compliance-box {
+    padding: 1.5rem 1rem 0 !important;
+  }
+  .brokerage-lockup-row {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+}
+
+</style>
+
 </head>
 <body>
 
@@ -730,18 +1302,18 @@
   <!-- Header Navigation -->
   <header>
     <div class="nav-inner">
-      <a href="/" class="brand-link">
+      <a href="index.html#home" class="brand-link">
         <span class="brand-name">TREVOR BERRY</span>
         <span class="brand-meta">Mortgage Associate</span>
       </a>
 
       <nav class="nav-links">
-        <a href="/">Home</a>
+        <a href="index.html#home">Home</a>
         <a href="index.html#buying">Buying</a>
         <a href="index.html#homeowners">Homeowners</a>
         <a href="index.html#alternative">Alternative</a>
         <a href="index.html#partners" class="active">Partners</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html#contact">Contact</a>
       </nav>
 
       <div>
@@ -949,7 +1521,7 @@
           <span class="tag" style="color: var(--brand-green);">Step 02 · Possession Day</span>
           <h3>2. Closing Funds Advanced</h3>
           <p>
-            On closing day, we advance the approved rebate amount directly to the conveyancing real estate lawyer's trust account to satisfy the down payment.
+            On closing day, I advance the approved rebate amount directly to the conveyancing real estate lawyer's trust account to satisfy the down payment.
           </p>
           <ul class="lane-bullets">
             <li>Funds arrive directly on the lawyer's Statement of Adjustments as buyer down payment</li>
@@ -966,7 +1538,7 @@
             The appropriate CRA/Ontario rebate application is completed based on occupancy and transaction type to claim the government refund.
           </p>
           <ul class="lane-bullets">
-            <li>We supply the complete paperwork package and documentation checklist for the CRA</li>
+            <li>I supply the complete paperwork package and documentation checklist for the CRA</li>
             <li>When the CRA issues the rebate refund cheque or direct deposit, it pays off the advance</li>
             <li>Buyer gets into the home today without liquidating emergency cash or investments</li>
           </ul>
