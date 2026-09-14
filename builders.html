@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alberta Home Builder Financing &amp; Presale Program | Trevor Berry</title>
-  <meta name="description" content="Help Alberta buyers close with zero out-of-pocket builder discount using my limited-time capitalized GST Rebate Advance program." />
+  <meta name="description" content="Help Alberta buyers close with zero out-of-pocket builder discount using our limited-time capitalized GST Rebate Advance program." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -717,11 +717,11 @@
     }
   
     /* =========================================================================
-       MASTER MOBILE OPTIMIZATIONS (UNIFIED MOBILE FIXES - VERSION 27)
+       CUMULATIVE MASTER MOBILE OPTIMIZATIONS (FIXES SCROLL, ALIGNMENT, SPANS & GRIDS)
        ========================================================================= */
     @media (max-width: 1024px) {
-      /* Force body to prevent horizontal overflow/scrolling completely */
-      body, html {
+      /* Prevent horizontal scroll */
+      html, body {
         overflow-x: hidden !important;
         position: relative;
         width: 100%;
@@ -729,55 +729,55 @@
         padding: 0;
       }
 
-      /* Unified Container Margins - No Elements Touch the Edge! */
-      .hero, 
-      .principles-section, 
-      .lanes-section, 
-      .contact-section, 
-      .subpage-hero, 
-      .content-section, 
-      footer {
-        padding-left: 1.25rem !important;
-        padding-right: 1.25rem !important;
-        box-sizing: border-box !important;
-      }
-
-      .hero-container, 
-      .subpage-hero-container, 
-      .footer-inner, 
-      .brokerage-compliance-box {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
+      /* Force all grid column spans back to 1 column on mobile to prevent squishing */
+      [style*="grid-column"], 
+      .feature-box, 
+      .option-card, 
+      .card, 
+      .grid-span-2,
+      .grid-span-3 {
+        grid-column: span 1 !important;
         width: 100% !important;
+        max-width: 100% !important;
         box-sizing: border-box !important;
       }
 
-      /* Center headers symmetrically on mobile */
-      .subpage-hero {
+      /* Responsive form row and input columns stack on mobile */
+      .form-grid-2, 
+      .form-row-2, 
+      .grid-2-col,
+      [style*="grid-template-columns: 1fr 1fr"],
+      [style*="grid-template-columns: repeat(2"] {
+        grid-template-columns: 1fr !important;
+        gap: 0.8rem !important;
+      }
+
+      /* Center all subpage hero headers and paragraphs on mobile */
+      .subpage-hero, .hero {
+        text-align: center !important;
         padding-top: 2.2rem !important;
         padding-bottom: 2rem !important;
-        text-align: center !important;
       }
-      .subpage-hero h1 {
+      .subpage-hero h1,
+      .hero h1,
+      .subpage-hero h1 span.accent,
+      .hero h1 span.accent,
+      .subpage-hero-container h1 {
         font-size: 1.85rem !important;
         line-height: 1.25 !important;
         text-align: center !important;
       }
-      .subpage-hero p.lead {
+      .subpage-hero p.lead,
+      .hero p.lead,
+      .hero-content p.lead,
+      .subpage-hero-container p.lead {
         font-size: 0.98rem !important;
         line-height: 1.55 !important;
         text-align: center !important;
         margin: 0 auto 1.5rem !important;
       }
-      .eyebrow-tag {
-        display: inline-flex !important;
-        justify-content: center !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        text-align: center !important;
-      }
 
-      /* Section Title Alignments - Centered for Symmetrical Mobile Layout */
+      /* Center all standard section h2 and description p on mobile */
       .section-title-wrap {
         text-align: center !important;
         margin-bottom: 2rem !important;
@@ -787,8 +787,6 @@
         font-size: 1.8rem !important;
         text-align: center !important;
         line-height: 1.25 !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
       }
       .section-title-wrap p {
         font-size: 0.96rem !important;
@@ -796,19 +794,38 @@
         line-height: 1.5 !important;
         margin: 0 auto !important;
       }
-      .section-eyebrow {
+
+      /* Center hero content layouts on mobile */
+      .hero-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem !important;
+        align-items: stretch !important;
         text-align: center !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        display: block !important;
+      }
+      .hero-content {
+        text-align: center !important;
+      }
+      .hero-actions {
+        justify-content: center !important;
+        gap: 0.75rem !important;
+        width: 100% !important;
+      }
+      .hero-actions .btn, .btn {
+        width: 100% !important;
+        justify-content: center !important;
+      }
+      .hero-points {
+        gap: 1.2rem !important;
+        justify-content: center !important;
       }
 
-      /* Header Menu - Compact, Wrapped & Centered (NO HORIZONTAL SWIPING!) */
+      /* Compact Wrapped Navigation Header - centered, no horizontal swipe */
       .nav-inner {
         flex-direction: column !important;
         align-items: center !important;
         gap: 0.8rem !important;
-        padding: 0.8rem 0 !important;
+        padding: 0.85rem 1.25rem !important;
         text-align: center !important;
       }
       .brand-link {
@@ -826,7 +843,7 @@
         text-align: center !important;
       }
       .nav-inner > div:last-child {
-        display: none !important; /* Hide desktop CTA button */
+        display: none !important; /* Hide CTA button to save space */
       }
       nav.nav-links {
         width: 100% !important;
@@ -845,448 +862,122 @@
         display: inline-block !important;
       }
 
-      /* Stack grids and elements into clean single-column layout */
-      .feature-grid-2,
-      .footer-inner,
-      .principles-grid,
-      .lanes-grid,
-      .team-cards-grid,
-      .inquiry-form-grid,
-      .property-cards-grid,
-      .classifier-container,
-      #cpa-classifier-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
-      }
-      .feature-box,
-      .principle-card,
-      .lane-card,
-      .pill-card,
-      .phase-card,
-      .calc-card,
-      .option-card,
-      .team-card {
-        margin-bottom: 1.5rem !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-        grid-column: span 1 !important; /* Override double-wide grid cells on mobile */
-      }
-      .feature-box:last-child,
-      .principle-card:last-child,
-      .lane-card:last-child,
-      .pill-card:last-child,
-      .phase-card:last-child {
-        margin-bottom: 0 !important;
-      }
-
-      /* Dynamic form stacking (e.g. CPA classifier and inputs) */
-      .form-grid-2,
-      .form-row-2,
-      
-      
-      /* Padding adjustments to prevent text squishing in cards */
+      /* CPA Classifier card mobile padding relief */
       .classifier-card-container,
+      [style*="padding: 2.5rem"],
+      .feature-box {
+        padding: 1.25rem !important;
+      }
       
-
-      /* Sticky result panel reset */
-      .classifier-result-wrap {
-        position: static !important;
+      /* Center rate tags */
+      .rate-tag {
+        text-align: center !important;
+        display: block !important;
+        margin-top: 0.4rem !important;
+        width: 100% !important;
       }
     }
 
-    
-    
+    /* =========================================================================
+       REINFORCED MOBILE MARGIN & HEADER RESPONSIVE GUARANTEE
        ========================================================================= */
     @media (max-width: 1024px) {
       html, body {
         width: 100% !important;
-        max-width: 100vw !important;
+        max-width: 100% !important;
         overflow-x: hidden !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        position: relative !important;
+      }
+
+      .top-strip-inner {
+        padding: 0.5rem 1.25rem !important;
         box-sizing: border-box !important;
       }
-      
-      /* Mobile Header Navigation - 3x2 Symmetrical Grid */
+
       .nav-inner {
         flex-direction: column !important;
         align-items: center !important;
-        gap: 0.8rem !important;
-        padding: 0.8rem 0 !important;
+        gap: 0.75rem !important;
+        padding: 0.85rem 1.25rem !important;
         text-align: center !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
       }
-      .brand-link {
-        align-items: center !important;
-        text-align: center !important;
-        margin-bottom: 0.2rem !important;
-      }
-      .brand-name {
-        font-size: 1.15rem !important;
-        letter-spacing: 0.02em !important;
-        text-align: center !important;
-      }
-      .brand-meta {
-        font-size: 0.72rem !important;
-        text-align: center !important;
-      }
-      .nav-inner > div:last-child {
-        display: none !important;
-      }
+
       nav.nav-links {
         width: 100% !important;
-        max-width: 380px !important;
-        margin: 0 auto !important;
-        display: grid !important;
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 0.4rem 0.5rem !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 0.4rem 0.75rem !important;
         padding: 0.2rem 0 !important;
-        justify-items: center !important;
-        align-items: center !important;
         overflow: visible !important;
         white-space: normal !important;
+        box-sizing: border-box !important;
       }
+
       nav.nav-links a {
-        font-size: 0.82rem !important;
+        font-size: 0.84rem !important;
         font-weight: 700 !important;
-        padding: 0.3rem 0.2rem !important;
-        display: block !important;
-        text-align: center !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-        white-space: nowrap !important;
+        padding: 0.25rem 0.45rem !important;
+        display: inline-block !important;
       }
 
-      /* Centered Subpage Heroes and Section Titles */
-      .subpage-hero {
-        padding-top: 2rem !important;
-        padding-bottom: 1.8rem !important;
-        text-align: center !important;
-      }
-      .subpage-hero h1 {
-        font-size: 1.85rem !important;
-        line-height: 1.25 !important;
-        text-align: center !important;
-      }
-      .subpage-hero p.lead {
-        font-size: 0.98rem !important;
-        line-height: 1.55 !important;
-        text-align: center !important;
-        margin: 0 auto 1.5rem !important;
-      }
-      .section-title-wrap {
-        text-align: center !important;
-        margin-bottom: 2rem !important;
-      }
-      .section-title-wrap h2 {
-        text-align: center !important;
-      }
-      .section-title-wrap p {
-        text-align: center !important;
-      }
-
-      /* Compact Paddings & Reset Stretched Containers */
-      .content-section, 
-      .hero-container, 
-      .subpage-hero-container {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-        width: 100% !important;
-        max-width: 100vw !important;
+      .subpage-hero, .hero {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
         box-sizing: border-box !important;
       }
 
-      div
+      .subpage-hero-container, .hero-container, .content-section, .brokerage-compliance-box {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
 
-      div
+      .calc-card-container,
+      .cta-banner-box,
+      .feature-box,
+      .classifier-card-container,
+      [style*="padding: 2.5rem"],
+      [style*="padding: 3.5rem"],
+      [style*="padding: 2.2rem 1.8rem"] {
+        padding: 1.25rem !important;
+        box-sizing: border-box !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
 
-      div
+      .feature-grid-2,
+      .feature-grid-3,
+      .feature-grid-4,
+      .calc-layout-grid,
+      .form-grid-2,
+      .form-row-2,
+      .grid-2-col,
+      .grid-3-col,
+      .grid-4-col,
+      .prov-selector-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
 
-      /* Grid Column Spans Reset */
-      .feature-box
+      .table-container {
+        width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        margin: 1.5rem 0 !important;
+        border-radius: var(--radius) !important;
+        box-sizing: border-box !important;
+      }
     }
-  
-/* =========================================================================
-   CLEAN MASTER MOBILE RESPONSIVE STYLES (MAIN SITE PAGES)
-   ========================================================================= */
-@media (max-width: 860px) {
-  html, body {
-    overflow-x: hidden !important;
-    position: relative !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    box-sizing: border-box !important;
-  }
-  .top-strip {
-    font-size: 0.78rem !important;
-    padding: 0.4rem 0 !important;
-  }
-  .top-strip-inner {
-    padding: 0 1rem !important;
-    justify-content: center !important;
-    text-align: center !important;
-  }
-  .nav-inner {
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
-    padding: 0.85rem 1rem !important;
-    gap: 0.75rem !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-  .brand-link {
-    align-items: center !important;
-    text-align: center !important;
-    margin: 0 auto !important;
-  }
-  .brand-name {
-    font-size: 1.15rem !important;
-    text-align: center !important;
-  }
-  .brand-meta {
-    font-size: 0.72rem !important;
-    text-align: center !important;
-  }
-  .nav-cta-wrap {
-    display: none !important;
-  }
-  nav.nav-links {
-    width: 100% !important;
-    max-width: 380px !important;
-    margin: 0 auto !important;
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 0.5rem 0.8rem !important;
-    padding: 0 !important;
-  }
-  nav.nav-links a {
-    font-size: 0.85rem !important;
-    font-weight: 700 !important;
-    padding: 0.2rem 0.4rem !important;
-    display: inline-block !important;
-    text-align: center !important;
-  }
-  .subpage-hero {
-    padding: 2.2rem 1rem 2rem !important;
-  }
-  .subpage-hero-container {
-    padding: 0 !important;
-  }
-  .subpage-hero h1 {
-    font-size: 1.75rem !important;
-    line-height: 1.25 !important;
-  }
-  .subpage-hero p.lead {
-    font-size: 0.95rem !important;
-    line-height: 1.5 !important;
-  }
-  .content-section {
-    padding: 2rem 1rem !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-  .section-title-wrap {
-    margin-bottom: 1.5rem !important;
-  }
-  .section-title-wrap h2 {
-    font-size: 1.55rem !important;
-  }
-  .section-title-wrap p {
-    font-size: 0.92rem !important;
-  }
-  .feature-grid-2, .feature-grid-3, .feature-grid-4, .calc-layout-grid, .form-grid-2, .form-row-2 {
-    grid-template-columns: 1fr !important;
-    gap: 1.25rem !important;
-    width: 100% !important;
-  }
-  .feature-box, .calc-card-container, .classifier-card-container, .pill-card, .lane-card, .option-card {
-    padding: 1.35rem 1.1rem !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-    grid-column: span 1 !important;
-  }
-  .cta-banner-box {
-    padding: 2rem 1.1rem !important;
-  }
-  .cta-banner-box h3 {
-    font-size: 1.45rem !important;
-  }
-  .cta-banner-box p {
-    font-size: 0.92rem !important;
-  }
-  .table-container {
-    margin: 1.2rem 0 !important;
-    border-radius: 8px !important;
-    width: 100% !important;
-  }
-  table.matrix-table {
-    font-size: 0.82rem !important;
-  }
-  table.matrix-table th, table.matrix-table td {
-    padding: 0.65rem 0.75rem !important;
-  }
-  footer {
-    padding: 3rem 1rem 2rem !important;
-  }
-  .footer-inner {
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
-  }
-  .brokerage-compliance-box {
-    padding: 1.5rem 1rem 0 !important;
-  }
-  .brokerage-lockup-row {
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-  }
-}
-
-
-/* =========================================================================
-   CLEAN MASTER MOBILE RESPONSIVE STYLES (MAIN SITE PAGES)
-   ========================================================================= */
-@media (max-width: 860px) {
-  html, body {
-    overflow-x: hidden !important;
-    position: relative !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    box-sizing: border-box !important;
-  }
-  .top-strip {
-    font-size: 0.78rem !important;
-    padding: 0.4rem 0 !important;
-  }
-  .top-strip-inner {
-    padding: 0 1rem !important;
-    justify-content: center !important;
-    text-align: center !important;
-  }
-  .nav-inner {
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
-    padding: 0.85rem 1rem !important;
-    gap: 0.75rem !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-  .brand-link {
-    align-items: center !important;
-    text-align: center !important;
-    margin: 0 auto !important;
-  }
-  .brand-name {
-    font-size: 1.15rem !important;
-    text-align: center !important;
-  }
-  .brand-meta {
-    font-size: 0.72rem !important;
-    text-align: center !important;
-  }
-  .nav-cta-wrap {
-    display: none !important;
-  }
-  nav.nav-links {
-    width: 100% !important;
-    max-width: 380px !important;
-    margin: 0 auto !important;
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 0.5rem 0.8rem !important;
-    padding: 0 !important;
-  }
-  nav.nav-links a {
-    font-size: 0.85rem !important;
-    font-weight: 700 !important;
-    padding: 0.2rem 0.4rem !important;
-    display: inline-block !important;
-    text-align: center !important;
-  }
-  .subpage-hero {
-    padding: 2.2rem 1rem 2rem !important;
-  }
-  .subpage-hero-container {
-    padding: 0 !important;
-  }
-  .subpage-hero h1 {
-    font-size: 1.75rem !important;
-    line-height: 1.25 !important;
-  }
-  .subpage-hero p.lead {
-    font-size: 0.95rem !important;
-    line-height: 1.5 !important;
-  }
-  .content-section {
-    padding: 2rem 1rem !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-  .section-title-wrap {
-    margin-bottom: 1.5rem !important;
-  }
-  .section-title-wrap h2 {
-    font-size: 1.55rem !important;
-  }
-  .section-title-wrap p {
-    font-size: 0.92rem !important;
-  }
-  .feature-grid-2, .feature-grid-3, .feature-grid-4, .calc-layout-grid, .form-grid-2, .form-row-2 {
-    grid-template-columns: 1fr !important;
-    gap: 1.25rem !important;
-    width: 100% !important;
-  }
-  .feature-box, .calc-card-container, .classifier-card-container, .pill-card, .lane-card, .option-card {
-    padding: 1.35rem 1.1rem !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-    grid-column: span 1 !important;
-  }
-  .cta-banner-box {
-    padding: 2rem 1.1rem !important;
-  }
-  .cta-banner-box h3 {
-    font-size: 1.45rem !important;
-  }
-  .cta-banner-box p {
-    font-size: 0.92rem !important;
-  }
-  .table-container {
-    margin: 1.2rem 0 !important;
-    border-radius: 8px !important;
-    width: 100% !important;
-  }
-  table.matrix-table {
-    font-size: 0.82rem !important;
-  }
-  table.matrix-table th, table.matrix-table td {
-    padding: 0.65rem 0.75rem !important;
-  }
-  footer {
-    padding: 3rem 1rem 2rem !important;
-  }
-  .footer-inner {
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
-  }
-  .brokerage-compliance-box {
-    padding: 1.5rem 1rem 0 !important;
-  }
-  .brokerage-lockup-row {
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-  }
-}
-
-</style>
+  </style>
 
 </head>
 <body>
@@ -1303,7 +994,7 @@
   <!-- Header Navigation -->
   <header>
     <div class="nav-inner">
-      <a href="index.html#home" class="brand-link">
+      <a href="/" class="brand-link">
         <span class="brand-name">TREVOR BERRY</span>
         <span class="brand-meta">Mortgage Associate</span>
       </a>
@@ -1313,7 +1004,7 @@
         <a href="index.html#buying">Buying</a>
         <a href="index.html#homeowners">Homeowners</a>
         <a href="index.html#alternative">Alternative</a>
-        <a href="index.html#partners" class="active">Partners</a>
+        <a href="index.html#partners">Partners</a>
         <a href="index.html#contact">Contact</a>
       </nav>
 
@@ -1346,7 +1037,7 @@
     <section class="content-section" id="how-it-works" style="padding-top: 0; padding-bottom: 2rem;">
       <div class="section-title-wrap">
         <span class="section-eyebrow">The Mechanics</span>
-        <h2>How I Capitalize the GST Rebate at Closing</h2>
+        <h2>How We Capitalize the GST Rebate at Closing</h2>
         <p>A missing $15,000 on possession day can unravel months of construction. Here is the compliant 3-step operational flow we use to bridge the buyer's <span style="white-space: nowrap;">cash gap</span>.</p>
       </div>
 
@@ -1356,7 +1047,7 @@
           <span class="tag" style="color: var(--brand-green); font-weight: 800;">Step 01 · Underwriting &amp; Contract</span>
           <h3>1. Structure the Credit</h3>
           <p>
-            During contract drafting, I ensure the purchase agreement is drawn up so the buyer's statutory rebate entitlement can be properly capitalized, rather than locked up as a passive builder subsidy.
+            During contract drafting, we ensure the purchase agreement is drawn up so the buyer's statutory rebate entitlement can be properly capitalized, rather than locked up as a passive builder subsidy.
           </p>
           <ul class="lane-bullets">
             <li>Pre-cleared contract compliance ensures lender approval</li>
@@ -1370,7 +1061,7 @@
           <span class="tag" style="color: var(--accent-mustard); font-weight: 800;">Step 02 · Closing Day Advance</span>
           <h3>2. Bridge the Cash-to-Close</h3>
           <p>
-            On possession day, I advance the approved federal GST rebate amount (up to $50,000) directly to the buyer's real estate lawyer's trust account to satisfy the cash-to-close ledger.
+            On possession day, we advance the approved federal GST rebate amount (up to $50,000) directly to the buyer's real estate lawyer's trust account to satisfy the cash-to-close ledger.
           </p>
           <ul class="lane-bullets">
             <li>Appears on the Statement of Adjustments as buyer equity</li>
@@ -1394,6 +1085,108 @@
         </div>
       </div>
     </section>
+
+    <!-- Interactive Alberta Builder GST Rebate & Closing Advance Calculator -->
+    <section class="content-section" id="calculator" style="padding-top: 1rem; padding-bottom: 3rem;">
+      <div class="section-title-wrap">
+        <span class="section-eyebrow">Interactive Estimator</span>
+        <h2>Alberta Builder GST Rebate &amp; Advance Calculator</h2>
+        <p>Test any new construction purchase price to see the exact 5% GST, statutory rebate credit available, net tax payable, and how much cash your buyers can save on closing day.</p>
+      </div>
+
+      <div class="calc-card-container">
+        <div class="calc-top-header">
+          <h3>New Build GST Rebate Estimator (Alberta)</h3>
+          <p>Federal 5% GST calculations, statutory FTHB top-up thresholds ($1M max), and closing advance values</p>
+        </div>
+
+        <div class="calc-layout-grid">
+          <!-- Left: Sliders & Controls -->
+          <div class="calc-input-block">
+            <!-- 1. Buyer Eligibility Status -->
+            <div class="calc-field-row">
+              <span class="calc-field-title">1. Buyer Eligibility Status</span>
+              <div class="toggle-row-group" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <button type="button" class="toggle-pill-btn active" id="btn-builder-fthb" onclick="setBuilderBuyerStatus('fthb')">
+                  First-Time Home Buyer (FTHB)
+                </button>
+                <button type="button" class="toggle-pill-btn" id="btn-builder-repeat" onclick="setBuilderBuyerStatus('repeat')">
+                  Repeat / Move-Up Buyer
+                </button>
+              </div>
+              <span style="font-size: 0.78rem; color: var(--brand-green); font-weight: 700; margin-top: 0.3rem; display: block;" id="builder-buyer-status-subtext">
+                ✓ First-time buyers qualify for 100% GST rebate up to $1,000,000 purchase price (max $50,000 credit).
+              </span>
+            </div>
+
+            <!-- 2. Occupancy Intention -->
+            <div class="calc-field-row">
+              <span class="calc-field-title">2. Occupancy Intention</span>
+              <div class="toggle-row-group" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <button type="button" class="toggle-pill-btn active" id="btn-builder-occ-owner" onclick="setBuilderOccupancy('owner')">Primary Residence</button>
+                <button type="button" class="toggle-pill-btn" id="btn-builder-occ-investor" onclick="setBuilderOccupancy('investor')">Investor / Rental</button>
+              </div>
+              <span style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem; display: block;" id="builder-occ-subtext">
+                ✓ Primary residence purchasers qualify for immediate builder credit assignment on closing.
+              </span>
+            </div>
+
+            <!-- 3. Purchase Price Slider -->
+            <div class="calc-field-row">
+              <div class="calc-label-header" style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="calc-field-title">3. Target Purchase Price (Pre-Tax):</span>
+                <span class="calc-display-val" id="disp-builder-price" style="font-size: 1.35rem; font-weight: 800; color: var(--brand-green);">$550,000</span>
+              </div>
+              <input type="range" class="calc-slider-input" id="slider-builder-price" min="250000" max="2000000" step="5000" value="550000" oninput="updateBuilderCalculator()" style="width: 100%; margin: 0.8rem 0 0.4rem;" />
+              <div class="slider-scale-limits" style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted);">
+                <span>$250K</span>
+                <span>$500K</span>
+                <span>$1M</span>
+                <span>$1.5M</span>
+                <span>$2M</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Output Card -->
+          <div class="calc-results-box" style="background: var(--bg-subtle); border: 1.5px solid var(--border-subtle); border-radius: var(--radius); padding: 1.5rem;">
+            <div class="results-hero-metric" style="text-align: center; margin-bottom: 1.5rem; padding-bottom: 1.2rem; border-bottom: 1px solid var(--border-subtle);">
+              <div class="metric-subtitle" style="font-size: 0.82rem; font-weight: 800; text-transform: uppercase; color: var(--brand-green); letter-spacing: 0.05em;">Estimated Rebate Eligible</div>
+              <div class="metric-bignum" id="out-builder-advance-amt" style="font-size: 2.5rem; font-weight: 800; color: var(--brand-green); line-height: 1.1; margin: 0.2rem 0;">$27,500</div>
+              <div class="metric-caption" id="out-builder-advance-desc" style="font-size: 0.82rem; color: var(--text-muted);">Statutory 100% GST Rebate credit assigned directly to closing ledger.</div>
+            </div>
+
+            <div class="rebate-breakdown-table" style="display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.9rem; margin-bottom: 1.2rem;">
+              <div class="breakdown-line" style="display: flex; justify-content: space-between;">
+                <span>Base Home Price:</span>
+                <strong id="out-builder-base-price">$550,000</strong>
+              </div>
+              <div class="breakdown-line" style="display: flex; justify-content: space-between;">
+                <span>Federal 5% GST:</span>
+                <strong id="out-builder-total-gst" style="color: var(--accent-orange);">$27,500</strong>
+              </div>
+              <div class="breakdown-line" style="display: flex; justify-content: space-between;">
+                <span>Statutory GST Rebate Credit:</span>
+                <strong id="out-builder-rebate-credit" style="color: var(--brand-green);">$27,500</strong>
+              </div>
+              <div class="breakdown-line highlight" style="display: flex; justify-content: space-between; font-weight: 800; font-size: 0.98rem; padding-top: 0.5rem; border-top: 1.5px solid var(--border-subtle);">
+                <span>Net GST Payable by Buyer:</span>
+                <strong id="out-builder-net-gst" style="color: var(--brand-green);">$0</strong>
+              </div>
+            </div>
+
+            <div class="rule-explainer-box" id="out-builder-rule-note" style="background: rgba(18, 69, 59, 0.06); border-left: 3px solid var(--brand-green); padding: 0.8rem 1rem; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 0.82rem; color: var(--text-body); line-height: 1.5; margin-bottom: 1.2rem;">
+              FTHB Primary Residence: Full 100% GST rebate up to $1,000,000 purchase price ($50,000 max rebate).
+            </div>
+
+            <button type="button" class="btn btn-accent" style="width: 100%; justify-content: center; font-weight: 800;" onclick="openABBuilderModal('Calculator Scenario ($' + document.getElementById('slider-builder-price').value + ')')">
+              Structure This Scenario For My Show Home →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <!-- Strategic Comparison Section -->
     <section class="content-section" style="padding-top: 1rem;">
@@ -1443,11 +1236,11 @@
       <div class="section-title-wrap">
         <span class="section-eyebrow">Program Parameters</span>
         <h2>Alberta GST Rebate Rules &amp; Caps</h2>
-        <p>This statutory program is subject to strict CRA guidelines. Here are the key thresholds I pre-underwrite for your buyers:</p>
+        <p>This statutory program is subject to strict CRA guidelines. Here are the key thresholds we pre-underwrite for your buyers:</p>
       </div>
 
-      <div style="max-width: 900px; margin: 0 auto; background: #FFFFFF; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 3rem; box-shadow: var(--shadow-card);">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+      <div style="max-width: 900px; margin: 0 auto; background: #FFFFFF; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2.2rem 1.8rem; box-shadow: var(--shadow-card);">
+        <div class="feature-grid-2" style="margin-bottom: 1.5rem;">
           <div>
             <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--brand-green); margin-bottom: 1rem;">First-Time Home Buyers (FTHB)</h3>
             <p style="font-size: 0.92rem; color: var(--text-body); line-height: 1.6; margin-bottom: 1.2rem;">
@@ -1475,7 +1268,7 @@
         <div style="background: var(--brand-green-light); border-radius: var(--radius); padding: 1.5rem 1.8rem; border-left: 4px solid var(--brand-green); margin-top: 2.2rem;">
           <strong style="color: var(--brand-green); display: block; margin-bottom: 0.3rem; font-size: 1.05rem;">The Lead Rescue Commitment:</strong>
           <span style="font-size: 0.92rem; color: var(--text-main); line-height: 1.5; display: block;">
-            "Before you write off a show-home visitor who walked away because of a deposit timeline or cash shortfall, send me their anonymized scenario. I will pre-screen their statutory rebate eligibility and coordinate a compliant closing strategy to salvage your contract."
+            "Before you write off a show-home visitor who walked away because of a deposit timeline or cash shortfall, send me their anonymized scenario. We will pre-screen their statutory rebate eligibility and coordinate a compliant closing strategy to salvage your contract."
           </span>
         </div>
       </div>
@@ -1569,7 +1362,7 @@
             <input type="text" id="ab_company" placeholder="e.g. Sterling Homes, Belmont / Seton" required style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.2rem;">
+          <div class="form-grid-2" style="margin-bottom: 1.2rem;">
             <div>
               <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Direct Phone *</label>
               <input type="tel" id="ab_phone" placeholder="403-000-0000" required style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem;" />
@@ -1651,5 +1444,109 @@
       document.getElementById('abBuilderSuccessNotice').style.display = 'block';
     }
   </script>
+
+  <script>
+    // --- Alberta Builder Calculator State & Functions ---
+    var builderBuyerStatus = 'fthb';
+    var builderOccupancy = 'owner';
+
+    function setBuilderBuyerStatus(status) {
+      builderBuyerStatus = status;
+      document.getElementById('btn-builder-fthb').classList.toggle('active', status === 'fthb');
+      document.getElementById('btn-builder-repeat').classList.toggle('active', status === 'repeat');
+      
+      var sub = document.getElementById('builder-buyer-status-subtext');
+      if (status === 'fthb') {
+        sub.innerHTML = '✓ First-time buyers qualify for 100% GST rebate up to $1,000,000 purchase price (max $50,000 credit).';
+      } else {
+        sub.innerHTML = '✓ Repeat buyers qualify for baseline 36% GST rebate up to $350,000 price (max $6,300 credit, phase-out at $450k).';
+      }
+      updateBuilderCalculator();
+    }
+
+    function setBuilderOccupancy(occ) {
+      builderOccupancy = occ;
+      document.getElementById('btn-builder-occ-owner').classList.toggle('active', occ === 'owner');
+      document.getElementById('btn-builder-occ-investor').classList.toggle('active', occ === 'investor');
+      
+      var sub = document.getElementById('builder-occ-subtext');
+      if (occ === 'owner') {
+        sub.innerHTML = '✓ Primary residence purchasers qualify for immediate builder credit assignment on closing.';
+      } else {
+        sub.innerHTML = 'ℹ️ Rental investors pay 5% GST at closing and file CRA NRRP rebate post-closing (for homes under $450k).';
+      }
+      updateBuilderCalculator();
+    }
+
+    function updateBuilderCalculator() {
+      var priceInput = document.getElementById('slider-builder-price');
+      if (!priceInput) return;
+      var price = parseFloat(priceInput.value) || 550000;
+      
+      document.getElementById('disp-builder-price').innerText = '$' + price.toLocaleString();
+      document.getElementById('out-builder-base-price').innerText = '$' + price.toLocaleString();
+
+      var gst = price * 0.05;
+      var rebate = 0;
+      var note = '';
+
+      if (builderOccupancy === 'investor') {
+        if (price <= 350000) {
+          rebate = gst * 0.36;
+          if (rebate > 6300) rebate = 6300;
+          note = 'Investor Rental: Eligible for CRA NRRP rental rebate post-closing ($' + Math.round(rebate).toLocaleString() + ' refund).';
+        } else if (price < 450000) {
+          rebate = 6300 * ((450000 - price) / 100000);
+          note = 'Investor Rental: Partial CRA NRRP rebate ($' + Math.round(rebate).toLocaleString() + ' refund).';
+        } else {
+          rebate = 0;
+          note = 'Investor Rental: Over $450,000 cap — No GST rebate available.';
+        }
+      } else {
+        // Primary Residence
+        if (builderBuyerStatus === 'fthb') {
+          if (price <= 1000000) {
+            rebate = gst; // 100% of GST
+            if (rebate > 50000) rebate = 50000;
+            note = 'FTHB Primary Residence: Full 100% GST rebate credit ($' + Math.round(rebate).toLocaleString() + '). Zero out-of-pocket GST!';
+          } else if (price < 1500000) {
+            var fullMax = 50000;
+            rebate = fullMax * ((1500000 - price) / 500000);
+            note = 'FTHB Primary Residence: Linear phase-out between $1M and $1.5M ($' + Math.round(rebate).toLocaleString() + ' rebate).';
+          } else {
+            rebate = 0;
+            note = 'Purchase price over $1,500,000 — FTHB GST rebate fully phased out.';
+          }
+        } else {
+          // Repeat / Move-Up Buyer
+          if (price <= 350000) {
+            rebate = gst * 0.36;
+            if (rebate > 6300) rebate = 6300;
+            note = 'Repeat Buyer: Baseline 36% GST rebate credit ($' + Math.round(rebate).toLocaleString() + ').';
+          } else if (price < 450000) {
+            rebate = 6300 * ((450000 - price) / 100000);
+            note = 'Repeat Buyer: Partial baseline rebate ($' + Math.round(rebate).toLocaleString() + ').';
+          } else {
+            rebate = 0;
+            note = 'Repeat buyer over $450,000 cap — Baseline GST rebate fully phased out.';
+          }
+        }
+      }
+
+      var netGst = Math.max(0, gst - rebate);
+
+      document.getElementById('out-builder-advance-amt').innerText = '$' + Math.round(rebate).toLocaleString();
+      document.getElementById('out-builder-total-gst').innerText = '$' + Math.round(gst).toLocaleString();
+      document.getElementById('out-builder-rebate-credit').innerText = '$' + Math.round(rebate).toLocaleString();
+      document.getElementById('out-builder-net-gst').innerText = '$' + Math.round(netGst).toLocaleString();
+      document.getElementById('out-builder-rule-note').innerText = note;
+    }
+
+    // Run calculator on initial page load
+    document.addEventListener('DOMContentLoaded', function() {
+      updateBuilderCalculator();
+    });
+  </script>
+
 </body>
 </html>
