@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#12453B">
+<meta name="robots" content="noindex,nofollow">
+<title>Private Scenario SafeDrop | Trevor Berry</title>
+<meta name="description" content="A confidential, high-level scenario drop for CPAs, planners, insolvency professionals and family lawyers. No client-identifying information required to start.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#12453B; --green-dark:#0A2923; --green-soft:#E7EFEA; --bg:#FFFFFF; --bg-soft:#F8FAF9; --bg-alt:#EFF4F1;
+  --line:#E2EAE5; --ink:#131E1A; --body:#394A43; --muted:#647870; --gold:#EDAB2B; --orange:#F7704F;
+  --radius:12px; --radius-lg:18px; --radius-xl:24px; --shadow:0 10px 32px rgba(18,69,59,.08); --max:1160px;
+  --font:'Plus Jakarta Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth} body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased} a{color:inherit;text-decoration:none}
+.top-strip{background:var(--bg-soft);border-bottom:1px solid var(--line);font-size:.82rem;padding:.55rem 0;color:var(--muted)}
+.top-strip-inner{max-width:var(--max);margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+.top-strip a{color:var(--green);font-weight:700}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{max-width:var(--max);margin:0 auto;padding:1rem 1.5rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.brand{display:flex;flex-direction:column;gap:2px}.brand strong{font-size:1.3rem;font-weight:800;letter-spacing:.02em;color:var(--green);text-transform:uppercase}.brand span{font-size:.76rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--orange)}
+.nav-note{font-size:.86rem;font-weight:700;color:var(--muted)}
+.hero{padding:4.8rem 0 4rem;background:linear-gradient(180deg,#fff 0%,var(--bg-soft) 100%);border-bottom:1px solid var(--line)}
+.hero-inner{max-width:var(--max);margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:1.05fr .95fr;gap:3.5rem;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:var(--green-soft);color:var(--green);font-size:.78rem;font-weight:800;padding:.38rem .86rem;border-radius:999px;text-transform:uppercase;letter-spacing:.06em}
+.hero h1{font-size:clamp(2.65rem,5vw,4.25rem);line-height:1.04;letter-spacing:-.045em;margin:1rem 0 1rem;max-width:720px}
+.hero .lead{font-size:1.06rem;line-height:1.7;color:var(--body);max-width:680px;margin-bottom:1.6rem}
+.badges{display:flex;flex-wrap:wrap;gap:.7rem;margin-bottom:1.8rem}.badge{display:inline-flex;align-items:center;padding:.55rem .8rem;background:#fff;border:1px solid var(--line);border-radius:999px;font-size:.8rem;font-weight:700;color:var(--body)}
+.hero-points{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding-top:1.4rem;border-top:1px solid var(--line)}
+.hero-points strong{display:block;color:var(--green);font-size:.98rem;margin-bottom:.12rem}.hero-points span{display:block;color:var(--muted);font-size:.79rem;font-weight:600;line-height:1.35}
+.image-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius-xl);padding:.85rem;box-shadow:0 18px 42px rgba(18,69,59,.12)}
+.image-box{aspect-ratio:4/3;border-radius:18px;overflow:hidden;background:var(--bg-alt)}
+.image-box img{width:100%;height:100%;object-fit:cover;display:block}
+.image-caption{padding:1rem .8rem .3rem;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+.image-caption small{display:block;color:var(--orange);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.2rem}.image-caption strong{font-size:.98rem}
+.image-status{display:inline-flex;align-items:center;gap:.45rem;background:var(--green-soft);color:var(--green);border-radius:999px;padding:.48rem .7rem;font-size:.74rem;font-weight:800;white-space:nowrap}.image-status:before{content:'';width:8px;height:8px;border-radius:50%;background:#26A699}
+.trust-strip{background:#fff;border-bottom:1px solid var(--line)}
+.trust-inner{max-width:var(--max);margin:0 auto;padding:1.2rem 1.5rem;display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem}.trust-item{text-align:center;padding:.5rem .8rem;border-right:1px solid var(--line)}.trust-item:last-child{border-right:0}.trust-item strong{display:block;color:var(--green);font-size:.95rem}.trust-item span{color:var(--muted);font-size:.76rem;font-weight:600}
+.section{padding:4.7rem 1.5rem}.section-inner{max-width:var(--max);margin:0 auto}.grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:2rem;align-items:start}
+.side-card{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius-xl);padding:2rem;position:sticky;top:98px}.side-card h2{font-size:2rem;line-height:1.15;margin:.75rem 0 .75rem}.side-card p{color:var(--body);font-size:.96rem;margin-bottom:1.2rem}
+.steps{display:grid;gap:.95rem;margin-top:1.4rem}.step{display:flex;gap:.8rem;align-items:flex-start}.step span{width:28px;height:28px;border-radius:50%;background:var(--green-soft);color:var(--green);font-size:.76rem;font-weight:800;display:grid;place-items:center;flex:0 0 28px;margin-top:.05rem}.step div{font-size:.88rem;color:var(--body)}
+.partner-types{margin-top:1.4rem;padding-top:1.2rem;border-top:1px solid var(--line)}.partner-types b{display:block;font-size:.84rem;color:var(--green);margin-bottom:.5rem}.chips{display:flex;flex-wrap:wrap;gap:.5rem}.chips i{font-style:normal;padding:.45rem .68rem;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:.74rem;font-weight:700;color:var(--body)}
+.form-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-xl);padding:2rem;box-shadow:var(--shadow)}
+.form-card h2{font-size:1.65rem;line-height:1.15;margin-bottom:.35rem}.form-card > p{color:var(--muted);font-size:.9rem;margin-bottom:1.35rem}
+.notice{background:var(--bg-soft);border:1px solid var(--line);border-radius:16px;padding:1rem 1rem .95rem;margin-bottom:1.25rem}.notice b{display:block;margin-bottom:.35rem}.notice ul{padding-left:1rem;color:var(--body);font-size:.86rem}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.span2{grid-column:1/-1}
+label{display:grid;gap:.38rem;font-size:.78rem;color:var(--ink);font-weight:700} input,select,textarea{width:100%;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);padding:.8rem .9rem;font-family:var(--font);font-size:.94rem;outline:none} input:focus,select:focus,textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(18,69,59,.08)} textarea{resize:vertical;min-height:118px}
+.help{font-size:.74rem;color:var(--muted);font-weight:500}.consent{display:flex;gap:.6rem;align-items:flex-start;color:var(--muted);font-size:.78rem;margin:1rem 0 1.1rem}.consent input{width:auto;margin-top:.15rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:.9rem 1.4rem;border-radius:10px;font-weight:800;font-size:.92rem;cursor:pointer;border:2px solid transparent;transition:all .18s ease;font-family:var(--font)} .btn:hover{transform:translateY(-1px)} .btn-primary{background:var(--green);color:#fff;border-color:var(--green)} .btn-primary:hover{background:#0E362E;border-color:#0E362E}
+.btn-outline{background:#fff;color:var(--green);border-color:var(--green)} .btn-full{width:100%}.btn:disabled{opacity:.7;cursor:wait;transform:none}
+.status{display:none;background:var(--green-soft);border:1px solid #c8dacd;border-radius:16px;padding:1.15rem;margin-top:1rem;color:var(--green-dark)}.status h3{margin-bottom:.2rem}
+.send-client{margin-top:1.2rem;background:var(--bg-soft);border:1px solid var(--line);border-radius:18px;padding:1.2rem}.send-client h3{font-size:1.05rem;margin-bottom:.3rem}.send-client p{font-size:.86rem;color:var(--body);margin-bottom:.9rem}.copyrow{display:grid;grid-template-columns:1fr auto;gap:.6rem}
+.copyrow input{background:#fff}.footer{background:#0E1814;color:#fff;padding:3rem 1.5rem 2rem;border-top:1px solid #1C2B25}.footer-inner{max-width:var(--max);margin:0 auto}.footer strong{display:block;margin-bottom:.4rem}.legal{color:#8CA399;font-size:.76rem;line-height:1.65;max-width:900px}
+@media(max-width:1024px){.hero-inner,.grid{grid-template-columns:1fr}.hero-copy{text-align:center}.hero .lead{margin-left:auto;margin-right:auto}.badges,.hero-points{justify-content:center}.hero-points{max-width:760px;margin:0 auto}.side-card{position:static}}
+@media(max-width:760px){.top-strip-inner,.nav{flex-direction:column;text-align:center}.nav-note{display:none}.trust-inner{grid-template-columns:1fr 1fr}.trust-item{border-right:0;border-bottom:1px solid var(--line)}.trust-item:nth-last-child(-n+2){border-bottom:0}.section{padding:3.8rem 1.2rem}.hero{padding:3.6rem 0 3rem}.hero-points,.form-grid{grid-template-columns:1fr}.span2{grid-column:auto}.copyrow{grid-template-columns:1fr}.btn-outline{width:100%}}
+@media(max-width:480px){.hero h1{font-size:2.3rem}.badge{width:100%;justify-content:center}.trust-inner{grid-template-columns:1fr}.trust-item{border-bottom:1px solid var(--line)!important}.trust-item:last-child{border-bottom:0!important}}
+</style>
+</head>
+<body>
+<div class="top-strip"><div class="top-strip-inner"><span>Confidential partner resource for complicated homeowner financing situations</span><a href="mailto:tberry@myperch.io">tberry@myperch.io</a></div></div>
+<header><div class="nav"><a class="brand" href="https://trevormortgages.ca"><strong>TREVOR BERRY</strong><span>Mortgage Associate · Perch Mortgage Brokerage</span></a><div class="nav-note">Private Scenario SafeDrop</div></div></header>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="eyebrow">Professional side · confidential</div>
+      <h1>Send the situation first.<br>I’ll review the mortgage side.</h1>
+      <p class="lead">Built for CPAs, financial planners, insolvency professionals and family lawyers who want a clean first step before making a full client introduction.</p>
+      <div class="badges">
+        <span class="badge">No client-identifying information required</span>
+        <span class="badge">Approximate numbers are fine</span>
+        <span class="badge">Personally reviewed by Trevor</span>
+      </div>
+      <div class="hero-points">
+        <div><strong>Simple first pass</strong><span>One short form with the rough numbers and the problem.</span></div>
+        <div><strong>Private and practical</strong><span>I assess likely financing lanes and key obstacles.</span></div>
+        <div><strong>Easy next step</strong><span>If it makes sense, send the client directly to the private review.</span></div>
+      </div>
+    </div>
+    <div class="image-card">
+      <div class="image-box"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&fm=jpg&q=82&w=1800" alt="Professional reviewing financial documents at a desk" loading="eager"></div>
+      <div class="image-caption">
+        <div><small>Private scenario review</small><strong>A cleaner first step for professional partners.</strong></div>
+        <span class="image-status">Advisor reviewed</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="trust-strip"><div class="trust-inner">
+  <div class="trust-item"><strong>40+ lenders</strong><span>Through Perch Mortgage Brokerage</span></div>
+  <div class="trust-item"><strong>Prime · Alt · Private</strong><span>Not tied to one lane</span></div>
+  <div class="trust-item"><strong>Anonymous first review</strong><span>No client documents needed</span></div>
+  <div class="trust-item"><strong>Direct with Trevor</strong><span>Not a call centre</span></div>
+</div></section>
+<main class="section"><div class="section-inner"><div class="grid">
+  <aside class="side-card">
+    <div class="eyebrow">How it works</div>
+    <h2>A quick mortgage feasibility check before you refer.</h2>
+    <p>You do not need to decide whether the answer is a refinance, HELOC, alternative lender, second/private mortgage or a plan-first approach. Send me the picture and I’ll work through the financing side.</p>
+    <div class="steps">
+      <div class="step"><span>1</span><div><strong>Send the rough numbers.</strong><br>Property, mortgage, income, funding need and the core problem.</div></div>
+      <div class="step"><span>2</span><div><strong>I review the likely lanes.</strong><br>Prime, alternative, second/private or whether waiting makes more sense.</div></div>
+      <div class="step"><span>3</span><div><strong>Use the next step that fits.</strong><br>Either introduce the client or send them to the private homeowner review.</div></div>
+    </div>
+    <div class="partner-types"><b>Designed for partners such as:</b><div class="chips"><i>CPA / accountant</i><i>Financial planner</i><i>LIT / insolvency</i><i>Family lawyer</i><i>Other trusted advisor</i></div></div>
+  </aside>
+  <section class="form-card">
+    <h2>Confidential Scenario Drop</h2>
+    <p>Keep it simple. Approximate information is fine, and please keep the first submission anonymous.</p>
+    <div class="notice"><b>Before you submit</b><ul><li>No client names, SINs, dates of birth, account numbers or documents.</li><li>This is a high-level scenario review, not a file submission.</li><li>I’ll follow up with you directly first.</li></ul></div>
+    <form id="safeForm">
+      <div class="form-grid">
+        <label class="span2">What is the main situation?
+          <select id="situation" required>
+            <option value="">Choose one</option>
+            <option>Debt / monthly cash flow</option>
+            <option>CRA / tax obligations</option>
+            <option>Separation / property buyout</option>
+            <option>Consumer proposal / bankruptcy / credit event</option>
+            <option>Liquidity need</option>
+            <option>Complex / self-employed income</option>
+            <option>Refinance / renewal problem</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>Property location<input id="location" placeholder="Calgary, AB" required></label>
+        <label>Approx. property value<input id="value" inputmode="decimal" placeholder="$750,000" required></label>
+        <label>Approx. mortgage(s) owing<input id="mortgage" inputmode="decimal" placeholder="$390,000" required></label>
+        <label>Approx. household income<input id="income" inputmode="decimal" placeholder="$120,000"></label>
+        <label class="span2">Approx. debt / funding need<input id="need" inputmode="decimal" placeholder="$65,000"></label>
+        <label class="span2">Anything I should know?
+          <textarea id="notes" placeholder="Example: homeowner has significant equity, CRA arrears and high revolving debt. We want to know whether there is a realistic financing path before making an introduction."></textarea>
+          <span class="help">A few anonymous sentences is enough.</span>
+        </label>
+        <label>Your name<input id="name" autocomplete="name" required></label>
+        <label>Firm / profession<input id="firm" placeholder="Smith LLP · CPA" required></label>
+        <label class="span2">Your email<input id="email" type="email" autocomplete="email" required></label>
+      </div>
+      <label class="consent"><input id="confirm" type="checkbox" required><span>I confirm I have not included client-identifying information or confidential documents in this initial scenario.</span></label>
+      <button class="btn btn-primary btn-full" type="submit">Send Private Scenario to Trevor →</button>
+    </form>
+    <div id="success" class="status" aria-live="polite"><h3>Scenario received.</h3><div>I’ll review the mortgage side and follow up with you directly. If it looks worth pursuing, you can introduce the client or send them the private client-review link below.</div></div>
+    <div class="send-client">
+      <h3>Ready to send the client directly?</h3>
+      <p>Create a referral link for the private homeowner review. Your firm name will appear at the top of the client page.</p>
+      <div class="form-grid"><label class="span2">Firm name shown to client<input id="refFirm" placeholder="Smith & Co. CPA"></label></div>
+      <div class="copyrow"><input id="refLink" readonly value="https://trevormortgages.ca/review.html"><button id="copyBtn" class="btn btn-outline" type="button">Copy Link</button></div>
+    </div>
+  </section>
+</div></div></main>
+<footer class="footer"><div class="footer-inner"><strong>Trevor Berry · Mortgage Associate · Perch Mortgage Brokerage</strong><div class="legal">Preliminary professional-use review only. Financing is subject to borrower qualification, property, income, credit and lender guidelines. This resource is for general information only and is not legal, tax or insolvency advice.</div></div></footer>
+<script>
+(()=>{
+  const endpoint='https://script.google.com/macros/s/AKfycbxunHTb9xivp_KH2UNceJvwaYayIAxSmkeAJRJ8SKzE0ECkIl6mGD9ROpmTMz2x7z5K/exec';
+  const $=id=>document.getElementById(id);
+  const form=$('safeForm');
+  const refFirm=$('refFirm');
+  const refLink=$('refLink');
+  const updateRef=()=>{const v=refFirm.value.trim();refLink.value=v?`https://trevormortgages.ca/review.html?ref=${encodeURIComponent(v)}`:'https://trevormortgages.ca/review.html'};
+  refFirm.addEventListener('input',updateRef); updateRef();
+  $('copyBtn').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(refLink.value);$('copyBtn').textContent='Copied';setTimeout(()=>$('copyBtn').textContent='Copy Link',1200)}catch(e){refLink.select();document.execCommand('copy')}});
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    for(const id of ['situation','location','value','mortgage','name','firm','email']){ if(!$(id).value.trim()){ $(id).focus(); return; } }
+    if(!$('confirm').checked){ $('confirm').focus(); return; }
+    const details=[
+      'Situation: '+$('situation').value,
+      'Location: '+$('location').value.trim(),
+      'Property value: '+$('value').value.trim(),
+      'Mortgage(s) owing: '+$('mortgage').value.trim(),
+      'Household income: '+$('income').value.trim(),
+      'Debt / funding need: '+$('need').value.trim(),
+      'Partner firm/profession: '+$('firm').value.trim(),
+      'Notes: '+$('notes').value.trim()
+    ].join('\n');
+    const payload={
+      lead_type:'equity_partner_safedrop',
+      full_name:$('name').value.trim(),
+      phone:'',
+      email:$('email').value.trim(),
+      province:$('location').value.trim(),
+      details,
+      scenario_type:$('situation').value,
+      property_value:$('value').value.trim(),
+      mortgage_balance:$('mortgage').value.trim(),
+      debt_or_funding_need:$('need').value.trim(),
+      household_income:$('income').value.trim(),
+      partner_firm:$('firm').value.trim(),
+      source_cta:'Partner SafeDrop',
+      submittedAt:new Date().toISOString()
+    };
+    const btn=form.querySelector('button[type="submit"]');
+    btn.disabled=true; btn.textContent='Sending...';
+    fetch(endpoint,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).finally(()=>{
+      form.style.display='none'; $('success').style.display='block';
+      document.querySelector('.send-client').scrollIntoView({behavior:'smooth',block:'nearest'});
+    });
+  });
+})();
+</script>
+</body>
+</html>
