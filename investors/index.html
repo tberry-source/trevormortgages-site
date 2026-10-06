@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#12453B" />
+  <title>Investor Financing | Trevor Mortgages</title>
+  <meta name="description" content="Investor financing for purchases, renovations, refinances and rental properties. Private capital through Perch Capital plus broader Canada-wide lender access through Perch Mortgage Brokerage." />
+  <link rel="canonical" href="https://trevormortgages.ca/investors/" />
+  <meta property="og:title" content="Investor Financing | Trevor Mortgages" />
+  <meta property="og:description" content="How are you funding your next deal? Private capital, alternative financing and broader lender access for active real estate investors." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://trevormortgages.ca/investors/" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-canvas: #FFFFFF;
+      --bg-subtle: #F8FAF9;
+      --bg-alt: #EFF4F1;
+      --border-subtle: #E2EAE5;
+      --border-focus: #12453B;
+      --text-main: #131E1A;
+      --text-body: #394A43;
+      --text-muted: #647870;
+      --brand-green: #12453B;
+      --brand-green-hover: #0E362E;
+      --brand-green-light: #E7EFEA;
+      --brand-green-dark: #0A2923;
+      --accent-mustard: #EDAB2B;
+      --accent-mustard-hover: #D99518;
+      --accent-teal: #26A699;
+      --accent-orange: #F7704F;
+      --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --radius-sm: 6px;
+      --radius: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --shadow-sm: 0 1px 3px rgba(18,69,59,.05);
+      --shadow-card: 0 4px 20px rgba(18,69,59,.06);
+      --shadow-lg: 0 20px 50px rgba(18,69,59,.13);
+      --max: 1160px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg-canvas); color: var(--text-main); font-family: var(--font-family); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    .top-strip { background: var(--bg-subtle); border-bottom: 1px solid var(--border-subtle); font-size: .82rem; padding: .55rem 0; color: var(--text-muted); }
+    .top-strip-inner { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .top-strip a { color: var(--brand-green); text-decoration: none; font-weight: 700; }
+    header { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.98); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-subtle); }
+    .nav-inner { max-width: var(--max); margin: 0 auto; padding: 1.1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1.6rem; }
+    .brand-link { display: flex; flex-direction: column; text-decoration: none; gap: 2px; }
+    .brand-name { font-size: 1.35rem; font-weight: 800; letter-spacing: .02em; color: var(--brand-green); line-height: 1.1; text-transform: uppercase; }
+    .brand-meta { font-size: .78rem; font-weight: 800; color: var(--accent-orange); letter-spacing: .06em; text-transform: uppercase; }
+    nav.nav-links { display: flex; align-items: center; gap: 1.55rem; }
+    nav.nav-links a { color: var(--text-body); text-decoration: none; font-size: .9rem; font-weight: 600; transition: color .15s ease; }
+    nav.nav-links a:hover, nav.nav-links a.active { color: var(--brand-green); }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: .8rem 1.5rem; border-radius: var(--radius); font-weight: 700; font-size: .92rem; text-decoration: none; cursor: pointer; transition: all .2s ease; font-family: var(--font-family); border: 2px solid transparent; gap: .4rem; }
+    .btn-primary { background: var(--brand-green); color: #fff; border-color: var(--brand-green); }
+    .btn-primary:hover { background: var(--brand-green-hover); border-color: var(--brand-green-hover); transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+    .btn-secondary { background: #fff; color: var(--brand-green); border-color: var(--brand-green); }
+    .btn-secondary:hover { background: var(--brand-green); color: #fff; transform: translateY(-1px); }
+    .btn-accent { background: var(--accent-mustard); color: var(--text-main); border-color: var(--accent-mustard); font-weight: 800; }
+    .btn-accent:hover { background: var(--accent-mustard-hover); border-color: var(--accent-mustard-hover); transform: translateY(-1px); }
+
+    .hero { padding: 4.8rem 0 4.3rem; background: linear-gradient(180deg,#fff 0%,var(--bg-subtle) 100%); border-bottom: 1px solid var(--border-subtle); }
+    .hero-container { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; display: grid; grid-template-columns: 1.03fr .97fr; gap: 4rem; align-items: center; }
+    .eyebrow-tag { display: inline-flex; align-items: center; gap: .5rem; background: var(--brand-green-light); color: var(--brand-green); font-size: .79rem; font-weight: 800; padding: .38rem .86rem; border-radius: 30px; margin-bottom: 1.3rem; text-transform: uppercase; letter-spacing: .055em; }
+    .hero h1 { font-size: clamp(2.65rem,5vw,4.25rem); line-height: 1.03; font-weight: 800; letter-spacing: -.045em; color: var(--text-main); margin-bottom: 1.35rem; max-width: 710px; }
+    .hero h1 span { color: var(--brand-green); }
+    .hero .lead { font-size: 1.08rem; line-height: 1.7; color: var(--text-body); max-width: 690px; margin-bottom: 1.85rem; }
+    .hero .audience-line { font-size: .94rem; color: var(--text-muted); font-weight: 700; margin: -0.7rem 0 1rem; max-width: 700px; }
+    .hero .repeat-line { font-size: 1rem; font-weight: 800; color: var(--brand-green); margin-bottom: 1.8rem; }
+    .hero-actions { display: flex; gap: .85rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .hero-points { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; padding-top: 1.45rem; border-top: 1px solid var(--border-subtle); }
+    .hero-point strong { display: block; font-size: 1rem; color: var(--brand-green); margin-bottom: .15rem; }
+    .hero-point span { display: block; font-size: .78rem; color: var(--text-muted); font-weight: 600; line-height: 1.35; }
+
+    .property-card { position: relative; background: #fff; border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: .85rem; box-shadow: var(--shadow-lg); }
+    .property-image { aspect-ratio: 4/3; width: 100%; border-radius: 16px; overflow: hidden; background: var(--bg-alt); }
+    .property-image img { width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block; }
+    .property-caption { padding: 1rem .75rem .45rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .property-caption-copy small { display: block; color: var(--accent-orange); font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; margin-bottom: .18rem; }
+    .property-caption-copy strong { font-size: .98rem; color: var(--text-main); }
+    .property-status { display: inline-flex; align-items: center; gap: .45rem; background: var(--brand-green-light); color: var(--brand-green); border-radius: 999px; padding: .48rem .7rem; font-size: .73rem; font-weight: 800; white-space: nowrap; }
+    .property-status::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--accent-teal); }
+
+    .investor-paths { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; margin: 0 0 1.8rem; }
+    .investor-path { background: #fff; border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 1.15rem; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; align-items: flex-start; }
+    .investor-path.primary-path { border-top: 4px solid var(--accent-mustard); }
+    .investor-path h2 { font-size: 1rem; line-height: 1.35; letter-spacing: -.01em; margin: 0 0 .5rem; color: var(--text-main); }
+    .investor-path p { font-size: .82rem; line-height: 1.55; color: var(--text-body); margin: 0 0 .9rem; }
+    .investor-path .btn { margin-top: auto; padding: .62rem .9rem; font-size: .78rem; }
+
+    .second-look { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem 4.5rem; }
+    .second-look-card { border: 1px solid var(--border-subtle); border-left: 4px solid var(--accent-mustard); border-radius: var(--radius-lg); background: #fff; padding: 1.45rem 1.6rem; box-shadow: var(--shadow-sm); }
+    .second-look-card h3 { color: var(--brand-green); font-size: 1.08rem; margin-bottom: .35rem; }
+    .second-look-card p { color: var(--text-body); font-size: .92rem; line-height: 1.65; max-width: 900px; }
+
+    .trust-strip { background: #fff; border-bottom: 1px solid var(--border-subtle); }
+    .trust-inner { max-width: var(--max); margin: 0 auto; padding: 1.25rem 1.5rem; display: grid; grid-template-columns: repeat(4,1fr); gap: .5rem; }
+    .trust-item { text-align: center; padding: .5rem .8rem; border-right: 1px solid var(--border-subtle); }
+    .trust-item:last-child { border-right: 0; }
+    .trust-item strong { display: block; color: var(--brand-green); font-size: .95rem; }
+    .trust-item span { color: var(--text-muted); font-size: .76rem; font-weight: 600; }
+
+    .section { padding: 5rem 1.5rem; }
+    .section.alt { background: var(--bg-alt); }
+    .section-inner { max-width: var(--max); margin: 0 auto; }
+    .section-title { max-width: 760px; margin: 0 auto 2.8rem; text-align: center; }
+    .section-eyebrow { display: block; color: var(--accent-mustard); font-size: .8rem; font-weight: 800; text-transform: uppercase; letter-spacing: .09em; margin-bottom: .55rem; }
+    .section-title h2 { font-size: clamp(2rem,3.2vw,2.75rem); line-height: 1.18; letter-spacing: -.025em; margin-bottom: .85rem; }
+    .section-title p { color: var(--text-body); font-size: 1.02rem; }
+
+    .funding-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.4rem; }
+    .funding-card { background: #fff; border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-sm); position: relative; overflow: hidden; }
+    .funding-card.primary::before { content: ''; position: absolute; inset: 0 auto auto 0; width: 100%; height: 4px; background: var(--accent-mustard); }
+    .icon-box { width: 44px; height: 44px; border-radius: 10px; background: var(--brand-green-light); display: grid; place-items: center; color: var(--brand-green); margin-bottom: 1.15rem; }
+    .icon-box svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 2; }
+    .funding-card h3 { font-size: 1.2rem; margin-bottom: .28rem; }
+    .funding-card .sub { color: var(--accent-orange); font-size: .73rem; font-weight: 800; text-transform: uppercase; letter-spacing: .07em; margin-bottom: .9rem; }
+    .funding-card p { color: var(--text-body); font-size: .94rem; line-height: 1.65; }
+    .funding-card ul { list-style: none; margin-top: 1rem; display: grid; gap: .55rem; }
+    .funding-card li { font-size: .86rem; color: var(--text-main); padding-left: 1.15rem; position: relative; }
+    .funding-card li::before { content: '•'; position: absolute; left: 0; color: var(--brand-green); font-size: 1.1rem; top: -.15rem; }
+
+    .process-panel { background: var(--brand-green-dark); color: #fff; border-radius: var(--radius-xl); padding: 3rem; box-shadow: var(--shadow-card); }
+    .process-panel .section-eyebrow { color: var(--accent-mustard); }
+    .process-panel h2 { font-size: clamp(2rem,3vw,2.65rem); line-height: 1.2; margin-bottom: .65rem; }
+    .process-panel > p { color: #BED0C8; max-width: 700px; }
+    .steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.3rem; margin-top: 2.4rem; }
+    .step { padding-top: 1.2rem; border-top: 1px solid rgba(255,255,255,.16); }
+    .step-num { width: 30px; height: 30px; border-radius: 50%; background: var(--accent-mustard); color: var(--text-main); display: grid; place-items: center; font-size: .75rem; font-weight: 800; margin-bottom: .85rem; }
+    .step h3 { font-size: .98rem; margin-bottom: .35rem; }
+    .step p { color: #AFC4BA; font-size: .8rem; line-height: 1.55; }
+
+    .scenario-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.25rem; }
+    .scenario-card { background: #fff; border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 1.65rem; min-height: 210px; }
+    .scenario-icon { width: 38px; height: 38px; border-radius: 9px; background: var(--bg-alt); color: var(--brand-green); display: grid; place-items: center; margin-bottom: 1.1rem; }
+    .scenario-icon svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; }
+    .scenario-card h3 { font-size: 1.04rem; margin-bottom: .5rem; }
+    .scenario-card p { color: var(--text-body); font-size: .86rem; line-height: 1.6; }
+
+    .deal-section { background: var(--bg-subtle); border-top: 1px solid var(--border-subtle); }
+    .deal-shell { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: .83fr 1.17fr; gap: 3.25rem; align-items: start; }
+    .deal-copy { padding-top: .5rem; }
+    .deal-copy h2 { font-size: clamp(2.2rem,3.5vw,3rem); line-height: 1.12; letter-spacing: -.03em; margin-bottom: 1rem; }
+    .deal-copy > p { color: var(--text-body); font-size: 1rem; margin-bottom: 1.6rem; }
+    .deal-notes { display: grid; gap: .8rem; }
+    .deal-note { display: flex; gap: .7rem; align-items: flex-start; color: var(--text-body); font-size: .86rem; }
+    .deal-note span { width: 24px; height: 24px; flex: 0 0 24px; border-radius: 50%; background: var(--brand-green-light); color: var(--brand-green); display: grid; place-items: center; font-weight: 800; font-size: .72rem; margin-top: .05rem; }
+    .deal-form { background: #fff; border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-card); }
+    .deal-form h3 { font-size: 1.25rem; margin-bottom: .3rem; }
+    .deal-form > p { color: var(--text-muted); font-size: .86rem; margin-bottom: 1.35rem; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    label { display: grid; gap: .38rem; font-size: .78rem; color: var(--text-main); font-weight: 700; }
+    .span-2 { grid-column: 1 / -1; }
+    input, select, textarea { width: 100%; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); background: #fff; color: var(--text-main); padding: .77rem .85rem; font-family: var(--font-family); font-size: .88rem; outline: none; }
+    input:focus, select:focus, textarea:focus { border-color: var(--brand-green); box-shadow: 0 0 0 3px rgba(18,69,59,.08); }
+    textarea { resize: vertical; min-height: 108px; }
+    .consent { display: flex; align-items: flex-start; gap: .55rem; color: var(--text-muted); font-size: .73rem; font-weight: 500; margin: 1rem 0; }
+    .consent input { width: auto; margin-top: .16rem; }
+    .btn-full { width: 100%; }
+    .form-status { margin-top: .7rem; color: var(--brand-green); font-size: .78rem; font-weight: 700; min-height: 1.2em; }
+
+    footer { background: #0E1814; color: #fff; padding: 4.5rem 1.5rem 2.5rem; border-top: 1px solid #1C2B25; }
+    .footer-inner { max-width: var(--max); margin: 0 auto 3.5rem; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 3rem; }
+    .footer-main h4 { font-size: 1.25rem; font-weight: 800; margin-bottom: .6rem; }
+    .footer-main p { color: #9BB0A7; font-size: .92rem; line-height: 1.6; margin-bottom: 1.2rem; }
+    .footer-links h5 { color: var(--accent-mustard); font-size: .82rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 1rem; }
+    .footer-links ul { list-style: none; }
+    .footer-links li { margin-bottom: .55rem; font-size: .9rem; color: #C0D2CA; }
+    .footer-links a { color: #C0D2CA; text-decoration: none; transition: color .15s; }
+    .footer-links a:hover { color: #fff; }
+    .brokerage-compliance-box { max-width: var(--max); margin: 0 auto; padding-top: 2.5rem; border-top: 1px solid #1C2B25; display: flex; flex-direction: column; gap: 1.2rem; }
+    .brokerage-lockup-row { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+    .brokerage-details { font-size: .82rem; color: #8CA399; line-height: 1.6; }
+    .legal-disclaimer { font-size: .74rem; color: #6C8278; line-height: 1.6; }
+
+    @media(max-width: 1024px) {
+      .nav-inner { flex-wrap: wrap; }
+      nav.nav-links { order: 3; width: 100%; justify-content: center; flex-wrap: wrap; gap: 1rem 1.25rem; }
+      .hero-container { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-content { text-align: center; }
+      .hero .lead, .hero .audience-line { margin-left: auto; margin-right: auto; }
+      .hero-actions { justify-content: center; }
+      .hero-points { max-width: 700px; margin: 0 auto; }
+      .property-card { max-width: 720px; margin: 0 auto; }
+      .funding-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .scenario-grid { grid-template-columns: 1fr 1fr; }
+      .deal-shell { grid-template-columns: 1fr; gap: 2rem; }
+      .deal-copy { text-align: center; max-width: 740px; margin: 0 auto; }
+      .deal-notes { max-width: 620px; margin: 0 auto; text-align: left; }
+    }
+    @media(max-width: 760px) {
+      .top-strip { padding: .45rem 0; }
+      .top-strip-inner { padding: 0 1rem; justify-content: center; text-align: center; }
+      .top-strip-inner span:last-child { display: none; }
+      header { position: static; }
+      .nav-inner { padding: .85rem 1rem; flex-direction: row; flex-wrap: nowrap; gap: .75rem; }
+      .brand-link { min-width: 0; }
+      .brand-name { font-size: 1.05rem; }
+      .brand-meta { font-size: .64rem; }
+      nav.nav-links { display: none; }
+      .nav-inner > .btn { padding: .68rem .9rem; font-size: .78rem; white-space: nowrap; margin-left: auto; }
+      .hero { padding: 2.8rem 0 3rem; }
+      .hero-container { padding: 0 1rem; gap: 1.8rem; }
+      .hero-content { text-align: left; }
+      .eyebrow-tag { font-size: .69rem; margin-bottom: 1rem; }
+      .hero h1 { font-size: clamp(2.35rem, 12vw, 3.2rem); line-height: 1.02; margin-bottom: 1rem; }
+      .hero .lead { font-size: .98rem; line-height: 1.65; margin-bottom: 1.2rem; }
+      .hero .audience-line { font-size: .86rem; margin: 0 0 .85rem; }
+      .hero .repeat-line { font-size: .94rem; margin-bottom: 1.2rem; }
+      .hero-actions { justify-content: flex-start; gap: .65rem; margin-bottom: 1.35rem; }
+      .hero-actions .btn { width: 100%; }
+      .investor-paths { grid-template-columns: 1fr; gap: .75rem; margin-bottom: 1.3rem; }
+      .investor-path { padding: 1rem; }
+      .investor-path h2 { font-size: 1rem; }
+      .investor-path p { font-size: .84rem; }
+      .investor-path .btn { width: 100%; }
+      .second-look { padding: 0 1rem 3.5rem; }
+      .second-look-card { padding: 1.2rem; }
+      .hero-points { grid-template-columns: 1fr; gap: .65rem; padding-top: 1rem; }
+      .hero-point { padding: .8rem .9rem; background: #fff; border: 1px solid var(--border-subtle); border-radius: 10px; }
+      .property-card { width: 100%; padding: .65rem; border-radius: 18px; box-shadow: 0 12px 30px rgba(18,69,59,.10); }
+      .property-image { aspect-ratio: 16/11; border-radius: 12px; }
+      .property-caption { padding: .8rem .45rem .25rem; align-items: flex-start; flex-direction: column; gap: .6rem; }
+      .property-status { font-size: .68rem; }
+      .trust-inner { grid-template-columns: 1fr 1fr; padding: 1rem; }
+      .trust-item { border-right: 0; border-bottom: 1px solid var(--border-subtle); padding: .8rem .45rem; }
+      .trust-item:nth-last-child(-n+2) { border-bottom: 0; }
+      .section { padding: 3.5rem 1rem; }
+      .section-title { margin-bottom: 2rem; text-align: left; }
+      .section-title h2 { font-size: 2rem; }
+      .funding-card { padding: 1.45rem; }
+      .process-panel { padding: 1.8rem 1.15rem; border-radius: 18px; }
+      .steps { grid-template-columns: 1fr; gap: 1rem; margin-top: 1.7rem; }
+      .scenario-grid { grid-template-columns: 1fr; }
+      .scenario-card { min-height: auto; padding: 1.4rem; }
+      .deal-shell { gap: 1.5rem; }
+      .deal-copy { text-align: left; }
+      .deal-form { padding: 1.2rem; }
+      .form-grid { grid-template-columns: 1fr; }
+      .span-2 { grid-column: auto; }
+      input, select, textarea { font-size: 16px; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      footer { padding: 3.25rem 1rem 2rem; }
+      .brokerage-lockup-row { align-items: flex-start; }
+    }
+    @media(max-width: 480px) {
+      .top-strip { font-size: .76rem; }
+      .nav-inner > .btn { padding: .62rem .72rem; font-size: .72rem; }
+      .hero h1 { font-size: 2.35rem; }
+      .trust-inner { grid-template-columns: 1fr; }
+      .trust-item { border-bottom: 1px solid var(--border-subtle)!important; }
+      .trust-item:last-child { border-bottom: 0!important; }
+      .section-title h2 { font-size: 1.8rem; }
+      .deal-copy h2 { font-size: 2.15rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-strip">
+    <div class="top-strip-inner">
+      <span>Feel free to text or call: <a href="tel:4038701537">403-870-1537</a></span>
+      <span>40+ Canadian Lenders · Clear Solutions · Zero Hidden Fees</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="nav-inner">
+      <a href="/#home" class="brand-link">
+        <span class="brand-name">TREVOR BERRY</span>
+        <span class="brand-meta">Mortgage Associate</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="/#home">Home</a>
+        <a href="/#buying">Buying</a>
+        <a href="/#homeowners">Homeowners</a>
+        <a href="/#alternative">Alternative</a>
+        <a href="/investors/" class="active">Investors</a>
+        <a href="/#partners">Partners</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <a class="btn btn-primary" href="#deal">Send Me a Deal</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="eyebrow-tag">Investor Financing · Canada-wide</div>
+          <h1>How are you funding <span>your next deal?</span></h1>
+          <p class="lead">I help active real estate investors structure financing for purchases, renovations, refinances and rental properties. Perch Capital gives us a fast private-capital lane, and when another structure fits better, I can source across the broader Perch Mortgage Brokerage lender network.</p>
+          <p class="audience-line">Built for flippers, BRRRR investors, rental-property owners, portfolio investors and small residential developers.</p>
+          <div class="repeat-line">Get set up once. Then bring me the deals.</div>
+          <div class="investor-paths" aria-label="Choose your investor funding next step">
+            <article class="investor-path primary-path">
+              <h2>Found a property? Send me the deal.</h2>
+              <p>Send the address, purchase price, renovation budget, expected value and your exit plan. I’ll tell you which financing options are worth pursuing.</p>
+              <a class="btn btn-primary" href="#deal">Send Me a Deal</a>
+            </article>
+            <article class="investor-path">
+              <h2>Still looking for your next property?</h2>
+              <p>Let’s get your financing set up first so you know what you can buy, how much cash you’ll need and what funding options are available.</p>
+              <button class="btn btn-secondary" type="button" id="investorReadyBtn">Get Investor-Ready</button>
+            </article>
+          </div>
+          <div class="hero-points">
+            <div class="hero-point"><strong>Fast private capital</strong><span>For qualifying time-sensitive investor transactions</span></div>
+            <div class="hero-point"><strong>Broader lender access</strong><span>Private, alternative and conventional options</span></div>
+            <div class="hero-point"><strong>Built for repeat deals</strong><span>A relationship that gets more efficient over time</span></div>
+          </div>
+        </div>
+
+        <div class="property-card">
+          <div class="property-image">
+            <img src="/investor-house-hero-clean.jpg" alt="Modern residential investment property" />
+          </div>
+          <div class="property-caption">
+            <div class="property-caption-copy">
+              <small>Investor Funding</small>
+              <strong>Built around the deal, not one lender.</strong>
+            </div>
+            <div class="property-status">Advisor reviewed</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Investor financing highlights">
+      <div class="trust-inner">
+        <div class="trust-item"><strong>40+ lenders</strong><span>through Perch Mortgage Brokerage</span></div>
+        <div class="trust-item"><strong>Canada-wide</strong><span>subject to lender availability</span></div>
+        <div class="trust-item"><strong>Private + Alt + Prime</strong><span>not tied to one funding lane</span></div>
+        <div class="trust-item"><strong>One advisor</strong><span>from review through closing</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="funding">
+      <div class="section-inner">
+        <div class="section-title">
+          <span class="section-eyebrow">Funding options</span>
+          <h2>Start with the deal. Then choose the right lane.</h2>
+          <p>The goal is not to force every transaction into one private product. I review what you are buying, the capital required, your timeline and your exit, then structure the financing around that.</p>
+        </div>
+        <div class="funding-grid">
+          <article class="funding-card primary">
+            <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></div>
+            <h3>Perch Capital</h3>
+            <div class="sub">Fast private capital</div>
+            <p>A strong front-end option for qualifying investor transactions where speed, flexibility and a clear exit matter more than conventional-bank timing.</p>
+            <ul><li>Up to 75% of property value on qualifying deals</li><li>Short-term structures for suitable investor transactions</li><li>Repeat business may qualify for improved economics</li><li>Broker fees from 1% on qualifying transactions</li></ul>
+          </article>
+          <article class="funding-card">
+            <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M4 20V10m5 10V4m6 16v-7m5 7V7"/></svg></div>
+            <h3>Broader Lender Access</h3>
+            <div class="sub">Private · Alternative · Conventional</div>
+            <p>If the deal is better suited elsewhere, I can source through a wider Canada-wide lender network instead of trying to make one private program fit everything.</p>
+            <ul><li>Different property and borrower profiles</li><li>Longer-term alternative financing</li><li>Rental and portfolio strategies</li><li>Refinance and equity takeout options</li></ul>
+          </article>
+          <article class="funding-card">
+            <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M5 20V9l7-5 7 5v11M9 20v-6h6v6"/></svg></div>
+            <h3>Exit & Takeout Strategy</h3>
+            <div class="sub">Think beyond the closing date</div>
+            <p>For short-term capital, the exit is part of the financing plan from the start. Sell, refinance or hold, the next step should be clear before the money goes in.</p>
+            <ul><li>Sell after renovation</li><li>Refinance into a rental hold</li><li>Alternative or conventional takeout</li><li>Equity recycling into the next deal</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="second-look" aria-label="Investor financing second look">
+      <div class="second-look-card">
+        <h3>Already have financing? Get a second look.</h3>
+        <p>If timing, property condition, leverage or lender fit is creating a problem, send me the deal before you walk away. I can review private, alternative and conventional options.</p>
+      </div>
+    </section>
+
+    <section class="section alt" id="how">
+      <div class="section-inner">
+        <div class="process-panel">
+          <span class="section-eyebrow">For repeat investors</span>
+          <h2>Less friction as the relationship grows.</h2>
+          <p>The first transaction is where I learn the borrower profile, experience, liquidity and strategy. On future deals we can start with that context and focus more quickly on the property, project and structure. Updated documents and lender approval are still required where applicable.</p>
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><h3>Get set up</h3><p>Review the investor profile, goals and typical deal range.</p></div>
+            <div class="step"><div class="step-num">2</div><h3>Bring the deal</h3><p>Address, purchase price, value, renovation budget and timeline.</p></div>
+            <div class="step"><div class="step-num">3</div><h3>Review the structure</h3><p>Match the transaction to private, alternative or conventional financing.</p></div>
+            <div class="step"><div class="step-num">4</div><h3>Close and repeat</h3><p>Keep the relationship moving and revisit documents as lenders require.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-title">
+          <span class="section-eyebrow">Common investor scenarios</span>
+          <h2>Not every investor deal looks the same.</h2>
+          <p>Purchase, renovate, refinance or hold. The right structure depends on the property, the borrower, the timeline and the exit.</p>
+        </div>
+        <div class="scenario-grid">
+          <article class="scenario-card"><div class="scenario-icon"><svg viewBox="0 0 24 24"><path d="M3 11 12 4l9 7M5 10v10h14V10M9 20v-6h6v6"/></svg></div><h3>Flip</h3><p>Buy, renovate and sell. Structure acquisition and renovation financing around speed, leverage and a clear sale exit.</p></article>
+          <article class="scenario-card"><div class="scenario-icon"><svg viewBox="0 0 24 24"><path d="M14 4 4 14l6 6L20 10m-7-5 2-2 6 6-2 2"/></svg></div><h3>BRRRR</h3><p>Buy, renovate, rent and refinance. Plan the front-end financing with the long-term takeout strategy in mind.</p></article>
+          <article class="scenario-card"><div class="scenario-icon"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.3-5.7L4 8m0-4v4h4"/></svg></div><h3>Rental & Portfolio</h3><p>Acquire or refinance buy-and-hold properties, from the next rental to a growing portfolio with the right lender fit.</p></article>
+          <article class="scenario-card"><div class="scenario-icon"><svg viewBox="0 0 24 24"><path d="M4 19V9m5 10V5m5 14v-7m5 7V3"/></svg></div><h3>Development / Complex Deals</h3><p>Infill, conversions, small residential development and transactions that need a more customized financing structure.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section deal-section" id="deal">
+      <div class="deal-shell">
+        <div class="deal-copy">
+          <span class="section-eyebrow">Your next deal</span>
+          <h2>Send me the numbers.</h2>
+          <p>You do not need to know which lender or product you need. Give me the property, the capital request, the timing and your exit plan. I’ll tell you which funding lane is worth pursuing.</p>
+          <div class="deal-notes">
+            <div class="deal-note"><span>1</span><div><strong>No full application to start.</strong><br/>A high-level deal review is enough for the first conversation.</div></div>
+            <div class="deal-note"><span>2</span><div><strong>Real advisor review.</strong><br/>The submission comes directly to Trevor, not a call centre.</div></div>
+            <div class="deal-note"><span>3</span><div><strong>National reach.</strong><br/>Availability still depends on the property, province and lender guidelines.</div></div>
+          </div>
+        </div>
+        <form class="deal-form" id="dealForm">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+          <input type="hidden" name="_subject" value="New Investor Deal Review" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_url" value="https://trevormortgages.ca/investors" />
+          <h3>Investor Deal Review</h3>
+          <p>Share what you know. Missing details can be filled in on the follow-up call.</p>
+          <div class="form-grid">
+            <label>Name<input name="name" type="text" autocomplete="name" required placeholder="Your name" /></label>
+            <label>Phone<input name="phone" type="tel" autocomplete="tel" required placeholder="403-555-0199" /></label>
+            <label>Email<input name="email" type="email" autocomplete="email" required placeholder="you@example.com" /></label>
+            <label>City / Province<input name="location" type="text" placeholder="e.g. Calgary, AB" /></label>
+            <label>Deal type<select name="dealType" id="dealType"><option value="">Choose one</option><option>Investor-ready / no property yet</option><option>Flip</option><option>BRRRR</option><option>Rental purchase</option><option>Refinance</option><option>Development</option><option>Other</option></select></label>
+            <label>Property / address<input name="address" type="text" placeholder="Address or area, if known" /></label>
+            <label>Purchase price<input name="purchasePrice" type="text" inputmode="decimal" placeholder="e.g. $550,000" /></label>
+            <label>Estimated value / ARV<input name="value" type="text" inputmode="decimal" placeholder="e.g. $650,000" /></label>
+            <label>Renovation budget<input name="reno" type="text" inputmode="decimal" placeholder="e.g. $75,000" /></label>
+            <label>Capital needed<input name="capital" type="text" inputmode="decimal" placeholder="e.g. $400,000" /></label>
+            <label>Closing date<input name="closing" type="text" placeholder="e.g. Nov 15" /></label>
+            <label>Exit strategy<select name="exit"><option value="">Choose one</option><option>Sell</option><option>Refinance and hold</option><option>Long-term rental hold</option><option>Not sure yet</option></select></label>
+            <label class="span-2">Anything else I should know?<textarea name="notes" placeholder="Experience, current financing, urgency, property condition, corporation, etc."></textarea></label>
+          </div>
+          <label class="consent"><input type="checkbox" name="consent" value="Yes" required /><span>I agree to be contacted by Trevor Berry about this financing request by phone, email or text. I can opt out at any time.</span></label>
+          <button type="submit" class="btn btn-primary btn-full">Send the Deal →</button>
+          <div class="form-status" id="formStatus" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-main">
+        <h4>TREVOR BERRY</h4>
+        <p>Mortgage Associate with Perch Mortgages. Helping clients structure the right financing across 40+ lenders with clear, straightforward advice.</p>
+        <p style="color: var(--accent-mustard); font-weight: 700; font-size: 0.92rem;">
+          Direct: 403-870-1537 · tberry@myperch.io
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h5>Explore Financing</h5>
+        <ul>
+          <li><a href="/#buying">Buying a Home &amp; Pre-Approvals</a></li>
+          <li><a href="/#homeowners">Equity &amp; Debt Consolidation</a></li>
+          <li><a href="/#alternative">Alternative &amp; Bank Decline</a></li>
+          <li><a href="/#partners">Partners &amp; Collaborations</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h5>Credentials &amp; Licensing</h5>
+        <ul>
+          <li>Licensed Mortgage Associate</li>
+          <li>Operating in Alberta &amp; Across Canada</li>
+          <li>40+ Bank, Monoline &amp; Private Lenders</li>
+          <li>Powered by Perch National Platform</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Official Brokerage Regulatory Lockup (Footer Only) -->
+    <div class="brokerage-compliance-box">
+      <div class="brokerage-lockup-row">
+        <a href="https://myperch.io" target="_blank" rel="noopener" class="perch-brand-lockup" title="Perch Mortgage Brokerage" style="display: inline-flex; align-items: center; gap: 0.75rem; text-decoration: none; color: #FFFFFF;">
+          <!-- Official Perch Logo (Bird-Pin + Wordmark) -->
+          <svg viewBox="0 0 152 44" fill="currentColor" style="height: 32px; width: auto; display: block;" aria-label="Perch">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M17 2C9.268 2 3 8.268 3 16C3 25.8 17 42 17 42C17 42 31 25.8 31 16C31 15.65 30.98 15.3 30.95 14.96C32.8 16.5 35.8 17.5 40 17.5V12.5C36.5 12.5 33.5 11 31.8 8.8C28.8 4.6 23.3 2 17 2ZM17 21C14.239 21 12 18.761 12 16C12 13.239 14.239 11 17 11C19.761 11 22 13.239 22 16C22 18.761 19.761 21 17 21Z" fill="currentColor"/>
+            <text x="46" y="30" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="28" font-weight="800" letter-spacing="-0.03em" fill="currentColor">perch</text>
+          </svg>
+        </a>
+        <div class="brokerage-details">
+          <strong>Trevor Berry</strong> is a licensed Mortgage Associate registered with <strong>Perch Mortgage Brokerage</strong>.<br />
+          Operating across Alberta, British Columbia, Ontario, and Canadian provinces through Perch's national brokerage platform.
+        </div>
+      </div>
+      <p class="legal-disclaimer">
+        Information, interest rates, and loan structures are for educational and illustrative purposes only O.A.C. Terms and rates are subject to borrower qualification and lender guidelines.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const investorReadyBtn = document.getElementById('investorReadyBtn');
+    if (investorReadyBtn) {
+      investorReadyBtn.addEventListener('click', function() {
+        const dealType = document.getElementById('dealType');
+        if (dealType) dealType.value = 'Investor-ready / no property yet';
+        document.getElementById('deal').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+
+    const dealForm = document.getElementById('dealForm');
+    if (dealForm) {
+      dealForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const status = document.getElementById('formStatus');
+        const submitButton = this.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.textContent;
+
+        status.textContent = 'Sending your deal...';
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+
+        try {
+          const response = await fetch('https://formsubmit.co/ajax/tberry@myperch.io', {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: new FormData(this)
+          });
+
+          const result = await response.json().catch(() => ({}));
+
+          if (!response.ok || result.success === false) {
+            throw new Error('Submission failed');
+          }
+
+          status.textContent = 'Thanks. Your deal has been sent to Trevor.';
+          this.reset();
+        } catch (error) {
+          status.textContent = 'I could not send the form. Please text Trevor at 403-870-1537 or email tberry@myperch.io.';
+        } finally {
+          submitButton.disabled = false;
+          submitButton.textContent = originalButtonText;
+        }
+      });
+    }
+  </script>
+</body>
+</html>
