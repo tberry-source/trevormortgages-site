@@ -3,25 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#12453B" />
-  <title>Investor Financing | Trevor Mortgages</title>
-  <meta name="description" content="Investor financing for purchases, renovations, refinances and rental properties. Private capital through Perch Capital plus broader Canada-wide lender access through Perch Mortgage Brokerage." />
-  <link rel="canonical" href="https://trevormortgages.ca/investors/" />
-  <meta property="og:title" content="Investor Financing | Trevor Mortgages" />
-  <meta property="og:description" content="How are you funding your next deal? Private capital, alternative financing and broader lender access for active real estate investors." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://trevormortgages.ca/investors/" />
+  <title>Trevor Mortgages | Clear Solutions & Unbiased Mortgage Advice</title>
+  
+  
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
   <style>
+
     :root {
       --bg-canvas: #FFFFFF;
       --bg-subtle: #F8FAF9;
       --bg-alt: #EFF4F1;
       --border-subtle: #E2EAE5;
       --border-focus: #12453B;
+      
       --text-main: #131E1A;
       --text-body: #394A43;
       --text-muted: #647870;
+      
+      /* Official Perch Color Tokens */
       --brand-green: #12453B;
       --brand-green-hover: #0E362E;
       --brand-green-light: #E7EFEA;
@@ -30,192 +30,2515 @@
       --accent-mustard-hover: #D99518;
       --accent-teal: #26A699;
       --accent-orange: #F7704F;
+      
       --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       --radius-sm: 6px;
       --radius: 10px;
       --radius-lg: 16px;
-      --radius-xl: 24px;
-      --shadow-sm: 0 1px 3px rgba(18,69,59,.05);
-      --shadow-card: 0 4px 20px rgba(18,69,59,.06);
-      --shadow-lg: 0 20px 50px rgba(18,69,59,.13);
-      --max: 1160px;
+      --shadow-sm: 0 1px 3px rgba(18, 69, 59, 0.05);
+      --shadow-card: 0 4px 20px rgba(18, 69, 59, 0.06);
+      --shadow-lg: 0 16px 40px rgba(18, 69, 59, 0.12);
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { background: var(--bg-canvas); color: var(--text-main); font-family: var(--font-family); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-    a { color: inherit; }
-    .top-strip { background: var(--bg-subtle); border-bottom: 1px solid var(--border-subtle); font-size: .82rem; padding: .55rem 0; color: var(--text-muted); }
-    .top-strip-inner { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
-    .top-strip a { color: var(--brand-green); text-decoration: none; font-weight: 700; }
-    header { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.98); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-subtle); }
-    .nav-inner { max-width: var(--max); margin: 0 auto; padding: 1.1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1.6rem; }
-    .brand-link { display: flex; flex-direction: column; text-decoration: none; gap: 2px; }
-    .brand-name { font-size: 1.35rem; font-weight: 800; letter-spacing: .02em; color: var(--brand-green); line-height: 1.1; text-transform: uppercase; }
-    .brand-meta { font-size: .78rem; font-weight: 800; color: var(--accent-orange); letter-spacing: .06em; text-transform: uppercase; }
-    nav.nav-links { display: flex; align-items: center; gap: 1.55rem; }
-    nav.nav-links a { color: var(--text-body); text-decoration: none; font-size: .9rem; font-weight: 600; transition: color .15s ease; }
-    nav.nav-links a:hover, nav.nav-links a.active { color: var(--brand-green); }
-    .btn { display: inline-flex; align-items: center; justify-content: center; padding: .8rem 1.5rem; border-radius: var(--radius); font-weight: 700; font-size: .92rem; text-decoration: none; cursor: pointer; transition: all .2s ease; font-family: var(--font-family); border: 2px solid transparent; gap: .4rem; }
-    .btn-primary { background: var(--brand-green); color: #fff; border-color: var(--brand-green); }
-    .btn-primary:hover { background: var(--brand-green-hover); border-color: var(--brand-green-hover); transform: translateY(-1px); box-shadow: var(--shadow-sm); }
-    .btn-secondary { background: #fff; color: var(--brand-green); border-color: var(--brand-green); }
-    .btn-secondary:hover { background: var(--brand-green); color: #fff; transform: translateY(-1px); }
-    .btn-accent { background: var(--accent-mustard); color: var(--text-main); border-color: var(--accent-mustard); font-weight: 800; }
-    .btn-accent:hover { background: var(--accent-mustard-hover); border-color: var(--accent-mustard-hover); transform: translateY(-1px); }
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-main);
+      font-family: var(--font-family);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
 
-    .hero { padding: 4.8rem 0 4.3rem; background: linear-gradient(180deg,#fff 0%,var(--bg-subtle) 100%); border-bottom: 1px solid var(--border-subtle); }
-    .hero-container { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; display: grid; grid-template-columns: 1.03fr .97fr; gap: 4rem; align-items: center; }
-    .eyebrow-tag { display: inline-flex; align-items: center; gap: .5rem; background: var(--brand-green-light); color: var(--brand-green); font-size: .79rem; font-weight: 800; padding: .38rem .86rem; border-radius: 30px; margin-bottom: 1.3rem; text-transform: uppercase; letter-spacing: .055em; }
-    .hero h1 { font-size: clamp(2.65rem,5vw,4.25rem); line-height: 1.03; font-weight: 800; letter-spacing: -.045em; color: var(--text-main); margin-bottom: 1.35rem; max-width: 710px; }
-    .hero h1 span { color: var(--brand-green); }
-    .hero .lead { font-size: 1.08rem; line-height: 1.7; color: var(--text-body); max-width: 690px; margin-bottom: 1.85rem; }
-    .hero .audience-line { font-size: .94rem; color: var(--text-muted); font-weight: 700; margin: -0.7rem 0 1rem; max-width: 700px; }
-    .hero .repeat-line { font-size: 1rem; font-weight: 800; color: var(--brand-green); margin-bottom: 1.8rem; }
-    .hero-actions { display: flex; gap: .85rem; flex-wrap: wrap; margin-bottom: 2rem; }
-    .hero-points { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; padding-top: 1.45rem; border-top: 1px solid var(--border-subtle); }
-    .hero-point strong { display: block; font-size: 1rem; color: var(--brand-green); margin-bottom: .15rem; }
-    .hero-point span { display: block; font-size: .78rem; color: var(--text-muted); font-weight: 600; line-height: 1.35; }
+    /* Top Utility Strip */
+    .top-strip {
+      background-color: var(--bg-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.82rem;
+      padding: 0.55rem 0;
+      color: var(--text-muted);
+    }
+    .top-strip-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .top-strip a {
+      color: var(--brand-green);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .top-strip a:hover { text-decoration: underline; }
 
-    .property-card { position: relative; background: #fff; border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: .85rem; box-shadow: var(--shadow-lg); }
-    .property-image { aspect-ratio: 4/3; width: 100%; border-radius: 16px; overflow: hidden; background: var(--bg-alt); }
-    .property-image img { width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block; }
-    .property-caption { padding: 1rem .75rem .45rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-    .property-caption-copy small { display: block; color: var(--accent-orange); font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; margin-bottom: .18rem; }
-    .property-caption-copy strong { font-size: .98rem; color: var(--text-main); }
-    .property-status { display: inline-flex; align-items: center; gap: .45rem; background: var(--brand-green-light); color: var(--brand-green); border-radius: 999px; padding: .48rem .7rem; font-size: .73rem; font-weight: 800; white-space: nowrap; }
-    .property-status::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--accent-teal); }
+    /* Clean Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 1.1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-link {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      gap: 2px;
+    }
+    .brand-name {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      color: var(--brand-green);
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+    .brand-meta {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: #F7704F !important; /* Official Perch Orange */
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
 
-    .trust-strip { background: #fff; border-bottom: 1px solid var(--border-subtle); }
-    .trust-inner { max-width: var(--max); margin: 0 auto; padding: 1.25rem 1.5rem; display: grid; grid-template-columns: repeat(4,1fr); gap: .5rem; }
-    .trust-item { text-align: center; padding: .5rem .8rem; border-right: 1px solid var(--border-subtle); }
-    .trust-item:last-child { border-right: 0; }
-    .trust-item strong { display: block; color: var(--brand-green); font-size: .95rem; }
-    .trust-item span { color: var(--text-muted); font-size: .76rem; font-weight: 600; }
+    nav.nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+    }
+    nav.nav-links a {
+      color: var(--text-body);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+    nav.nav-links a:hover, nav.nav-links a.active {
+      color: var(--brand-green);
+    }
 
-    .section { padding: 5rem 1.5rem; }
-    .section.alt { background: var(--bg-alt); }
-    .section-inner { max-width: var(--max); margin: 0 auto; }
-    .section-title { max-width: 760px; margin: 0 auto 2.8rem; text-align: center; }
-    .section-eyebrow { display: block; color: var(--accent-mustard); font-size: .8rem; font-weight: 800; text-transform: uppercase; letter-spacing: .09em; margin-bottom: .55rem; }
-    .section-title h2 { font-size: clamp(2rem,3.2vw,2.75rem); line-height: 1.18; letter-spacing: -.025em; margin-bottom: .85rem; }
-    .section-title p { color: var(--text-body); font-size: 1.02rem; }
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem 1.5rem;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: var(--font-family);
+      border: 1.5px solid transparent;
+      gap: 0.4rem;
+    }
+    .btn-primary {
+      background-color: var(--brand-green);
+      color: #FFFFFF;
+      border: 2px solid var(--brand-green);
+    }
+    .btn-primary:hover {
+      background-color: var(--brand-green-hover);
+      border-color: var(--brand-green-hover);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: #FFFFFF;
+      border: 2px solid var(--brand-green);
+      color: var(--brand-green);
+      font-weight: 700;
+      box-shadow: 0 2px 6px rgba(18, 69, 59, 0.06);
+    }
+    .btn-secondary:hover {
+      background: var(--brand-green);
+      color: #FFFFFF;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(18, 69, 59, 0.12);
+    }
+    .btn-accent {
+      background-color: var(--accent-mustard);
+      color: #121E1A;
+      border: 2px solid var(--accent-mustard);
+      font-weight: 800;
+    }
+    .btn-accent:hover {
+      background-color: var(--accent-mustard-hover);
+      border-color: var(--accent-mustard-hover);
+      transform: translateY(-1px);
+    }
 
-    .funding-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.4rem; }
-    .funding-card { background: #fff; border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-sm); position: relative; overflow: hidden; }
-    .funding-card.primary::before { content: ''; position: absolute; inset: 0 auto auto 0; width: 100%; height: 4px; background: var(--accent-mustard); }
-    .icon-box { width: 44px; height: 44px; border-radius: 10px; background: var(--brand-green-light); display: grid; place-items: center; color: var(--brand-green); margin-bottom: 1.15rem; }
-    .icon-box svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 2; }
-    .funding-card h3 { font-size: 1.2rem; margin-bottom: .28rem; }
-    .funding-card .sub { color: var(--accent-orange); font-size: .73rem; font-weight: 800; text-transform: uppercase; letter-spacing: .07em; margin-bottom: .9rem; }
-    .funding-card p { color: var(--text-body); font-size: .94rem; line-height: 1.65; }
-    .funding-card ul { list-style: none; margin-top: 1rem; display: grid; gap: .55rem; }
-    .funding-card li { font-size: .86rem; color: var(--text-main); padding-left: 1.15rem; position: relative; }
-    .funding-card li::before { content: '•'; position: absolute; left: 0; color: var(--brand-green); font-size: 1.1rem; top: -.15rem; }
+    /* Hero Section */
+    .hero {
+      padding: 4.5rem 0 4rem;
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--bg-subtle) 100%);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .hero-container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 1.25fr 0.85fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+    .eyebrow-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--brand-green-light);
+      color: var(--brand-green);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.35rem 0.85rem;
+      border-radius: 30px;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 {
+      font-size: 2.75rem;
+      line-height: 1.18;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 span.accent {
+      color: var(--brand-green);
+    }
+    .hero p.lead {
+      font-size: 1.12rem;
+      line-height: 1.65;
+      color: var(--text-body);
+      margin-bottom: 2rem;
+    }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.2rem;
+      flex-wrap: wrap;
+    }
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .point-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .point-val {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--brand-green);
+      line-height: 1.1;
+    }
+    .point-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
 
-    .process-panel { background: var(--brand-green-dark); color: #fff; border-radius: var(--radius-xl); padding: 3rem; box-shadow: var(--shadow-card); }
-    .process-panel .section-eyebrow { color: var(--accent-mustard); }
-    .process-panel h2 { font-size: clamp(2rem,3vw,2.65rem); line-height: 1.2; margin-bottom: .65rem; }
-    .process-panel > p { color: #BED0C8; max-width: 700px; }
-    .steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.3rem; margin-top: 2.4rem; }
-    .step { padding-top: 1.2rem; border-top: 1px solid rgba(255,255,255,.16); }
-    .step-num { width: 30px; height: 30px; border-radius: 50%; background: var(--accent-mustard); color: var(--text-main); display: grid; place-items: center; font-size: .75rem; font-weight: 800; margin-bottom: .85rem; }
-    .step h3 { font-size: .98rem; margin-bottom: .35rem; }
-    .step p { color: #AFC4BA; font-size: .8rem; line-height: 1.55; }
+    /* Headshot & Profile Card */
+    .profile-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-card);
+      position: relative;
+    }
+    .photo-wrap {
+      width: 100%;
+      aspect-ratio: 4/5;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--bg-alt);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .avatar-fallback {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: var(--brand-green);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 800;
+    }
+    .profile-info h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.15rem;
+    }
+    .profile-role {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--brand-green);
+    }
 
-    .scenario-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.25rem; }
-    .scenario-card { background: #fff; border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 1.65rem; min-height: 210px; }
-    .scenario-icon { width: 38px; height: 38px; border-radius: 9px; background: var(--bg-alt); color: var(--brand-green); display: grid; place-items: center; margin-bottom: 1.1rem; }
-    .scenario-icon svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; }
-    .scenario-card h3 { font-size: 1.04rem; margin-bottom: .5rem; }
-    .scenario-card p { color: var(--text-body); font-size: .86rem; line-height: 1.6; }
+    /* Section Headers */
+    .section-title-wrap {
+      max-width: 720px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+    .section-eyebrow {
+      color: var(--accent-mustard);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .section-title-wrap h2 {
+      font-size: 2.1rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      margin-bottom: 0.8rem;
+      line-height: 1.25;
+    }
+    .section-title-wrap p {
+      font-size: 1.05rem;
+      color: var(--text-body);
+    }
 
-    .deal-section { background: var(--bg-subtle); border-top: 1px solid var(--border-subtle); }
-    .deal-shell { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: .83fr 1.17fr; gap: 3.25rem; align-items: start; }
-    .deal-copy { padding-top: .5rem; }
-    .deal-copy h2 { font-size: clamp(2.2rem,3.5vw,3rem); line-height: 1.12; letter-spacing: -.03em; margin-bottom: 1rem; }
-    .deal-copy > p { color: var(--text-body); font-size: 1rem; margin-bottom: 1.6rem; }
-    .deal-notes { display: grid; gap: .8rem; }
-    .deal-note { display: flex; gap: .7rem; align-items: flex-start; color: var(--text-body); font-size: .86rem; }
-    .deal-note span { width: 24px; height: 24px; flex: 0 0 24px; border-radius: 50%; background: var(--brand-green-light); color: var(--brand-green); display: grid; place-items: center; font-weight: 800; font-size: .72rem; margin-top: .05rem; }
-    .deal-form { background: #fff; border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-card); }
-    .deal-form h3 { font-size: 1.25rem; margin-bottom: .3rem; }
-    .deal-form > p { color: var(--text-muted); font-size: .86rem; margin-bottom: 1.35rem; }
-    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    label { display: grid; gap: .38rem; font-size: .78rem; color: var(--text-main); font-weight: 700; }
-    .span-2 { grid-column: 1 / -1; }
-    input, select, textarea { width: 100%; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); background: #fff; color: var(--text-main); padding: .77rem .85rem; font-family: var(--font-family); font-size: .88rem; outline: none; }
-    input:focus, select:focus, textarea:focus { border-color: var(--brand-green); box-shadow: 0 0 0 3px rgba(18,69,59,.08); }
-    textarea { resize: vertical; min-height: 108px; }
-    .consent { display: flex; align-items: flex-start; gap: .55rem; color: var(--text-muted); font-size: .73rem; font-weight: 500; margin: 1rem 0; }
-    .consent input { width: auto; margin-top: .16rem; }
-    .btn-full { width: 100%; }
-    .form-status { margin-top: .7rem; color: var(--brand-green); font-size: .78rem; font-weight: 700; min-height: 1.2em; }
+    /* How I Work */
+    .principles-section {
+      padding: 4.5rem 1.5rem;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .principles-grid {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .principle-card {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 2rem;
+      transition: transform 0.2s ease;
+    }
+    .principle-card:hover {
+      transform: translateY(-2px);
+    }
+    .principle-icon-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      background: var(--brand-green-light);
+      color: var(--brand-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+    }
+    .principle-icon-wrap svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--brand-green);
+      stroke-width: 2;
+      fill: none;
+    }
+    .principle-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.6rem;
+    }
+    .principle-card p {
+      font-size: 0.94rem;
+      color: var(--text-body);
+      line-height: 1.6;
+    }
 
-    footer { background: #0E1814; color: #fff; padding: 4.5rem 1.5rem 2.5rem; border-top: 1px solid #1C2B25; }
-    .footer-inner { max-width: var(--max); margin: 0 auto 3.5rem; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 3rem; }
-    .footer-main h4 { font-size: 1.25rem; font-weight: 800; margin-bottom: .6rem; }
-    .footer-main p { color: #9BB0A7; font-size: .92rem; line-height: 1.6; margin-bottom: 1.2rem; }
-    .footer-links h5 { color: var(--accent-mustard); font-size: .82rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 1rem; }
+    /* 3 Client Lanes */
+    .lanes-section {
+      padding: 4.5rem 1.5rem 5rem;
+      background: var(--bg-alt);
+    }
+    .lanes-grid {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+    }
+    .lane-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+    }
+    .lane-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card);
+    }
+    .lane-photo-header {
+      width: 100%;
+      height: 180px;
+      position: relative;
+      background: var(--brand-green-light);
+      overflow: hidden;
+    }
+    .lane-photo-header img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .lane-card:hover .lane-photo-header img {
+      transform: scale(1.03);
+    }
+    .lane-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(18, 69, 59, 0.92);
+      color: #FFFFFF;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.3rem 0.7rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      backdrop-filter: blur(4px);
+    }
+    .lane-content {
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .lane-card h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.8rem;
+    }
+    .lane-card p {
+      font-size: 0.94rem;
+      color: var(--text-body);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+    .lane-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem 0;
+    }
+    .lane-bullets li {
+      padding-left: 1.25rem !important;
+      position: relative !important;
+      list-style: none !important;
+      position: relative;
+      padding-left: 1.25rem;
+      font-size: 0.88rem;
+      color: var(--text-main);
+      margin-bottom: 0.6rem;
+      line-height: 1.5;
+    }
+    .lane-bullets li::before {
+      position: absolute !important;
+      left: 0 !important;
+      top: -0.1rem !important;
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: -0.05rem;
+      color: var(--brand-green);
+      font-size: 1.3rem;
+      line-height: 1;
+    }
+
+    /* Partner Banner */
+    .partner-banner {
+      max-width: 1160px;
+      margin: 0 auto;
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 3rem;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .partner-banner h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.6rem;
+    }
+    .partner-banner p {
+      font-size: 0.96rem;
+      color: var(--text-body);
+      line-height: 1.6;
+    }
+    .partner-cta-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Calculator Design on Homepage */
+    .calc-box-wrap {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      margin: 3.5rem 0;
+      box-shadow: 0 8px 30px rgba(18, 69, 59, 0.07);
+    }
+    .calc-header {
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .calc-header h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--brand-green);
+    }
+    .calc-header p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+    }
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2.8rem;
+      align-items: stretch;
+    }
+    .calc-inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      justify-content: space-between;
+    }
+    .calc-field label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.6rem;
+    }
+    .calc-field label span.val {
+      color: #F7704F; /* Perch Orange */
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+    .calc-range {
+      width: 100%;
+      accent-color: #F7704F; /* Perch Orange */
+      cursor: pointer;
+      height: 6px;
+    }
+    .calc-toggles {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .calc-toggle-btn {
+      padding: 0.55rem 1.1rem;
+      border: 1.5px solid var(--border-subtle);
+      background: var(--bg-subtle);
+      font-size: 0.85rem;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-family: var(--font-family);
+      color: var(--text-body);
+      transition: all 0.15s ease;
+    }
+    .calc-toggle-btn.active {
+      background: var(--brand-green);
+      color: #FFFFFF;
+      border-color: var(--brand-green);
+    }
+    .rate-input-box {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .rate-input-box input {
+      width: 110px;
+      padding: 0.55rem 0.85rem;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: var(--font-family);
+      color: var(--text-main);
+    }
+    .rate-input-box input:focus {
+      border-color: var(--brand-green);
+      outline: none;
+    }
+
+    /* Result Card */
+    .calc-results {
+      background: #12453B; /* Deep Brand Green */
+      border-radius: var(--radius);
+      padding: 2.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: #FFFFFF;
+      box-shadow: 0 8px 24px rgba(18, 69, 59, 0.15);
+    }
+    .calc-metric-main {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 1.3rem;
+      margin-bottom: 1.3rem;
+      text-align: center;
+    }
+    .calc-metric-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #A3CFBB;
+    }
+    .calc-metric-num {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.1;
+      margin: 0.35rem 0;
+    }
+    .calc-metric-sub {
+      font-size: 0.85rem;
+      color: #D1DFD8;
+    }
+    .calc-breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.65rem 0;
+      font-size: 0.9rem;
+      color: #D1DFD8;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .calc-breakdown-row strong {
+      color: #FFFFFF;
+    }
+
+    /* Custom Contact Section styles */
+    .contact-section {
+      padding: 4.5rem 1.5rem;
+      background: var(--bg-subtle);
+      border-top: 1px solid var(--border-subtle);
+    }
+    .contact-box-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: 0 8px 30px rgba(18, 69, 59, 0.05);
+    }
+    .contact-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+    }
+
+    /* Modal Backdrop */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(19, 30, 26, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.2rem;
+    }
+    .modal-backdrop.active { display: flex; }
+    .modal-dialog {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 540px;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+    }
+    .modal-top {
+      padding: 1.2rem 1.6rem;
+      background: var(--brand-green);
+      color: #FFFFFF;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-top h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+    .modal-close-btn {
+      background: transparent;
+      border: none;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1.6rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+    .modal-close-btn:hover { color: #FFFFFF; }
+    .modal-body {
+      padding: 1.8rem;
+    }
+    .step-track {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 1.5rem;
+    }
+    .step-bar {
+      height: 4px;
+      flex-grow: 1;
+      background: var(--border-subtle);
+      border-radius: 2px;
+      transition: background 0.25s ease;
+    }
+    .step-bar.active { background: var(--brand-green); }
+    .step-panel { display: none; }
+    .step-panel.active { display: block; }
+
+    .pill-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+    .pill-card {
+      background: var(--bg-subtle);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 1rem 0.9rem;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .pill-card:hover {
+      border-color: var(--brand-green);
+      background: #FFFFFF;
+      box-shadow: var(--shadow-sm);
+    }
+    .pill-icon {
+      width: 24px;
+      height: 24px;
+      color: var(--brand-green);
+      margin-bottom: 0.2rem;
+    }
+    .pill-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--brand-green);
+      stroke-width: 2;
+      fill: none;
+    }
+    .pill-title {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--text-main);
+    }
+    .pill-sub {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+    .input-row {
+      margin-bottom: 1.1rem;
+    }
+    .input-row label {
+      display: block;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.35rem;
+    }
+    .input-field {
+      width: 100%;
+      padding: 0.75rem 0.9rem;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.95rem;
+      background: #FFFFFF;
+      color: var(--text-main);
+    }
+    .input-field:focus {
+      outline: none;
+      border-color: var(--brand-green);
+      box-shadow: 0 0 0 3px rgba(18, 69, 59, 0.08);
+    }
+
+    /* Footer */
+    footer {
+      background: #0E1814;
+      color: #FFFFFF;
+      padding: 4.5rem 1.5rem 2.5rem;
+      border-top: 1px solid #1C2B25;
+    }
+    .footer-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+    }
+    .footer-main h4 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.01em;
+    }
+    .footer-main p {
+      color: #9BB0A7;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+    .footer-links h5 {
+      color: var(--accent-mustard);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+    }
     .footer-links ul { list-style: none; }
-    .footer-links li { margin-bottom: .55rem; font-size: .9rem; color: #C0D2CA; }
-    .footer-links a { color: #C0D2CA; text-decoration: none; transition: color .15s; }
-    .footer-links a:hover { color: #fff; }
-    .brokerage-compliance-box { max-width: var(--max); margin: 0 auto; padding-top: 2.5rem; border-top: 1px solid #1C2B25; display: flex; flex-direction: column; gap: 1.2rem; }
-    .brokerage-lockup-row { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
-    .brokerage-details { font-size: .82rem; color: #8CA399; line-height: 1.6; }
-    .legal-disclaimer { font-size: .74rem; color: #6C8278; line-height: 1.6; }
+    .footer-links li {
+      margin-bottom: 0.55rem;
+      font-size: 0.9rem;
+    }
+    .footer-links a {
+      color: #C0D2CA;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: #FFFFFF; }
 
-    @media(max-width: 1024px) {
-      .nav-inner { flex-wrap: wrap; }
-      nav.nav-links { order: 3; width: 100%; justify-content: center; flex-wrap: wrap; gap: 1rem 1.25rem; }
-      .hero-container { grid-template-columns: 1fr; gap: 2.5rem; }
-      .hero-content { text-align: center; }
-      .hero .lead, .hero .audience-line { margin-left: auto; margin-right: auto; }
-      .hero-actions { justify-content: center; }
-      .hero-points { max-width: 700px; margin: 0 auto; }
-      .property-card { max-width: 720px; margin: 0 auto; }
-      .funding-grid { grid-template-columns: 1fr; }
-      .steps { grid-template-columns: 1fr 1fr; }
-      .scenario-grid { grid-template-columns: 1fr 1fr; }
-      .deal-shell { grid-template-columns: 1fr; gap: 2rem; }
-      .deal-copy { text-align: center; max-width: 740px; margin: 0 auto; }
-      .deal-notes { max-width: 620px; margin: 0 auto; text-align: left; }
+    /* Official Brokerage License Strip with Perch Logo */
+    .brokerage-compliance-box {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding-top: 2.5rem;
+      border-top: 1px solid #1C2B25;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
     }
-    @media(max-width: 760px) {
-      .top-strip-inner { flex-direction: column; text-align: center; gap: .2rem; }
-      .nav-inner { flex-direction: column; gap: .9rem; }
-      .brand-link { align-items: center; text-align: center; }
-      nav.nav-links { font-size: .85rem; gap: .7rem 1rem; }
-      .hero { padding: 3.4rem 0 3.2rem; }
-      .hero-container { padding: 0 1.2rem; }
-      .hero h1 { font-size: 2.65rem; }
-      .hero-points { grid-template-columns: 1fr; gap: .75rem; }
-      .hero-point { padding: .7rem; background: #fff; border: 1px solid var(--border-subtle); border-radius: 8px; }
-      .property-caption { align-items: flex-start; flex-direction: column; }
-      .trust-inner { grid-template-columns: 1fr 1fr; }
-      .trust-item { border-right: 0; border-bottom: 1px solid var(--border-subtle); }
-      .trust-item:nth-last-child(-n+2) { border-bottom: 0; }
-      .section { padding: 4rem 1.2rem; }
-      .process-panel { padding: 2rem 1.4rem; }
-      .steps { grid-template-columns: 1fr; }
-      .scenario-grid { grid-template-columns: 1fr; }
-      .form-grid { grid-template-columns: 1fr; }
-      .span-2 { grid-column: auto; }
-      .deal-form { padding: 1.35rem; }
-      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .brokerage-lockup-row {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
     }
-    @media(max-width: 480px) {
-      nav.nav-links { display: none; }
-      .hero h1 { font-size: 2.3rem; }
-      .hero .lead { font-size: 1rem; }
-      .hero-actions .btn { width: 100%; }
-      .trust-inner { grid-template-columns: 1fr; }
-      .trust-item { border-bottom: 1px solid var(--border-subtle)!important; }
-      .trust-item:last-child { border-bottom: 0!important; }
+    .brokerage-brand-badge {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0.5rem 1rem;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius-sm);
+      line-height: 1.2;
     }
-  </style>
+    .brokerage-brand-badge .badge-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: 0.04em;
+    }
+    .brokerage-brand-badge .badge-sub {
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--accent-mustard);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .brokerage-details {
+      font-size: 0.82rem;
+      color: #8CA399;
+      line-height: 1.6;
+    }
+    .legal-disclaimer {
+      font-size: 0.74rem;
+      color: #6C8278;
+      line-height: 1.6;
+    }
+
+    /* =========================================================================
+       COMPREHENSIVE MOBILE OPTIMIZATIONS (FIXES NAVIGATION, SPACING & COLLAPSES)
+       ========================================================================= */
+    
+
+/* ================= SUBPAGE COMPONENT STYLES ================= */
+.subpage-hero {
+      padding: 4.5rem 0 3.8rem;
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--bg-subtle) 100%);
+      border-bottom: 1px solid var(--border-subtle);
+      text-align: center;
+    }
+    .subpage-hero-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .eyebrow-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--brand-green-light);
+      color: var(--brand-green);
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 0.35rem 0.9rem;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1.2rem;
+    }
+    .subpage-hero h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: var(--text-main);
+      margin-bottom: 1.2rem;
+      line-height: 1.2;
+    }
+    .subpage-hero h1 span.accent {
+      color: var(--brand-green);
+    }
+    .subpage-hero p.lead {
+      font-size: 1.12rem;
+      line-height: 1.65;
+      color: var(--text-body);
+      max-width: 780px;
+      margin: 0 auto 2.2rem;
+    }
+
+    /* Content Layout Containers */
+    .content-section {
+      padding: 4.5rem 0;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 4.5rem 1.5rem;
+    }
+    .section-title-wrap {
+      max-width: 780px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+    .section-eyebrow {
+      color: var(--accent-mustard);
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .section-title-wrap h2 {
+      font-size: 2.1rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      margin-bottom: 0.8rem;
+      line-height: 1.25;
+    }
+    .section-title-wrap p {
+      font-size: 1.05rem;
+      color: var(--text-body);
+    }
+
+    /* --- INTERACTIVE REBATE ADVANCE CALCULATOR --- */
+    .calc-card-container {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      padding: 2.5rem;
+      margin: 2.5rem auto 4rem;
+      max-width: 1040px;
+    }
+    .calc-top-header {
+      text-align: center;
+      margin-bottom: 2.2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .calc-top-header h3 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--brand-green);
+      margin-bottom: 0.4rem;
+    }
+    .calc-top-header p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .calc-layout-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    /* Left Inputs */
+    .calc-input-block {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+    }
+    .calc-field-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .calc-label-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .calc-field-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .calc-display-val {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--brand-green);
+    }
+    .calc-slider-input {
+      width: 100%;
+      accent-color: var(--brand-green);
+      cursor: pointer;
+      height: 6px;
+    }
+    .slider-scale-limits {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-top: 0.2rem;
+    }
+
+    /* Province Selectors (Pill Group) */
+    .prov-selector-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+    }
+    .prov-btn {
+      padding: 0.75rem 0.8rem;
+      border: 1.5px solid var(--border-subtle);
+      background: var(--bg-subtle);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-body);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .prov-btn span.sub {
+      font-size: 0.74rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+    .prov-btn:hover {
+      border-color: var(--brand-green);
+      background: #FFFFFF;
+    }
+    .prov-btn.active {
+      background: var(--brand-green);
+      border-color: var(--brand-green);
+      color: #FFFFFF;
+    }
+    .prov-btn.active span.sub {
+      color: #A7F3D0;
+    }
+
+    /* Occupancy Toggle */
+    .toggle-row-group {
+      display: flex;
+      gap: 0.6rem;
+    }
+    .toggle-pill-btn {
+      flex: 1;
+      padding: 0.65rem 0.8rem;
+      border: 1.5px solid var(--border-subtle);
+      background: var(--bg-subtle);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--text-body);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-align: center;
+    }
+    .toggle-pill-btn.active {
+      background: var(--brand-green);
+      border-color: var(--brand-green);
+      color: #FFFFFF;
+    }
+
+    /* Right Output Pane */
+    .calc-results-box {
+      background: #0E1814;
+      color: #FFFFFF;
+      border-radius: var(--radius);
+      padding: 2.2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+      box-shadow: var(--shadow-card);
+    }
+    .results-hero-metric {
+      text-align: center;
+      padding-bottom: 1.4rem;
+      border-bottom: 1px solid #1F2E28;
+    }
+    .metric-subtitle {
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: var(--accent-mustard);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.3rem;
+    }
+    .metric-bignum {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+    .metric-caption {
+      font-size: 0.82rem;
+      color: #9CA3AF;
+      margin-top: 0.4rem;
+    }
+
+    /* Breakdown Table */
+    .rebate-breakdown-table {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+    .breakdown-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.88rem;
+      color: #D1D5DB;
+    }
+    .breakdown-line strong {
+      color: #FFFFFF;
+      font-size: 0.92rem;
+    }
+    .breakdown-line.highlight {
+      background: rgba(237, 171, 43, 0.12);
+      border: 1px solid rgba(237, 171, 43, 0.3);
+      padding: 0.6rem 0.8rem;
+      border-radius: var(--radius-sm);
+      margin-top: 0.2rem;
+    }
+    .breakdown-line.highlight strong {
+      color: var(--accent-mustard);
+      font-size: 1.05rem;
+    }
+
+    .rule-explainer-box {
+      background: #14221C;
+      border-left: 3px solid var(--accent-mustard);
+      padding: 0.8rem 1rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.8rem;
+      color: #C2D1CB;
+      line-height: 1.5;
+    }
+
+    /* Cards & Informational Grid */
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .phases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .phase-card {
+      background: #FFFFFF;
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .feature-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin: 3.5rem 0;
+    }
+    .feature-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 3.5rem 0;
+    }
+    .phases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    .feature-box {
+      background: var(--bg-subtle);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem 1.8rem;
+    }
+    .feature-box .tag {
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: var(--accent-mustard);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .feature-box h3 {
+      font-size: 1.28rem;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+      color: var(--text-main);
+      line-height: 1.3;
+    }
+    .feature-box p {
+      font-size: 0.94rem;
+      color: var(--text-body);
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+    .lane-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem 0;
+    }
+    .lane-bullets li {
+      padding-left: 1.25rem !important;
+      position: relative !important;
+      list-style: none !important;
+      position: relative;
+      padding-left: 1.25rem;
+      font-size: 0.86rem;
+      color: var(--text-main);
+      margin-bottom: 0.6rem;
+      line-height: 1.5;
+    }
+    .lane-bullets li::before {
+      position: absolute !important;
+      left: 0 !important;
+      top: -0.1rem !important;
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: -0.05rem;
+      color: var(--brand-green);
+      font-size: 1.3rem;
+      line-height: 1;
+    }
+
+    /* Comparison Matrix Table */
+    .table-container {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow-x: auto;
+      margin: 3rem 0;
+      box-shadow: var(--shadow-sm);
+    }
+    table.matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+    table.matrix-table th {
+      background: var(--brand-green);
+      color: #FFFFFF;
+      padding: 1rem 1.4rem;
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: -0.01em;
+    }
+    table.matrix-table td {
+      padding: 1.1rem 1.4rem;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-body);
+    }
+    table.matrix-table tr:last-child td {
+      border-bottom: none;
+    }
+    table.matrix-table tr:nth-child(even) {
+      background: var(--bg-subtle);
+    }
+    table.matrix-table td strong {
+      color: var(--text-main);
+    }
+    .badge-check {
+      color: var(--brand-green);
+      font-weight: 800;
+    }
+
+    /* CTA Banner Box */
+    .cta-banner-box {
+      background: var(--brand-green);
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 3.5rem 2.5rem;
+      text-align: center;
+      margin: 3.5rem auto 0;
+      max-width: 980px;
+    }
+    .cta-banner-box h3 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+      letter-spacing: -0.02em;
+    }
+    .cta-banner-box p {
+      color: #C2D1CB;
+      font-size: 1.05rem;
+      max-width: 680px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+
+    /* Footer & Compliance */
+    footer {
+      background: #0E1814;
+      color: #FFFFFF;
+      padding: 4.5rem 0 2.5rem;
+      border-top: 1px solid #1C2B25;
+      margin-top: 5rem;
+    }
+    .footer-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+    }
+    .footer-main h4 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+    }
+    .footer-main p {
+      color: #9BB0A7;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+    .footer-links h5 {
+      color: var(--accent-mustard);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+    }
+    .footer-links ul { list-style: none; }
+    .footer-links li {
+      margin-bottom: 0.55rem;
+      font-size: 0.9rem;
+    }
+    .footer-links a {
+      color: #C0D2CA;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: #FFFFFF; }
+
+    .brokerage-compliance-box {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 0;
+      border-top: 1px solid #1C2B25;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .brokerage-lockup-row {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .brokerage-details {
+      font-size: 0.84rem;
+      color: #8CA399;
+      line-height: 1.6;
+    }
+    .legal-disclaimer {
+      font-size: 0.75rem;
+      color: #6C8278;
+      line-height: 1.6;
+    }
+
+    /* Modal Backdrop & Dialog */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(19, 30, 26, 0.72);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.2rem;
+    }
+    .modal-backdrop.active { display: flex; }
+    .modal-dialog {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 580px;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+    }
+    .modal-top {
+      padding: 1.3rem 1.8rem;
+      background: var(--brand-green);
+      color: #FFFFFF;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-top h3 { font-size: 1.25rem; font-weight: 800; }
+    .modal-close-btn {
+      background: transparent;
+      border: none;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+    .modal-close-btn:hover { color: #FFFFFF; }
+    .modal-body { padding: 2rem; }
+
+    
+
+
+    /* =========================================================================
+       MASTER MOBILE OPTIMIZATIONS (FIXES MARGINS, HEADERS, GRID ALIGNMENT & SCROLL)
+       ========================================================================= */
+    @media (max-width: 1024px) {
+      /* Spacing between cards/bubbles on mobile to prevent touching */
+      .feature-box,
+      .principle-card,
+      .lane-card,
+      .pill-card,
+      .phase-card {
+        margin-bottom: 1.5rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      /* Remove bottom margin on the last item to prevent extra page-bottom gap */
+      .feature-box:last-child,
+      .principle-card:last-child,
+      .lane-card:last-child,
+      .pill-card:last-child,
+      .phase-card:last-child {
+        margin-bottom: 0 !important;
+      }
+
+      /* Unified Grid-to-Flex stack for main Hero section on mobile */
+      .hero-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem !important;
+        align-items: stretch !important;
+        text-align: center !important;
+      }
+
+      /* Force body to prevent horizontal overflow/scrolling completely */
+      body, html {
+        overflow-x: hidden !important;
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Unified Container Margins - No Elements Touches the Edge! */
+      .hero, 
+      .principles-section, 
+      .lanes-section, 
+      .contact-section, 
+      .subpage-hero, 
+      .content-section, 
+      footer {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+        box-sizing: border-box !important;
+      }
+
+      .hero-container, 
+      .subpage-hero-container, 
+      .footer-inner, 
+      .brokerage-compliance-box {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      /* Header Menu - Compact, Wrapped & Centered (NO HORIZONTAL SWIPING!) */
+      .nav-inner {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.8rem !important;
+        padding: 0.8rem 0 !important;
+        text-align: center !important;
+      }
+      .brand-link {
+        align-items: center !important;
+        text-align: center !important;
+        margin-bottom: 0.2rem !important;
+      }
+      .brand-name {
+        font-size: 1.15rem !important;
+        letter-spacing: 0.02em !important;
+        text-align: center !important;
+      }
+      .brand-meta {
+        font-size: 0.72rem !important;
+        text-align: center !important;
+      }
+      .nav-inner > div:last-child {
+        display: none !important; /* Hide the desk cta button */
+      }
+      nav.nav-links {
+        width: 100% !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 0.5rem 1rem !important;
+        padding: 0.2rem 0 !important;
+        overflow: visible !important;
+        white-space: normal !important;
+      }
+      nav.nav-links a {
+        font-size: 0.82rem !important;
+        font-weight: 700 !important;
+        padding: 0.25rem 0.4rem !important;
+        display: inline-block !important;
+      }
+
+      /* Section Title Alignments - Left-Aligned for Natural Reading */
+      .section-title-wrap {
+        text-align: left !important;
+        margin-bottom: 2rem !important;
+        padding: 0 !important;
+      }
+      .section-title-wrap h2 {
+        font-size: 1.8rem !important;
+        text-align: center !important;
+        line-height: 1.25 !important;
+      }
+      .section-title-wrap p {
+        font-size: 0.96rem !important;
+        text-align: center !important;
+        line-height: 1.5 !important;
+        margin: 0 auto !important;
+      }
+
+      /* Hero Content Spacing on Mobile */
+      .hero {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+      }
+      .hero h1 {
+        font-size: 1.85rem !important;
+        line-height: 1.25 !important;
+        text-align: center !important;
+      }
+      .hero p.lead {
+        font-size: 0.98rem !important;
+        line-height: 1.55 !important;
+        text-align: left !important;
+        margin-bottom: 1.5rem !important;
+      }
+      .hero-actions {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.75rem !important;
+        width: 100% !important;
+      }
+      .hero-actions .btn {
+        width: 100% !important;
+      }
+      .hero-points {
+        gap: 1.2rem !important;
+        justify-content: space-between !important;
+      }
+
+      /* Subpage Hero and Titles Mobile Formatting */
+      .subpage-hero {
+        padding-top: 2rem !important;
+        padding-bottom: 1.8rem !important;
+        text-align: center !important;
+      }
+      .subpage-hero h1 {
+        font-size: 1.85rem !important;
+        line-height: 1.25 !important;
+        text-align: center !important;
+      }
+      .subpage-hero p.lead {
+        font-size: 0.98rem !important;
+        line-height: 1.55 !important;
+        text-align: center !important;
+        margin: 0 auto 1.5rem !important;
+      }
+
+      /* Stack Grids cleanly into 1 Column with standard borders and margin safety */
+      .principles-grid, 
+      .lanes-grid, 
+      .feature-grid-2, 
+      .feature-grid-3, 
+      .phases-grid,
+      .partners-grid,
+      .footer-inner, 
+      .pill-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.2rem !important;
+        width: 100% !important;
+      }
+
+      /* Stacking standard cards and adding clean inner margins */
+      .principle-card, 
+      .lane-card, 
+      .feature-box, 
+      .pill-card {
+        padding: 1.5rem 1.25rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      .lane-photo-header {
+        height: 150px !important;
+      }
+
+      /* Partner & Ad Banners stack on mobile with margin insets */
+      .partner-banner {
+        grid-template-columns: 1fr !important;
+        padding: 1.5rem 1.25rem !important;
+        gap: 1.5rem !important;
+        margin-top: 2rem !important;
+      }
+      .partner-cta-box {
+        width: 100% !important;
+        align-items: center !important;
+      }
+      .partner-cta-box .btn {
+        width: 100% !important;
+      }
+
+      .cta-banner-box {
+        padding: 1.8rem 1.25rem !important;
+        margin-top: 2rem !important;
+        border-radius: var(--radius) !important;
+      }
+      .cta-banner-box h3 {
+        font-size: 1.45rem !important;
+        line-height: 1.3 !important;
+      }
+      .cta-banner-box p {
+        font-size: 0.92rem !important;
+        margin-bottom: 1.5rem !important;
+      }
+
+      /* Mobile Calculator Optimization - Vertical Stacking & Full-Width Inputs */
+      .calc-grid, 
+      .calc-layout-grid, 
+      .calc-card-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        width: 100% !important;
+      }
+
+      .calc-box-wrap, 
+      .calc-card, 
+      .calc-card-container {
+        padding: 1.5rem 1.25rem !important;
+        margin: 1.5rem 0 !important;
+        border-radius: var(--radius) !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      .calc-inputs, 
+      .calc-input-block, 
+      .calc-left-inputs {
+        padding: 0 !important;
+        gap: 1.2rem !important;
+        width: 100% !important;
+      }
+
+      .calc-results, 
+      .calc-results-box, 
+      .calc-right-results {
+        padding: 1.5rem 1.25rem !important;
+        border-radius: var(--radius) !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      .calc-metric-num, 
+      .metric-bignum, 
+      .result-main-num {
+        font-size: 2.2rem !important;
+      }
+
+      .calc-breakdown-row, 
+      .breakdown-row, 
+      .calc-output-row {
+        font-size: 0.85rem !important;
+        padding: 0.5rem 0 !important;
+      }
+
+      .rate-input-box {
+        width: 100% !important;
+      }
+      .rate-input-box input {
+        width: 100% !important;
+      }
+
+      /* Sliding / Stacking Toggle buttons for Sliders on Mobile */
+      .toggle-row-group {
+        flex-direction: column !important;
+        gap: 0.4rem !important;
+      }
+      .toggle-pill-btn, .calc-toggle-btn {
+        width: 100% !important;
+        text-align: center !important;
+        padding: 0.6rem !important;
+      }
+
+      /* Contact Form Optimization on Mobile */
+      .contact-box-wrap {
+        padding: 1.5rem 1.25rem !important;
+      }
+      .contact-form-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+      }
+
+      /* Modal Optimization on Mobile */
+      .modal-backdrop {
+        overflow-y: auto !important;
+      }
+      .modal-dialog {
+        max-width: 100% !important;
+        margin: 0 !important;
+        border-radius: var(--radius) !important;
+        max-height: calc(100vh - 2.4rem) !important;
+        display: flex !important;
+        flex-direction: column !important;
+      }
+      .modal-body {
+        padding: 1.2rem !important;
+        overflow-y: auto !important;
+        flex-grow: 1 !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+
+      /* Centering Footer elements properly */
+      footer {
+        padding-top: 3rem !important;
+        padding-bottom: 2rem !important;
+      }
+      .footer-main {
+        text-align: left !important;
+        margin-bottom: 1.5rem !important;
+      }
+      .footer-links {
+        text-align: left !important;
+        margin-bottom: 1.5rem !important;
+      }
+      .brokerage-lockup-row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 1.2rem !important;
+      }
+      .brokerage-brand-badge {
+        align-self: flex-start !important;
+      }
+      .brokerage-details, .legal-disclaimer {
+        text-align: left !important;
+        font-size: 0.78rem !important;
+      }
+    
+      /* Surgical Mobile Fixes for Advisor Profile Card & Photo Area */
+      .profile-card {
+        max-width: 100% !important;
+        margin: 1.5rem 0 0 0 !important;
+        padding: 1.25rem !important;
+        display: flex !important;
+        flex-direction: row !important; /* Elegant row-based layout instead of giant vertical box */
+        align-items: center !important;
+        gap: 1.25rem !important;
+        text-align: left !important;
+        box-sizing: border-box !important;
+        border-radius: var(--radius) !important;
+        box-shadow: 0 4px 15px rgba(18, 69, 59, 0.05) !important;
+        background: #FFFFFF !important;
+        border: 1px solid var(--border-subtle) !important;
+      }
+      .photo-wrap {
+        width: 76px !important;
+        height: 76px !important;
+        aspect-ratio: 1/1 !important; /* Perfect circular profile picture */
+        border-radius: 50% !important;
+        margin-bottom: 0 !important;
+        margin-right: 0 !important;
+        flex-shrink: 0 !important;
+        overflow: hidden !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: var(--brand-green-light) !important;
+        border: 2px solid var(--border-subtle) !important;
+      }
+      .photo-wrap img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center top !important;
+        border-radius: 50% !important;
+        display: block !important;
+      }
+      .profile-info {
+        text-align: left !important;
+        margin-top: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+      }
+      .profile-info h3 {
+        font-size: 1.15rem !important;
+        font-weight: 800 !important;
+        color: var(--text-main) !important;
+        margin: 0 0 0.2rem 0 !important;
+        line-height: 1.2 !important;
+      }
+      .profile-role {
+        font-size: 0.82rem !important;
+        font-weight: 600 !important;
+        color: var(--brand-green) !important;
+        margin: 0 !important;
+        line-height: 1.3 !important;
+      }
+      .avatar-fallback {
+        width: 76px !important;
+        height: 76px !important;
+        border-radius: 50% !important;
+        font-size: 1.5rem !important;
+        background: var(--brand-green) !important;
+        color: #FFFFFF !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-weight: 800 !important;
+      }
+}
+    
+
+    /* Premium Mobile Header Scroll Optimization */
+    @media (max-width: 1024px) {
+      .nav-inner {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.6rem !important;
+        padding: 0.8rem 1rem !important;
+      }
+      nav.nav-links {
+        width: 100% !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        gap: 1.1rem !important;
+        padding-bottom: 0.4rem !important;
+        display: flex !important;
+        justify-content: flex-start !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+      nav.nav-links::-webkit-scrollbar {
+        display: none !important;
+      }
+      nav.nav-links a {
+        font-size: 0.88rem !important;
+        padding: 0.2rem 0 !important;
+        display: inline-block !important;
+      }
+      .nav-inner > div:last-child {
+        display: none !important; /* Hide CTA button on mobile header to preserve vital space */
+      }
+    }
+    
+  
+    /* =========================================================================
+       MASTER MOBILE OPTIMIZATIONS (UNIFIED MOBILE FIXES - VERSION 27)
+       ========================================================================= */
+    @media (max-width: 1024px) {
+      /* Force body to prevent horizontal overflow/scrolling completely */
+      body, html {
+        overflow-x: hidden !important;
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Unified Container Margins - No Elements Touch the Edge! */
+      .hero, 
+      .principles-section, 
+      .lanes-section, 
+      .contact-section, 
+      .subpage-hero, 
+      .content-section, 
+      footer {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+        box-sizing: border-box !important;
+      }
+
+      .hero-container, 
+      .subpage-hero-container, 
+      .footer-inner, 
+      .brokerage-compliance-box {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      /* Center headers symmetrically on mobile */
+      .subpage-hero {
+        padding-top: 2.2rem !important;
+        padding-bottom: 2rem !important;
+        text-align: center !important;
+      }
+      .subpage-hero h1 {
+        font-size: 1.85rem !important;
+        line-height: 1.25 !important;
+        text-align: center !important;
+      }
+      .subpage-hero p.lead {
+        font-size: 0.98rem !important;
+        line-height: 1.55 !important;
+        text-align: center !important;
+        margin: 0 auto 1.5rem !important;
+      }
+      .eyebrow-tag {
+        display: inline-flex !important;
+        justify-content: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+      }
+
+      /* Section Title Alignments - Centered for Symmetrical Mobile Layout */
+      .section-title-wrap {
+        text-align: center !important;
+        margin-bottom: 2rem !important;
+        padding: 0 !important;
+      }
+      .section-title-wrap h2 {
+        font-size: 1.8rem !important;
+        text-align: center !important;
+        line-height: 1.25 !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      .section-title-wrap p {
+        font-size: 0.96rem !important;
+        text-align: center !important;
+        line-height: 1.5 !important;
+        margin: 0 auto !important;
+      }
+      .section-eyebrow {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+      }
+
+      /* Header Menu - Compact, Wrapped & Centered (NO HORIZONTAL SWIPING!) */
+      .nav-inner {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.8rem !important;
+        padding: 0.8rem 0 !important;
+        text-align: center !important;
+      }
+      .brand-link {
+        align-items: center !important;
+        text-align: center !important;
+        margin-bottom: 0.2rem !important;
+      }
+      .brand-name {
+        font-size: 1.15rem !important;
+        letter-spacing: 0.02em !important;
+        text-align: center !important;
+      }
+      .brand-meta {
+        font-size: 0.72rem !important;
+        text-align: center !important;
+      }
+      .nav-inner > div:last-child {
+        display: none !important; /* Hide desktop CTA button */
+      }
+      nav.nav-links {
+        width: 100% !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 0.5rem 1rem !important;
+        padding: 0.2rem 0 !important;
+        overflow: visible !important;
+        white-space: normal !important;
+      }
+      nav.nav-links a {
+        font-size: 0.82rem !important;
+        font-weight: 700 !important;
+        padding: 0.25rem 0.4rem !important;
+        display: inline-block !important;
+      }
+
+      /* Stack grids and elements into clean single-column layout */
+      .feature-grid-2,
+      .footer-inner,
+      .principles-grid,
+      .lanes-grid,
+      .team-cards-grid,
+      .inquiry-form-grid,
+      .property-cards-grid,
+      .classifier-container,
+      #cpa-classifier-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+      }
+      .feature-box,
+      .principle-card,
+      .lane-card,
+      .pill-card,
+      .phase-card,
+      .calc-card,
+      .option-card,
+      .team-card {
+        margin-bottom: 1.5rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        grid-column: span 1 !important; /* Override double-wide grid cells on mobile */
+      }
+      .feature-box:last-child,
+      .principle-card:last-child,
+      .lane-card:last-child,
+      .pill-card:last-child,
+      .phase-card:last-child {
+        margin-bottom: 0 !important;
+      }
+
+      /* Dynamic form stacking (e.g. CPA classifier and inputs) */
+      .form-grid-2,
+      .form-row-2,
+      
+      
+      /* Padding adjustments to prevent text squishing in cards */
+      .classifier-card-container,
+      
+
+      /* Sticky result panel reset */
+      .classifier-result-wrap {
+        position: static !important;
+      }
+    }
+
+    
+    
+       ========================================================================= */
+    @media (max-width: 1024px) {
+      html, body {
+        width: 100% !important;
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+      }
+      
+      /* Mobile Header Navigation - 3x2 Symmetrical Grid */
+      .nav-inner {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.8rem !important;
+        padding: 0.8rem 0 !important;
+        text-align: center !important;
+      }
+      .brand-link {
+        align-items: center !important;
+        text-align: center !important;
+        margin-bottom: 0.2rem !important;
+      }
+      .brand-name {
+        font-size: 1.15rem !important;
+        letter-spacing: 0.02em !important;
+        text-align: center !important;
+      }
+      .brand-meta {
+        font-size: 0.72rem !important;
+        text-align: center !important;
+      }
+      .nav-inner > div:last-child {
+        display: none !important;
+      }
+      nav.nav-links {
+        width: 100% !important;
+        max-width: 380px !important;
+        margin: 0 auto !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 0.4rem 0.5rem !important;
+        padding: 0.2rem 0 !important;
+        justify-items: center !important;
+        align-items: center !important;
+        overflow: visible !important;
+        white-space: normal !important;
+      }
+      nav.nav-links a {
+        font-size: 0.82rem !important;
+        font-weight: 700 !important;
+        padding: 0.3rem 0.2rem !important;
+        display: block !important;
+        text-align: center !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        white-space: nowrap !important;
+      }
+
+      /* Centered Subpage Heroes and Section Titles */
+      .subpage-hero {
+        padding-top: 2rem !important;
+        padding-bottom: 1.8rem !important;
+        text-align: center !important;
+      }
+      .subpage-hero h1 {
+        font-size: 1.85rem !important;
+        line-height: 1.25 !important;
+        text-align: center !important;
+      }
+      .subpage-hero p.lead {
+        font-size: 0.98rem !important;
+        line-height: 1.55 !important;
+        text-align: center !important;
+        margin: 0 auto 1.5rem !important;
+      }
+      .section-title-wrap {
+        text-align: center !important;
+        margin-bottom: 2rem !important;
+      }
+      .section-title-wrap h2 {
+        text-align: center !important;
+      }
+      .section-title-wrap p {
+        text-align: center !important;
+      }
+
+      /* Compact Paddings & Reset Stretched Containers */
+      .content-section, 
+      .hero-container, 
+      .subpage-hero-container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        box-sizing: border-box !important;
+      }
+
+      div
+
+      div
+
+      div
+
+      /* Grid Column Spans Reset */
+      .feature-box
+    }
+  
+/* =========================================================================
+   CLEAN MASTER MOBILE RESPONSIVE STYLES (MAIN SITE PAGES)
+   ========================================================================= */
+@media (max-width: 860px) {
+  html, body {
+    overflow-x: hidden !important;
+    position: relative !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .top-strip {
+    font-size: 0.78rem !important;
+    padding: 0.4rem 0 !important;
+  }
+  .top-strip-inner {
+    padding: 0 1rem !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+  .nav-inner {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 0.85rem 1rem !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .brand-link {
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+  .brand-name {
+    font-size: 1.15rem !important;
+    text-align: center !important;
+  }
+  .brand-meta {
+    font-size: 0.72rem !important;
+    text-align: center !important;
+  }
+  .nav-cta-wrap {
+    display: none !important;
+  }
+  nav.nav-links {
+    width: 100% !important;
+    max-width: 380px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0.5rem 0.8rem !important;
+    padding: 0 !important;
+  }
+  nav.nav-links a {
+    font-size: 0.85rem !important;
+    font-weight: 700 !important;
+    padding: 0.2rem 0.4rem !important;
+    display: inline-block !important;
+    text-align: center !important;
+  }
+  .subpage-hero {
+    padding: 2.2rem 1rem 2rem !important;
+  }
+  .subpage-hero-container {
+    padding: 0 !important;
+  }
+  .subpage-hero h1 {
+    font-size: 1.75rem !important;
+    line-height: 1.25 !important;
+  }
+  .subpage-hero p.lead {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+  }
+  .content-section {
+    padding: 2rem 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .section-title-wrap {
+    margin-bottom: 1.5rem !important;
+  }
+  .section-title-wrap h2 {
+    font-size: 1.55rem !important;
+  }
+  .section-title-wrap p {
+    font-size: 0.92rem !important;
+  }
+  .feature-grid-2, .feature-grid-3, .feature-grid-4, .calc-layout-grid, .form-grid-2, .form-row-2 {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+    width: 100% !important;
+  }
+  .feature-box, .calc-card-container, .classifier-card-container, .pill-card, .lane-card, .option-card {
+    padding: 1.35rem 1.1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    grid-column: span 1 !important;
+  }
+  .cta-banner-box {
+    padding: 2rem 1.1rem !important;
+  }
+  .cta-banner-box h3 {
+    font-size: 1.45rem !important;
+  }
+  .cta-banner-box p {
+    font-size: 0.92rem !important;
+  }
+  .table-container {
+    margin: 1.2rem 0 !important;
+    border-radius: 8px !important;
+    width: 100% !important;
+  }
+  table.matrix-table {
+    font-size: 0.82rem !important;
+  }
+  table.matrix-table th, table.matrix-table td {
+    padding: 0.65rem 0.75rem !important;
+  }
+  footer {
+    padding: 3rem 1rem 2rem !important;
+  }
+  .footer-inner {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  .brokerage-compliance-box {
+    padding: 1.5rem 1rem 0 !important;
+  }
+  .brokerage-lockup-row {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+}
+
+
+/* =========================================================================
+   CLEAN MASTER MOBILE RESPONSIVE STYLES (MAIN SITE PAGES)
+   ========================================================================= */
+@media (max-width: 860px) {
+  html, body {
+    overflow-x: hidden !important;
+    position: relative !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .top-strip {
+    font-size: 0.78rem !important;
+    padding: 0.4rem 0 !important;
+  }
+  .top-strip-inner {
+    padding: 0 1rem !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+  .nav-inner {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 0.85rem 1rem !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .brand-link {
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+  .brand-name {
+    font-size: 1.15rem !important;
+    text-align: center !important;
+  }
+  .brand-meta {
+    font-size: 0.72rem !important;
+    text-align: center !important;
+  }
+  .nav-cta-wrap {
+    display: none !important;
+  }
+  nav.nav-links {
+    width: 100% !important;
+    max-width: 380px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0.5rem 0.8rem !important;
+    padding: 0 !important;
+  }
+  nav.nav-links a {
+    font-size: 0.85rem !important;
+    font-weight: 700 !important;
+    padding: 0.2rem 0.4rem !important;
+    display: inline-block !important;
+    text-align: center !important;
+  }
+  .subpage-hero {
+    padding: 2.2rem 1rem 2rem !important;
+  }
+  .subpage-hero-container {
+    padding: 0 !important;
+  }
+  .subpage-hero h1 {
+    font-size: 1.75rem !important;
+    line-height: 1.25 !important;
+  }
+  .subpage-hero p.lead {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+  }
+  .content-section {
+    padding: 2rem 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .section-title-wrap {
+    margin-bottom: 1.5rem !important;
+  }
+  .section-title-wrap h2 {
+    font-size: 1.55rem !important;
+  }
+  .section-title-wrap p {
+    font-size: 0.92rem !important;
+  }
+  .feature-grid-2, .feature-grid-3, .feature-grid-4, .calc-layout-grid, .form-grid-2, .form-row-2 {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+    width: 100% !important;
+  }
+  .feature-box, .calc-card-container, .classifier-card-container, .pill-card, .lane-card, .option-card {
+    padding: 1.35rem 1.1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    grid-column: span 1 !important;
+  }
+  .cta-banner-box {
+    padding: 2rem 1.1rem !important;
+  }
+  .cta-banner-box h3 {
+    font-size: 1.45rem !important;
+  }
+  .cta-banner-box p {
+    font-size: 0.92rem !important;
+  }
+  .table-container {
+    margin: 1.2rem 0 !important;
+    border-radius: 8px !important;
+    width: 100% !important;
+  }
+  table.matrix-table {
+    font-size: 0.82rem !important;
+  }
+  table.matrix-table th, table.matrix-table td {
+    padding: 0.65rem 0.75rem !important;
+  }
+  footer {
+    padding: 3rem 1rem 2rem !important;
+  }
+  .footer-inner {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  .brokerage-compliance-box {
+    padding: 1.5rem 1rem 0 !important;
+  }
+  .brokerage-lockup-row {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+}
+
+</style>
+
+
 </head>
 <body>
+
+  <!-- Top Strip -->
   <div class="top-strip">
     <div class="top-strip-inner">
       <span>Feel free to text or call: <a href="tel:4038701537">403-870-1537</a></span>
@@ -223,173 +2546,827 @@
     </div>
   </div>
 
+  <!-- Header Navigation -->
   <header>
     <div class="nav-inner">
-      <a href="../index.html#home" class="brand-link">
+      <a href="#home" class="brand-link" onclick="showPage('home', event)">
         <span class="brand-name">TREVOR BERRY</span>
         <span class="brand-meta">Mortgage Associate</span>
       </a>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="../index.html#home">Home</a>
-        <a href="../index.html#buying">Buying</a>
-        <a href="../index.html#homeowners">Homeowners</a>
-        <a href="../index.html#alternative">Alternative</a>
-        <a href="./" class="active">Investors</a>
-        <a href="../index.html#partners">Partners</a>
-        <a href="../index.html#contact">Contact</a>
+
+      <nav class="nav-links">
+        <a href="index.html#home" class="active" onclick="handleHeaderNav('home', event)">Home</a>
+        <a href="index.html#buying" onclick="handleHeaderNav('buying', event)">Buying</a>
+        <a href="index.html#homeowners" onclick="handleHeaderNav('homeowners', event)">Homeowners</a>
+        <a href="index.html#alternative" onclick="handleHeaderNav('alternative', event)">Alternative</a>
+        <a href="index.html#partners" onclick="handleHeaderNav('partners', event)">Partners</a>
+        <a href="index.html#contact" onclick="handleHeaderNav('contact', event)">Contact</a>
       </nav>
-      <a class="btn btn-primary" href="#deal">Send Me a Deal</a>
+
+      <div>
+        <button class="btn btn-primary" onclick="openSnapshotModal('General Inquiry')">Get Mortgage Numbers</button>
+      </div>
     </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero-container">
-        <div class="hero-content">
-          <div class="eyebrow-tag">Investor Financing · Canada-wide</div>
-          <h1>How are you funding <span>your next deal?</span></h1>
-          <p class="lead">I help active real estate investors structure financing for purchases, renovations, refinances and rental properties. Perch Capital gives us a fast private-capital lane, and when another structure fits better, I can source across the broader Perch Mortgage Brokerage lender network.</p>
-          <p class="audience-line">Built for flippers, BRRRR investors, rental-property owners, portfolio investors and small residential developers.</p>
-          <div class="repeat-line">Get set up once. Then bring me the deals.</div>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#deal">Send Me a Deal →</a>
-            <a class="btn btn-secondary" href="#funding">See the Funding Options</a>
-          </div>
-          <div class="hero-points">
-            <div class="hero-point"><strong>Fast private capital</strong><span>For qualifying time-sensitive investor transactions</span></div>
-            <div class="hero-point"><strong>Broader lender access</strong><span>Private, alternative and conventional options</span></div>
-            <div class="hero-point"><strong>Built for repeat deals</strong><span>A relationship that gets more efficient over time</span></div>
-          </div>
+    <section class="page-view" id="view-home">
+        <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+
+        <h1>Clear Mortgage Advice for <span class="accent">Everyday Buyers</span> & Complex Scenarios</h1>
+        <p class="lead">
+          I help you find the right lender, compare your real payment options, and set up a mortgage that actually fits your life — whether you're buying your first home, accessing equity to clear debt, or working through a tricky bank decline.
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="openSnapshotModal('Purchase Strategy')">Get Your Mortgage Numbers →</button>
+          <a href="#how-i-help" class="btn btn-secondary" onclick="scrollToElement('how-i-help', event)">How I Work</a>
         </div>
 
-        <div class="property-card">
-          <div class="property-image">
-            <img src="investor-house-hero-clean.jpg" alt="Modern residential investment property" />
+        <div class="hero-points">
+          <div class="point-item">
+            <span class="point-val">40+</span>
+            <span class="point-label">Lenders Shopped</span>
           </div>
-          <div class="property-caption">
-            <div class="property-caption-copy">
-              <small>Investor Funding</small>
-              <strong>Built around the deal, not one lender.</strong>
+          <div class="point-item">
+            <span class="point-val">Unbiased</span>
+            <span class="point-label">Working for You</span>
+          </div>
+          <div class="point-item">
+            <span class="point-val">Free To Use</span>
+            <span class="point-label">Standard Residential</span>
+          </div>
+          <div class="point-item">
+            <span class="point-val">No Surprises</span>
+            <span class="point-label">Clear Closing Numbers</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Advisor Profile Card (Clean - Photo & Title Only) -->
+      <div class="profile-card">
+        <div class="photo-wrap">
+          <img src="trevor-headshot.jpg" alt="Trevor Berry - Mortgage Associate" onerror="this.onerror=null; this.style.display='none'; if(!this.parentNode.querySelector('.avatar-fallback')){ var div=document.createElement('div'); div.className='avatar-fallback'; div.innerText='TB'; this.parentNode.appendChild(div); }" />
+        </div>
+        <div class="profile-info">
+          <h3>Trevor Berry</h3>
+          <p class="profile-role">Mortgage Associate · Perch Mortgages</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How I Work (Conversational & Plain English) -->
+  <section class="principles-section" id="how-i-help">
+    <div class="section-title-wrap">
+      <span class="section-eyebrow">How I Work With You</span>
+      <h2>A Mortgage Should Fit Your Budget, Not Just a Bank Box</h2>
+      <p>A bank branch only sells their own retail products. I shop across 40+ lenders to build a plan around what you're actually trying to achieve.</p>
+    </div>
+
+    <div class="principles-grid">
+      <div class="principle-card">
+        <div class="principle-icon-wrap">
+          <!-- Clean SVG Analytics Icon -->
+          <svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        </div>
+        <h3>Setting Up Your Payments</h3>
+        <p>We'll look at 25 vs. 30-year amortizations to make sure your monthly cash flow stays comfortable, with prepayment options so you can pay down principal faster when it suits you.</p>
+      </div>
+
+      <div class="principle-card">
+        <div class="principle-icon-wrap">
+          <!-- Clean SVG Shield Icon -->
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Avoiding Costly Bank Penalties</h3>
+        <p>If life changes and you need to break ymy mortgage early, big bank penalty calculations can cost tens of thousands. I help place you with lenders that use fairer formulas.</p>
+      </div>
+
+      <div class="principle-card">
+        <div class="principle-icon-wrap">
+          <!-- Clean SVG Network Icon -->
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v6m0 6v6M3 12h6m6 0h6"/></svg>
+        </div>
+        <h3>Real Options Across 40+ Lenders</h3>
+        <p>From major banks and credit unions to competitive monolines and private equity, I find the lender that actually makes sense for your income, credit, and goals.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The 3 Lanes -->
+  <section class="lanes-section">
+    <div class="section-title-wrap">
+      <span class="section-eyebrow">How I Can Help</span>
+      <h2>Choose What You're Looking to Solve</h2>
+      <p>Select the path that matches what you're currently working on.</p>
+    </div>
+
+    <div class="lanes-grid">
+      <!-- Lane 1: Buying -->
+      <div class="lane-card">
+        <div class="lane-photo-header">
+          <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80" alt="Purchasing a home" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80'; if(!this.complete || this.naturalWidth === 0){ this.style.display='none'; }" />
+          <span class="lane-badge">Buying a Home</span>
+        </div>
+        <div class="lane-content">
+          <h3>Purchasing & Pre-Approvals</h3>
+          <p>I shop rates across 40+ lenders, secure 120-day rate holds, compare 25 vs. 30-year amortizations, and explore potential down payment programs to make purchasing realistic with zero surprises.</p>
+          <ul class="lane-bullets">
+            <li>Access to Canada's most competitive rates</li>
+            <li>120-day rate hold to protect against increases</li>
+            <li>Full cash-to-close, legal fees & closing cost clarity</li>
+          </ul>
+          <button class="btn btn-secondary" onclick="openSnapshotModal('Buying a Home')">Get Purchase Numbers →</button>
+        </div>
+      </div>
+
+      <!-- Lane 2: Homeowners & Equity -->
+      <div class="lane-card">
+        <div class="lane-photo-header">
+          <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80" alt="Renovations and home equity" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80'; if(!this.complete || this.naturalWidth === 0){ this.style.display='none'; }" />
+          <span class="lane-badge">Homeowners</span>
+        </div>
+        <div class="lane-content">
+          <h3>Equity & Debt Relief</h3>
+          <p>Wiping out 12–20% credit cards and car loans into one lower monthly payment, or funding renovations and legal suites without breaking a low-rate first mortgage.</p>
+          <ul class="lane-bullets">
+            <li>Consolidate high-interest debt & car loans into one payment</li>
+            <li>Access equity for legal basement suites or renos</li>
+            <li>Protect existing low-rate mortgages via 2nd mortgages / HELOCs</li>
+          </ul>
+          <button class="btn btn-secondary" onclick="openSnapshotModal('Homeowner Equity')">Get Equity Options →</button>
+        </div>
+      </div>
+
+      <!-- Lane 3: Alternative & Private -->
+      <div class="lane-card">
+        <div class="lane-photo-header">
+          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Alternative mortgage lending" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80'; if(!this.complete || this.naturalWidth === 0){ this.style.display='none'; }" />
+          <span class="lane-badge">Second Opinions</span>
+        </div>
+        <div class="lane-content">
+          <h3>When the Bank Says "No"</h3>
+          <p>A bank decline usually just means your file didn't fit their standard computer box. I work with common-sense lenders to get you financed and set up a plan back to prime rates.</p>
+          <ul class="lane-bullets">
+            <li>Stated income for self-employed write-offs</li>
+            <li>Bruised credit & past bankruptcy turnarounds</li>
+            <li>Short-term bridge loans with clear exit plans</li>
+          </ul>
+          <button class="btn btn-secondary" onclick="openSnapshotModal('Bank Decline')">Request Second Opinion →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Partner Banner -->
+    <div class="partner-banner">
+      <div>
+        <span style="color: var(--accent-mustard); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">Professional Collaborations</span>
+        <h3>Partnering with Industry Professionals</h3>
+        <p>I collaborate with real estate agents, accountants, builders, renovation contractors, and financial planners to give clients smooth closings, tax-efficient debt structures, and common-sense financing options that help deals move forward.</p>
+      </div>
+      <div class="partner-cta-box">
+        <button class="btn btn-accent" onclick="openSnapshotModal('Partner Collaboration')">Discuss a Scenario With Trevor →</button>
+        <a href="#partners" onclick="showPage('partners', event)" style="color: var(--brand-green); font-size: 0.92rem; font-weight: 700; text-decoration: underline; margin: 0 auto; display: inline-block;">Learn More About Working Together</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4-Step Intake Modal (With Clean SVG Icons & Exact Mustard) -->
+  >
+
+  
+  
+  
+  </section>
+
+        <!-- VIEW 2: BUYING -->
+    <section class="page-view" id="view-buying" style="display: none;">
+        <section class="subpage-hero">
+      <div class="subpage-hero-container">
+        <div class="eyebrow-tag">
+          <span>Pre-Approvals & Rate Holds · Alberta & Ontario</span>
+        </div>
+        <h1>Secure Your Financing & <span class="accent">Shop for Your New Home with Confidence</span></h1>
+        <p class="lead">
+          Don't let rising rates or complex lender rules stall your home purchase. I secure a 120-day rate hold, map out your down payment, and explore custom options (including my Buy.ca program and cash incentives) to ensure zero closing-day surprises.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <button class="btn btn-primary" style="font-size: 0.95rem;" onclick="document.getElementById('buying-calculator').scrollIntoView({ behavior: 'smooth' })">Calculate Your Purchase Numbers ↓</button>
+          <button type="button" class="btn btn-secondary" style="border: 2px solid var(--brand-green); background: #FFFFFF; color: var(--brand-green);" onclick="openSnapshotModal('Pre-Approval Consultation')">Get Ymy Buyer Snapshot →</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" style="padding-top: 0; padding-bottom: 2rem;">
+      <div class="feature-grid-3">
+        <div class="feature-box">
+          <span class="tag">Rate Protection</span>
+          <h3>120-Day Fixed Rate Holds</h3>
+          <p>
+            Interest rates can fluctuate while you shop. I secure a written 120-day rate lock across major monolines and banks, giving you complete budget protection and peace of mind.
+          </p>
+          <ul class="lane-bullets">
+            <li>Lock in today's best rates before you start shopping</li>
+            <li>Full rate protection for up to 4 months of house hunting</li>
+            <li>If rates go down, your locked rate matches the lower market rate</li>
+          </ul>
+        </div>
+
+        <div class="feature-box">
+          <span class="tag">Down Payment Solutions</span>
+          <h3>Down Payment Programs, Buy.ca &amp; Government Incentives</h3>
+          <p>
+            Struggling with cash-to-close? I help you explore specialized programs like the <a href="https://myperch.io/programs/down-payment-bonus/" target="_blank" rel="noopener" style="color: var(--brand-green); font-weight: 700; text-decoration: underline;">Perch Down Payment Bonus Program</a>, the Buy.ca 1.5% down payment cash bonus, gifted down payments, the Federal First-Time Home Buyer Incentive, and local housing grants.
+          </p>
+          <ul class="lane-bullets">
+            <li>Structured gift letter support from family members</li>
+            <li>Buy.ca program to advance 1.5% commission toward down payment</li>
+            <li>Structure rebates assignment directly onto Statements of Adjustments</li>
+          </ul>
+        </div>
+
+        <div class="feature-box">
+          <span class="tag">Unbiased Shopping</span>
+          <h3>We Shop 40+ Lenders For You</h3>
+          <p>
+            Standard retail banks can only sell you their own financial products. I shop the entire Canadian wholesale market—prime, alternative, and private—to find your perfect fit.
+          </p>
+          <ul class="lane-bullets">
+            <li>Access monolines with lower penalty calculations</li>
+            <li>Flexible stated-income programs for self-employed buyers</li>
+            <li>Common-sense alternative products for credit challenges</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Purchase Calculator -->
+    <section class="content-section" id="buying-calculator" style="padding-top: 1rem;">
+      <div class="section-title-wrap">
+        <span class="section-eyebrow">Interactive Estimator</span>
+        <h2>Mortgage Purchase &amp; Pre-Approval Calculator</h2>
+        <p>Calculate your estimated monthly payment, CMHC insurance premiums, and total cash required to close.</p>
+      </div>
+
+      <div class="calc-card-container">
+        <div class="calc-top-header">
+          <h3>Estimate Your Home Purchase Math</h3>
+          <p>Verify down payment rules, amortization periods, and estimated monthly payments</p>
+        </div>
+
+        <div class="calc-layout-grid">
+          <div class="calc-input-block">
+            <!-- Amortization -->
+            <div class="calc-field-row">
+              <span class="calc-field-title">1. Amortization Period</span>
+              <div class="toggle-row-group">
+                <button type="button" class="toggle-pill-btn active" id="btn-buy-amort25" onclick="setBuyAmort(25)">
+                  25 Years (Standard)
+                </button>
+                <button type="button" class="toggle-pill-btn" id="btn-buy-amort30" onclick="setBuyAmort(30)">
+                  30 Years (Uninsured)
+                </button>
+              </div>
+              <span style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem;" id="buy-amort-subtext">
+                ✓ 25 years is standard for insured mortgages (< 20% down payment).
+              </span>
             </div>
-            <div class="property-status">Advisor reviewed</div>
+
+            <!-- Price Slider -->
+            <div class="calc-field-row">
+              <div class="calc-label-header">
+                <span class="calc-field-title">2. Ballpark Purchase Price:</span>
+                <span class="calc-display-val" id="disp-buy-price">$550,000</span>
+              </div>
+              <input type="range" class="calc-slider-input" id="slider-buy-price" min="200000" max="1500000" step="5000" value="550000" oninput="runPurchaseCalc()" />
+              <div class="slider-scale-limits">
+                <span>$200K</span>
+                <span>$550K</span>
+                <span>$1M</span>
+                <span>$1.5M</span>
+              </div>
+            </div>
+
+            <!-- Down Payment Slider -->
+            <div class="calc-field-row">
+              <div class="calc-label-header">
+                <span class="calc-field-title">3. Down Payment:</span>
+                <span class="calc-display-val" id="disp-buy-down">10% ($55,000)</span>
+              </div>
+              <input type="range" class="calc-slider-input" id="slider-buy-down" min="5" max="35" step="1" value="10" oninput="runPurchaseCalc()" />
+              <div class="slider-scale-limits">
+                <span id="buy-min-down-lbl">Min 5%</span>
+                <span>10%</span>
+                <span>20% (No CMHC)</span>
+                <span>35%</span>
+              </div>
+            </div>
+
+            <!-- Rate Input -->
+            <div class="calc-field-row">
+              <span class="calc-field-title">4. Mortgage Interest Rate</span>
+              <div class="rate-box-row" style="display: flex; align-items: center; gap: 0.8rem; margin-top: 0.4rem;">
+                <div class="rate-input-wrap" style="display: inline-flex; align-items: center; background: #FFFFFF; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 0.4rem 0.8rem; width: 110px;">
+                  <input type="number" id="input-buy-rate" value="3.60" step="0.05" min="1.0" max="15.0" style="border: none; outline: none; font-family: inherit; font-size: 1.05rem; font-weight: 800; color: var(--text-main); width: 60px;" oninput="runPurchaseCalc()" />
+                  <span style="font-weight: 800; color: var(--text-body); margin-left: 0.3rem;">%</span>
+                </div>
+                <span class="rate-tag" style="font-size: 0.78rem; color: var(--text-muted);">Current benchmark (editable)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Output Card -->
+          <div class="calc-results-box">
+            <div class="results-hero-metric">
+              <div class="metric-subtitle">Estimated Monthly Payment</div>
+              <div class="metric-bignum" id="out-buy-monthly">$2,536</div>
+              <div class="metric-caption">Includes principal and interest payment. Est. Property Taxes: <span id="out-buy-taxes">+$252/mo</span></div>
+            </div>
+
+            <div class="rebate-breakdown-table">
+              <div class="breakdown-line">
+                <span>Purchase Price:</span>
+                <strong id="out-buy-price-disp">$550,000</strong>
+              </div>
+              <div class="breakdown-line">
+                <span>Down Payment Amount:</span>
+                <strong id="out-buy-down-disp">$55,000</strong>
+              </div>
+              <div class="breakdown-line">
+                <span>CMHC Default Insurance:</span>
+                <strong id="out-buy-cmhc-disp">$15,345</strong>
+              </div>
+              <div class="breakdown-line highlight">
+                <span>Total Mortgage Financed:</span>
+                <strong id="out-buy-total-financed">$510,345</strong>
+              </div>
+              <div class="breakdown-line" style="border-top: 1px dashed var(--border-subtle); padding-top: 0.5rem; margin-top: 0.5rem;">
+                <span>Estimated Cash to Close:</span>
+                <strong id="out-buy-cash-close">$57,500</strong>
+              </div>
+            </div>
+
+<!-- Removed Closing Day Note Box -->
+
+            <button type="button" class="btn btn-accent" style="width: 100%; justify-content: center; margin-top: 1rem;" onclick="openSnapshotModal('Purchase Calculator Snapshot')">
+              Request My Buyer Snapshot →
+            </button>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="trust-strip" aria-label="Investor financing highlights">
-      <div class="trust-inner">
-        <div class="trust-item"><strong>40+ lenders</strong><span>through Perch Mortgage Brokerage</span></div>
-        <div class="trust-item"><strong>Canada-wide</strong><span>subject to lender availability</span></div>
-        <div class="trust-item"><strong>Private + Alt + Prime</strong><span>not tied to one funding lane</span></div>
-        <div class="trust-item"><strong>One advisor</strong><span>from review through closing</span></div>
+    <!-- Bottom CTA Banner -->
+    <section class="content-section" style="padding-top: 0;">
+      <div class="cta-banner-box">
+        <h3>Ready to Calculate Your Exact Closing Math?</h3>
+        <p>I will shop competitive rates, lock in your 120-day pre-approval, evaluate your down payment strategies, and connect you with 40+ wholesale lenders.</p>
+        <button type="button" class="btn btn-accent" onclick="openSnapshotModal('General Buyer Inquiry')">Get Your Mortgage Snapshot →</button>
       </div>
     </section>
-
-    <section class="section" id="funding">
-      <div class="section-inner">
-        <div class="section-title">
-          <span class="section-eyebrow">Funding options</span>
-          <h2>Start with the deal. Then choose the right lane.</h2>
-          <p>The goal is not to force every transaction into one private product. I review what you are buying, the capital required, your timeline and your exit, then structure the financing around that.</p>
-        </div>
-        <div class="funding-grid">
-          <article class="funding-card primary">
-            <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></div>
-            <h3>Perch Capital</h3>
-            <div class="sub">Fast private capital</div>
-            <p>A strong front-end option for qualifying investor transactions where speed, flexibility and a clear exit matter more than conventional-bank timing.</p>
-            <ul><li>Up to 75% of property value on qualifying deals</li><li>Short-term structures for suitable investor transactions</li><li>Repeat business may qualify for improved economics</li><li>Broker fees from 1% on qualifying transactions</li></ul>
-          </article>
-          <article class="funding-card">
-            <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M4 20V10m5 10V4m6 16v-7m5 7V7"/></svg></div>
-            <h3>Broader Lender Access</h3>
-            <div class="sub">Private · Alternative · Conventional</div>
-            <p>If the deal is better suited elsewhere, I can source through a wider Canada-wide lender network instead of trying to make one private program fit everything.</p>
-            <ul><li>Different property and borrower profiles</li><li>Longer-term alternative financing</li><li>Rental and portfolio strategies</li><li>Refinance and equity takeout options</li></ul>
-          </article>
-          <article class="funding-card">
-            <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M5 20V9l7-5 7 5v11M9 20v-6h6v6"/></svg></div>
-            <h3>Exit & Takeout Strategy</h3>
-            <div class="sub">Think beyond the closing date</div>
-            <p>For short-term capital, the exit is part of the financing plan from the start. Sell, refinance or hold, the next step should be clear before the money goes in.</p>
-            <ul><li>Sell after renovation</li><li>Refinance into a rental hold</li><li>Alternative or conventional takeout</li><li>Equity recycling into the next deal</li></ul>
-          </article>
-        </div>
-      </div>
     </section>
 
-    <section class="section alt" id="how">
-      <div class="section-inner">
-        <div class="process-panel">
-          <span class="section-eyebrow">For repeat investors</span>
-          <h2>Less friction as the relationship grows.</h2>
-          <p>The first transaction is where I learn the borrower profile, experience, liquidity and strategy. On future deals we can start with that context and focus more quickly on the property, project and structure. Updated documents and lender approval are still required where applicable.</p>
-          <div class="steps">
-            <div class="step"><div class="step-num">1</div><h3>Get set up</h3><p>Review the investor profile, goals and typical deal range.</p></div>
-            <div class="step"><div class="step-num">2</div><h3>Bring the deal</h3><p>Address, purchase price, value, renovation budget and timeline.</p></div>
-            <div class="step"><div class="step-num">3</div><h3>Review the structure</h3><p>Match the transaction to private, alternative or conventional financing.</p></div>
-            <div class="step"><div class="step-num">4</div><h3>Close and repeat</h3><p>Keep the relationship moving and revisit documents as lenders require.</p></div>
+<!-- VIEW 3: HOMEOWNERS -->
+    <section class="page-view" id="view-homeowners" style="display: none;">
+        <!-- Subpage Hero Section -->
+  <section class="subpage-hero">
+    <div class="subpage-hero-container">
+      <div class="eyebrow-tag">
+        <span>Homeowner Strategy · Cash Flow & Equity</span>
+      </div>
+      <h1>Put Your Home Equity to Work & <span class="accent">Lower Your Monthly Payments</span></h1>
+      <p class="lead">
+        High-interest credit cards and heavy car loans can squeeze household cash flow. I show you the exact math on restructuring expensive debt into one manageable monthly payment, or funding renovations and rental purchases while preserving your existing low-rate mortgage.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <button class="btn btn-primary" onclick="openSnapshotModal('Homeowner Equity')">Your Equity Options →</button>
+        <button type="button" class="btn btn-secondary" onclick="document.getElementById('scenarios').scrollIntoView({ behavior: 'smooth' })">Explore Refinance Scenarios ↓</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section: Education & Strategy First -->
+  <section class="content-section" id="scenarios">
+    <div class="section-title-wrap">
+      <span class="section-eyebrow">Strategic Restructuring</span>
+      <h2>Real Ways Homeowners Use Their Equity</h2>
+      <p>It isn't about taking on more debt—it's about moving expensive debt to a lower interest rate to restore monthly cash flow.</p>
+    </div>
+
+    <!-- 4 Strategy Boxes Grid -->
+    <div class="feature-grid-2">
+      <div class="feature-box">
+        <h3>Consolidating Credit Cards & Car Loans</h3>
+        <p>It's common to carry an $800/mo vehicle loan at 8.5% and $15,000 on credit cards at 19.99%. By rolling high-interest consumer debt into ymy mortgage equity, homeowners frequently reduce monthly obligations by $800 to $1,500+ every month.</p>
+        <ul class="lane-bullets">
+          <li>One simple monthly payment instead of juggling multiple high-rate bills</li>
+          <li>Dramatically cuts total non-deductible interest paid over time</li>
+          <li>Immediately restores disposable household cash flow</li>
+        </ul>
+      </div>
+
+      <div class="feature-box">
+        <h3>Preserving Your Low-Rate First Mortgage</h3>
+        <p>If you have an existing first mortgage locked in at a low fixed rate (such as 2% to 3%), breaking it to refinance triggers massive bank penalties and forfeits your rate. Instead, I structure secondary mortgage solutions or customized equity facilities that leave your primary low-rate mortgage completely untouched.</p>
+        <ul class="lane-bullets">
+          <li>Zero bank prepayment penalties on your existing first mortgage</li>
+          <li>Maintain your low locked-in rate on your primary principal balance</li>
+          <li>Access only the net equity you need to eliminate expensive consumer debt</li>
+        </ul>
+      </div>
+
+      <div class="feature-box">
+        <h3>Funding Suites or Rental Purchases</h3>
+        <p>Whether you are converting an unfinished basement into a legal secondary suite or pulling equity from your primary home to purchase an investment property, home equity is the most cost-effective capital available. I structure the mortgage so projected rental cash flows actively strengthen your borrowing power.</p>
+        <ul class="lane-bullets">
+          <li>Generate monthly rental income ($1,400 to $2,000+/mo)</li>
+          <li>Use future tenant revenue to qualify for higher financing limits</li>
+          <li>Leverage primary residence equity for rental property down payments</li>
+        </ul>
+      </div>
+
+      <div class="feature-box">
+        <h3>Renovations, Improvements & Investments</h3>
+        <p>Whether updating a kitchen, replacing a roof, expanding living space for a growing family, or deploying capital into business or wealth opportunities, tapping equity at residential mortgage rates is far cheaper than carrying floating credit lines or unsecured bank loans.</p>
+        <ul class="lane-bullets">
+          <li>Significantly lower borrowing costs than personal loans or lines of credit</li>
+          <li>Spread project costs comfortably over a standard amortization</li>
+          <li>Substantially increase property value while maintaining monthly cash flow</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- The Straight Math Comparison Card -->
+    <div class="calc-card" style="background: var(--bg-subtle); border: 1.5px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2.5rem; margin: 3.5rem 0;">
+      <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.6rem;">The Straight Math: Consolidating $45,000 of Debt</h3>
+      <p style="margin-bottom: 1.8rem; color: var(--text-body); font-size: 0.95rem;">Here is how restructuring consumer debt into mortgage equity changes a typical household budget:</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+        <div style="background: #FFFFFF; padding: 1.8rem; border-radius: 10px; border: 1.5px solid #E2EAE5;">
+          <div style="font-size: 0.82rem; font-weight: 800; color: #B9382B; text-transform: uppercase; letter-spacing: 0.05em;">Before (Separate Payments)</div>
+          <div style="margin-top: 0.8rem; font-size: 0.95rem; color: var(--text-body); line-height: 1.8;">
+            • Car Loan ($30k @ 8.5%): <strong>$615/mo</strong><br />
+            • Credit Cards ($15k @ 19.9%): <strong>$450/mo</strong><br />
+            <div style="margin-top: 1rem; padding-top: 0.8rem; border-top: 1px dashed var(--border-subtle); font-size: 1.25rem; font-weight: 800; color: var(--text-main);">Total: $1,065 / month</div>
+          </div>
+        </div>
+        <div style="background: #FFFFFF; padding: 1.8rem; border-radius: 10px; border: 2px solid var(--brand-green);">
+          <div style="font-size: 0.82rem; font-weight: 800; color: var(--brand-green); text-transform: uppercase; letter-spacing: 0.05em;">After (Rolled Into Equity)</div>
+          <div style="margin-top: 0.8rem; font-size: 0.95rem; color: var(--text-body); line-height: 1.8;">
+            • $45,000 added to mortgage @ 4.79%:<br />
+            • Single payment over amortization: <strong>$255/mo</strong><br />
+            <div style="margin-top: 1rem; padding-top: 0.8rem; border-top: 1px dashed var(--brand-green-light); font-size: 1.25rem; font-weight: 800; color: var(--brand-green);">Monthly Savings: $810 / month</div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section class="section">
-      <div class="section-inner">
-        <div class="section-title">
-          <span class="section-eyebrow">Common investor scenarios</span>
-          <h2>Not every investor deal looks the same.</h2>
-          <p>Purchase, renovate, refinance or hold. The right structure depends on the property, the borrower, the timeline and the exit.</p>
-        </div>
-        <div class="scenario-grid">
-          <article class="scenario-card"><div class="scenario-icon"><svg viewBox="0 0 24 24"><path d="M3 11 12 4l9 7M5 10v10h14V10M9 20v-6h6v6"/></svg></div><h3>Flip</h3><p>Buy, renovate and sell. Structure acquisition and renovation financing around speed, leverage and a clear sale exit.</p></article>
-          <article class="scenario-card"><div class="scenario-icon"><svg viewBox="0 0 24 24"><path d="M14 4 4 14l6 6L20 10m-7-5 2-2 6 6-2 2"/></svg></div><h3>BRRRR</h3><p>Buy, renovate, rent and refinance. Plan the front-end financing with the long-term takeout strategy in mind.</p></article>
-          <article class="scenario-card"><div class="scenario-icon"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.3-5.7L4 8m0-4v4h4"/></svg></div><h3>Rental & Portfolio</h3><p>Acquire or refinance buy-and-hold properties, from the next rental to a growing portfolio with the right lender fit.</p></article>
-          <article class="scenario-card"><div class="scenario-icon"><svg viewBox="0 0 24 24"><path d="M4 19V9m5 10V5m5 14v-7m5 7V3"/></svg></div><h3>Development / Complex Deals</h3><p>Infill, conversions, small residential development and transactions that need a more customized financing structure.</p></article>
-        </div>
+    <!-- Home Equity Calculator (Boxed, High Contrast, Perfectly Aligned) -->
+    <div class="calc-box-wrap" id="equity-calc" style="background: #FFFFFF; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2.5rem; margin: 3.5rem 0; box-shadow: 0 8px 30px rgba(18, 69, 59, 0.07);">
+      <div class="calc-header" style="border-bottom: 1px solid var(--border-subtle); padding-bottom: 1.2rem; margin-bottom: 2rem;">
+        <h3 style="font-size: 1.6rem; font-weight: 800; color: var(--brand-green);">Home Equity Calculator</h3>
+        <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 0.3rem;">Calculate your maximum Canadian 80% LTV refinance limit and net cash available in real time.</p>
       </div>
-    </section>
 
-    <section class="section deal-section" id="deal">
-      <div class="deal-shell">
-        <div class="deal-copy">
-          <span class="section-eyebrow">Your next deal</span>
-          <h2>Send me the numbers.</h2>
-          <p>You do not need to know which lender or product you need. Give me the property, the capital request, the timing and your exit plan. I’ll tell you which funding lane is worth pursuing.</p>
-          <div class="deal-notes">
-            <div class="deal-note"><span>1</span><div><strong>No full application to start.</strong><br/>A high-level deal review is enough for the first conversation.</div></div>
-            <div class="deal-note"><span>2</span><div><strong>Real advisor review.</strong><br/>The submission comes directly to Trevor, not a call centre.</div></div>
-            <div class="deal-note"><span>3</span><div><strong>National reach.</strong><br/>Availability still depends on the property, province and lender guidelines.</div></div>
+      <div class="calc-grid" style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 2.8rem; align-items: stretch;">
+        <div class="calc-inputs" style="display: flex; flex-direction: column; gap: 1.8rem; justify-content: space-between;">
+          <div class="calc-field">
+            <label style="display: flex; justify-content: space-between; font-size: 0.92rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.6rem;">
+              <span>Estimated Current Home Value:</span>
+              <span class="val" id="eq-val-disp" style="color: #F7704F; font-size: 1.1rem; font-weight: 800;">$650,000</span>
+            </label>
+            <input type="range" class="calc-range" id="eq-val-slider" min="300000" max="2000000" step="10000" value="650000" oninput="runEqCalc()" style="width: 100%; accent-color: #F7704F; cursor: pointer; height: 6px;" />
+            <div style="display: flex; justify-content: space-between; font-size: 0.76rem; color: var(--text-muted); margin-top: 0.2rem;">
+              <span>$300k</span>
+              <span>$1.15M</span>
+              <span>$2.0M</span>
+            </div>
+          </div>
+
+          <div class="calc-field">
+            <label style="display: flex; justify-content: space-between; font-size: 0.92rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.6rem;">
+              <span>Current Mortgage Balance:</span>
+              <span class="val" id="eq-mort-disp" style="color: #F7704F; font-size: 1.1rem; font-weight: 800;">$350,000</span>
+            </label>
+            <input type="range" class="calc-range" id="eq-mort-slider" min="0" max="1500000" step="10000" value="350000" oninput="runEqCalc()" style="width: 100%; accent-color: #F7704F; cursor: pointer; height: 6px;" />
+            <div style="display: flex; justify-content: space-between; font-size: 0.76rem; color: var(--text-muted); margin-top: 0.2rem;">
+              <span>$0 (Clear Title)</span>
+              <span>$750k</span>
+              <span>$1.5M</span>
+            </div>
+          </div>
+
+          <div style="background: var(--bg-subtle); padding: 1.2rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); font-size: 0.88rem; color: var(--text-body); line-height: 1.5;">
+            <strong>Canadian 80% Refinance Benchmark:</strong> Under Canadian lending guidelines, homeowners can refinance up to 80% of their property's appraised value. The difference between 80% LTV and your current balance is the tax-free equity available to consolidate debts or reinvest.
           </div>
         </div>
-        <form class="deal-form" id="dealForm">
-          <h3>Investor Deal Review</h3>
-          <p>Share what you know. Missing details can be filled in on the follow-up call.</p>
-          <div class="form-grid">
-            <label>Name<input name="name" type="text" autocomplete="name" required placeholder="Your name" /></label>
-            <label>Phone<input name="phone" type="tel" autocomplete="tel" required placeholder="403-555-0199" /></label>
-            <label>Email<input name="email" type="email" autocomplete="email" required placeholder="you@example.com" /></label>
-            <label>City / Province<input name="location" type="text" placeholder="e.g. Calgary, AB" /></label>
-            <label>Deal type<select name="dealType"><option value="">Choose one</option><option>Flip</option><option>BRRRR</option><option>Rental purchase</option><option>Refinance</option><option>Development</option><option>Other</option></select></label>
-            <label>Property / address<input name="address" type="text" placeholder="Address or area, if known" /></label>
-            <label>Purchase price<input name="purchasePrice" type="text" inputmode="decimal" placeholder="e.g. $550,000" /></label>
-            <label>Estimated value / ARV<input name="value" type="text" inputmode="decimal" placeholder="e.g. $650,000" /></label>
-            <label>Renovation budget<input name="reno" type="text" inputmode="decimal" placeholder="e.g. $75,000" /></label>
-            <label>Capital needed<input name="capital" type="text" inputmode="decimal" placeholder="e.g. $400,000" /></label>
-            <label>Closing date<input name="closing" type="text" placeholder="e.g. Nov 15" /></label>
-            <label>Exit strategy<select name="exit"><option value="">Choose one</option><option>Sell</option><option>Refinance and hold</option><option>Long-term rental hold</option><option>Not sure yet</option></select></label>
-            <label class="span-2">Anything else I should know?<textarea name="notes" placeholder="Experience, current financing, urgency, property condition, corporation, etc."></textarea></label>
-          </div>
-          <label class="consent"><input type="checkbox" required /><span>I agree to be contacted by Trevor Berry about this financing request by phone, email or text. I can opt out at any time.</span></label>
-          <button type="submit" class="btn btn-primary btn-full">Send the Deal →</button>
-          <div class="form-status" id="formStatus" aria-live="polite"></div>
-        </form>
-      </div>
-    </section>
-  </main>
 
-  <footer>
+        <div class="calc-results" style="background: var(--brand-green); color: #FFFFFF; border-radius: var(--radius); padding: 2.2rem; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 8px 24px rgba(18, 69, 59, 0.2);">
+          <div class="calc-metric-main" style="border-bottom: 1px solid rgba(255, 255, 255, 0.15); padding-bottom: 1.4rem; margin-bottom: 1.4rem;">
+            <div class="calc-metric-label" style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #A3CFBB;">Net Cash Available to You</div>
+            <div class="calc-metric-num" id="eq-net-cash-out" style="font-size: 2.7rem; font-weight: 800; color: #FFFFFF; line-height: 1.1; margin: 0.4rem 0;">$170,000</div>
+            <div class="calc-metric-sub" style="font-size: 0.84rem; color: #C2D1CB;">Based on Canada's standard 80% Loan-to-Value limit</div>
+          </div>
+
+          <div class="calc-breakdown" style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <div class="calc-breakdown-row" style="display: flex; justify-content: space-between; padding: 0.5rem 0; font-size: 0.92rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); color: #C2D1CB;">
+              <span>Total Home Equity:</span>
+              <strong id="eq-total-equity-out" style="color: #FFFFFF; font-weight: 800;">$300,000</strong>
+            </div>
+            <div class="calc-breakdown-row" style="display: flex; justify-content: space-between; padding: 0.5rem 0; font-size: 0.92rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); color: #C2D1CB;">
+              <span>Maximum 80% Refinance Limit:</span>
+              <strong id="eq-max-loan-out" style="color: #FFFFFF; font-weight: 800;">$520,000</strong>
+            </div>
+            <div class="calc-breakdown-row" style="display: flex; justify-content: space-between; padding: 0.5rem 0; font-size: 0.92rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); color: #C2D1CB;">
+              <span>Existing Mortgage Payoff:</span>
+              <strong id="eq-payoff-out" style="color: #FFFFFF; font-weight: 800;">$350,000</strong>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-accent" style="width: 100%; margin-top: 1.5rem; justify-content: center; font-weight: 800;" onclick="openSnapshotModal('Homeowner Equity', document.getElementById('eq-net-cash-out').innerText)">
+            Get Your Equity Options →
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Generously Spaced and Perfectly Aligned Bottom CTA Banner -->
+    <div class="cta-banner-box" style="background: var(--brand-green); color: #FFFFFF; border-radius: var(--radius-lg); padding: 3rem; text-align: center; margin-top: 4rem;">
+      <h3 style="font-size: 2rem; font-weight: 800; margin-bottom: 0.8rem; color: #FFFFFF;">Want to See What Your Equity Can Do?</h3>
+      <p style="color: #C2D1CB; font-size: 1.05rem; max-width: 680px; margin: 0 auto 1.8rem; line-height: 1.6;">
+        I will calculate your current home value and show you whether debt consolidation or a structured equity takeout makes the most financial sense for your family.
+      </p>
+      <button class="btn btn-accent" onclick="openSnapshotModal('Homeowner Equity')">Get Your Equity Options →</button>
+    </div>
+  </section>
+    </section>
+
+    <!-- VIEW 4: ALTERNATIVE -->
+    <section class="page-view" id="view-alternative" style="display: none;">
+        <section class="subpage-hero">
+    <div class="subpage-hero-container">
+      <div class="eyebrow-tag">
+        <span>Second Opinions · Common-Sense Underwriting</span>
+      </div>
+      <h1>When the Bank Says "No", <span class="accent">You Still Have Options</span></h1>
+      <p class="lead">
+        A bank decline usually just means your situation didn't fit into an automated computer algorithm. I work with alternative lenders and private equity who look at the common sense of your deal—getting you financed now, with a clear roadmap back to prime rates.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <button class="btn btn-primary" onclick="openSnapshotModal('Bank Decline')">Request a Second Opinion →</button>
+        <button type="button" class="btn btn-secondary" style="border: 2px solid var(--brand-green); background: #FFFFFF; color: var(--brand-green); font-family: inherit; font-size: inherit; cursor: pointer;" onclick="document.getElementById('solutions').scrollIntoView({ behavior: 'smooth' })">How Alternative Lending Works ↓</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="content-section" id="solutions">
+    <div class="section-title-wrap">
+      <span class="section-eyebrow">Common Scenarios</span>
+      <h2>Who We Help Beyond the Bank Branch</h2>
+      <p>Real people with real income whose tax returns or credit history don't fit Big-5 bank guidelines.</p>
+    </div>
+
+    <div class="feature-grid-2">
+      <div class="feature-box">
+        <h3>Self-Employed & Business Owners</h3>
+        <p>If you're a contractor, consultant, or business owner, your accountant works hard to maximize legitimate tax write-offs. That's great for your tax bill, but big banks look strictly at your Line 15000 net income and decline ymy mortgage. I use stated-income and bank statement programs that verify real cash flow.</p>
+        <ul class="lane-bullets">
+          <li>Qualify based on 6–12 months of actual business bank deposits</li>
+          <li>No need to artificially inflate your taxable income</li>
+          <li>Solutions for incorporated professionals & sole proprietors</li>
+        </ul>
+      </div>
+
+      <div class="feature-box">
+        <h3>Bruised Credit & Life Events</h3>
+        <p>A divorce, medical issue, job transition, or past consumer proposal shouldn't disqualify you from owning a home. Alternative B-lenders look at your overall equity and current ability to pay rather than rejecting you over a past score drop.</p>
+        <ul class="lane-bullets">
+          <li>Approvals down to 500 credit scores O.A.C.</li>
+          <li>Solutions while in or discharged from a consumer proposal</li>
+          <li>Rebuilding credit while you live in your property</li>
+        </ul>
+      </div>
+
+      <div class="feature-box">
+        <h3>Short-Term Private Bridge Loans</h3>
+        <p>When you need capital quickly—to close on a firm purchase before your existing property sells, resolve CRA tax arrears, or complete construction—private financing provides fast equity-based approvals with minimal red tape.</p>
+      </div>
+
+      <div class="feature-box">
+        <h3>The Exit Strategy Roadmap</h3>
+        <p>Alternative and private lending is a bridge, not a permanent home. Every client I place in an alternative mortgage gets a written written exit roadmap detailing the exact steps needed to qualify back with a prime bank lender.</p>
+      </div>
+    </div>
+
+    <div class="calc-card">
+      <h3>The Alternative-to-Prime Bridge Framework</h3>
+      <div class="phases-grid">
+        <div class="phase-card">
+          <div style="font-size: 0.8rem; font-weight: 700; color: var(--accent-mustard);">PHASE 1</div>
+          <div style="font-weight: 800; font-size: 1.1rem; margin: 0.3rem 0; color: var(--text-main);">Secure Financing</div>
+          <p style="font-size: 0.88rem; color: var(--text-body);">Solve the immediate funding deadline with common-sense B-lender or equity capital.</p>
+        </div>
+        <div class="phase-card">
+          <div style="font-size: 0.8rem; font-weight: 700; color: var(--accent-mustard);">PHASE 2</div>
+          <div style="font-weight: 800; font-size: 1.1rem; margin: 0.3rem 0; color: var(--text-main);">Execute the Fix</div>
+          <p style="font-size: 0.88rem; color: var(--text-body);">Targeted credit score rebuilding, debt paydowns, or seasoning 2 years of business financials.</p>
+        </div>
+        <div class="phase-card">
+          <div style="font-size: 0.8rem; font-weight: 700; color: var(--brand-green);">PHASE 3</div>
+          <div style="font-weight: 800; font-size: 1.1rem; margin: 0.3rem 0; color: var(--brand-green);">Graduate to Prime</div>
+          <p style="font-size: 0.88rem; color: var(--text-body);">Transition back into an A-tier lender at standard discounted market interest rates.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-banner-box">
+      <h3>Turned Down Recently? Let's Take a Second Look.</h3>
+      <p>Send me the scenario without pulling credit. I'll tell you honestly what your options are and what lenders will look at.</p>
+      <button class="btn btn-accent" onclick="openSnapshotModal('Bank Decline')">Request a Second Opinion →</button>
+    </div>
+  </section>
+    
+    </section><!-- Close view-alternative -->
+    <section class="page-view" id="view-partners" style="display: none;">
+        <!-- Subpage Hero -->
+  <section class="subpage-hero">
+    <div class="subpage-hero-container">
+      <div class="eyebrow-tag">
+        <span>Professional Partnerships · Alberta & Ontario</span>
+      </div>
+      <h1>Collaborations That Help <span class="accent">Clients & Deals Move Forward</span></h1>
+      <p class="lead">
+        I partner with real estate agents, builders, CPAs, renovation companies, and corporate accountants. Together, I provide clients with common-sense financing structures, smooth closings, and specialized lending resources.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <button class="btn btn-primary" onclick="openPartnerModal()">Discuss a Scenario With Trevor →</button>
+        <button type="button" class="btn btn-secondary" onclick="document.getElementById('verticals').scrollIntoView({ behavior: 'smooth' })">Explore Partner Programs ↓</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partner Verticals Section -->
+  <section class="content-section" id="verticals">
+    <div class="section-title-wrap">
+      <span class="section-eyebrow">Collaboration Verticals</span>
+      <h2>Specialized Resources for Your Industry</h2>
+      <p>Select your field below to explore tailored partner programs, dedicated resources, and live client tools.</p>
+    </div>
+
+    <div class="partners-grid">
+      
+      <!-- 1. Realtors -->
+      <div class="feature-box" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="font-size: 0.8rem; font-weight: 800; color: #F7704F; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">Real Estate Agents</div>
+          <h3 style="font-size: 1.35rem; margin-bottom: 0.8rem;">Realtor Partner Hub & Listing Tools</h3>
+          <p style="font-size: 0.94rem; color: var(--text-body); line-height: 1.6; margin-bottom: 1.2rem;">
+            Turn every listing into a high-converting financing portal. We build property-specific payment hubs, provide down payment rebate programs, and offer a 5% referral fee structure to reward high-performing agent collaborations.
+          </p>
+          <ul class="lane-bullets" style="margin-bottom: 1.5rem;">
+            <li>Co-branded subdomains with live payment & down payment sliders for each property</li>
+            <li>Assisting buyers with cash-to-close hurdles through strategic rebate & Perch bonus programs</li>
+            <li>Compliant professional referral fees on closed client mortgages</li>
+            <li>Print-ready 8.5×11 feature sheets with instant QR code payment breakdowns</li>
+          </ul>
+        </div>
+        <div>
+          <a href="realtors.html" class="btn btn-secondary" style="width: 100%; justify-content: center;">Explore Realtor Hub & Resources →</a>
+        </div>
+      </div>
+
+      <!-- 2. Builders -->
+      <div class="feature-box" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="font-size: 0.8rem; font-weight: 800; color: #EDAB2B; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">Home Builders & Sales Teams</div>
+          <h3 style="font-size: 1.35rem; margin-bottom: 0.8rem;">Pre-Construction & Sales Velocity</h3>
+          <p style="font-size: 0.94rem; color: var(--text-body); line-height: 1.6; margin-bottom: 1.2rem;">
+            Convert more showhome traffic and prevent deals from collapsing over cash-to-close shortfalls. I structure new-build 5% GST Rebate assignments and leverage Perch / Buy.ca down payment advances to bridge deposit requirements.
+          </p>
+          <ul class="lane-bullets" style="margin-bottom: 1.5rem;">
+            <li>Assigned 5% GST Rebate structures credited directly to closing</li>
+            <li>Buy.ca 1.5% commission advances for down payment & closing cash</li>
+            <li>Lead recovery desk for buyers who walked away from showhomes</li>
+          </ul>
+        </div>
+        <div style="display: flex; gap: 0.5rem; width: 100%;">
+          <a href="builders.html" class="btn btn-secondary" style="flex: 1; justify-content: center; font-size: 0.82rem; padding: 0.6rem 0.3rem;">Alberta Builders →</a>
+          <a href="builders-ontario.html" class="btn btn-secondary" style="flex: 1; justify-content: center; font-size: 0.82rem; padding: 0.6rem 0.3rem;">Ontario Builders →</a>
+        </div>
+      </div>
+
+      <!-- 3. CPAs -->
+      <div class="feature-box" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="font-size: 0.8rem; font-weight: 800; color: #26A699; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">CPAs & Tax Strategists</div>
+          <h3 style="font-size: 1.35rem; margin-bottom: 0.8rem;">Confidential CPA Deal Desk</h3>
+          <p style="font-size: 0.94rem; color: var(--text-body); line-height: 1.6; margin-bottom: 1.2rem;">
+            When business-for-self clients need mortgages, standard retail banks force them to declare higher taxable personal income—undoing months of tax planning. I structure stated-income and bank-statement programs that respect legitimate write-offs.
+          </p>
+          <ul class="lane-bullets" style="margin-bottom: 1.5rem;">
+            <li>Direct CPA scenario intake without pulling client credit</li>
+            <li>Corporate holding company & inter-company loan structures</li>
+            <li>CRA tax arrears clearance and structured bridge funding</li>
+          </ul>
+        </div>
+        <div>
+          <a href="accountants.html" class="btn btn-secondary" style="width: 100%; justify-content: center;">Open CPA Scenario Desk & Resources →</a>
+        </div>
+      </div>
+
+      <!-- 4. Renovation Companies -->
+      <div class="feature-box" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="font-size: 0.8rem; font-weight: 800; color: #F7704F; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">Renovation Companies & Contractors</div>
+          <h3 style="font-size: 1.35rem; margin-bottom: 0.8rem;">Main Floor, Kitchen & Bath Remodels</h3>
+          <p style="font-size: 0.94rem; color: var(--text-body); line-height: 1.6; margin-bottom: 1.2rem;">
+            Close more quotes for main floor renovations, kitchens, and bathrooms ($30k–$120k+). Instead of homeowners stalling because of savings, give them an easy refinance strategy that turns a $60k project into an affordable ~$290/month payment.
+          </p>
+          <ul class="lane-bullets" style="margin-bottom: 1.5rem;">
+            <li>Turn intimidating cash quotes into low monthly carrying costs using equity</li>
+            <li>Simple point-of-sale financing framework your estimators can use right at the kitchen table</li>
+            <li>Buyers roll renovation budgets directly into their purchase mortgage on possession day</li>
+            <li>Project equity approved and deposited before demo day starts</li>
+          </ul>
+        </div>
+        <div>
+          <a href="renovators.html" class="btn btn-secondary" style="width: 100%; justify-content: center;">Explore Contractor Financing Programs →</a>
+        </div>
+      </div>
+
+      <!-- 5. Corporate Accountants & Planners -->
+      <div class="feature-box" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="font-size: 0.8rem; font-weight: 800; color: #6678FF; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">Corporate Accountants & Financial Planners</div>
+          <h3 style="font-size: 1.35rem; margin-bottom: 0.8rem;">Balance Sheet & Wealth Alignment</h3>
+          <p style="font-size: 0.94rem; color: var(--text-body); line-height: 1.6; margin-bottom: 1.2rem;">
+            A mortgage is typically the single largest liability on ymy client's balance sheet. I collaborate with accountants, bookkeepers, and planners to align debt amortization, liquidity buffers, and interest deductibility with long-term wealth goals.
+          </p>
+          <ul class="lane-bullets" style="margin-bottom: 1.5rem;">
+            <li>The Smith Manoeuvre & investment tax-deductibility setups</li>
+            <li>Refinancing for non-registered corporate investment contributions</li>
+            <li>Retirement cash flow protection and debt repayment scheduling</li>
+          </ul>
+        </div>
+        <div>
+          <a href="planners.html" class="btn btn-secondary" style="width: 100%; justify-content: center;">Explore Wealth & Planner Solutions →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Action Banner -->
+    <div class="cta-banner-box" style="margin-top: 4rem;">
+      <h3>Have a Client Scenario or Want to Collaborate?</h3>
+      <p>Whether you have a complex self-employed file, a buyer with cash-to-close hurdles, or a shared project to structure, let's connect.</p>
+      <button class="btn btn-accent" onclick="openPartnerModal()">Discuss a Scenario With Trevor →</button>
+    </div>
+    </section>
+    </section>
+    <!-- Close view-partners -->
+    <section class="contact-section" id="contact">
+    <div class="section-title-wrap">
+      <span class="section-eyebrow">Get in Touch</span>
+      <h2>Have a Question or Scenario? Send a Quick Message</h2>
+      <p>Fill out the form below and I will get back to you within 2 hours with clear, direct answers.</p>
+    </div>
+
+    <div class="contact-box-wrap">
+      <form id="contactForm">
+        <div class="contact-form-grid">
+          <div class="input-row">
+            <label for="contactName">Your Name *</label>
+            <input type="text" class="input-field" id="contactName" placeholder="First and last name" required />
+          </div>
+          <div class="input-row">
+            <label for="contactPhone">Phone Number *</label>
+            <input type="tel" class="input-field" id="contactPhone" placeholder="403-555-0199" required />
+          </div>
+          <div class="input-row">
+            <label for="contactEmail">Email Address *</label>
+            <input type="email" class="input-field" id="contactEmail" placeholder="you@example.com" required />
+          </div>
+        </div>
+        <div class="input-row" style="margin-top: 1rem;">
+          <label for="contactMessage">Message / Scenario Details *</label>
+          <textarea class="input-field" id="contactMessage" rows="4" placeholder="Briefly describe what you are looking to solve..." required style="resize: vertical; min-height: 100px; font-family: inherit;"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Send Message →</button>
+      </form>
+      <div id="contact-success" style="display: none; text-align: center; padding: 2rem 0;">
+        <div style="font-size: 3rem; margin-bottom: 1rem;">✉️</div>
+        <h3 style="color: var(--brand-green); font-size: 1.4rem; margin-bottom: 0.5rem; font-weight: 800;">Message Sent Successfully!</h3>
+        <p style="color: var(--text-body); font-size: 1rem;">Thank you! Your message has been routed to Trevor's secure inbox. He will reach out to you shortly.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
     <div class="footer-inner">
       <div class="footer-main">
         <h4>TREVOR BERRY</h4>
@@ -402,19 +3379,19 @@
       <div class="footer-links">
         <h5>Explore Financing</h5>
         <ul>
-          <li><a href="../#buying">Buying a Home &amp; Pre-Approvals</a></li>
-          <li><a href="../#homeowners">Equity &amp; Debt Consolidation</a></li>
-          <li><a href="../#alternative">Alternative &amp; Bank Decline</a></li>
-          <li><a href="../#partners">Partners &amp; Collaborations</a></li>
+          <li><a href="#buying" onclick="showPage('buying', event)">Buying a Home & Pre-Approvals</a></li>
+          <li><a href="#homeowners" onclick="showPage('homeowners', event)">Equity & Debt Consolidation</a></li>
+          <li><a href="#alternative" onclick="showPage('alternative', event)">Alternative & Bank Decline</a></li>
+          <li><a href="#partners" onclick="showPage('partners', event)">Partners & Collaborations</a></li>
         </ul>
       </div>
 
       <div class="footer-links">
-        <h5>Credentials &amp; Licensing</h5>
+        <h5>Credentials & Licensing</h5>
         <ul>
           <li>Licensed Mortgage Associate</li>
-          <li>Operating in Alberta &amp; Across Canada</li>
-          <li>40+ Bank, Monoline &amp; Private Lenders</li>
+          <li>Operating in Alberta & Across Canada</li>
+          <li>40+ Bank, Monoline & Private Lenders</li>
           <li>Powered by Perch National Platform</li>
         </ul>
       </div>
@@ -441,29 +3418,758 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById('dealForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const data = Object.fromEntries(new FormData(this).entries());
-      const lines = [
-        'Hi Trevor,','','I have an investor deal I would like you to review.','',
-        `Name: ${data.name || ''}`,
-        `Phone: ${data.phone || ''}`,
-        `Email: ${data.email || ''}`,
-        `City / Province: ${data.location || ''}`,
-        `Deal type: ${data.dealType || ''}`,
-        `Property / address: ${data.address || ''}`,
-        `Purchase price: ${data.purchasePrice || ''}`,
-        `Estimated value / ARV: ${data.value || ''}`,
-        `Renovation budget: ${data.reno || ''}`,
-        `Capital needed: ${data.capital || ''}`,
-        `Closing date: ${data.closing || ''}`,
-        `Exit strategy: ${data.exit || ''}`,
-        `Notes: ${data.notes || ''}`,'','Thanks.'
-      ];
-      document.getElementById('formStatus').textContent = 'Opening your email with the deal details...';
-      window.location.href = 'mailto:tberry@myperch.io?subject=' + encodeURIComponent('Investor Deal Review') + '&body=' + encodeURIComponent(lines.join('\n'));
+
+<div class="modal-backdrop" id="snapshotModal">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalHeading">
+      <div class="modal-top">
+        <h3 id="modalHeading">Get Your Mortgage Snapshot</h3>
+        <button type="button" class="modal-close-btn" aria-label="Close modal" onclick="closeSnapshotModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="step-track">
+          <div class="step-bar active" id="bar-1"></div>
+          <div class="step-bar" id="bar-2"></div>
+          <div class="step-bar" id="bar-3"></div>
+          <div class="step-bar" id="bar-4"></div>
+        </div>
+
+        <form id="snapshotForm">
+          <!-- Step 1: Goal -->
+          <div class="step-panel active" id="panel-1">
+            <h4 style="font-size: 1.15rem; margin-bottom: 0.3rem;">What are you looking to figure out?</h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">Select what best fits your situation:</p>
+            <div class="pill-grid">
+              <div class="pill-card" onclick="chooseGoal('Buying a Home')">
+                <div class="pill-icon">
+                  <!-- SVG Home Icon -->
+                  <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <div class="pill-title">Buying a Home</div>
+                <div class="pill-sub">First-time, new build, or move-up</div>
+              </div>
+              <div class="pill-card" onclick="chooseGoal('Equity / Debt Relief')">
+                <div class="pill-icon">
+                  <!-- SVG Credit Card Icon -->
+                  <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                </div>
+                <div class="pill-title">Debt & Equity</div>
+                <div class="pill-sub">Credit cards, car loans, or renos</div>
+              </div>
+              <div class="pill-card" onclick="chooseGoal('Bank Declined / Alt')">
+                <div class="pill-icon">
+                  <!-- SVG Second Opinion / Switch Icon -->
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+                </div>
+                <div class="pill-title">Bank Said No</div>
+                <div class="pill-sub">Self-employed, credit, or 2nd opinion</div>
+              </div>
+              <div class="pill-card" onclick="chooseGoal('Pre-Approval / Explore')">
+                <div class="pill-icon">
+                  <!-- SVG Document / Check Icon -->
+                  <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                </div>
+                <div class="pill-title">Pre-Approval</div>
+                <div class="pill-sub">Check numbers & rate holds</div>
+              </div>
+            </div>
+            <input type="hidden" id="goalInput" value="Buying a Home" />
+          </div>
+
+          <!-- Step 2: Target Numbers -->
+          <div class="step-panel" id="panel-2">
+            <h4 style="font-size: 1.15rem; margin-bottom: 0.3rem;">What's the ballpark target?</h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">A rough estimate is completely fine:</p>
+            <div class="input-row">
+              <label id="valueLabel" for="targetVal">Target Purchase Price</label>
+              <input type="text" class="input-field" id="targetVal" placeholder="e.g. $550,000" />
+            </div>
+            <div class="input-row">
+              <label for="targetLoc">Location</label>
+              <input type="text" class="input-field" id="targetLoc" placeholder="e.g. Calgary, AB or Toronto, ON" value="" />
+            </div>
+            <button type="button" class="btn btn-primary" style="width: 100%;" onclick="showStep(3)">Continue →</button>
+          </div>
+
+          <!-- Step 3: Cash & Time -->
+          <div class="step-panel" id="panel-3">
+            <h4 style="font-size: 1.15rem; margin-bottom: 0.3rem;">Down payment & timeline</h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">Helps me narrow down the right lender options:</p>
+            <div class="input-row">
+              <label for="downVal">Available Savings or Down Payment</label>
+              <input type="text" class="input-field" id="downVal" placeholder="e.g. $35,000" />
+            </div>
+            <div class="input-row">
+              <label for="timeframeSelect">When are you looking to move?</label>
+              <select class="input-field" id="timeframeSelect">
+                <option value="0-3 Months (Active)">0–3 Months (Active / Making Offers)</option>
+                <option value="3-6 Months">3–6 Months</option>
+                <option value="6-12 Months">6–12 Months</option>
+                <option value="Just Exploring">Just Exploring Options</option>
+              </select>
+            </div>
+            <button type="button" class="btn btn-primary" style="width: 100%;" onclick="showStep(4)">Almost Done: Contact Info →</button>
+          </div>
+
+          <!-- Step 4: Contact -->
+          <div class="step-panel" id="panel-4">
+            <h4 style="font-size: 1.15rem; margin-bottom: 0.3rem;">Where should I send your snapshot?</h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">No credit check · No obligation · Straightforward advice</p>
+            <div class="input-row">
+              <label for="userName">Your Name</label>
+              <input type="text" class="input-field" id="userName" placeholder="First and last name" required />
+            </div>
+            <div class="input-row">
+              <label for="userPhone">Phone Number (for quick text updates)</label>
+              <input type="tel" class="input-field" id="userPhone" placeholder="403-555-0199" required />
+            </div>
+            <div class="input-row">
+              <label for="userEmail">Email Address</label>
+              <input type="email" class="input-field" id="userEmail" placeholder="you@example.com" required />
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send My Free Mortgage Snapshot →</button>
+          </div>
+
+          <!-- Confirmation -->
+          <div class="step-panel" id="panel-success">
+            <div style="text-align: center; padding: 1.5rem 0;">
+              <div style="font-size: 2.8rem; margin-bottom: 0.8rem;">✅</div>
+              <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Snapshot Request Received!</h3>
+              <p style="color: var(--text-body); font-size: 0.95rem; line-height: 1.6;">
+                Thanks <strong id="greetingName"></strong>. I'm reviewing your details and will follow up with ymy custom options shortly.
+              </p>
+              <button type="button" class="btn btn-secondary" style="margin-top: 1.5rem;" onclick="closeSnapshotModal()">Close</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+<script>
+    // =========================================================================
+    // 1. SINGLE PAGE ROUTER (SPA MODULE)
+    // =========================================================================
+    let activeStep = 1;
+
+    // Scroll smoothly to a specific element on the page, switching views to 'home' if necessary
+    function scrollToElement(id, event) {
+        if (event) event.preventDefault();
+        const currentHash = window.location.hash;
+        if (currentHash !== '#home' && currentHash !== '') {
+            showPage('home');
+        }
+        setTimeout(() => {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }, 150);
+    }
+
+
+    function handleHeaderNav(pageId, event) {
+        const path = window.location.pathname;
+        const isHomePage = path === '/' || path.endsWith('index.html') || path === '' || path.includes('localhost');
+        
+        if (isHomePage) {
+            if (event) event.preventDefault();
+            if (pageId === 'contact') {
+                scrollToContact();
+            } else {
+                showPage(pageId);
+                // Force hash update
+                if (window.location.hash !== '#' + pageId) {
+                    history.pushState(null, null, '#' + pageId);
+                }
+            }
+        }
+    }
+
+    function showPage(pageId, event) {
+        if (event) event.preventDefault();
+        
+        // Hide mobile header scrolling behavior and scroll back to top smoothly
+        window.scrollTo({ top: 0, behavior: 'instant' });
+
+        // Toggle Active Class in Header Nav Links
+        document.querySelectorAll('nav.nav-links a').forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === '#' + pageId) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+
+        // Toggle Page View Visibilities
+        document.querySelectorAll('.page-view').forEach(view => {
+            view.style.display = 'none';
+            view.classList.remove('active');
+        });
+
+        const targetView = document.getElementById('view-' + pageId);
+        if (targetView) {
+            targetView.style.display = 'block';
+            targetView.classList.add('active');
+            console.log("Navigated to:", pageId);
+        }
+
+        // Push URL hash without page jump to enable deep-linking and browser navigation
+        if (window.location.hash !== '#' + pageId) {
+            history.pushState(null, null, '#' + pageId);
+        }
+    }
+
+    // Scroll to contact form smoothly - FIXED id target!
+    function scrollToContact(event) {
+        if (event) event.preventDefault();
+        const contactSec = document.getElementById('contact');
+        if (contactSec) {
+            contactSec.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    // Browser navigation (Back / Forward buttons) support
+    window.addEventListener('hashchange', handleRouting);
+    window.addEventListener('DOMContentLoaded', function() {
+        handleRouting();
+        // Initialize calculators
+        if (typeof updateCalculator === 'function') updateCalculator();
+        if (typeof runEqCalc === 'function') runEqCalc();
+        if (typeof runPurchaseCalc === 'function') runPurchaseCalc();
     });
-  </script>
+
+    function handleRouting() {
+        let hash = window.location.hash.substring(1);
+        const validPages = ['home', 'buying', 'homeowners', 'alternative', 'partners'];
+        if (!validPages.includes(hash)) {
+            hash = 'home';
+        }
+        showPage(hash);
+    }
+
+    // =========================================================================
+    // 2. UNIVERSAL INTAKE MODAL (GOOGLE SHEET CRM WIRED)
+    // =========================================================================
+    // Close modal on Escape key for accessibility
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            const modal = document.getElementById('snapshotModal');
+            if (modal && modal.classList.contains('active')) {
+                closeSnapshotModal();
+            }
+        }
+    });
+
+    function openSnapshotModal(goal) {
+        if (goal) document.getElementById('goalInput').value = goal;
+        const modal = document.getElementById('snapshotModal');
+        if (modal) {
+            modal.classList.add('active');
+            showStep(1);
+        }
+    }
+
+    function closeSnapshotModal() {
+        const modal = document.getElementById('snapshotModal');
+        if (modal) modal.classList.remove('active');
+    }
+
+    function chooseGoal(goal) {
+        document.getElementById('goalInput').value = goal;
+        const valLabel = document.getElementById('valueLabel');
+        if (goal.includes('Equity') || goal.includes('Debt')) {
+            valLabel.innerText = 'Estimated Current Home Value';
+        } else {
+            valLabel.innerText = 'Target Purchase Price';
+        }
+        showStep(2);
+    }
+
+    function showStep(step) {
+        activeStep = step;
+        document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+        document.querySelectorAll('.step-bar').forEach((b, i) => {
+            if (i < step) b.classList.add('active');
+            else b.classList.remove('active');
+        });
+        const target = document.getElementById('panel-' + step);
+        if (target) target.classList.add('active');
+    }
+
+    // Google Sheets CRM Hook for Multi-Step Modal Form
+    document.getElementById('snapshotForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const lead = {
+            lead_type: 'general_buyer',
+            full_name: document.getElementById('userName').value,
+            phone: document.getElementById('userPhone').value,
+            email: document.getElementById('userEmail').value,
+            goal: document.getElementById('goalInput').value,
+            purchase_price: document.getElementById('targetVal').value,
+            location: document.getElementById('targetLoc').value,
+            savings_available: document.getElementById('downVal').value,
+            timeline: document.getElementById('timeframeSelect').value,
+            province: 'Alberta',
+            source_cta: 'Master SPA Multi-Step Intake',
+            submittedAt: new Date().toISOString()
+        };
+
+        const goal = lead.goal.toLowerCase();
+        if (goal.includes('buying') || goal.includes('pre-approval')) {
+            lead.lead_type = 'general_buyer';
+        } else if (goal.includes('equity') || goal.includes('debt')) {
+            lead.lead_type = 'renovators'; 
+        } else {
+            lead.lead_type = 'general_inquiry';
+        }
+
+        document.getElementById('greetingName').innerText = lead.full_name;
+
+        const scriptEndpoint = 'https://script.google.com/macros/s/AKfycbxunHTb9xivp_KH2UNceJvwaYayIAxSmkeAJRJ8SKzE0ECkIl6mGD9ROpmTMz2x7z5K/exec';
+        
+        fetch(scriptEndpoint, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(lead)
+        }).catch(err => console.log('Lead submission logged:', err));
+
+        document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+        document.getElementById('panel-success').classList.add('active');
+    });
+
+    // =========================================================================
+    // 3. UNIVERSAL FOOTER CONTACT FORM (GOOGLE SHEET CRM WIRED)
+    // =========================================================================
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const lead = {
+            lead_type: 'general_inquiry',
+            full_name: document.getElementById('contactName').value,
+            email: document.getElementById('contactEmail').value,
+            phone: document.getElementById('contactPhone').value,
+            province: 'Alberta',
+            details: document.getElementById('contactMessage').value,
+            source_cta: 'Universal Footer Contact Form',
+            submittedAt: new Date().toISOString()
+        };
+        
+        const scriptEndpoint = 'https://script.google.com/macros/s/AKfycbxunHTb9xivp_KH2UNceJvwaYayIAxSmkeAJRJ8SKzE0ECkIl6mGD9ROpmTMz2x7z5K/exec';
+        
+        fetch(scriptEndpoint, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(lead)
+        }).then(() => {
+            document.getElementById('contactForm').style.display = 'none';
+            document.getElementById('contact-success').style.display = 'block';
+        }).catch(err => {
+            console.log('General contact submission logged:', err);
+            document.getElementById('contactForm').style.display = 'none';
+            document.getElementById('contact-success').style.display = 'block';
+        });
+    });
+
+    // =========================================================================
+    // 4. BUYING VIEW CALCULATOR CODE
+    // =========================================================================
+    var currentProvince = 'AB';
+    var currentBuyerStatus = 'fthb';
+    var currentOccupancy = 'owner';
+
+    function setProvince(prov) {
+      currentProvince = prov;
+      document.getElementById('btn-prov-ab').classList.toggle('active', prov === 'AB');
+      document.getElementById('btn-prov-on').classList.toggle('active', prov === 'ON');
+      updateCalculator();
+    }
+
+    function setBuyerStatus(status) {
+      currentBuyerStatus = status;
+      document.getElementById('btn-buyer-fthb').classList.toggle('active', status === 'fthb');
+      document.getElementById('btn-buyer-repeat').classList.toggle('active', status === 'repeat');
+
+      var subtext = document.getElementById('buyer-status-subtext');
+      if (status === 'fthb') {
+        subtext.textContent = "✓ First-time buyers qualify for the 100% GST rebate up to $1M (up to $50,000 maximum).";
+      } else {
+        subtext.textContent = "✓ Repeat & move-up buyers qualify for baseline statutory rebates (up to $24,000 in ON; up to $6,300 in AB).";
+      }
+      updateCalculator();
+    }
+
+    function setOccupancy(occ) {
+      currentOccupancy = occ;
+      document.getElementById('btn-occ-owner').classList.toggle('active', occ === 'owner');
+      document.getElementById('btn-occ-investor').classList.toggle('active', occ === 'investor');
+      
+      var sub = document.getElementById('occ-subtext');
+      if (occ === 'owner') {
+        sub.textContent = "✓ Primary residence purchasers qualify for immediate builder credit or down payment advance.";
+      } else {
+        sub.textContent = "⚠️ Investors must pay tax at closing and file the CRA NRRP rental rebate post-possession.";
+      }
+      updateCalculator();
+    }
+
+    function updateCalculator() {
+      var slider = document.getElementById('slider-price');
+      var price = slider ? (parseFloat(slider.value) || 550000) : 550000;
+      
+      var dispPrice = document.getElementById('disp-price');
+      if (dispPrice) dispPrice.textContent = "$" + price.toLocaleString();
+
+      var fedRebate = 0;
+      var provRebate = 0;
+      var onhapRebate = 0;
+      var totalTax = 0;
+      var taxDesc = "";
+      var fedDesc = "";
+      var provDesc = "";
+
+      // 1. Total Tax Calculation
+      if (currentProvince === 'AB') {
+        totalTax = price * 0.05;
+        taxDesc = "$" + Math.round(totalTax).toLocaleString() + " (5% GST)";
+      } else {
+        totalTax = price * 0.13;
+        taxDesc = "$" + Math.round(totalTax).toLocaleString() + " (13% HST)";
+      }
+
+      // 2. Federal Rebate Calculation
+      if (currentOccupancy === 'investor') {
+        if (price <= 350000) {
+          fedRebate = (price * 0.05) * 0.36;
+          fedDesc = "$" + Math.round(fedRebate).toLocaleString() + " (NRRP Baseline)";
+        } else if (price < 450000) {
+          fedRebate = 6300 * ((450000 - price) / 100000);
+          fedDesc = "$" + Math.round(fedRebate).toLocaleString() + " (Phasing Out)";
+        } else {
+          fedRebate = 0;
+          fedDesc = "$0 (Over $450k NRRP Cap)";
+        }
+      } else {
+        if (currentBuyerStatus === 'fthb') {
+          if (price <= 1000000) {
+            fedRebate = price * 0.05;
+            fedDesc = "$" + Math.round(fedRebate).toLocaleString() + " (100% FTHB Rebate)";
+          } else if (price < 1500000) {
+            fedRebate = 50000 * ((1500000 - price) / 500000);
+            fedDesc = "$" + Math.round(fedRebate).toLocaleString() + " (FTHB Partial Phase-out)";
+          } else {
+            fedRebate = 0;
+            fedDesc = "$0 (Over $1.5M FTHB Ceiling)";
+          }
+        } else {
+          if (price <= 350000) {
+            fedRebate = (price * 0.05) * 0.36;
+            fedDesc = "$" + Math.round(fedRebate).toLocaleString() + " (36% Baseline)";
+          } else if (price < 450000) {
+            fedRebate = 6300 * ((450000 - price) / 100000);
+            fedDesc = "$" + Math.round(fedRebate).toLocaleString() + " (Phasing Out)";
+          } else {
+            fedRebate = 0;
+            fedDesc = "$0 (Over $450k Cap)";
+          }
+        }
+      }
+
+      // 3. Provincial Rebate & ONHAP Calculation (Ontario 8% and 5% top-ups)
+      if (currentProvince === 'ON') {
+        if (price <= 1000000) {
+          provRebate = Math.min(price * 0.08, 80000);
+          provDesc = "$" + Math.round(provRebate).toLocaleString() + " (Enhanced ENHR/ENRRP)";
+          var grossONHAP = Math.min(price * 0.05, 50000);
+          onhapRebate = Math.max(0, grossONHAP - fedRebate);
+        } else if (price <= 1500000) {
+          provRebate = 80000;
+          provDesc = "$80,000 (Enhanced ENHR/ENRRP)";
+          var grossONHAP = 50000;
+          onhapRebate = Math.max(0, grossONHAP - fedRebate);
+        } else if (price < 1850000) {
+          var factor = (1850000 - price) / 350000;
+          provRebate = 24000 + (56000 * factor);
+          provDesc = "$" + Math.round(provRebate).toLocaleString() + " (ENHR/ENRRP Phase-down)";
+          var grossONHAP = 50000 * factor;
+          onhapRebate = Math.max(0, grossONHAP - fedRebate);
+        } else {
+          var provTax = price * 0.08;
+          provRebate = Math.min(24000, provTax * 0.75);
+          provDesc = "$" + Math.round(provRebate).toLocaleString() + " (Standard Cap)";
+          onhapRebate = 0;
+        }
+      } else {
+        provRebate = 0;
+        provDesc = "$0 (N/A in Alberta)";
+        onhapRebate = 0;
+      }
+
+      var totalRebate = fedRebate + provRebate + onhapRebate;
+
+      // Update DOM Safely
+      var elTotalTax = document.getElementById('out-total-tax');
+      if (elTotalTax) elTotalTax.textContent = taxDesc;
+
+      var elFed = document.getElementById('out-fed-rebate');
+      if (elFed) elFed.textContent = fedDesc;
+
+      var elProv = document.getElementById('out-prov-rebate');
+      if (elProv) {
+        if (currentProvince === 'ON') {
+          var provLabel = provDesc;
+          if (onhapRebate > 0) {
+            provLabel += " + $" + Math.round(onhapRebate).toLocaleString() + " ONHAP";
+          }
+          elProv.textContent = provLabel;
+        } else {
+          elProv.textContent = "$0 (N/A in Alberta)";
+        }
+      }
+
+      var elTotalRebate = document.getElementById('out-total-rebate');
+      if (elTotalRebate) elTotalRebate.textContent = "$" + Math.round(totalRebate).toLocaleString();
+
+      var elAdvAmt = document.getElementById('out-advance-amt');
+      var elAdvDesc = document.getElementById('out-advance-desc');
+      if (elAdvAmt && elAdvDesc) {
+        elAdvAmt.textContent = "$" + Math.round(totalRebate).toLocaleString();
+        if (currentOccupancy === 'owner') {
+          elAdvDesc.textContent = "Closing treatment depends on builder structure, lender policy and available financing programs.";
+        } else {
+          elAdvDesc.innerHTML = "Closing availability: <strong>Requires structure review.</strong><br>Closing treatment depends on builder structure, lender policy and available financing programs.";
+        }
+      }
+
+      // 4. Rule Notes Generation
+      var ruleNote = "";
+      if (currentProvince === 'AB') {
+        if (currentOccupancy === 'investor') {
+          ruleNote = "<strong>Alberta Investor Rule:</strong> Rental properties do not qualify for the First-Time Buyer top-up. Investors must pay the 5% GST upfront at closing and file the CRA NRRP rebate post-possession (eligible up to $450,000 only).";
+        } else if (currentBuyerStatus === 'fthb') {
+          if (price <= 1000000) {
+            ruleNote = "<strong>Alberta FTHB Advantage:</strong> Eligible first-time home buyers receive a <strong>100% full rebate of the 5% GST</strong> up to $1,000,000 (saving up to <strong>$50,000</strong>).";
+          } else if (price < 1500000) {
+            ruleNote = "<strong>Alberta FTHB Phase-Out:</strong> Between $1M and $1.5M, the first-time buyer GST rebate gradually reduces from $50,000 to $0. On this $" + price.toLocaleString() + " purchase, the eligible tax relief is <strong>$" + Math.round(fedRebate).toLocaleString() + "</strong>.";
+          } else {
+            ruleNote = "<strong>Above $1.5M Ceiling:</strong> In Alberta, new homes valued at or above $1.5M do not qualify for federal GST rebates. The full 5% GST is payable.";
+          }
+        } else {
+          if (price > 450000) {
+            ruleNote = "<strong>Alberta Repeat Buyer Rule:</strong> For repeat/move-up buyers, the standard federal GST rebate phases out completely above $450,000. Full 5% GST applies, but can be factored into mortgage financing.";
+          } else {
+            ruleNote = "<strong>Alberta Standard Rebate:</strong> Repeat buyers qualify for the 36% federal GST rebate on homes up to $350,000 (phasing out at $450k, max $6,300).";
+          }
+        }
+      } else {
+        if (currentOccupancy === 'investor') {
+          ruleNote = "<strong>Ontario Investor Rule:</strong> Qualifying Ontario rental-property purchasers may be eligible for the enhanced Ontario rental rebate (ENRRP) and ONHAP, providing combined relief of up to $130,000 depending on purchase price and program eligibility. Investors must pay tax at closing and apply to the CRA post-possession.";
+        } else {
+          if (price <= 1000000) {
+            ruleNote = "<strong>Ontario Enhanced Program (ENHR + ONHAP):</strong> Eligible Ontario new homes up to $1 million may receive relief equivalent to the full 13% HST. Maximum combined relief of $130,000 is maintained from $1 million to $1.5 million and then gradually declines to $24,000 at $1.85 million.";
+          } else if (price <= 1500000) {
+            ruleNote = "<strong>Ontario Combined Enhanced Program:</strong> Maximum combined relief of $130,000 is maintained from $1 million to $1.5 million (through the ENHR provincial portion of $80,000 + ONHAP/FTHB federal-equivalent portions) and then gradually declines to $24,000 at $1.85 million.";
+          } else if (price < 1850000) {
+            ruleNote = "<strong>Ontario Enhanced Phase-Out:</strong> Between $1.5M and $1.85M, both enhanced portions phase down, providing <strong>$" + Math.round(totalRebate).toLocaleString() + "</strong> in combined relief on this $" + price.toLocaleString() + " purchase.";
+          } else {
+            ruleNote = "<strong>Ontario Limit Rule:</strong> Above the $1.85M ENHR ceiling, the enhanced provincial rebate and ONHAP do not apply. The standard provincial rebate of **$24,000** remains available with no upper purchase price cap.";
+          }
+        }
+      }
+
+      var elRuleNote = document.getElementById('out-rule-note');
+      if (elRuleNote) elRuleNote.innerHTML = ruleNote;
+    }
+
+    function openIntakeModal(source) {
+      openSnapshotModal(source);
+    }
+    function closeIntakeModal() {
+      closeSnapshotModal();
+    }
+
+    var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxunHTb9xivp_KH2UNceJvwaYayIAxSmkeAJRJ8SKzE0ECkIl6mGD9ROpmTMz2x7z5K/exec';
+
+    function handleIntakeSubmit(e) {
+      e.preventDefault();
+      var nameInput = document.getElementById('m_name');
+      var name = nameInput ? (nameInput.value || 'Client') : 'Client';
+      var phone = document.getElementById('m_phone').value;
+      var email = document.getElementById('m_email').value;
+      var price = document.getElementById('m_price').value || document.getElementById('m_price').placeholder || '';
+      var prov = document.getElementById('m_prov').value;
+      
+      var leadData = {
+        lead_type: 'new_build_buyer',
+        full_name: name,
+        phone: phone,
+        email: email,
+        purchase_price: price,
+        province: prov,
+        source_cta: 'Alberta Buyer Standalone Page'
+      };
+      
+      if (GOOGLE_SCRIPT_URL) {
+        fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(leadData)
+        }).catch(function(err) { console.log('Lead sync logged:', err); });
+      }
+
+      document.getElementById('displayClientName').innerText = name;
+      document.getElementById('intakeForm').style.display = 'none';
+      document.getElementById('intakeSuccessNotice').style.display = 'block';
+    }
+
+    // =========================================================================
+    // 4b. BUYING VIEW CALCULATOR CODE
+    // =========================================================================
+    window.buyAmortYears = 25;
+
+    function setBuyAmort(yrs) {
+        window.buyAmortYears = yrs;
+        document.getElementById('btn-buy-amort25').classList.toggle('active', yrs === 25);
+        document.getElementById('btn-buy-amort30').classList.toggle('active', yrs === 30);
+        runPurchaseCalc();
+    }
+
+    function runPurchaseCalc() {
+        var priceSlider = document.getElementById('slider-buy-price');
+        var price = priceSlider ? (parseFloat(priceSlider.value) || 550000) : 550000;
+        
+        var dispPrice = document.getElementById('disp-buy-price');
+        if (dispPrice) dispPrice.textContent = "$" + price.toLocaleString();
+
+        // Enforce dynamic minimum down payment based on Canadian rules
+        var minDownAmt = 0;
+        if (price >= 1000000) {
+            minDownAmt = price * 0.20;
+        } else if (price > 500000) {
+            minDownAmt = 25000 + (price - 500000) * 0.10;
+        } else {
+            minDownAmt = price * 0.05;
+        }
+
+        var minDownPct = (minDownAmt / price) * 100;
+        var downSlider = document.getElementById('slider-buy-down');
+        if (!downSlider) return;
+        
+        // Update down payment slider min dynamically
+        var roundedMinPct = Math.ceil(minDownPct);
+        downSlider.min = roundedMinPct;
+        
+        // If current slider value is less than min, adjust it
+        var currentDownPct = parseFloat(downSlider.value);
+        if (currentDownPct < roundedMinPct) {
+            currentDownPct = roundedMinPct;
+            downSlider.value = roundedMinPct;
+        }
+
+        var lbl = document.getElementById('buy-min-down-lbl');
+        if (lbl) lbl.textContent = "Min " + roundedMinPct + "%";
+        
+        var downAmount = price * (currentDownPct / 100);
+        var dispBuyDown = document.getElementById('disp-buy-down');
+        if (dispBuyDown) dispBuyDown.textContent = currentDownPct + "% ($" + Math.round(downAmount).toLocaleString() + ")";
+
+        var baseLoan = price - downAmount;
+        var cmhcPct = 0;
+        if (currentDownPct < 20) {
+            if (currentDownPct >= 15) cmhcPct = 0.0280;
+            else if (currentDownPct >= 10) cmhcPct = 0.0310;
+            else cmhcPct = 0.0400;
+        }
+        var cmhcPrem = baseLoan * cmhcPct;
+        var totalLoan = baseLoan + cmhcPrem;
+
+        // Amortization check (uninsured can do 30 years, insured must do 25 years unless first-time buyer/new build)
+        var buyAmortYears = window.buyAmortYears || 25;
+        var canDo30YrInsured = (currentBuyerStatus === 'fthb'); // First-time buyers on new builds/homes can access 30-year insured
+        if (currentDownPct < 20 && buyAmortYears > 25 && !canDo30YrInsured) {
+            buyAmortYears = 25;
+            window.buyAmortYears = 25;
+            document.getElementById('btn-buy-amort25').classList.add('active');
+            document.getElementById('btn-buy-amort30').classList.remove('active');
+            document.getElementById('buy-amort-subtext').textContent = "⚠️ Insured mortgages (< 20% down) are capped at 25 years for repeat buyers.";
+        } else if (currentDownPct < 20 && buyAmortYears > 25 && canDo30YrInsured) {
+            document.getElementById('buy-amort-subtext').textContent = "✓ Eligible 30-year amortization active for first-time buyers on new construction.";
+        } else if (currentDownPct < 20) {
+            document.getElementById('buy-amort-subtext').textContent = "✓ 25 years is standard. First-time buyers can select 30-year amortizations.";
+        } else {
+            document.getElementById('buy-amort-subtext').textContent = "✓ Conventional mortgages (20%+ down) are eligible for 30-year amortizations.";
+        }
+
+        // Calculations
+        var rateInput = document.getElementById('input-buy-rate');
+        var annualRate = rateInput ? (parseFloat(rateInput.value) || 3.60) : 3.60;
+
+        // Canadian Semi-Annual Compounding
+        var r = annualRate / 100;
+        var monthlyRate = Math.pow(1 + r / 2, 2 / 12) - 1;
+        var n = buyAmortYears * 12;
+        var monthlyPayment = 0;
+        if (totalLoan > 0) {
+            monthlyPayment = totalLoan * (monthlyRate * Math.pow(1 + monthlyRate, n)) / (Math.pow(1 + monthlyRate, n) - 1);
+        }
+
+        // Estimated Property Taxes (~0.55% of price annually in Calgary)
+        var monthlyTaxes = Math.round((price * 0.0055) / 12);
+
+        // Update UI
+        document.getElementById('out-buy-monthly').textContent = "$" + Math.round(monthlyPayment).toLocaleString();
+        document.getElementById('out-buy-taxes').textContent = "+$" + monthlyTaxes + "/mo";
+        document.getElementById('out-buy-price-disp').textContent = "$" + Math.round(price).toLocaleString();
+        document.getElementById('out-buy-down-disp').textContent = "$" + Math.round(downAmount).toLocaleString() + " (" + currentDownPct + "%)";
+        document.getElementById('out-buy-cmhc-disp').textContent = cmhcPrem > 0 ? "$" + Math.round(cmhcPrem).toLocaleString() : "$0 (Conventional)";
+        document.getElementById('out-buy-total-financed').textContent = "$" + Math.round(totalLoan).toLocaleString();
+        document.getElementById('out-buy-cash-close').textContent = "$" + Math.round(downAmount + 2500).toLocaleString();
+    }
+
+    // =========================================================================
+    // 5. HOMEOWNERS VIEW CALCULATOR CODE
+    // =========================================================================
+    function runEqCalc() {
+      var valEl = document.getElementById('eq-val-slider');
+      var mortEl = document.getElementById('eq-mort-slider');
+      if (!valEl || !mortEl) return;
+
+      var homeVal = parseFloat(valEl.value) || 650000;
+      var mortBal = parseFloat(mortEl.value) || 350000;
+
+      var vDisp = document.getElementById('eq-val-disp');
+      if (vDisp) vDisp.textContent = '$' + homeVal.toLocaleString();
+      var mDisp = document.getElementById('eq-mort-disp');
+      if (mDisp) mDisp.textContent = '$' + mortBal.toLocaleString();
+
+      var maxLoan = homeVal * 0.80;
+      var netCash = Math.max(0, maxLoan - mortBal);
+      var totalEquity = Math.max(0, homeVal - mortBal);
+
+      var nOut = document.getElementById('eq-net-cash-out');
+      if (nOut) nOut.textContent = '$' + Math.round(netCash).toLocaleString();
+      var eOut = document.getElementById('eq-total-equity-out');
+      if (eOut) eOut.textContent = '$' + Math.round(totalEquity).toLocaleString();
+      var lOut = document.getElementById('eq-max-loan-out');
+      if (lOut) lOut.textContent = '$' + Math.round(maxLoan).toLocaleString();
+      var pOut = document.getElementById('eq-payoff-out');
+      if (pOut) pOut.textContent = '$' + Math.round(mortBal).toLocaleString();
+    }
+
+    // =========================================================================
+    // 6. PARTNERS VIEW SCRIPTS
+    // =========================================================================
+    function openPartnerModal() {
+        openSnapshotModal('Partner Collaboration');
+    }
+
+</script>
+
+
 </body>
 </html>
