@@ -1,7 +1,3 @@
----
-layout: null
-permalink: /investors/
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,6 +84,18 @@ permalink: /investors/
     .property-caption-copy strong { font-size: .98rem; color: var(--text-main); }
     .property-status { display: inline-flex; align-items: center; gap: .45rem; background: var(--brand-green-light); color: var(--brand-green); border-radius: 999px; padding: .48rem .7rem; font-size: .73rem; font-weight: 800; white-space: nowrap; }
     .property-status::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--accent-teal); }
+
+    .investor-paths { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; margin: 0 0 1.8rem; }
+    .investor-path { background: #fff; border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 1.15rem; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; align-items: flex-start; }
+    .investor-path.primary-path { border-top: 4px solid var(--accent-mustard); }
+    .investor-path h2 { font-size: 1rem; line-height: 1.35; letter-spacing: -.01em; margin: 0 0 .5rem; color: var(--text-main); }
+    .investor-path p { font-size: .82rem; line-height: 1.55; color: var(--text-body); margin: 0 0 .9rem; }
+    .investor-path .btn { margin-top: auto; padding: .62rem .9rem; font-size: .78rem; }
+
+    .second-look { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem 4.5rem; }
+    .second-look-card { border: 1px solid var(--border-subtle); border-left: 4px solid var(--accent-mustard); border-radius: var(--radius-lg); background: #fff; padding: 1.45rem 1.6rem; box-shadow: var(--shadow-sm); }
+    .second-look-card h3 { color: var(--brand-green); font-size: 1.08rem; margin-bottom: .35rem; }
+    .second-look-card p { color: var(--text-body); font-size: .92rem; line-height: 1.65; max-width: 900px; }
 
     .trust-strip { background: #fff; border-bottom: 1px solid var(--border-subtle); }
     .trust-inner { max-width: var(--max); margin: 0 auto; padding: 1.25rem 1.5rem; display: grid; grid-template-columns: repeat(4,1fr); gap: .5rem; }
@@ -186,36 +194,69 @@ permalink: /investors/
       .deal-notes { max-width: 620px; margin: 0 auto; text-align: left; }
     }
     @media(max-width: 760px) {
-      .top-strip-inner { flex-direction: column; text-align: center; gap: .2rem; }
-      .nav-inner { flex-direction: column; gap: .9rem; }
-      .brand-link { align-items: center; text-align: center; }
-      nav.nav-links { font-size: .85rem; gap: .7rem 1rem; }
-      .hero { padding: 3.4rem 0 3.2rem; }
-      .hero-container { padding: 0 1.2rem; }
-      .hero h1 { font-size: 2.65rem; }
-      .hero-points { grid-template-columns: 1fr; gap: .75rem; }
-      .hero-point { padding: .7rem; background: #fff; border: 1px solid var(--border-subtle); border-radius: 8px; }
-      .property-caption { align-items: flex-start; flex-direction: column; }
-      .trust-inner { grid-template-columns: 1fr 1fr; }
-      .trust-item { border-right: 0; border-bottom: 1px solid var(--border-subtle); }
+      .top-strip { padding: .45rem 0; }
+      .top-strip-inner { padding: 0 1rem; justify-content: center; text-align: center; }
+      .top-strip-inner span:last-child { display: none; }
+      header { position: static; }
+      .nav-inner { padding: .85rem 1rem; flex-direction: row; flex-wrap: nowrap; gap: .75rem; }
+      .brand-link { min-width: 0; }
+      .brand-name { font-size: 1.05rem; }
+      .brand-meta { font-size: .64rem; }
+      nav.nav-links { display: none; }
+      .nav-inner > .btn { padding: .68rem .9rem; font-size: .78rem; white-space: nowrap; margin-left: auto; }
+      .hero { padding: 2.8rem 0 3rem; }
+      .hero-container { padding: 0 1rem; gap: 1.8rem; }
+      .hero-content { text-align: left; }
+      .eyebrow-tag { font-size: .69rem; margin-bottom: 1rem; }
+      .hero h1 { font-size: clamp(2.35rem, 12vw, 3.2rem); line-height: 1.02; margin-bottom: 1rem; }
+      .hero .lead { font-size: .98rem; line-height: 1.65; margin-bottom: 1.2rem; }
+      .hero .audience-line { font-size: .86rem; margin: 0 0 .85rem; }
+      .hero .repeat-line { font-size: .94rem; margin-bottom: 1.2rem; }
+      .hero-actions { justify-content: flex-start; gap: .65rem; margin-bottom: 1.35rem; }
+      .hero-actions .btn { width: 100%; }
+      .investor-paths { grid-template-columns: 1fr; gap: .75rem; margin-bottom: 1.3rem; }
+      .investor-path { padding: 1rem; }
+      .investor-path h2 { font-size: 1rem; }
+      .investor-path p { font-size: .84rem; }
+      .investor-path .btn { width: 100%; }
+      .second-look { padding: 0 1rem 3.5rem; }
+      .second-look-card { padding: 1.2rem; }
+      .hero-points { grid-template-columns: 1fr; gap: .65rem; padding-top: 1rem; }
+      .hero-point { padding: .8rem .9rem; background: #fff; border: 1px solid var(--border-subtle); border-radius: 10px; }
+      .property-card { width: 100%; padding: .65rem; border-radius: 18px; box-shadow: 0 12px 30px rgba(18,69,59,.10); }
+      .property-image { aspect-ratio: 16/11; border-radius: 12px; }
+      .property-caption { padding: .8rem .45rem .25rem; align-items: flex-start; flex-direction: column; gap: .6rem; }
+      .property-status { font-size: .68rem; }
+      .trust-inner { grid-template-columns: 1fr 1fr; padding: 1rem; }
+      .trust-item { border-right: 0; border-bottom: 1px solid var(--border-subtle); padding: .8rem .45rem; }
       .trust-item:nth-last-child(-n+2) { border-bottom: 0; }
-      .section { padding: 4rem 1.2rem; }
-      .process-panel { padding: 2rem 1.4rem; }
-      .steps { grid-template-columns: 1fr; }
+      .section { padding: 3.5rem 1rem; }
+      .section-title { margin-bottom: 2rem; text-align: left; }
+      .section-title h2 { font-size: 2rem; }
+      .funding-card { padding: 1.45rem; }
+      .process-panel { padding: 1.8rem 1.15rem; border-radius: 18px; }
+      .steps { grid-template-columns: 1fr; gap: 1rem; margin-top: 1.7rem; }
       .scenario-grid { grid-template-columns: 1fr; }
+      .scenario-card { min-height: auto; padding: 1.4rem; }
+      .deal-shell { gap: 1.5rem; }
+      .deal-copy { text-align: left; }
+      .deal-form { padding: 1.2rem; }
       .form-grid { grid-template-columns: 1fr; }
       .span-2 { grid-column: auto; }
-      .deal-form { padding: 1.35rem; }
+      input, select, textarea { font-size: 16px; }
       .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      footer { padding: 3.25rem 1rem 2rem; }
+      .brokerage-lockup-row { align-items: flex-start; }
     }
     @media(max-width: 480px) {
-      nav.nav-links { display: none; }
-      .hero h1 { font-size: 2.3rem; }
-      .hero .lead { font-size: 1rem; }
-      .hero-actions .btn { width: 100%; }
+      .top-strip { font-size: .76rem; }
+      .nav-inner > .btn { padding: .62rem .72rem; font-size: .72rem; }
+      .hero h1 { font-size: 2.35rem; }
       .trust-inner { grid-template-columns: 1fr; }
       .trust-item { border-bottom: 1px solid var(--border-subtle)!important; }
       .trust-item:last-child { border-bottom: 0!important; }
+      .section-title h2 { font-size: 1.8rem; }
+      .deal-copy h2 { font-size: 2.15rem; }
     }
   </style>
 </head>
@@ -255,9 +296,17 @@ permalink: /investors/
           <p class="lead">I help active real estate investors structure financing for purchases, renovations, refinances and rental properties. Perch Capital gives us a fast private-capital lane, and when another structure fits better, I can source across the broader Perch Mortgage Brokerage lender network.</p>
           <p class="audience-line">Built for flippers, BRRRR investors, rental-property owners, portfolio investors and small residential developers.</p>
           <div class="repeat-line">Get set up once. Then bring me the deals.</div>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#deal">Send Me a Deal →</a>
-            <a class="btn btn-secondary" href="#funding">See the Funding Options</a>
+          <div class="investor-paths" aria-label="Choose your investor funding next step">
+            <article class="investor-path primary-path">
+              <h2>Found a property? Send me the deal.</h2>
+              <p>Send the address, purchase price, renovation budget, expected value and your exit plan. I’ll tell you which financing options are worth pursuing.</p>
+              <a class="btn btn-primary" href="#deal">Send Me a Deal</a>
+            </article>
+            <article class="investor-path">
+              <h2>Still looking for your next property?</h2>
+              <p>Let’s get your financing set up first so you know what you can buy, how much cash you’ll need and what funding options are available.</p>
+              <button class="btn btn-secondary" type="button" id="investorReadyBtn">Get Investor-Ready</button>
+            </article>
           </div>
           <div class="hero-points">
             <div class="hero-point"><strong>Fast private capital</strong><span>For qualifying time-sensitive investor transactions</span></div>
@@ -323,6 +372,13 @@ permalink: /investors/
       </div>
     </section>
 
+    <section class="second-look" aria-label="Investor financing second look">
+      <div class="second-look-card">
+        <h3>Already have financing? Get a second look.</h3>
+        <p>If timing, property condition, leverage or lender fit is creating a problem, send me the deal before you walk away. I can review private, alternative and conventional options.</p>
+      </div>
+    </section>
+
     <section class="section alt" id="how">
       <div class="section-inner">
         <div class="process-panel">
@@ -375,7 +431,7 @@ permalink: /investors/
             <label>Phone<input name="phone" type="tel" autocomplete="tel" required placeholder="403-555-0199" /></label>
             <label>Email<input name="email" type="email" autocomplete="email" required placeholder="you@example.com" /></label>
             <label>City / Province<input name="location" type="text" placeholder="e.g. Calgary, AB" /></label>
-            <label>Deal type<select name="dealType"><option value="">Choose one</option><option>Flip</option><option>BRRRR</option><option>Rental purchase</option><option>Refinance</option><option>Development</option><option>Other</option></select></label>
+            <label>Deal type<select name="dealType" id="dealType"><option value="">Choose one</option><option>Investor-ready / no property yet</option><option>Flip</option><option>BRRRR</option><option>Rental purchase</option><option>Refinance</option><option>Development</option><option>Other</option></select></label>
             <label>Property / address<input name="address" type="text" placeholder="Address or area, if known" /></label>
             <label>Purchase price<input name="purchasePrice" type="text" inputmode="decimal" placeholder="e.g. $550,000" /></label>
             <label>Estimated value / ARV<input name="value" type="text" inputmode="decimal" placeholder="e.g. $650,000" /></label>
@@ -446,6 +502,15 @@ permalink: /investors/
   </footer>
 
   <script>
+    const investorReadyBtn = document.getElementById('investorReadyBtn');
+    if (investorReadyBtn) {
+      investorReadyBtn.addEventListener('click', function() {
+        const dealType = document.getElementById('dealType');
+        if (dealType) dealType.value = 'Investor-ready / no property yet';
+        document.getElementById('deal').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+
     document.getElementById('dealForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const data = Object.fromEntries(new FormData(this).entries());
