@@ -53,7 +53,7 @@ label{display:grid;gap:.42rem;font-size:.88rem;color:var(--ink);font-weight:700}
 .help{font-size:.74rem;color:var(--muted);font-weight:500}.consent{display:flex;gap:.6rem;align-items:flex-start;color:var(--muted);font-size:.78rem;margin:1rem 0 1.1rem}.consent input{width:auto;margin-top:.15rem}
 .btn{display:inline-flex;align-items:center;justify-content:center;padding:.9rem 1.4rem;border-radius:10px;font-weight:800;font-size:.92rem;cursor:pointer;border:2px solid transparent;transition:all .18s ease;font-family:var(--font)} .btn:hover{transform:translateY(-1px)} .btn-primary{background:var(--green);color:#fff;border-color:var(--green)} .btn-primary:hover{background:#0E362E;border-color:#0E362E}
 .btn-outline{background:#fff;color:var(--green);border-color:var(--green)} .btn-full{width:100%}.btn:disabled{opacity:.7;cursor:wait;transform:none}
-.status{display:none;background:var(--green-soft);border:1px solid #c8dacd;border-radius:16px;padding:1.15rem;margin-top:1rem;color:var(--green-dark)}.status h3{margin-bottom:.2rem}
+.status{display:none;background:var(--green-soft);border:1px solid #c8dacd;border-radius:16px;padding:1.15rem;margin-top:1rem;color:var(--green-dark)}.status h3{margin-bottom:.2rem}.error-status{background:#FFF5F2;border-color:#F1C4B9;color:#743424}.error-status a{text-decoration:underline;font-weight:700}
 .send-client{margin-top:1.2rem;background:var(--bg-soft);border:1px solid var(--line);border-radius:18px;padding:1.2rem}.send-client h3{font-size:1.05rem;margin-bottom:.3rem}.send-client p{font-size:.86rem;color:var(--body);margin-bottom:.9rem}.copyrow{display:grid;grid-template-columns:1fr auto;gap:.6rem}
 .copyrow input{background:#fff}.referral-card{margin-top:2rem;border:1px solid var(--line);border-radius:var(--radius-xl);padding:1.6rem 1.7rem;display:grid;grid-template-columns:.9fr 1.1fr;gap:2rem;align-items:end;background:#fff}.referral-card h2{font-size:1.5rem;line-height:1.2;margin:.2rem 0 .35rem}.referral-card p{color:var(--body);font-size:.95rem}.referral-eyebrow{color:var(--orange);font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.referral-controls{display:grid;gap:.75rem}.trevor-card-section{padding:0 1.5rem 4.5rem}.trevor-card{max-width:var(--max);margin:0 auto;background:var(--green-dark);color:#fff;border-radius:var(--radius-xl);padding:1.55rem;display:grid;grid-template-columns:145px 1fr;gap:1.7rem;align-items:center}.trevor-photo{width:145px;height:145px;object-fit:cover;border-radius:18px;background:#fff}.trevor-card h2{font-size:2rem;line-height:1.1;margin:.25rem 0 .3rem}.trevor-card p{color:#C8D5D0;margin-bottom:1rem}.contact-links{display:flex;flex-wrap:wrap;gap:.65rem}.contact-links a{display:inline-flex;padding:.7rem .9rem;border:1px solid rgba(255,255,255,.25);border-radius:10px;color:#fff;font-weight:700;font-size:.9rem}.contact-links a:hover{background:rgba(255,255,255,.08)}.footer{background:#0E1814;color:#fff;padding:3rem 1.5rem 2rem;border-top:1px solid #1C2B25}.footer-inner{max-width:var(--max);margin:0 auto}.footer strong{display:block;margin-bottom:.4rem}.legal{color:#8CA399;font-size:.76rem;line-height:1.65;max-width:900px}
 @media(max-width:1024px){.hero-inner,.grid{grid-template-columns:1fr}.hero-copy{text-align:center}.hero .lead{margin-left:auto;margin-right:auto}.badges,.hero-points{justify-content:center}.hero-points{max-width:760px;margin:0 auto}.side-card{position:static}}
@@ -141,6 +141,7 @@ label{display:grid;gap:.42rem;font-size:.88rem;color:var(--ink);font-weight:700}
       <button class="btn btn-primary btn-full" type="submit">Send Scenario to Trevor →</button>
     </form>
     <div id="success" class="status" aria-live="polite"><h3>Scenario received.</h3><div>I’ll review the mortgage side and follow up with you directly.</div></div>
+    <div id="sendError" class="status error-status" aria-live="polite"><h3>That didn’t send.</h3><div>Please try again, or email the scenario to <a href="mailto:tberry@myperch.io">tberry@myperch.io</a>.</div></div>
 
   </section>
 </div>
@@ -213,10 +214,19 @@ label{display:grid;gap:.42rem;font-size:.88rem;color:var(--ink);font-weight:700}
     };
     const btn=form.querySelector('button[type="submit"]');
     btn.disabled=true; btn.textContent='Sending...';
-    fetch(endpoint,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).finally(()=>{
-      form.style.display='none'; $('success').style.display='block';
-      document.querySelector('.send-client').scrollIntoView({behavior:'smooth',block:'nearest'});
-    });
+    $('sendError').style.display='none';
+    fetch(endpoint,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+      .then(()=>{
+        form.style.display='none';
+        $('success').style.display='block';
+        $('success').scrollIntoView({behavior:'smooth',block:'nearest'});
+      })
+      .catch(()=>{
+        btn.disabled=false;
+        btn.textContent='Send Scenario to Trevor →';
+        $('sendError').style.display='block';
+        $('sendError').scrollIntoView({behavior:'smooth',block:'nearest'});
+      });
   });
 })();
 </script>
