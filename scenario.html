@@ -40,16 +40,16 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);backdro
 .image-caption small{display:block;color:var(--orange);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.2rem}.image-caption strong{font-size:.98rem}
 .image-status{display:inline-flex;align-items:center;gap:.45rem;background:var(--green-soft);color:var(--green);border-radius:999px;padding:.48rem .7rem;font-size:.74rem;font-weight:800;white-space:nowrap}.image-status:before{content:'';width:8px;height:8px;border-radius:50%;background:#26A699}
 .trust-strip{background:#fff;border-bottom:1px solid var(--line)}
-.trust-inner{max-width:var(--max);margin:0 auto;padding:1.2rem 1.5rem;display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem}.trust-item{text-align:center;padding:.5rem .8rem;border-right:1px solid var(--line)}.trust-item:last-child{border-right:0}.trust-item strong{display:block;color:var(--green);font-size:.95rem}.trust-item span{color:var(--muted);font-size:.76rem;font-weight:600}
+.trust-inner{max-width:var(--max);margin:0 auto;padding:1.2rem 1.5rem;display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}.trust-item{text-align:center;padding:.5rem .8rem;border-right:1px solid var(--line)}.trust-item:last-child{border-right:0}.trust-item strong{display:block;color:var(--green);font-size:.95rem}.trust-item span{color:var(--muted);font-size:.76rem;font-weight:600}
 .section{padding:4.7rem 1.5rem}.section-inner{max-width:var(--max);margin:0 auto}.grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:2rem;align-items:start}
 .side-card{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius-xl);padding:2rem;position:sticky;top:98px}.side-card h2{font-size:2rem;line-height:1.15;margin:.75rem 0 .75rem}.side-card p{color:var(--body);font-size:.96rem;margin-bottom:1.2rem}
 .steps{display:grid;gap:.95rem;margin-top:1.4rem}.step{display:flex;gap:.8rem;align-items:flex-start}.step span{width:28px;height:28px;border-radius:50%;background:var(--green-soft);color:var(--green);font-size:.76rem;font-weight:800;display:grid;place-items:center;flex:0 0 28px;margin-top:.05rem}.step div{font-size:.88rem;color:var(--body)}
 .partner-types{margin-top:1.4rem;padding-top:1.2rem;border-top:1px solid var(--line)}.partner-types b{display:block;font-size:.84rem;color:var(--green);margin-bottom:.5rem}.chips{display:flex;flex-wrap:wrap;gap:.5rem}.chips i{font-style:normal;padding:.45rem .68rem;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:.74rem;font-weight:700;color:var(--body)}
 .form-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-xl);padding:2rem;box-shadow:var(--shadow)}
 .form-card h2{font-size:1.65rem;line-height:1.15;margin-bottom:.35rem}.form-card > p{color:var(--muted);font-size:.9rem;margin-bottom:1.35rem}
-.notice{background:var(--bg-soft);border:1px solid var(--line);border-radius:16px;padding:1rem 1rem .95rem;margin-bottom:1.25rem}.notice b{display:block;margin-bottom:.35rem}.notice ul{padding-left:1rem;color:var(--body);font-size:.86rem}
+.notice{background:#F3F7F5;border-left:3px solid var(--green);padding:.9rem 1rem;margin-bottom:1.25rem;color:var(--body);font-size:.9rem}.notice strong{color:var(--ink)}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.span2{grid-column:1/-1}
-label{display:grid;gap:.38rem;font-size:.78rem;color:var(--ink);font-weight:700} input,select,textarea{width:100%;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);padding:.8rem .9rem;font-family:var(--font);font-size:.94rem;outline:none} input:focus,select:focus,textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(18,69,59,.08)} textarea{resize:vertical;min-height:118px}
+label{display:grid;gap:.42rem;font-size:.88rem;color:var(--ink);font-weight:700} input,select,textarea{width:100%;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);padding:.8rem .9rem;font-family:var(--font);font-size:.94rem;outline:none} input:focus,select:focus,textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(18,69,59,.08)} textarea{resize:vertical;min-height:118px}
 .help{font-size:.74rem;color:var(--muted);font-weight:500}.consent{display:flex;gap:.6rem;align-items:flex-start;color:var(--muted);font-size:.78rem;margin:1rem 0 1.1rem}.consent input{width:auto;margin-top:.15rem}
 .btn{display:inline-flex;align-items:center;justify-content:center;padding:.9rem 1.4rem;border-radius:10px;font-weight:800;font-size:.92rem;cursor:pointer;border:2px solid transparent;transition:all .18s ease;font-family:var(--font)} .btn:hover{transform:translateY(-1px)} .btn-primary{background:var(--green);color:#fff;border-color:var(--green)} .btn-primary:hover{background:#0E362E;border-color:#0E362E}
 .btn-outline{background:#fff;color:var(--green);border-color:var(--green)} .btn-full{width:100%}.btn:disabled{opacity:.7;cursor:wait;transform:none}
@@ -91,27 +91,24 @@ label{display:grid;gap:.38rem;font-size:.78rem;color:var(--ink);font-weight:700}
   </div>
 </section>
 <section class="trust-strip"><div class="trust-inner">
-  <div class="trust-item"><strong>40+ lenders</strong><span>Through Perch Mortgage Brokerage</span></div>
-  <div class="trust-item"><strong>Prime · Alt · Private</strong><span>Not tied to one lane</span></div>
-  <div class="trust-item"><strong>Anonymous first review</strong><span>No client documents needed</span></div>
-  <div class="trust-item"><strong>Direct with Trevor</strong><span>Not a call centre</span></div>
+  <div class="trust-item"><strong>Anonymous first look</strong></div>
+  <div class="trust-item"><strong>40+ lender access</strong></div>
+  <div class="trust-item"><strong>Direct with Trevor</strong></div>
 </div></section>
 <main class="section"><div class="section-inner"><div class="grid">
   <aside class="side-card">
     <div class="eyebrow">How it works</div>
-    <h2>A quick mortgage feasibility check before you refer.</h2>
-    <p>You do not need to decide whether the answer is a refinance, HELOC, alternative lender, second/private mortgage or a plan-first approach. Send me the picture and I’ll work through the financing side.</p>
+    <h2>Three steps. That’s it.</h2>
     <div class="steps">
-      <div class="step"><span>1</span><div><strong>Send the rough numbers.</strong><br>Property, mortgage, income, funding need and the core problem.</div></div>
-      <div class="step"><span>2</span><div><strong>I review the likely lanes.</strong><br>Prime, alternative, second/private or whether waiting makes more sense.</div></div>
-      <div class="step"><span>3</span><div><strong>Use the next step that fits.</strong><br>Either introduce the client or send them to the private homeowner review.</div></div>
+      <div class="step"><span>1</span><div><strong>Send the rough numbers.</strong><br>Property, mortgage, income, funding need and the core issue.</div></div>
+      <div class="step"><span>2</span><div><strong>I review what looks realistic.</strong><br>Bank, alternative, HELOC, second/private, or a plan before financing.</div></div>
+      <div class="step"><span>3</span><div><strong>You decide the next step.</strong><br>If there is a path worth pursuing, introduce the client or send them the review link.</div></div>
     </div>
-    <div class="partner-types"><b>Designed for partners such as:</b><div class="chips"><i>CPA / accountant</i><i>Financial planner</i><i>LIT / insolvency</i><i>Family lawyer</i><i>Other trusted advisor</i></div></div>
   </aside>
   <section class="form-card">
-    <h2>Confidential Scenario Drop</h2>
-    <p>Keep it simple. Approximate information is fine, and please keep the first submission anonymous.</p>
-    <div class="notice"><b>Before you submit</b><ul><li>No client names, SINs, dates of birth, account numbers or documents.</li><li>This is a high-level scenario review, not a file submission.</li><li>I’ll follow up with you directly first.</li></ul></div>
+    <h2>Scenario SafeDrop</h2>
+    <p>Approximate information is fine. This should only take a couple of minutes.</p>
+    <div class="notice"><strong>Keep the first drop anonymous.</strong> No client names, SINs, dates of birth, account numbers or documents.</div>
     <form id="safeForm">
       <div class="form-grid">
         <label class="span2">What is the main situation?
@@ -141,7 +138,7 @@ label{display:grid;gap:.38rem;font-size:.78rem;color:var(--ink);font-weight:700}
         <label class="span2">Your email<input id="email" type="email" autocomplete="email" required></label>
       </div>
       <label class="consent"><input id="confirm" type="checkbox" required><span>I confirm I have not included client-identifying information or confidential documents in this initial scenario.</span></label>
-      <button class="btn btn-primary btn-full" type="submit">Send Private Scenario to Trevor →</button>
+      <button class="btn btn-primary btn-full" type="submit">Send Scenario to Trevor →</button>
     </form>
     <div id="success" class="status" aria-live="polite"><h3>Scenario received.</h3><div>I’ll review the mortgage side and follow up with you directly. If it looks worth pursuing, you can introduce the client or send them the private client-review link below.</div></div>
     <div class="send-client">
