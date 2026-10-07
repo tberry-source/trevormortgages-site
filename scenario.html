@@ -29,12 +29,12 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);backdro
 .hero-inner{max-width:var(--max);margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:1.05fr .95fr;gap:3.5rem;align-items:center}
 .eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:var(--green-soft);color:var(--green);font-size:.78rem;font-weight:800;padding:.38rem .86rem;border-radius:999px;text-transform:uppercase;letter-spacing:.06em}
 .hero h1{font-size:clamp(2.65rem,5vw,4.25rem);line-height:1.04;letter-spacing:-.045em;margin:1rem 0 1rem;max-width:720px}
-.hero .lead{font-size:1.06rem;line-height:1.7;color:var(--body);max-width:680px;margin-bottom:1.6rem}
+.hero .lead{font-size:1.08rem;line-height:1.65;color:var(--body);max-width:680px;margin-bottom:1.2rem}.hero-facts{display:flex;flex-wrap:wrap;gap:.55rem 1.15rem;padding-top:1rem;border-top:1px solid var(--line)}.hero-facts span{font-size:.86rem;font-weight:700;color:var(--green)}
 .badges{display:flex;flex-wrap:wrap;gap:.7rem;margin-bottom:1.8rem}.badge{display:inline-flex;align-items:center;padding:.55rem .8rem;background:#fff;border:1px solid var(--line);border-radius:999px;font-size:.8rem;font-weight:700;color:var(--body)}
 .hero-points{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding-top:1.4rem;border-top:1px solid var(--line)}
 .hero-points strong{display:block;color:var(--green);font-size:.98rem;margin-bottom:.12rem}.hero-points span{display:block;color:var(--muted);font-size:.79rem;font-weight:600;line-height:1.35}
-.image-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius-xl);padding:.85rem;box-shadow:0 18px 42px rgba(18,69,59,.12)}
-.image-box{aspect-ratio:4/3;border-radius:18px;overflow:hidden;background:var(--bg-alt)}
+.image-card{position:relative;background:#fff;border-radius:var(--radius-xl);overflow:hidden;box-shadow:0 18px 42px rgba(18,69,59,.12)}
+.image-box{aspect-ratio:4/3;overflow:hidden;background:var(--bg-alt)}
 .image-box img{width:100%;height:100%;object-fit:cover;display:block}
 .image-caption{padding:1rem .8rem .3rem;display:flex;justify-content:space-between;gap:1rem;align-items:center}
 .image-caption small{display:block;color:var(--orange);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.2rem}.image-caption strong{font-size:.98rem}
@@ -57,7 +57,7 @@ label{display:grid;gap:.42rem;font-size:.88rem;color:var(--ink);font-weight:700}
 .send-client{margin-top:1.2rem;background:var(--bg-soft);border:1px solid var(--line);border-radius:18px;padding:1.2rem}.send-client h3{font-size:1.05rem;margin-bottom:.3rem}.send-client p{font-size:.86rem;color:var(--body);margin-bottom:.9rem}.copyrow{display:grid;grid-template-columns:1fr auto;gap:.6rem}
 .copyrow input{background:#fff}.referral-card{margin-top:2rem;border:1px solid var(--line);border-radius:var(--radius-xl);padding:1.6rem 1.7rem;display:grid;grid-template-columns:.9fr 1.1fr;gap:2rem;align-items:end;background:#fff}.referral-card h2{font-size:1.5rem;line-height:1.2;margin:.2rem 0 .35rem}.referral-card p{color:var(--body);font-size:.95rem}.referral-eyebrow{color:var(--orange);font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.referral-controls{display:grid;gap:.75rem}.trevor-card-section{padding:0 1.5rem 4.5rem}.trevor-card{max-width:var(--max);margin:0 auto;background:var(--green-dark);color:#fff;border-radius:var(--radius-xl);padding:1.55rem;display:grid;grid-template-columns:145px 1fr;gap:1.7rem;align-items:center}.trevor-photo{width:145px;height:145px;object-fit:cover;border-radius:18px;background:#fff}.trevor-card h2{font-size:2rem;line-height:1.1;margin:.25rem 0 .3rem}.trevor-card p{color:#C8D5D0;margin-bottom:1rem}.contact-links{display:flex;flex-wrap:wrap;gap:.65rem}.contact-links a{display:inline-flex;padding:.7rem .9rem;border:1px solid rgba(255,255,255,.25);border-radius:10px;color:#fff;font-weight:700;font-size:.9rem}.contact-links a:hover{background:rgba(255,255,255,.08)}.footer{background:#0E1814;color:#fff;padding:3rem 1.5rem 2rem;border-top:1px solid #1C2B25}.footer-inner{max-width:var(--max);margin:0 auto}.footer strong{display:block;margin-bottom:.4rem}.legal{color:#8CA399;font-size:.76rem;line-height:1.65;max-width:900px}
 @media(max-width:1024px){.hero-inner,.grid{grid-template-columns:1fr}.hero-copy{text-align:center}.hero .lead{margin-left:auto;margin-right:auto}.badges,.hero-points{justify-content:center}.hero-points{max-width:760px;margin:0 auto}.side-card{position:static}}
-@media(max-width:760px){.top-strip{display:none}.nav{padding:.85rem 1.1rem}.brand strong{font-size:1.12rem}.brand span{font-size:.68rem}.nav-note{display:none}.hero{padding:2.6rem 0 2.3rem}.hero-inner{padding:0 1.1rem;gap:1.7rem}.hero-copy{text-align:left}.eyebrow{font-size:.69rem;padding:.34rem .68rem}.hero h1{font-size:2.3rem;line-height:1.02;margin:.8rem 0 .9rem}.hero .lead{font-size:.98rem;line-height:1.6;margin-bottom:1rem}.badges{gap:.5rem;margin-bottom:1.1rem}.badge{font-size:.73rem;padding:.48rem .65rem}.hero-points{grid-template-columns:1fr;gap:.65rem;padding-top:1rem}.hero-points>div{padding:.75rem .8rem;background:#fff;border:1px solid var(--line);border-radius:12px}.image-card{padding:.55rem;border-radius:18px;box-shadow:0 10px 26px rgba(18,69,59,.10)}.image-box{aspect-ratio:16/10;border-radius:14px}.image-box img{object-position:center}.image-caption{padding:.8rem .55rem .25rem;align-items:flex-start}.image-caption strong{font-size:.86rem}.image-status{font-size:.68rem;padding:.4rem .58rem}.trust-inner{grid-template-columns:1fr 1fr;padding:.85rem 1rem}.trust-item{border-right:0;border-bottom:1px solid var(--line);padding:.65rem .45rem}.trust-item:nth-last-child(-n+2){border-bottom:0}.trust-item strong{font-size:.84rem}.trust-item span{font-size:.68rem}.section{padding:2.7rem 1rem}.grid{gap:1rem}.side-card,.form-card{padding:1.2rem;border-radius:18px}.side-card h2{font-size:1.55rem}.side-card p,.step div{font-size:.84rem}.partner-types{margin-top:1rem;padding-top:1rem}.form-card h2{font-size:1.45rem}.notice{padding:.9rem}.form-grid{grid-template-columns:1fr;gap:.85rem}.span2{grid-column:auto}input,select,textarea{font-size:16px;padding:.85rem}.btn{min-height:48px}.copyrow{grid-template-columns:1fr}.btn-outline{width:100%}.send-client{padding:1rem}}
+@media(max-width:760px){.top-strip{display:none}.nav{padding:.85rem 1.1rem}.brand strong{font-size:1.12rem}.brand span{font-size:.68rem}.nav-note{display:none}.hero{padding:2.6rem 0 2.3rem}.hero-inner{padding:0 1.1rem;gap:1.7rem}.hero-copy{text-align:left}.eyebrow{font-size:.69rem;padding:.34rem .68rem}.hero h1{font-size:2.3rem;line-height:1.02;margin:.8rem 0 .9rem}.hero .lead{font-size:.98rem;line-height:1.6;margin-bottom:1rem}.hero-facts{display:grid;gap:.3rem;padding-top:.8rem}.hero-facts span{font-size:.8rem}.image-card{border-radius:18px;box-shadow:0 10px 26px rgba(18,69,59,.10)}.image-box{aspect-ratio:16/10}.image-box img{object-position:center}.trust-inner{grid-template-columns:1fr 1fr;padding:.85rem 1rem}.trust-item{border-right:0;border-bottom:1px solid var(--line);padding:.65rem .45rem}.trust-item:nth-last-child(-n+2){border-bottom:0}.trust-item strong{font-size:.84rem}.trust-item span{font-size:.68rem}.section{padding:2.7rem 1rem}.grid{gap:1rem}.side-card,.form-card{padding:1.2rem;border-radius:18px}.side-card h2{font-size:1.55rem}.side-card p,.step div{font-size:.84rem}.partner-types{margin-top:1rem;padding-top:1rem}.form-card h2{font-size:1.45rem}.notice{padding:.9rem}.form-grid{grid-template-columns:1fr;gap:.85rem}.span2{grid-column:auto}input,select,textarea{font-size:16px;padding:.85rem}.btn{min-height:48px}.copyrow{grid-template-columns:1fr}.btn-outline{width:100%}.send-client{padding:1rem}}
 @media(max-width:480px){.hero h1{font-size:2.05rem}.badge{width:100%;justify-content:flex-start}.image-caption{display:block}.image-status{margin-top:.55rem}.trust-inner{grid-template-columns:1fr}.trust-item{border-bottom:1px solid var(--line)!important}.trust-item:last-child{border-bottom:0!important}.form-card,.side-card{padding:1rem}.section{padding-left:.85rem;padding-right:.85rem}.referral-card{grid-template-columns:1fr;padding:1.1rem;gap:1rem}.trevor-card-section{padding:0 .85rem 3rem}.trevor-card{grid-template-columns:1fr;text-align:center;padding:1.2rem}.trevor-photo{width:110px;height:110px;margin:0 auto}.contact-links{display:grid}.contact-links a{justify-content:center}}
 </style>
 </head>
@@ -70,23 +70,15 @@ label{display:grid;gap:.42rem;font-size:.88rem;color:var(--ink);font-weight:700}
       <div class="eyebrow">Professional referral resource</div>
       <h1>Send me the scenario.<br>I’ll work through the mortgage side.</h1>
       <p class="lead">For CPAs, financial planners, insolvency professionals and family lawyers. Send the rough numbers first, without introducing the client. I’ll tell you whether I see a financing path worth exploring.</p>
-      <div class="badges">
-        <span class="badge">No client-identifying information required</span>
-        <span class="badge">Approximate numbers are fine</span>
-        <span class="badge">Personally reviewed by Trevor</span>
-      </div>
-      <div class="hero-points">
-        <div><strong>Simple first pass</strong><span>One short form with the rough numbers and the problem.</span></div>
-        <div><strong>Private and practical</strong><span>I assess likely financing lanes and key obstacles.</span></div>
-        <div><strong>Easy next step</strong><span>If it makes sense, send the client directly to the private review.</span></div>
+      <div class="hero-facts">
+        <span>No client introduction required</span>
+        <span>Approximate numbers are fine</span>
+        <span>Reviewed personally by Trevor</span>
       </div>
     </div>
     <div class="image-card">
       <div class="image-box"><img src="https://plus.unsplash.com/premium_photo-1661716960968-8eead7b1b203?auto=format&fit=crop&fm=jpg&q=82&w=1800" alt="Two professionals reviewing financial documents together" loading="eager"></div>
-      <div class="image-caption">
-        <div><small>Private scenario review</small><strong>A cleaner first step for professional partners.</strong></div>
-        <span class="image-status">Advisor reviewed</span>
-      </div>
+
     </div>
   </div>
 </section>
