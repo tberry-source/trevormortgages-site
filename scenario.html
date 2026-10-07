@@ -29,7 +29,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);backdro
 .hero-inner{max-width:var(--max);margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:1.05fr .95fr;gap:3.5rem;align-items:center}
 .eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:var(--green-soft);color:var(--green);font-size:.78rem;font-weight:800;padding:.38rem .86rem;border-radius:999px;text-transform:uppercase;letter-spacing:.06em}
 .hero h1{font-size:clamp(2.65rem,5vw,4.25rem);line-height:1.04;letter-spacing:-.045em;margin:1rem 0 1rem;max-width:720px}
-.hero .lead{font-size:1.08rem;line-height:1.65;color:var(--body);max-width:680px;margin-bottom:1.2rem}.hero-facts{display:flex;flex-wrap:wrap;gap:.55rem 1.15rem;padding-top:1rem;border-top:1px solid var(--line)}.hero-facts span{font-size:.86rem;font-weight:700;color:var(--green)}
+.hero .lead{font-size:1.08rem;line-height:1.65;color:var(--body);max-width:680px;margin-bottom:1.2rem}.hero-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding-top:1.2rem;border-top:1px solid var(--line)}.hero-facts>div{display:grid;grid-template-columns:30px 1fr;gap:.55rem;align-items:start}.hero-facts b{font-size:.72rem;letter-spacing:.08em;color:var(--orange);padding-top:.1rem}.hero-facts span{display:grid;gap:.1rem}.hero-facts strong{font-size:.84rem;line-height:1.25;color:var(--green)}.hero-facts small{font-size:.74rem;line-height:1.35;color:var(--muted);font-weight:600}
 .badges{display:flex;flex-wrap:wrap;gap:.7rem;margin-bottom:1.8rem}.badge{display:inline-flex;align-items:center;padding:.55rem .8rem;background:#fff;border:1px solid var(--line);border-radius:999px;font-size:.8rem;font-weight:700;color:var(--body)}
 .hero-points{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding-top:1.4rem;border-top:1px solid var(--line)}
 .hero-points strong{display:block;color:var(--green);font-size:.98rem;margin-bottom:.12rem}.hero-points span{display:block;color:var(--muted);font-size:.79rem;font-weight:600;line-height:1.35}
@@ -42,11 +42,11 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);backdro
 .trust-strip{background:#fff;border-bottom:1px solid var(--line)}
 .trust-inner{max-width:var(--max);margin:0 auto;padding:1.2rem 1.5rem;display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}.trust-item{text-align:center;padding:.5rem .8rem;border-right:1px solid var(--line)}.trust-item:last-child{border-right:0}.trust-item strong{display:block;color:var(--green);font-size:.95rem}.trust-item span{color:var(--muted);font-size:.76rem;font-weight:600}
 .section{padding:4.7rem 1.5rem}.section-inner{max-width:var(--max);margin:0 auto}.grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:2rem;align-items:start}
-.side-card{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius-xl);padding:2rem;position:sticky;top:98px}.side-card h2{font-size:2rem;line-height:1.15;margin:.75rem 0 .75rem}.side-card p{color:var(--body);font-size:.96rem;margin-bottom:1.2rem}
+.side-card{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius-xl);padding:2rem;position:sticky;top:98px}.side-card h2{font-size:2rem;line-height:1.14;margin:.75rem 0 .8rem}.side-card p{color:var(--body);font-size:.96rem;margin-bottom:1.2rem}.side-intro{font-size:1rem!important;line-height:1.65!important;margin-bottom:.9rem!important}
 .steps{display:grid;gap:.95rem;margin-top:1.4rem}.step{display:flex;gap:.8rem;align-items:flex-start}.step span{width:28px;height:28px;border-radius:50%;background:var(--green-soft);color:var(--green);font-size:.76rem;font-weight:800;display:grid;place-items:center;flex:0 0 28px;margin-top:.05rem}.step div{font-size:.88rem;color:var(--body)}
 .partner-types{margin-top:1.4rem;padding-top:1.2rem;border-top:1px solid var(--line)}.partner-types b{display:block;font-size:.84rem;color:var(--green);margin-bottom:.5rem}.chips{display:flex;flex-wrap:wrap;gap:.5rem}.chips i{font-style:normal;padding:.45rem .68rem;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:.74rem;font-weight:700;color:var(--body)}
 .form-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-xl);padding:2rem;box-shadow:var(--shadow)}
-.form-card h2{font-size:1.65rem;line-height:1.15;margin-bottom:.35rem}.form-card > p{color:var(--muted);font-size:.9rem;margin-bottom:1.35rem}
+.form-kicker{color:var(--orange);font-size:.74rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem}.form-card h2{font-size:1.75rem;line-height:1.15;margin-bottom:.35rem}.form-card > p,.form-intro{color:var(--body);font-size:1rem;line-height:1.6;margin-bottom:1.35rem}
 .notice{background:#F3F7F5;border-left:3px solid var(--green);padding:.9rem 1rem;margin-bottom:1.25rem;color:var(--body);font-size:.9rem}.notice strong{color:var(--ink)}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.span2{grid-column:1/-1}
 label{display:grid;gap:.42rem;font-size:.88rem;color:var(--ink);font-weight:700} input,select,textarea{width:100%;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);padding:.8rem .9rem;font-family:var(--font);font-size:.94rem;outline:none} input:focus,select:focus,textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(18,69,59,.08)} textarea{resize:vertical;min-height:118px}
@@ -55,10 +55,10 @@ label{display:grid;gap:.42rem;font-size:.88rem;color:var(--ink);font-weight:700}
 .btn-outline{background:#fff;color:var(--green);border-color:var(--green)} .btn-full{width:100%}.btn:disabled{opacity:.7;cursor:wait;transform:none}
 .status{display:none;background:var(--green-soft);border:1px solid #c8dacd;border-radius:16px;padding:1.15rem;margin-top:1rem;color:var(--green-dark)}.status h3{margin-bottom:.2rem}.error-status{background:#FFF5F2;border-color:#F1C4B9;color:#743424}.error-status a{text-decoration:underline;font-weight:700}
 .send-client{margin-top:1.2rem;background:var(--bg-soft);border:1px solid var(--line);border-radius:18px;padding:1.2rem}.send-client h3{font-size:1.05rem;margin-bottom:.3rem}.send-client p{font-size:.86rem;color:var(--body);margin-bottom:.9rem}.copyrow{display:grid;grid-template-columns:1fr auto;gap:.6rem}
-.copyrow input{background:#fff}.referral-card{margin-top:2rem;border:1px solid var(--line);border-radius:var(--radius-xl);padding:1.6rem 1.7rem;display:grid;grid-template-columns:.9fr 1.1fr;gap:2rem;align-items:end;background:#fff}.referral-card h2{font-size:1.5rem;line-height:1.2;margin:.2rem 0 .35rem}.referral-card p{color:var(--body);font-size:.95rem}.referral-eyebrow{color:var(--orange);font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.referral-controls{display:grid;gap:.75rem}.trevor-card-section{padding:0 1.5rem 4.5rem}.trevor-card{max-width:var(--max);margin:0 auto;background:var(--green-dark);color:#fff;border-radius:var(--radius-xl);padding:1.55rem;display:grid;grid-template-columns:145px 1fr;gap:1.7rem;align-items:center}.trevor-photo{width:145px;height:145px;object-fit:cover;border-radius:18px;background:#fff}.trevor-card h2{font-size:2rem;line-height:1.1;margin:.25rem 0 .3rem}.trevor-card p{color:#C8D5D0;margin-bottom:1rem}.contact-links{display:flex;flex-wrap:wrap;gap:.65rem}.contact-links a{display:inline-flex;padding:.7rem .9rem;border:1px solid rgba(255,255,255,.25);border-radius:10px;color:#fff;font-weight:700;font-size:.9rem}.contact-links a:hover{background:rgba(255,255,255,.08)}.footer{background:#0E1814;color:#fff;padding:3rem 1.5rem 2rem;border-top:1px solid #1C2B25}.footer-inner{max-width:var(--max);margin:0 auto}.footer strong{display:block;margin-bottom:.4rem}.legal{color:#8CA399;font-size:.76rem;line-height:1.65;max-width:900px}
+.copyrow input{background:#fff}.referral-card{margin-top:2.5rem;border-radius:var(--radius-xl);padding:2.5rem 2.6rem;display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center;background:var(--green-dark);color:#fff;box-shadow:0 18px 44px rgba(18,69,59,.12)}.referral-card h2{font-size:clamp(2rem,3vw,2.8rem);line-height:1.08;margin:.35rem 0 .7rem;letter-spacing:-.03em}.referral-card p{color:#D5E0DC;font-size:1rem;line-height:1.65;max-width:620px}.referral-eyebrow{color:#FF8A6A;font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.09em}.referral-note{margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.14);color:#AFC1BA;font-size:.86rem;line-height:1.55}.referral-controls{display:grid;gap:.85rem;background:#fff;color:var(--ink);padding:1.25rem;border-radius:18px}.referral-controls label{font-size:.9rem}.btn-referral{background:var(--orange);color:#fff;border-color:var(--orange);white-space:nowrap}.btn-referral:hover{background:#E85F3E;border-color:#E85F3E}.trevor-card-section{padding:0 1.5rem 4.5rem}.trevor-card{max-width:var(--max);margin:0 auto;background:var(--green-dark);color:#fff;border-radius:var(--radius-xl);padding:1.55rem;display:grid;grid-template-columns:145px 1fr;gap:1.7rem;align-items:center}.trevor-photo{width:145px;height:145px;object-fit:cover;border-radius:18px;background:#fff}.trevor-card h2{font-size:2rem;line-height:1.1;margin:.25rem 0 .3rem}.trevor-card p{color:#C8D5D0;margin-bottom:1rem}.contact-links{display:flex;flex-wrap:wrap;gap:.65rem}.contact-links a{display:inline-flex;padding:.7rem .9rem;border:1px solid rgba(255,255,255,.25);border-radius:10px;color:#fff;font-weight:700;font-size:.9rem}.contact-links a:hover{background:rgba(255,255,255,.08)}.contact-links .learn-link{border-color:transparent;background:#fff;color:var(--green-dark)}.contact-links .learn-link:hover{background:#F0F4F2}.footer{background:#0E1814;color:#fff;padding:3rem 1.5rem 2rem;border-top:1px solid #1C2B25}.footer-inner{max-width:var(--max);margin:0 auto}.footer strong{display:block;margin-bottom:.4rem}.legal{color:#8CA399;font-size:.76rem;line-height:1.65;max-width:900px}
 @media(max-width:1024px){.hero-inner,.grid{grid-template-columns:1fr}.hero-copy{text-align:center}.hero .lead{margin-left:auto;margin-right:auto}.badges,.hero-points{justify-content:center}.hero-points{max-width:760px;margin:0 auto}.side-card{position:static}}
-@media(max-width:760px){.top-strip{display:none}.nav{padding:.85rem 1.1rem}.brand strong{font-size:1.12rem}.brand span{font-size:.68rem}.nav-note{display:none}.hero{padding:2.6rem 0 2.3rem}.hero-inner{padding:0 1.1rem;gap:1.7rem}.hero-copy{text-align:left}.eyebrow{font-size:.69rem;padding:.34rem .68rem}.hero h1{font-size:2.3rem;line-height:1.02;margin:.8rem 0 .9rem}.hero .lead{font-size:.98rem;line-height:1.6;margin-bottom:1rem}.hero-facts{display:grid;gap:.3rem;padding-top:.8rem}.hero-facts span{font-size:.8rem}.image-card{border-radius:18px;box-shadow:0 10px 26px rgba(18,69,59,.10)}.image-box{aspect-ratio:16/10}.image-box img{object-position:center}.trust-inner{grid-template-columns:1fr 1fr;padding:.85rem 1rem}.trust-item{border-right:0;border-bottom:1px solid var(--line);padding:.65rem .45rem}.trust-item:nth-last-child(-n+2){border-bottom:0}.trust-item strong{font-size:.84rem}.trust-item span{font-size:.68rem}.section{padding:2.7rem 1rem}.grid{gap:1rem}.side-card,.form-card{padding:1.2rem;border-radius:18px}.side-card h2{font-size:1.55rem}.side-card p,.step div{font-size:.84rem}.partner-types{margin-top:1rem;padding-top:1rem}.form-card h2{font-size:1.45rem}.notice{padding:.9rem}.form-grid{grid-template-columns:1fr;gap:.85rem}.span2{grid-column:auto}input,select,textarea{font-size:16px;padding:.85rem}.btn{min-height:48px}.copyrow{grid-template-columns:1fr}.btn-outline{width:100%}.send-client{padding:1rem}}
-@media(max-width:480px){.hero h1{font-size:2.05rem}.badge{width:100%;justify-content:flex-start}.image-caption{display:block}.image-status{margin-top:.55rem}.trust-inner{grid-template-columns:1fr}.trust-item{border-bottom:1px solid var(--line)!important}.trust-item:last-child{border-bottom:0!important}.form-card,.side-card{padding:1rem}.section{padding-left:.85rem;padding-right:.85rem}.referral-card{grid-template-columns:1fr;padding:1.1rem;gap:1rem}.trevor-card-section{padding:0 .85rem 3rem}.trevor-card{grid-template-columns:1fr;text-align:center;padding:1.2rem}.trevor-photo{width:110px;height:110px;margin:0 auto}.contact-links{display:grid}.contact-links a{justify-content:center}}
+@media(max-width:760px){.top-strip{display:none}.nav{padding:.85rem 1.1rem}.brand strong{font-size:1.12rem}.brand span{font-size:.68rem}.nav-note{display:none}.hero{padding:2.6rem 0 2.3rem}.hero-inner{padding:0 1.1rem;gap:1.7rem}.hero-copy{text-align:left}.eyebrow{font-size:.69rem;padding:.34rem .68rem}.hero h1{font-size:2.3rem;line-height:1.02;margin:.8rem 0 .9rem}.hero .lead{font-size:.98rem;line-height:1.6;margin-bottom:1rem}.hero-facts{grid-template-columns:1fr;gap:.7rem;padding-top:.9rem}.hero-facts>div{grid-template-columns:28px 1fr}.hero-facts strong{font-size:.82rem}.hero-facts small{font-size:.74rem}.image-card{border-radius:18px;box-shadow:0 10px 26px rgba(18,69,59,.10)}.image-box{aspect-ratio:16/10}.image-box img{object-position:center}.trust-inner{grid-template-columns:1fr 1fr;padding:.85rem 1rem}.trust-item{border-right:0;border-bottom:1px solid var(--line);padding:.65rem .45rem}.trust-item:nth-last-child(-n+2){border-bottom:0}.trust-item strong{font-size:.84rem}.trust-item span{font-size:.68rem}.section{padding:2.7rem 1rem}.grid{gap:1rem}.side-card,.form-card{padding:1.2rem;border-radius:18px}.side-card h2{font-size:1.55rem}.side-card p,.step div{font-size:.84rem}.partner-types{margin-top:1rem;padding-top:1rem}.form-card h2{font-size:1.45rem}.notice{padding:.9rem}.form-grid{grid-template-columns:1fr;gap:.85rem}.span2{grid-column:auto}input,select,textarea{font-size:16px;padding:.85rem}.btn{min-height:48px}.copyrow{grid-template-columns:1fr}.btn-outline{width:100%}.send-client{padding:1rem}}
+@media(max-width:480px){.hero h1{font-size:2.05rem}.badge{width:100%;justify-content:flex-start}.image-caption{display:block}.image-status{margin-top:.55rem}.trust-inner{grid-template-columns:1fr}.trust-item{border-bottom:1px solid var(--line)!important}.trust-item:last-child{border-bottom:0!important}.form-card,.side-card{padding:1rem}.section{padding-left:.85rem;padding-right:.85rem}.referral-card{grid-template-columns:1fr;padding:1.6rem 1.2rem;gap:1.4rem}.referral-card h2{font-size:2rem}.referral-controls{padding:1rem}.trevor-card-section{padding:0 .85rem 3rem}.trevor-card{grid-template-columns:1fr;text-align:center;padding:1.2rem}.trevor-photo{width:110px;height:110px;margin:0 auto}.contact-links{display:grid}.contact-links a{justify-content:center}}
 </style>
 </head>
 <body>
@@ -71,13 +71,13 @@ label{display:grid;gap:.42rem;font-size:.88rem;color:var(--ink);font-weight:700}
       <h1>Send me the scenario.<br>I’ll work through the mortgage side.</h1>
       <p class="lead">For CPAs, financial planners, insolvency professionals and family lawyers. Send the rough numbers first, without introducing the client. I’ll tell you whether I see a financing path worth exploring.</p>
       <div class="hero-facts">
-        <span>No client introduction required</span>
-        <span>Approximate numbers are fine</span>
-        <span>Reviewed personally by Trevor</span>
+        <div><b>01</b><span><strong>No client introduction needed</strong><small>Start with the scenario first.</small></span></div>
+        <div><b>02</b><span><strong>Rough numbers are enough</strong><small>No application or documents to begin.</small></span></div>
+        <div><b>03</b><span><strong>Reviewed by Trevor</strong><small>You get a real feasibility opinion.</small></span></div>
       </div>
     </div>
     <div class="image-card">
-      <div class="image-box"><img src="https://plus.unsplash.com/premium_photo-1661716960968-8eead7b1b203?auto=format&fit=crop&fm=jpg&q=82&w=1800" alt="Two professionals reviewing financial documents together" loading="eager"></div>
+      <div class="image-box"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&fm=jpg&q=84&w=1800" alt="Bright modern professional office interior" loading="eager"></div>
 
     </div>
   </div>
@@ -89,17 +89,19 @@ label{display:grid;gap:.42rem;font-size:.88rem;color:var(--ink);font-weight:700}
 </div></section>
 <main class="section"><div class="section-inner"><div class="grid">
   <aside class="side-card">
-    <div class="eyebrow">How it works</div>
-    <h2>Three steps. That’s it.</h2>
+    <div class="eyebrow">What this intake is</div>
+    <h2>A two-minute feasibility check before a full referral.</h2>
+    <p class="side-intro">Use it when a client has equity but the financing picture is complicated. You send the rough numbers without identifying the client, and I give you a first opinion on whether there appears to be a workable mortgage path.</p>
     <div class="steps">
-      <div class="step"><span>1</span><div><strong>Send the rough numbers.</strong><br>Property, mortgage, income, funding need and the core issue.</div></div>
-      <div class="step"><span>2</span><div><strong>I review what looks realistic.</strong><br>Bank, alternative, HELOC, second/private, or a plan before financing.</div></div>
-      <div class="step"><span>3</span><div><strong>You decide the next step.</strong><br>If there is a path worth pursuing, introduce the client or send them the review link.</div></div>
+      <div class="step"><span>01</span><div><strong>Send the situation.</strong><br>Property value, mortgage, income, debt or funding need, plus a few notes.</div></div>
+      <div class="step"><span>02</span><div><strong>I review the likely options.</strong><br>Bank, HELOC/refinance, alternative, second/private, or whether a plan-first approach makes more sense.</div></div>
+      <div class="step"><span>03</span><div><strong>You choose how to proceed.</strong><br>If there is a path worth pursuing, introduce the client or send them the client review link below.</div></div>
     </div>
   </aside>
   <section class="form-card">
+    <div class="form-kicker">Anonymous first look</div>
     <h2>Scenario SafeDrop</h2>
-    <p>Approximate information is fine. This should only take a couple of minutes.</p>
+    <p class="form-intro">Give me enough to understand the property, the financial pressure and the goal. Approximate numbers are fine. This is not a mortgage application.</p>
     <div class="notice"><strong>Keep the first drop anonymous.</strong> No client names, SINs, dates of birth, account numbers or documents.</div>
     <form id="safeForm">
       <div class="form-grid">
@@ -138,14 +140,15 @@ label{display:grid;gap:.42rem;font-size:.88rem;color:var(--ink);font-weight:700}
   </section>
 </div>
   <section class="referral-card">
-    <div>
-      <div class="referral-eyebrow">Client referral link</div>
-      <h2>Already ready to introduce the client?</h2>
-      <p>Create a direct Mortgage & Equity Review link with your firm name attached.</p>
+    <div class="referral-copy">
+      <div class="referral-eyebrow">Send the client directly</div>
+      <h2>Already know they should speak with me?</h2>
+      <p>Skip the anonymous scenario check and send the client straight to the Mortgage & Equity Review. Add your firm name and I’ll know where the referral came from.</p>
+      <div class="referral-note">The client sees a simple intake for equity, debt, CRA, credit, separation and other complicated mortgage situations.</div>
     </div>
     <div class="referral-controls">
-      <label>Firm name<input id="refFirm" placeholder="Smith & Co. CPA"></label>
-      <div class="copyrow"><input id="refLink" readonly value="https://trevormortgages.ca/review"><button id="copyBtn" class="btn btn-outline" type="button">Copy Link</button></div>
+      <label>Firm name shown on the referral<input id="refFirm" placeholder="Smith & Co. CPA"></label>
+      <div class="copyrow"><input id="refLink" readonly value="https://trevormortgages.ca/review"><button id="copyBtn" class="btn btn-referral" type="button">Copy Client Link</button></div>
     </div>
   </section>
 </div></main>
@@ -159,6 +162,7 @@ label{display:grid;gap:.42rem;font-size:.88rem;color:var(--ink);font-weight:700}
       <div class="contact-links">
         <a href="tel:+14038701537">Call or text 403-870-1537</a>
         <a href="mailto:tberry@myperch.io">tberry@myperch.io</a>
+        <a href="https://trevormortgages.ca" class="learn-link">Learn more about Trevor →</a>
       </div>
     </div>
   </div>
