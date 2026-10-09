@@ -69,6 +69,8 @@
     .hero h1 { font-size: clamp(2.65rem,5vw,4.25rem); line-height: 1.03; font-weight: 800; letter-spacing: -.045em; color: var(--text-main); margin-bottom: 1.35rem; max-width: 710px; }
     .hero h1 span { color: var(--brand-green); }
     .hero .lead { font-size: 1.08rem; line-height: 1.7; color: var(--text-body); max-width: 690px; margin-bottom: 1.85rem; }
+    .hero .lead a, .funding-card .funding-learn-link { color: var(--brand-green); font-weight: 800; text-underline-offset: 3px; }
+    .funding-card .funding-learn-link { display: inline-block; margin-top: 1rem; font-size: .86rem; }
     .hero .audience-line { font-size: .94rem; color: var(--text-muted); font-weight: 700; margin: -0.7rem 0 1rem; max-width: 700px; }
     .hero .repeat-line { font-size: 1rem; font-weight: 800; color: var(--brand-green); margin-bottom: 1.8rem; }
     .hero-actions { display: flex; gap: .85rem; flex-wrap: wrap; margin-bottom: 2rem; }
@@ -205,11 +207,15 @@
       nav.nav-links { display: none; }
       .nav-inner > .btn { padding: .68rem .9rem; font-size: .78rem; white-space: nowrap; margin-left: auto; }
       .hero { padding: 2.8rem 0 3rem; }
-      .hero-container { padding: 0 1rem; gap: 1.8rem; }
-      .hero-content { text-align: left; }
+      .hero-container { padding: 0 1rem; gap: 1.15rem; }
+      /* Flatten the hero content on mobile so the original photo can sit after the intro. */
+      .hero-content { display: contents; }
+      .hero-intro { order: 1; text-align: left; min-width: 0; }
+      .property-card { order: 2; }
+      .hero-details { order: 3; text-align: left; min-width: 0; }
       .eyebrow-tag { font-size: .69rem; margin-bottom: 1rem; }
       .hero h1 { font-size: clamp(2.35rem, 12vw, 3.2rem); line-height: 1.02; margin-bottom: 1rem; }
-      .hero .lead { font-size: .98rem; line-height: 1.65; margin-bottom: 1.2rem; }
+      .hero .lead { font-size: .98rem; line-height: 1.6; margin-bottom: .25rem; }
       .hero .audience-line { font-size: .86rem; margin: 0 0 .85rem; }
       .hero .repeat-line { font-size: .94rem; margin-bottom: 1.2rem; }
       .hero-actions { justify-content: flex-start; gap: .65rem; margin-bottom: 1.35rem; }
@@ -223,7 +229,7 @@
       .second-look-card { padding: 1.2rem; }
       .hero-points { grid-template-columns: 1fr; gap: .65rem; padding-top: 1rem; }
       .hero-point { padding: .8rem .9rem; background: #fff; border: 1px solid var(--border-subtle); border-radius: 10px; }
-      .property-card { width: 100%; padding: .65rem; border-radius: 18px; box-shadow: 0 12px 30px rgba(18,69,59,.10); }
+      .property-card { width: 100%; margin: 0; padding: .65rem; border-radius: 18px; box-shadow: 0 12px 30px rgba(18,69,59,.10); }
       .property-image { aspect-ratio: 16/11; border-radius: 12px; }
       .property-caption { padding: .8rem .45rem .25rem; align-items: flex-start; flex-direction: column; gap: .6rem; }
       .property-status { font-size: .68rem; }
@@ -291,9 +297,12 @@
     <section class="hero">
       <div class="hero-container">
         <div class="hero-content">
+          <div class="hero-intro">
           <div class="eyebrow-tag">Investor Financing · Canada-wide</div>
           <h1>How are you funding <span>your next deal?</span></h1>
-          <p class="lead">I help active real estate investors structure financing for purchases, renovations, refinances and rental properties. Perch Capital gives us a fast private-capital lane, and when another structure fits better, I can source across the broader Perch Mortgage Brokerage lender network.</p>
+          <p class="lead">I help investors finance flips, BRRRR projects, rental purchases and refinances. Through Perch Mortgage Brokerage, I have direct access to <a href="https://www.perchcapital.ca/brokers" target="_blank" rel="noopener noreferrer">Perch Capital</a>, our affiliated private-lending option, plus a national network of 40+ lenders. That means a faster private-capital lane when it fits, and more choices when it doesn’t.</p>
+          </div>
+          <div class="hero-details">
           <p class="audience-line">Built for flippers, BRRRR investors, rental-property owners, portfolio investors and small residential developers.</p>
           <div class="repeat-line">Get set up once. Then bring me the deals.</div>
           <div class="investor-paths" aria-label="Choose your investor funding next step">
@@ -309,9 +318,10 @@
             </article>
           </div>
           <div class="hero-points">
-            <div class="hero-point"><strong>Fast private capital</strong><span>For qualifying time-sensitive investor transactions</span></div>
-            <div class="hero-point"><strong>Broader lender access</strong><span>Private, alternative and conventional options</span></div>
-            <div class="hero-point"><strong>Built for repeat deals</strong><span>A relationship that gets more efficient over time</span></div>
+            <div class="hero-point"><strong>Direct private-capital access</strong><span>Perch Capital can help qualifying deals move quickly</span></div>
+            <div class="hero-point"><strong>40+ lending options</strong><span>Compare private, alternative and conventional lenders</span></div>
+            <div class="hero-point"><strong>Built for repeat deals</strong><span>One financing relationship across multiple projects</span></div>
+          </div>
           </div>
         </div>
 
@@ -332,9 +342,9 @@
 
     <section class="trust-strip" aria-label="Investor financing highlights">
       <div class="trust-inner">
-        <div class="trust-item"><strong>40+ lenders</strong><span>through Perch Mortgage Brokerage</span></div>
-        <div class="trust-item"><strong>Canada-wide</strong><span>subject to lender availability</span></div>
-        <div class="trust-item"><strong>Private + Alt + Prime</strong><span>not tied to one funding lane</span></div>
+        <div class="trust-item"><strong>Perch Capital</strong><span>affiliated private lending access</span></div>
+        <div class="trust-item"><strong>40+ lenders</strong><span>national brokerage network</span></div>
+        <div class="trust-item"><strong>Private + Alt + Prime</strong><span>more than one financing path</span></div>
         <div class="trust-item"><strong>One advisor</strong><span>from review through closing</span></div>
       </div>
     </section>
@@ -343,23 +353,24 @@
       <div class="section-inner">
         <div class="section-title">
           <span class="section-eyebrow">Funding options</span>
-          <h2>Start with the deal. Then choose the right lane.</h2>
-          <p>The goal is not to force every transaction into one private product. I review what you are buying, the capital required, your timeline and your exit, then structure the financing around that.</p>
+          <h2>In-house lending access. More options beyond it.</h2>
+          <p>Perch Capital can be an excellent starting point for qualifying short-term investor deals. But I am not restricted to one lender or product. I review the property, required funds, carrying costs, timeline and exit strategy, then compare the available financing paths to help find the best fit.</p>
         </div>
         <div class="funding-grid">
           <article class="funding-card primary">
             <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></div>
             <h3>Perch Capital</h3>
-            <div class="sub">Fast private capital</div>
-            <p>A strong front-end option for qualifying investor transactions where speed, flexibility and a clear exit matter more than conventional-bank timing.</p>
-            <ul><li>Up to 75% of property value on qualifying deals</li><li>Short-term structures for suitable investor transactions</li><li>Repeat business may qualify for improved economics</li></ul>
+            <div class="sub">Our affiliated private lending option</div>
+            <p>Direct access to an established private-capital option for qualifying investor files, with streamlined submissions and a faster path to an initial lending decision when timing matters.</p>
+            <ul><li>Same-day conditional decisions on qualifying submissions</li><li>Up to 75% of property value on qualifying deals</li><li>Short-term financing with a clear exit strategy</li><li>Potentially improved terms for eligible repeat borrowers</li></ul>
+            <a class="funding-learn-link" href="https://www.perchcapital.ca/brokers" target="_blank" rel="noopener noreferrer">Learn about Perch Capital ↗</a>
           </article>
           <article class="funding-card">
             <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M4 20V10m5 10V4m6 16v-7m5 7V7"/></svg></div>
-            <h3>Broader Lender Access</h3>
+            <h3>National Lender Network</h3>
             <div class="sub">Private · Alternative · Conventional</div>
-            <p>If the deal is better suited elsewhere, I can source through a wider Canada-wide lender network instead of trying to make one private program fit everything.</p>
-            <ul><li>Different property and borrower profiles</li><li>Longer-term alternative financing</li><li>Rental and portfolio strategies</li><li>Refinance and equity takeout options</li></ul>
+            <p>Perch Capital is one option, not the only option. Through the Perch Mortgage Brokerage network of 40+ lenders, I can look for the right structure, term and total borrowing cost rather than forcing your project into a single private product.</p>
+            <ul><li>Alternative private lenders for specialized properties or timelines</li><li>Conventional and alternative mortgage options where eligible</li><li>Rental, portfolio and longer-term hold strategies</li><li>Refinance, equity access and takeout planning</li></ul>
           </article>
           <article class="funding-card">
             <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M5 20V9l7-5 7 5v11M9 20v-6h6v6"/></svg></div>
