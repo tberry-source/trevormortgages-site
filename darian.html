@@ -856,7 +856,7 @@
     <!-- Hero Header -->
     <div class="hub-hero">
       <div class="prop-eyebrow">Instant Monthly Payment Estimates</div>
-      <h1 class="hub-title">See What Darian’s Listings Could Cost You Monthly</h1>
+      <h1 class="hub-title">See What Darian’s Listing Could Cost You Monthly</h1>
       <p class="hub-lead">
         Buying a home isn’t only about whether you can qualify for the mortgage.<br />
         Sometimes the bigger question is:<br />
@@ -888,14 +888,14 @@
     <section class="picker-section">
       <div class="section-heading-row">
         <div class="section-title">
-          <span>Select one of Darian’s Listings or Test a Custom Price</span>
+          <span>Explore Darian’s Listing or Test a Custom Price</span>
         </div>
         <div class="section-sub">
           Click any card below to load that property's exact price and property tax numbers
         </div>
       </div>
 
-      <div class="property-cards-grid cols-3">
+      <div class="property-cards-grid cols-2">
         
         <!-- Property 1 -->
         <div class="prop-card active" id="card-prop-1" onclick="selectProperty(1)">
@@ -914,27 +914,6 @@
             </div>
             <div class="prop-card-status" id="status-prop-1">
               <span>✓ Selected</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Property 2 -->
-        <div class="prop-card" id="card-prop-2" onclick="selectProperty(2)">
-          <div>
-            <span class="prop-card-tag tag-featured">Featured Listing</span>
-            <div class="prop-card-address">809 68 Avenue SW</div>
-            <div class="prop-card-meta">
-              Kingsland, Calgary · MLS® A2354443<br />
-              2 + 2 Beds · 2 Baths · 1,100 sq ft
-            </div>
-          </div>
-          <div>
-            <div class="prop-card-price-row">
-              <span class="prop-card-price-lbl">Asking Price</span>
-              <span class="prop-card-price-val">$665,000</span>
-            </div>
-            <div class="prop-card-status" id="status-prop-2">
-              <span>Click to Calculate →</span>
             </div>
           </div>
         </div>
@@ -1196,13 +1175,6 @@
         specs: "2 + 1 Beds · 2 Baths · 1,140 sq ft · MLS® A2354106",
         price: 399999,
         monthlyTax: 236
-      },
-      2: {
-        address: "809 68 Avenue SW",
-        community: "Kingsland, Calgary",
-        specs: "2 + 2 Beds · 2 Baths · 1,100 sq ft · MLS® A2354443",
-        price: 665000,
-        monthlyTax: 408
       }
     };
 
@@ -1210,19 +1182,15 @@
       currentSelection = id;
 
       var card1 = document.getElementById('card-prop-1');
-      var card2 = document.getElementById('card-prop-2');
       var cardCustom = document.getElementById('card-prop-custom');
 
       if (card1) card1.classList.toggle('active', id === 1);
-      if (card2) card2.classList.toggle('active', id === 2);
       if (cardCustom) cardCustom.classList.toggle('active', id === 'custom');
 
       var status1 = document.getElementById('status-prop-1');
-      var status2 = document.getElementById('status-prop-2');
       var statusCustom = document.getElementById('status-prop-custom');
 
       if (status1) status1.innerHTML = id === 1 ? '<span>✓ Selected</span>' : '<span>Click to Calculate →</span>';
-      if (status2) status2.innerHTML = id === 2 ? '<span>✓ Selected</span>' : '<span>Click to Calculate →</span>';
       if (statusCustom) statusCustom.innerHTML = id === 'custom' ? '<span>✓ Selected</span>' : '<span>Click to Calculate →</span>';
 
       var bannerName = document.getElementById('calc-focus-name');
@@ -1347,8 +1315,7 @@
       var monthlyPayment = totalLoan * (monthlyRate * Math.pow(1 + monthlyRate, n)) / (Math.pow(1 + monthlyRate, n) - 1);
 
       var monthlyTax = 236;
-      if (currentSelection === 2) monthlyTax = 408;
-      else if (currentSelection === 'custom') monthlyTax = Math.round(price * 0.0055 / 12);
+      if (currentSelection === 'custom') monthlyTax = Math.round(price * 0.0055 / 12);
 
       var totalMonthly = monthlyPayment + monthlyTax;
 
