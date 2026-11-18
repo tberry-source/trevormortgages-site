@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Compare Home Trust Classic posted fixed rates by term and explore self-employed mortgage programs.">
+  <meta name="description" content="Explore alternative mortgage pricing for business owners, including a posted fixed-rate benchmark.">
   <title>Live Mortgage Programs and Rates | Trevor Berry, Perch Mortgages</title>
   <style>:root {
   color-scheme: light;
@@ -131,9 +131,9 @@ p { margin: 0; }
   <main id="main" class="wrap resources">
     <p class="eyebrow">Business-owner mortgages</p>
     <h1>Alternative mortgage rates for business owners</h1>
-    <p class="lead">See what’s available for self-employed borrowers, check posted rates and keep up with Bank of Canada decisions.</p>
+    <p class="lead">Some qualifying business owners may find alternative mortgage rates in the 4% range, depending on the product, property, equity and current lender pricing.</p>
     <section class="resources-review alt-rates" aria-labelledby="alt-rates-title">
-      <h2 id="alt-rates-title">Home Trust Classic posted rate range</h2>
+      <h2 id="alt-rates-title">Posted fixed-rate benchmark</h2>
       <div id="alt-rate-values" hidden>
         <strong id="alt-rate-range" class="alt-range"></strong>
         <table id="alt-rate-table">
@@ -147,9 +147,8 @@ p { margin: 0; }
           </tbody>
         </table>
       </div>
-      <p id="alt-rate-status" role="status">See the lender’s posted rates for current figures.</p>
-      <p>These are one lender’s posted rates across fixed terms. Your rate and any lender or broker fees depend on your application and may differ.</p>
-      <p><a href="https://www.hometrust.ca/en/mortgages/rates">View Home Trust’s posted rates</a></p>
+      <p id="alt-rate-status" role="status">The fixed-rate benchmark is temporarily unavailable.</p>
+      <p>This benchmark shows one lender’s posted fixed rates across terms. Ask for current fixed and adjustable quotes for your file, including any lender or broker fees.</p>
     </section>
     <div class="resources-list">
       <a class="resource" href="https://myperch.io/non-salaried-income/">
@@ -187,7 +186,7 @@ p { margin: 0; }
     document.querySelectorAll('#alt-rate-table td').forEach((cell, i) => { cell.textContent = rates[i]; });
     const [year, month, day] = effective.split('-').map(Number);
     const date = new Intl.DateTimeFormat('en-CA', { dateStyle: 'long', timeZone: 'UTC' });
-    status.textContent = 'Home Trust Classic posted rates effective ' + date.format(new Date(Date.UTC(year, month - 1, day))) + '.';
+    status.textContent = 'Fixed-rate benchmark effective ' + date.format(new Date(Date.UTC(year, month - 1, day))) + '.';
     document.querySelector('#alt-rate-values').hidden = false;
   } catch {
     // The lender's source link remains visible when the numbers are unavailable.
