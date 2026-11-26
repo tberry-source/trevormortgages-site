@@ -1,5 +1,5 @@
-// Add the owner's GA4 measurement ID to enable measurement.
-const measurementId = '';
+// GA4 website measurement and playbook download events.
+const measurementId = 'G-1VYWZ9S5HD';
 if (/^G-[A-Z0-9]+$/.test(measurementId)) {
   window.dataLayer = window.dataLayer || [];
   window.gtag = function () { window.dataLayer.push(arguments); };
