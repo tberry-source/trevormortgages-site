@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Darian Stadnyk × Trevor Berry | Calgary Home Financing Hub</title>
-  <meta name="description" content="Calculate accurate monthly mortgage payments, down payment requirements, and property taxes for Darian Stadnyk's Calgary listings." />
+  <title>134 Rocky Ridge Mews NW | Open House with Darian Stadnyk</title>
+  <meta name="description" content="Open house hosted by Darian Stadnyk on November 28, 1–3 p.m. Explore down payment options and illustrative mortgage payments for 134 Rocky Ridge Mews NW, Calgary, MLS A2354751." />
+  <link rel="canonical" href="https://trevormortgages.ca/darian" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -320,7 +321,7 @@
     .prop-card-status {
       margin-top: 0.4rem;
     }
-    .prop-card-status span {
+    .prop-card-status, .prop-card-status span {
       font-size: 0.8rem;
       font-weight: 700;
       color: var(--accent-gold-hover);
@@ -855,13 +856,12 @@
 
     <!-- Hero Header -->
     <div class="hub-hero">
-      <div class="prop-eyebrow">Instant Monthly Payment Estimates</div>
-      <h1 class="hub-title">See What Darian’s Listing Could Cost You Monthly</h1>
+      <div class="prop-eyebrow">Open House Hosted by Darian Stadnyk</div>
+      <h1 class="hub-title">134 Rocky Ridge Mews NW</h1>
       <p class="hub-lead">
-        Buying a home isn’t only about whether you can qualify for the mortgage.<br />
-        Sometimes the bigger question is:<br />
-        <strong>How much cash will I actually need upfront and what will I have left after I move in?</strong><br /><br />
-        There may be more options than you realize, including different down payment strategies, rate shopping, and ways to structure your mortgage more effectively.
+        <strong>Saturday, November 28, 2026 · 1–3 p.m. MST</strong><br /><br />
+        See what this home could cost each month, compare down payment options, and plan the cash you may need to buy.<br />
+        Darian is your open-house host. Trevor can help you put together a mortgage plan.
       </p>
 
 <!-- Micro-Team Strip -->
@@ -869,7 +869,7 @@
         <div class="strip-item">
           <div class="strip-badge">🏡</div>
           <div class="strip-text">
-            <strong>Property & Showings:</strong> Darian Stadnyk 
+            <strong>Open-House Host:</strong> Darian Stadnyk 
             <a href="sms:5878880024" class="strip-phone">587-888-0024</a>
           </div>
         </div>
@@ -888,29 +888,29 @@
     <section class="picker-section">
       <div class="section-heading-row">
         <div class="section-title">
-          <span>Explore Darian’s Listing or Test a Custom Price</span>
+          <span>Explore This Open House or Test a Custom Price</span>
         </div>
         <div class="section-sub">
-          Click any card below to load that property's exact price and property tax numbers
+          This home's asking price, listed property taxes and annual HOA fee are loaded below
         </div>
       </div>
 
       <div class="property-cards-grid cols-2">
         
         <!-- Property 1 -->
-        <div class="prop-card active" id="card-prop-1" onclick="selectProperty(1)">
+        <div class="prop-card active" id="card-prop-1" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectProperty(1)}" onclick="selectProperty(1)">
           <div>
-            <span class="prop-card-tag tag-featured">Featured Listing</span>
-            <div class="prop-card-address">252 Templeview Way NE</div>
+            <span class="prop-card-tag tag-featured">Open House · Hosted by Darian</span>
+            <div class="prop-card-address">134 Rocky Ridge Mews NW</div>
             <div class="prop-card-meta">
-              Temple, Calgary · MLS® A2354106<br />
-              2 + 1 Beds · 2 Baths · 1,140 sq ft
+              Rocky Ridge, Calgary · MLS® A2354751<br />
+              3 + 1 Beds · 2 Full + 1 Half Baths · 1,568 sq ft
             </div>
           </div>
           <div>
             <div class="prop-card-price-row">
               <span class="prop-card-price-lbl">Asking Price</span>
-              <span class="prop-card-price-val">$399,999</span>
+              <span class="prop-card-price-val">$639,999</span>
             </div>
             <div class="prop-card-status" id="status-prop-1">
               <span>✓ Selected</span>
@@ -919,13 +919,13 @@
         </div>
 
         <!-- Property 3: Custom Calculator -->
-        <div class="prop-card" id="card-prop-custom" onclick="selectProperty('custom')">
+        <div class="prop-card" id="card-prop-custom" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectProperty('custom')}" onclick="selectProperty('custom')">
           <div>
             <span class="prop-card-tag tag-custom">Custom Property</span>
             <div class="prop-card-address">Any Calgary Home</div>
             <div class="prop-card-meta">
               Found another home you love?<br />
-              Test any custom purchase price from $200k to $1.5M+
+              Test any custom purchase price from $200k to $1.5M
             </div>
           </div>
           <div>
@@ -940,6 +940,7 @@
         </div>
 
       </div>
+      <p id="listing-attribution" style="text-align:center;font-size:0.78rem;line-height:1.6;color:var(--text-muted);margin-top:1rem;">Listing courtesy of Beatrix Smolejova, Premiere Realty Direct. Open house hosted by Darian Stadnyk.<br /><a href="https://www.realtor.ca/real-estate/30550623/134-rocky-ridge-mews-nw-calgary-rocky-ridge" target="_blank" rel="noopener noreferrer" style="color:var(--accent-gold-hover);font-weight:700;">View the full MLS® listing →</a> · Property information checked November 27, 2026.</p>
     </section>
 
     <!-- Step 2: Calculator Card -->
@@ -947,10 +948,10 @@
       <div class="calc-focus-banner">
         <div>
           <div class="calc-focus-label">Now Calculating:</div>
-          <div class="calc-focus-name" id="calc-focus-name">252 Templeview Way NE</div>
+          <div class="calc-focus-name" id="calc-focus-name">134 Rocky Ridge Mews NW</div>
         </div>
         <div class="calc-focus-specs" id="calc-focus-specs">
-          Temple, Calgary · 2 + 1 Beds · 2 Baths · 1,140 sq ft · Est. Taxes: $236/mo
+          Rocky Ridge, Calgary · MLS® A2354751 · Taxes: $4,199/year · HOA: $262.50/year
         </div>
       </div>
 
@@ -959,9 +960,9 @@
           <div class="calc-field-group">
             <div class="calc-label-row">
               <span>Purchase Price:</span>
-              <span class="calc-num-callout" id="calc-price-disp">$399,999</span>
+              <span class="calc-num-callout" id="calc-price-disp">$639,999</span>
             </div>
-            <input type="range" class="slider-range" id="slider-price" min="200000" max="1500000" step="1" value="399999" oninput="runHubCalc()" />
+            <input type="range" class="slider-range" id="slider-price" aria-label="Purchase price" min="200000" max="1500000" step="1" value="639999" oninput="runHubCalc()" />
             <div class="slider-bounds">
               <span>$200k</span>
               <span>$850k</span>
@@ -971,29 +972,36 @@
 
           <div class="calc-field-group">
             <div class="calc-label-row">
-              <span>Down Payment (<span id="down-mode-label">%</span>):</span>
-              <span class="calc-num-callout" id="calc-down-disp">10% ($40,000)</span>
+              <span>Down Payment (<span id="down-mode-label">$</span>):</span>
+              <span class="calc-num-callout" id="calc-down-disp">$39,000 (6.1%)</span>
             </div>
-            <input type="range" class="slider-range" id="slider-down" min="5" max="35" step="1" value="10" oninput="runHubCalc()" />
+            <input type="range" class="slider-range" id="slider-down" aria-label="Down payment" min="38999.90" max="223999.65" step="0.01" value="39000" oninput="runHubCalc()" />
             <div class="slider-bounds">
-              <span id="dp-min-bound">Min 5%</span>
+              <span id="dp-min-bound">Min $39,000</span>
               <span>20% (Uninsured)</span>
               <span>35%</span>
             </div>
             <div class="btn-toggle-group">
-              <button type="button" class="toggle-pill-btn active" id="btn-mode-pct" onclick="setDownPaymentMode('pct')">% Down</button>
-              <button type="button" class="toggle-pill-btn" id="btn-mode-dol" onclick="setDownPaymentMode('dol')">$ Amount</button>
+              <button type="button" class="toggle-pill-btn" id="btn-mode-pct" onclick="setDownPaymentMode('pct')">% Down</button>
+              <button type="button" class="toggle-pill-btn active" id="btn-mode-dol" onclick="setDownPaymentMode('dol')">$ Amount</button>
             </div>
+            <div class="btn-toggle-group" aria-label="Down payment examples" style="margin-top:0.65rem;flex-wrap:wrap;">
+              <button type="button" class="toggle-pill-btn" id="btn-down-minimum" onclick="setDownPreset('minimum')">Minimum down</button>
+              <button type="button" class="toggle-pill-btn" id="btn-down-10" onclick="setDownPreset('10')">10% down</button>
+              <button type="button" class="toggle-pill-btn" id="btn-down-20" onclick="setDownPreset('20')">20% down</button>
+            </div>
+            <p id="minimum-down-explanation" style="font-size:0.75rem;color:var(--text-muted);line-height:1.5;margin-top:0.65rem;">Minimum down: 5% of the first $500,000 plus 10% of the remainder.</p>
           </div>
 
           <div class="calc-field-group">
             <div class="calc-label-row">
-              <span>First-Time Buyer or New Build?</span>
+              <span id="first-time-label">Eligible First-Time Homebuyer?</span>
             </div>
             <div class="btn-toggle-group">
-              <button type="button" class="toggle-pill-btn active" id="btn-fthb-yes" onclick="setFTHB(true)">Yes</button>
-              <button type="button" class="toggle-pill-btn" id="btn-fthb-no" onclick="setFTHB(false)">No</button>
+              <button type="button" class="toggle-pill-btn" id="btn-fthb-yes" onclick="setFTHB(true)">Yes</button>
+              <button type="button" class="toggle-pill-btn active" id="btn-fthb-no" onclick="setFTHB(false)">No / Unsure</button>
             </div>
+            <p style="font-size:0.75rem;color:var(--text-muted);line-height:1.5;margin-top:0.65rem;"><span id="first-time-help">For this resale home, 30 years with less than 20% down requires at least one eligible first-time buyer.</span> <a href="https://www.cmhc-schl.gc.ca/professionals/project-funding-and-mortgage-financing/mortgage-loan-insurance/mortgage-loan-insurance-homeownership-programs/home-start" target="_blank" rel="noopener noreferrer">Eligibility details</a>.</p>
           </div>
 
           <div class="calc-field-group">
@@ -1011,55 +1019,64 @@
 
           <div class="calc-field-group">
             <div class="calc-label-row">
-              <span>Mortgage Interest Rate</span>
+              <span>Illustrative Mortgage Interest Rate</span>
+            </div>
+            <div class="btn-toggle-group" style="margin-bottom:0.7rem;">
+              <button type="button" class="toggle-pill-btn active" id="btn-rate-fixed" onclick="setRateType('fixed')">5-year fixed example</button>
+              <button type="button" class="toggle-pill-btn" id="btn-rate-variable" onclick="setRateType('variable')">Variable example</button>
             </div>
             <div class="rate-box-row">
               <div class="rate-input-wrap">
-                <input type="number" id="input-rate" value="3.60" step="0.05" min="1.0" max="15.0" oninput="runHubCalc()" />
+                <input type="number" id="input-rate" aria-label="Illustrative mortgage interest rate" value="4.49" step="0.01" min="0" max="25" oninput="runHubCalc()" />
                 <span style="font-weight: 800; color: var(--text-body); margin-left: 0.3rem;">%</span>
               </div>
-              <span class="rate-tag">sample current rate</span>
+              <span class="rate-tag">editable planning rate</span>
             </div>
+            <p id="rate-assumption-note" style="font-size:0.75rem;color:var(--text-muted);line-height:1.5;margin-top:0.65rem;">4.49% is an illustrative assumption. Trevor will confirm available lender pricing. Fixed examples use semiannual compounding.</p>
           </div>
         </div>
 
         <div class="calc-right-results">
           <div>
             <div class="result-metric-header">Estimated Total Monthly Cost</div>
-            <div class="result-main-num" id="out-total-monthly">$2,109</div>
-            <div class="result-sub">Includes mortgage principal, interest & property taxes</div>
+            <div class="result-main-num" id="out-total-monthly">$3,828</div>
+            <div class="result-sub" id="monthly-cost-scope">Includes mortgage principal, interest, property taxes & HOA</div>
 
             <div class="breakdown-table">
               <div class="breakdown-row">
                 <span>Mortgage Payment:</span>
-                <strong id="out-mort-payment">$1,873/mo</strong>
+                <strong id="out-mort-payment">$3,456/mo</strong>
               </div>
               <div class="breakdown-row">
                 <span>Est. Property Taxes:</span>
-                <strong id="out-tax-amount">+$236/mo</strong>
+                <strong id="out-tax-amount">+$350/mo</strong>
+              </div>
+              <div class="breakdown-row" id="hoa-row">
+                <span>HOA Monthly Equivalent:</span>
+                <strong id="out-hoa-amount">+$22/mo</strong>
               </div>
               <div class="breakdown-row">
                 <span>Down Payment Required:</span>
-                <strong id="out-down-required">$35,900</strong>
+                <strong id="out-down-required">$39,000</strong>
               </div>
               <div class="breakdown-row">
                 <span>Default Insurance (CMHC):</span>
-                <strong id="out-cmhc-premium">$11,160</strong>
+                <strong id="out-cmhc-premium">$24,040</strong>
               </div>
               <div class="breakdown-row" style="border-top: 1px dashed rgba(255,255,255,0.2); margin-top: 0.5rem; padding-top: 0.5rem;">
                 <span>Est. Closing Costs (~1.5%):</span>
-                <strong id="out-closing-costs">$6,000</strong>
+                <strong id="out-closing-costs">$9,600</strong>
               </div>
               <div class="breakdown-row" style="font-size: 1.05rem; color: #FFFFFF; font-weight: 700; margin-top: 0.3rem;">
                 <span>Estimated Cash Needed:</span>
-                <strong id="out-cash-needed" style="color: var(--accent-gold);">$46,000</strong>
+                <strong id="out-cash-needed" style="color: var(--accent-gold);">$48,600</strong>
               </div>
               <div style="font-size: 0.72rem; color: #9CA3AF; line-height: 1.2; margin-top: 0.8rem; text-align: center; font-style: italic;">
-                * Closing-cost estimate is illustrative, excludes adjustments, and varies by transaction.
+                Planning estimates only. The 1.5% closing-cost allowance is a budgeting placeholder, not an itemized fee quote; adjustments and actual costs vary. <span id="hoa-fee-note">The HOA is $262.50 annually. </span>Home insurance, utilities and maintenance are additional. Figures are rounded.
               </div>
               <div class="breakdown-row total-row">
                 <span>Total Mortgage Financed:</span>
-                <strong id="out-total-financed">$371,159</strong>
+                <strong id="out-total-financed">$625,039</strong>
               </div>
             </div>
           </div>
@@ -1078,6 +1095,8 @@
         </div>
       </div>
     </div>
+
+    <p style="font-size:0.76rem;color:var(--text-muted);line-height:1.6;margin:-0.5rem 0 2rem;">Mortgage examples assume an eligible owner-occupied purchase and a traditional down payment. Default-insurance premiums are added to the mortgage where required; eligible insured 30-year examples include the additional 0.20 percentage-point premium. Rates, payments and availability depend on borrower qualification, property details and lender approval. Fixed-term pricing applies only for that term; variable rates and payments can change.</p>
 
     <!-- Inquiry Card -->
     <div class="inquiry-card">
@@ -1163,199 +1182,300 @@
   </footer>
 
   <script>
-    var currentSelection = 1;
-    var currentDownMode = 'pct';
-    var amortYears = 25;
-    var isFTHB = true;
+var currentSelection = 1;
+var currentDownMode = 'dol';
+var amortYears = 25;
+var isFTHB = false;
+var currentRateType = 'fixed';
+var lastCalculation = null;
 
-    var properties = {
-      1: {
-        address: "252 Templeview Way NE",
-        community: "Temple, Calgary",
-        specs: "2 + 1 Beds · 2 Baths · 1,140 sq ft · MLS® A2354106",
-        price: 399999,
-        monthlyTax: 236
-      }
-    };
+var properties = {
+  1: {
+    address: '134 Rocky Ridge Mews NW',
+    community: 'Rocky Ridge, Calgary',
+    specs: '4 Beds · 2.5 Baths · 1,568 sq ft · MLS® A2354751',
+    price: 639999,
+    annualTaxes: 4199,
+    annualHoaFees: 262.5,
+    monthlyTax: 4199 / 12
+  }
+};
 
-    function selectProperty(id) {
-      currentSelection = id;
+function hubElement(id) { return document.getElementById(id); }
+function hubText(id, text) {
+  var element = hubElement(id);
+  if (element) element.textContent = text;
+}
+function hubActive(id, active) {
+  var element = hubElement(id);
+  if (element) element.classList.toggle('active', active);
+}
+function hubCents(value) { return Math.round(value * 100) / 100; }
+function hubMoney(value, precise) {
+  return '$' + value.toLocaleString('en-CA', {
+    minimumFractionDigits: precise && Math.abs(value - Math.round(value)) > 0.000001 ? 2 : 0,
+    maximumFractionDigits: precise ? 2 : 0
+  });
+}
+function hubMinimumDown(price) {
+  if (price <= 500000) return hubCents(price * 0.05);
+  if (price < 1500000) return hubCents(25000 + (price - 500000) * 0.1);
+  return hubCents(price * 0.2);
+}
+function hubPrice() {
+  var slider = hubElement('slider-price');
+  var entered = slider ? Number(slider.value) : NaN;
+  var fallback = currentSelection === 'custom' ? 550000 : properties[1].price;
+  return Number.isFinite(entered) && entered > 0 ? entered : fallback;
+}
+function hubReadDown(price) {
+  var slider = hubElement('slider-down');
+  var entered = slider ? Number(slider.value) : NaN;
+  var amount = Number.isFinite(entered)
+    ? (currentDownMode === 'pct' ? price * entered / 100 : entered)
+    : hubMinimumDown(price);
+  return hubCents(Math.max(hubMinimumDown(price), Math.min(amount, price * 0.35)));
+}
+function hubWriteDown(amount, price) {
+  var slider = hubElement('slider-down');
+  if (!slider) return;
+  var minimum = hubMinimumDown(price);
+  amount = hubCents(Math.max(minimum, Math.min(amount, price * 0.35)));
+  if (currentDownMode === 'pct') {
+    slider.min = String(minimum / price * 100);
+    slider.max = '35';
+    // A percentage step would round a precise cash amount when changing modes.
+    slider.step = 'any';
+    slider.value = String(amount / price * 100);
+  } else {
+    slider.min = String(minimum);
+    slider.max = String(hubCents(price * 0.35));
+    slider.step = '0.01';
+    slider.value = String(amount);
+  }
+  hubActive('btn-mode-pct', currentDownMode === 'pct');
+  hubActive('btn-mode-dol', currentDownMode === 'dol');
+  hubText('down-mode-label', currentDownMode === 'pct' ? '%' : '$');
+}
 
-      var card1 = document.getElementById('card-prop-1');
-      var cardCustom = document.getElementById('card-prop-custom');
+function selectProperty(id) {
+  currentSelection = id === 'custom' ? 'custom' : 1;
+  hubActive('card-prop-1', currentSelection === 1);
+  hubActive('card-prop-custom', currentSelection === 'custom');
+  hubText('status-prop-1', currentSelection === 1 ? '✓ Selected' : 'Click to Calculate →');
+  hubText('status-prop-custom', currentSelection === 'custom' ? '✓ Selected' : 'Click to Calculate →');
 
-      if (card1) card1.classList.toggle('active', id === 1);
-      if (cardCustom) cardCustom.classList.toggle('active', id === 'custom');
+  var price = currentSelection === 'custom' ? 550000 : properties[1].price;
+  var priceSlider = hubElement('slider-price');
+  if (priceSlider) priceSlider.value = String(price);
+  currentDownMode = 'dol';
+  amortYears = 25;
+  // The custom-property question also allows a new build. Reconfirm eligibility
+  // when returning to this resale property rather than carrying that answer over.
+  isFTHB = false;
+  hubActive('btn-fthb-yes', false);
+  hubActive('btn-fthb-no', true);
+  hubWriteDown(Math.ceil(hubMinimumDown(price)), price);
 
-      var status1 = document.getElementById('status-prop-1');
-      var statusCustom = document.getElementById('status-prop-custom');
+  var showingButton = hubElement('btn-darian-showing');
+  if (showingButton) showingButton.style.display = currentSelection === 'custom' ? 'none' : 'block';
+  var attribution = hubElement('listing-attribution');
+  if (attribution) {
+    attribution.style.display = currentSelection === 'custom' ? 'none' : '';
+  }
+  hubText('first-time-label', currentSelection === 'custom'
+    ? 'Eligible First-Time Buyer or Newly Built Home?'
+    : 'At Least One Eligible First-Time Buyer?');
+  hubText('first-time-help', currentSelection === 'custom'
+    ? 'Below 20% down, a 30-year insured estimate requires at least one eligible first-time buyer or a newly built home, subject to lender and insurer approval.'
+    : 'This home is a resale. Below 20% down, a 30-year insured estimate requires at least one eligible first-time buyer, subject to lender and insurer approval.');
+  runHubCalc();
+}
 
-      if (status1) status1.innerHTML = id === 1 ? '<span>✓ Selected</span>' : '<span>Click to Calculate →</span>';
-      if (statusCustom) statusCustom.innerHTML = id === 'custom' ? '<span>✓ Selected</span>' : '<span>Click to Calculate →</span>';
+function setDownPaymentMode(mode) {
+  if (mode !== 'pct' && mode !== 'dol') return;
+  var price = hubPrice();
+  var amount = hubReadDown(price);
+  currentDownMode = mode;
+  hubWriteDown(amount, price);
+  runHubCalc();
+}
 
-      var bannerName = document.getElementById('calc-focus-name');
-      var bannerSpecs = document.getElementById('calc-focus-specs');
-      var priceSlider = document.getElementById('slider-price');
+function setDownPreset(preset) {
+  var price = hubPrice();
+  var amount = preset === 'minimum' ? hubMinimumDown(price)
+    : preset === '10' ? hubCents(price * 0.1)
+    : preset === '20' ? hubCents(price * 0.2) : hubReadDown(price);
+  currentDownMode = 'dol';
+  hubWriteDown(Math.max(amount, hubMinimumDown(price)), price);
+  runHubCalc();
+}
 
-      if (id === 'custom') {
-        bannerName.textContent = "Custom Calgary Property Estimate";
-        bannerSpecs.textContent = "Adjust sliders below to test payments on any home price in Calgary · Est. Taxes: $250/mo";
-        priceSlider.value = 550000;
-        if (document.getElementById('btn-darian-showing')) {
-          document.getElementById('btn-darian-showing').style.display = 'none';
-        }
-      } else {
-        var p = properties[id];
-        bannerName.textContent = p.address;
-        bannerSpecs.textContent = p.community + " · " + p.specs + " · Est. Taxes: $" + p.monthlyTax + "/mo";
-        priceSlider.value = p.price;
-        if (document.getElementById('btn-darian-showing')) {
-          document.getElementById('btn-darian-showing').style.display = 'block';
-        }
-      }
+function setFTHB(value) {
+  isFTHB = value === true;
+  hubActive('btn-fthb-yes', isFTHB);
+  hubActive('btn-fthb-no', !isFTHB);
+  runHubCalc();
+}
 
-      runHubCalc();
-    }
+function setAmortization(years) {
+  amortYears = Number(years) === 30 ? 30 : 25;
+  runHubCalc();
+}
 
-    function setDownPaymentMode(mode) {
-      currentDownMode = mode;
-      document.getElementById('btn-mode-pct').classList.toggle('active', mode === 'pct');
-      document.getElementById('btn-mode-dol').classList.toggle('active', mode === 'dol');
-      document.getElementById('down-mode-label').textContent = mode === 'pct' ? '%' : '$';
+function setRateType(type) {
+  currentRateType = type === 'variable' ? 'variable' : 'fixed';
+  var input = hubElement('input-rate');
+  if (input) input.value = currentRateType === 'variable' ? '3.95' : '4.49';
+  runHubCalc();
+}
 
-      var slider = document.getElementById('slider-down');
-      var price = parseFloat(document.getElementById('slider-price').value) || 399999;
+function runHubCalc() {
+  var price = hubPrice();
+  var downAmount = hubReadDown(price);
+  hubWriteDown(downAmount, price);
+  var downPct = downAmount / price * 100;
+  var minimum = hubMinimumDown(price);
+  var rateInput = hubElement('input-rate');
+  var enteredRate = rateInput && rateInput.value.trim() !== '' ? Number(rateInput.value) : NaN;
+  var annualRate = Number.isFinite(enteredRate)
+    ? Math.max(0, Math.min(enteredRate, 25))
+    : currentRateType === 'variable' ? 3.95 : 4.49;
+  if (rateInput && Number.isFinite(enteredRate) && annualRate !== enteredRate) rateInput.value = String(annualRate);
 
-      if (mode === 'pct') {
-        slider.min = "5"; slider.max = "35"; slider.step = "1"; slider.value = "10";
-      } else {
-        var minDol = Math.round((price * 0.05) / 1000) * 1000;
-        var maxDol = Math.round((price * 0.35) / 1000) * 1000;
-        slider.min = minDol.toString(); slider.max = maxDol.toString(); slider.step = "2500";
-        slider.value = (Math.round((price * 0.10) / 1000) * 1000).toString();
-      }
-      runHubCalc();
-    }
+  var baseLoan = hubCents(Math.max(price - downAmount, 0));
+  var loanToValue = baseLoan / price;
+  var tolerance = 1e-12;
+  var insured = loanToValue > 0.8 + tolerance;
+  var revertedAmortization = amortYears === 30 && insured && !isFTHB;
+  if (revertedAmortization) amortYears = 25;
+  hubActive('btn-amort-25', amortYears === 25);
+  hubActive('btn-amort-30', amortYears === 30);
+  var warning = hubElement('amort-warning');
+  if (warning) {
+    warning.style.display = revertedAmortization ? 'block' : 'none';
+    warning.textContent = currentSelection === 'custom'
+      ? 'A 30-year insured estimate requires an eligible first-time buyer or a newly built home. The estimate and selection have returned to 25 years.'
+      : 'This is a resale home. Below 20% down, a 30-year estimate requires an eligible first-time buyer. The estimate and selection have returned to 25 years.';
+  }
+  var cmhcPct = insured
+    ? loanToValue <= 0.85 + tolerance ? 0.028
+    : loanToValue <= 0.9 + tolerance ? 0.031 : 0.04
+    : 0;
+  if (insured && amortYears === 30) cmhcPct += 0.002;
+  var cmhcPrem = hubCents(baseLoan * cmhcPct);
+  var totalLoan = hubCents(baseLoan + cmhcPrem);
+  var compounding = currentRateType === 'variable' ? 12 : 2;
+  var monthlyRate = Math.pow(1 + annualRate / 100 / compounding, compounding / 12) - 1;
+  var payments = amortYears * 12;
+  var monthlyPayment = totalLoan <= 0 ? 0 : monthlyRate === 0 ? totalLoan / payments
+    : totalLoan * monthlyRate / (1 - Math.pow(1 + monthlyRate, -payments));
+  var monthlyTax = currentSelection === 'custom' ? price * 0.0055 / 12 : properties[1].annualTaxes / 12;
+  var monthlyHoa = currentSelection === 'custom' ? 0 : properties[1].annualHoaFees / 12;
+  var totalMonthly = monthlyPayment + monthlyTax + monthlyHoa;
+  var closingCosts = Math.round(price * 0.015);
+  var cashNeeded = hubCents(downAmount + closingCosts);
 
-    function setFTHB(val) {
-      isFTHB = val;
-      document.getElementById('btn-fthb-yes').classList.toggle('active', val === true);
-      document.getElementById('btn-fthb-no').classList.toggle('active', val === false);
-      runHubCalc();
-    }
+  lastCalculation = {
+    property: currentSelection === 'custom' ? 'Custom Calgary Property Estimate' : properties[1].address,
+    purchasePrice: price,
+    downAmount: downAmount,
+    downPct: downPct,
+    minimumDownPayment: minimum,
+    baseMortgage: baseLoan,
+    insurancePremiumRate: cmhcPct,
+    insurancePremium: cmhcPrem,
+    totalMortgage: totalLoan,
+    annualRate: annualRate,
+    rateType: currentRateType,
+    compoundingPeriodsPerYear: compounding,
+    amortizationYears: amortYears,
+    monthlyMortgagePayment: monthlyPayment,
+    monthlyTax: monthlyTax,
+    monthlyHoa: monthlyHoa,
+    totalMonthly: totalMonthly,
+    closingCosts: closingCosts,
+    cashNeeded: cashNeeded
+  };
 
-    function setAmortization(yrs) {
-      amortYears = yrs;
-      document.getElementById('btn-amort-25').classList.toggle('active', yrs === 25);
-      document.getElementById('btn-amort-30').classList.toggle('active', yrs === 30);
-      runHubCalc();
-    }
+  hubText('calc-price-disp', hubMoney(price));
+  if (currentSelection === 'custom') {
+    hubText('custom-card-price-disp', hubMoney(price));
+    hubText('calc-focus-name', 'Custom Calgary Property Estimate');
+    hubText('calc-focus-specs', 'Adjust the price to explore another Calgary home · Tax assumption: 0.55% of price/year · HOA not included');
+  } else {
+    hubText('calc-focus-name', properties[1].address);
+    hubText('calc-focus-specs', properties[1].community + ' · ' + properties[1].specs + ' · Taxes: $4,199/year · HOA: $262.50/year');
+  }
+  hubText('calc-down-disp', currentDownMode === 'pct'
+    ? downPct.toFixed(2) + '% (' + hubMoney(downAmount, true) + ')'
+    : hubMoney(downAmount, true) + ' (' + downPct.toFixed(2) + '%)');
+  hubText('dp-min-bound', 'Min ' + hubMoney(minimum, true));
+  hubActive('btn-down-minimum', Math.abs(downAmount - minimum) < 0.011);
+  hubActive('btn-down-10', Math.abs(downAmount - price * 0.1) < 0.011);
+  hubActive('btn-down-20', Math.abs(downAmount - price * 0.2) < 0.011);
+  var tenPercentButton = hubElement('btn-down-10');
+  if (tenPercentButton) tenPercentButton.disabled = hubCents(price * 0.1) < minimum;
+  hubText('minimum-down-explanation', price <= 500000
+    ? 'Minimum down payment: 5% of the purchase price (' + hubMoney(minimum, true) + ').'
+    : price < 1500000
+    ? 'Minimum down payment: 5% of the first $500,000 plus 10% of the remainder (' + hubMoney(minimum, true) + ').'
+    : 'At $1.5 million or more, the minimum down payment is 20% (' + hubMoney(minimum, true) + ').');
+  hubActive('btn-rate-fixed', currentRateType === 'fixed');
+  hubActive('btn-rate-variable', currentRateType === 'variable');
+  hubText('rate-assumption-note', currentRateType === 'variable'
+    ? 'Illustrative starting variable rate, using monthly compounding. Rates and lender payment conventions can change. Trevor will confirm available pricing and eligibility.'
+    : 'Illustrative 5-year fixed rate, using Canadian semiannual compounding. Pricing depends on qualification; the rate after the five-year term is unknown.');
+  hubText('out-total-monthly', hubMoney(totalMonthly));
+  hubText('out-mort-payment', hubMoney(monthlyPayment) + '/mo');
+  hubText('out-tax-amount', '+' + hubMoney(monthlyTax) + '/mo');
+  hubText('out-hoa-amount', '+' + hubMoney(monthlyHoa) + '/mo');
+  var hoaRow = hubElement('hoa-row');
+  if (hoaRow) hoaRow.style.display = monthlyHoa > 0 ? '' : 'none';
+  var hoaNote = hubElement('hoa-fee-note');
+  if (hoaNote) hoaNote.style.display = monthlyHoa > 0 ? '' : 'none';
+  hubText('monthly-cost-scope', monthlyHoa > 0
+    ? 'Includes mortgage principal, interest, property taxes and the monthly equivalent of the $262.50 annual HOA fee.'
+    : 'Includes mortgage principal, interest and estimated property taxes. HOA or condo fees are not included for custom properties.');
+  hubText('out-down-required', hubMoney(downAmount, true));
+  hubText('out-cmhc-premium', cmhcPrem > 0 ? hubMoney(cmhcPrem) + ' (financed)' : '$0 (Conventional)');
+  hubText('out-total-financed', hubMoney(totalLoan));
+  hubText('out-closing-costs', hubMoney(closingCosts));
+  hubText('out-cash-needed', hubMoney(cashNeeded));
+  return lastCalculation;
+}
 
-    function runHubCalc() {
-      var priceSlider = document.getElementById('slider-price');
-      var price = parseFloat(priceSlider.value) || 399999;
-      document.getElementById('calc-price-disp').textContent = "$" + price.toLocaleString();
+function handleInquiry(event) {
+  event.preventDefault();
+  var calculation = runHubCalc();
+  var leadData = {
+    lead_type: 'realtor_hub_darian',
+    full_name: hubElement('inq_name').value || '',
+    phone: hubElement('inq_phone').value || '',
+    email: hubElement('inq_email').value || '',
+    purchase_price: hubMoney(calculation.purchasePrice, true),
+    savings_available: hubMoney(calculation.downAmount, true),
+    scenario_notes: 'Darian Hub inquiry for ' + calculation.property
+      + '; ' + calculation.downPct.toFixed(2) + '% down; '
+      + calculation.annualRate.toFixed(2) + '% illustrative ' + calculation.rateType
+      + '; ' + calculation.amortizationYears + '-year amortization; '
+      + hubMoney(calculation.monthlyMortgagePayment) + '/month mortgage payment.',
+    province: 'Alberta',
+    source_cta: 'Darian Hub Inquiry Card',
+    submittedAt: new Date().toISOString()
+  };
+  fetch('https://script.google.com/macros/s/AKfycbxunHTb9xivp_KH2UNceJvwaYayIAxSmkeAJRJ8SKzE0ECkIl6mGD9ROpmTMz2x7z5K/exec', {
+    method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(leadData)
+  }).catch(function(error) { console.log(error); });
+  event.target.style.display = 'none';
+  hubElement('inquiry-success').style.display = 'block';
+}
 
-      if (currentSelection === 'custom') {
-        document.getElementById('custom-card-price-disp').textContent = "$" + price.toLocaleString();
-      }
-
-      var slider = document.getElementById('slider-down');
-      var downVal = parseFloat(slider.value) || 10;
-      var downAmount = 0; var downPct = 0;
-
-      if (currentDownMode === 'pct') {
-        downPct = downVal; downAmount = price * (downPct / 100);
-        document.getElementById('calc-down-disp').textContent = downPct + "% ($" + Math.round(downAmount).toLocaleString() + ")";
-        document.getElementById('dp-min-bound').textContent = "Min 5%";
-      } else {
-        downAmount = downVal; downPct = (downAmount / price) * 100;
-        document.getElementById('calc-down-disp').textContent = "$" + Math.round(downAmount).toLocaleString() + " (" + downPct.toFixed(1) + "%)";
-        var minDol = Math.round((price * 0.05) / 1000) * 1000;
-        document.getElementById('dp-min-bound').textContent = "Min $" + minDol.toLocaleString();
-      }
-
-      var rateInput = document.getElementById('input-rate');
-      var annualRate = rateInput ? (parseFloat(rateInput.value) || 3.60) : 3.60;
-      var baseLoan = price - downAmount;
-      var cmhcPct = 0; var tempAmortYears = amortYears;
-
-      if (downPct < 20) {
-        if (amortYears === 30) {
-          if (!isFTHB) {
-            document.getElementById('amort-warning').style.display = 'block';
-            tempAmortYears = 25;
-            if (downPct >= 15) cmhcPct = 0.0280;
-            else if (downPct >= 10) cmhcPct = 0.0310;
-            else cmhcPct = 0.0400;
-          } else {
-            document.getElementById('amort-warning').style.display = 'none';
-            tempAmortYears = 30;
-            if (downPct >= 15) cmhcPct = 0.0300;
-            else if (downPct >= 10) cmhcPct = 0.0330;
-            else cmhcPct = 0.0425;
-          }
-        } else {
-          document.getElementById('amort-warning').style.display = 'none';
-          tempAmortYears = 25;
-          if (downPct >= 15) cmhcPct = 0.0280;
-          else if (downPct >= 10) cmhcPct = 0.0310;
-          else cmhcPct = 0.0400;
-        }
-      } else {
-        document.getElementById('amort-warning').style.display = 'none';
-      }
-
-      var cmhcPrem = baseLoan * cmhcPct;
-      var totalLoan = baseLoan + cmhcPrem;
-
-      var r = annualRate / 100;
-      var monthlyRate = Math.pow(1 + r / 2, 2 / 12) - 1;
-      var n = tempAmortYears * 12;
-      var monthlyPayment = totalLoan * (monthlyRate * Math.pow(1 + monthlyRate, n)) / (Math.pow(1 + monthlyRate, n) - 1);
-
-      var monthlyTax = 236;
-      if (currentSelection === 'custom') monthlyTax = Math.round(price * 0.0055 / 12);
-
-      var totalMonthly = monthlyPayment + monthlyTax;
-
-      document.getElementById('out-total-monthly').textContent = "$" + Math.round(totalMonthly).toLocaleString();
-      document.getElementById('out-mort-payment').textContent = "$" + Math.round(monthlyPayment).toLocaleString() + "/mo";
-      document.getElementById('out-tax-amount').textContent = "+$" + Math.round(monthlyTax).toLocaleString() + "/mo";
-      document.getElementById('out-down-required').textContent = "$" + Math.round(downAmount).toLocaleString();
-      document.getElementById('out-cmhc-premium').textContent = cmhcPrem > 0 ? "$" + Math.round(cmhcPrem).toLocaleString() : "$0 (Conventional)";
-      document.getElementById('out-total-financed').textContent = "$" + Math.round(totalLoan).toLocaleString();
-
-      var closingCosts = Math.round(price * 0.015);
-      var cashNeeded = Math.round(downAmount + closingCosts);
-      document.getElementById('out-closing-costs').textContent = "$" + closingCosts.toLocaleString();
-      document.getElementById('out-cash-needed').textContent = "$" + cashNeeded.toLocaleString();
-    }
-
-    function handleInquiry(e) {
-      e.preventDefault();
-      var leadData = {
-        lead_type: 'realtor_hub_darian',
-        full_name: document.getElementById('inq_name').value || '',
-        phone: document.getElementById('inq_phone').value || '',
-        email: document.getElementById('inq_email').value || '',
-        purchase_price: "$" + (parseFloat(document.getElementById('slider-price').value) || 0).toLocaleString(),
-        savings_available: "$" + (parseFloat(document.getElementById('slider-down').value) || 0).toLocaleString(),
-        scenario_notes: "Calculated Darian Hub with " + document.getElementById('calc-focus-name').textContent,
-        province: 'Alberta',
-        source_cta: 'Darian Hub Inquiry Card',
-        submittedAt: new Date().toISOString()
-      };
-      fetch('https://script.google.com/macros/s/AKfycbxunHTb9xivp_KH2UNceJvwaYayIAxSmkeAJRJ8SKzE0ECkIl6mGD9ROpmTMz2x7z5K/exec', {
-        method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(leadData)
-      }).catch(function(err){ console.log(err); });
-      e.target.style.display = 'none';
-      document.getElementById('inquiry-success').style.display = 'block';
-    }
-
-    window.addEventListener('DOMContentLoaded', function() {
-      selectProperty(1);
-    });
+window.addEventListener('DOMContentLoaded', function() {
+  var input = hubElement('input-rate');
+  if (input) input.value = '4.49';
+  selectProperty(1);
+});
   </script>
 </body>
 </html>
