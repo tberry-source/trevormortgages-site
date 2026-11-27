@@ -888,14 +888,14 @@
     <section class="picker-section">
       <div class="section-heading-row">
         <div class="section-title">
-          <span>Explore This Open House or Test a Custom Price</span>
+          <span>Explore the Open House, Darian’s Listing, or a Custom Price</span>
         </div>
         <div class="section-sub">
-          This home's asking price, listed property taxes and annual HOA fee are loaded below
+          Choose a property to load its asking price, property taxes and applicable HOA fee
         </div>
       </div>
 
-      <div class="property-cards-grid cols-2">
+      <div class="property-cards-grid cols-3">
         
         <!-- Property 1 -->
         <div class="prop-card active" id="card-prop-1" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectProperty(1)}" onclick="selectProperty(1)">
@@ -914,6 +914,27 @@
             </div>
             <div class="prop-card-status" id="status-prop-1">
               <span>✓ Selected</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Property 2: Darian's Active Listing -->
+        <div class="prop-card" id="card-prop-2" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectProperty(2)}" onclick="selectProperty(2)">
+          <div>
+            <span class="prop-card-tag tag-featured">Darian’s Active Listing</span>
+            <div class="prop-card-address">252 Templeview Way NE</div>
+            <div class="prop-card-meta">
+              Temple, Calgary · MLS® A2354106<br />
+              2 + 1 Beds · 1 Full + 1 Half Baths · 1,140 sq ft
+            </div>
+          </div>
+          <div>
+            <div class="prop-card-price-row">
+              <span class="prop-card-price-lbl">Asking Price</span>
+              <span class="prop-card-price-val">$399,999</span>
+            </div>
+            <div class="prop-card-status" id="status-prop-2">
+              <span>Click to Calculate →</span>
             </div>
           </div>
         </div>
@@ -940,7 +961,7 @@
         </div>
 
       </div>
-      <p id="listing-attribution" style="text-align:center;font-size:0.78rem;line-height:1.6;color:var(--text-muted);margin-top:1rem;">Listing courtesy of Beatrix Smolejova, Premiere Realty Direct. Open house hosted by Darian Stadnyk.<br /><a href="https://www.realtor.ca/real-estate/30550623/134-rocky-ridge-mews-nw-calgary-rocky-ridge" target="_blank" rel="noopener noreferrer" style="color:var(--accent-gold-hover);font-weight:700;">View the full MLS® listing →</a> · Property information checked November 27, 2026.</p>
+      <p id="listing-attribution" style="text-align:center;font-size:0.78rem;line-height:1.6;color:var(--text-muted);margin-top:1rem;"><span id="listing-credit">Listing courtesy of Beatrix Smolejova, Premiere Realty Direct. Open house hosted by Darian Stadnyk.</span><br /><a id="listing-link" href="https://www.realtor.ca/real-estate/30550623/134-rocky-ridge-mews-nw-calgary-rocky-ridge" target="_blank" rel="noopener noreferrer" style="color:var(--accent-gold-hover);font-weight:700;">View the full MLS® listing →</a> · Property information checked November 27, 2026.</p>
     </section>
 
     <!-- Step 2: Calculator Card -->
@@ -1197,7 +1218,20 @@ var properties = {
     price: 639999,
     annualTaxes: 4199,
     annualHoaFees: 262.5,
-    monthlyTax: 4199 / 12
+    monthlyTax: 4199 / 12,
+    listingCredit: 'Listing courtesy of Beatrix Smolejova, Premiere Realty Direct. Open house hosted by Darian Stadnyk.',
+    listingUrl: 'https://www.realtor.ca/real-estate/30550623/134-rocky-ridge-mews-nw-calgary-rocky-ridge'
+  },
+  2: {
+    address: '252 Templeview Way NE',
+    community: 'Temple, Calgary',
+    specs: '2 + 1 Beds · 1 Full + 1 Half Baths · 1,140 sq ft · MLS® A2354106',
+    price: 399999,
+    annualTaxes: 2826,
+    annualHoaFees: 0,
+    monthlyTax: 2826 / 12,
+    listingCredit: 'Listed by Darian Stadnyk, Premiere Realty Direct.',
+    listingUrl: 'https://www.realtor.ca/real-estate/30466077/252-templeview-way-ne-calgary-temple'
   }
 };
 
@@ -1225,7 +1259,7 @@ function hubMinimumDown(price) {
 function hubPrice() {
   var slider = hubElement('slider-price');
   var entered = slider ? Number(slider.value) : NaN;
-  var fallback = currentSelection === 'custom' ? 550000 : properties[1].price;
+  var fallback = currentSelection === 'custom' ? 550000 : properties[currentSelection].price;
   return Number.isFinite(entered) && entered > 0 ? entered : fallback;
 }
 function hubReadDown(price) {
@@ -1259,13 +1293,15 @@ function hubWriteDown(amount, price) {
 }
 
 function selectProperty(id) {
-  currentSelection = id === 'custom' ? 'custom' : 1;
-  hubActive('card-prop-1', currentSelection === 1);
-  hubActive('card-prop-custom', currentSelection === 'custom');
-  hubText('status-prop-1', currentSelection === 1 ? '✓ Selected' : 'Click to Calculate →');
-  hubText('status-prop-custom', currentSelection === 'custom' ? '✓ Selected' : 'Click to Calculate →');
+  currentSelection = id === 'custom' ? 'custom'
+    : Object.prototype.hasOwnProperty.call(properties, Number(id)) ? Number(id) : 1;
+  [1, 2, 'custom'].forEach(function(propertyId) {
+    hubActive('card-prop-' + propertyId, currentSelection === propertyId);
+    hubText('status-prop-' + propertyId, currentSelection === propertyId ? '✓ Selected' : 'Click to Calculate →');
+  });
 
-  var price = currentSelection === 'custom' ? 550000 : properties[1].price;
+  var property = properties[currentSelection];
+  var price = property ? property.price : 550000;
   var priceSlider = hubElement('slider-price');
   if (priceSlider) priceSlider.value = String(price);
   currentDownMode = 'dol';
@@ -1282,6 +1318,11 @@ function selectProperty(id) {
   var attribution = hubElement('listing-attribution');
   if (attribution) {
     attribution.style.display = currentSelection === 'custom' ? 'none' : '';
+  }
+  if (property) {
+    hubText('listing-credit', property.listingCredit);
+    var listingLink = hubElement('listing-link');
+    if (listingLink) listingLink.href = property.listingUrl;
   }
   hubText('first-time-label', currentSelection === 'custom'
     ? 'Eligible First-Time Buyer or Newly Built Home?'
@@ -1331,6 +1372,7 @@ function setRateType(type) {
 }
 
 function runHubCalc() {
+  var property = properties[currentSelection];
   var price = hubPrice();
   var downAmount = hubReadDown(price);
   hubWriteDown(downAmount, price);
@@ -1370,14 +1412,14 @@ function runHubCalc() {
   var payments = amortYears * 12;
   var monthlyPayment = totalLoan <= 0 ? 0 : monthlyRate === 0 ? totalLoan / payments
     : totalLoan * monthlyRate / (1 - Math.pow(1 + monthlyRate, -payments));
-  var monthlyTax = currentSelection === 'custom' ? price * 0.0055 / 12 : properties[1].annualTaxes / 12;
-  var monthlyHoa = currentSelection === 'custom' ? 0 : properties[1].annualHoaFees / 12;
+  var monthlyTax = property ? property.annualTaxes / 12 : price * 0.0055 / 12;
+  var monthlyHoa = property ? property.annualHoaFees / 12 : 0;
   var totalMonthly = monthlyPayment + monthlyTax + monthlyHoa;
   var closingCosts = Math.round(price * 0.015);
   var cashNeeded = hubCents(downAmount + closingCosts);
 
   lastCalculation = {
-    property: currentSelection === 'custom' ? 'Custom Calgary Property Estimate' : properties[1].address,
+    property: property ? property.address : 'Custom Calgary Property Estimate',
     purchasePrice: price,
     downAmount: downAmount,
     downPct: downPct,
@@ -1404,8 +1446,10 @@ function runHubCalc() {
     hubText('calc-focus-name', 'Custom Calgary Property Estimate');
     hubText('calc-focus-specs', 'Adjust the price to explore another Calgary home · Tax assumption: 0.55% of price/year · HOA not included');
   } else {
-    hubText('calc-focus-name', properties[1].address);
-    hubText('calc-focus-specs', properties[1].community + ' · ' + properties[1].specs + ' · Taxes: $4,199/year · HOA: $262.50/year');
+    hubText('calc-focus-name', property.address);
+    hubText('calc-focus-specs', property.community + ' · ' + property.specs
+      + ' · Taxes: ' + hubMoney(property.annualTaxes, true) + '/year'
+      + (property.annualHoaFees > 0 ? ' · HOA: ' + hubMoney(property.annualHoaFees, true) + '/year' : ''));
   }
   hubText('calc-down-disp', currentDownMode === 'pct'
     ? downPct.toFixed(2) + '% (' + hubMoney(downAmount, true) + ')'
@@ -1433,9 +1477,13 @@ function runHubCalc() {
   var hoaRow = hubElement('hoa-row');
   if (hoaRow) hoaRow.style.display = monthlyHoa > 0 ? '' : 'none';
   var hoaNote = hubElement('hoa-fee-note');
-  if (hoaNote) hoaNote.style.display = monthlyHoa > 0 ? '' : 'none';
+  if (hoaNote) {
+    hoaNote.style.display = monthlyHoa > 0 ? '' : 'none';
+    if (monthlyHoa > 0) hoaNote.textContent = 'The HOA is ' + hubMoney(property.annualHoaFees, true) + ' annually. ';
+  }
   hubText('monthly-cost-scope', monthlyHoa > 0
-    ? 'Includes mortgage principal, interest, property taxes and the monthly equivalent of the $262.50 annual HOA fee.'
+    ? 'Includes mortgage principal, interest, property taxes and the monthly equivalent of the ' + hubMoney(property.annualHoaFees, true) + ' annual HOA fee.'
+    : property ? 'Includes mortgage principal, interest and property taxes.'
     : 'Includes mortgage principal, interest and estimated property taxes. HOA or condo fees are not included for custom properties.');
   hubText('out-down-required', hubMoney(downAmount, true));
   hubText('out-cmhc-premium', cmhcPrem > 0 ? hubMoney(cmhcPrem) + ' (financed)' : '$0 (Conventional)');
